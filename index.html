@@ -1102,6 +1102,9 @@
             <button class="nav-tab" onclick="showTab('round3')">
                 Round 3 <span class="round-badge">41 Picks</span>
             </button>
+            <button class="nav-tab" onclick="showTab('create')">
+                <i class="fas fa-pencil-alt"></i> Create Your Mock
+            </button>
         </div>
     </nav>
 
@@ -1439,6 +1442,105 @@
                 </div>
             </div>
         </div>
+
+        <!-- CREATE YOUR MOCK TAB -->
+        <div id="create" class="tab-content">
+            <h2 class="round-title"><i class="fas fa-pencil-alt"></i> Create Your <span>Mock Draft</span></h2>
+            
+            <div class="create-intro" style="text-align: center; max-width: 800px; margin: 0 auto 2rem; color: var(--text-secondary);">
+                <p>Build your own 2026 NFL Mock Draft! Select a team and assign players to each pick. Share your predictions with friends!</p>
+            </div>
+
+            <!-- Draft Controls -->
+            <div class="draft-controls" style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <div>
+                        <h3 style="font-family: 'Oswald', sans-serif; margin-bottom: 0.5rem;">Your Draft Progress</h3>
+                        <div style="display: flex; gap: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
+                            <span><strong id="customPickCount">0</strong>/32 Picks</span>
+                            <span id="draftStatus" style="color: var(--warning);">In Progress</span>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 0.75rem;">
+                        <button class="filter-btn" onclick="resetDraft()" style="background: rgba(255,71,87,0.2); border-color: var(--danger); color: var(--danger);">
+                            <i class="fas fa-trash-alt"></i> Reset
+                        </button>
+                        <button class="filter-btn" onclick="autoFillDraft()" style="background: rgba(0,212,255,0.2);">
+                            <i class="fas fa-magic"></i> Auto-Fill
+                        </button>
+                        <button class="filter-btn" onclick="shareCustomDraft()" style="background: var(--accent); color: var(--primary);">
+                            <i class="fas fa-share-alt"></i> Share
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Player Selection Panel -->
+            <div class="player-selection-panel" style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem;">
+                <h3 style="font-family: 'Oswald', sans-serif; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-users"></i> Select Player for Pick <span id="currentPickNum">1</span>
+                </h3>
+                
+                <!-- Current Team Display -->
+                <div id="currentTeamDisplay" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; padding: 1rem; background: rgba(0,212,255,0.05); border-radius: 8px; border-left: 3px solid var(--accent);">
+                    <svg class="team-helmet" id="currentTeamHelmet" viewBox="0 0 100 70" style="width: 60px; height: 40px;">
+                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#001E62" stroke="#A71930" stroke-width="3"/>
+                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold">NYG</text>
+                    </svg>
+                    <div>
+                        <div style="font-weight: 600; font-size: 1.1rem;">New York Giants</div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary);">Record: 3-14 | Pick #1</div>
+                    </div>
+                </div>
+
+                <!-- Position Filter for Players -->
+                <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap;">
+                    <span style="color: var(--text-secondary); font-size: 0.9rem; margin-right: 0.5rem;">Filter:</span>
+                    <button class="filter-btn active" onclick="filterPlayerPool('all')">All</button>
+                    <button class="filter-btn" onclick="filterPlayerPool('QB')">QB</button>
+                    <button class="filter-btn" onclick="filterPlayerPool('RB')">RB</button>
+                    <button class="filter-btn" onclick="filterPlayerPool('WR')">WR</button>
+                    <button class="filter-btn" onclick="filterPlayerPool('TE')">TE</button>
+                    <button class="filter-btn" onclick="filterPlayerPool('OL')">OL</button>
+                    <button class="filter-btn" onclick="filterPlayerPool('DL')">DL</button>
+                    <button class="filter-btn" onclick="filterPlayerPool('EDGE')">EDGE</button>
+                    <button class="filter-btn" onclick="filterPlayerPool('LB')">LB</button>
+                    <button class="filter-btn" onclick="filterPlayerPool('DB')">DB</button>
+                </div>
+
+                <!-- Search Players -->
+                <div class="search-box" style="margin-bottom: 1rem; max-width: 400px;">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="playerPoolSearch" placeholder="Search available players..." onkeyup="searchPlayerPool()" style="width: 100%;">
+                </div>
+
+                <!-- Available Players Grid -->
+                <div id="availablePlayers" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; max-height: 400px; overflow-y: auto; padding-right: 0.5rem;">
+                    <!-- Players populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Custom Draft Board -->
+            <div class="custom-draft-board" style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem;">
+                <h3 style="font-family: 'Oswald', sans-serif; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-clipboard-list"></i> Your Draft Board
+                </h3>
+                
+                <div id="customPicksList" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                    <!-- Custom picks populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Draft Summary -->
+            <div id="draftSummary" style="margin-top: 2rem; background: linear-gradient(135deg, rgba(0,212,255,0.1) 0%, rgba(0,255,136,0.05) 100%); border: 1px solid var(--accent); border-radius: 12px; padding: 1.5rem; display: none;">
+                <h3 style="font-family: 'Oswald', sans-serif; margin-bottom: 1rem; color: var(--accent);">
+                    <i class="fas fa-trophy"></i> Draft Complete!
+                </h3>
+                <div id="draftStats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem;">
+                    <!-- Stats populated by JavaScript -->
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer class="footer">
@@ -1609,6 +1711,356 @@
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
             updatePositionCounts();
+        });
+
+        // ==========================================
+        // CUSTOM MOCK DRAFT BUILDER
+        // ==========================================
+
+        // Draft data
+        const draftOrder = [
+            { pick: 1, team: 'Giants', teamCode: 'NYG', record: '3-14', helmet: '#001E62', accent: '#A71930' },
+            { pick: 2, team: 'Patriots', teamCode: 'NE', record: '4-13', helmet: '#002244', accent: '#C60C30' },
+            { pick: 3, team: 'Jaguars', teamCode: 'JAX', record: '5-12', helmet: '#006778', accent: '#D7A22A' },
+            { pick: 4, team: 'Browns', teamCode: 'CLE', record: '5-12', helmet: '#311D00', accent: '#FF3C00' },
+            { pick: 5, team: 'Titans', teamCode: 'TEN', record: '6-11', helmet: '#0C2340', accent: '#4C8FB6' },
+            { pick: 6, team: 'Panthers', teamCode: 'CAR', record: '6-11', helmet: '#0085CA', accent: '#101820' },
+            { pick: 7, team: 'Jets', teamCode: 'NYJ', record: '7-10', helmet: '#125740', accent: 'white' },
+            { pick: 8, team: 'Saints', teamCode: 'NO', record: '7-10', helmet: '#101820', accent: '#D3BC8D' },
+            { pick: 9, team: 'Commanders', teamCode: 'WAS', record: '8-9', helmet: '#773141', accent: '#FFB612' },
+            { pick: 10, team: 'Bears', teamCode: 'CHI', record: '8-9', helmet: '#0B162A', accent: '#C83803' },
+            { pick: 11, team: 'Packers', teamCode: 'GB', record: '9-8', helmet: '#203731', accent: '#FFB612' },
+            { pick: 12, team: 'Falcons', teamCode: 'ATL', record: '9-8', helmet: '#000000', accent: '#A71930' },
+            { pick: 13, team: 'Buccaneers', teamCode: 'TB', record: '10-7', helmet: '#5A1414', accent: '#FFB612' },
+            { pick: 14, team: 'Dolphins', teamCode: 'MIA', record: '10-7', helmet: '#008E97', accent: '#FC4C02' },
+            { pick: 15, team: 'Ravens', teamCode: 'BAL', record: '10-7', helmet: '#241773', accent: '#9E7C0C' },
+            { pick: 16, team: 'Colts', teamCode: 'IND', record: '10-7', helmet: '#003594', accent: '#FFB81C' },
+            { pick: 17, team: '49ers', teamCode: 'SF', record: '10-7', helmet: '#AA0000', accent: '#B3995D' },
+            { pick: 18, team: 'Vikings', teamCode: 'MIN', record: '10-7', helmet: '#4F2683', accent: '#FFC62F' },
+            { pick: 19, team: 'Chargers', teamCode: 'LAC', record: '11-6', helmet: '#0076B6', accent: '#FFB81C' },
+            { pick: 20, team: 'Chiefs', teamCode: 'KC', record: '11-6', helmet: '#E31837', accent: '#FFB81C' },
+            { pick: 21, team: 'Cardinals', teamCode: 'ARI', record: '11-6', helmet: '#97233F', accent: '#000000' },
+            { pick: 22, team: 'Seahawks', teamCode: 'SEA', record: '12-5', helmet: '#002244', accent: '#69BE28' },
+            { pick: 23, team: 'Bills', teamCode: 'BUF', record: '12-5', helmet: '#00338D', accent: '#C60C30' },
+            { pick: 24, team: 'Texans', teamCode: 'HOU', record: '12-5', helmet: '#03202F', accent: '#A71930' },
+            { pick: 25, team: 'Cowboys', teamCode: 'DAL', record: '12-5', helmet: '#003594', accent: '#869397' },
+            { pick: 26, team: 'Eagles', teamCode: 'PHI', record: '13-4', helmet: '#004C54', accent: '#A5ACAF' },
+            { pick: 27, team: 'Bengals', teamCode: 'CIN', record: '13-4', helmet: '#FB4F14', accent: 'black' },
+            { pick: 28, team: 'Raiders', teamCode: 'LV', record: '13-4', helmet: '#000000', accent: '#A5ACAF' },
+            { pick: 29, team: 'Steelers', teamCode: 'PIT', record: '13-4', helmet: '#FFB612', accent: '#101820' },
+            { pick: 30, team: 'Broncos', teamCode: 'DEN', record: '14-3', helmet: '#FB4F14', accent: '#002244' },
+            { pick: 31, team: 'Rams', teamCode: 'LAR', record: '14-3', helmet: '#003594', accent: '#FFD100' },
+            { pick: 32, team: 'Lions', teamCode: 'DET', record: '15-2', helmet: '#0076B6', accent: '#B0B7BC' }
+        ];
+
+        const availablePlayers = [
+            { name: 'Julian Lewis', position: 'QB', school: 'Colorado', height: "6'4\"", weight: 225, forty: '4.75' },
+            { name: 'Jaxson Dart', position: 'QB', school: 'Ole Miss', height: "6'2\"", weight: 220, forty: '4.70' },
+            { name: 'Quinn Ewers', position: 'QB', school: 'Texas', height: "6'2\"", weight: 210, forty: '4.85' },
+            { name: 'Will Campbell', position: 'OT', school: 'LSU', height: "6'6\"", weight: 325, forty: '5.15' },
+            { name: 'Josh Simmons', position: 'OT', school: 'Ohio State', height: "6'5\"", weight: 310, forty: '5.10' },
+            { name: 'Jonah Savaiinaea', position: 'IOL', school: 'Arizona', height: "6'5\"", weight: 330, forty: '5.30' },
+            { name: 'Donovan Jackson', position: 'IOL', school: 'Ohio State', height: "6'4\"", weight: 315, forty: '5.20' },
+            { name: 'Travis Hunter', position: 'CB', school: 'Colorado', height: "6'1\"", weight: 185, forty: '4.35' },
+            { name: 'Tacario Davis', position: 'CB', school: 'Arizona', height: "6'4\"", weight: 195, forty: '4.45' },
+            { name: 'Daylen Everette', position: 'CB', school: 'Georgia', height: "6'0\"", weight: 190, forty: '4.40' },
+            { name: 'Malaki Starks', position: 'S', school: 'Georgia', height: "6'1\"", weight: 205, forty: '4.45' },
+            { name: 'Kevin Winston Jr.', position: 'S', school: 'Penn State', height: "6'2\"", weight: 215, forty: '4.50' },
+            { name: 'Xavier Nwankpa', position: 'S', school: 'Iowa', height: "6'2\"", weight: 210, forty: '4.50' },
+            { name: 'Abdul Carter', position: 'EDGE', school: 'Penn State', height: "6'3\"", weight: 252, forty: '4.55' },
+            { name: 'Princeton Fant', position: 'EDGE', school: 'Tennessee', height: "6'4\"", weight: 260, forty: '4.60' },
+            { name: 'Dani Dennis-Sutton', position: 'EDGE', school: 'Penn State', height: "6'5\"", weight: 270, forty: '4.75' },
+            { name: 'Shemar Stewart', position: 'EDGE', school: 'Texas A&M', height: "6'6\"", weight: 280, forty: '4.70' },
+            { name: 'Mason Graham', position: 'DL', school: 'Michigan', height: "6'3\"", weight: 318, forty: '5.05' },
+            { name: 'Deone Walker', position: 'DL', school: 'Kentucky', height: "6'7\"", weight: 340, forty: '5.25' },
+            { name: 'Tyleik Williams', position: 'DL', school: 'Ohio State', height: "6'3\"", weight: 320, forty: '5.10' },
+            { name: 'Tetairoa McMillan', position: 'WR', school: 'Arizona', height: "6'5\"", weight: 210, forty: '4.50' },
+            { name: 'Emeka Egbuka', position: 'WR', school: 'Ohio State', height: "6'1\"", weight: 205, forty: '4.40' },
+            { name: 'Luther Burden III', position: 'WR', school: 'Missouri', height: "5'11\"", weight: 200, forty: '4.40' },
+            { name: 'Jalen Royals', position: 'WR', school: 'Utah State', height: "6'0\"", weight: 195, forty: '4.45' },
+            { name: 'Ashton Jeanty', position: 'RB', school: 'Boise State', height: "5'9\"", weight: 215, forty: '4.45' },
+            { name: 'TreVeyon Henderson', position: 'RB', school: 'Ohio State', height: "5'10\"", weight: 215, forty: '4.40' },
+            { name: 'Omarion Hampton', position: 'RB', school: 'North Carolina', height: "5'11\"", weight: 220, forty: '4.50' },
+            { name: 'Damien Martinez', position: 'RB', school: 'Miami', height: "6'0\"", weight: 225, forty: '4.55' },
+            { name: 'Colston Loveland', position: 'TE', school: 'Michigan', height: "6'5\"", weight: 245, forty: '4.60' },
+            { name: 'Tyler Warren', position: 'TE', school: 'Penn State', height: "6'6\"", weight: 255, forty: '4.70' },
+            { name: 'Jihaad Campbell', position: 'LB', school: 'Alabama', height: "6'3\"", weight: 230, forty: '4.50' },
+            { name: 'Oluwafemi Oladejo', position: 'LB', school: 'UCLA', height: "6'3\"", weight: 240, forty: '4.60' },
+            { name: 'Carson Schwesinger', position: 'LB', school: 'UCLA', height: "6'2\"", weight: 235, forty: '4.55' },
+            { name: 'Aireontae Ersery', position: 'OT', school: 'Minnesota', height: "6'6\"", weight: 330, forty: '5.20' },
+            { name: 'Jordan Burch', position: 'DL', school: 'Oregon', height: "6'6\"", weight: 290, forty: '4.85' },
+            { name: 'Darius Alexander', position: 'DL', school: 'Toledo', height: "6'4\"", weight: 305, forty: '5.00' },
+            { name: 'Jayden Higgins', position: 'WR', school: 'Iowa State', height: "6'4\"", weight: 215, forty: '4.55' },
+            { name: 'Evan Pryor', position: 'RB', school: 'North Carolina', height: "5'11\"", weight: 200, forty: '4.45' },
+            { name: 'Will Rogers', position: 'QB', school: 'Washington', height: "6'2\"", weight: 210, forty: '4.80' },
+            { name: 'Cameron Ward', position: 'QB', school: 'Miami', height: "6'3\"", weight: 225, forty: '4.75' }
+        ];
+
+        let customDraft = [];
+        let currentPickIndex = 0;
+        let playerPoolFilter = 'all';
+
+        // Initialize custom draft
+        function initCustomDraft() {
+            customDraft = draftOrder.map(d => ({ ...d, selectedPlayer: null }));
+            currentPickIndex = 0;
+            renderCurrentPick();
+            renderPlayerPool();
+            renderCustomPicksList();
+            updateDraftProgress();
+        }
+
+        // Render current pick selector
+        function renderCurrentPick() {
+            if (currentPickIndex >= draftOrder.length) {
+                document.getElementById('currentPickNum').textContent = 'Complete!';
+                document.getElementById('currentTeamDisplay').style.display = 'none';
+                showDraftSummary();
+                return;
+            }
+
+            const current = draftOrder[currentPickIndex];
+            document.getElementById('currentPickNum').textContent = current.pick;
+            
+            // Update team display
+            const helmetSvg = document.getElementById('currentTeamHelmet');
+            helmetSvg.innerHTML = `
+                <ellipse cx="50" cy="35" rx="48" ry="32" fill="${current.helmet}" stroke="${current.accent}" stroke-width="3"/>
+                <text x="50" y="42" text-anchor="middle" fill="white" font-size="16" font-weight="bold">${current.teamCode}</text>
+            `;
+            
+            document.getElementById('currentTeamDisplay').innerHTML = `
+                <svg class="team-helmet" viewBox="0 0 100 70" style="width: 60px; height: 40px;">
+                    <ellipse cx="50" cy="35" rx="48" ry="32" fill="${current.helmet}" stroke="${current.accent}" stroke-width="3"/>
+                    <text x="50" y="42" text-anchor="middle" fill="white" font-size="16" font-weight="bold">${current.teamCode}</text>
+                </svg>
+                <div>
+                    <div style="font-weight: 600; font-size: 1.1rem;">${current.team}</div>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary);">Record: ${current.record} | Pick #${current.pick}</div>
+                </div>
+            `;
+        }
+
+        // Render player pool
+        function renderPlayerPool() {
+            const container = document.getElementById('availablePlayers');
+            const searchTerm = document.getElementById('playerPoolSearch').value.toLowerCase();
+            
+            let filtered = availablePlayers.filter(p => {
+                const matchesSearch = p.name.toLowerCase().includes(searchTerm) || 
+                                    p.school.toLowerCase().includes(searchTerm);
+                const matchesFilter = playerPoolFilter === 'all' || 
+                                    p.position === playerPoolFilter ||
+                                    (playerPoolFilter === 'OL' && ['OT', 'IOL'].includes(p.position)) ||
+                                    (playerPoolFilter === 'DL' && ['DL', 'EDGE'].includes(p.position)) ||
+                                    (playerPoolFilter === 'DB' && ['CB', 'S'].includes(p.position));
+                return matchesSearch && matchesFilter;
+            });
+
+            container.innerHTML = filtered.map((player, idx) => `
+                <div class="player-pool-item" onclick="selectPlayer('${player.name}')" 
+                     style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; 
+                            padding: 0.75rem; cursor: pointer; transition: all 0.3s ease; animation: slideIn 0.3s ease ${idx * 0.02}s;">
+                    <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 0.25rem;">${player.name}</div>
+                    <div style="display: flex; gap: 0.5rem; font-size: 0.75rem; color: var(--text-secondary);">
+                        <span style="background: var(--accent); color: var(--primary); padding: 0.1rem 0.4rem; border-radius: 4px; font-weight: 600;">${player.position}</span>
+                        <span>${player.school}</span>
+                    </div>
+                </div>
+            `).join('');
+
+            // Add hover styles
+            const style = document.createElement('style');
+            style.textContent = `
+                .player-pool-item:hover { border-color: var(--accent) !important; transform: translateY(-2px); }
+                .player-pool-item:active { transform: scale(0.98); }
+            `;
+            document.head.appendChild(style);
+        }
+
+        // Filter player pool
+        function filterPlayerPool(position) {
+            playerPoolFilter = position;
+            document.querySelectorAll('.player-selection-panel .filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent === position || (position === 'all' && btn.textContent === 'All')) {
+                    btn.classList.add('active');
+                }
+            });
+            renderPlayerPool();
+        }
+
+        // Search player pool
+        function searchPlayerPool() {
+            renderPlayerPool();
+        }
+
+        // Select player for current pick
+        function selectPlayer(playerName) {
+            if (currentPickIndex >= draftOrder.length) return;
+
+            const player = availablePlayers.find(p => p.name === playerName);
+            if (!player) return;
+
+            customDraft[currentPickIndex].selectedPlayer = player;
+            currentPickIndex++;
+            
+            renderCurrentPick();
+            renderCustomPicksList();
+            updateDraftProgress();
+            
+            showToast(`${playerName} selected for ${customDraft[currentPickIndex - 1].team}!`);
+        }
+
+        // Render custom picks list
+        function renderCustomPicksList() {
+            const container = document.getElementById('customPicksList');
+            container.innerHTML = customDraft.map((pick, idx) => {
+                const isCurrent = idx === currentPickIndex;
+                const hasPlayer = pick.selectedPlayer !== null;
+                
+                return `
+                    <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem 1rem; 
+                                background: ${isCurrent ? 'rgba(0,212,255,0.1)' : 'var(--card-bg)'}; 
+                                border: 1px solid ${isCurrent ? 'var(--accent)' : 'var(--border)'}; 
+                                border-radius: 8px; ${isCurrent ? 'border-left: 3px solid var(--accent);' : ''}">
+                        <span style="font-family: 'Oswald', sans-serif; font-size: 1.25rem; font-weight: 700; 
+                                     color: ${isCurrent ? 'var(--accent)' : 'var(--text-secondary)'}; min-width: 30px;">
+                            ${pick.pick}
+                        </span>
+                        <svg viewBox="0 0 100 70" style="width: 40px; height: 30px; flex-shrink: 0;">
+                            <ellipse cx="50" cy="35" rx="48" ry="32" fill="${pick.helmet}" stroke="${pick.accent}" stroke-width="3"/>
+                            <text x="50" y="42" text-anchor="middle" fill="white" font-size="14" font-weight="bold">${pick.teamCode}</text>
+                        </svg>
+                        <div style="flex: 1;">
+                            <div style="font-weight: 600; font-size: 0.95rem;">${pick.team}</div>
+                            ${hasPlayer ? `
+                                <div style="font-size: 0.85rem; color: var(--accent);">
+                                    ${pick.selectedPlayer.name} <span style="color: var(--text-secondary);">• ${pick.selectedPlayer.position} • ${pick.selectedPlayer.school}</span>
+                                </div>
+                            ` : `
+                                <div style="font-size: 0.85rem; color: var(--text-secondary);">${isCurrent ? 'On the clock...' : 'Pending...'}</div>
+                            `}
+                        </div>
+                        ${hasPlayer ? `
+                            <button onclick="removePick(${idx})" style="background: none; border: none; color: var(--danger); cursor: pointer; padding: 0.25rem;">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        ` : ''}
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Remove pick
+        function removePick(index) {
+            customDraft[index].selectedPlayer = null;
+            currentPickIndex = index;
+            renderCurrentPick();
+            renderCustomPicksList();
+            updateDraftProgress();
+            document.getElementById('draftSummary').style.display = 'none';
+        }
+
+        // Update draft progress
+        function updateDraftProgress() {
+            const completed = customDraft.filter(p => p.selectedPlayer !== null).length;
+            document.getElementById('customPickCount').textContent = completed;
+            
+            const statusEl = document.getElementById('draftStatus');
+            if (completed === 32) {
+                statusEl.textContent = 'Complete!';
+                statusEl.style.color = 'var(--success)';
+            } else if (completed === 0) {
+                statusEl.textContent = 'Not Started';
+                statusEl.style.color = 'var(--text-secondary)';
+            } else {
+                statusEl.textContent = 'In Progress';
+                statusEl.style.color = 'var(--warning)';
+            }
+        }
+
+        // Reset draft
+        function resetDraft() {
+            if (confirm('Are you sure you want to reset your entire mock draft?')) {
+                initCustomDraft();
+                document.getElementById('draftSummary').style.display = 'none';
+                showToast('Draft reset!');
+            }
+        }
+
+        // Auto-fill draft
+        function autoFillDraft() {
+            if (confirm('This will auto-fill all remaining picks with my predictions. Continue?')) {
+                const myPicks = [
+                    'Julian Lewis', 'Will Campbell', 'Travis Hunter', 'Abdul Carter', 'Mason Graham',
+                    'Tetairoa McMillan', 'Colston Loveland', 'Ashton Jeanty', 'Josh Simmons', 'Emeka Egbuka',
+                    'Jihaad Campbell', 'Malaki Starks', 'Kevin Winston Jr.', 'Luther Burden III', 'Tyler Warren',
+                    'Jonah Savaiinaea', 'Tacario Davis', 'Donovan Jackson', 'TreVeyon Henderson', 'Xavier Nwankpa',
+                    'Princeton Fant', 'Dani Dennis-Sutton', 'Evan Pryor', 'Tyleik Williams', 'Jordan Burch',
+                    'Oluwafemi Oladejo', 'Darius Alexander', 'Aireontae Ersery', 'Carson Schwesinger',
+                    'Jayden Higgins', 'Omarion Hampton', 'Shemar Stewart'
+                ];
+
+                for (let i = 0; i < customDraft.length; i++) {
+                    if (!customDraft[i].selectedPlayer && myPicks[i]) {
+                        const player = availablePlayers.find(p => p.name === myPicks[i]);
+                        if (player) {
+                            customDraft[i].selectedPlayer = player;
+                        }
+                    }
+                }
+                
+                currentPickIndex = 32;
+                renderCurrentPick();
+                renderCustomPicksList();
+                updateDraftProgress();
+                showToast('Auto-filled with my predictions!');
+            }
+        }
+
+        // Show draft summary
+        function showDraftSummary() {
+            const container = document.getElementById('draftStats');
+            const stats = {};
+            
+            customDraft.forEach(pick => {
+                if (pick.selectedPlayer) {
+                    const pos = pick.selectedPlayer.position;
+                    stats[pos] = (stats[pos] || 0) + 1;
+                }
+            });
+
+            container.innerHTML = Object.entries(stats)
+                .sort((a, b) => b[1] - a[1])
+                .map(([pos, count]) => `
+                    <div style="text-align: center; padding: 0.75rem; background: var(--card-bg); border-radius: 8px;">
+                        <div style="font-family: 'Oswald', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--accent);">${count}</div>
+                        <div style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase;">${pos}</div>
+                    </div>
+                `).join('');
+
+            document.getElementById('draftSummary').style.display = 'block';
+        }
+
+        // Share custom draft
+        function shareCustomDraft() {
+            const completed = customDraft.filter(p => p.selectedPlayer !== null).length;
+            if (completed === 0) {
+                showToast('Make some picks first!');
+                return;
+            }
+
+            const text = `Check out my 2026 NFL Mock Draft! I made ${completed}/32 picks. Who would you choose?`;
+            const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(window.location.href)}`;
+            window.open(url, '_blank', 'width=600,height=400');
+        }
+
+        // Initialize when tab is shown
+        document.querySelector('.nav-tab[onclick="showTab(\'create\')"]').addEventListener('click', () => {
+            if (customDraft.length === 0) {
+                initCustomDraft();
+            }
         });
 
         // Register Service Worker for PWA
