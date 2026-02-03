@@ -1,0 +1,22 @@
+{
+  "name": "2026 NFL Mock Draft",
+  "short_name": "NFL Mock Draft",
+  "description": "Complete 2026 NFL Mock Draft with 3 rounds, player analysis, and team needs",
+  "start_url": "/nfl-mock-draft-2026/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#00d4ff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect fill='%2300d4ff' width='192' height='192' rx='24'/%3E%3Ctext x='96' y='120' text-anchor='middle' fill='%230a0a0f' font-size='80' font-family='Arial' font-weight='bold'%3E%3C/text%3E%3Cpath d='M60 120 L96 60 L132 120' fill='none' stroke='%230a0a0f' stroke-width='12' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect fill='%2300d4ff' width='512' height='512' rx='48'/%3E%3Ctext x='256' y='320' text-anchor='middle' fill='%230a0a0f' font-size='200' font-family='Arial' font-weight='bold'%3E%3C/text%3E%3Cpath d='M160 320 L256 160 L352 320' fill='none' stroke='%230a0a0f' stroke-width='32' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}

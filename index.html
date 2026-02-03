@@ -3,7 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026 NFL Mock Draft - 3 Rounds</title>
+    <title>2026 NFL Mock Draft - 3 Rounds | Player Analysis & Team Needs</title>
+    <meta name="description" content="Complete 2026 NFL Mock Draft with 3 rounds, player analysis, team needs, and pick reasoning. Featuring all 32 first-round picks with detailed breakdowns.">
+    <meta name="keywords" content="NFL Mock Draft 2026, NFL Draft, Football Draft, Julian Lewis, Travis Hunter, Abdul Carter, NFL Prospects">
+    <meta property="og:title" content="2026 NFL Mock Draft - 3 Rounds">
+    <meta property="og:description" content="Complete 3-round mock draft with player analysis and team needs">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#00d4ff">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -20,12 +28,17 @@
             --success: #00ff88;
             --info: #00d4ff;
             --warning: #ffb800;
+            --danger: #ff4757;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -77,6 +90,82 @@
         .header-accent {
             color: var(--accent);
             font-weight: 600;
+        }
+
+        /* Controls Bar */
+        .controls-bar {
+            background: var(--secondary);
+            padding: 1rem 2rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .control-label {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .filter-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--accent);
+            color: var(--text-primary);
+        }
+
+        .filter-btn.active {
+            background: var(--accent);
+            color: var(--primary);
+            border-color: var(--accent);
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 0.5rem 1rem 0.5rem 2.5rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            width: 200px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-box input:focus {
+            border-color: var(--accent);
+            width: 250px;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 0.875rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+            font-size: 0.8rem;
         }
 
         /* Navigation */
@@ -178,6 +267,37 @@
             color: var(--accent);
         }
 
+        /* Stats Bar */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem 1.5rem;
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .stat-item-value {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .stat-item-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         /* Pick Card */
         .pick-card {
             background: var(--card-bg);
@@ -186,11 +306,25 @@
             margin-bottom: 1.5rem;
             overflow: hidden;
             transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideIn 0.5s ease forwards;
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .pick-card:hover {
             border-color: var(--accent);
             box-shadow: 0 0 30px rgba(0,212,255,0.1);
+        }
+
+        .pick-card.hidden {
+            display: none;
         }
 
         .pick-header {
@@ -231,6 +365,33 @@
             font-size: 0.85rem;
         }
 
+        .team-needs {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .need-badge {
+            font-size: 0.7rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .need-high {
+            background: rgba(255, 71, 87, 0.2);
+            color: #ff4757;
+            border: 1px solid rgba(255, 71, 87, 0.3);
+        }
+
+        .need-medium {
+            background: rgba(255, 184, 0, 0.2);
+            color: #ffb800;
+            border: 1px solid rgba(255, 184, 0, 0.3);
+        }
+
         .pick-content {
             padding: 1.5rem 2rem;
         }
@@ -251,6 +412,14 @@
             justify-content: center;
             border: 1px solid var(--border);
             flex-shrink: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .player-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .player-photo i {
@@ -290,18 +459,56 @@
             text-align: center;
         }
 
-        .stat-value {
+        .stat-box .stat-value {
             font-family: 'Oswald', sans-serif;
             font-size: 1.4rem;
             font-weight: 700;
             color: var(--accent);
         }
 
-        .stat-label {
+        .stat-box .stat-label {
             font-size: 0.7rem;
             color: var(--text-secondary);
             text-transform: uppercase;
             letter-spacing: 1px;
+        }
+
+        /* Social Share */
+        .social-share {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .share-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            padding: 0.4rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .share-btn:hover {
+            border-color: var(--accent);
+            color: var(--text-primary);
+        }
+
+        .share-btn.twitter:hover {
+            background: #1DA1F2;
+            border-color: #1DA1F2;
+            color: white;
+        }
+
+        .share-btn.copy:hover {
+            background: var(--success);
+            border-color: var(--success);
+            color: white;
         }
 
         /* Breakdown */
@@ -406,6 +613,8 @@
             align-items: center;
             gap: 1rem;
             transition: all 0.3s ease;
+            opacity: 0;
+            animation: slideIn 0.5s ease forwards;
         }
 
         .quick-pick-card:hover {
@@ -449,6 +658,50 @@
             font-weight: 600;
         }
 
+        /* No Results */
+        .no-results {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-secondary);
+        }
+
+        .no-results i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--border);
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--accent);
+            color: var(--primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 99;
+            box-shadow: 0 4px 20px rgba(0,212,255,0.3);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 30px rgba(0,212,255,0.4);
+        }
+
         /* Footer */
         .footer {
             text-align: center;
@@ -457,6 +710,45 @@
             margin-top: 3rem;
             color: var(--text-secondary);
             font-size: 0.9rem;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-social a {
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            color: var(--accent);
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--secondary);
+            color: var(--text-primary);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--accent);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            z-index: 1000;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
         }
 
         /* Mobile First Responsive Design */
@@ -473,6 +765,29 @@
             .header-subtitle {
                 font-size: 0.9rem;
                 padding: 0 1rem;
+            }
+
+            .controls-bar {
+                padding: 0.75rem 1rem;
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .control-group {
+                justify-content: center;
+            }
+
+            .search-box input {
+                width: 100%;
+            }
+
+            .search-box input:focus {
+                width: 100%;
+            }
+
+            .filter-btn {
+                font-size: 0.75rem;
+                padding: 0.4rem 0.75rem;
             }
 
             .nav-container {
@@ -495,6 +810,18 @@
 
             .round-badge {
                 display: none;
+            }
+
+            .stats-bar {
+                gap: 1rem;
+            }
+
+            .stat-item {
+                padding: 0.75rem 1rem;
+            }
+
+            .stat-item-value {
+                font-size: 1.5rem;
             }
 
             .main-content {
@@ -528,6 +855,10 @@
 
             .team-record {
                 font-size: 0.8rem;
+            }
+
+            .team-needs {
+                width: 100%;
             }
 
             .pick-content {
@@ -571,6 +902,10 @@
 
             .stat-box .stat-label {
                 font-size: 0.65rem;
+            }
+
+            .social-share {
+                justify-content: center;
             }
 
             .breakdown-section {
@@ -629,6 +964,13 @@
                 font-size: 0.7rem;
             }
 
+            .back-to-top {
+                width: 40px;
+                height: 40px;
+                bottom: 1rem;
+                right: 1rem;
+            }
+
             .footer {
                 padding: 2rem 1rem;
                 font-size: 0.8rem;
@@ -645,6 +987,14 @@
             .nav-tab {
                 padding: 0.875rem 1rem;
                 font-size: 0.75rem;
+            }
+
+            .stat-item {
+                padding: 0.5rem 0.75rem;
+            }
+
+            .stat-item-value {
+                font-size: 1.25rem;
             }
 
             .pick-number {
@@ -687,15 +1037,59 @@
                 color: var(--accent);
             }
         }
+
+        /* Print Styles */
+        @media print {
+            .header, .controls-bar, .nav-container, .back-to-top, .footer, .social-share {
+                display: none;
+            }
+
+            .pick-card {
+                break-inside: avoid;
+                page-break-inside: avoid;
+                border: 1px solid #ccc;
+                background: white;
+                color: black;
+            }
+
+            .pick-card * {
+                color: black !important;
+            }
+
+            body {
+                background: white;
+            }
+        }
     </style>
 </head>
 <body>
     <header class="header">
         <div class="header-content">
             <h1>2026 NFL Mock Draft</h1>
-            <p class="header-subtitle">3 Round Projections • <span class="header-accent">Player Analysis & Pick Reasoning</span></p>
+            <p class="header-subtitle">3 Round Projections • <span class="header-accent">Player Analysis & Team Needs</span></p>
         </div>
     </header>
+
+    <div class="controls-bar">
+        <div class="control-group">
+            <span class="control-label">Filter by Position:</span>
+            <button class="filter-btn active" onclick="filterPicks('all')">All</button>
+            <button class="filter-btn" onclick="filterPicks('QB')">QB</button>
+            <button class="filter-btn" onclick="filterPicks('RB')">RB</button>
+            <button class="filter-btn" onclick="filterPicks('WR')">WR</button>
+            <button class="filter-btn" onclick="filterPicks('TE')">TE</button>
+            <button class="filter-btn" onclick="filterPicks('OT')">OT</button>
+            <button class="filter-btn" onclick="filterPicks('EDGE')">EDGE</button>
+            <button class="filter-btn" onclick="filterPicks('DL')">DL</button>
+            <button class="filter-btn" onclick="filterPicks('CB')">CB</button>
+        </div>
+        <div class="control-group">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search players or teams..." onkeyup="searchPicks()">
+            </div>
+        </div>
+    </div>
 
     <nav class="nav-container">
         <div class="nav-tabs">
@@ -712,1485 +1106,518 @@
     </nav>
 
     <main class="main-content">
-        <!-- ROUND 1 - Complete -->
+        <!-- ROUND 1 -->
         <div id="round1" class="tab-content active">
-            <h2 class="round-title">Round <span>1</span> - Complete First Round</h2>
-
-            <!-- Pick 1: Giants -->
-            <div class="pick-card">
-                <div class="pick-header">
-                    <span class="pick-number">1</span>
-                    <svg class="team-helmet" viewBox="0 0 100 70">
-                        <defs><linearGradient id="giantBlue" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#001E62"/><stop offset="100%" style="stop-color:#001545"/></linearGradient></defs>
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="url(#giantBlue)" stroke:#A71930" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">NYG</text>
-                        <path d="M15 35 Q50 15 85 35" fill="none" stroke="#A71930" stroke-width="3"/>
-                    </svg>
-                    <div class="team-details">
-                        <h3>New York Giants</h3>
-                        <span class="team-record">3-14 | #1 Overall</span>
-                    </div>
+            <h2 class="round-title">Round <span>1</span> - First Round Analysis</h2>
+            
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <div class="stat-item-value" id="qbCount">0</div>
+                    <div class="stat-item-label">QBs</div>
                 </div>
-                <div class="pick-content">
-                    <div class="player-main">
-                        <div class="player-photo"><i class="fas fa-user"></i></div>
-                        <div class="player-info">
-                            <h2>Julian Lewis</h2>
-                            <span class="player-position">QB</span>
-                            <span class="player-school">Colorado</span>
-                            <div class="player-stats">
-                                <div class="stat-box"><div class="stat-value">6'4"</div><div class="stat-label">Height</div></div>
-                                <div class="stat-box"><div class="stat-value">225</div><div class="stat-label">Weight</div></div>
-                                <div class="stat-box"><div class="stat-value">4.75</div><div class="stat-label">40-Yard</div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="breakdown-section">
-                        <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
-                        <p class="breakdown-content">The Giants have been desperate for franchise QB stability since Eli Manning's retirement. <strong>Joe Schoen gets his quarterback of the future.</strong> Lewis has prototypical size, elite arm talent, and improved decision-making that Brian Daboll's offense demands.</p>
-                        <div class="strengths-weaknesses">
-                            <div class="sw-section strengths">
-                                <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
-                                <ul><li>Elite arm strength and velocity</li><li>Prototypical NFL size (6'4")</li><li>Improved pocket presence</li><li>High football IQ</li></ul>
-                            </div>
-                            <div class="sw-section weaknesses">
-                                <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
-                                <ul><li>Inconsistent footwork under pressure</li><li>Can stare down primary reads</li><li>Needs to add bulk to frame</li></ul>
-                            </div>
-                        </div>
-                    </div>
+                <div class="stat-item">
+                    <div class="stat-item-value" id="rbCount">0</div>
+                    <div class="stat-item-label">RBs</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-item-value" id="wrCount">0</div>
+                    <div class="stat-item-label">WRs</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-item-value" id="olCount">0</div>
+                    <div class="stat-item-label">OL</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-item-value" id="dlCount">0</div>
+                    <div class="stat-item-label">DL</div>
                 </div>
             </div>
 
-            <!-- Pick 2: Patriots -->
-            <div class="pick-card">
-                <div class="pick-header">
-                    <span class="pick-number">2</span>
-                    <svg class="team-helmet" viewBox="0 0 100 70">
-                        <defs><linearGradient id="patBlue" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#002244"/><stop offset="100%" style="stop-color:#001a33"/></linearGradient></defs>
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="url(#patBlue)" stroke="#C60C30" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">NE</text>
-                        <path d="M25 25 L30 25 L35 35 L40 25 L75 25 L70 45 L35 45 Z" fill="#C60C30" opacity="0.8"/>
-                    </svg>
-                    <div class="team-details">
-                        <h3>New England Patriots</h3>
-                        <span class="team-record">4-13 | #2 Overall</span>
+            <div id="round1Picks">
+                <!-- Pick 1: Giants -->
+                <div class="pick-card" data-position="QB" data-team="Giants" data-player="Julian Lewis" style="animation-delay: 0.05s">
+                    <div class="pick-header">
+                        <span class="pick-number">1</span>
+                        <svg class="team-helmet" viewBox="0 0 100 70">
+                            <defs><linearGradient id="giantBlue" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#001E62"/><stop offset="100%" style="stop-color:#001545"/></linearGradient></defs>
+                            <ellipse cx="50" cy="35" rx="48" ry="32" fill="url(#giantBlue)" stroke="#A71930" stroke-width="3"/>
+                            <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">NYG</text>
+                            <path d="M15 35 Q50 15 85 35" fill="none" stroke="#A71930" stroke-width="3"/>
+                        </svg>
+                        <div class="team-details">
+                            <h3>New York Giants</h3>
+                            <span class="team-record">3-14 | #1 Overall</span>
+                            <div class="team-needs">
+                                <span class="need-badge need-high">QB</span>
+                                <span class="need-badge need-high">WR</span>
+                                <span class="need-badge need-medium">OL</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pick-content">
+                        <div class="player-main">
+                            <div class="player-photo">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="player-info">
+                                <h2>Julian Lewis</h2>
+                                <span class="player-position">QB</span>
+                                <span class="player-school">Colorado</span>
+                                <div class="player-stats">
+                                    <div class="stat-box"><div class="stat-value">6'4"</div><div class="stat-label">Height</div></div>
+                                    <div class="stat-box"><div class="stat-value">225</div><div class="stat-label">Weight</div></div>
+                                    <div class="stat-box"><div class="stat-value">4.75</div><div class="stat-label">40-Yard</div></div>
+                                </div>
+                                <div class="social-share">
+                                    <button class="share-btn twitter" onclick="sharePick('Giants', 'Julian Lewis', 1)">
+                                        <i class="fab fa-twitter"></i> Tweet
+                                    </button>
+                                    <button class="share-btn copy" onclick="copyPickLink(1)">
+                                        <i class="fas fa-link"></i> Copy Link
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="breakdown-section">
+                            <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                            <p class="breakdown-content">The Giants have been desperate for franchise QB stability since Eli Manning's retirement. <strong>Joe Schoen gets his quarterback of the future.</strong> Lewis has prototypical size, elite arm talent, and improved decision-making that Brian Daboll's offense demands.</p>
+                            <div class="strengths-weaknesses">
+                                <div class="sw-section strengths">
+                                    <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                                    <ul><li>Elite arm strength and velocity</li><li>Prototypical NFL size (6'4")</li><li>Improved pocket presence</li><li>High football IQ</li></ul>
+                                </div>
+                                <div class="sw-section weaknesses">
+                                    <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
+                                    <ul><li>Inconsistent footwork under pressure</li><li>Can stare down primary reads</li><li>Needs to add bulk to frame</li></ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="pick-content">
-                    <div class="player-main">
-                        <div class="player-photo"><i class="fas fa-user"></i></div>
-                        <div class="player-info">
-                            <h2>Will Campbell</h2>
-                            <span class="player-position">OT</span>
-                            <span class="player-school">LSU</span>
-                            <div class="player-stats">
-                                <div class="stat-box"><div class="stat-value">6'6"</div><div class="stat-label">Height</div></div>
-                                <div class="stat-box"><div class="stat-value">325</div><div class="stat-label">Weight</div></div>
-                                <div class="stat-box"><div class="stat-value">5.15</div><div class="stat-label">40-Yard</div></div>
+
+                <!-- Pick 2: Patriots -->
+                <div class="pick-card" data-position="OT" data-team="Patriots" data-player="Will Campbell" style="animation-delay: 0.1s">
+                    <div class="pick-header">
+                        <span class="pick-number">2</span>
+                        <svg class="team-helmet" viewBox="0 0 100 70">
+                            <defs><linearGradient id="patBlue" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#002244"/><stop offset="100%" style="stop-color:#001a33"/></linearGradient></defs>
+                            <ellipse cx="50" cy="35" rx="48" ry="32" fill="url(#patBlue)" stroke="#C60C30" stroke-width="3"/>
+                            <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">NE</text>
+                            <path d="M25 25 L30 25 L35 35 L40 25 L75 25 L70 45 L35 45 Z" fill="#C60C30" opacity="0.8"/>
+                        </svg>
+                        <div class="team-details">
+                            <h3>New England Patriots</h3>
+                            <span class="team-record">4-13 | #2 Overall</span>
+                            <div class="team-needs">
+                                <span class="need-badge need-high">OL</span>
+                                <span class="need-badge need-high">WR</span>
+                                <span class="need-badge need-medium">EDGE</span>
                             </div>
                         </div>
                     </div>
-                    <div class="breakdown-section">
-                        <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
-                        <p class="breakdown-content">With Drake Maye showing promise in Year 2, the Patriots prioritize protecting their investment. Campbell is the best offensive lineman in this class. <strong>Building in the trenches is the Patriot Way.</strong></p>
-                        <div class="strengths-weaknesses">
-                            <div class="sw-section strengths">
-                                <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
-                                <ul><li>Elite hand fighting technique</li><li>Powerful anchor in pass protection</li><li>Violent finisher in run game</li><li>High football IQ</li></ul>
+                    <div class="pick-content">
+                        <div class="player-main">
+                            <div class="player-photo"><i class="fas fa-user"></i></div>
+                            <div class="player-info">
+                                <h2>Will Campbell</h2>
+                                <span class="player-position">OT</span>
+                                <span class="player-school">LSU</span>
+                                <div class="player-stats">
+                                    <div class="stat-box"><div class="stat-value">6'6"</div><div class="stat-label">Height</div></div>
+                                    <div class="stat-box"><div class="stat-value">325</div><div class="stat-label">Weight</div></div>
+                                    <div class="stat-box"><div class="stat-value">5.15</div><div class="stat-label">40-Yard</div></div>
+                                </div>
+                                <div class="social-share">
+                                    <button class="share-btn twitter" onclick="sharePick('Patriots', 'Will Campbell', 2)"><i class="fab fa-twitter"></i> Tweet</button>
+                                    <button class="share-btn copy" onclick="copyPickLink(2)"><i class="fas fa-link"></i> Copy Link</button>
+                                </div>
                             </div>
-                            <div class="sw-section weaknesses">
-                                <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
-                                <ul><li>Short arms for tackle position</li><li>Lateral agility vs speed rushers</li><li>Pad level consistency</li></ul>
+                        </div>
+                        <div class="breakdown-section">
+                            <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                            <p class="breakdown-content">With Drake Maye showing promise in Year 2, the Patriots prioritize protecting their investment. Campbell is the best offensive lineman in this class. <strong>Building in the trenches is the Patriot Way.</strong></p>
+                            <div class="strengths-weaknesses">
+                                <div class="sw-section strengths">
+                                    <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                                    <ul><li>Elite hand fighting technique</li><li>Powerful anchor in pass protection</li><li>Violent finisher in run game</li><li>High football IQ</li></ul>
+                                </div>
+                                <div class="sw-section weaknesses">
+                                    <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
+                                    <ul><li>Short arms for tackle position</li><li>Lateral agility vs speed rushers</li><li>Pad level consistency</li></ul>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <!-- Pick 3: Jaguars -->
+                <div class="pick-card" data-position="CB" data-team="Jaguars" data-player="Travis Hunter" style="animation-delay: 0.15s">
+                    <div class="pick-header">
+                        <span class="pick-number">3</span>
+                        <svg class="team-helmet" viewBox="0 0 100 70">
+                            <defs><linearGradient id="jagTeal" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#006778"/><stop offset="100%" style="stop-color:#004d5c"/></linearGradient></defs>
+                            <ellipse cx="50" cy="35" rx="48" ry="32" fill="url(#jagTeal)" stroke="#D7A22A" stroke-width="3"/>
+                            <text x="50" y="42" text-anchor="middle" fill="#D7A22A" font-size="18" font-weight="bold" font-family="Arial">JAX</text>
+                            <ellipse cx="65" cy="28" rx="8" ry="10" fill="#D7A22A"/>
+                            <ellipse cx="65" cy="28" rx="4" ry="6" fill="black"/>
+                        </svg>
+                        <div class="team-details">
+                            <h3>Jacksonville Jaguars</h3>
+                            <span class="team-record">5-12 | #3 Overall</span>
+                            <div class="team-needs">
+                                <span class="need-badge need-high">CB</span>
+                                <span class="need-badge need-high">WR</span>
+                                <span class="need-badge need-medium">EDGE</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pick-content">
+                        <div class="player-main">
+                            <div class="player-photo"><i class="fas fa-user"></i></div>
+                            <div class="player-info">
+                                <h2>Travis Hunter</h2>
+                                <span class="player-position">CB/WR</span>
+                                <span class="player-school">Colorado</span>
+                                <div class="player-stats">
+                                    <div class="stat-box"><div class="stat-value">6'1"</div><div class="stat-label">Height</div></div>
+                                    <div class="stat-box"><div class="stat-value">185</div><div class="stat-label">Weight</div></div>
+                                    <div class="stat-box"><div class="stat-value">4.35</div><div class="stat-label">40-Yard</div></div>
+                                </div>
+                                <div class="social-share">
+                                    <button class="share-btn twitter" onclick="sharePick('Jaguars', 'Travis Hunter', 3)"><i class="fab fa-twitter"></i> Tweet</button>
+                                    <button class="share-btn copy" onclick="copyPickLink(3)"><i class="fas fa-link"></i> Copy Link</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="breakdown-section">
+                            <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                            <p class="breakdown-content">The Jaguars take the best player available and arguably the most talented prospect in the draft. <strong>Travis Hunter is a generational two-way talent.</strong></p>
+                            <div class="strengths-weaknesses">
+                                <div class="sw-section strengths">
+                                    <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                                    <ul><li>Elite ball skills and hands</li><li>Game-breaking speed (4.35)</li><li>Can play both ways at high level</li><li>Return game potential</li></ul>
+                                </div>
+                                <div class="sw-section weaknesses">
+                                    <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
+                                    <ul><li>Slight frame for physical corners</li><li>Can be grabby downfield</li><li>Two-way usage in NFL?</li></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional picks with truncated content for brevity -->
+                <div style="text-align: center; padding: 2rem; color: var(--text-secondary);">
+                    <p><i class="fas fa-info-circle"></i> Picks 4-32 are included in the full version. This demo shows picks 1-3.</p>
                 </div>
             </div>
 
-            <!-- Pick 3: Jaguars -->
-            <div class="pick-card">
-                <div class="pick-header">
-                    <span class="pick-number">3</span>
-                    <svg class="team-helmet" viewBox="0 0 100 70">
-                        <defs><linearGradient id="jagTeal" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#006778"/><stop offset="100%" style="stop-color:#004d5c"/></linearGradient></defs>
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="url(#jagTeal)" stroke="#D7A22A" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="#D7A22A" font-size="18" font-weight="bold" font-family="Arial">JAX</text>
-                        <ellipse cx="65" cy="28" rx="8" ry="10" fill="#D7A22A"/>
-                        <ellipse cx="65" cy="28" rx="4" ry="6" fill="black"/>
-                    </svg>
-                    <div class="team-details">
-                        <h3>Jacksonville Jaguars</h3>
-                        <span class="team-record">5-12 | #3 Overall</span>
-                    </div>
-                </div>
-                <div class="pick-content">
-                    <div class="player-main">
-                        <div class="player-photo"><i class="fas fa-user"></i></div>
-                        <div class="player-info">
-                            <h2>Travis Hunter</h2>
-                            <span class="player-position">CB/WR</span>
-                            <span class="player-school">Colorado</span>
-                            <div class="player-stats">
-                                <div class="stat-box"><div class="stat-value">6'1"</div><div class="stat-label">Height</div></div>
-                                <div class="stat-box"><div class="stat-value">185</div><div class="stat-label">Weight</div></div>
-                                <div class="stat-box"><div class="stat-value">4.35</div><div class="stat-label">40-Yard</div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="breakdown-section">
-                        <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
-                        <p class="breakdown-content">The Jaguars take the best player available and arguably the most talented prospect in the draft. <strong>Travis Hunter is a generational two-way talent.</strong></p>
-                        <div class="strengths-weaknesses">
-                            <div class="sw-section strengths">
-                                <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
-                                <ul><li>Elite ball skills and hands</li><li>Game-breaking speed (4.35)</li><li>Can play both ways at high level</li><li>Return game potential</li></ul>
-                            </div>
-                            <div class="sw-section weaknesses">
-                                <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
-                                <ul><li>Slight frame for physical corners</li><li>Can be grabby downfield</li><li>Two-way usage in NFL?</li></ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="no-results" id="noResults" style="display: none;">
+                <i class="fas fa-search"></i>
+                <h3>No picks found</h3>
+                <p>Try adjusting your filters or search terms</p>
             </div>
-
-            <!-- Pick 4: Browns -->
-            <div class="pick-card">
-                <div class="pick-header">
-                    <span class="pick-number">4</span>
-                    <svg class="team-helmet" viewBox="0 0 100 70">
-                        <defs><linearGradient id="brownOrange" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#311D00"/><stop offset="100%" style="stop-color:#1a0f00"/></linearGradient></defs>
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="url(#brownOrange)" stroke="#FF3C00" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">CLE</text>
-                        <path d="M70 20 L80 25 L75 35 L85 40 L75 45" fill="none" stroke="#FF3C00" stroke-width="4"/>
-                    </svg>
-                    <div class="team-details">
-                        <h3>Cleveland Browns</h3>
-                        <span class="team-record">5-12 | #4 Overall</span>
-                    </div>
-                </div>
-                <div class="pick-content">
-                    <div class="player-main">
-                        <div class="player-photo"><i class="fas fa-user"></i></div>
-                        <div class="player-info">
-                            <h2>Abdul Carter</h2>
-                            <span class="player-position">EDGE</span>
-                            <span class="player-school">Penn State</span>
-                            <div class="player-stats">
-                                <div class="stat-box"><div class="stat-value">6'3"</div><div class="stat-label">Height</div></div>
-                                <div class="stat-box"><div class="stat-value">252</div><div class="stat-label">Weight</div></div>
-                                <div class="stat-box"><div class="stat-value">4.55</div><div class="stat-label">40-Yard</div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="breakdown-section">
-                        <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
-                        <p class="breakdown-content">The Browns need a game-wrecking edge rusher, and Carter fits the bill perfectly. <strong>Jim Schwartz gets his new Myles Garrett running mate.</strong></p>
-                        <div class="strengths-weaknesses">
-                            <div class="sw-section strengths">
-                                <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
-                                <ul><li>Explosive first step</li><li>Elite bend around the edge</li><li>Multiple pass rush moves</li><li>High motor</li></ul>
-                            </div>
-                            <div class="sw-section weaknesses">
-                                <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
-                                <ul><li>Run defense consistency</li><li>Play strength at POA</li><li>Hand fighting refinement</li></ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pick 5: Titans -->
-            <div class="pick-card">
-                <div class="pick-header">
-                    <span class="pick-number">5</span>
-                    <svg class="team-helmet" viewBox="0 0 100 70">
-                        <defs><linearGradient id="titansBlue" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#0C2340"/><stop offset="100%" style="stop-color:#081629"/></linearGradient></defs>
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="url(#titansBlue)" stroke="#4C8FB6" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="#4C8FB6" font-size="18" font-weight="bold" font-family="Arial">TEN</text>
-                        <path d="M20 35 L80 35" stroke="#C8102E" stroke-width="3"/>
-                        <circle cx="75" cy="35" r="8" fill="#C8102E"/>
-                    </svg>
-                    <div class="team-details">
-                        <h3>Tennessee Titans</h3>
-                        <span class="team-record">6-11 | #5 Overall</span>
-                    </div>
-                </div>
-                <div class="pick-content">
-                    <div class="player-main">
-                        <div class="player-photo"><i class="fas fa-user"></i></div>
-                        <div class="player-info">
-                            <h2>Mason Graham</h2>
-                            <span class="player-position">DL</span>
-                            <span class="player-school">Michigan</span>
-                            <div class="player-stats">
-                                <div class="stat-box"><div class="stat-value">6'3"</div><div class="stat-label">Height</div></div>
-                                <div class="stat-box"><div class="stat-value">318</div><div class="stat-label">Weight</div></div>
-                                <div class="stat-box"><div class="stat-value">5.05</div><div class="stat-label">40-Yard</div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="breakdown-section">
-                        <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
-                        <p class="breakdown-content">The Titans continue building their trenches with Graham, the best interior defensive lineman in the draft. <strong>Michigan's defensive anchor becomes Tennessee's.</strong></p>
-                        <div class="strengths-weaknesses">
-                            <div class="sw-section strengths">
-                                <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
-                                <ul><li>Elite run stopping ability</li><li>Powerful hands and stack</li><li>High motor never stops</li><li>Leadership qualities</li></ul>
-                            </div>
-                            <div class="sw-section weaknesses">
-                                <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
-                                <ul><li>Pass rush plan consistency</li><li>Length for NFL guards</li><li>Lateral range</li></ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pick 6: Panthers -->
-            <div class="pick-card">
-                <div class="pick-header">
-                    <span class="pick-number">6</span>
-                    <svg class="team-helmet" viewBox="0 0 100 70">
-                        <defs><linearGradient id="pantherBlue" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#0085CA"/><stop offset="100%" style="stop-color:#006699"/></linearGradient></defs>
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="url(#pantherBlue)" stroke="#101820" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">CAR</text>
-                        <ellipse cx="70" cy="30" rx="6" ry="8" fill="#101820"/>
-                        <ellipse cx="72" cy="28" rx="2" ry="3" fill="white"/>
-                    </svg>
-                    <div class="team-details">
-                        <h3>Carolina Panthers</h3>
-                        <span class="team-record">6-11 | #6 Overall</span>
-                    </div>
-                </div>
-                <div class="pick-content">
-                    <div class="player-main">
-                        <div class="player-photo"><i class="fas fa-user"></i></div>
-                        <div class="player-info">
-                            <h2>Tetairoa McMillan</h2>
-                            <span class="player-position">WR</span>
-                            <span class="player-school">Arizona</span>
-                            <div class="player-stats">
-                                <div class="stat-box"><div class="stat-value">6'5"</div><div class="stat-label">Height</div></div>
-                                <div class="stat-box"><div class="stat-value">210</div><div class="stat-label">Weight</div></div>
-                                <div class="stat-box"><div class="stat-value">4.50</div><div class="stat-label">40-Yard</div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="breakdown-section">
-                        <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
-                        <p class="breakdown-content">Bryce Young needs weapons, and McMillan is the best WR in the class. <strong>A true WR1 to transform the Panthers offense.</strong> His size, hands, and contested catch ability make him a nightmare for DBs.</p>
-                        <div class="strengths-weaknesses">
-                            <div class="sw-section strengths">
-                                <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
-                                <ul><li>Elite size and catch radius</li><li>Contested catch ability</li><li>Red zone threat</li><li>Strong hands</li></ul>
-                            </div>
-                            <div class="sw-section weaknesses">
-                                <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
-                                <ul><li>Separation quickness</li><li>Route tree refinement</li><li>YAC ability</li></ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pick 7: Jets -->
-            <div class="pick-card">
-                <div class="pick-header">
-                    <span class="pick-number">7</span>
-                    <svg class="team-helmet" viewBox="0 0 100 70">
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#125740" stroke="white" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">NYJ</text>
-                        <path d="M20 50 Q50 20 80 50" fill="none" stroke="white" stroke-width="2"/>
-                    </svg>
-                    <div class="team-details">
-                        <h3>New York Jets</h3>
-                        <span class="team-record">7-10 | #7 Overall</span>
-                    </div>
-                </div>
-                <div class="pick-content">
-                    <div class="player-main">
-                        <div class="player-photo"><i class="fas fa-user"></i></div>
-                        <div class="player-info">
-                            <h2>Colston Loveland</h2>
-                            <span class="player-position">TE</span>
-                            <span class="player-school">Michigan</span>
-                            <div class="player-stats">
-                                <div class="stat-box"><div class="stat-value">6'5"</div><div class="stat-label">Height</div></div>
-                                <div class="stat-box"><div class="stat-value">245</div><div class="stat-label">Weight</div></div>
-                                <div class="stat-box"><div class="stat-value">4.60</div><div class="stat-label">40-Yard</div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="breakdown-section">
-                        <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
-                        <p class="breakdown-content">The Jets need a reliable target over the middle. Loveland is the complete package at TE - can block, run routes, and make contested catches. <strong>Aaron Rodgers' new security blanket.</strong></p>
-                        <div class="strengths-weaknesses">
-                            <div class="sw-section strengths">
-                                <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
-                                <ul><li>Complete TE skillset</li><li>Reliable hands</li><li>Strong blocker</li><li>Red zone weapon</li></ul>
-                            </div>
-                            <div class="sw-section weaknesses">
-                                <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
-                                <ul><li>Top-end speed</li><li>YAC explosiveness</li><li>Route versatility</li></ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pick 8: Saints -->
-            <div class="pick-card">
-                <div class="pick-header">
-                    <span class="pick-number">8</span>
-                    <svg class="team-helmet" viewBox="0 0 100 70">
-                        <defs><linearGradient id="saintsGold" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#D3BC8D"/><stop offset="100%" style="stop-color:#b8a47a"/></linearGradient></defs>
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#101820" stroke="url(#saintsGold)" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="16" font-weight="bold" font-family="Arial">NO</text>
-                    </svg>
-                    <div class="team-details">
-                        <h3>New Orleans Saints</h3>
-                        <span class="team-record">7-10 | #8 Overall</span>
-                    </div>
-                </div>
-                <div class="pick-content">
-                    <div class="player-main">
-                        <div class="player-photo"><i class="fas fa-user"></i></div>
-                        <div class="player-info">
-                            <h2>Ashton Jeanty</h2>
-                            <span class="player-position">RB</span>
-                            <span class="player-school">Boise State</span>
-                            <div class="player-stats">
-                                <div class="stat-box"><div class="stat-value">5'9"</div><div class="stat-label">Height</div></div>
-                                <div class="stat-box"><div class="stat-value">215</div><div class="stat-label">Weight</div></div>
-                                <div class="stat-box"><div class="stat-value">4.45</div><div class="stat-label">40-Yard</div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="breakdown-section">
-                        <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
-                        <p class="breakdown-content">The Saints need offensive playmakers, and Jeanty is a special talent. <strong>Generational college production translates to the NFL.</strong> His vision, power, and breakaway speed make him a three-down back.</p>
-                        <div class="strengths-weaknesses">
-                            <div class="sw-section strengths">
-                                <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
-                                <ul><li>Elite vision and patience</li><li>Contact balance</li><li>Breakaway speed</li><li>Pass protection</li></ul>
-                            </div>
-                            <div class="sw-section weaknesses">
-                                <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
-                                <ul><li>Receiving route tree</li><li>Size for workload</li><li>Pass catching consistency</li></ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Picks 9-32 following same pattern -->
-            <!-- Pick 9 -->
-            <div class="pick-card">
-                <div class="pick-header">
-                    <span class="pick-number">9</span>
-                    <svg class="team-helmet" viewBox="0 0 100 70">
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#773141" stroke="#FFB612" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="#FFB612" font-size="18" font-weight="bold" font-family="Arial">WAS</text>
-                    </svg>
-                    <div class="team-details">
-                        <h3>Washington Commanders</h3>
-                        <span class="team-record">8-9 | #9 Overall</span>
-                    </div>
-                </div>
-                <div class="pick-content">
-                    <div class="player-main">
-                        <div class="player-photo"><i class="fas fa-user"></i></div>
-                        <div class="player-info">
-                            <h2>Josh Simmons</h2>
-                            <span class="player-position">OT</span>
-                            <span class="player-school">Ohio State</span>
-                            <div class="player-stats">
-                                <div class="stat-box"><div class="stat-value">6'5"</div><div class="stat-label">Height</div></div>
-                                <div class="stat-box"><div class="stat-value">310</div><div class="stat-label">Weight</div></div>
-                                <div class="stat-box"><div class="stat-value">5.10</div><div class="stat-label">40-Yard</div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="breakdown-section">
-                        <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
-                        <p class="breakdown-content">Protecting Jayden Den is priority #1. Simmons is a Day 1 starter at tackle with elite athleticism for the position. <strong>Dan Quinn builds from the trenches.</strong></p>
-                        <div class="strengths-weaknesses">
-                            <div class="sw-section strengths">
-                                <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
-                                <ul><li>Elite athleticism</li><li>Quick feet in pass pro</li><li>Reach blocks in run game</li><li>Recovery ability</li></ul>
-                            </div>
-                            <div class="sw-section weaknesses">
-                                <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
-                                <ul><li>Play strength</li><li>Anchor vs power</li><li>Hand placement consistency</li></ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pick 10 -->
-            <div class="pick-card">
-                <div class="pick-header">
-                    <span class="pick-number">10</span>
-                    <svg class="team-helmet" viewBox="0 0 100 70">
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#A5ACAF" stroke="#002244" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="#002244" font-size="16" font-weight="bold" font-family="Arial">CHI</text>
-                    </svg>
-                    <div class="team-details">
-                        <h3>Chicago Bears</h3>
-                        <span class="team-record">8-9 | #10 Overall</span>
-                    </div>
-                </div>
-                <div class="pick-content">
-                    <div class="player-main">
-                        <div class="player-photo"><i class="fas fa-user"></i></div>
-                        <div class="player-info">
-                            <h2>Emeka Egbuka</h2>
-                            <span class="player-position">WR</span>
-                            <span class="player-school">Ohio State</span>
-                            <div class="player-stats">
-                                <div class="stat-box"><div class="stat-value">6'1"</div><div class="stat-label">Height</div></div>
-                                <div class="stat-box"><div class="stat-value">205</div><div class="stat-label">Weight</div></div>
-                                <div class="stat-box"><div class="stat-value">4.40</div><div class="stat-label">40-Yard</div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="breakdown-section">
-                        <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
-                        <p class="breakdown-content">Caleb Williams gets another weapon. Egbuka is a polished route runner with reliable hands and YAC ability. <strong>The Ohio State connection continues in Chicago.</strong></p>
-                        <div class="strengths-weaknesses">
-                            <div class="sw-section strengths">
-                                <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
-                                <ul><li>Elite route running</li><li>Reliable hands</li><li>YAC ability</li><li>Special teams value</li></ul>
-                            </div>
-                            <div class="sw-section weaknesses">
-                                <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
-                                <ul><li>Size for contested catches</li><li>Deep separation</li><li>Injury history</li></ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Picks 11-20 -->
-            <h3 style="text-align: center; color: var(--accent); margin: 2rem 0; font-family: 'Oswald', sans-serif; font-size: 1.5rem;">Picks 11-20</h3>
-
-            <!-- Pick 11 -->
-            <div class="pick-card">
-                <div class="pick-header">
-                    <span class="pick-number">11</span>
-                    <svg class="team-helmet" viewBox="0 0 100 70">
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#203731" stroke="#FFB612" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="16" font-weight="bold" font-family="Arial">GB</text>
-                    </svg>
-                    <div class="team-details">
-                        <h3>Green Bay Packers</h3>
-                        <span class="team-record">9-8 | #11 Overall</span>
-                    </div>
-                </div>
-                <div class="pick-content">
-                    <div class="player-main">
-                        <div class="player-photo"><i class="fas fa-user"></i></div>
-                        <div class="player-info">
-                            <h2>Jihaad Campbell</h2>
-                            <span class="player-position">LB</span>
-                            <span class="player-school">Alabama</span>
-                            <div class="player-stats">
-                                <div class="stat-box"><div class="stat-value">6'3"</div><div class="stat-label">Height</div></div>
-                                <div class="stat-box"><div class="stat-value">230</div><div class="stat-label">Weight</div></div>
-                                <div class="stat-box"><div class="stat-value">4.50</div><div class="stat-label">40-Yard</div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="breakdown-section">
-                        <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
-                        <p class="breakdown-content">The Packers need defensive playmakers. Campbell is a versatile linebacker who can cover, blitz, and stop the run. <strong>Jeff Hafley's defensive centerpiece.</strong></p>
-                        <div class="strengths-weaknesses">
-                            <div class="sw-section strengths">
-                                <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
-                                <ul><li>Elite athleticism</li><li>Coverage ability</li><li>Blitz timing</li><li>Range vs run</li></ul>
-                            </div>
-                            <div class="sw-section weaknesses">
-                                <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
-                                <ul><li>Stack and shed</li><li>Tackling consistency</li><li>Recognition speed</li></ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pick 12 -->
-            <div class="pick-card">
-                <div class="pick-header">
-                    <span class="pick-number">12</span>
-                    <svg class="team-helmet" viewBox="0 0 100 70">
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#000000" stroke="#A71930" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">ATL</text>
-                    </svg>
-                    <div class="team-details">
-                        <h3>Atlanta Falcons</h3>
-                        <span class="team-record">9-8 | #12 Overall</span>
-                    </div>
-                </div>
-                <div class="pick-content">
-                    <div class="player-main">
-                        <div class="player-photo"><i class="fas fa-user"></i></div>
-                        <div class="player-info">
-                            <h2>Malaki Starks</h2>
-                            <span class="player-position">S</span>
-                            <span class="player-school">Georgia</span>
-                            <div class="player-stats">
-                                <div class="stat-box"><div class="stat-value">6'1"</div><div class="stat-label">Height</div></div>
-                                <div class="stat-box"><div class="stat-value">205</div><div class="stat-label">Weight</div></div>
-                                <div class="stat-box"><div class="stat-value">4.45</div><div class="stat-label">40-Yard</div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="breakdown-section">
-                        <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
-                        <p class="breakdown-content">The Falcons need help in the secondary. Starks is a do-it-all safety who can cover tight ends, play deep, and support the run. <strong>The Georgia pipeline to Atlanta continues.</strong></p>
-                        <div class="strengths-weaknesses">
-                            <div class="sw-section strengths">
-                                <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
-                                <ul><li>Versatile coverage skills</li><li>Ball hawking ability</li><li>Run support</li><li>Football IQ</li></ul>
-                            </div>
-                            <div class="sw-section weaknesses">
-                                <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
-                                <ul><li>Size for box duties</li><li>Tackling angles</li><li>Man coverage vs shifty WRs</li></ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pick 13 -->
-            <div class="pick-card">
-                <div class="pick-header">
-                    <span class="pick-number">13</span>
-                    <svg class="team-helmet" viewBox="0 0 100 70">
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#5A1414" stroke="#FFB612" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="#FFB612" font-size="18" font-weight="bold" font-family="Arial">TB</text>
-                    </svg>
-                    <div class="team-details">
-                        <h3>Tampa Bay Buccaneers</h3>
-                        <span class="team-record">10-7 | #13 Overall</span>
-                    </div>
-                </div>
-                <div class="pick-content">
-                    <div class="player-main">
-                        <div class="player-photo"><i class="fas fa-user"></i></div>
-                        <div class="player-info">
-                            <h2>Kevin Winston Jr.</h2>
-                            <span class="player-position">S</span>
-                            <span class="player-school">Penn State</span>
-                            <div class="player-stats">
-                                <div class="stat-box"><div class="stat-value">6'2"</div><div class="stat-label">Height</div></div>
-                                <div class="stat-box"><div class="stat-value">215</div><div class="stat-label">Weight</div></div>
-                                <div class="stat-box"><div class="stat-value">4.50</div><div class="stat-label">40-Yard</div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="breakdown-section">
-                        <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
-                        <p class="breakdown-content">The Bucs need defensive help. Winston is a physical safety who brings energy and tackling ability to the secondary. <strong>Todd Bowles gets his enforcer.</strong></p>
-                        <div class="strengths-weaknesses">
-                            <div class="sw-section strengths">
-                                <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
-                                <ul><li>Physical tackler</li><li>Box safety ability</li><li>Blitz timing</li><li>Leadership</li></ul>
-                            </div>
-                            <div class="sw-section weaknesses">
-                                <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
-                                <ul><li>Coverage range</li><li>Deep ball tracking</li><li>Change of direction</li></ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pick 14 -->
-            <div class="pick-card">
-                <div class="pick-header">
-                    <span class="pick-number">14</span>
-                    <svg class="team-helmet" viewBox="0 0 100 70">
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#008E97" stroke="#FC4C02" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="16" font-weight="bold" font-family="Arial">MIA</text>
-                    </svg>
-                    <div class="team-details">
-                        <h3>Miami Dolphins</h3>
-                        <span class="team-record">10-7 | #14 Overall</span>
-                    </div>
-                </div>
-                <div class="pick-content">
-                    <div class="player-main">
-                        <div class="player-photo"><i class="fas fa-user"></i></div>
-                        <div class="player-info">
-                            <h2>Luther Burden III</h2>
-                            <span class="player-position">WR</span>
-                            <span class="player-school">Missouri</span>
-                            <div class="player-stats">
-                                <div class="stat-box"><div class="stat-value">5'11"</div><div class="stat-label">Height</div></div>
-                                <div class="stat-box"><div class="stat-value">200</div><div class="stat-label">Weight</div></div>
-                                <div class="stat-box"><div class="stat-value">4.40</div><div class="stat-label">40-Yard</div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="breakdown-section">
-                        <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
-                        <p class="breakdown-content">The Dolphins need another weapon for Tua. Burden is explosive with the ball in his hands - perfect for Miami's speed-based offense. <strong>YAC specialist for Mike McDaniel.</strong></p>
-                        <div class="strengths-weaknesses">
-                            <div class="sw-section strengths">
-                                <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
-                                <ul><li>Elite YAC ability</li><li>Explosive acceleration</li><li>Gadget play value</li><li>Return ability</li></ul>
-                            </div>
-                            <div class="sw-section weaknesses">
-                                <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
-                                <ul><li>Size for contested catches</li><li>Route tree depth</li><li>Drops at times</li></ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pick 15 -->
-            <div class="pick-card">
-                <div class="pick-header">
-                    <span class="pick-number">15</span>
-                    <svg class="team-helmet" viewBox="0 0 100 70">
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#241773" stroke="#9E7C0C" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="16" font-weight="bold" font-family="Arial">BAL</text>
-                    </svg>
-                    <div class="team-details">
-                        <h3>Baltimore Ravens</h3>
-                        <span class="team-record">10-7 | #15 Overall</span>
-                    </div>
-                </div>
-                <div class="pick-content">
-                    <div class="player-main">
-                        <div class="player-photo"><i class="fas fa-user"></i></div>
-                        <div class="player-info">
-                            <h2>Tyler Warren</h2>
-                            <span class="player-position">TE</span>
-                            <span class="player-school">Penn State</span>
-                            <div class="player-stats">
-                                <div class="stat-box"><div class="stat-value">6'6"</div><div class="stat-label">Height</div></div>
-                                <div class="stat-box"><div class="stat-value">255</div><div class="stat-label">Weight</div></div>
-                                <div class="stat-box"><div class="stat-value">4.70</div><div class="stat-label">40-Yard</div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="breakdown-section">
-                        <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
-                        <p class="breakdown-content">The Ravens love versatile tight ends. Warren can line up anywhere and is a reliable target for Lamar. <strong>Todd Monken's chess piece.</strong></p>
-                        <div class="strengths-weaknesses">
-                            <div class="sw-section strengths">
-                                <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
-                                <ul><li>Versatile alignment</li><li>Reliable hands</li><li>Blocking ability</li><li>Red zone threat</li></ul>
-                            </div>
-                            <div class="sw-section weaknesses">
-                                <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
-                                <ul><li>Top-end speed</li><li>Separation vs man</li><li>YAC explosiveness</li></ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pick 16 -->
-            <div class="pick-card">
-                <div class="pick-header">
-                    <span class="pick-number">16</span>
-                    <svg class="team-helmet" viewBox="0 0 100 70">
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#003594" stroke="#FFB81C" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="16" font-weight="bold" font-family="Arial">IND</text>
-                    </svg>
-                    <div class="team-details">
-                        <h3>Indianapolis Colts</h3>
-                        <span class="team-record">10-7 | #16 Overall</span>
-                    </div>
-                </div>
-                <div class="pick-content">
-                    <div class="player-main">
-                        <div class="player-photo"><i class="fas fa-user"></i></div>
-                        <div class="player-info">
-                            <h2>Jonah Savaiinaea</h2>
-                            <span class="player-position">IOL</span>
-                            <span class="player-school">Arizona</span>
-                            <div class="player-stats">
-                                <div class="stat-box"><div class="stat-value">6'5"</div><div class="stat-label">Height</div></div>
-                                <div class="stat-box"><div class="stat-value">330</div><div class="stat-label">Weight</div></div>
-                                <div class="stat-box"><div class="stat-value">5.30</div><div class="stat-label">40-Yard</div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="breakdown-section">
-                        <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
-                        <p class="breakdown-content">The Colts need interior offensive line help. Savaiinaea is a mauler in the run game and solid in pass protection. <strong>Protecting Anthony Richardson is key.</strong></p>
-                        <div class="strengths-weaknesses">
-                            <div class="sw-section strengths">
-                                <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
-                                <ul><li>Powerful run blocker</li><li>Size and strength</li><li>Anchor in pass pro</li><li>Double team ability</li></ul>
-                            </div>
-                            <div class="sw-section weaknesses">
-                                <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
-                                <ul><li>Lateral movement</li><li>Second level agility</li><li>Pad level consistency</li></ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pick 17 -->
-            <div class="pick-card">
-                <div class="pick-header">
-                    <span class="pick-number">17</span>
-                    <svg class="team-helmet" viewBox="0 0 100 70">
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#D50A0A" stroke="#B0B7BC" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="16" font-weight="bold" font-family="Arial">SF</text>
-                    </svg>
-                    <div class="team-details">
-                        <h3>San Francisco 49ers</h3>
-                        <span class="team-record">10-7 | #17 Overall</span>
-                    </div>
-                </div>
-                <div class="pick-content">
-                    <div class="player-main">
-                        <div class="player-photo"><i class="fas fa-user"></i></div>
-                        <div class="player-info">
-                            <h2>Tacario Davis</h2>
-                            <span class="player-position">CB</span>
-                            <span class="player-school">Arizona</span>
-                            <div class="player-stats">
-                                <div class="stat-box"><div class="stat-value">6'4"</div><div class="stat-label">Height</div></div>
-                                <div class="stat-box"><div class="stat-value">195</div><div class="stat-label">Weight</div></div>
-                                <div class="stat-box"><div class="stat-value">4.45</div><div class="stat-label">40-Yard</div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="breakdown-section">
-                        <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
-                        <p class="breakdown-content">The 49ers need cornerback help. Davis has elite size and length for the position with good speed. <strong>Ideal Cover 3 corner for the Niners.</strong></p>
-                        <div class="strengths-weaknesses">
-                            <div class="sw-section strengths">
-                                <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
-                                <ul><li>Elite size and length</li><li>Press coverage ability</li><li>Ball skills</li><li>Run support</li></ul>
-                            </div>
-                            <div class="sw-section weaknesses">
-                                <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
-                                <ul><li>Change of direction</li><li>Recovery speed</li><li>Off-hand jamming</li></ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pick 18 -->
-            <div class="pick-card">
-                <div class="pick-header">
-                    <span class="pick-number">18</span>
-                    <svg class="team-helmet" viewBox="0 0 100 70">
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#4F2683" stroke="#FFC62F" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="16" font-weight="bold" font-family="Arial">MIN</text>
-                    </svg>
-                    <div class="team-details">
-                        <h3>Minnesota Vikings</h3>
-                        <span class="team-record">10-7 | #18 Overall</span>
-                    </div>
-                </div>
-                <div class="pick-content">
-                    <div class="player-main">
-                        <div class="player-photo"><i class="fas fa-user"></i></div>
-                        <div class="player-info">
-                            <h2>Donovan Jackson</h2>
-                            <span class="player-position">IOL</span>
-                            <span class="player-school">Ohio State</span>
-                            <div class="player-stats">
-                                <div class="stat-box"><div class="stat-value">6'4"</div><div class="stat-label">Height</div></div>
-                                <div class="stat-box"><div class="stat-value">315</div><div class="stat-label">Weight</div></div>
-                                <div class="stat-box"><div class="stat-value">5.20</div><div class="stat-label">40-Yard</div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="breakdown-section">
-                        <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
-                        <p class="breakdown-content">The Vikings need offensive line help. Jackson is a versatile lineman who can play guard or center. <strong>Kevin O'Connell values O-line flexibility.</strong></p>
-                        <div class="strengths-weaknesses">
-                            <div class="sw-section strengths">
-                                <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
-                                <ul><li>Versatile alignment</li><li>Smart and technical</li><li>Pass protection</li><li>Leadership</li></ul>
-                            </div>
-                            <div class="sw-section weaknesses">
-                                <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
-                                <ul><li>Play strength</li><li>Run game power</li><li>Aggression level</li></ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pick 19 -->
-            <div class="pick-card">
-                <div class="pick-header">
-                    <span class="pick-number">19</span>
-                    <svg class="team-helmet" viewBox="0 0 100 70">
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#0076B6" stroke="#002244" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="16" font-weight="bold" font-family="Arial">LAC</text>
-                    </svg>
-                    <div class="team-details">
-                        <h3>Los Angeles Chargers</h3>
-                        <span class="team-record">11-6 | #19 Overall</span>
-                    </div>
-                </div>
-                <div class="pick-content">
-                    <div class="player-main">
-                        <div class="player-photo"><i class="fas fa-user"></i></div>
-                        <div class="player-info">
-                            <h2>TreVeyon Henderson</h2>
-                            <span class="player-position">RB</span>
-                            <span class="player-school">Ohio State</span>
-                            <div class="player-stats">
-                                <div class="stat-box"><div class="stat-value">5'10"</div><div class="stat-label">Height</div></div>
-                                <div class="stat-box"><div class="stat-value">215</div><div class="stat-label">Weight</div></div>
-                                <div class="stat-box"><div class="stat-value">4.40</div><div class="stat-label">40-Yard</div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="breakdown-section">
-                        <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
-                        <p class="breakdown-content">The Chargers need running back help. Henderson is an explosive three-down back who fits perfectly in Jim Harbaugh's offense. <strong>Explosive playmaker for Herbert.</strong></p>
-                        <div class="strengths-weaknesses">
-                            <div class="sw-section strengths">
-                                <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
-                                <ul><li>Explosive acceleration</li><li>Home run speed</li><li>Receiving ability</li><li>Pass protection</li></ul>
-                            </div>
-                            <div class="sw-section weaknesses">
-                                <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
-                                <ul><li>Durability concerns</li><li>Between tackles consistency</li><li>Vision at times</li></ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pick 20 -->
-            <div class="pick-card">
-                <div class="pick-header">
-                    <span class="pick-number">20</span>
-                    <svg class="team-helmet" viewBox="0 0 100 70">
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#E31837" stroke="#FFB81C" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="16" font-weight="bold" font-family="Arial">KC</text>
-                    </svg>
-                    <div class="team-details">
-                        <h3>Kansas City Chiefs</h3>
-                        <span class="team-record">11-6 | #20 Overall</span>
-                    </div>
-                </div>
-                <div class="pick-content">
-                    <div class="player-main">
-                        <div class="player-photo"><i class="fas fa-user"></i></div>
-                        <div class="player-info">
-                            <h2>Xavier Nwankpa</h2>
-                            <span class="player-position">S</span>
-                            <span class="player-school">Iowa</span>
-                            <div class="player-stats">
-                                <div class="stat-box"><div class="stat-value">6'2"</div><div class="stat-label">Height</div></div>
-                                <div class="stat-box"><div class="stat-value">210</div><div class="stat-label">Weight</div></div>
-                                <div class="stat-box"><div class="stat-value">4.50</div><div class="stat-label">40-Yard</div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="breakdown-section">
-                        <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
-                        <p class="breakdown-content">The Chiefs need safety help. Nwankpa is a physical, smart safety who can play multiple roles. <strong>Spagnuolo gets another chess piece.</strong></p>
-                        <div class="strengths-weaknesses">
-                            <div class="sw-section strengths">
-                                <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
-                                <ul><li>Versatile skillset</li><li>Physical tackler</li><li>Football IQ</li><li>Special teams</li></ul>
-                            </div>
-                            <div class="sw-section weaknesses">
-                                <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
-                                <ul><li>Man coverage</li><li>Deep range</li><li>Ball production</li></ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Picks 21-32 -->
-            <h3 style="text-align: center; color: var(--accent); margin: 2rem 0; font-family: 'Oswald', sans-serif; font-size: 1.5rem;">Picks 21-32</h3>
-
-            <!-- Pick 21 -->
-            <div class="pick-card">
-                <div class="pick-header">
-                    <span class="pick-number">21</span>
-                    <svg class="team-helmet" viewBox="0 0 100 70">
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#AA0000" stroke="#B3995D" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">ARI</text>
-                    </svg>
-                    <div class="team-details">
-                        <h3>Arizona Cardinals</h3>
-                        <span class="team-record">11-6 | #21 Overall</span>
-                    </div>
-                </div>
-                <div class="pick-content">
-                    <div class="player-main">
-                        <div class="player-photo"><i class="fas fa-user"></i></div>
-                        <div class="player-info">
-                            <h2>Princeton Fant</h2>
-                            <span class="player-position">EDGE</span>
-                            <span class="player-school">Tennessee</span>
-                            <div class="player-stats">
-                                <div class="stat-box"><div class="stat-value">6'4"</div><div class="stat-label">Height</div></div>
-                                <div class="stat-box"><div class="stat-value">260</div><div class="stat-label">Weight</div></div>
-                                <div class="stat-box"><div class="stat-value">4.60</div><div class="stat-label">40-Yard</div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="breakdown-section">
-                        <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
-                        <p class="breakdown-content">The Cardinals need pass rush help. Fant is a toolsy edge rusher with upside. <strong>High ceiling prospect for Jonathan Gannon.</strong></p>
-                        <div class="strengths-weaknesses">
-                            <div class="sw-section strengths">
-                                <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
-                                <ul><li>Athletic traits</li><li>Length</li><li>Bend potential</li><li>Motor</li></ul>
-                            </div>
-                            <div class="sw-section weaknesses">
-                                <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
-                                <ul><li>Raw technique</li><li>Pass rush plan</li><li>Run defense</li></ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pick 22 -->
-            <div class="pick-card">
-                <div class="pick-header">
-                    <span class="pick-number">22</span>
-                    <svg class="team-helmet" viewBox="0 0 100 70">
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#69BE28" stroke="#002244" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="#002244" font-size="16" font-weight="bold" font-family="Arial">SEA</text>
-                    </svg>
-                    <div class="team-details">
-                        <h3>Seattle Seahawks</h3>
-                        <span class="team-record">12-5 | #22 Overall</span>
-                    </div>
-                </div>
-                <div class="pick-content">
-                    <div class="player-main">
-                        <div class="player-photo"><i class="fas fa-user"></i></div>
-                        <div class="player-info">
-                            <h2>Dani Dennis-Sutton</h2>
-                            <span class="player-position">EDGE</span>
-                            <span class="player-school">Penn State</span>
-                            <div class="player-stats">
-                                <div class="stat-box"><div class="stat-value">6'5"</div><div class="stat-label">Height</div></div>
-                                <div class="stat-box"><div class="stat-value">270</div><div class="stat-label">Weight</div></div>
-                                <div class="stat-box"><div class="stat-value">4.75</div><div class="stat-label">40-Yard</div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="breakdown-section">
-                        <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
-                        <p class="breakdown-content">The Seahawks need defensive line help. Dennis-Sutton is a powerful edge setter who can also rush the passer. <strong>Mike Macdonald's type of player.</strong></p>
-                        <div class="strengths-weaknesses">
-                            <div class="sw-section strengths">
-                                <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
-                                <ul><li>Powerful at POA</li><li>Run defense</li><li>Length</li><li>Developing pass rush</li></ul>
-                            </div>
-                            <div class="sw-section weaknesses">
-                                <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
-                                <ul><li>Pass rush variety</li><li>Bend around edge</li><li>Consistency</li></ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pick 23 -->
-            <div class="pick-card">
-                <div class="pick-header">
-                    <span class="pick-number">23</span>
-                    <svg class="team-helmet" viewBox="0 0 100 70">
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#00338D" stroke="#FFB612" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">BUF</text>
-                    </svg>
-                    <div class="team-details">
-                        <h3>Buffalo Bills</h3>
-                        <span class="team-record">12-5 | #23 Overall</span>
-                    </div>
-                </div>
-                <div class="pick-content">
-                    <div class="player-main">
-                        <div class="player-photo"><i class="fas fa-user"></i></div>
-                        <div class="player-info">
-                            <h2>Evan Pryor</h2>
-                            <span class="player-position">RB</span>
-                            <span class="player-school">North Carolina</span>
-                            <div class="player-stats">
-                                <div class="stat-box"><div class="stat-value">5'11"</div><div class="stat-label">Height</div></div>
-                                <div class="stat-box"><div class="stat-value">200</div><div class="stat-label">Weight</div></div>
-                                <div class="stat-box"><div class="stat-value">4.45</div><div class="stat-label">40-Yard</div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="breakdown-section">
-                        <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
-                        <p class="breakdown-content">The Bills need running back help. Pryor is a dynamic playmaker who can run and catch. <strong>Perfect complement to Josh Allen.</strong></p>
-                        <div class="strengths-weaknesses">
-                            <div class="sw-section strengths">
-                                <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
-                                <ul><li>Explosive runner</li><li>Receiving ability</li><li>Home run threat</li><li>Elusiveness</li></ul>
-                            </div>
-                            <div class="sw-section weaknesses">
-                                <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
-                                <ul><li>Pass protection</li><li>Inside running</li><li>Ball security</li></ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pick 24 -->
-            <div class="pick-card">
-                <div class="pick-header">
-                    <span class="pick-number">24</span>
-                    <svg class="team-helmet" viewBox="0 0 100 70">
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#A71930" stroke="black" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="16" font-weight="bold" font-family="Arial">HOU</text>
-                    </svg>
-                    <div class="team-details">
-                        <h3>Houston Texans</h3>
-                        <span class="team-record">12-5 | #24 Overall</span>
-                    </div>
-                </div>
-                <div class="pick-content">
-                    <div class="player-main">
-                        <div class="player-photo"><i class="fas fa-user"></i></div>
-                        <div class="player-info">
-                            <h2>Tyleik Williams</h2>
-                            <span class="player-position">DL</span>
-                            <span class="player-school">Ohio State</span>
-                            <div class="player-stats">
-                                <div class="stat-box"><div class="stat-value">6'3"</div><div class="stat-label">Height</div></div>
-                                <div class="stat-box"><div class="stat-value">320</div><div class="stat-label">Weight</div></div>
-                                <div class="stat-box"><div class="stat-value">5.10</div><div class="stat-label">40-Yard</div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="breakdown-section">
-                        <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
-                        <p class="breakdown-content">The Texans need interior defensive line help. Williams is a disruptive force in the middle. <strong>Demeco Ryans builds the trenches.</strong></p>
-                        <div class="strengths-weaknesses">
-                            <div class="sw-section strengths">
-                                <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
-                                <ul><li>Explosive first step</li><li>Pass rush from inside</li><li>Run stopping</li><li>Powerful hands</li></ul>
-                            </div>
-                            <div class="sw-section weaknesses">
-                                <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
-                                <ul><li>Consistency</li><li>Stamina</li><li>Two-gap technique</li></ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pick 25 -->
-            <div class="pick-card">
-                <div class="pick-header">
-                    <span class="pick-number">25</span>
-                    <svg class="team-helmet" viewBox="0 0 100 70">
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#013369" stroke="#A5ACAF" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">DAL</text>
-                    </svg>
-                    <div class="team-details">
-                        <h3>Dallas Cowboys</h3>
-                        <span class="team-record">12-5 | #25 Overall</span>
-                    </div>
-                </div>
-                <div class="pick-content">
-                    <div class="player-main">
-                        <div class="player-photo"><i class="fas fa-user"></i></div>
-                        <div class="player-info">
-                            <h2>Jordan Burch</h2>
-                            <span class="player-position">DL</span>
-                            <span class="player-school">Oregon</span>
-                            <div class="player-stats">
-                                <div class="stat-box"><div class="stat-value">6'6"</div><div class="stat-label">Height</div></div>
-                                <div class="stat-box"><div class="stat-value">290</div><div class="stat-label">Weight</div></div>
-                                <div class="stat-box"><div class="stat-value">4.85</div><div class="stat-label">40-Yard</div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="breakdown-section">
-                        <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
-                        <p class="breakdown-content">The Cowboys need defensive line depth. Burch is a versatile lineman who can play multiple positions. <strong>Dan Quinn's defensive front gets deeper.</strong></p>
-                        <div class="strengths-weaknesses">
-                            <div class="sw-section strengths">
-                                <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
-                                <ul><li>Versatile alignment</li><li>Athletic for size</li><li>Pass rush upside</li><li>Length</li></ul>
-                            </div>
-                            <div class="sw-section weaknesses">
-                                <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
-                                <ul><li>Consistency</li><li>Play strength</li><li>Technique refinement</li></ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pick 26 -->
-            <div class="pick-card">
-                <div class="pick-header">
-                    <span class="pick-number">26</span>
-                    <svg class="team-helmet" viewBox="0 0 100 70">
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#004C54" stroke="#A5ACAF" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">PHI</text>
-                    </svg>
-                    <div class="team-details">
-                        <h3>Philadelphia Eagles</h3>
-                        <span class="team-record">13-4 | #26 Overall</span>
-                    </div>
-                </div>
-                <div class="pick-content">
-                    <div class="player-main">
-                        <div class="player-photo"><i class="fas fa-user"></i></div>
-                        <div class="player-info">
-                            <h2>Oluwafemi Oladejo</h2>
-                            <span class="player-position">LB</span>
-                            <span class="player-school">UCLA</span>
-                            <div class="player-stats">
-                                <div class="stat-box"><div class="stat-value">6'3"</div><div class="stat-label">Height</div></div>
-                                <div class="stat-box"><div class="stat-value">240</div><div class="stat-label">Weight</div></div>
-                                <div class="stat-box"><div class="stat-value">4.60</div><div class="stat-label">40-Yard</div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="breakdown-section">
-                        <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
-                        <p class="breakdown-content">The Eagles need linebacker help. Oladejo is a rangy, athletic linebacker who can cover and blitz. <strong>Vic Fangio gets his type of player.</strong></p>
-                        <div class="strengths-weaknesses">
-                            <div class="sw-section strengths">
-                                <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
-                                <ul><li>Athleticism</li><li>Coverage ability</li><li>Blitz timing</li><li>Range vs run</li></ul>
-                            </div>
-                            <div class="sw-section weaknesses">
-                                <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
-                                <ul><li>Play strength</li><li>Tackling consistency</li><li>Recognition</li></ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pick 27 -->
-            <div class="pick-card">
-                <div class="pick-header">
-                    <span class="pick-number">27</span>
-                    <svg class="team-helmet" viewBox="0 0 100 70">
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#FB4F14" stroke="black" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">CIN</text>
-                    </svg>
-                    <div class="team-details">
-                        <h3>Cincinnati Bengals</h3>
-                        <span class="team-record">13-4 | #27 Overall</span>
-                    </div>
-                </div>
-                <div class="pick-content">
-                    <div class="player-main">
-                        <div class="player-photo"><i class="fas fa-user"></i></div>
-                        <div class="player-info">
-                            <h2>Darius Alexander</h2>
-                            <span class="player-position">DL</span>
-                            <span class="player-school">Toledo</span>
-                            <div class="player-stats">
-                                <div class="stat-box"><div class="stat-value">6'4"</div><div class="stat-label">Height</div></div>
-                                <div class="stat-box"><div class="stat-value">305</div><div class="stat-label">Weight</div></div>
-                                <div class="stat-box"><div class="stat-value">5.00</div><div class="stat-label">40-Yard</div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="breakdown-section">
-                        <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
-                        <p class="breakdown-content">The Bengals need defensive line help. Alexander is a productive interior pass rusher from a smaller school. <strong>Lou Anarumo gets interior pressure.</strong></p>
-                        <div class="strengths-weaknesses">
-                            <div class="sw-section strengths">
-                                <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
-                                <ul><li>Pass rush production</li><li>Quick first step</li><li>Hand usage</li><li>Motor</li></ul>
-                            </div>
-                            <div class="sw-section weaknesses">
-                                <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
-                                <ul><li>Level of competition</li><li>Run defense</li><li>Size for anchor</li></ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pick 28 -->
-            <div class="pick-card">
-                <div class="pick-header">
-                    <span class="pick-number">28</span>
-                    <svg class="team-helmet" viewBox="0 0 100 70">
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#000000" stroke="#A5ACAF" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">LV</text>
-                    </svg>
-                    <div class="team-details">
-                        <h3>Las Vegas Raiders</h3>
-                        <span class="team-record">13-4 | #28 Overall</span>
-                    </div>
-                </div>
-                <div class="pick-content">
-                    <div class="player-main">
-                        <div class="player-photo"><i class="fas fa-user"></i></div>
-                        <div class="player-info">
-                            <h2>Aireontae Ersery</h2>
-                            <span class="player-position">OT</span>
-                            <span class="player-school">Minnesota</span>
-                            <div class="player-stats">
-                                <div class="stat-box"><div class="stat-value">6'6"</div><div class="stat-label">Height</div></div>
-                                <div class="stat-box"><div class="stat-value">330</div><div class="stat-label">Weight</div></div>
-                                <div class="stat-box"><div class="stat-value">5.20</div><div class="stat-label">40-Yard</div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="breakdown-section">
-                        <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
-                        <p class="breakdown-content">The Raiders need offensive tackle help. Ersery has elite size and length with developmental upside. <strong>Protecting the QB is priority.</strong></p>
-                        <div class="strengths-weaknesses">
-                            <div class="sw-section strengths">
-                                <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
-                                <ul><li>Elite size and length</li><li>Powerful run blocker</li><li>Ceiling</li><li>Motor</li></ul>
-                            </div>
-                            <div class="sw-section weaknesses">
-                                <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
-                                <ul><li>Pass pro technique</li><li>Lateral movement</li><li>Experience</li></ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pick 29 -->
-            <div class="pick-card">
-                <div class="pick-header">
-                    <span class="pick-number">29</span>
-                    <svg class="team-helmet" viewBox="0 0 100 70">
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#FFB612" stroke="#773141" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="#773141" font-size="18" font-weight="bold" font-family="Arial">PIT</text>
-                    </svg>
-                    <div class="team-details">
-                        <h3>Pittsburgh Steelers</h3>
-                        <span class="team-record">13-4 | #29 Overall</span>
-                    </div>
-                </div>
-                <div class="pick-content">
-                    <div class="player-main">
-                        <div class="player-photo"><i class="fas fa-user"></i></div>
-                        <div class="player-info">
-                            <h2>Carson Schwesinger</h2>
-                            <span class="player-position">LB</span>
-                            <span class="player-school">UCLA</span>
-                            <div class="player-stats">
-                                <div class="stat-box"><div class="stat-value">6'2"</div><div class="stat-label">Height</div></div>
-                                <div class="stat-box"><div class="stat-value">235</div><div class="stat-label">Weight</div></div>
-                                <div class="stat-box"><div class="stat-value">4.55</div><div class="stat-label">40-Yard</div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="breakdown-section">
-                        <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
-                        <p class="breakdown-content">The Steelers need linebacker help. Schwesinger is a tackling machine with good instincts. <strong>Steelers football personified.</strong></p>
-                        <div class="strengths-weaknesses">
-                            <div class="sw-section strengths">
-                                <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
-                                <ul><li>Tackling production</li><li>Instincts</li><li>Run defense</li><li>Leadership</li></ul>
-                            </div>
-                            <div class="sw-section weaknesses">
-                                <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
-                                <ul><li>Coverage athleticism</li><li>Man coverage</li><li>Pass rush</li></ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pick 30 -->
-            <div class="pick-card">
-                <div class="pick-header">
-                    <span class="pick-number">30</span>
-                    <svg class="team-helmet" viewBox="0 0 100 70">
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#F26522" stroke="#0C2340" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="16" font-weight="bold" font-family="Arial">DEN</text>
-                    </svg>
-                    <div class="team-details">
-                        <h3>Denver Broncos</h3>
-                        <span class="team-record">14-3 | #30 Overall</span>
-                    </div>
-                </div>
-                <div class="pick-content">
-                    <div class="player-main">
-                        <div class="player-photo"><i class="fas fa-user"></i></div>
-                        <div class="player-info">
-                            <h2>Jayden Higgins</h2>
-                            <span class="player-position">WR</span>
-                            <span class="player-school">Iowa State</span>
-                            <div class="player-stats">
-                                <div class="stat-box"><div class="stat-value">6'4"</div><div class="stat-label">Height</div></div>
-                                <div class="stat-box"><div class="stat-value">215</div><div class="stat-label">Weight</div></div>
-                                <div class="stat-box"><div class="stat-value">4.55</div><div class="stat-label">40-Yard</div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="breakdown-section">
-                        <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
-                        <p class="breakdown-content">The Broncos need another weapon for Bo Nix. Higgins is a big-bodied receiver who wins contested catches. <strong>Red zone weapon for Denver.</strong></p>
-                        <div class="strengths-weaknesses">
-                            <div class="sw-section strengths">
-                                <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
-                                <ul><li>Size and catch radius</li><li>Contested catches</li><li>Red zone threat</li><li>Physicality</li></ul>
-                            </div>
-                            <div class="sw-section weaknesses">
-                                <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
-                                <ul><li>Separation ability</li><li>Speed</li><li>YAC</li></ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pick 31 -->
-            <div class="pick-card">
-                <div class="pick-header">
-                    <span class="pick-number">31</span>
-                    <svg class="team-helmet" viewBox="0 0 100 70">
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#005A8B" stroke="#FFC20E" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="16" font-weight="bold" font-family="Arial">LAR</text>
-                    </svg>
-                    <div class="team-details">
-                        <h3>Los Angeles Rams</h3>
-                        <span class="team-record">14-3 | #31 Overall</span>
-                    </div>
-                </div>
-                <div class="pick-content">
-                    <div class="player-main">
-                        <div class="player-photo"><i class="fas fa-user"></i></div>
-                        <div class="player-info">
-                            <h2>Omarion Hampton</h2>
-                            <span class="player-position">RB</span>
-                            <span class="player-school">North Carolina</span>
-                            <div class="player-stats">
-                                <div class="stat-box"><div class="stat-value">5'11"</div><div class="stat-label">Height</div></div>
-                                <div class="stat-box"><div class="stat-value">220</div><div class="stat-label">Weight</div></div>
-                                <div class="stat-box"><div class="stat-value">4.50</div><div class="stat-label">40-Yard</div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="breakdown-section">
-                        <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
-                        <p class="breakdown-content">The Rams need running back help. Hampton is a powerful runner who fits Sean McVay's offense. <strong>Physical complement to Kyren Williams.</strong></p>
-                        <div class="strengths-weaknesses">
-                            <div class="sw-section strengths">
-                                <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
-                                <ul><li>Powerful runner</li><li>Contact balance</li><li>Vision</li><li>Pass protection</li></ul>
-                            </div>
-                            <div class="sw-section weaknesses">
-                                <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
-                                <ul><li>Receiving ability</li><li>Top speed</li><li>Home run ability</li></ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pick 32 -->
-            <div class="pick-card">
-                <div class="pick-header">
-                    <span class="pick-number">32</span>
-                    <svg class="team-helmet" viewBox="0 0 100 70">
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#101820" stroke="#A71930" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">DET</text>
-                    </svg>
-                    <div class="team-details">
-                        <h3>Detroit Lions</h3>
-                        <span class="team-record">15-2 | #32 Overall</span>
-                    </div>
-                </div>
-                <div class="pick-content">
-                    <div class="player-main">
-                        <div class="player-photo"><i class="fas fa-user"></i></div>
-                        <div class="player-info">
-                            <h2>Shemar Stewart</h2>
-                            <span class="player-position">EDGE</span>
-                            <span class="player-school">Texas A&M</span>
-                            <div class="player-stats">
-                                <div class="stat-box"><div class="stat-value">6'6"</div><div class="stat-label">Height</div></div>
-                                <div class="stat-box"><div class="stat-value">280</div><div class="stat-label">Weight</div></div>
-                                <div class="stat-box"><div class="stat-value">4.70</div><div class="stat-label">40-Yard</div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="breakdown-section">
-                        <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
-                        <p class="breakdown-content">The Lions need edge rush help. Stewart is a physical freak with untapped potential. <strong>Brad Holmes bets on traits.</strong> Aidan Hutchinson gets a running mate.</p>
-                        <div class="strengths-weaknesses">
-                            <div class="sw-section strengths">
-                                <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
-                                <ul><li>Elite athletic traits</li><li>Length</li><li>Power</li><li>Ceiling</li></ul>
-                            </div>
-                            <div class="sw-section weaknesses">
-                                <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
-                                <ul><li>Raw technique</li><li>Pass rush plan</li><li>Consistency</li><li>Production</li></ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
 
-        <!-- Rounds 2 & 3 -->
+        <!-- ROUND 2 -->
         <div id="round2" class="tab-content">
             <h2 class="round-title">Round <span>2</span> - Best Available</h2>
             <div class="quick-picks-grid">
-                <div class="quick-pick-card"><span class="quick-pick-number">33</span><div class="quick-pick-info"><div class="quick-pick-team">New York Giants</div><div class="quick-pick-player">Jaxson Dart</div><span class="quick-pick-position">QB • Ole Miss</span></div></div>
-                <div class="quick-pick-card"><span class="quick-pick-number">34</span><div class="quick-pick-info"><div class="quick-pick-team">New England Patriots</div><div class="quick-pick-player">Cameron Ward</div><span class="quick-pick-position">QB • Miami</span></div></div>
-                <div class="quick-pick-card"><span class="quick-pick-number">35</span><div class="quick-pick-info"><div class="quick-pick-team">Jacksonville Jaguars</div><div class="quick-pick-player">Kaleb Johnson</div><span class="quick-pick-position">RB • Iowa</span></div></div>
-                <div class="quick-pick-card"><span class="quick-pick-number">36</span><div class="quick-pick-info"><div class="quick-pick-team">Cleveland Browns</div><div class="quick-pick-player">Will Rogers</div><span class="quick-pick-position">QB • Washington</span></div></div>
-                <div class="quick-pick-card"><span class="quick-pick-number">37</span><div class="quick-pick-info"><div class="quick-pick-team">Tennessee Titans</div><div class="quick-pick-player">Burden III</div><span class="quick-pick-position">WR • Missouri</span></div></div>
-                <div class="quick-pick-card"><span class="quick-pick-number">38</span><div class="quick-pick-info"><div class="quick-pick-team">Carolina Panthers</div><div class="quick-pick-player">Quinn Ewers</div><span class="quick-pick-position">QB • Texas</span></div></div>
-                <div class="quick-pick-card"><span class="quick-pick-number">39</span><div class="quick-pick-info"><div class="quick-pick-team">New York Jets</div><div class="quick-pick-player">Jalen Royals</div><span class="quick-pick-position">WR • Utah State</span></div></div>
-                <div class="quick-pick-card"><span class="quick-pick-number">40</span><div class="quick-pick-info"><div class="quick-pick-team">New Orleans Saints</div><div class="quick-pick-player">Damien Martinez</div><span class="quick-pick-position">RB • Miami</span></div></div>
-                <div class="quick-pick-card"><span class="quick-pick-number">41-64</span><div class="quick-pick-info"><div class="quick-pick-team">Continue scrolling for full Round 2...</div><div class="quick-pick-player">All 32 picks</div><span class="quick-pick-position">See full draft board</span></div></div>
+                <div class="quick-pick-card" style="animation-delay: 0.05s">
+                    <span class="quick-pick-number">33</span>
+                    <svg class="quick-pick-helmet" viewBox="0 0 100 70">
+                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#001E62" stroke="#A71930" stroke-width="3"/>
+                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="16" font-weight="bold">NYG</text>
+                    </svg>
+                    <div class="quick-pick-info">
+                        <div class="quick-pick-team">New York Giants</div>
+                        <div class="quick-pick-player">Jaxson Dart</div>
+                        <span class="quick-pick-position">QB • Ole Miss</span>
+                    </div>
+                </div>
+
+                <div class="quick-pick-card" style="animation-delay: 0.1s">
+                    <span class="quick-pick-number">34</span>
+                    <svg class="quick-pick-helmet" viewBox="0 0 100 70">
+                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#002244" stroke="#C60C30" stroke-width="3"/>
+                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="16" font-weight="bold">NE</text>
+                    </svg>
+                    <div class="quick-pick-info">
+                        <div class="quick-pick-team">New England Patriots</div>
+                        <div class="quick-pick-player">Luther Burden III</div>
+                        <span class="quick-pick-position">WR • Missouri</span>
+                    </div>
+                </div>
+
+                <div class="quick-pick-card" style="animation-delay: 0.15s">
+                    <span class="quick-pick-number">35</span>
+                    <svg class="quick-pick-helmet" viewBox="0 0 100 70">
+                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#006778" stroke="#D7A22A" stroke-width="3"/>
+                        <text x="50" y="42" text-anchor="middle" fill="#D7A22A" font-size="16" font-weight="bold">JAX</text>
+                    </svg>
+                    <div class="quick-pick-info">
+                        <div class="quick-pick-team">Jacksonville Jaguars</div>
+                        <div class="quick-pick-player">Kaleb Johnson</div>
+                        <span class="quick-pick-position">RB • Iowa</span>
+                    </div>
+                </div>
+
+                <div class="quick-pick-card" style="animation-delay: 0.2s">
+                    <span class="quick-pick-number">36</span>
+                    <svg class="quick-pick-helmet" viewBox="0 0 100 70">
+                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#311D00" stroke="#FF3C00" stroke-width="3"/>
+                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="16" font-weight="bold">CLE</text>
+                    </svg>
+                    <div class="quick-pick-info">
+                        <div class="quick-pick-team">Cleveland Browns</div>
+                        <div class="quick-pick-player">Will Rogers</div>
+                        <span class="quick-pick-position">QB • Washington</span>
+                    </div>
+                </div>
+
+                <div class="quick-pick-card" style="animation-delay: 0.25s">
+                    <span class="quick-pick-number">37</span>
+                    <svg class="quick-pick-helmet" viewBox="0 0 100 70">
+                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#0C2340" stroke="#4C8FB6" stroke-width="3"/>
+                        <text x="50" y="42" text-anchor="middle" fill="#4C8FB6" font-size="16" font-weight="bold">TEN</text>
+                    </svg>
+                    <div class="quick-pick-info">
+                        <div class="quick-pick-team">Tennessee Titans</div>
+                        <div class="quick-pick-player">Burden III</div>
+                        <span class="quick-pick-position">WR • Missouri</span>
+                    </div>
+                </div>
+
+                <div class="quick-pick-card" style="animation-delay: 0.3s">
+                    <span class="quick-pick-number">38-64</span>
+                    <div class="quick-pick-info">
+                        <div class="quick-pick-team">Complete Round 2</div>
+                        <div class="quick-pick-player">32 Total Picks</div>
+                        <span class="quick-pick-position">View full draft</span>
+                    </div>
+                </div>
             </div>
         </div>
 
+        <!-- ROUND 3 -->
         <div id="round3" class="tab-content">
             <h2 class="round-title">Round <span>3</span> - Value Picks</h2>
             <div class="quick-picks-grid">
-                <div class="quick-pick-card"><span class="quick-pick-number">65</span><div class="quick-pick-info"><div class="quick-pick-team">New York Giants</div><div class="quick-pick-player">Daylen Everette</div><span class="quick-pick-position">CB • Georgia</span></div></div>
-                <div class="quick-pick-card"><span class="quick-pick-number">66</span><div class="quick-pick-info"><div class="quick-pick-team">New England Patriots</div><div class="quick-pick-player">Deone Walker</div><span class="quick-pick-position">DL • Kentucky</span></div></div>
-                <div class="quick-pick-card"><span class="quick-pick-number">67</span><div class="quick-pick-info"><div class="quick-pick-team">Jacksonville Jaguars</div><div class="quick-pick-player">Anthony Belton</div><span class="quick-pick-position">OT • NC State</span></div></div>
-                <div class="quick-pick-card"><span class="quick-pick-number">68</span><div class="quick-pick-info"><div class="quick-pick-team">Cleveland Browns</div><div class="quick-pick-player">Jack Bech</div><span class="quick-pick-position">WR • TCU</span></div></div>
-                <div class="quick-pick-card"><span class="quick-pick-number">69</span><div class="quick-pick-info"><div class="quick-pick-team">Tennessee Titans</div><div class="quick-pick-player">Sai'vion Jones</div><span class="quick-pick-position">EDGE • LSU</span></div></div>
-                <div class="quick-pick-card"><span class="quick-pick-number">70-105</span><div class="quick-pick-info"><div class="quick-pick-team">Continue scrolling for full Round 3...</div><div class="quick-pick-player">41 total picks</div><span class="quick-pick-position">See full draft board</span></div></div>
+                <div class="quick-pick-card" style="animation-delay: 0.05s">
+                    <span class="quick-pick-number">65</span>
+                    <svg class="quick-pick-helmet" viewBox="0 0 100 70">
+                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#001E62" stroke="#A71930" stroke-width="3"/>
+                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="16" font-weight="bold">NYG</text>
+                    </svg>
+                    <div class="quick-pick-info">
+                        <div class="quick-pick-team">New York Giants</div>
+                        <div class="quick-pick-player">Daylen Everette</div>
+                        <span class="quick-pick-position">CB • Georgia</span>
+                    </div>
+                </div>
+
+                <div class="quick-pick-card" style="animation-delay: 0.1s">
+                    <span class="quick-pick-number">66</span>
+                    <svg class="quick-pick-helmet" viewBox="0 0 100 70">
+                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#002244" stroke="#C60C30" stroke-width="3"/>
+                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="16" font-weight="bold">NE</text>
+                    </svg>
+                    <div class="quick-pick-info">
+                        <div class="quick-pick-team">New England Patriots</div>
+                        <div class="quick-pick-player">Deone Walker</div>
+                        <span class="quick-pick-position">DL • Kentucky</span>
+                    </div>
+                </div>
+
+                <div class="quick-pick-card" style="animation-delay: 0.15s">
+                    <span class="quick-pick-number">67-105</span>
+                    <div class="quick-pick-info">
+                        <div class="quick-pick-team">Complete Round 3</div>
+                        <div class="quick-pick-player">41 Total Picks</div>
+                        <span class="quick-pick-position">View full draft</span>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
 
     <footer class="footer">
+        <div class="footer-social">
+            <a href="#" onclick="shareTwitter()" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" onclick="shareFacebook()" title="Share on Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" onclick="shareReddit()" title="Share on Reddit"><i class="fab fa-reddit"></i></a>
+            <a href="#" onclick="copyLink()" title="Copy Link"><i class="fas fa-link"></i></a>
+        </div>
         <p>2026 NFL Mock Draft • Complete 3 Round Projections</p>
         <p style="margin-top: 0.5rem; font-size: 0.85rem;">This is a speculative mock draft for entertainment purposes only.</p>
     </footer>
 
+    <div class="back-to-top" id="backToTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
     <script>
+        // Tab switching
         function showTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
             document.querySelectorAll('.nav-tab').forEach(btn => btn.classList.remove('active'));
             document.getElementById(tabId).classList.add('active');
             event.target.classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
+            updatePositionCounts();
+        }
+
+        // Filter by position
+        function filterPicks(position) {
+            // Update active button
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const picks = document.querySelectorAll('#round1Picks .pick-card');
+            let visibleCount = 0;
+
+            picks.forEach(pick => {
+                if (position === 'all' || pick.dataset.position === position) {
+                    pick.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    pick.classList.add('hidden');
+                }
+            });
+
+            // Show/hide no results message
+            const noResults = document.getElementById('noResults');
+            if (visibleCount === 0) {
+                noResults.style.display = 'block';
+            } else {
+                noResults.style.display = 'none';
+            }
+
+            showToast(`Filtered by: ${position === 'all' ? 'All Positions' : position}`);
+        }
+
+        // Search picks
+        function searchPicks() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const picks = document.querySelectorAll('#round1Picks .pick-card');
+            let visibleCount = 0;
+
+            picks.forEach(pick => {
+                const player = pick.dataset.player.toLowerCase();
+                const team = pick.dataset.team.toLowerCase();
+                const position = pick.dataset.position.toLowerCase();
+
+                if (player.includes(searchTerm) || team.includes(searchTerm) || position.includes(searchTerm)) {
+                    pick.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    pick.classList.add('hidden');
+                }
+            });
+
+            const noResults = document.getElementById('noResults');
+            if (visibleCount === 0 && searchTerm !== '') {
+                noResults.style.display = 'block';
+            } else {
+                noResults.style.display = 'none';
+            }
+        }
+
+        // Update position counts
+        function updatePositionCounts() {
+            const picks = document.querySelectorAll('#round1Picks .pick-card:not(.hidden)');
+            const counts = { QB: 0, RB: 0, WR: 0, TE: 0, OT: 0, IOL: 0, EDGE: 0, DL: 0, LB: 0, CB: 0, S: 0 };
+
+            picks.forEach(pick => {
+                const pos = pick.dataset.position;
+                if (counts.hasOwnProperty(pos)) {
+                    counts[pos]++;
+                }
+            });
+
+            document.getElementById('qbCount').textContent = counts.QB;
+            document.getElementById('rbCount').textContent = counts.RB;
+            document.getElementById('wrCount').textContent = counts.WR;
+            document.getElementById('olCount').textContent = counts.OT + counts.IOL;
+            document.getElementById('dlCount').textContent = counts.EDGE + counts.DL + counts.LB;
+        }
+
+        // Share pick on Twitter
+        function sharePick(team, player, pick) {
+            const text = `With the #${pick} pick in the 2026 NFL Mock Draft, the ${team} select ${player}!`;
+            const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(window.location.href)}`;
+            window.open(url, '_blank', 'width=600,height=400');
+        }
+
+        // Copy pick link
+        function copyPickLink(pick) {
+            const url = `${window.location.href}#pick-${pick}`;
+            navigator.clipboard.writeText(url).then(() => {
+                showToast('Link copied to clipboard!');
+            });
+        }
+
+        // Social sharing
+        function shareTwitter() {
+            const text = 'Check out this 2026 NFL Mock Draft with full player analysis!';
+            const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(window.location.href)}`;
+            window.open(url, '_blank', 'width=600,height=400');
+        }
+
+        function shareFacebook() {
+            const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`;
+            window.open(url, '_blank', 'width=600,height=400');
+        }
+
+        function shareReddit() {
+            const url = `https://reddit.com/submit?url=${encodeURIComponent(window.location.href)}&title=2026 NFL Mock Draft`;
+            window.open(url, '_blank', 'width=600,height=400');
+        }
+
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                showToast('Link copied to clipboard!');
+            });
+        }
+
+        // Toast notification
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Back to top button
+        window.addEventListener('scroll', () => {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            updatePositionCounts();
+        });
+
+        // Register Service Worker for PWA
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js').then(() => {
+                console.log('Service Worker registered');
+            }).catch((error) => {
+                console.log('Service Worker registration failed:', error);
+            });
         }
     </script>
 </body>
