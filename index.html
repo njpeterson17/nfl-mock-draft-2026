@@ -459,37 +459,232 @@
             font-size: 0.9rem;
         }
 
-        /* Responsive */
+        /* Mobile First Responsive Design */
         @media (max-width: 768px) {
+            .header {
+                padding: 2rem 1rem;
+            }
+
             .header h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+
+            .header-subtitle {
+                font-size: 0.9rem;
+                padding: 0 1rem;
+            }
+
+            .nav-container {
+                padding: 0;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .nav-tabs {
+                justify-content: flex-start;
+                padding: 0 1rem;
+                gap: 0;
             }
 
             .nav-tab {
+                padding: 1rem 1.25rem;
+                font-size: 0.8rem;
+                white-space: nowrap;
+            }
+
+            .round-badge {
+                display: none;
+            }
+
+            .main-content {
                 padding: 1rem;
-                font-size: 0.85rem;
+            }
+
+            .round-title {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
             }
 
             .pick-header {
                 flex-wrap: wrap;
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            .pick-number {
+                font-size: 2rem;
+                min-width: 45px;
+            }
+
+            .team-helmet {
+                width: 50px;
+                height: 35px;
+            }
+
+            .team-details h3 {
+                font-size: 1.1rem;
+            }
+
+            .team-record {
+                font-size: 0.8rem;
+            }
+
+            .pick-content {
+                padding: 1rem;
             }
 
             .player-main {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
+                gap: 1rem;
+            }
+
+            .player-photo {
+                width: 80px;
+                height: 100px;
+            }
+
+            .player-info h2 {
+                font-size: 1.3rem;
+            }
+
+            .player-position {
+                font-size: 0.75rem;
+                padding: 0.2rem 0.6rem;
+            }
+
+            .player-school {
+                font-size: 0.85rem;
             }
 
             .player-stats {
                 justify-content: center;
+                gap: 1rem;
+                margin-top: 1rem;
+            }
+
+            .stat-box .stat-value {
+                font-size: 1.2rem;
+            }
+
+            .stat-box .stat-label {
+                font-size: 0.65rem;
+            }
+
+            .breakdown-section {
+                padding: 1rem;
+            }
+
+            .breakdown-title {
+                font-size: 0.95rem;
+            }
+
+            .breakdown-content {
+                font-size: 0.85rem;
             }
 
             .strengths-weaknesses {
                 grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .sw-section h4 {
+                font-size: 0.8rem;
+            }
+
+            .sw-section li {
+                font-size: 0.8rem;
             }
 
             .quick-picks-grid {
                 grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+
+            .quick-pick-card {
+                padding: 1rem;
+            }
+
+            .quick-pick-number {
+                font-size: 1.25rem;
+                min-width: 35px;
+            }
+
+            .quick-pick-helmet {
+                width: 40px;
+                height: 30px;
+            }
+
+            .quick-pick-player {
+                font-size: 1rem;
+            }
+
+            .quick-pick-team {
+                font-size: 0.75rem;
+            }
+
+            .quick-pick-position {
+                font-size: 0.7rem;
+            }
+
+            .footer {
+                padding: 2rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Extra Small Screens */
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.6rem;
+                letter-spacing: 1px;
+            }
+
+            .nav-tab {
+                padding: 0.875rem 1rem;
+                font-size: 0.75rem;
+            }
+
+            .pick-number {
+                font-size: 1.75rem;
+            }
+
+            .team-details h3 {
+                font-size: 1rem;
+            }
+
+            .player-info h2 {
+                font-size: 1.1rem;
+            }
+
+            .pick-header {
+                gap: 0.75rem;
+            }
+
+            .team-helmet {
+                width: 45px;
+                height: 32px;
+            }
+        }
+
+        /* Touch Device Optimizations */
+        @media (hover: none) {
+            .pick-card:hover {
+                transform: none;
+            }
+
+            .quick-pick-card:hover {
+                transform: none;
+            }
+
+            .nav-tab:hover {
+                color: var(--text-secondary);
+            }
+
+            .nav-tab.active:hover {
+                color: var(--accent);
             }
         }
     </style>
