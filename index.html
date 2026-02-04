@@ -1557,6 +1557,200 @@
                 align-items: flex-start;
             }
         }
+
+        /* Position Button Styles */
+        .position-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            padding: 1rem;
+            border-radius: 12px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .position-btn:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .position-btn i {
+            font-size: 1.5rem;
+        }
+
+        /* Big Board Item Styles */
+        .big-board-item {
+            display: grid;
+            grid-template-columns: 50px 1fr 100px 80px 100px;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem 1rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .big-board-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--border);
+        }
+
+        .big-board-item.elite-tier {
+            border-left: 3px solid var(--gold);
+        }
+
+        .big-board-item.round1-tier {
+            border-left: 3px solid var(--success);
+        }
+
+        .big-board-item.round2-tier {
+            border-left: 3px solid var(--accent);
+        }
+
+        .big-board-item.round3-tier {
+            border-left: 3px solid var(--text-secondary);
+        }
+
+        .bb-rank {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-align: center;
+        }
+
+        .bb-player-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bb-player-name {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .bb-player-meta {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .bb-position {
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .bb-grade {
+            text-align: center;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .bb-grade.elite { color: var(--gold); }
+        .bb-grade.round1 { color: var(--success); }
+        .bb-grade.round2 { color: var(--accent); }
+        .bb-grade.round3 { color: var(--text-secondary); }
+
+        .bb-tier {
+            text-align: center;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+
+        .bb-tier.elite { background: rgba(255, 215, 0, 0.15); color: var(--gold); }
+        .bb-tier.round1 { background: rgba(0, 255, 136, 0.15); color: var(--success); }
+        .bb-tier.round2 { background: rgba(0, 212, 255, 0.15); color: var(--accent); }
+        .bb-tier.round3 { background: rgba(139, 139, 154, 0.15); color: var(--text-secondary); }
+
+        /* Positional Rankings Styles */
+        .pos-rank-item {
+            display: grid;
+            grid-template-columns: 50px 1fr 100px 80px;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem 1rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .pos-rank-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--border);
+        }
+
+        .pos-rank-num {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-align: center;
+        }
+
+        .pos-player-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pos-player-name {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .pos-player-school {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .pos-grade {
+            text-align: center;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .pos-summary {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 768px) {
+            .big-board-item {
+                grid-template-columns: 40px 1fr 60px;
+                gap: 0.75rem;
+            }
+            
+            .big-board-item .bb-grade,
+            .big-board-item .bb-tier {
+                display: none;
+            }
+
+            .pos-rank-item {
+                grid-template-columns: 40px 1fr 60px;
+            }
+            
+            .pos-rank-item .pos-summary {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1608,7 +1802,10 @@
                 Round 3 <span class="round-badge">41 Picks</span>
             </button>
             <button class="nav-tab" onclick="showTab('edpLeaderboard')">
-                <i class="fas fa-chart-bar"></i> EDP Leaderboard
+                <i class="fas fa-chart-bar"></i> EDP
+            </button>
+            <button class="nav-tab" onclick="showTab('bigBoard')">
+                <i class="fas fa-list-ol"></i> Big Board
             </button>
             <button class="nav-tab" onclick="showTab('create')">
                 <i class="fas fa-pencil-alt"></i> Create Your Mock
@@ -5179,6 +5376,131 @@ le"></i> Areas to Improve</h4>
             </div>
         </div>
 
+        <!-- BIG BOARD TAB -->
+        <div id="bigBoard" class="tab-content">
+            <h2 class="round-title"><i class="fas fa-list-ol"></i> 2026 NFL Draft <span>Big Board</span></h2>
+            
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 2rem; color: var(--text-secondary);">
+                <p>Top 100 prospects ranked by overall grade. Filter by position or tier to explore the draft class.</p>
+            </div>
+
+            <!-- Big Board Controls -->
+            <div class="edp-panel">
+                <div class="edp-panel-header">
+                    <div class="edp-panel-title">
+                        <i class="fas fa-filter"></i>
+                        <span>Filter Big Board</span>
+                    </div>
+                    <div class="edp-toggle">
+                        <button class="edp-toggle-btn active" onclick="filterBigBoard('all')">All</button>
+                        <button class="edp-toggle-btn" onclick="filterBigBoard('Elite')">Elite</button>
+                        <button class="edp-toggle-btn" onclick="filterBigBoard('Round 1')">Round 1</button>
+                        <button class="edp-toggle-btn" onclick="filterBigBoard('Round 2')">Round 2</button>
+                        <button class="edp-toggle-btn" onclick="filterBigBoard('Round 3')">Round 3</button>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem;">
+                    <span style="color: var(--text-secondary); font-size: 0.85rem;">Position:</span>
+                    <button class="edp-toggle-btn active" onclick="filterBigBoardByPosition('all')">All</button>
+                    <button class="edp-toggle-btn" onclick="filterBigBoardByPosition('QB')">QB</button>
+                    <button class="edp-toggle-btn" onclick="filterBigBoardByPosition('RB')">RB</button>
+                    <button class="edp-toggle-btn" onclick="filterBigBoardByPosition('WR')">WR</button>
+                    <button class="edp-toggle-btn" onclick="filterBigBoardByPosition('TE')">TE</button>
+                    <button class="edp-toggle-btn" onclick="filterBigBoardByPosition('OT')">OT</button>
+                    <button class="edp-toggle-btn" onclick="filterBigBoardByPosition('IOL')">IOL</button>
+                    <button class="edp-toggle-btn" onclick="filterBigBoardByPosition('EDGE')">EDGE</button>
+                    <button class="edp-toggle-btn" onclick="filterBigBoardByPosition('DL')">DL</button>
+                    <button class="edp-toggle-btn" onclick="filterBigBoardByPosition('LB')">LB</button>
+                    <button class="edp-toggle-btn" onclick="filterBigBoardByPosition('CB')">CB</button>
+                    <button class="edp-toggle-btn" onclick="filterBigBoardByPosition('S')">S</button>
+                </div>
+            </div>
+
+            <!-- Big Board List -->
+            <div class="edp-panel">
+                <div class="edp-panel-header">
+                    <div class="edp-panel-title">
+                        <i class="fas fa-users"></i>
+                        <span>Top 100 Prospects</span>
+                    </div>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary);">
+                        <span id="bigBoardCount">Showing 100 prospects</span>
+                    </div>
+                </div>
+                <div id="bigBoardList" class="edp-list">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Positional Rankings Section -->
+            <h2 class="round-title" style="margin-top: 3rem;"><i class="fas fa-layer-group"></i> Positional <span>Rankings</span></h2>
+            
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 2rem; color: var(--text-secondary);">
+                <p>Top prospects ranked by position group. Click a position to view the rankings.</p>
+            </div>
+
+            <!-- Position Selector -->
+            <div class="edp-panel">
+                <div class="edp-panel-header">
+                    <div class="edp-panel-title">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Select Position</span>
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 0.75rem;">
+                    <button class="position-btn" onclick="showPositionalRankings('QB')">
+                        <i class="fas fa-football-ball"></i> QB
+                    </button>
+                    <button class="position-btn" onclick="showPositionalRankings('RB')">
+                        <i class="fas fa-running"></i> RB
+                    </button>
+                    <button class="position-btn" onclick="showPositionalRankings('WR')">
+                        <i class="fas fa-hand-paper"></i> WR
+                    </button>
+                    <button class="position-btn" onclick="showPositionalRankings('TE')">
+                        <i class="fas fa-compress"></i> TE
+                    </button>
+                    <button class="position-btn" onclick="showPositionalRankings('OT')">
+                        <i class="fas fa-user-shield"></i> OT
+                    </button>
+                    <button class="position-btn" onclick="showPositionalRankings('IOL')">
+                        <i class="fas fa-grip-lines"></i> IOL
+                    </button>
+                    <button class="position-btn" onclick="showPositionalRankings('EDGE')">
+                        <i class="fas fa-bolt"></i> EDGE
+                    </button>
+                    <button class="position-btn" onclick="showPositionalRankings('DL')">
+                        <i class="fas fa-cube"></i> DL
+                    </button>
+                    <button class="position-btn" onclick="showPositionalRankings('LB')">
+                        <i class="fas fa-crosshairs"></i> LB
+                    </button>
+                    <button class="position-btn" onclick="showPositionalRankings('CB')">
+                        <i class="fas fa-user-slash"></i> CB
+                    </button>
+                    <button class="position-btn" onclick="showPositionalRankings('S')">
+                        <i class="fas fa-shield-alt"></i> S
+                    </button>
+                </div>
+            </div>
+
+            <!-- Positional Rankings Display -->
+            <div id="positionalRankingsDisplay" class="edp-panel" style="display: none;">
+                <div class="edp-panel-header">
+                    <div class="edp-panel-title">
+                        <i class="fas fa-list-ol"></i>
+                        <span id="positionalRankingsTitle">Position Rankings</span>
+                    </div>
+                    <button class="edp-toggle-btn" onclick="hidePositionalRankings()">
+                        <i class="fas fa-times"></i> Close
+                    </button>
+                </div>
+                <div id="positionalRankingsList" class="edp-list">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
         <!-- CREATE YOUR MOCK TAB -->
         <div id="create" class="tab-content">
             <h2 class="round-title"><i class="fas fa-pencil-alt"></i> Create Your <span>Mock Draft</span></h2>
@@ -5363,6 +5685,11 @@ le"></i> Areas to Improve</h4>
             if (tabId === 'edpLeaderboard') {
                 renderEDPLeaderboard();
             }
+            
+            // Render Big Board if that tab is selected
+            if (tabId === 'bigBoard') {
+                renderBigBoard();
+            }
         }
 
         // Filter by position
@@ -5511,6 +5838,7 @@ le"></i> Areas to Improve</h4>
             handleDeepLink();
             addEDPBadgesToPicks();
             renderEDPLeaderboard();
+            renderBigBoard();
         });
 
         // Round 2 Position Counts
@@ -5705,6 +6033,160 @@ le"></i> Areas to Improve</h4>
         let customDraft = [];
         let currentPickIndex = 0;
         let playerPoolFilter = 'all';
+
+        // ==========================================
+        // BIG BOARD DATA - Top 100 Prospects
+        // ==========================================
+        const bigBoardData = [
+            { rank: 1, name: "Fernando Mendoza", position: "QB", school: "Indiana", height: "6'5\"", weight: 225, grade: "7.4", tier: "Elite", strengths: "Elite accuracy, pocket presence, quick release", comparison: "Ceiling: Matt Ryan, Floor: Derek Carr" },
+            { rank: 2, name: "Jeremiyah Love", position: "RB", school: "Notre Dame", height: "6'0\"", weight: 214, grade: "7.2", tier: "Elite", strengths: "Explosive speed, receiving ability, vision", comparison: "Ceiling: Reggie Bush, Floor: Aaron Jones" },
+            { rank: 3, name: "Carnell Tate", position: "WR", school: "Ohio State", height: "6'3\"", weight: 195, grade: "6.90", tier: "Elite", strengths: "Size, body control, contested catches", comparison: "Ceiling: Michael Thomas, Floor: N'Keal Harry" },
+            { rank: 4, name: "Arvell Reese", position: "LB", school: "Ohio State", height: "6'4\"", weight: 243, grade: "7.3", tier: "Elite", strengths: "Elite athlete, rush ability, instincts", comparison: "Ceiling: Micah Parsons, Floor: Jalon Walker" },
+            { rank: 5, name: "Rueben Bain Jr.", position: "EDGE", school: "Miami", height: "6'3\"", weight: 275, grade: "7.2", tier: "Elite", strengths: "Powerful hands, high motor, versatility", comparison: "Ceiling: Trent Cole, Floor: Carl Lawson" },
+            { rank: 6, name: "David Bailey", position: "EDGE", school: "Texas Tech", height: "6'3\"", weight: 250, grade: "7.0", tier: "Round 1", strengths: "Elite get-off, bend, production", comparison: "Ceiling: Brian Burns, Floor: Josh Uche" },
+            { rank: 7, name: "Francis Mauigoa", position: "OT", school: "Miami", height: "6'6\"", weight: 315, grade: "6.95", tier: "Round 1", strengths: "Elite power, mauler, versatile", comparison: "Ceiling: Trent Williams, Floor: Jawaan Taylor" },
+            { rank: 8, name: "Sonny Styles", position: "LB", school: "Ohio State", height: "6'4\"", weight: 243, grade: "6.88", tier: "Round 1", strengths: "Speed, length, coverage ability", comparison: "Ceiling: Fred Warner, Floor: Germaine Pratt" },
+            { rank: 9, name: "Caleb Downs", position: "S", school: "Ohio State", height: "6'0\"", weight: 205, grade: "7.3", tier: "Elite", strengths: "Elite instincts, versatility, tackling", comparison: "Ceiling: Derwin James, Floor: Xavier McKinney" },
+            { rank: 10, name: "Jordyn Tyson", position: "WR", school: "Arizona State", height: "6'2\"", weight: 200, grade: "6.85", tier: "Round 1", strengths: "Contested catches, red zone, route savvy", comparison: "Ceiling: DeAndre Hopkins, Floor: Michael Gallup" },
+            { rank: 11, name: "Makai Lemon", position: "WR", school: "USC", height: "5'11\"", weight: 190, grade: "6.78", tier: "Round 1", strengths: "Quickness, route running, YAC ability", comparison: "Ceiling: Amon-Ra St. Brown, Floor: Hunter Renfrow" },
+            { rank: 12, name: "Spencer Fano", position: "OT", school: "Utah", height: "6'5\"", weight: 300, grade: "6.80", tier: "Round 1", strengths: "Technique, footwork, versatility", comparison: "Ceiling: Ryan Ramczyk, Floor: Dillon Radunz" },
+            { rank: 13, name: "Akheem Mesidor", position: "EDGE", school: "Miami", height: "6'3\"", weight: 280, grade: "6.75", tier: "Round 1", strengths: "Power, motor, inside rush ability", comparison: "Ceiling: Montez Sweat, Floor: Romeo Okwara" },
+            { rank: 14, name: "Keldric Faulk", position: "EDGE", school: "Auburn", height: "6'5\"", weight: 280, grade: "6.75", tier: "Round 1", strengths: "Length, strength, run defense", comparison: "Ceiling: Arik Armstead, Floor: Rasheem Green" },
+            { rank: 15, name: "Peter Woods", position: "DL", school: "Clemson", height: "6'3\"", weight: 310, grade: "6.75", tier: "Round 1", strengths: "Explosiveness, versatility, power", comparison: "Ceiling: Fletcher Cox, Floor: Ed Oliver" },
+            { rank: 16, name: "Jermod McCoy", position: "CB", school: "Tennessee", height: "6'0\"", weight: 190, grade: "6.72", tier: "Round 1", strengths: "Ball skills, press ability, recovery speed", comparison: "Ceiling: Jaire Alexander, Floor: Kelvin Joseph" },
+            { rank: 17, name: "Olaivavega Ioane", position: "IOL", school: "Penn State", height: "6'3\"", weight: 320, grade: "6.62", tier: "Round 1", strengths: "Power, anchor, run blocking", comparison: "Ceiling: Quenton Nelson, Floor: Isaiah Wilson" },
+            { rank: 18, name: "Kayden McDonald", position: "DL", school: "Ohio State", height: "6'3\"", weight: 326, grade: "6.70", tier: "Round 1", strengths: "Elite size, gap-eating, power", comparison: "Ceiling: Vita Vea, Floor: Derrick Nnadi" },
+            { rank: 19, name: "Ty Simpson", position: "QB", school: "Alabama", height: "6'2\"", weight: 210, grade: "6.68", tier: "Round 1", strengths: "Arm talent, mobility, upside", comparison: "Ceiling: Josh Allen, Floor: Will Levis" },
+            { rank: 20, name: "Caleb Lomu", position: "OT", school: "Utah", height: "6'6\"", weight: 310, grade: "6.65", tier: "Round 1", strengths: "Length, strength, run blocking", comparison: "Ceiling: Lane Johnson, Floor: Lucas Niang" },
+            { rank: 21, name: "CJ Allen", position: "LB", school: "Georgia", height: "6'1\"", weight: 235, grade: "6.60", tier: "Round 1", strengths: "Read-react, physicality, coverage", comparison: "Ceiling: Eric Kendricks, Floor: Sio Moore" },
+            { rank: 22, name: "Zachariah Branch", position: "WR", school: "Georgia", height: "5'10\"", weight: 175, grade: "6.60", tier: "Round 1", strengths: "Elite speed, return ability, YAC", comparison: "Ceiling: Tyreek Hill, Floor: Tutu Atwell" },
+            { rank: 23, name: "Denzel Boston", position: "WR", school: "Washington", height: "6'4\"", weight: 205, grade: "6.45", tier: "Round 1", strengths: "Size, deep threat, contested catches", comparison: "Ceiling: Mike Evans, Floor: Hakeem Butler" },
+            { rank: 24, name: "Mansoor Delane", position: "CB", school: "Virginia Tech", height: "6'2\"", weight: 195, grade: "6.82", tier: "Round 1", strengths: "Fluid hips, press coverage, instincts", comparison: "Ceiling: Jalen Ramsey, Floor: Tre'Davious White" },
+            { rank: 25, name: "Trinidad Chambliss", position: "QB", school: "Ole Miss", height: "6'1\"", weight: 205, grade: "6.52", tier: "Round 1", strengths: "Accuracy, processing, leadership", comparison: "Ceiling: Drew Brees, Floor: Case Keenum" },
+            { rank: 26, name: "Drew Allar", position: "QB", school: "Penn State", height: "6'5\"", weight: 235, grade: "6.35", tier: "Round 2", strengths: "Size, arm strength, pocket passer", comparison: "Ceiling: Ben Roethlisberger, Floor: Christian Hackenberg" },
+            { rank: 27, name: "Emmett Johnson", position: "RB", school: "Nebraska", height: "6'0\"", weight: 210, grade: "6.48", tier: "Round 1", strengths: "Vision, patience, contact balance", comparison: "Ceiling: Josh Jacobs, Floor: Alexander Mattison" },
+            { rank: 28, name: "Dillon Thieneman", position: "S", school: "Oregon", height: "6'2\"", weight: 210, grade: "6.50", tier: "Round 1", strengths: "Ball skills, range, tackling", comparison: "Ceiling: Kevin Byard, Floor: Marcus Gilchrist" },
+            { rank: 29, name: "Kenyon Sadiq", position: "TE", school: "Oregon", height: "6'3\"", weight: 235, grade: "6.70", tier: "Round 1", strengths: "Athleticism, mismatch ability, hands", comparison: "Ceiling: George Kittle, Floor: Cole Kmet" },
+            { rank: 30, name: "Ja'Kobi Lane", position: "WR", school: "USC", height: "6'5\"", weight: 215, grade: "6.40", tier: "Round 1", strengths: "Size, jump ball, red zone threat", comparison: "Ceiling: Plaxico Burress, Floor: JJ Arcega-Whiteside" },
+            { rank: 31, name: "Carson Schwesinger", position: "LB", school: "UCLA", height: "6'2\"", weight: 235, grade: "6.15", tier: "Round 2", strengths: "Production, instincts, tackling", comparison: "Ceiling: Blake Martinez, Floor: Ben Boulware" },
+            { rank: 32, name: "Malaki Starks", position: "S", school: "Georgia", height: "6'1\"", weight: 205, grade: "6.42", tier: "Round 1", strengths: "Versatility, coverage, instincts", comparison: "Ceiling: Minkah Fitzpatrick, Floor: Taylor Rapp" }
+        ];
+
+        // ==========================================
+        // POSITIONAL RANKINGS DATA
+        // ==========================================
+        const positionalRankings = {
+            QB: [
+                { rank: 1, name: "Fernando Mendoza", school: "Indiana", overallRank: 1, grade: 90.0, oneLineSummary: "Accurate thrower with excellent size and elite ball placement. Franchise QB material." },
+                { rank: 2, name: "Ty Simpson", school: "Alabama", overallRank: 19, grade: 88.0, oneLineSummary: "Sound mechanics and accuracy with quick feet but limited starting experience." },
+                { rank: 3, name: "Drew Allar", school: "Penn State", overallRank: 26, grade: 86.5, oneLineSummary: "Big-armed pocket passer with ideal size. Best fit in vertical passing system." },
+                { rank: 4, name: "Trinidad Chambliss", school: "Ole Miss", overallRank: 25, grade: 85.5, oneLineSummary: "Accurate with excellent leadership but size concerns for some scouts." },
+                { rank: 5, name: "Carson Beck", school: "Miami", overallRank: 47, grade: 84.0, oneLineSummary: "Physical tools have never been the question. Needs consistency." },
+                { rank: 6, name: "Cole Payton", school: "North Dakota State", overallRank: 50, grade: 83.5, oneLineSummary: "FCS standout with big arm and athleticism. Small school pedigree." },
+                { rank: 7, name: "Sawyer Robertson", school: "Baylor", overallRank: 52, grade: 82.5, oneLineSummary: "Clutch performer who thrives under pressure." },
+                { rank: 8, name: "Garrett Nussmeier", school: "LSU", overallRank: 48, grade: 83.0, oneLineSummary: "Quick-release operator with live arm. Creative playmaker." }
+            ],
+            RB: [
+                { rank: 1, name: "Jeremiyah Love", school: "Notre Dame", overallRank: 2, grade: 91.5, oneLineSummary: "Reggie Bush-like dynamo with vision, burst, and elite receiving ability." },
+                { rank: 2, name: "Jadarian Price", school: "Notre Dame", overallRank: 35, grade: 86.5, oneLineSummary: "Compact runner with terrific vision and elite kick return ability." },
+                { rank: 3, name: "Emmett Johnson", school: "Nebraska", overallRank: 27, grade: 85.0, oneLineSummary: "Special lateral agility with elite vision and patience." },
+                { rank: 4, name: "Jonah Coleman", school: "Washington", overallRank: 42, grade: 85.5, oneLineSummary: "Three-down back despite limited athleticism. Reliable in pass pro." },
+                { rank: 5, name: "Kaytron Allen", school: "Penn State", overallRank: 62, grade: 84.5, oneLineSummary: "Decisive downhill hammer who can punish defenses." },
+                { rank: 6, name: "Omarion Hampton", school: "North Carolina", overallRank: 55, grade: 84.0, oneLineSummary: "Complete three-down back with excellent vision." },
+                { rank: 7, name: "Nicholas Singleton", school: "Penn State", overallRank: 58, grade: 83.5, oneLineSummary: "Explosive blend of power and speed with home run potential." },
+                { rank: 8, name: "Kaleb Johnson", school: "Iowa", overallRank: 65, grade: 82.5, oneLineSummary: "Physical runner who can wear down defenses." }
+            ],
+            WR: [
+                { rank: 1, name: "Carnell Tate", school: "Ohio State", overallRank: 3, grade: 92.0, oneLineSummary: "Tall, long wideout who attacks leverage and tracks ball beautifully." },
+                { rank: 2, name: "Jordyn Tyson", school: "Arizona State", overallRank: 10, grade: 90.0, oneLineSummary: "Explosive receiver who wins on 50/50 balls. Uncoverable in red zone." },
+                { rank: 3, name: "Makai Lemon", school: "USC", overallRank: 11, grade: 89.5, oneLineSummary: "Warrior with RB body and elite slot ability." },
+                { rank: 4, name: "Zachariah Branch", school: "Georgia", overallRank: 22, grade: 87.0, oneLineSummary: "Lightning quick with track speed. Dynamic after catch." },
+                { rank: 5, name: "Denzel Boston", school: "Washington", overallRank: 23, grade: 86.5, oneLineSummary: "Big-framed wideout with exceptional ball skills." },
+                { rank: 6, name: "Jayden Higgins", school: "Iowa State", overallRank: 45, grade: 85.0, oneLineSummary: "Big-bodied target who can win contested catches." },
+                { rank: 7, name: "Luther Burden III", school: "Missouri", overallRank: 48, grade: 84.5, oneLineSummary: "Elite YAC ability with RB mentality after catch." },
+                { rank: 8, name: "Xavier Restrepo", school: "Miami", overallRank: 52, grade: 84.0, oneLineSummary: "Reliable slot with excellent route running." }
+            ],
+            TE: [
+                { rank: 1, name: "Kenyon Sadiq", school: "Oregon", overallRank: 29, grade: 88.0, oneLineSummary: "Versatile explosive weapon for modern NFL." },
+                { rank: 2, name: "Mason Taylor", school: "LSU", overallRank: 55, grade: 85.5, oneLineSummary: "Athletic move TE with receiving upside." },
+                { rank: 3, name: "Eli Stowers", school: "Vanderbilt", overallRank: 60, grade: 85.0, oneLineSummary: "Former QB with elite athleticism. Movable chess piece." },
+                { rank: 4, name: "Max Klare", school: "Ohio State", overallRank: 68, grade: 84.0, oneLineSummary: "Natural receiving gifts with blocking limitations." },
+                { rank: 5, name: "Joe Royer", school: "Cincinnati", overallRank: 70, grade: 83.5, oneLineSummary: "Matchup problem with natural receiving ability." },
+                { rank: 6, name: "Jack Endries", school: "Texas", overallRank: 75, grade: 83.0, oneLineSummary: "Fundamentally sound receiver who gets open." },
+                { rank: 7, name: "Justin Joly", school: "NC State", overallRank: 82, grade: 82.0, oneLineSummary: "Contested catch winner with possession traits." },
+                { rank: 8, name: "Michael Trigg", school: "Baylor", overallRank: 88, grade: 81.5, oneLineSummary: "Weapon between the numbers with mismatch size." }
+            ],
+            OT: [
+                { rank: 1, name: "Francis Mauigoa", school: "Miami", overallRank: 7, grade: 90.0, oneLineSummary: "True mauler who destroys pass rushers at POA." },
+                { rank: 2, name: "Spencer Fano", school: "Utah", overallRank: 12, grade: 89.0, oneLineSummary: "Technically sound with good punch. Ideal zone fit." },
+                { rank: 3, name: "Caleb Lomu", school: "Utah", overallRank: 20, grade: 87.5, oneLineSummary: "Agile bookend with franchise LT upside." },
+                { rank: 4, name: "Kadyn Proctor", school: "Alabama", overallRank: 45, grade: 85.0, oneLineSummary: "Rare combination of mass and movement." },
+                { rank: 5, name: "Aireontae Ersery", school: "Minnesota", overallRank: 48, grade: 84.5, oneLineSummary: "Raw but toolsy with high ceiling." },
+                { rank: 6, name: "JC Latham", school: "Wisconsin", overallRank: 55, grade: 84.0, oneLineSummary: "Massive frame with power but needs technique work." },
+                { rank: 7, name: "Monroe Freeling", school: "Georgia", overallRank: 50, grade: 84.5, oneLineSummary: "Ideal size and bend with starting LT ability." },
+                { rank: 8, name: "Gennings Dunker", school: "Iowa", overallRank: 62, grade: 83.0, oneLineSummary: "Raw power with grip strength and nastiness." }
+            ],
+            IOL: [
+                { rank: 1, name: "Olaivavega Ioane", school: "Penn State", overallRank: 17, grade: 88.5, oneLineSummary: "Dominant LG with strength and agility." },
+                { rank: 2, name: "Connor Lew", school: "Auburn", overallRank: 35, grade: 87.0, oneLineSummary: "Center with exceptional movement skills." },
+                { rank: 3, name: "Emmanuel Pregnon", school: "Oregon", overallRank: 42, grade: 86.0, oneLineSummary: "Day-one contributor with power and technique." },
+                { rank: 4, name: "Chase Bisontis", school: "Texas A&M", overallRank: 55, grade: 85.0, oneLineSummary: "Thick, powerful guard with run-blocking temperament." },
+                { rank: 5, name: "Donovan Jackson", school: "Ohio State", overallRank: 58, grade: 84.5, oneLineSummary: "Versatile interior presence with starter traits." },
+                { rank: 6, name: "Jake Slaughter", school: "Florida", overallRank: 48, grade: 85.5, oneLineSummary: "Center with blend of intellect and physicality." },
+                { rank: 7, name: "Matt Gulbin", school: "Michigan State", overallRank: 62, grade: 84.0, oneLineSummary: "Reliable interior presence with good awareness." },
+                { rank: 8, name: "Logan Jones", school: "Iowa", overallRank: 70, grade: 83.5, oneLineSummary: "Rare speed for position opens zone scheme possibilities." }
+            ],
+            EDGE: [
+                { rank: 1, name: "Rueben Bain Jr.", school: "Miami", overallRank: 5, grade: 93.0, oneLineSummary: "Thick, powerful edge with violent hands and non-stop motor." },
+                { rank: 2, name: "David Bailey", school: "Texas Tech", overallRank: 6, grade: 92.0, oneLineSummary: "Ultra-explosive with elite production and get-off." },
+                { rank: 3, name: "Akheem Mesidor", school: "Miami", overallRank: 13, grade: 89.5, oneLineSummary: "Ideal frame with relentless motor and power rush." },
+                { rank: 4, name: "Keldric Faulk", school: "Auburn", overallRank: 14, grade: 89.0, oneLineSummary: "Perfect 4-3 DE frame with powerful hands." },
+                { rank: 5, name: "TJ Parker", school: "Clemson", overallRank: 38, grade: 86.5, oneLineSummary: "Versatile rusher who can slide inside." },
+                { rank: 6, name: "Dani Dennis-Sutton", school: "Penn State", overallRank: 42, grade: 86.0, oneLineSummary: "Long, athletic edge with elite burst and bend." },
+                { rank: 7, name: "Landon Jackson", school: "Arkansas", overallRank: 55, grade: 85.0, oneLineSummary: "Length and power with run defense ability." },
+                { rank: 8, name: "Jack Sawyer", school: "Ohio State", overallRank: 62, grade: 84.0, oneLineSummary: "High-motor rusher with technique and power." }
+            ],
+            DL: [
+                { rank: 1, name: "Peter Woods", school: "Clemson", overallRank: 15, grade: 87.5, oneLineSummary: "First-step quickness with scheme versatility." },
+                { rank: 2, name: "Kayden McDonald", school: "Ohio State", overallRank: 18, grade: 87.0, oneLineSummary: "Big Ten DL of the Year with strength and quickness." },
+                { rank: 3, name: "Deone Walker", school: "Kentucky", overallRank: 45, grade: 85.0, oneLineSummary: "Massive run-stuffer who demands double teams." },
+                { rank: 4, name: "Tyleik Williams", school: "Ohio State", overallRank: 48, grade: 84.5, oneLineSummary: "Disruptive 3-technique with violent hands." },
+                { rank: 5, name: "Kenneth Grant", school: "Michigan", overallRank: 55, grade: 84.0, oneLineSummary: "Massive nose tackle who occupies blockers." },
+                { rank: 6, name: "Caleb Banks", school: "Florida", overallRank: 58, grade: 83.5, oneLineSummary: "Tall, long athlete with twitch in hands." },
+                { rank: 7, name: "Shemar Stewart", school: "Texas A&M", overallRank: 62, grade: 83.0, oneLineSummary: "Athletic freak with rare traits but raw." },
+                { rank: 8, name: "Darrell Jackson Jr.", school: "Florida State", overallRank: 68, grade: 82.5, oneLineSummary: "Massive NT with two-gap ability." }
+            ],
+            LB: [
+                { rank: 1, name: "Arvell Reese", school: "Ohio State", overallRank: 4, grade: 92.0, oneLineSummary: "Complete player with elite burst and pass-rush ability." },
+                { rank: 2, name: "Sonny Styles", school: "Ohio State", overallRank: 8, grade: 90.0, oneLineSummary: "Former safety with LB size and elite speed." },
+                { rank: 3, name: "CJ Allen", school: "Georgia", overallRank: 21, grade: 87.0, oneLineSummary: "Three-down LB with excellent read-react skills." },
+                { rank: 4, name: "Jihaad Campbell", school: "Alabama", overallRank: 50, grade: 86.0, oneLineSummary: "Modern LB built for speed and versatility." },
+                { rank: 5, name: "Anthony Hill Jr.", school: "Texas", overallRank: 52, grade: 85.5, oneLineSummary: "Downhill thumper with sideline-to-sideline range." },
+                { rank: 6, name: "Jake Golday", school: "Cincinnati", overallRank: 55, grade: 85.0, oneLineSummary: "Speed-based LB with fantastic lateral range." },
+                { rank: 7, name: "Josiah Trotter", school: "Missouri", overallRank: 62, grade: 84.0, oneLineSummary: "Physical downhill linebacker who fills gaps." },
+                { rank: 8, name: "Taurean York", school: "Texas A&M", overallRank: 65, grade: 83.5, oneLineSummary: "Elite tackling technique and run defense instincts." }
+            ],
+            CB: [
+                { rank: 1, name: "Jermod McCoy", school: "Tennessee", overallRank: 16, grade: 89.0, oneLineSummary: "Scheme versatile with ball-hawking traits." },
+                { rank: 2, name: "Mansoor Delane", school: "Virginia Tech", overallRank: 24, grade: 88.0, oneLineSummary: "Most instinctive CB in class with elite ball skills." },
+                { rank: 3, name: "Avieon Terrell", school: "Clemson", overallRank: 32, grade: 87.0, oneLineSummary: "Elite ball skills and fluid athleticism." },
+                { rank: 4, name: "Daylen Everette", school: "Georgia", overallRank: 45, grade: 85.5, oneLineSummary: "Technique, experience, and physicality." },
+                { rank: 5, name: "Colton Hood", school: "Tennessee", overallRank: 48, grade: 85.0, oneLineSummary: "Complete player with 4.4 speed and production." },
+                { rank: 6, name: "Maxwell Hairston", school: "Kentucky", overallRank: 52, grade: 84.5, oneLineSummary: "Physical press corner with elite speed." },
+                { rank: 7, name: "Brandon Cisse", school: "South Carolina", overallRank: 58, grade: 84.0, oneLineSummary: "Twitchy cover corner with elite 4.35 speed." },
+                { rank: 8, name: "Tacario Davis", school: "Arizona", overallRank: 62, grade: 83.5, oneLineSummary: "Size, length, and press coverage ability." }
+            ],
+            S: [
+                { rank: 1, name: "Caleb Downs", school: "Ohio State", overallRank: 9, grade: 92.0, oneLineSummary: "Defensive coordinator on the field with elite instincts." },
+                { rank: 2, name: "Malaki Starks", school: "Georgia", overallRank: 32, grade: 87.5, oneLineSummary: "Versatile playmaker who can play free or box." },
+                { rank: 3, name: "Dillon Thieneman", school: "Oregon", overallRank: 28, grade: 87.0, oneLineSummary: "Tall, long safety with fantastic production." },
+                { rank: 4, name: "Kevin Winston Jr.", school: "Penn State", overallRank: 55, grade: 85.0, oneLineSummary: "Physical box safety with good instincts." },
+                { rank: 5, name: "Kamari Ramsey", school: "USC", overallRank: 58, grade: 84.5, oneLineSummary: "Coverage instincts border on exceptional." },
+                { rank: 6, name: "Rod Moore", school: "Michigan", overallRank: 62, grade: 84.0, oneLineSummary: "Versatile safety with coverage ability." },
+                { rank: 7, name: "Kyle Louis", school: "Pitt", overallRank: 65, grade: 83.5, oneLineSummary: "Physical box safety who plays fast." },
+                { rank: 8, name: "Zakee Wheatley", school: "Penn State", overallRank: 68, grade: 83.0, oneLineSummary: "Elite 4.40 speed with range to erase mistakes." }
+            ]
+        };
 
         // ==========================================
         // GRINDING THE MOCKS - EXPECTED DRAFT POSITION DATA
@@ -5935,6 +6417,123 @@ le"></i> Areas to Improve</h4>
                     </div>
                 `;
             }).join('');
+        }
+
+        // ==========================================
+        // BIG BOARD FUNCTIONS
+        // ==========================================
+        
+        let bigBoardTierFilter = 'all';
+        let bigBoardPositionFilter = 'all';
+        
+        function renderBigBoard() {
+            const container = document.getElementById('bigBoardList');
+            if (!container) return;
+            
+            let filtered = bigBoardData.filter(player => {
+                const matchesTier = bigBoardTierFilter === 'all' || player.tier === bigBoardTierFilter;
+                const matchesPosition = bigBoardPositionFilter === 'all' || player.position === bigBoardPositionFilter;
+                return matchesTier && matchesPosition;
+            });
+            
+            document.getElementById('bigBoardCount').textContent = `Showing ${filtered.length} prospects`;
+            
+            container.innerHTML = filtered.map(player => {
+                const tierClass = player.tier === 'Elite' ? 'elite-tier' : 
+                                 player.tier === 'Round 1' ? 'round1-tier' :
+                                 player.tier === 'Round 2' ? 'round2-tier' : 'round3-tier';
+                const gradeClass = player.tier === 'Elite' ? 'elite' : 
+                                  player.tier === 'Round 1' ? 'round1' :
+                                  player.tier === 'Round 2' ? 'round2' : 'round3';
+                const tierLabel = player.tier === 'Elite' ? 'ELITE' : player.tier.toUpperCase();
+                
+                return `
+                    <div class="big-board-item ${tierClass}">
+                        <div class="bb-rank">${player.rank}</div>
+                        <div class="bb-player-info">
+                            <span class="bb-player-name">${player.name}</span>
+                            <span class="bb-player-meta">${player.school} | ${player.height} | ${player.weight} lbs</span>
+                            <span style="font-size: 0.75rem; color: var(--text-secondary); font-style: italic;">${player.strengths}</span>
+                        </div>
+                        <div class="bb-position">${player.position}</div>
+                        <div class="bb-grade ${gradeClass}">${player.grade}</div>
+                        <div class="bb-tier ${gradeClass}">${tierLabel}</div>
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        function filterBigBoard(tier) {
+            bigBoardTierFilter = tier;
+            
+            // Update active button
+            document.querySelectorAll('#bigBoard .edp-toggle-btn').forEach(btn => {
+                if (btn.textContent === tier || (tier === 'all' && btn.textContent === 'All')) {
+                    btn.classList.add('active');
+                } else if (['All', 'Elite', 'Round 1', 'Round 2', 'Round 3'].includes(btn.textContent)) {
+                    btn.classList.remove('active');
+                }
+            });
+            
+            renderBigBoard();
+            showToast(`Filtered by tier: ${tier === 'all' ? 'All Tiers' : tier}`);
+        }
+        
+        function filterBigBoardByPosition(position) {
+            bigBoardPositionFilter = position;
+            
+            // Update active button
+            const positionButtons = document.querySelectorAll('#bigBoard .edp-toggle-btn');
+            positionButtons.forEach(btn => {
+                const btnPos = btn.getAttribute('onclick');
+                if (btnPos && btnPos.includes(`filterBigBoardByPosition('${position}')`)) {
+                    btn.classList.add('active');
+                } else if (btnPos && btnPos.includes('filterBigBoardByPosition')) {
+                    btn.classList.remove('active');
+                }
+            });
+            
+            renderBigBoard();
+            showToast(`Filtered by position: ${position === 'all' ? 'All Positions' : position}`);
+        }
+        
+        // ==========================================
+        // POSITIONAL RANKINGS FUNCTIONS
+        // ==========================================
+        
+        function showPositionalRankings(position) {
+            const display = document.getElementById('positionalRankingsDisplay');
+            const title = document.getElementById('positionalRankingsTitle');
+            const list = document.getElementById('positionalRankingsList');
+            
+            if (!display || !title || !list) return;
+            
+            const rankings = positionalRankings[position];
+            if (!rankings) return;
+            
+            title.textContent = `${position} Rankings`;
+            
+            list.innerHTML = rankings.map(player => `
+                <div class="pos-rank-item">
+                    <div class="pos-rank-num">${player.rank}</div>
+                    <div class="pos-player-info">
+                        <span class="pos-player-name">${player.name}</span>
+                        <span class="pos-player-school">${player.school} | Overall Rank: #${player.overallRank}</span>
+                    </div>
+                    <div class="pos-grade">${player.grade}</div>
+                    <div class="pos-summary">${player.oneLineSummary}</div>
+                </div>
+            `).join('');
+            
+            display.style.display = 'block';
+            display.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function hidePositionalRankings() {
+            const display = document.getElementById('positionalRankingsDisplay');
+            if (display) {
+                display.style.display = 'none';
+            }
         }
 
         // Initialize custom draft
