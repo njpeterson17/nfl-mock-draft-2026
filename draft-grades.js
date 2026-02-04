@@ -2,40 +2,45 @@
 // DRAFT GRADES SYSTEM FOR 2026 NFL MOCK DRAFT
 // ============================================
 
-// Team needs data (based on need badges in HTML)
+// Team needs data (based on need badges in HTML) - Updated post-mock analysis
 const teamNeedsData = {
-    'Raiders': { high: ['QB', 'EDGE', 'WR'], medium: ['DL', 'CB'], low: ['LB'] },
-    'Jets': { high: ['QB', 'OL', 'WR'], medium: ['CB', 'EDGE'], low: ['RB'] },
-    'Cardinals': { high: ['OT', 'DL', 'EDGE'], medium: ['CB', 'S'], low: ['RB'] },
-    'Titans': { high: ['WR', 'CB'], medium: ['EDGE', 'LB'], low: ['DL'] },
-    'Giants': { high: ['Interior DL', 'CB', 'EDGE'], medium: ['QB', 'WR'], low: ['LB'] },
-    'Browns': { high: ['QB', 'CB'], medium: ['WR', 'OT', 'S'], low: ['DL'] },
-    'Commanders': { high: ['DE', 'CB', 'DL'], medium: ['LB', 'S'], low: ['RB'] },
-    'Saints': { high: ['WR', 'OT'], medium: ['CB', 'EDGE'], low: ['DL'] },
-    'Chiefs': { high: ['Pass rusher', 'Interior DL'], medium: ['WR', 'CB'], low: ['RB'] },
-    'Bengals': { high: ['Interior DL', 'EDGE'], medium: ['OT', 'LB', 'CB'], low: ['RB'] },
-    'Dolphins': { high: ['QB'], medium: ['EDGE', 'CB', 'DL'], low: ['LB'] },
-    'Cowboys': { high: ['Defense (not DT)', 'S'], medium: ['WR', 'RB', 'LB', 'EDGE'], low: ['DL'] },
-    'Rams': { high: ['QB'], medium: ['EDGE', 'OL', 'S'], low: ['DL'] },
-    'Ravens': { high: ['Pass rusher'], medium: ['DL', 'WR', 'CB'], low: ['RB'] },
-    'Buccaneers': { high: ['LB'], medium: ['EDGE', 'S'], low: ['WR'] },
-    'Lions': { high: ['Interior OL'], medium: ['CB', 'S'], low: ['RB'] },
-    'Vikings': { high: ['Center'], medium: ['CB', 'WR'], low: ['DL'] },
-    'Panthers': { high: ['EDGE'], medium: ['WR', 'S'], low: ['DL'] },
-    'Steelers': { high: ['QB'], medium: ['WR', 'OL'], low: ['DL'] },
-    'Chargers': { high: ['Center'], medium: ['DL', 'LB'], low: ['CB'] },
-    'Eagles': { high: ['OL'], medium: ['CB', 'TE'], low: ['DL'] },
-    'Bears': { high: ['EDGE'], medium: ['DL', 'OL'], low: ['CB'] },
-    'Bills': { high: ['WR'], medium: ['LB', 'S'], low: ['DL'] },
-    '49ers': { high: ['Pass rusher'], medium: ['WR', 'CB'], low: ['DL'] },
-    'Texans': { high: ['RB'], medium: ['OL', 'CB'], low: ['DL'] },
-    'Broncos': { high: ['ILB'], medium: ['OL', 'WR'], low: ['DL'] },
-    'Patriots': { high: ['WR', 'DL', 'CB'], medium: ['OL', 'EDGE'], low: ['RB'] },
-    'Seahawks': { high: ['OL', 'EDGE', 'CB'], medium: ['DL', 'WR'], low: ['RB'] },
-    'Colts': { high: ['EDGE', 'DL'], medium: ['CB', 'S'], low: ['RB'] },
-    'Falcons': { high: ['EDGE', 'DL'], medium: ['CB', 'LB'], low: ['RB'] },
-    'Packers': { high: ['WR', 'DL'], medium: ['CB', 'EDGE'], low: ['RB'] },
-    'Jaguars': { high: ['RB', 'WR', 'DL'], medium: ['CB', 'EDGE'], low: ['LB'] }
+    // Teams that addressed QB in Round 1 - QB need removed
+    'Raiders': { high: ['EDGE', 'WR', 'OL'], medium: ['DL', 'CB'], low: ['LB'] },
+    'Jets': { high: ['OL', 'WR', 'RB'], medium: ['CB', 'EDGE'], low: ['DL'] },
+    'Browns': { high: ['CB', 'WR', 'S'], medium: ['OT', 'DL'], low: ['RB'] },
+    'Dolphins': { high: ['IOL', 'EDGE', 'CB'], medium: ['DL', 'LB'], low: ['RB'] },
+    'Steelers': { high: ['IOL', 'WR', 'CB'], medium: ['EDGE', 'DL'], low: ['RB'] },
+    'Rams': { high: ['DL', 'EDGE', 'OL'], medium: ['CB', 'S'], low: ['RB'] },
+    
+    // Teams with multiple first-rounders
+    'Cowboys': { high: ['DL', 'LB', 'WR'], medium: ['RB', 'EDGE'], low: ['QB'] },
+    
+    // Teams that addressed primary needs
+    'Cardinals': { high: ['DL', 'CB', 'S'], medium: ['EDGE', 'WR'], low: ['RB'] },
+    'Titans': { high: ['CB', 'EDGE', 'OL'], medium: ['LB', 'DL'], low: ['RB'] },
+    'Giants': { high: ['CB', 'WR', 'QB'], medium: ['EDGE', 'S'], low: ['RB'] },
+    'Commanders': { high: ['CB', 'DL', 'S'], medium: ['LB', 'OT'], low: ['RB'] },
+    'Saints': { high: ['OT', 'CB', 'EDGE'], medium: ['DL', 'S'], low: ['RB'] },
+    'Chiefs': { high: ['Interior DL', 'WR', 'CB'], medium: ['OT', 'S'], low: ['RB'] },
+    'Bengals': { high: ['EDGE', 'OT', 'LB'], medium: ['CB', 'S'], low: ['RB'] },
+    'Ravens': { high: ['CB', 'WR', 'S'], medium: ['DL', 'OT'], low: ['RB'] },
+    'Buccaneers': { high: ['EDGE', 'S', 'DL'], medium: ['CB', 'WR'], low: ['QB'] },
+    'Lions': { high: ['CB', 'S', 'EDGE'], medium: ['WR', 'DL'], low: ['QB'] },
+    'Vikings': { high: ['WR', 'CB', 'EDGE'], medium: ['DL', 'S'], low: ['RB'] },
+    'Panthers': { high: ['TE', 'S', 'WR'], medium: ['DL', 'CB'], low: ['QB'] },
+    'Chargers': { high: ['DL', 'LB', 'CB'], medium: ['WR', 'EDGE'], low: ['RB'] },
+    'Eagles': { high: ['CB', 'OT', 'LB'], medium: ['S', 'EDGE'], low: ['RB'] },
+    'Bears': { high: ['DL', 'IOL', 'WR'], medium: ['CB', 'S'], low: ['TE'] },
+    'Bills': { high: ['S', 'DL', 'CB'], medium: ['EDGE', 'OT'], low: ['RB'] },
+    '49ers': { high: ['CB', 'IOL', 'WR'], medium: ['S', 'DL'], low: ['QB'] },
+    'Texans': { high: ['OL', 'CB', 'EDGE'], medium: ['DL', 'S'], low: ['QB'] },
+    'Broncos': { high: ['OT', 'IOL', 'ILB'], medium: ['EDGE', 'S'], low: ['QB'] },
+    'Patriots': { high: ['DL', 'CB', 'EDGE'], medium: ['OT', 'S'], low: ['RB'] },
+    'Seahawks': { high: ['IOL', 'EDGE', 'CB'], medium: ['DL', 'WR'], low: ['RB'] },
+    'Colts': { high: ['CB', 'S', 'WR'], medium: ['DL', 'EDGE'], low: ['RB'] },
+    'Falcons': { high: ['CB', 'DL', 'EDGE'], medium: ['S', 'WR'], low: ['QB'] },
+    'Packers': { high: ['DL', 'CB', 'EDGE'], medium: ['S', 'LB'], low: ['QB'] },
+    'Jaguars': { high: ['CB', 'EDGE', 'S'], medium: ['DL', 'OL'], low: ['TE'] }
 };
 
 // Positional value multipliers

@@ -23,11 +23,38 @@ A complete 3-round NFL mock draft for the 2026 season with detailed player analy
 
 | Pick | Team | Player | Position | School |
 |------|------|--------|----------|--------|
-| 1 | Giants | Julian Lewis | QB | Colorado |
-| 2 | Patriots | Will Campbell | OT | LSU |
-| 3 | Jaguars | Travis Hunter | CB/WR | Colorado |
-| 4 | Browns | Abdul Carter | EDGE | Penn State |
-| 5 | Titans | Mason Graham | DL | Michigan |
+| 1 | Raiders | Fernando Mendoza | QB | Indiana |
+| 2 | Jets | Ty Simpson | QB | Alabama |
+| 3 | Cardinals | Francis Mauigoa | OT | Miami |
+| 4 | Titans | Carnell Tate | WR | Ohio State |
+| 5 | Giants | Peter Woods | DL | Clemson |
+| 6 | Browns | Trinidad Chambliss | CB | Ohio State |
+| 7 | Commanders | Rueben Bain Jr. | DL | Miami |
+| 8 | Saints | Jordyn Tyson | WR | Arizona State |
+| 9 | Chiefs | David Bailey | EDGE | Texas Tech |
+| 10 | Bengals | Kayden McDonald | DL | Ohio State |
+| 11 | Dolphins | Cole Payton | QB | North Dakota State |
+| 12 | Cowboys | Jermod McCoy | CB | Tennessee |
+| 13 | Rams | Drew Allar | QB | Penn State |
+| 14 | Ravens | Akheem Mesidor | EDGE | Miami |
+| 15 | Buccaneers | Arvell Reese | LB | Ohio State |
+| 16 | Jets | Makai Lemon | WR | USC |
+| 17 | Lions | Olaivavega Ioane | IOL | Penn State |
+| 18 | Vikings | Caleb Lomu | EDGE | Utah |
+| 19 | Panthers | Keldric Faulk | EDGE | Auburn |
+| 20 | Cowboys | Caleb Downs | S | Ohio State |
+| 21 | Steelers | Carson Beck | QB | Georgia |
+| 22 | Chargers | Spencer Fano | OT | Utah |
+| 23 | Eagles | Kenyon Sadiq | TE | Boise State |
+| 24 | Browns | Mansoor Delane | CB | Ohio State |
+| 25 | Bears | Sonny Styles | LB | Ohio State |
+| 26 | Bills | Denzel Boston | WR | Washington |
+| 27 | 49ers | CJ Allen | LB | Georgia |
+| 28 | Texans | Jeremiyah Love | RB | Notre Dame |
+| 29 | Rams | Dillon Thieneman | S | Purdue |
+| 30 | Broncos | Zachariah Branch | WR/RB | USC |
+| 31 | Patriots | *Super Bowl LX Runner-Up* | - | - |
+| 32 | Seahawks | 🏆 Super Bowl LX Champions | - | - |
 
 ## 🚀 Getting Started
 
