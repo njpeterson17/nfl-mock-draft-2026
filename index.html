@@ -1084,20 +1084,20 @@
     <div class="controls-bar">
         <div class="control-group">
             <span class="control-label">Filter by Position:</span>
-            <button class="filter-btn active" onclick="filterPicks('all')">All</button>
-            <button class="filter-btn" onclick="filterPicks('QB')">QB</button>
-            <button class="filter-btn" onclick="filterPicks('RB')">RB</button>
-            <button class="filter-btn" onclick="filterPicks('WR')">WR</button>
-            <button class="filter-btn" onclick="filterPicks('TE')">TE</button>
-            <button class="filter-btn" onclick="filterPicks('OT')">OT</button>
-            <button class="filter-btn" onclick="filterPicks('EDGE')">EDGE</button>
-            <button class="filter-btn" onclick="filterPicks('DL')">DL</button>
-            <button class="filter-btn" onclick="filterPicks('CB')">CB</button>
+            <button class="filter-btn active" onclick="filterAllPicks('all')">All</button>
+            <button class="filter-btn" onclick="filterAllPicks('QB')">QB</button>
+            <button class="filter-btn" onclick="filterAllPicks('RB')">RB</button>
+            <button class="filter-btn" onclick="filterAllPicks('WR')">WR</button>
+            <button class="filter-btn" onclick="filterAllPicks('TE')">TE</button>
+            <button class="filter-btn" onclick="filterAllPicks('OT')">OT</button>
+            <button class="filter-btn" onclick="filterAllPicks('EDGE')">EDGE</button>
+            <button class="filter-btn" onclick="filterAllPicks('DL')">DL</button>
+            <button class="filter-btn" onclick="filterAllPicks('CB')">CB</button>
         </div>
         <div class="control-group">
             <div class="search-box">
                 <i class="fas fa-search"></i>
-                <input type="text" id="searchInput" placeholder="Search players or teams..." onkeyup="searchPicks()">
+                <input type="text" id="searchInput" placeholder="Search players or teams..." onkeyup="searchAllPicks()">
             </div>
         </div>
     </div>
@@ -2840,85 +2840,1745 @@
             </div>
         </div>
 
-        <!-- ROUND 2 -->
-        <div id="round2" class="tab-content">
-            <h2 class="round-title">Round <span>2</span> - Best Available</h2>
-            <div class="quick-picks-grid">
-                <div class="quick-pick-card" style="animation-delay: 0.05s">
-                    <span class="quick-pick-number">33</span>
-                    <svg class="quick-pick-helmet" viewBox="0 0 100 70">
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#001E62" stroke="#A71930" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="16" font-weight="bold">NYG</text>
-                    </svg>
-                    <div class="quick-pick-info">
-                        <div class="quick-pick-team">New York Giants</div>
-                        <div class="quick-pick-player">Trinidad Chambliss</div>
-                        <span class="quick-pick-position">QB • Ole Miss</span>
+        <!-- ROUND 2 - FULL DETAILED PICKS -->
+<div id="round2" class="tab-content">
+    <h2 class="round-title">Round <span>2</span> - Best Available</h2>
+    
+    <div class="stats-bar">
+        <div class="stat-item">
+            <div class="stat-item-value" id="r2qbCount">0</div>
+            <div class="stat-item-label">QBs</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-item-value" id="r2rbCount">0</div>
+            <div class="stat-item-label">RBs</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-item-value" id="r2wrCount">0</div>
+            <div class="stat-item-label">WRs</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-item-value" id="r2olCount">0</div>
+            <div class="stat-item-label">OL</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-item-value" id="r2dlCount">0</div>
+            <div class="stat-item-label">DL</div>
+        </div>
+    </div>
+
+    <div id="round2Picks">
+        <!-- Pick 33: Giants -->
+        <div class="pick-card" data-position="CB" data-team="Giants" data-player="Daylen Everette" style="animation-delay: 0.05s">
+            <div class="pick-header">
+                <span class="pick-number">33</span>
+                <svg class="team-helmet" viewBox="0 0 100 70">
+                    <ellipse cx="50" cy="35" rx="48" ry="32" fill="#001E62" stroke="#A71930" stroke-width="3"/>
+                    <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">NYG</text>
+                </svg>
+                <div class="team-details">
+                    <h3>New York Giants</h3>
+                    <span class="team-record">4-13 | #33 Overall</span>
+                    <div class="team-needs">
+                        <span class="need-badge need-high">CB</span>
+                        <span class="need-badge need-high">EDGE</span>
+                        <span class="need-badge need-medium">WR</span>
                     </div>
                 </div>
-
-                <div class="quick-pick-card" style="animation-delay: 0.1s">
-                    <span class="quick-pick-number">34</span>
-                    <svg class="quick-pick-helmet" viewBox="0 0 100 70">
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#002244" stroke="#C60C30" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="16" font-weight="bold">NE</text>
-                    </svg>
-                    <div class="quick-pick-info">
-                        <div class="quick-pick-team">New England Patriots</div>
-                        <div class="quick-pick-player">Luther Burden III</div>
-                        <span class="quick-pick-position">WR • Missouri</span>
+            </div>
+            <div class="pick-content">
+                <div class="player-main">
+                    <div class="player-photo"><img src="images/players/daylen-everette.jpg" alt="Daylen Everette" onerror="this.src='images/players/placeholder.jpg'"></div>
+                    <div class="player-info">
+                        <h2>Daylen Everette</h2>
+                        <span class="player-position">CB</span>
+                        <span class="player-school">Georgia</span>
+                        <div class="player-stats">
+                            <div class="stat-box"><div class="stat-value">6'1"</div><div class="stat-label">Height</div></div>
+                            <div class="stat-box"><div class="stat-value">195</div><div class="stat-label">Weight</div></div>
+                            <div class="stat-box"><div class="stat-value">4.40</div><div class="stat-label">40-Yard</div></div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn twitter" onclick="sharePick('Giants', 'Daylen Everette', 33)"><i class="fab fa-twitter"></i> Tweet</button>
+                            <button class="share-btn copy" onclick="copyPickLink(33)"><i class="fas fa-link"></i> Copy Link</button>
+                        </div>
                     </div>
                 </div>
-
-                <div class="quick-pick-card" style="animation-delay: 0.15s">
-                    <span class="quick-pick-number">35</span>
-                    <svg class="quick-pick-helmet" viewBox="0 0 100 70">
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#006778" stroke="#D7A22A" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="#D7A22A" font-size="16" font-weight="bold">JAX</text>
-                    </svg>
-                    <div class="quick-pick-info">
-                        <div class="quick-pick-team">Jacksonville Jaguars</div>
-                        <div class="quick-pick-player">Kaleb Johnson</div>
-                        <span class="quick-pick-position">RB • Iowa</span>
-                    </div>
-                </div>
-
-                <div class="quick-pick-card" style="animation-delay: 0.2s">
-                    <span class="quick-pick-number">36</span>
-                    <svg class="quick-pick-helmet" viewBox="0 0 100 70">
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#311D00" stroke="#FF3C00" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="16" font-weight="bold">CLE</text>
-                    </svg>
-                    <div class="quick-pick-info">
-                        <div class="quick-pick-team">Cleveland Browns</div>
-                        <div class="quick-pick-player">Cole Payton</div>
-                        <span class="quick-pick-position">QB • North Dakota State</span>
-                    </div>
-                </div>
-
-                <div class="quick-pick-card" style="animation-delay: 0.25s">
-                    <span class="quick-pick-number">37</span>
-                    <svg class="quick-pick-helmet" viewBox="0 0 100 70">
-                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="#0C2340" stroke="#4C8FB6" stroke-width="3"/>
-                        <text x="50" y="42" text-anchor="middle" fill="#4C8FB6" font-size="16" font-weight="bold">TEN</text>
-                    </svg>
-                    <div class="quick-pick-info">
-                        <div class="quick-pick-team">Tennessee Titans</div>
-                        <div class="quick-pick-player">Burden III</div>
-                        <span class="quick-pick-position">WR • Missouri</span>
-                    </div>
-                </div>
-
-                <div class="quick-pick-card" style="animation-delay: 0.3s">
-                    <span class="quick-pick-number">38-64</span>
-                    <div class="quick-pick-info">
-                        <div class="quick-pick-team">Complete Round 2</div>
-                        <div class="quick-pick-player">32 Total Picks</div>
-                        <span class="quick-pick-position">View full draft</span>
+                <div class="breakdown-section">
+                    <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                    <p class="breakdown-content">The Giants need secondary help after allowing the 5th-most passing yards in 2025. <strong>Everette is a physical press-man corner</strong> from Georgia's DBU pipeline with elite speed and ball skills. He can start opposite Deonte Banks and give NYG a formidable young cornerback duo.</p>
+                    <div class="strengths-weaknesses">
+                        <div class="sw-section strengths">
+                            <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                            <ul><li>Elite speed and recovery ability (4.40)</li><li>Physical press-man specialist</li><li>Georgia DBU pedigree and coaching</li><li>Excellent ball skills and timing</li></ul>
+                        </div>
+                        <div class="sw-section weaknesses">
+                            <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
+                            <ul><li>Zone coverage consistency</li><li>Can be grabby downfield at times</li><li>Tackle technique in open field</li></ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Pick 34: Patriots -->
+        <div class="pick-card" data-position="WR" data-team="Patriots" data-player="Luther Burden III" style="animation-delay: 0.1s">
+            <div class="pick-header">
+                <span class="pick-number">34</span>
+                <svg class="team-helmet" viewBox="0 0 100 70">
+                    <ellipse cx="50" cy="35" rx="48" ry="32" fill="#002244" stroke="#C60C30" stroke-width="3"/>
+                    <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">NE</text>
+                </svg>
+                <div class="team-details">
+                    <h3>New England Patriots</h3>
+                    <span class="team-record">14-3 | #34 Overall</span>
+                    <div class="team-needs">
+                        <span class="need-badge need-high">WR</span>
+                        <span class="need-badge need-medium">DL</span>
+                        <span class="need-badge need-medium">CB</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-content">
+                <div class="player-main">
+                    <div class="player-photo"><img src="images/players/luther-burden-iii.jpg" alt="Luther Burden III" onerror="this.src='images/players/placeholder.jpg'"></div>
+                    <div class="player-info">
+                        <h2>Luther Burden III</h2>
+                        <span class="player-position">WR</span>
+                        <span class="player-school">Missouri</span>
+                        <div class="player-stats">
+                            <div class="stat-box"><div class="stat-value">5'11"</div><div class="stat-label">Height</div></div>
+                            <div class="stat-box"><div class="stat-value">205</div><div class="stat-label">Weight</div></div>
+                            <div class="stat-box"><div class="stat-value">4.38</div><div class="stat-label">40-Yard</div></div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn twitter" onclick="sharePick('Patriots', 'Luther Burden III', 34)"><i class="fab fa-twitter"></i> Tweet</button>
+                            <button class="share-btn copy" onclick="copyPickLink(34)"><i class="fas fa-link"></i> Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="breakdown-section">
+                    <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                    <p class="breakdown-content">New England needs playmakers for Drake Maye. <strong>Burden is Mel Kiper's #4 overall prospect</strong> - an explosive receiver with 4.38 speed who can take the top off defenses. Averaged 15.2 yards per catch at Missouri and creates massive separation with his route running.</p>
+                    <div class="strengths-weaknesses">
+                        <div class="sw-section strengths">
+                            <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                            <ul><li>Elite speed and acceleration (4.38)</li><li>Explosive playmaker after the catch</li><li>Sharp route runner who creates separation</li><li>Big play ability and YAC threat</li></ul>
+                        </div>
+                        <div class="sw-section weaknesses">
+                            <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
+                            <ul><li>Below-average height (5'11")</li><li>Contested catch consistency</li><li>Needs to improve press release</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pick 35: Jaguars -->
+        <div class="pick-card" data-position="RB" data-team="Jaguars" data-player="Kaleb Johnson" style="animation-delay: 0.15s">
+            <div class="pick-header">
+                <span class="pick-number">35</span>
+                <svg class="team-helmet" viewBox="0 0 100 70">
+                    <ellipse cx="50" cy="35" rx="48" ry="32" fill="#006778" stroke="#D7A22A" stroke-width="3"/>
+                    <text x="50" y="42" text-anchor="middle" fill="#D7A22A" font-size="18" font-weight="bold" font-family="Arial">JAX</text>
+                </svg>
+                <div class="team-details">
+                    <h3>Jacksonville Jaguars</h3>
+                    <span class="team-record">13-4 | #35 Overall</span>
+                    <div class="team-needs">
+                        <span class="need-badge need-high">RB</span>
+                        <span class="need-badge need-medium">WR</span>
+                        <span class="need-badge need-medium">DL</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-content">
+                <div class="player-main">
+                    <div class="player-photo"><img src="images/players/kaleb-johnson.jpg" alt="Kaleb Johnson" onerror="this.src='images/players/placeholder.jpg'"></div>
+                    <div class="player-info">
+                        <h2>Kaleb Johnson</h2>
+                        <span class="player-position">RB</span>
+                        <span class="player-school">Iowa</span>
+                        <div class="player-stats">
+                            <div class="stat-box"><div class="stat-value">6'0"</div><div class="stat-label">Height</div></div>
+                            <div class="stat-box"><div class="stat-value">225</div><div class="stat-label">Weight</div></div>
+                            <div class="stat-box"><div class="stat-value">4.48</div><div class="stat-label">40-Yard</div></div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn twitter" onclick="sharePick('Jaguars', 'Kaleb Johnson', 35)"><i class="fab fa-twitter"></i> Tweet</button>
+                            <button class="share-btn copy" onclick="copyPickLink(35)"><i class="fas fa-link"></i> Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="breakdown-section">
+                    <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                    <p class="breakdown-content">Travis Etienne Jr.'s contract situation makes RB a priority. <strong>Johnson is the #1 RB on Kiper's board</strong> - a powerful runner at 6'0" 225 with surprising speed (4.48). Rushed for 1,537 yards and 21 TDs at Iowa. Perfect complement to Trevor Lawrence's offense.</p>
+                    <div class="strengths-weaknesses">
+                        <div class="sw-section strengths">
+                            <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                            <ul><li>Powerful runner with excellent contact balance</li><li>Great size/speed combo for position</li><li>Vision and patience behind line</li><li>Three-down ability with receiving skills</li></ul>
+                        </div>
+                        <div class="sw-section weaknesses">
+                            <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
+                            <ul><li>Lacks elite burst through holes</li><li>Pass protection technique</li><li>Not a home-run threat on every touch</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pick 36: Titans -->
+        <div class="pick-card" data-position="WR" data-team="Titans" data-player="Tacario Davis" style="animation-delay: 0.2s">
+            <div class="pick-header">
+                <span class="pick-number">36</span>
+                <svg class="team-helmet" viewBox="0 0 100 70">
+                    <ellipse cx="50" cy="35" rx="48" ry="32" fill="#0C2340" stroke="#4C8FB6" stroke-width="3"/>
+                    <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">TEN</text>
+                </svg>
+                <div class="team-details">
+                    <h3>Tennessee Titans</h3>
+                    <span class="team-record">3-14 | #36 Overall</span>
+                    <div class="team-needs">
+                        <span class="need-badge need-high">CB</span>
+                        <span class="need-badge need-medium">EDGE</span>
+                        <span class="need-badge need-medium">LB</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-content">
+                <div class="player-main">
+                    <div class="player-photo"><img src="images/players/tacario-davis.jpg" alt="Tacario Davis" onerror="this.src='images/players/placeholder.jpg'"></div>
+                    <div class="player-info">
+                        <h2>Tacario Davis</h2>
+                        <span class="player-position">CB</span>
+                        <span class="player-school">Arizona</span>
+                        <div class="player-stats">
+                            <div class="stat-box"><div class="stat-value">6'4"</div><div class="stat-label">Height</div></div>
+                            <div class="stat-box"><div class="stat-value">200</div><div class="stat-label">Weight</div></div>
+                            <div class="stat-box"><div class="stat-value">4.45</div><div class="stat-label">40-Yard</div></div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn twitter" onclick="sharePick('Titans', 'Tacario Davis', 36)"><i class="fab fa-twitter"></i> Tweet</button>
+                            <button class="share-btn copy" onclick="copyPickLink(36)"><i class="fas fa-link"></i> Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="breakdown-section">
+                    <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                    <p class="breakdown-content">Tennessee needs cornerback help to pair with their pass rush investments. <strong>Davis has rare size at 6'4"</strong> with elite speed for his length. Dominated Pac-12 matchups with his physicality and long arms. Perfect fit for a defense needing length on the outside.</p>
+                    <div class="strengths-weaknesses">
+                        <div class="sw-section strengths">
+                            <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                            <ul><li>Rare size/speed combo (6'4", 4.45)</li><li>Long arms disrupt passing lanes</li><li>Physical press coverage ability</li><li>Excellent ball skills for size</li></ul>
+                        </div>
+                        <div class="sw-section weaknesses">
+                            <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
+                            <ul><li>Change of direction in space</li><li>Hip fluidity vs smaller WRs</li><li>Route recognition from zone</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pick 37: Commanders -->
+        <div class="pick-card" data-position="DL" data-team="Commanders" data-player="Deone Walker" style="animation-delay: 0.25s">
+            <div class="pick-header">
+                <span class="pick-number">37</span>
+                <svg class="team-helmet" viewBox="0 0 100 70">
+                    <ellipse cx="50" cy="35" rx="48" ry="32" fill="#773141" stroke="#FFB612" stroke-width="3"/>
+                    <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">WAS</text>
+                </svg>
+                <div class="team-details">
+                    <h3>Washington Commanders</h3>
+                    <span class="team-record">5-12 | #37 Overall</span>
+                    <div class="team-needs">
+                        <span class="need-badge need-high">DL</span>
+                        <span class="need-badge need-high">CB</span>
+                        <span class="need-badge need-medium">LB</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-content">
+                <div class="player-main">
+                    <div class="player-photo"><img src="images/players/deone-walker.jpg" alt="Deone Walker" onerror="this.src='images/players/placeholder.jpg'"></div>
+                    <div class="player-info">
+                        <h2>Deone Walker</h2>
+                        <span class="player-position">DL</span>
+                        <span class="player-school">Kentucky</span>
+                        <div class="player-stats">
+                            <div class="stat-box"><div class="stat-value">6'6"</div><div class="stat-label">Height</div></div>
+                            <div class="stat-box"><div class="stat-value">350</div><div class="stat-label">Weight</div></div>
+                            <div class="stat-box"><div class="stat-value">5.30</div><div class="stat-label">40-Yard</div></div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn twitter" onclick="sharePick('Commanders', 'Deone Walker', 37)"><i class="fab fa-twitter"></i> Tweet</button>
+                            <button class="share-btn copy" onclick="copyPickLink(37)"><i class="fas fa-link"></i> Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="breakdown-section">
+                    <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                    <p class="breakdown-content">Washington needs interior defensive line help after losing Jonathan Allen. <strong>Walker is a massive space-eater at 6'6" 350</strong> who commands double teams and plugs running lanes. Has surprising quickness for his size and can collapse the pocket from the interior.</p>
+                    <div class="strengths-weaknesses">
+                        <div class="sw-section strengths">
+                            <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                            <ul><li>Elite size and mass (6'6" 350)</li><li>Occupies double teams consistently</li><li>Strong hands and grip strength</li><li>Surprising lateral quickness</li></ul>
+                        </div>
+                        <div class="sw-section weaknesses">
+                            <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
+                            <ul><li>Pass rush production is limited</li><li>Stamina on extended drives</li><li>Pad level consistency</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pick 38: Saints -->
+        <div class="pick-card" data-position="OT" data-team="Saints" data-player="Aireontae Ersery" style="animation-delay: 0.3s">
+            <div class="pick-header">
+                <span class="pick-number">38</span>
+                <svg class="team-helmet" viewBox="0 0 100 70">
+                    <ellipse cx="50" cy="35" rx="48" ry="32" fill="#101820" stroke="#D3BC8D" stroke-width="3"/>
+                    <text x="50" y="42" text-anchor="middle" fill="#D3BC8D" font-size="18" font-weight="bold" font-family="Arial">NO</text>
+                </svg>
+                <div class="team-details">
+                    <h3>New Orleans Saints</h3>
+                    <span class="team-record">6-11 | #38 Overall</span>
+                    <div class="team-needs">
+                        <span class="need-badge need-high">OT</span>
+                        <span class="need-badge need-medium">CB</span>
+                        <span class="need-badge need-medium">EDGE</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-content">
+                <div class="player-main">
+                    <div class="player-photo"><img src="images/players/aireontae-ersery.jpg" alt="Aireontae Ersery" onerror="this.src='images/players/placeholder.jpg'"></div>
+                    <div class="player-info">
+                        <h2>Aireontae Ersery</h2>
+                        <span class="player-position">OT</span>
+                        <span class="player-school">Minnesota</span>
+                        <div class="player-stats">
+                            <div class="stat-box"><div class="stat-value">6'6"</div><div class="stat-label">Height</div></div>
+                            <div class="stat-box"><div class="stat-value">320</div><div class="stat-label">Weight</div></div>
+                            <div class="stat-box"><div class="stat-value">5.15</div><div class="stat-label">40-Yard</div></div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn twitter" onclick="sharePick('Saints', 'Aireontae Ersery', 38)"><i class="fab fa-twitter"></i> Tweet</button>
+                            <button class="share-btn copy" onclick="copyPickLink(38)"><i class="fas fa-link"></i> Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="breakdown-section">
+                    <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                    <p class="breakdown-content">New Orleans needs tackle help to protect whoever plays QB in 2026. <strong>Ersery is a massive mauler at 6'6" 320</strong> with plus athleticism for his size. Started 30+ games at Minnesota and has the frame to develop into a starting left tackle with coaching.</p>
+                    <div class="strengths-weaknesses">
+                        <div class="sw-section strengths">
+                            <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                            <ul><li>Elite size and length (6'6" 320)</li><li>Powerful run blocker who creates movement</li><li>Good athlete for his size</li><li>Experience with 30+ starts</li></ul>
+                        </div>
+                        <div class="sw-section weaknesses">
+                            <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
+                            <ul><li>Pass protection technique refinement</li><li>Lateral quickness vs speed rushers</li><li>Hand placement consistency</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pick 39: Chiefs -->
+        <div class="pick-card" data-position="DL" data-team="Chiefs" data-player="Tyleik Williams" style="animation-delay: 0.35s">
+            <div class="pick-header">
+                <span class="pick-number">39</span>
+                <svg class="team-helmet" viewBox="0 0 100 70">
+                    <ellipse cx="50" cy="35" rx="48" ry="32" fill="#E31837" stroke="#FFB81C" stroke-width="3"/>
+                    <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">KC</text>
+                </svg>
+                <div class="team-details">
+                    <h3>Kansas City Chiefs</h3>
+                    <span class="team-record">6-11 | #39 Overall</span>
+                    <div class="team-needs">
+                        <span class="need-badge need-high">Interior DL</span>
+                        <span class="need-badge need-medium">CB</span>
+                        <span class="need-badge need-medium">WR</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-content">
+                <div class="player-main">
+                    <div class="player-photo"><img src="images/players/tyleik-williams.jpg" alt="Tyleik Williams" onerror="this.src='images/players/placeholder.jpg'"></div>
+                    <div class="player-info">
+                        <h2>Tyleik Williams</h2>
+                        <span class="player-position">DL</span>
+                        <span class="player-school">Ohio State</span>
+                        <div class="player-stats">
+                            <div class="stat-box"><div class="stat-value">6'3"</div><div class="stat-label">Height</div></div>
+                            <div class="stat-box"><div class="stat-value">315</div><div class="stat-label">Weight</div></div>
+                            <div class="stat-box"><div class="stat-value">5.05</div><div class="stat-label">40-Yard</div></div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn twitter" onclick="sharePick('Chiefs', 'Tyleik Williams', 39)"><i class="fab fa-twitter"></i> Tweet</button>
+                            <button class="share-btn copy" onclick="copyPickLink(39)"><i class="fas fa-link"></i> Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="breakdown-section">
+                    <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                    <p class="breakdown-content">KC needs interior defensive line help to complement Chris Jones. <strong>Williams is a disruptive 3-technique</strong> who made plays in the National Championship run. Quick first step and violent hands allow him to penetrate gaps and disrupt run game.</p>
+                    <div class="strengths-weaknesses">
+                        <div class="sw-section strengths">
+                            <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                            <ul><li>Explosive first step and penetration</li><li>Violent hands and pass rush moves</li><li>High motor and pursuit</li><li>Ohio State championship pedigree</li></ul>
+                        </div>
+                        <div class="sw-section weaknesses">
+                            <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
+                            <ul><li>Anchor vs double teams</li><li>Consistency game-to-game</li><li>Needs to add functional strength</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pick 40: Bengals -->
+        <div class="pick-card" data-position="EDGE" data-team="Bengals" data-player="Dani Dennis-Sutton" style="animation-delay: 0.4s">
+            <div class="pick-header">
+                <span class="pick-number">40</span>
+                <svg class="team-helmet" viewBox="0 0 100 70">
+                    <ellipse cx="50" cy="35" rx="48" ry="32" fill="#FB4F14" stroke="black" stroke-width="3"/>
+                    <text x="50" y="42" text-anchor="middle" fill="black" font-size="18" font-weight="bold" font-family="Arial">CIN</text>
+                </svg>
+                <div class="team-details">
+                    <h3>Cincinnati Bengals</h3>
+                    <span class="team-record">6-11 | #40 Overall</span>
+                    <div class="team-needs">
+                        <span class="need-badge need-high">EDGE</span>
+                        <span class="need-badge need-medium">CB</span>
+                        <span class="need-badge need-medium">LB</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-content">
+                <div class="player-main">
+                    <div class="player-photo"><img src="images/players/dani-dennis-sutton.jpg" alt="Dani Dennis-Sutton" onerror="this.src='images/players/placeholder.jpg'"></div>
+                    <div class="player-info">
+                        <h2>Dani Dennis-Sutton</h2>
+                        <span class="player-position">EDGE</span>
+                        <span class="player-school">Penn State</span>
+                        <div class="player-stats">
+                            <div class="stat-box"><div class="stat-value">6'5"</div><div class="stat-label">Height</div></div>
+                            <div class="stat-box"><div class="stat-value">270</div><div class="stat-label">Weight</div></div>
+                            <div class="stat-box"><div class="stat-value">4.75</div><div class="stat-label">40-Yard</div></div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn twitter" onclick="sharePick('Bengals', 'Dani Dennis-Sutton', 40)"><i class="fab fa-twitter"></i> Tweet</button>
+                            <button class="share-btn copy" onclick="copyPickLink(40)"><i class="fas fa-link"></i> Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="breakdown-section">
+                    <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                    <p class="breakdown-content">Cincinnati needs pass rushers opposite Trey Hendrickson. <strong>Dennis-Sutton is a long, athletic edge rusher</strong> from Penn State with elite burst and bend. Recorded 9 sacks in 2025 and has the tools to develop into a double-digit sack artist with NFL coaching.</p>
+                    <div class="strengths-weaknesses">
+                        <div class="sw-section strengths">
+                            <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                            <ul><li>Elite length (6'5") and athleticism</li><li>Explosive first step off the edge</li><li>Excellent bend around the corner</li><li>High upside as pass rusher</li></ul>
+                        </div>
+                        <div class="sw-section weaknesses">
+                            <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
+                            <ul><li>Run defense discipline</li><li>Needs more pass rush moves</li><li>Can play too high at times</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pick 41: Dolphins -->
+        <div class="pick-card" data-position="IOL" data-team="Dolphins" data-player="Donovan Jackson" style="animation-delay: 0.45s">
+            <div class="pick-header">
+                <span class="pick-number">41</span>
+                <svg class="team-helmet" viewBox="0 0 100 70">
+                    <ellipse cx="50" cy="35" rx="48" ry="32" fill="#008E97" stroke="#FC4C02" stroke-width="3"/>
+                    <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">MIA</text>
+                </svg>
+                <div class="team-details">
+                    <h3>Miami Dolphins</h3>
+                    <span class="team-record">7-10 | #41 Overall</span>
+                    <div class="team-needs">
+                        <span class="need-badge need-high">IOL</span>
+                        <span class="need-badge need-medium">EDGE</span>
+                        <span class="need-badge need-medium">CB</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-content">
+                <div class="player-main">
+                    <div class="player-photo"><img src="images/players/donovan-jackson.jpg" alt="Donovan Jackson" onerror="this.src='images/players/placeholder.jpg'"></div>
+                    <div class="player-info">
+                        <h2>Donovan Jackson</h2>
+                        <span class="player-position">IOL</span>
+                        <span class="player-school">Ohio State</span>
+                        <div class="player-stats">
+                            <div class="stat-box"><div class="stat-value">6'4"</div><div class="stat-label">Height</div></div>
+                            <div class="stat-box"><div class="stat-value">320</div><div class="stat-label">Weight</div></div>
+                            <div class="stat-box"><div class="stat-value">5.20</div><div class="stat-label">40-Yard</div></div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn twitter" onclick="sharePick('Dolphins', 'Donovan Jackson', 41)"><i class="fab fa-twitter"></i> Tweet</button>
+                            <button class="share-btn copy" onclick="copyPickLink(41)"><i class="fas fa-link"></i> Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="breakdown-section">
+                    <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                    <p class="breakdown-content">Miami's offensive line ranked near the bottom in pass protection. <strong>Jackson is a powerful guard</strong> from Ohio State who can play center in a pinch. Physical run blocker who creates movement at the point of attack and provides immediate interior upgrade.</p>
+                    <div class="strengths-weaknesses">
+                        <div class="sw-section strengths">
+                            <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                            <ul><li>Elite power and strength (320 lbs)</li><li>Violent run blocker</li><li>Versatile - guard or center</li><li>Ohio State pedigree</li></ul>
+                        </div>
+                        <div class="sw-section weaknesses">
+                            <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
+                            <ul><li>Lateral agility in pass pro</li><li>Recovery when beat initially</li><li>Anchor vs power rushers</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pick 42: Cowboys -->
+        <div class="pick-card" data-position="S" data-team="Cowboys" data-player="Malaki Starks" style="animation-delay: 0.5s">
+            <div class="pick-header">
+                <span class="pick-number">42</span>
+                <svg class="team-helmet" viewBox="0 0 100 70">
+                    <ellipse cx="50" cy="35" rx="48" ry="32" fill="#003594" stroke="#869397" stroke-width="3"/>
+                    <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">DAL</text>
+                    <path d="M45 30 L50 25 L55 30 L55 40 L50 45 L45 40 Z" fill="white"/>
+                </svg>
+                <div class="team-details">
+                    <h3>Dallas Cowboys</h3>
+                    <span class="team-record">7-9-1 | #42 Overall</span>
+                    <div class="team-needs">
+                        <span class="need-badge need-high">S</span>
+                        <span class="need-badge need-medium">LB</span>
+                        <span class="need-badge need-medium">EDGE</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-content">
+                <div class="player-main">
+                    <div class="player-photo"><img src="images/players/malaki-starks.jpg" alt="Malaki Starks" onerror="this.src='images/players/placeholder.jpg'"></div>
+                    <div class="player-info">
+                        <h2>Malaki Starks</h2>
+                        <span class="player-position">S</span>
+                        <span class="player-school">Georgia</span>
+                        <div class="player-stats">
+                            <div class="stat-box"><div class="stat-value">6'1"</div><div class="stat-label">Height</div></div>
+                            <div class="stat-box"><div class="stat-value">205</div><div class="stat-label">Weight</div></div>
+                            <div class="stat-box"><div class="stat-value">4.45</div><div class="stat-label">40-Yard</div></div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn twitter" onclick="sharePick('Cowboys', 'Malaki Starks', 42)"><i class="fab fa-twitter"></i> Tweet</button>
+                            <button class="share-btn copy" onclick="copyPickLink(42)"><i class="fas fa-link"></i> Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="breakdown-section">
+                    <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                    <p class="breakdown-content">Dallas needs safety help after taking CB in Round 1. <strong>Starks is a versatile playmaker</strong> who can play free safety, box, or nickel. Elite range and ball skills from Georgia's championship defense. Perfect complement to their Round 1 cornerback selection.</p>
+                    <div class="strengths-weaknesses">
+                        <div class="sw-section strengths">
+                            <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                            <ul><li>Elite range and ball skills</li><li>Versatile - can play multiple positions</li><li>Georgia championship pedigree</li><li>Excellent tackling ability</li></ul>
+                        </div>
+                        <div class="sw-section weaknesses">
+                            <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
+                            <ul><li>Deep coverage consistency</li><li>Man coverage vs slot WRs</li><li>Can be overaggressive at times</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pick 43: Rams (via Falcons) -->
+        <div class="pick-card" data-position="DL" data-team="Rams" data-player="Kenneth Grant" style="animation-delay: 0.55s">
+            <div class="pick-header">
+                <span class="pick-number">43</span>
+                <svg class="team-helmet" viewBox="0 0 100 70">
+                    <ellipse cx="50" cy="35" rx="48" ry="32" fill="#003594" stroke="#FFD100" stroke-width="3"/>
+                    <text x="50" y="42" text-anchor="middle" fill="#FFD100" font-size="18" font-weight="bold" font-family="Arial">LAR</text>
+                    <path d="M35 30 Q40 25 45 30 Q45 35 40 40" fill="none" stroke="#FFD100" stroke-width="2"/>
+                    <path d="M55 30 Q60 25 65 30 Q65 35 60 40" fill="none" stroke="#FFD100" stroke-width="2"/>
+                </svg>
+                <div class="team-details">
+                    <h3>Los Angeles Rams</h3>
+                    <span class="team-record">via Falcons (8-9) | #43 Overall</span>
+                    <div class="team-needs">
+                        <span class="need-badge need-high">DL</span>
+                        <span class="need-badge need-medium">LB</span>
+                        <span class="need-badge need-medium">CB</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-content">
+                <div class="player-main">
+                    <div class="player-photo"><img src="images/players/kenneth-grant.jpg" alt="Kenneth Grant" onerror="this.src='images/players/placeholder.jpg'"></div>
+                    <div class="player-info">
+                        <h2>Kenneth Grant</h2>
+                        <span class="player-position">DL</span>
+                        <span class="player-school">Michigan</span>
+                        <div class="player-stats">
+                            <div class="stat-box"><div class="stat-value">6'4"</div><div class="stat-label">Height</div></div>
+                            <div class="stat-box"><div class="stat-value">340</div><div class="stat-label">Weight</div></div>
+                            <div class="stat-box"><div class="stat-value">5.25</div><div class="stat-label">40-Yard</div></div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn twitter" onclick="sharePick('Rams', 'Kenneth Grant', 43)"><i class="fab fa-twitter"></i> Tweet</button>
+                            <button class="share-btn copy" onclick="copyPickLink(43)"><i class="fas fa-link"></i> Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="breakdown-section">
+                    <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                    <p class="breakdown-content">The Rams need interior defensive line help to stop the run. <strong>Grant is a massive nose tackle at 6'4" 340</strong> who demands double teams. Dominated at Michigan with his power and disruption. Perfect fit for the Rams' defensive front rotation.</p>
+                    <div class="strengths-weaknesses">
+                        <div class="sw-section strengths">
+                            <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                            <ul><li>Elite size and power (6'4" 340)</li><li>Occupies double teams effectively</li><li>Strong hands and grip strength</li><li>Disrupts run game consistently</li></ul>
+                        </div>
+                        <div class="sw-section weaknesses">
+                            <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
+                            <ul><li>Limited pass rush ability</li><li>Stamina on long drives</li><li>Lateral mobility concerns</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pick 44: Ravens -->
+        <div class="pick-card" data-position="CB" data-team="Ravens" data-player="Maxwell Hairston" style="animation-delay: 0.6s">
+            <div class="pick-header">
+                <span class="pick-number">44</span>
+                <svg class="team-helmet" viewBox="0 0 100 70">
+                    <ellipse cx="50" cy="35" rx="48" ry="32" fill="#241773" stroke="#9E7C0C" stroke-width="3"/>
+                    <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">BAL</text>
+                </svg>
+                <div class="team-details">
+                    <h3>Baltimore Ravens</h3>
+                    <span class="team-record">8-9 | #44 Overall</span>
+                    <div class="team-needs">
+                        <span class="need-badge need-high">CB</span>
+                        <span class="need-badge need-medium">DL</span>
+                        <span class="need-badge need-medium">WR</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-content">
+                <div class="player-main">
+                    <div class="player-photo"><img src="images/players/maxwell-hairston.jpg" alt="Maxwell Hairston" onerror="this.src='images/players/placeholder.jpg'"></div>
+                    <div class="player-info">
+                        <h2>Maxwell Hairston</h2>
+                        <span class="player-position">CB</span>
+                        <span class="player-school">Kentucky</span>
+                        <div class="player-stats">
+                            <div class="stat-box"><div class="stat-value">6'1"</div><div class="stat-label">Height</div></div>
+                            <div class="stat-box"><div class="stat-value">195</div><div class="stat-label">Weight</div></div>
+                            <div class="stat-box"><div class="stat-value">4.40</div><div class="stat-label">40-Yard</div></div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn twitter" onclick="sharePick('Ravens', 'Maxwell Hairston', 44)"><i class="fab fa-twitter"></i> Tweet</button>
+                            <button class="share-btn copy" onclick="copyPickLink(44)"><i class="fas fa-link"></i> Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="breakdown-section">
+                    <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                    <p class="breakdown-content">Baltimore needs cornerback depth opposite Marlon Humphrey. <strong>Hairston is a physical press corner</strong> with elite speed and ball skills. Recorded 5 interceptions in 2025 and has the tools to develop into a shutdown corner in Baltimore's system.</p>
+                    <div class="strengths-weaknesses">
+                        <div class="sw-section strengths">
+                            <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                            <ul><li>Elite speed (4.40) and recovery</li><li>Physical press coverage</li><li>Excellent ball skills (5 INTs in 2025)</li><li>Great size at 6'1" 195</li></ul>
+                        </div>
+                        <div class="sw-section weaknesses">
+                            <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
+                            <ul><li>Zone coverage discipline</li><li>Tackle technique in space</li><li>Can be grabby at times</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pick 45: Buccaneers -->
+        <div class="pick-card" data-position="EDGE" data-team="Buccaneers" data-player="Princely Umanmielen" style="animation-delay: 0.65s">
+            <div class="pick-header">
+                <span class="pick-number">45</span>
+                <svg class="team-helmet" viewBox="0 0 100 70">
+                    <ellipse cx="50" cy="35" rx="48" ry="32" fill="#D50A0A" stroke="#FF7900" stroke-width="3"/>
+                    <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">TB</text>
+                </svg>
+                <div class="team-details">
+                    <h3>Tampa Bay Buccaneers</h3>
+                    <span class="team-record">8-9 | #45 Overall</span>
+                    <div class="team-needs">
+                        <span class="need-badge need-high">EDGE</span>
+                        <span class="need-badge need-medium">S</span>
+                        <span class="need-badge need-medium">LB</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-content">
+                <div class="player-main">
+                    <div class="player-photo"><img src="images/players/princely-umanmielen.jpg" alt="Princely Umanmielen" onerror="this.src='images/players/placeholder.jpg'"></div>
+                    <div class="player-info">
+                        <h2>Princely Umanmielen</h2>
+                        <span class="player-position">EDGE</span>
+                        <span class="player-school">Ole Miss</span>
+                        <div class="player-stats">
+                            <div class="stat-box"><div class="stat-value">6'4"</div><div class="stat-label">Height</div></div>
+                            <div class="stat-box"><div class="stat-value="255</div><div class="stat-label">Weight</div></div>
+                            <div class="stat-box"><div class="stat-value">4.65</div><div class="stat-label">40-Yard</div></div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn twitter" onclick="sharePick('Buccaneers', 'Princely Umanmielen', 45)"><i class="fab fa-twitter"></i> Tweet</button>
+                            <button class="share-btn copy" onclick="copyPickLink(45)"><i class="fas fa-link"></i> Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="breakdown-section">
+                    <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                    <p class="breakdown-content">Tampa Bay needs edge rushers after losing Shaq Barrett. <strong>Umanmielen is a twitchy pass rusher</strong> with explosive traits and high upside. Recorded 10.5 sacks at Ole Miss and has the bend and speed to win consistently at the NFL level.</p>
+                    <div class="strengths-weaknesses">
+                        <div class="sw-section strengths">
+                            <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                            <ul><li>Elite burst and first-step quickness</li><li>Excellent bend around the edge</li><li>Speed-to-power conversion</li><li>High upside as pass rusher</li></ul>
+                        </div>
+                        <div class="sw-section weaknesses">
+                            <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
+                            <ul><li>Run defense consistency</li><li>Needs to add strength</li><li>Pass rush move arsenal</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pick 46: Jets (via Colts) -->
+        <div class="pick-card" data-position="RB" data-team="Jets" data-player="Omarion Hampton" style="animation-delay: 0.7s">
+            <div class="pick-header">
+                <span class="pick-number">46</span>
+                <svg class="team-helmet" viewBox="0 0 100 70">
+                    <ellipse cx="50" cy="35" rx="48" ry="32" fill="#125740" stroke="white" stroke-width="3"/>
+                    <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">NYJ</text>
+                </svg>
+                <div class="team-details">
+                    <h3>New York Jets</h3>
+                    <span class="team-record">via Colts (8-9) | #46 Overall</span>
+                    <div class="team-needs">
+                        <span class="need-badge need-high">RB</span>
+                        <span class="need-badge need-medium">OL</span>
+                        <span class="need-badge need-medium">CB</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-content">
+                <div class="player-main">
+                    <div class="player-photo"><img src="images/players/omarion-hampton.jpg" alt="Omarion Hampton" onerror="this.src='images/players/placeholder.jpg'"></div>
+                    <div class="player-info">
+                        <h2>Omarion Hampton</h2>
+                        <span class="player-position">RB</span>
+                        <span class="player-school">North Carolina</span>
+                        <div class="player-stats">
+                            <div class="stat-box"><div class="stat-value">5'11"</div><div class="stat-label">Height</div></div>
+                            <div class="stat-box"><div class="stat-value">220</div><div class="stat-label">Weight</div></div>
+                            <div class="stat-box"><div class="stat-value">4.48</div><div class="stat-label">40-Yard</div></div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn twitter" onclick="sharePick('Jets', 'Omarion Hampton', 46)"><i class="fab fa-twitter"></i> Tweet</button>
+                            <button class="share-btn copy" onclick="copyPickLink(46)"><i class="fas fa-link"></i> Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="breakdown-section">
+                    <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                    <p class="breakdown-content">After addressing QB and WR in Round 1, the Jets get their RB. <strong>Hampton is a complete three-down back</strong> who rushed for 1,660 yards and 15 TDs at UNC. Excellent vision, power, and receiving ability make him perfect for their new offense.</p>
+                    <div class="strengths-weaknesses">
+                        <div class="sw-section strengths">
+                            <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                            <ul><li>Complete three-down back</li><li>Excellent vision and patience</li><li>Powerful runner with contact balance</li><li>Reliable receiver out of backfield</li></ul>
+                        </div>
+                        <div class="sw-section weaknesses">
+                            <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
+                            <ul><li>Top-end speed not elite</li><li>Pass protection technique</li><li>Long speed on breakaway runs</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pick 47: Lions -->
+        <div class="pick-card" data-position="LB" data-team="Lions" data-player="Carson Schwesinger" style="animation-delay: 0.75s">
+            <div class="pick-header">
+                <span class="pick-number">47</span>
+                <svg class="team-helmet" viewBox="0 0 100 70">
+                    <ellipse cx="50" cy="35" rx="48" ry="32" fill="#0076B6" stroke="#B0B7BC" stroke-width="3"/>
+                    <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">DET</text>
+                </svg>
+                <div class="team-details">
+                    <h3>Detroit Lions</h3>
+                    <span class="team-record">9-8 | #47 Overall</span>
+                    <div class="team-needs">
+                        <span class="need-badge need-high">LB</span>
+                        <span class="need-badge need-medium">CB</span>
+                        <span class="need-badge need-medium">S</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-content">
+                <div class="player-main">
+                    <div class="player-photo"><img src="images/players/carson-schwesinger.jpg" alt="Carson Schwesinger" onerror="this.src='images/players/placeholder.jpg'"></div>
+                    <div class="player-info">
+                        <h2>Carson Schwesinger</h2>
+                        <span class="player-position">LB</span>
+                        <span class="player-school">UCLA</span>
+                        <div class="player-stats">
+                            <div class="stat-box"><div class="stat-value">6'2"</div><div class="stat-label">Height</div></div>
+                            <div class="stat-box"><div class="stat-value">235</div><div class="stat-label">Weight</div></div>
+                            <div class="stat-box"><div class="stat-value">4.55</div><div class="stat-label">40-Yard</div></div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn twitter" onclick="sharePick('Lions', 'Carson Schwesinger', 47)"><i class="fab fa-twitter"></i> Tweet</button>
+                            <button class="share-btn copy" onclick="copyPickLink(47)"><i class="fas fa-link"></i> Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="breakdown-section">
+                    <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                    <p class="breakdown-content">Detroit needs linebacker help after Alex Anzalone's decline. <strong>Schwesinger led the nation with 136 tackles</strong> and has elite speed for the position. High football IQ and relentless pursuit make him a perfect fit for Dan Campbell's defensive culture.</p>
+                    <div class="strengths-weaknesses">
+                        <div class="sw-section strengths">
+                            <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                            <ul><li>Elite production (136 tackles)</li><li>Great speed for position (4.55)</li><li>High football IQ and instincts</li><li>Relentless pursuit and effort</li></ul>
+                        </div>
+                        <div class="sw-section weaknesses">
+                            <h4><i class="fas fa-minus-circ
+le"></i> Areas to Improve</h4>
+                            <ul><li>Size for taking on blockers</li><li>Coverage ability in space</li><li>One year of elite production</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pick 48: Vikings -->
+        <div class="pick-card" data-position="WR" data-team="Vikings" data-player="Jayden Higgins" style="animation-delay: 0.8s">
+            <div class="pick-header">
+                <span class="pick-number">48</span>
+                <svg class="team-helmet" viewBox="0 0 100 70">
+                    <ellipse cx="50" cy="35" rx="48" ry="32" fill="#4F2683" stroke="#FFC62F" stroke-width="3"/>
+                    <text x="50" y="42" text-anchor="middle" fill="#FFC62F" font-size="18" font-weight="bold" font-family="Arial">MIN</text>
+                </svg>
+                <div class="team-details">
+                    <h3>Minnesota Vikings</h3>
+                    <span class="team-record">9-8 | #48 Overall</span>
+                    <div class="team-needs">
+                        <span class="need-badge need-high">WR</span>
+                        <span class="need-badge need-medium">CB</span>
+                        <span class="need-badge need-medium">EDGE</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-content">
+                <div class="player-main">
+                    <div class="player-photo"><img src="images/players/jayden-higgins.jpg" alt="Jayden Higgins" onerror="this.src='images/players/placeholder.jpg'"></div>
+                    <div class="player-info">
+                        <h2>Jayden Higgins</h2>
+                        <span class="player-position">WR</span>
+                        <span class="player-school">Iowa State</span>
+                        <div class="player-stats">
+                            <div class="stat-box"><div class="stat-value">6'4"</div><div class="stat-label">Height</div></div>
+                            <div class="stat-box"><div class="stat-value">215</div><div class="stat-label">Weight</div></div>
+                            <div class="stat-box"><div class="stat-value">4.55</div><div class="stat-label">40-Yard</div></div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn twitter" onclick="sharePick('Vikings', 'Jayden Higgins', 48)"><i class="fab fa-twitter"></i> Tweet</button>
+                            <button class="share-btn copy" onclick="copyPickLink(48)"><i class="fas fa-link"></i> Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="breakdown-section">
+                    <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                    <p class="breakdown-content">Minnesota needs receiver depth behind Justin Jefferson. <strong>Higgins is a big-bodied target at 6'4" 215</strong> who can win contested catches. Had 1,183 yards and 9 TDs at Iowa State and provides a perfect complement to Jefferson's route-running mastery.</p>
+                    <div class="strengths-weaknesses">
+                        <div class="sw-section strengths">
+                            <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                            <ul><li>Elite size (6'4" 215) and length</li><li>Contested catch specialist</li><li>Red zone weapon</li><li>Good route runner for size</li></ul>
+                        </div>
+                        <div class="sw-section weaknesses">
+                            <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
+                            <ul><li>Separation vs press coverage</li><li>YAC ability after catch</li><li>Top-end speed (4.55)</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pick 49: Panthers -->
+        <div class="pick-card" data-position="TE" data-team="Panthers" data-player="Mason Taylor" style="animation-delay: 0.85s">
+            <div class="pick-header">
+                <span class="pick-number">49</span>
+                <svg class="team-helmet" viewBox="0 0 100 70">
+                    <ellipse cx="50" cy="35" rx="48" ry="32" fill="#0085CA" stroke="#101820" stroke-width="3"/>
+                    <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">CAR</text>
+                </svg>
+                <div class="team-details">
+                    <h3>Carolina Panthers</h3>
+                    <span class="team-record">8-9 | #49 Overall</span>
+                    <div class="team-needs">
+                        <span class="need-badge need-high">TE</span>
+                        <span class="need-badge need-medium">WR</span>
+                        <span class="need-badge need-medium">S</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-content">
+                <div class="player-main">
+                    <div class="player-photo"><img src="images/players/mason-taylor.jpg" alt="Mason Taylor" onerror="this.src='images/players/placeholder.jpg'"></div>
+                    <div class="player-info">
+                        <h2>Mason Taylor</h2>
+                        <span class="player-position">TE</span>
+                        <span class="player-school">LSU</span>
+                        <div class="player-stats">
+                            <div class="stat-box"><div class="stat-value">6'5"</div><div class="stat-label">Height</div></div>
+                            <div class="stat-box"><div class="stat-value">250</div><div class="stat-label">Weight</div></div>
+                            <div class="stat-box"><div class="stat-value">4.70</div><div class="stat-label">40-Yard</div></div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn twitter" onclick="sharePick('Panthers', 'Mason Taylor', 49)"><i class="fab fa-twitter"></i> Tweet</button>
+                            <button class="share-btn copy" onclick="copyPickLink(49)"><i class="fas fa-link"></i> Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="breakdown-section">
+                    <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                    <p class="breakdown-content">Carolina needs tight end help after losing Hayden Hurst. <strong>Taylor is a complete tight end</strong> from LSU with NFL bloodlines (son of Jason Taylor). Can block inline and stretch the seam as a receiver. Perfect security blanket for Bryce Young.</p>
+                    <div class="strengths-weaknesses">
+                        <div class="sw-section strengths">
+                            <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                            <ul><li>Complete TE - blocking and receiving</li><li>NFL bloodlines and football IQ</li><li>Reliable hands in traffic</li><li>Red zone weapon</li></ul>
+                        </div>
+                        <div class="sw-section weaknesses">
+                            <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
+                            <ul><li>YAC after the catch</li><li>Top-end speed (4.70)</li><li>Blocking technique consistency</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pick 50: Cowboys (via Packers) -->
+        <div class="pick-card" data-position="LB" data-team="Cowboys" data-player="Jihaad Campbell" style="animation-delay: 0.9s">
+            <div class="pick-header">
+                <span class="pick-number">50</span>
+                <svg class="team-helmet" viewBox="0 0 100 70">
+                    <ellipse cx="50" cy="35" rx="48" ry="32" fill="#003594" stroke="#869397" stroke-width="3"/>
+                    <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">DAL</text>
+                    <path d="M45 30 L50 25 L55 30 L55 40 L50 45 L45 40 Z" fill="white"/>
+                </svg>
+                <div class="team-details">
+                    <h3>Dallas Cowboys</h3>
+                    <span class="team-record">via Packers (9-7-1) | #50 Overall</span>
+                    <div class="team-needs">
+                        <span class="need-badge need-high">LB</span>
+                        <span class="need-badge need-medium">DL</span>
+                        <span class="need-badge need-medium">EDGE</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-content">
+                <div class="player-main">
+                    <div class="player-photo"><img src="images/players/jihaad-campbell.jpg" alt="Jihaad Campbell" onerror="this.src='images/players/placeholder.jpg'"></div>
+                    <div class="player-info">
+                        <h2>Jihaad Campbell</h2>
+                        <span class="player-position">LB</span>
+                        <span class="player-school">Alabama</span>
+                        <div class="player-stats">
+                            <div class="stat-box"><div class="stat-value">6'3"</div><div class="stat-label">Height</div></div>
+                            <div class="stat-box"><div class="stat-value">230</div><div class="stat-label">Weight</div></div>
+                            <div class="stat-box"><div class="stat-value">4.55</div><div class="stat-label">40-Yard</div></div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn twitter" onclick="sharePick('Cowboys', 'Jihaad Campbell', 50)"><i class="fab fa-twitter"></i> Tweet</button>
+                            <button class="share-btn copy" onclick="copyPickLink(50)"><i class="fas fa-link"></i> Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="breakdown-section">
+                    <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                    <p class="breakdown-content">Dallas needs linebacker help after defensive struggles in 2025. <strong>Campbell is an athletic playmaker</strong> from Alabama who can cover, blitz, and play the run. Versatile defender who can line up at multiple spots and make plays all over the field.</p>
+                    <div class="strengths-weaknesses">
+                        <div class="sw-section strengths">
+                            <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                            <ul><li>Elite athleticism for size</li><li>Versatile - can play multiple positions</li><li>Coverage ability in space</li><li>Alabama pedigree</li></ul>
+                        </div>
+                        <div class="sw-section weaknesses">
+                            <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
+                            <ul><li>Taking on blocks vs run</li><li>Consistency in gap fits</li><li>Needs to add functional strength</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pick 51: Steelers -->
+        <div class="pick-card" data-position="IOL" data-team="Steelers" data-player="Jonah Savaiinaea" style="animation-delay: 0.95s">
+            <div class="pick-header">
+                <span class="pick-number">51</span>
+                <svg class="team-helmet" viewBox="0 0 100 70">
+                    <ellipse cx="50" cy="35" rx="48" ry="32" fill="#FFB612" stroke="#101820" stroke-width="3"/>
+                    <text x="50" y="42" text-anchor="middle" fill="#101820" font-size="18" font-weight="bold" font-family="Arial">PIT</text>
+                </svg>
+                <div class="team-details">
+                    <h3>Pittsburgh Steelers</h3>
+                    <span class="team-record">10-7 | #51 Overall</span>
+                    <div class="team-needs">
+                        <span class="need-badge need-high">IOL</span>
+                        <span class="need-badge need-medium">WR</span>
+                        <span class="need-badge need-medium">CB</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-content">
+                <div class="player-main">
+                    <div class="player-photo"><img src="images/players/jonah-savaiinaea.jpg" alt="Jonah Savaiinaea" onerror="this.src='images/players/placeholder.jpg'"></div>
+                    <div class="player-info">
+                        <h2>Jonah Savaiinaea</h2>
+                        <span class="player-position">IOL</span>
+                        <span class="player-school">Arizona</span>
+                        <div class="player-stats">
+                            <div class="stat-box"><div class="stat-value">6'5"</div><div class="stat-label">Height</div></div>
+                            <div class="stat-box"><div class="stat-value">330</div><div class="stat-label">Weight</div></div>
+                            <div class="stat-box"><div class="stat-value">5.25</div><div class="stat-label">40-Yard</div></div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn twitter" onclick="sharePick('Steelers', 'Jonah Savaiinaea', 51)"><i class="fab fa-twitter"></i> Tweet</button>
+                            <button class="share-btn copy" onclick="copyPickLink(51)"><i class="fas fa-link"></i> Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="breakdown-section">
+                    <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                    <p class="breakdown-content">Pittsburgh needs interior offensive line help to protect their QB. <strong>Savaiinaea is a massive mauler at 6'5" 330</strong> who creates movement in the run game. Powerful guard who can also play tackle in a pinch. Perfect fit for Pittsburgh's physical style.</p>
+                    <div class="strengths-weaknesses">
+                        <div class="sw-section strengths">
+                            <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                            <ul><li>Elite size and power (6'5" 330)</li><li>Violent run blocker</li><li>Versatile - guard or tackle</li><li>Creates significant movement</li></ul>
+                        </div>
+                        <div class="sw-section weaknesses">
+                            <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
+                            <ul><li>Lateral mobility in pass pro</li><li>Recovery when beat</li><li>Athleticism vs speed rushers</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pick 52: Chargers -->
+        <div class="pick-card" data-position="DL" data-team="Chargers" data-player="Shemar Stewart" style="animation-delay: 1.0s">
+            <div class="pick-header">
+                <span class="pick-number">52</span>
+                <svg class="team-helmet" viewBox="0 0 100 70">
+                    <ellipse cx="50" cy="35" rx="48" ry="32" fill="#0076B6" stroke="#FFB81C" stroke-width="3"/>
+                    <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">LAC</text>
+                </svg>
+                <div class="team-details">
+                    <h3>Los Angeles Chargers</h3>
+                    <span class="team-record">11-6 | #52 Overall</span>
+                    <div class="team-needs">
+                        <span class="need-badge need-high">DL</span>
+                        <span class="need-badge need-medium">CB</span>
+                        <span class="need-badge need-medium">LB</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-content">
+                <div class="player-main">
+                    <div class="player-photo"><img src="images/players/shemar-stewart.jpg" alt="Shemar Stewart" onerror="this.src='images/players/placeholder.jpg'"></div>
+                    <div class="player-info">
+                        <h2>Shemar Stewart</h2>
+                        <span class="player-position">DL</span>
+                        <span class="player-school">Texas A&M</span>
+                        <div class="player-stats">
+                            <div class="stat-box"><div class="stat-value">6'6"</div><div class="stat-label">Height</div></div>
+                            <div class="stat-box"><div class="stat-value">290</div><div class="stat-label">Weight</div></div>
+                            <div class="stat-box"><div class="stat-value">4.75</div><div class="stat-label">40-Yard</div></div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn twitter" onclick="sharePick('Chargers', 'Shemar Stewart', 52)"><i class="fab fa-twitter"></i> Tweet</button>
+                            <button class="share-btn copy" onclick="copyPickLink(52)"><i class="fas fa-link"></i> Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="breakdown-section">
+                    <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                    <p class="breakdown-content">LA needs defensive line help to support Khalil Mack. <strong>Stewart is an athletic freak at 6'6" 290</strong> with rare movement skills. Can play inside or outside and has the tools to develop into a disruptive force with NFL coaching.</p>
+                    <div class="strengths-weaknesses">
+                        <div class="sw-section strengths">
+                            <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                            <ul><li>Elite size and athleticism</li><li>Versatile - can play multiple spots</li><li>Rare movement skills for size</li><li>High upside as pass rusher</li></ul>
+                        </div>
+                        <div class="sw-section weaknesses">
+                            <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
+                            <ul><li>Technique refinement needed</li><li>Consistency game-to-game</li><li>Pass rush move arsenal</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pick 53: Eagles -->
+        <div class="pick-card" data-position="CB" data-team="Eagles" data-player="Will Johnson" style="animation-delay: 1.05s">
+            <div class="pick-header">
+                <span class="pick-number">53</span>
+                <svg class="team-helmet" viewBox="0 0 100 70">
+                    <ellipse cx="50" cy="35" rx="48" ry="32" fill="#004C54" stroke="#A5ACAF" stroke-width="3"/>
+                    <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">PHI</text>
+                </svg>
+                <div class="team-details">
+                    <h3>Philadelphia Eagles</h3>
+                    <span class="team-record">11-6 | #53 Overall</span>
+                    <div class="team-needs">
+                        <span class="need-badge need-high">CB</span>
+                        <span class="need-badge need-medium">LB</span>
+                        <span class="need-badge need-medium">S</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-content">
+                <div class="player-main">
+                    <div class="player-photo"><img src="images/players/will-johnson.jpg" alt="Will Johnson" onerror="this.src='images/players/placeholder.jpg'"></div>
+                    <div class="player-info">
+                        <h2>Will Johnson</h2>
+                        <span class="player-position">CB</span>
+                        <span class="player-school">Michigan</span>
+                        <div class="player-stats">
+                            <div class="stat-box"><div class="stat-value">6'2"</div><div class="stat-label">Height</div></div>
+                            <div class="stat-box"><div class="stat-value">195</div><div class="stat-label">Weight</div></div>
+                            <div class="stat-box"><div class="stat-value">4.45</div><div class="stat-label">40-Yard</div></div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn twitter" onclick="sharePick('Eagles', 'Will Johnson', 53)"><i class="fab fa-twitter"></i> Tweet</button>
+                            <button class="share-btn copy" onclick="copyPickLink(53)"><i class="fas fa-link"></i> Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="breakdown-section">
+                    <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                    <p class="breakdown-content">Philadelphia needs cornerback depth after injuries in 2025. <strong>Johnson is a physical press corner</strong> from Michigan with ideal size and length. Can play outside or in the slot and provides immediate depth with starting potential.</p>
+                    <div class="strengths-weaknesses">
+                        <div class="sw-section strengths">
+                            <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                            <ul><li>Elite size and length (6'2")</li><li>Physical press coverage</li><li>Michigan pedigree</li><li>Versatile - inside or outside</li></ul>
+                        </div>
+                        <div class="sw-section weaknesses">
+                            <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
+                            <ul><li>Top-end speed recovery</li><li>Zone awareness</li><li>Tackle technique in space</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pick 54: Browns (via Jaguars) -->
+        <div class="pick-card" data-position="EDGE" data-team="Browns" data-player="Landon Jackson" style="animation-delay: 1.1s">
+            <div class="pick-header">
+                <span class="pick-number">54</span>
+                <svg class="team-helmet" viewBox="0 0 100 70">
+                    <ellipse cx="50" cy="35" rx="48" ry="32" fill="#311D00" stroke="#FF3C00" stroke-width="3"/>
+                    <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">CLE</text>
+                </svg>
+                <div class="team-details">
+                    <h3>Cleveland Browns</h3>
+                    <span class="team-record">via Jaguars (13-4) | #54 Overall</span>
+                    <div class="team-needs">
+                        <span class="need-badge need-high">EDGE</span>
+                        <span class="need-badge need-medium">WR</span>
+                        <span class="need-badge need-medium">S</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-content">
+                <div class="player-main">
+                    <div class="player-photo"><img src="images/players/landon-jackson.jpg" alt="Landon Jackson" onerror="this.src='images/players/placeholder.jpg'"></div>
+                    <div class="player-info">
+                        <h2>Landon Jackson</h2>
+                        <span class="player-position">EDGE</span>
+                        <span class="player-school">Arkansas</span>
+                        <div class="player-stats">
+                            <div class="stat-box"><div class="stat-value">6'7"</div><div class="stat-label">Height</div></div>
+                            <div class="stat-box"><div class="stat-value">280</div><div class="stat-label">Weight</div></div>
+                            <div class="stat-box"><div class="stat-value">4.75</div><div class="stat-label">40-Yard</div></div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn twitter" onclick="sharePick('Browns', 'Landon Jackson', 54)"><i class="fab fa-twitter"></i> Tweet</button>
+                            <button class="share-btn copy" onclick="copyPickLink(54)"><i class="fas fa-link"></i> Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="breakdown-section">
+                    <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                    <p class="breakdown-content">Cleveland needs pass rush help opposite Myles Garrett. <strong>Jackson is a long, athletic edge rusher at 6'7"</strong> with massive upside. Recorded 6.5 sacks at Arkansas and has the length and bend to develop into a quality starter.</p>
+                    <div class="strengths-weaknesses">
+                        <div class="sw-section strengths">
+                            <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                            <ul><li>Elite length (6'7")</li><li>Athleticism for size</li><li>High upside as pass rusher</li><li>Good bend around edge</li></ul>
+                        </div>
+                        <div class="sw-section weaknesses">
+                            <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
+                            <ul><li>Needs to add strength</li><li>Run defense consistency</li><li>Pass rush move variety</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pick 55: Bears -->
+        <div class="pick-card" data-position="IOL" data-team="Bears" data-player="Emeka Egbuka" style="animation-delay: 1.15s">
+            <div class="pick-header">
+                <span class="pick-number">55</span>
+                <svg class="team-helmet" viewBox="0 0 100 70">
+                    <ellipse cx="50" cy="35" rx="48" ry="32" fill="#0B162A" stroke="#C83803" stroke-width="3"/>
+                    <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">CHI</text>
+                </svg>
+                <div class="team-details">
+                    <h3>Chicago Bears</h3>
+                    <span class="team-record">11-6 | #55 Overall</span>
+                    <div class="team-needs">
+                        <span class="need-badge need-high">WR</span>
+                        <span class="need-badge need-medium">IOL</span>
+                        <span class="need-badge need-medium">TE</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-content">
+                <div class="player-main">
+                    <div class="player-photo"><img src="images/players/emeka-egbuka.jpg" alt="Emeka Egbuka" onerror="this.src='images/players/placeholder.jpg'"></div>
+                    <div class="player-info">
+                        <h2>Emeka Egbuka</h2>
+                        <span class="player-position">WR</span>
+                        <span class="player-school">Ohio State</span>
+                        <div class="player-stats">
+                            <div class="stat-box"><div class="stat-value">6'1"</div><div class="stat-label">Height</div></div>
+                            <div class="stat-box"><div class="stat-value">205</div><div class="stat-label">Weight</div></div>
+                            <div class="stat-box"><div class="stat-value">4.45</div><div class="stat-label">40-Yard</div></div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn twitter" onclick="sharePick('Bears', 'Emeka Egbuka', 55)"><i class="fab fa-twitter"></i> Tweet</button>
+                            <button class="share-btn copy" onclick="copyPickLink(55)"><i class="fas fa-link"></i> Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="breakdown-section">
+                    <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                    <p class="breakdown-content">Chicago needs receiver help after inconsistent production in 2025. <strong>Egbuka is a reliable slot receiver</strong> from Ohio State with elite route-running ability. Perfect complement to DJ Moore and Rome Odunze with his ability to work the middle of the field.</p>
+                    <div class="strengths-weaknesses">
+                        <div class="sw-section strengths">
+                            <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                            <ul><li>Elite route runner</li><li>Reliable hands in traffic</li><li>Ohio State pedigree</li><li>Slot specialist with YAC ability</li></ul>
+                        </div>
+                        <div class="sw-section weaknesses">
+                            <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
+                            <ul><li>Not a true outside receiver</li><li>Top-end speed (4.45)</li><li>Contested catch ability</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pick 56: Bills -->
+        <div class="pick-card" data-position="S" data-team="Bills" data-player="Kevin Winston Jr." style="animation-delay: 1.2s">
+            <div class="pick-header">
+                <span class="pick-number">56</span>
+                <svg class="team-helmet" viewBox="0 0 100 70">
+                    <ellipse cx="50" cy="35" rx="48" ry="32" fill="#00338D" stroke="#C60C30" stroke-width="3"/>
+                    <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">BUF</text>
+                </svg>
+                <div class="team-details">
+                    <h3>Buffalo Bills</h3>
+                    <span class="team-record">12-5 | #56 Overall</span>
+                    <div class="team-needs">
+                        <span class="need-badge need-high">S</span>
+                        <span class="need-badge need-medium">CB</span>
+                        <span class="need-badge need-medium">DL</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-content">
+                <div class="player-main">
+                    <div class="player-photo"><img src="images/players/kevin-winston-jr.jpg" alt="Kevin Winston Jr." onerror="this.src='images/players/placeholder.jpg'"></div>
+                    <div class="player-info">
+                        <h2>Kevin Winston Jr.</h2>
+                        <span class="player-position">S</span>
+                        <span class="player-school">Penn State</span>
+                        <div class="player-stats">
+                            <div class="stat-box"><div class="stat-value">6'2"</div><div class="stat-label">Height</div></div>
+                            <div class="stat-box"><div class="stat-value">210</div><div class="stat-label">Weight</div></div>
+                            <div class="stat-box"><div class="stat-value">4.45</div><div class="stat-label">40-Yard</div></div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn twitter" onclick="sharePick('Bills', 'Kevin Winston Jr.', 56)"><i class="fab fa-twitter"></i> Tweet</button>
+                            <button class="share-btn copy" onclick="copyPickLink(56)"><i class="fas fa-link"></i> Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="breakdown-section">
+                    <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                    <p class="breakdown-content">Buffalo needs safety help to replace aging veterans. <strong>Winston is a rangy safety with elite speed</strong> who can play free or box. Physical tackler with excellent ball skills. Penn State pedigree and leadership make him a perfect fit for Buffalo's defensive culture.</p>
+                    <div class="strengths-weaknesses">
+                        <div class="sw-section strengths">
+                            <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                            <ul><li>Elite size and speed combo</li><li>Versatile - free or box safety</li><li>Physical tackler</li><li>Ball skills and playmaking</li></ul>
+                        </div>
+                        <div class="sw-section weaknesses">
+                            <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
+                            <ul><li>Deep coverage discipline</li><li>Man coverage vs TEs</li><li>Angle selection on tackles</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pick 57: 49ers -->
+        <div class="pick-card" data-position="CB" data-team="49ers" data-player="Jahdae Barron" style="animation-delay: 1.25s">
+            <div class="pick-header">
+                <span class="pick-number">57</span>
+                <svg class="team-helmet" viewBox="0 0 100 70">
+                    <ellipse cx="50" cy="35" rx="48" ry="32" fill="#AA0000" stroke="#B3995D" stroke-width="3"/>
+                    <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">SF</text>
+                </svg>
+                <div class="team-details">
+                    <h3>San Francisco 49ers</h3>
+                    <span class="team-record">12-5 | #57 Overall</span>
+                    <div class="team-needs">
+                        <span class="need-badge need-high">CB</span>
+                        <span class="need-badge need-medium">S</span>
+                        <span class="need-badge need-medium">IOL</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-content">
+                <div class="player-main">
+                    <div class="player-photo"><img src="images/players/jahdae-barron.jpg" alt="Jahdae Barron" onerror="this.src='images/players/placeholder.jpg'"></div>
+                    <div class="player-info">
+                        <h2>Jahdae Barron</h2>
+                        <span class="player-position">CB</span>
+                        <span class="player-school">Texas</span>
+                        <div class="player-stats">
+                            <div class="stat-box"><div class="stat-value">6'0"</div><div class="stat-label">Height</div></div>
+                            <div class="stat-box"><div class="stat-value">195</div><div class="stat-label">Weight</div></div>
+                            <div class="stat-box"><div class="stat-value">4.40</div><div class="stat-label">40-Yard</div></div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn twitter" onclick="sharePick('49ers', 'Jahdae Barron', 57)"><i class="fab fa-twitter"></i> Tweet</button>
+                            <button class="share-btn copy" onclick="copyPickLink(57)"><i class="fas fa-link"></i> Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="breakdown-section">
+                    <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                    <p class="breakdown-content">San Francisco needs cornerback depth in their defensive backfield. <strong>Barron is a versatile defender</strong> from Texas who can play corner, safety, or nickel. Elite speed and physicality make him a perfect fit for the 49ers' aggressive defensive scheme.</p>
+                    <div class="strengths-weaknesses">
+                        <div class="sw-section strengths">
+                            <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                            <ul><li>Elite speed (4.40)</li><li>Versatile - can play multiple positions</li><li>Physical tackler</li><li>Ball skills and playmaking</li></ul>
+                        </div>
+                        <div class="sw-section weaknesses">
+                            <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
+                            <ul><li>Size for outside corner</li><li>Press technique consistency</li><li>Zone awareness</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pick 58: Texans -->
+        <div class="pick-card" data-position="RB" data-team="Texans" data-player="TreVeyon Henderson" style="animation-delay: 1.3s">
+            <div class="pick-header">
+                <span class="pick-number">58</span>
+                <svg class="team-helmet" viewBox="0 0 100 70">
+                    <ellipse cx="50" cy="35" rx="48" ry="32" fill="#03202F" stroke="#A71930" stroke-width="3"/>
+                    <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">HOU</text>
+                </svg>
+                <div class="team-details">
+                    <h3>Houston Texans</h3>
+                    <span class="team-record">12-5 | #58 Overall</span>
+                    <div class="team-needs">
+                        <span class="need-badge need-high">RB</span>
+                        <span class="need-badge need-medium">OL</span>
+                        <span class="need-badge need-medium">CB</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-content">
+                <div class="player-main">
+                    <div class="player-photo"><img src="images/players/treveyon-henderson.jpg" alt="TreVeyon Henderson" onerror="this.src='images/players/placeholder.jpg'"></div>
+                    <div class="player-info">
+                        <h2>TreVeyon Henderson</h2>
+                        <span class="player-position">RB</span>
+                        <span class="player-school">Ohio State</span>
+                        <div class="player-stats">
+                            <div class="stat-box"><div class="stat-value">5'10"</div><div class="stat-label">Height</div></div>
+                            <div class="stat-box"><div class="stat-value">215</div><div class="stat-label">Weight</div></div>
+                            <div class="stat-box"><div class="stat-value">4.40</div><div class="stat-label">40-Yard</div></div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn twitter" onclick="sharePick('Texans', 'TreVeyon Henderson', 58)"><i class="fab fa-twitter"></i> Tweet</button>
+                            <button class="share-btn copy" onclick="copyPickLink(58)"><i class="fas fa-link"></i> Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="breakdown-section">
+                    <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                    <p class="breakdown-content">Houston needs backfield firepower after Joe Mixon's injury. <strong>Henderson is an explosive playmaker</strong> with 4.40 speed and elite burst. Despite injuries at Ohio State, he showed flashes of being a game-changing back. Perfect complement to C.J. Stroud's passing attack.</p>
+                    <div class="strengths-weaknesses">
+                        <div class="sw-section strengths">
+                            <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                            <ul><li>Elite burst and acceleration</li><li>Home-run hitting ability</li><li>Three-down capability</li><li>Ohio State pedigree</li></ul>
+                        </div>
+                        <div class="sw-section weaknesses">
+                            <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
+                            <ul><li>Injury history concerns</li><li>Durability questions</li><li>Pass protection consistency</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pick 59: Rams -->
+        <div class="pick-card" data-position="WR" data-team="Rams" data-player="Xavier Restrepo" style="animation-delay: 1.35s">
+            <div class="pick-header">
+                <span class="pick-number">59</span>
+                <svg class="team-helmet" viewBox="0 0 100 70">
+                    <ellipse cx="50" cy="35" rx="48" ry="32" fill="#003594" stroke="#FFD100" stroke-width="3"/>
+                    <text x="50" y="42" text-anchor="middle" fill="#FFD100" font-size="18" font-weight="bold" font-family="Arial">LAR</text>
+                    <path d="M35 30 Q40 25 45 30 Q45 35 40 40" fill="none" stroke="#FFD100" stroke-width="2"/>
+                    <path d="M55 30 Q60 25 65 30 Q65 35 60 40" fill="none" stroke="#FFD100" stroke-width="2"/>
+                </svg>
+                <div class="team-details">
+                    <h3>Los Angeles Rams</h3>
+                    <span class="team-record">12-5 | #59 Overall</span>
+                    <div class="team-needs">
+                        <span class="need-badge need-high">WR</span>
+                        <span class="need-badge need-medium">EDGE</span>
+                        <span class="need-badge need-medium">CB</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-content">
+                <div class="player-main">
+                    <div class="player-photo"><img src="images/players/xavier-restrepo.jpg" alt="Xavier Restrepo" onerror="this.src='images/players/placeholder.jpg'"></div>
+                    <div class="player-info">
+                        <h2>Xavier Restrepo</h2>
+                        <span class="player-position">WR</span>
+                        <span class="player-school">Miami</span>
+                        <div class="player-stats">
+                            <div class="stat-box"><div class="stat-value">5'10"</div><div class="stat-label">Height</div></div>
+                            <div class="stat-box"><div class="stat-value">190</div><div class="stat-label">Weight</div></div>
+                            <div class="stat-box"><div class="stat-value">4.45</div><div class="stat-label">40-Yard</div></div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn twitter" onclick="sharePick('Rams', 'Xavier Restrepo', 59)"><i class="fab fa-twitter"></i> Tweet</button>
+                            <button class="share-btn copy" onclick="copyPickLink(59)"><i class="fas fa-link"></i> Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="breakdown-section">
+                    <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                    <p class="breakdown-content">The Rams need receiver depth behind Cooper Kupp and Puka Nacua. <strong>Restrepo is a polished route runner</strong> from Miami with excellent hands and YAC ability. Led the Hurricanes in receiving and provides reliable depth for Matthew Stafford.</p>
+                    <div class="strengths-weaknesses">
+                        <div class="sw-section strengths">
+                            <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                            <ul><li>Elite route running</li><li>Reliable hands</li><li>YAC ability in space</li><li>Slot specialist</li></ul>
+                        </div>
+                        <div class="sw-section weaknesses">
+                            <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
+                            <ul><li>Size for outside role</li><li>Contested catch ability</li><li>Top-end speed (4.45)</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pick 60: Broncos -->
+        <div class="pick-card" data-position="OT" data-team="Broncos" data-player="JC Latham" style="animation-delay: 1.4s">
+            <div class="pick-header">
+                <span class="pick-number">60</span>
+                <svg class="team-helmet" viewBox="0 0 100 70">
+                    <ellipse cx="50" cy="35" rx="48" ry="32" fill="#FB4F14" stroke="#002244" stroke-width="3"/>
+                    <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">DEN</text>
+                </svg>
+                <div class="team-details">
+                    <h3>Denver Broncos</h3>
+                    <span class="team-record">14-3 | #60 Overall</span>
+                    <div class="team-needs">
+                        <span class="need-badge need-high">OT</span>
+                        <span class="need-badge need-medium">IOL</span>
+                        <span class="need-badge need-medium">WR</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-content">
+                <div class="player-main">
+                    <div class="player-photo"><img src="images/players/jc-latham.jpg" alt="JC Latham" onerror="this.src='images/players/placeholder.jpg'"></div>
+                    <div class="player-info">
+                        <h2>JC Latham</h2>
+                        <span class="player-position">OT</span>
+                        <span class="player-school">Alabama</span>
+                        <div class="player-stats">
+                            <div class="stat-box"><div class="stat-value">6'6"</div><div class="stat-label">Height</div></div>
+                            <div class="stat-box"><div class="stat-value">360</div><div class="stat-label">Weight</div></div>
+                            <div class="stat-box"><div class="stat-value">5.30</div><div class="stat-label">40-Yard</div></div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn twitter" onclick="sharePick('Broncos', 'JC Latham', 60)"><i class="fab fa-twitter"></i> Tweet</button>
+                            <button class="share-btn copy" onclick="copyPickLink(60)"><i class="fas fa-link"></i> Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="breakdown-section">
+                    <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                    <p class="breakdown-content">Denver needs offensive line help to protect Bo Nix. <strong>Latham is a massive right tackle at 6'6" 360</strong> with rare power and length. Alabama pedigree and physicality make him an ideal fit for Sean Payton's offense. Can start immediately at RT.</p>
+                    <div class="strengths-weaknesses">
+                        <div class="sw-section strengths">
+                            <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                            <ul><li>Elite size and power (6'6" 360)</li><li>Massive wingspan</li><li>Dominant run blocker</li><li>Alabama pedigree</li></ul>
+                        </div>
+                        <div class="sw-section weaknesses">
+                            <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
+                            <ul><li>Lateral agility in pass pro</li><li>Speed rushers off the edge</li><li>Stamina on long drives</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pick 61: Patriots (Super Bowl) -->
+        <div class="pick-card" data-position="EDGE" data-team="Patriots" data-player="Jack Sawyer" style="animation-delay: 1.45s">
+            <div class="pick-header">
+                <span class="pick-number">61</span>
+                <svg class="team-helmet" viewBox="0 0 100 70">
+                    <ellipse cx="50" cy="35" rx="48" ry="32" fill="#002244" stroke="#C60C30" stroke-width="3"/>
+                    <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">NE</text>
+                </svg>
+                <div class="team-details">
+                    <h3>New England Patriots</h3>
+                    <span class="team-record">14-3 | Super Bowl | #61 Overall</span>
+                    <div class="team-needs">
+                        <span class="need-badge need-high">EDGE</span>
+                        <span class="need-badge need-medium">DL</span>
+                        <span class="need-badge need-medium">CB</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-content">
+                <div class="player-main">
+                    <div class="player-photo"><img src="images/players/jack-sawyer.jpg" alt="Jack Sawyer" onerror="this.src='images/players/placeholder.jpg'"></div>
+                    <div class="player-info">
+                        <h2>Jack Sawyer</h2>
+                        <span class="player-position">EDGE</span>
+                        <span class="player-school">Ohio State</span>
+                        <div class="player-stats">
+                            <div class="stat-box"><div class="stat-value">6'4"</div><div class="stat-label">Height</div></div>
+                            <div class="stat-box"><div class="stat-value">265</div><div class="stat-label">Weight</div></div>
+                            <div class="stat-box"><div class="stat-value">4.70</div><div class="stat-label">40-Yard</div></div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn twitter" onclick="sharePick('Patriots', 'Jack Sawyer', 61)"><i class="fab fa-twitter"></i> Tweet</button>
+                            <button class="share-btn copy" onclick="copyPickLink(61)"><i class="fas fa-link"></i> Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="breakdown-section">
+                    <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                    <p class="breakdown-content">New England needs pass rush help after losing key veterans. <strong>Sawyer is a high-motor edge rusher</strong> from Ohio State with relentless pursuit. National Championship performer with 9 sacks in 2025. Provides immediate rotational depth with starting upside.</p>
+                    <div class="strengths-weaknesses">
+                        <div class="sw-section strengths">
+                            <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                            <ul><li>High motor and pursuit</li><li>Strong vs the run</li><li>Ohio State pedigree</li><li>Versatile - can rush inside</li></ul>
+                        </div>
+                        <div class="sw-section weaknesses">
+                            <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
+                            <ul><li>Elite athletic traits</li><li>Bend around the edge</li><li>Speed rush ability</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pick 62: Seahawks (Super Bowl) -->
+        <div class="pick-card" data-position="IOL" data-team="Seahawks" data-player="Oluwafemi Oladejo" style="animation-delay: 1.5s">
+            <div class="pick-header">
+                <span class="pick-number">62</span>
+                <svg class="team-helmet" viewBox="0 0 100 70">
+                    <ellipse cx="50" cy="35" rx="48" ry="32" fill="#002244" stroke="#69BE28" stroke-width="3"/>
+                    <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">SEA</text>
+                </svg>
+                <div class="team-details">
+                    <h3>Seattle Seahawks</h3>
+                    <span class="team-record">14-3 | Super Bowl | #62 Overall</span>
+                    <div class="team-needs">
+                        <span class="need-badge need-high">IOL</span>
+                        <span class="need-badge need-medium">EDGE</span>
+                        <span class="need-badge need-medium">CB</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-content">
+                <div class="player-main">
+                    <div class="player-photo"><img src="images/players/oluwafemi-oladejo.jpg" alt="Oluwafemi Oladejo" onerror="this.src='images/players/placeholder.jpg'"></div>
+                    <div class="player-info">
+                        <h2>Oluwafemi Oladejo</h2>
+                        <span class="player-position">IOL</span>
+                        <span class="player-school">UCLA</span>
+                        <div class="player-stats">
+                            <div class="stat-box"><div class="stat-value">6'4"</div><div class="stat-label">Height</div></div>
+                            <div class="stat-box"><div class="stat-value">325</div><div class="stat-label">Weight</div></div>
+                            <div class="stat-box"><div class="stat-value">5.20</div><div class="stat-label">40-Yard</div></div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn twitter" onclick="sharePick('Seahawks', 'Oluwafemi Oladejo', 62)"><i class="fab fa-twitter"></i> Tweet</button>
+                            <button class="share-btn copy" onclick="copyPickLink(62)"><i class="fas fa-link"></i> Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="breakdown-section">
+                    <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                    <p class="breakdown-content">Seattle needs interior offensive line help to protect Geno Smith. <strong>Oladejo is a powerful guard</strong> from UCLA with excellent strength and technique. Physical run blocker who can start immediately and upgrade Seattle's interior protection.</p>
+                    <div class="strengths-weaknesses">
+                        <div class="sw-section strengths">
+                            <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                            <ul><li>Elite strength and power</li><li>Violent run blocker</li><li>Good technique</li><li>Versatile - guard or center</li></ul>
+                        </div>
+                        <div class="sw-section weaknesses">
+                            <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
+                            <ul><li>Lateral agility</li><li>Recovery when beat</li><li>Speed rushers</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pick 63: Cardinals -->
+        <div class="pick-card" data-position="S" data-team="Cardinals" data-player="Rod Moore" style="animation-delay: 1.55s">
+            <div class="pick-header">
+                <span class="pick-number">63</span>
+                <svg class="team-helmet" viewBox="0 0 100 70">
+                    <ellipse cx="50" cy="35" rx="48" ry="32" fill="#97233F" stroke="black" stroke-width="3"/>
+                    <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">ARI</text>
+                </svg>
+                <div class="team-details">
+                    <h3>Arizona Cardinals</h3>
+                    <span class="team-record">3-14 | #63 Overall</span>
+                    <div class="team-needs">
+                        <span class="need-badge need-high">S</span>
+                        <span class="need-badge need-medium">EDGE</span>
+                        <span class="need-badge need-medium">CB</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-content">
+                <div class="player-main">
+                    <div class="player-photo"><img src="images/players/rod-moore.jpg" alt="Rod Moore" onerror="this.src='images/players/placeholder.jpg'"></div>
+                    <div class="player-info">
+                        <h2>Rod Moore</h2>
+                        <span class="player-position">S</span>
+                        <span class="player-school">Michigan</span>
+                        <div class="player-stats">
+                            <div class="stat-box"><div class="stat-value">6'0"</div><div class="stat-label">Height</div></div>
+                            <div class="stat-box"><div class="stat-value">195</div><div class="stat-label">Weight</div></div>
+                            <div class="stat-box"><div class="stat-value">4.45</div><div class="stat-label">40-Yard</div></div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn twitter" onclick="sharePick('Cardinals', 'Rod Moore', 63)"><i class="fab fa-twitter"></i> Tweet</button>
+                            <button class="share-btn copy" onclick="copyPickLink(63)"><i class="fas fa-link"></i> Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="breakdown-section">
+                    <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                    <p class="breakdown-content">Arizona needs safety help to complete their defensive rebuild. <strong>Moore is a versatile defender</strong> from Michigan with excellent instincts and ball skills. National Champion who can play free safety, box, or nickel. Perfect fit for Jonathan Gannon's defense.</p>
+                    <div class="strengths-weaknesses">
+                        <div class="sw-section strengths">
+                            <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                            <ul><li>Versatile - multiple positions</li><li>High football IQ</li><li>Ball skills and playmaking</li><li>Michigan pedigree</li></ul>
+                        </div>
+                        <div class="sw-section weaknesses">
+                            <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
+                            <ul><li>Size for box safety</li><li>Tackle technique</li><li>Deep coverage range</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pick 64: Jets -->
+        <div class="pick-card" data-position="CB" data-team="Jets" data-player="Darien Porter" style="animation-delay: 1.6s">
+            <div class="pick-header">
+                <span class="pick-number">64</span>
+                <svg class="team-helmet" viewBox="0 0 100 70">
+                    <ellipse cx="50" cy="35" rx="48" ry="32" fill="#125740" stroke="white" stroke-width="3"/>
+                    <text x="50" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">NYJ</text>
+                </svg>
+                <div class="team-details">
+                    <h3>New York Jets</h3>
+                    <span class="team-record">3-14 | #64 Overall</span>
+                    <div class="team-needs">
+                        <span class="need-badge need-high">CB</span>
+                        <span class="need-badge need-medium">EDGE</span>
+                        <span class="need-badge need-medium">S</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-content">
+                <div class="player-main">
+                    <div class="player-photo"><img src="images/players/darien-porter.jpg" alt="Darien Porter" onerror="this.src='images/players/placeholder.jpg'"></div>
+                    <div class="player-info">
+                        <h2>Darien Porter</h2>
+                        <span class="player-position">CB</span>
+                        <span class="player-school">Iowa State</span>
+                        <div class="player-stats">
+                            <div class="stat-box"><div class="stat-value">6'2"</div><div class="stat-label">Height</div></div>
+                            <div class="stat-box"><div class="stat-value">190</div><div class="stat-label">Weight</div></div>
+                            <div class="stat-box"><div class="stat-value">4.40</div><div class="stat-label">40-Yard</div></div>
+                        </div>
+                        <div class="social-share">
+                            <button class="share-btn twitter" onclick="sharePick('Jets', 'Darien Porter', 64)"><i class="fab fa-twitter"></i> Tweet</button>
+                            <button class="share-btn copy" onclick="copyPickLink(64)"><i class="fas fa-link"></i> Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="breakdown-section">
+                    <div class="breakdown-title"><i class="fas fa-clipboard-check"></i> Pick Reasoning</div>
+                    <p class="breakdown-content">The Jets close Round 2 with another cornerback to rebuild their secondary. <strong>Porter is a long, athletic corner</strong> from Iowa State with elite speed and ball skills. Former receiver with natural playmaking ability. Perfect complement to their earlier defensive selections.</p>
+                    <div class="strengths-weaknesses">
+                        <div class="sw-section strengths">
+                            <h4><i class="fas fa-plus-circle"></i> Strengths</h4>
+                            <ul><li>Elite size and length (6'2")</li><li>Former receiver - ball skills</li><li>Elite speed (4.40)</li><li>High upside</li></ul>
+                        </div>
+                        <div class="sw-section weaknesses">
+                            <h4><i class="fas fa-minus-circle"></i> Areas to Improve</h4>
+                            <ul><li>Experience at cornerback</li><li>Technique refinement</li><li>Press coverage consistency</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="no-results" id="r2noResults" style="display: none;">
+        <i class="fas fa-search"></i>
+        <h3>No picks found</h3>
+        <p>Try adjusting your filters or search terms</p>
+    </div>
+</div>
+
 
         <!-- ROUND 3 -->
         <div id="round3" class="tab-content">
@@ -3229,7 +4889,122 @@
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
             updatePositionCounts();
+            updateR2PositionCounts();
         });
+
+        // Round 2 Position Counts
+        function updateR2PositionCounts() {
+            const picks = document.querySelectorAll('#round2Picks .pick-card:not(.hidden)');
+            const counts = { QB: 0, RB: 0, WR: 0, TE: 0, OT: 0, IOL: 0, EDGE: 0, DL: 0, LB: 0, CB: 0, S: 0 };
+
+            picks.forEach(pick => {
+                const pos = pick.dataset.position;
+                if (counts.hasOwnProperty(pos)) {
+                    counts[pos]++;
+                }
+            });
+
+            const r2qbCount = document.getElementById('r2qbCount');
+            const r2rbCount = document.getElementById('r2rbCount');
+            const r2wrCount = document.getElementById('r2wrCount');
+            const r2olCount = document.getElementById('r2olCount');
+            const r2dlCount = document.getElementById('r2dlCount');
+            
+            if (r2qbCount) r2qbCount.textContent = counts.QB;
+            if (r2rbCount) r2rbCount.textContent = counts.RB;
+            if (r2wrCount) r2wrCount.textContent = counts.WR;
+            if (r2olCount) r2olCount.textContent = counts.OT + counts.IOL;
+            if (r2dlCount) r2dlCount.textContent = counts.EDGE + counts.DL + counts.LB;
+        }
+
+        // Enhanced filter function that works for both rounds
+        function filterAllPicks(position) {
+            // Update active button
+            document.querySelectorAll('.controls-bar .filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filter Round 1
+            const r1picks = document.querySelectorAll('#round1Picks .pick-card');
+            let r1visibleCount = 0;
+            r1picks.forEach(pick => {
+                if (position === 'all' || pick.dataset.position === position) {
+                    pick.classList.remove('hidden');
+                    r1visibleCount++;
+                } else {
+                    pick.classList.add('hidden');
+                }
+            });
+            
+            // Show/hide Round 1 no results
+            const r1noResults = document.getElementById('noResults');
+            if (r1noResults) r1noResults.style.display = r1visibleCount === 0 && position !== 'all' ? 'block' : 'none';
+
+            // Filter Round 2
+            const r2picks = document.querySelectorAll('#round2Picks .pick-card');
+            let r2visibleCount = 0;
+            r2picks.forEach(pick => {
+                if (position === 'all' || pick.dataset.position === position) {
+                    pick.classList.remove('hidden');
+                    r2visibleCount++;
+                } else {
+                    pick.classList.add('hidden');
+                }
+            });
+            
+            // Show/hide Round 2 no results
+            const r2noResults = document.getElementById('r2noResults');
+            if (r2noResults) r2noResults.style.display = r2visibleCount === 0 && position !== 'all' ? 'block' : 'none';
+
+            updatePositionCounts();
+            updateR2PositionCounts();
+            showToast(`Filtered by: ${position === 'all' ? 'All Positions' : position}`);
+        }
+
+        // Enhanced search function that works for both rounds
+        function searchAllPicks() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            
+            // Search Round 1
+            const r1picks = document.querySelectorAll('#round1Picks .pick-card');
+            let r1visibleCount = 0;
+            r1picks.forEach(pick => {
+                const player = (pick.dataset.player || '').toLowerCase();
+                const team = (pick.dataset.team || '').toLowerCase();
+                const position = (pick.dataset.position || '').toLowerCase();
+
+                if (player.includes(searchTerm) || team.includes(searchTerm) || position.includes(searchTerm)) {
+                    pick.classList.remove('hidden');
+                    r1visibleCount++;
+                } else {
+                    pick.classList.add('hidden');
+                }
+            });
+            
+            const r1noResults = document.getElementById('noResults');
+            if (r1noResults) r1noResults.style.display = r1visibleCount === 0 && searchTerm !== '' ? 'block' : 'none';
+
+            // Search Round 2
+            const r2picks = document.querySelectorAll('#round2Picks .pick-card');
+            let r2visibleCount = 0;
+            r2picks.forEach(pick => {
+                const player = (pick.dataset.player || '').toLowerCase();
+                const team = (pick.dataset.team || '').toLowerCase();
+                const position = (pick.dataset.position || '').toLowerCase();
+
+                if (player.includes(searchTerm) || team.includes(searchTerm) || position.includes(searchTerm)) {
+                    pick.classList.remove('hidden');
+                    r2visibleCount++;
+                } else {
+                    pick.classList.add('hidden');
+                }
+            });
+            
+            const r2noResults = document.getElementById('r2noResults');
+            if (r2noResults) r2noResults.style.display = r2visibleCount === 0 && searchTerm !== '' ? 'block' : 'none';
+
+            updatePositionCounts();
+            updateR2PositionCounts();
+        }
 
         // ==========================================
         // CUSTOM MOCK DRAFT BUILDER
