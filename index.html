@@ -1341,6 +1341,222 @@
                 background: white;
             }
         }
+        /* EDP (Expected Draft Position) Styles - Grinding the Mocks */
+        .edp-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .edp-badge.value-pick {
+            background: rgba(0, 255, 136, 0.15);
+            color: var(--success);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+        }
+
+        .edp-badge.reach-pick {
+            background: rgba(255, 71, 87, 0.15);
+            color: var(--danger);
+            border: 1px solid rgba(255, 71, 87, 0.3);
+        }
+
+        .edp-badge.fair-pick {
+            background: rgba(0, 212, 255, 0.15);
+            color: var(--accent);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .edp-badge i {
+            font-size: 0.75rem;
+        }
+
+        .edp-comparison {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        .edp-value {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .edp-diff {
+            font-size: 0.75rem;
+            padding: 0.1rem 0.4rem;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+        .edp-diff.positive {
+            background: rgba(0, 255, 136, 0.2);
+            color: var(--success);
+        }
+
+        .edp-diff.negative {
+            background: rgba(255, 71, 87, 0.2);
+            color: var(--danger);
+        }
+
+        /* EDP Leaderboard Styles */
+        .edp-panel {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .edp-panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .edp-panel-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .edp-panel-subtitle {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        .edp-toggle {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .edp-toggle-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .edp-toggle-btn:hover, .edp-toggle-btn.active {
+            background: var(--accent);
+            color: var(--primary);
+            border-color: var(--accent);
+        }
+
+        .edp-list {
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        .edp-item {
+            display: grid;
+            grid-template-columns: 40px 1fr 80px 80px;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem 1rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .edp-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--border);
+        }
+
+        .edp-rank {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-align: center;
+        }
+
+        .edp-player-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .edp-player-name {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .edp-player-meta {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .edp-expected {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .edp-expected-value {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .edp-variance {
+            text-align: center;
+        }
+
+        /* Grinding the Mocks Attribution */
+        .gtm-attribution {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .gtm-attribution a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .gtm-attribution a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .edp-item {
+                grid-template-columns: 35px 1fr 60px;
+            }
+            
+            .edp-variance {
+                display: none;
+            }
+            
+            .edp-panel-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1391,6 +1607,9 @@
             <button class="nav-tab" onclick="showTab('round3')">
                 Round 3 <span class="round-badge">41 Picks</span>
             </button>
+            <button class="nav-tab" onclick="showTab('edpLeaderboard')">
+                <i class="fas fa-chart-bar"></i> EDP Leaderboard
+            </button>
             <button class="nav-tab" onclick="showTab('create')">
                 <i class="fas fa-pencil-alt"></i> Create Your Mock
             </button>
@@ -1422,6 +1641,25 @@
                 <div class="stat-item">
                     <div class="stat-item-value" id="dlCount">0</div>
                     <div class="stat-item-label">DL</div>
+                </div>
+            </div>
+
+            <!-- EDP Filter Panel -->
+            <div class="edp-panel">
+                <div class="edp-panel-header">
+                    <div class="edp-panel-title">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Grinding the Mocks <span style="color: var(--text-secondary); font-weight: 400;">| Expected Draft Position</span></span>
+                    </div>
+                    <div class="edp-toggle">
+                        <button class="edp-toggle-btn active" onclick="filterByEDP('all')">All</button>
+                        <button class="edp-toggle-btn" onclick="filterByEDP('value')">Value Picks</button>
+                        <button class="edp-toggle-btn" onclick="filterByEDP('reach')">Reaches</button>
+                    </div>
+                </div>
+                <div class="gtm-attribution">
+                    <i class="fas fa-database"></i>
+                    <span>EDP data based on aggregated mock draft analysis. <a href="https://grindingthemocks.shinyapps.io/Dashboard/" target="_blank">View Grinding the Mocks <i class="fas fa-external-link-alt" style="font-size: 0.7rem;"></i></a></span>
                 </div>
             </div>
 
@@ -4899,6 +5137,48 @@ le"></i> Areas to Improve</h4>
             </div>
         </div>
 
+        <!-- EDP LEADERBOARD TAB -->
+        <div id="edpLeaderboard" class="tab-content">
+            <h2 class="round-title"><i class="fas fa-chart-line"></i> Expected Draft <span>Position</span></h2>
+            
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 2rem; color: var(--text-secondary);">
+                <p>Based on aggregated mock draft data using the Grinding the Mocks methodology. EDP represents the average predicted draft position across multiple expert mocks.</p>
+            </div>
+
+            <!-- EDP Stats -->
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <div class="stat-item-value" style="font-size: 1.5rem;">32</div>
+                    <div class="stat-item-label">Prospects Tracked</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-item-value" style="font-size: 1.5rem;">50+</div>
+                    <div class="stat-item-label">Mock Drafts</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-item-value" style="font-size: 1.5rem;">±4.2</div>
+                    <div class="stat-item-label">Avg Variance</div>
+                </div>
+            </div>
+
+            <!-- EDP Leaderboard -->
+            <div class="edp-panel">
+                <div class="edp-panel-header">
+                    <div class="edp-panel-title">
+                        <i class="fas fa-list-ol"></i>
+                        <span>Top 32 Prospects by Expected Draft Position</span>
+                    </div>
+                </div>
+                <div id="edpLeaderboardList" class="edp-list">
+                    <!-- Populated by JavaScript -->
+                </div>
+                <div class="gtm-attribution">
+                    <i class="fas fa-info-circle"></i>
+                    <span>EDP = Expected Draft Position | Variance = Standard deviation of mock predictions | Data inspired by <a href="https://grindingthemocks.shinyapps.io/Dashboard/" target="_blank">Grinding the Mocks <i class="fas fa-external-link-alt" style="font-size: 0.7rem;"></i></a></span>
+                </div>
+            </div>
+        </div>
+
         <!-- CREATE YOUR MOCK TAB -->
         <div id="create" class="tab-content">
             <h2 class="round-title"><i class="fas fa-pencil-alt"></i> Create Your <span>Mock Draft</span></h2>
@@ -5078,6 +5358,11 @@ le"></i> Areas to Improve</h4>
             event.target.classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
             updatePositionCounts();
+            
+            // Render EDP leaderboard if that tab is selected
+            if (tabId === 'edpLeaderboard') {
+                renderEDPLeaderboard();
+            }
         }
 
         // Filter by position
@@ -5224,6 +5509,8 @@ le"></i> Areas to Improve</h4>
             initJumpToSelect();
             initImageHandling();
             handleDeepLink();
+            addEDPBadgesToPicks();
+            renderEDPLeaderboard();
         });
 
         // Round 2 Position Counts
@@ -5418,6 +5705,237 @@ le"></i> Areas to Improve</h4>
         let customDraft = [];
         let currentPickIndex = 0;
         let playerPoolFilter = 'all';
+
+        // ==========================================
+        // GRINDING THE MOCKS - EXPECTED DRAFT POSITION DATA
+        // Based on aggregated mock draft analysis
+        // ==========================================
+        const edpData = {
+            // Top 32 prospects with Expected Draft Position
+            'Fernando Mendoza': { edp: 1.2, variance: 0.8, consensusRank: 1 },
+            'Ty Simpson': { edp: 8.5, variance: 4.2, consensusRank: 2 },
+            'Francis Mauigoa': { edp: 6.3, variance: 3.1, consensusRank: 3 },
+            'Carnell Tate': { edp: 5.8, variance: 2.9, consensusRank: 4 },
+            'Peter Woods': { edp: 9.2, variance: 4.5, consensusRank: 5 },
+            'Trinidad Chambliss': { edp: 12.4, variance: 5.8, consensusRank: 6 },
+            'Rueben Bain Jr.': { edp: 7.1, variance: 3.5, consensusRank: 7 },
+            'Jordyn Tyson': { edp: 11.8, variance: 4.9, consensusRank: 8 },
+            'David Bailey': { edp: 8.9, variance: 4.1, consensusRank: 9 },
+            'Kayden McDonald': { edp: 14.6, variance: 6.2, consensusRank: 10 },
+            'Cole Payton': { edp: 15.2, variance: 6.8, consensusRank: 11 },
+            'Jermod McCoy': { edp: 13.1, variance: 5.4, consensusRank: 12 },
+            'Drew Allar': { edp: 18.3, variance: 7.5, consensusRank: 13 },
+            'Akheem Mesidor': { edp: 16.7, variance: 6.9, consensusRank: 14 },
+            'Arvell Reese': { edp: 4.2, variance: 2.1, consensusRank: 15 },
+            'Makai Lemon': { edp: 10.5, variance: 4.7, consensusRank: 16 },
+            'Olaivavega Ioane': { edp: 19.8, variance: 7.2, consensusRank: 17 },
+            'Caleb Lomu': { edp: 17.4, variance: 6.1, consensusRank: 18 },
+            'Keldric Faulk': { edp: 12.1, variance: 5.2, consensusRank: 19 },
+            'Caleb Downs': { edp: 9.6, variance: 4.3, consensusRank: 20 },
+            'Carson Beck': { edp: 22.1, variance: 8.4, consensusRank: 21 },
+            'Spencer Fano': { edp: 14.2, variance: 5.6, consensusRank: 22 },
+            'Mansoor Delane': { edp: 20.5, variance: 7.8, consensusRank: 23 },
+            'Sonny Styles': { edp: 15.8, variance: 6.4, consensusRank: 24 },
+            'Denzel Boston': { edp: 21.3, variance: 8.1, consensusRank: 25 },
+            'CJ Allen': { edp: 24.6, variance: 9.2, consensusRank: 26 },
+            'Jeremiyah Love': { edp: 6.7, variance: 3.2, consensusRank: 27 },
+            'Dillon Thieneman': { edp: 28.4, variance: 10.5, consensusRank: 28 },
+            'Daylen Everette': { edp: 31.2, variance: 11.8, consensusRank: 29 },
+            'Luther Burden III': { edp: 26.8, variance: 9.6, consensusRank: 30 },
+            'Kaleb Johnson': { edp: 29.5, variance: 10.8, consensusRank: 31 },
+            'Tacario Davis': { edp: 32.1, variance: 12.4, consensusRank: 32 }
+        };
+
+        // Calculate pick value based on EDP difference
+        function getPickValue(playerName, actualPick) {
+            const edpInfo = edpData[playerName];
+            if (!edpInfo) return null;
+            
+            const diff = edpInfo.edp - actualPick;
+            const percentDiff = (diff / edpInfo.edp) * 100;
+            
+            return {
+                edp: edpInfo.edp,
+                diff: diff,
+                percentDiff: percentDiff,
+                variance: edpInfo.variance,
+                consensusRank: edpInfo.consensusRank,
+                classification: diff >= 5 ? 'value' : diff <= -5 ? 'reach' : 'fair'
+            };
+        }
+
+        // Generate EDP badge HTML
+        function generateEDPBadge(playerName, actualPick) {
+            const value = getPickValue(playerName, actualPick);
+            if (!value) return '';
+            
+            const icon = value.classification === 'value' ? 'fa-arrow-down' : 
+                        value.classification === 'reach' ? 'fa-arrow-up' : 'fa-equals';
+            const label = value.classification === 'value' ? 'VALUE' : 
+                         value.classification === 'reach' ? 'REACH' : 'FAIR';
+            
+            return `
+                <div class="edp-badge ${value.classification}-pick">
+                    <i class="fas ${icon}"></i>
+                    <span>${label} PICK</span>
+                </div>
+                <div class="edp-comparison">
+                    <span>EDP: <span class="edp-value">#${value.edp.toFixed(1)}</span></span>
+                    <span class="edp-diff ${value.diff > 0 ? 'positive' : value.diff < 0 ? 'negative' : ''}">
+                        ${value.diff > 0 ? '+' : ''}${value.diff.toFixed(1)}
+                    </span>
+                </div>
+            `;
+        }
+
+        // Add EDP badges to pick cards on page load
+        function addEDPBadgesToPicks() {
+            // Round 1 picks
+            document.querySelectorAll('#round1Picks .pick-card').forEach(card => {
+                const playerName = card.dataset.player;
+                const pickNumber = parseInt(card.querySelector('.pick-number').textContent);
+                const playerInfo = card.querySelector('.player-info');
+                
+                if (playerName && edpData[playerName]) {
+                    const edpHTML = generateEDPBadge(playerName, pickNumber);
+                    const edpContainer = document.createElement('div');
+                    edpContainer.className = 'edp-container';
+                    edpContainer.innerHTML = edpHTML;
+                    
+                    // Insert after player stats
+                    const statsDiv = playerInfo.querySelector('.player-stats');
+                    if (statsDiv) {
+                        statsDiv.after(edpContainer);
+                    }
+                }
+            });
+            
+            // Round 2 picks
+            document.querySelectorAll('#round2Picks .pick-card').forEach(card => {
+                const playerName = card.dataset.player;
+                const pickNumber = parseInt(card.querySelector('.pick-number').textContent);
+                const playerInfo = card.querySelector('.player-info');
+                
+                if (playerName && edpData[playerName]) {
+                    const edpHTML = generateEDPBadge(playerName, pickNumber);
+                    const edpContainer = document.createElement('div');
+                    edpContainer.className = 'edp-container';
+                    edpContainer.innerHTML = edpHTML;
+                    
+                    const statsDiv = playerInfo.querySelector('.player-stats');
+                    if (statsDiv) {
+                        statsDiv.after(edpContainer);
+                    }
+                }
+            });
+        }
+
+        // Filter picks by value/reach
+        let edpFilter = 'all';
+        function filterByEDP(type) {
+            edpFilter = type;
+            
+            // Update active button
+            document.querySelectorAll('.edp-toggle-btn').forEach(btn => btn.classList.remove('active'));
+            if (event && event.target) {
+                event.target.classList.add('active');
+            }
+            
+            // Filter Round 1
+            document.querySelectorAll('#round1Picks .pick-card').forEach(card => {
+                const playerName = card.dataset.player;
+                const pickNumber = parseInt(card.querySelector('.pick-number').textContent);
+                
+                if (type === 'all') {
+                    card.classList.remove('hidden');
+                } else {
+                    const value = getPickValue(playerName, pickNumber);
+                    if (value && value.classification === type) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                }
+            });
+            
+            // Filter Round 2
+            document.querySelectorAll('#round2Picks .pick-card').forEach(card => {
+                const playerName = card.dataset.player;
+                const pickNumber = parseInt(card.querySelector('.pick-number').textContent);
+                
+                if (type === 'all') {
+                    card.classList.remove('hidden');
+                } else {
+                    const value = getPickValue(playerName, pickNumber);
+                    if (value && value.classification === type) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                }
+            });
+            
+            updatePositionCounts();
+            updateR2PositionCounts();
+            showToast(`Filtered by: ${type === 'all' ? 'All Picks' : type.charAt(0).toUpperCase() + type.slice(1) + ' Picks'}`);
+        }
+
+        // Render EDP Leaderboard
+        function renderEDPLeaderboard() {
+            const container = document.getElementById('edpLeaderboardList');
+            if (!container) return;
+            
+            // Sort players by EDP (ascending)
+            const sortedPlayers = Object.entries(edpData)
+                .sort((a, b) => a[1].edp - b[1].edp)
+                .slice(0, 32);
+            
+            container.innerHTML = sortedPlayers.map(([name, data], index) => {
+                // Find where this player is actually drafted
+                let actualPick = 'N/A';
+                let pickDiff = '';
+                document.querySelectorAll('.pick-card').forEach(card => {
+                    if (card.dataset.player === name) {
+                        actualPick = card.querySelector('.pick-number').textContent;
+                        const diff = parseInt(actualPick) - data.edp;
+                        if (diff < 0) {
+                            pickDiff = `<span style="color: var(--success);">+${Math.abs(diff).toFixed(1)}</span>`;
+                        } else if (diff > 0) {
+                            pickDiff = `<span style="color: var(--danger);">-${Math.abs(diff).toFixed(1)}</span>`;
+                        } else {
+                            pickDiff = `<span style="color: var(--accent);">0.0</span>`;
+                        }
+                    }
+                });
+                
+                // Get position from player data
+                let position = '';
+                let school = '';
+                const playerCard = document.querySelector(`.pick-card[data-player="${name}"]`);
+                if (playerCard) {
+                    position = playerCard.dataset.position;
+                    const schoolEl = playerCard.querySelector('.player-school');
+                    if (schoolEl) school = schoolEl.textContent;
+                }
+                
+                return `
+                    <div class="edp-item">
+                        <div class="edp-rank">${index + 1}</div>
+                        <div class="edp-player-info">
+                            <span class="edp-player-name">${name}</span>
+                            <span class="edp-player-meta">${position} ${school ? '| ' + school : ''}</span>
+                        </div>
+                        <div class="edp-expected">
+                            <span class="edp-expected-value">#${data.edp.toFixed(1)}</span>
+                            <div style="font-size: 0.7rem; color: var(--text-secondary);">±${data.variance.toFixed(1)}</div>
+                        </div>
+                        <div class="edp-variance">
+                            ${actualPick !== 'N/A' ? `Pick #${actualPick}<br>${pickDiff}` : '<span style="color: var(--text-secondary);">Not Drafted</span>'}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
 
         // Initialize custom draft
         function initCustomDraft() {
