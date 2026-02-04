@@ -14,6 +14,9 @@
     <meta name="theme-color" content="#00d4ff">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Export Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
         :root {
             --primary: #0a0a0f;
@@ -1319,6 +1322,271 @@
             }
         }
 
+
+        /* Export & Share Styles */
+        .export-bar {
+            background: linear-gradient(90deg, rgba(0,212,255,0.1) 0%, rgba(0,255,136,0.05) 50%, rgba(255,184,0,0.1) 100%);
+            padding: 0.75rem 2rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .export-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .export-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,212,255,0.2);
+        }
+
+        .export-btn.primary {
+            background: var(--accent);
+            color: var(--primary);
+            border-color: var(--accent);
+        }
+
+        .export-btn.primary:hover {
+            background: var(--accent-hover);
+            border-color: var(--accent-hover);
+        }
+
+        .share-btn.facebook:hover {
+            background: #4267B2;
+            border-color: #4267B2;
+            color: white;
+        }
+
+        .share-btn.reddit:hover {
+            background: #FF4500;
+            border-color: #FF4500;
+            color: white;
+        }
+
+        .share-btn.image:hover {
+            background: var(--warning);
+            border-color: var(--warning);
+            color: white;
+        }
+
+        .footer-export-btns {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        /* Export Modal */
+        .export-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1001;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .export-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .export-modal {
+            background: var(--secondary);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            transform: scale(0.9);
+            transition: all 0.3s ease;
+        }
+
+        .export-modal-overlay.active .export-modal {
+            transform: scale(1);
+        }
+
+        .export-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .export-modal-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .export-modal-close {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .export-modal-close:hover {
+            color: var(--accent);
+        }
+
+        .export-options {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .export-option {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .export-option:hover {
+            border-color: var(--accent);
+            background: rgba(0,212,255,0.05);
+        }
+
+        .export-option-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .export-option-icon.pdf { background: rgba(255, 71, 87, 0.2); color: #ff4757; }
+        .export-option-icon.text { background: rgba(0, 255, 136, 0.2); color: #00ff88; }
+        .export-option-icon.link { background: rgba(0, 212, 255, 0.2); color: #00d4ff; }
+        .export-option-icon.image { background: rgba(255, 184, 0, 0.2); color: #ffb800; }
+        .export-option-icon.social { background: rgba(29, 161, 242, 0.2); color: #1DA1F2; }
+
+        .export-option-content {
+            flex: 1;
+        }
+
+        .export-option-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .export-option-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Share URL Input */
+        .share-url-container {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: var(--card-bg);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .share-url-input-group {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .share-url-input {
+            flex: 1;
+            background: var(--primary);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .share-url-btn {
+            background: var(--accent);
+            color: var(--primary);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .share-url-btn:hover {
+            background: var(--accent-hover);
+        }
+
+        /* Loading Spinner */
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .export-bar {
+                padding: 0.5rem 1rem;
+            }
+
+            .export-btn {
+                padding: 0.4rem 0.75rem;
+                font-size: 0.75rem;
+            }
+
+            .export-modal {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+
+            .export-modal-title {
+                font-size: 1.2rem;
+            }
+        }
+
         /* Print Styles */
         @media print {
             .header, .controls-bar, .nav-container, .back-to-top, .footer, .social-share, .jump-to-container {
@@ -1751,6 +2019,300 @@
                 display: none;
             }
         }
+
+        /* Team Drafts Styles */
+        .team-drafts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .team-draft-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .team-draft-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+            border-color: var(--accent);
+        }
+
+        .team-draft-header {
+            padding: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .team-draft-logo {
+            width: 60px;
+            height: 40px;
+            flex-shrink: 0;
+        }
+
+        .team-draft-info h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .team-draft-record {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .grade-badge {
+            margin-left: auto;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-align: center;
+            min-width: 50px;
+        }
+
+        .grade-badge.grade-aplus { background: linear-gradient(135deg, #ffd700, #ffed4e); color: #000; }
+        .grade-badge.grade-a { background: linear-gradient(135deg, #00ff88, #00cc6a); color: #000; }
+        .grade-badge.grade-aminus { background: linear-gradient(135deg, #00dd77, #00aa55); color: #000; }
+        .grade-badge.grade-bplus { background: linear-gradient(135deg, #88ff00, #66cc00); color: #000; }
+        .grade-badge.grade-b { background: linear-gradient(135deg, #ccff00, #99cc00); color: #000; }
+        .grade-badge.grade-bminus { background: linear-gradient(135deg, #ffcc00, #cc9900); color: #000; }
+        .grade-badge.grade-cplus { background: linear-gradient(135deg, #ff9900, #cc7700); color: #fff; }
+        .grade-badge.grade-c { background: linear-gradient(135deg, #ff6600, #cc4400); color: #fff; }
+        .grade-badge.grade-cminus { background: linear-gradient(135deg, #ff3300, #cc1100); color: #fff; }
+        .grade-badge.grade-d { background: linear-gradient(135deg, #ff0000, #cc0000); color: #fff; }
+        .grade-badge.grade-f { background: linear-gradient(135deg, #990000, #660000); color: #fff; }
+
+        .team-draft-needs {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .team-needs-title {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+        }
+
+        .needs-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .need-tag {
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .need-tag.high { background: rgba(255, 71, 87, 0.2); color: #ff4757; border: 1px solid rgba(255, 71, 87, 0.3); }
+        .need-tag.medium { background: rgba(255, 184, 0, 0.2); color: #ffb800; border: 1px solid rgba(255, 184, 0, 0.3); }
+        .need-tag.low { background: rgba(139, 139, 154, 0.2); color: #8b8b9a; border: 1px solid rgba(139, 139, 154, 0.3); }
+
+        .team-draft-picks {
+            padding: 1rem 1.25rem;
+        }
+
+        .team-draft-pick {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .team-draft-pick:last-child {
+            border-bottom: none;
+        }
+
+        .pick-number-badge {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .pick-player-info {
+            flex: 1;
+        }
+
+        .pick-player-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        .pick-player-meta {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .pick-value-indicator {
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .pick-value-indicator.value { background: rgba(0, 255, 136, 0.2); color: var(--success); }
+        .pick-value-indicator.fair { background: rgba(0, 212, 255, 0.2); color: var(--accent); }
+        .pick-value-indicator.reach { background: rgba(255, 71, 87, 0.2); color: var(--danger); }
+
+        .team-draft-summary {
+            padding: 1rem 1.25rem;
+            background: rgba(255,255,255,0.02);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Draft Grades Leaderboard */
+        .grade-item {
+            display: grid;
+            grid-template-columns: 60px 1fr 80px 80px 80px 80px 80px;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255,255,255,0.02);
+            border-radius: 8px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .grade-item:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: var(--border);
+        }
+
+        .grade-rank {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-align: center;
+        }
+
+        .grade-team-info {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .grade-team-logo {
+            width: 40px;
+            height: 28px;
+        }
+
+        .grade-team-name {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .grade-team-record {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .score-box {
+            text-align: center;
+        }
+
+        .score-label {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+
+        .score-value {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .score-value.good { color: var(--success); }
+        .score-value.avg { color: var(--warning); }
+        .score-value.poor { color: var(--danger); }
+
+        @media (max-width: 768px) {
+            .team-drafts-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .grade-item {
+                grid-template-columns: 40px 1fr 60px;
+                gap: 0.75rem;
+            }
+            
+            .grade-item .score-box:nth-child(3),
+            .grade-item .score-box:nth-child(4),
+            .grade-item .score-box:nth-child(5),
+            .grade-item .score-box:nth-child(6) {
+                display: none;
+            }
+        }
+
+        /* Export Bar Styles */
+        .export-bar {
+            background: linear-gradient(90deg, rgba(0,212,255,0.1) 0%, rgba(0,255,136,0.1) 100%);
+            border-bottom: 1px solid var(--border);
+            padding: 0.75rem 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .export-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .export-btn:hover {
+            background: var(--accent);
+            color: var(--primary);
+            border-color: var(--accent);
+        }
+
+        .export-btn.primary {
+            background: var(--accent);
+            color: var(--primary);
+            border-color: var(--accent);
+        }
+
+        .export-btn.primary:hover {
+            background: var(--accent-hover);
+        }
     </style>
 </head>
 <body>
@@ -1760,6 +2322,26 @@
             <p class="header-subtitle">3 Round Projections • <span class="header-accent">Player Analysis & Team Needs</span></p>
         </div>
     </header>
+
+    <!-- Export Bar -->
+    <div class="export-bar">
+        <button class="export-btn primary" onclick="openExportModal()">
+            <i class="fas fa-download"></i> Export & Share
+        </button>
+        <button class="export-btn" onclick="copyDraftAsText()">
+            <i class="fas fa-copy"></i> Copy Text
+        </button>
+        <button class="export-btn" onclick="generateShareableURL()">
+            <i class="fas fa-link"></i> Get Link
+        </button>
+        <button class="export-btn" onclick="exportToPDF()">
+            <i class="fas fa-file-pdf"></i> PDF
+        </button>
+        <button class="export-btn" onclick="shareTwitter()">
+            <i class="fab fa-twitter"></i> Tweet
+        </button>
+    </div>
+
 
     <div class="controls-bar">
         <div class="control-group">
@@ -1806,6 +2388,12 @@
             </button>
             <button class="nav-tab" onclick="showTab('bigBoard')">
                 <i class="fas fa-list-ol"></i> Big Board
+            </button>
+            <button class="nav-tab" onclick="showTab('teamDrafts')">
+                <i class="fas fa-shield-alt"></i> Team Drafts
+            </button>
+            <button class="nav-tab" onclick="showTab('draftGrades')">
+                <i class="fas fa-star"></i> Draft Grades
             </button>
             <button class="nav-tab" onclick="showTab('create')">
                 <i class="fas fa-pencil-alt"></i> Create Your Mock
@@ -1956,6 +2544,8 @@
                                 <div class="social-share">
                                     <button class="share-btn twitter" onclick="sharePick('Jets', 'Ty Simpson', 2)"><i class="fab fa-twitter"></i> Tweet</button>
                                     <button class="share-btn copy" onclick="copyPickLink(2)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(2)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(2)"><i class="fab fa-reddit-alien"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -2010,6 +2600,8 @@
                                 <div class="social-share">
                                     <button class="share-btn twitter" onclick="sharePick('Cardinals', 'Francis Mauigoa', 3)"><i class="fab fa-twitter"></i> Tweet</button>
                                     <button class="share-btn copy" onclick="copyPickLink(3)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(3)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(3)"><i class="fab fa-reddit-alien"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -2063,6 +2655,8 @@
                                 <div class="social-share">
                                     <button class="share-btn twitter" onclick="sharePick('Titans', 'Carnell Tate', 4)"><i class="fab fa-twitter"></i> Tweet</button>
                                     <button class="share-btn copy" onclick="copyPickLink(4)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(4)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(4)"><i class="fab fa-reddit-alien"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -2116,6 +2710,8 @@
                                 <div class="social-share">
                                     <button class="share-btn twitter" onclick="sharePick('Giants', 'Peter Woods', 5)"><i class="fab fa-twitter"></i> Tweet</button>
                                     <button class="share-btn copy" onclick="copyPickLink(5)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(5)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(5)"><i class="fab fa-reddit-alien"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -2169,6 +2765,8 @@
                                 <div class="social-share">
                                     <button class="share-btn twitter" onclick="sharePick('Browns', 'Trinidad Chambliss', 6)"><i class="fab fa-twitter"></i> Tweet</button>
                                     <button class="share-btn copy" onclick="copyPickLink(6)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(6)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(6)"><i class="fab fa-reddit-alien"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -2222,6 +2820,8 @@
                                 <div class="social-share">
                                     <button class="share-btn twitter" onclick="sharePick('Commanders', 'Rueben Bain Jr.', 7)"><i class="fab fa-twitter"></i> Tweet</button>
                                     <button class="share-btn copy" onclick="copyPickLink(7)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(7)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(7)"><i class="fab fa-reddit-alien"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -2275,6 +2875,8 @@
                                 <div class="social-share">
                                     <button class="share-btn twitter" onclick="sharePick('Saints', 'Jordyn Tyson', 8)"><i class="fab fa-twitter"></i> Tweet</button>
                                     <button class="share-btn copy" onclick="copyPickLink(8)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(8)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(8)"><i class="fab fa-reddit-alien"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -2328,6 +2930,8 @@
                                 <div class="social-share">
                                     <button class="share-btn twitter" onclick="sharePick('Chiefs', 'David Bailey', 9)"><i class="fab fa-twitter"></i> Tweet</button>
                                     <button class="share-btn copy" onclick="copyPickLink(9)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(9)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(9)"><i class="fab fa-reddit-alien"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -2381,6 +2985,8 @@
                                 <div class="social-share">
                                     <button class="share-btn twitter" onclick="sharePick('Bengals', 'Kayden McDonald', 10)"><i class="fab fa-twitter"></i> Tweet</button>
                                     <button class="share-btn copy" onclick="copyPickLink(10)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(10)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(10)"><i class="fab fa-reddit-alien"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -2434,6 +3040,8 @@
                                 <div class="social-share">
                                     <button class="share-btn twitter" onclick="sharePick('Dolphins', 'Cole Payton', 11)"><i class="fab fa-twitter"></i> Tweet</button>
                                     <button class="share-btn copy" onclick="copyPickLink(11)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(11)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(11)"><i class="fab fa-reddit-alien"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -2488,6 +3096,8 @@
                                 <div class="social-share">
                                     <button class="share-btn twitter" onclick="sharePick('Cowboys', 'Jermod McCoy', 12)"><i class="fab fa-twitter"></i> Tweet</button>
                                     <button class="share-btn copy" onclick="copyPickLink(12)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(12)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(12)"><i class="fab fa-reddit-alien"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -2543,6 +3153,8 @@
                                 <div class="social-share">
                                     <button class="share-btn twitter" onclick="sharePick('Rams', 'Drew Allar', 13)"><i class="fab fa-twitter"></i> Tweet</button>
                                     <button class="share-btn copy" onclick="copyPickLink(13)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(13)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(13)"><i class="fab fa-reddit-alien"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -2596,6 +3208,8 @@
                                 <div class="social-share">
                                     <button class="share-btn twitter" onclick="sharePick('Ravens', 'Akheem Mesidor', 14)"><i class="fab fa-twitter"></i> Tweet</button>
                                     <button class="share-btn copy" onclick="copyPickLink(14)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(14)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(14)"><i class="fab fa-reddit-alien"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -2649,6 +3263,8 @@
                                 <div class="social-share">
                                     <button class="share-btn twitter" onclick="sharePick('Buccaneers', 'Arvell Reese', 15)"><i class="fab fa-twitter"></i> Tweet</button>
                                     <button class="share-btn copy" onclick="copyPickLink(15)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(15)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(15)"><i class="fab fa-reddit-alien"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -2702,6 +3318,8 @@
                                 <div class="social-share">
                                     <button class="share-btn twitter" onclick="sharePick('Jets', 'Makai Lemon', 16)"><i class="fab fa-twitter"></i> Tweet</button>
                                     <button class="share-btn copy" onclick="copyPickLink(16)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(16)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(16)"><i class="fab fa-reddit-alien"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -2755,6 +3373,8 @@
                                 <div class="social-share">
                                     <button class="share-btn twitter" onclick="sharePick('Lions', 'Olaivavega Ioane', 17)"><i class="fab fa-twitter"></i> Tweet</button>
                                     <button class="share-btn copy" onclick="copyPickLink(17)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(17)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(17)"><i class="fab fa-reddit-alien"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -2808,6 +3428,8 @@
                                 <div class="social-share">
                                     <button class="share-btn twitter" onclick="sharePick('Vikings', 'Caleb Lomu', 18)"><i class="fab fa-twitter"></i> Tweet</button>
                                     <button class="share-btn copy" onclick="copyPickLink(18)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(18)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(18)"><i class="fab fa-reddit-alien"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -2861,6 +3483,8 @@
                                 <div class="social-share">
                                     <button class="share-btn twitter" onclick="sharePick('Panthers', 'Keldric Faulk', 19)"><i class="fab fa-twitter"></i> Tweet</button>
                                     <button class="share-btn copy" onclick="copyPickLink(19)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(19)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(19)"><i class="fab fa-reddit-alien"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -2915,6 +3539,8 @@
                                 <div class="social-share">
                                     <button class="share-btn twitter" onclick="sharePick('Cowboys', 'Caleb Downs', 20)"><i class="fab fa-twitter"></i> Tweet</button>
                                     <button class="share-btn copy" onclick="copyPickLink(20)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(20)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(20)"><i class="fab fa-reddit-alien"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -2968,6 +3594,8 @@
                                 <div class="social-share">
                                     <button class="share-btn twitter" onclick="sharePick('Steelers', 'Carson Beck', 21)"><i class="fab fa-twitter"></i> Tweet</button>
                                     <button class="share-btn copy" onclick="copyPickLink(21)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(21)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(21)"><i class="fab fa-reddit-alien"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -3021,6 +3649,8 @@
                                 <div class="social-share">
                                     <button class="share-btn twitter" onclick="sharePick('Chargers', 'Spencer Fano', 22)"><i class="fab fa-twitter"></i> Tweet</button>
                                     <button class="share-btn copy" onclick="copyPickLink(22)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(22)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(22)"><i class="fab fa-reddit-alien"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -3074,6 +3704,8 @@
                                 <div class="social-share">
                                     <button class="share-btn twitter" onclick="sharePick('Eagles', 'Kenyon Sadiq', 23)"><i class="fab fa-twitter"></i> Tweet</button>
                                     <button class="share-btn copy" onclick="copyPickLink(23)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(23)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(23)"><i class="fab fa-reddit-alien"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -3127,6 +3759,8 @@
                                 <div class="social-share">
                                     <button class="share-btn twitter" onclick="sharePick('Browns', 'Mansoor Delane', 24)"><i class="fab fa-twitter"></i> Tweet</button>
                                     <button class="share-btn copy" onclick="copyPickLink(24)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(24)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(24)"><i class="fab fa-reddit-alien"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -3180,6 +3814,8 @@
                                 <div class="social-share">
                                     <button class="share-btn twitter" onclick="sharePick('Bears', 'Sonny Styles', 25)"><i class="fab fa-twitter"></i> Tweet</button>
                                     <button class="share-btn copy" onclick="copyPickLink(25)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(25)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(25)"><i class="fab fa-reddit-alien"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -3233,6 +3869,8 @@
                                 <div class="social-share">
                                     <button class="share-btn twitter" onclick="sharePick('Bills', 'Denzel Boston', 26)"><i class="fab fa-twitter"></i> Tweet</button>
                                     <button class="share-btn copy" onclick="copyPickLink(26)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(26)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(26)"><i class="fab fa-reddit-alien"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -3286,6 +3924,8 @@
                                 <div class="social-share">
                                     <button class="share-btn twitter" onclick="sharePick('49ers', 'CJ Allen', 27)"><i class="fab fa-twitter"></i> Tweet</button>
                                     <button class="share-btn copy" onclick="copyPickLink(27)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(27)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(27)"><i class="fab fa-reddit-alien"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -3339,6 +3979,8 @@
                                 <div class="social-share">
                                     <button class="share-btn twitter" onclick="sharePick('Texans', 'Jeremiyah Love', 28)"><i class="fab fa-twitter"></i> Tweet</button>
                                     <button class="share-btn copy" onclick="copyPickLink(28)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(28)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(28)"><i class="fab fa-reddit-alien"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -3394,6 +4036,8 @@
                                 <div class="social-share">
                                     <button class="share-btn twitter" onclick="sharePick('Rams', 'Dillon Thieneman', 29)"><i class="fab fa-twitter"></i> Tweet</button>
                                     <button class="share-btn copy" onclick="copyPickLink(29)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(29)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(29)"><i class="fab fa-reddit-alien"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -3447,6 +4091,8 @@
                                 <div class="social-share">
                                     <button class="share-btn twitter" onclick="sharePick('Broncos', 'Zachariah Branch', 30)"><i class="fab fa-twitter"></i> Tweet</button>
                                     <button class="share-btn copy" onclick="copyPickLink(30)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(30)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(30)"><i class="fab fa-reddit-alien"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -3614,6 +4260,8 @@
                         <div class="social-share">
                             <button class="share-btn twitter" onclick="sharePick('Giants', 'Daylen Everette', 33)"><i class="fab fa-twitter"></i> Tweet</button>
                             <button class="share-btn copy" onclick="copyPickLink(33)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(33)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(33)"><i class="fab fa-reddit-alien"></i></button>
                         </div>
                     </div>
                 </div>
@@ -3667,6 +4315,8 @@
                         <div class="social-share">
                             <button class="share-btn twitter" onclick="sharePick('Patriots', 'Luther Burden III', 34)"><i class="fab fa-twitter"></i> Tweet</button>
                             <button class="share-btn copy" onclick="copyPickLink(34)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(34)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(34)"><i class="fab fa-reddit-alien"></i></button>
                         </div>
                     </div>
                 </div>
@@ -3720,6 +4370,8 @@
                         <div class="social-share">
                             <button class="share-btn twitter" onclick="sharePick('Jaguars', 'Kaleb Johnson', 35)"><i class="fab fa-twitter"></i> Tweet</button>
                             <button class="share-btn copy" onclick="copyPickLink(35)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(35)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(35)"><i class="fab fa-reddit-alien"></i></button>
                         </div>
                     </div>
                 </div>
@@ -3773,6 +4425,8 @@
                         <div class="social-share">
                             <button class="share-btn twitter" onclick="sharePick('Titans', 'Tacario Davis', 36)"><i class="fab fa-twitter"></i> Tweet</button>
                             <button class="share-btn copy" onclick="copyPickLink(36)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(36)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(36)"><i class="fab fa-reddit-alien"></i></button>
                         </div>
                     </div>
                 </div>
@@ -3826,6 +4480,8 @@
                         <div class="social-share">
                             <button class="share-btn twitter" onclick="sharePick('Commanders', 'Deone Walker', 37)"><i class="fab fa-twitter"></i> Tweet</button>
                             <button class="share-btn copy" onclick="copyPickLink(37)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(37)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(37)"><i class="fab fa-reddit-alien"></i></button>
                         </div>
                     </div>
                 </div>
@@ -3879,6 +4535,8 @@
                         <div class="social-share">
                             <button class="share-btn twitter" onclick="sharePick('Saints', 'Aireontae Ersery', 38)"><i class="fab fa-twitter"></i> Tweet</button>
                             <button class="share-btn copy" onclick="copyPickLink(38)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(38)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(38)"><i class="fab fa-reddit-alien"></i></button>
                         </div>
                     </div>
                 </div>
@@ -3932,6 +4590,8 @@
                         <div class="social-share">
                             <button class="share-btn twitter" onclick="sharePick('Chiefs', 'Tyleik Williams', 39)"><i class="fab fa-twitter"></i> Tweet</button>
                             <button class="share-btn copy" onclick="copyPickLink(39)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(39)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(39)"><i class="fab fa-reddit-alien"></i></button>
                         </div>
                     </div>
                 </div>
@@ -3985,6 +4645,8 @@
                         <div class="social-share">
                             <button class="share-btn twitter" onclick="sharePick('Bengals', 'Dani Dennis-Sutton', 40)"><i class="fab fa-twitter"></i> Tweet</button>
                             <button class="share-btn copy" onclick="copyPickLink(40)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(40)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(40)"><i class="fab fa-reddit-alien"></i></button>
                         </div>
                     </div>
                 </div>
@@ -4038,6 +4700,8 @@
                         <div class="social-share">
                             <button class="share-btn twitter" onclick="sharePick('Dolphins', 'Donovan Jackson', 41)"><i class="fab fa-twitter"></i> Tweet</button>
                             <button class="share-btn copy" onclick="copyPickLink(41)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(41)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(41)"><i class="fab fa-reddit-alien"></i></button>
                         </div>
                     </div>
                 </div>
@@ -4092,6 +4756,8 @@
                         <div class="social-share">
                             <button class="share-btn twitter" onclick="sharePick('Cowboys', 'Malaki Starks', 42)"><i class="fab fa-twitter"></i> Tweet</button>
                             <button class="share-btn copy" onclick="copyPickLink(42)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(42)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(42)"><i class="fab fa-reddit-alien"></i></button>
                         </div>
                     </div>
                 </div>
@@ -4147,6 +4813,8 @@
                         <div class="social-share">
                             <button class="share-btn twitter" onclick="sharePick('Rams', 'Kenneth Grant', 43)"><i class="fab fa-twitter"></i> Tweet</button>
                             <button class="share-btn copy" onclick="copyPickLink(43)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(43)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(43)"><i class="fab fa-reddit-alien"></i></button>
                         </div>
                     </div>
                 </div>
@@ -4200,6 +4868,8 @@
                         <div class="social-share">
                             <button class="share-btn twitter" onclick="sharePick('Ravens', 'Maxwell Hairston', 44)"><i class="fab fa-twitter"></i> Tweet</button>
                             <button class="share-btn copy" onclick="copyPickLink(44)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(44)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(44)"><i class="fab fa-reddit-alien"></i></button>
                         </div>
                     </div>
                 </div>
@@ -4253,6 +4923,8 @@
                         <div class="social-share">
                             <button class="share-btn twitter" onclick="sharePick('Buccaneers', 'Princely Umanmielen', 45)"><i class="fab fa-twitter"></i> Tweet</button>
                             <button class="share-btn copy" onclick="copyPickLink(45)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(45)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(45)"><i class="fab fa-reddit-alien"></i></button>
                         </div>
                     </div>
                 </div>
@@ -4306,6 +4978,8 @@
                         <div class="social-share">
                             <button class="share-btn twitter" onclick="sharePick('Jets', 'Omarion Hampton', 46)"><i class="fab fa-twitter"></i> Tweet</button>
                             <button class="share-btn copy" onclick="copyPickLink(46)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(46)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(46)"><i class="fab fa-reddit-alien"></i></button>
                         </div>
                     </div>
                 </div>
@@ -4359,6 +5033,8 @@
                         <div class="social-share">
                             <button class="share-btn twitter" onclick="sharePick('Lions', 'Carson Schwesinger', 47)"><i class="fab fa-twitter"></i> Tweet</button>
                             <button class="share-btn copy" onclick="copyPickLink(47)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(47)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(47)"><i class="fab fa-reddit-alien"></i></button>
                         </div>
                     </div>
                 </div>
@@ -4413,6 +5089,8 @@ le"></i> Areas to Improve</h4>
                         <div class="social-share">
                             <button class="share-btn twitter" onclick="sharePick('Vikings', 'Jayden Higgins', 48)"><i class="fab fa-twitter"></i> Tweet</button>
                             <button class="share-btn copy" onclick="copyPickLink(48)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(48)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(48)"><i class="fab fa-reddit-alien"></i></button>
                         </div>
                     </div>
                 </div>
@@ -4466,6 +5144,8 @@ le"></i> Areas to Improve</h4>
                         <div class="social-share">
                             <button class="share-btn twitter" onclick="sharePick('Panthers', 'Mason Taylor', 49)"><i class="fab fa-twitter"></i> Tweet</button>
                             <button class="share-btn copy" onclick="copyPickLink(49)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(49)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(49)"><i class="fab fa-reddit-alien"></i></button>
                         </div>
                     </div>
                 </div>
@@ -4520,6 +5200,8 @@ le"></i> Areas to Improve</h4>
                         <div class="social-share">
                             <button class="share-btn twitter" onclick="sharePick('Cowboys', 'Jihaad Campbell', 50)"><i class="fab fa-twitter"></i> Tweet</button>
                             <button class="share-btn copy" onclick="copyPickLink(50)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(50)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(50)"><i class="fab fa-reddit-alien"></i></button>
                         </div>
                     </div>
                 </div>
@@ -4573,6 +5255,8 @@ le"></i> Areas to Improve</h4>
                         <div class="social-share">
                             <button class="share-btn twitter" onclick="sharePick('Steelers', 'Jonah Savaiinaea', 51)"><i class="fab fa-twitter"></i> Tweet</button>
                             <button class="share-btn copy" onclick="copyPickLink(51)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(51)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(51)"><i class="fab fa-reddit-alien"></i></button>
                         </div>
                     </div>
                 </div>
@@ -4626,6 +5310,8 @@ le"></i> Areas to Improve</h4>
                         <div class="social-share">
                             <button class="share-btn twitter" onclick="sharePick('Chargers', 'Shemar Stewart', 52)"><i class="fab fa-twitter"></i> Tweet</button>
                             <button class="share-btn copy" onclick="copyPickLink(52)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(52)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(52)"><i class="fab fa-reddit-alien"></i></button>
                         </div>
                     </div>
                 </div>
@@ -4679,6 +5365,8 @@ le"></i> Areas to Improve</h4>
                         <div class="social-share">
                             <button class="share-btn twitter" onclick="sharePick('Eagles', 'Will Johnson', 53)"><i class="fab fa-twitter"></i> Tweet</button>
                             <button class="share-btn copy" onclick="copyPickLink(53)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(53)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(53)"><i class="fab fa-reddit-alien"></i></button>
                         </div>
                     </div>
                 </div>
@@ -4732,6 +5420,8 @@ le"></i> Areas to Improve</h4>
                         <div class="social-share">
                             <button class="share-btn twitter" onclick="sharePick('Browns', 'Landon Jackson', 54)"><i class="fab fa-twitter"></i> Tweet</button>
                             <button class="share-btn copy" onclick="copyPickLink(54)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(54)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(54)"><i class="fab fa-reddit-alien"></i></button>
                         </div>
                     </div>
                 </div>
@@ -4785,6 +5475,8 @@ le"></i> Areas to Improve</h4>
                         <div class="social-share">
                             <button class="share-btn twitter" onclick="sharePick('Bears', 'Emeka Egbuka', 55)"><i class="fab fa-twitter"></i> Tweet</button>
                             <button class="share-btn copy" onclick="copyPickLink(55)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(55)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(55)"><i class="fab fa-reddit-alien"></i></button>
                         </div>
                     </div>
                 </div>
@@ -4838,6 +5530,8 @@ le"></i> Areas to Improve</h4>
                         <div class="social-share">
                             <button class="share-btn twitter" onclick="sharePick('Bills', 'Kevin Winston Jr.', 56)"><i class="fab fa-twitter"></i> Tweet</button>
                             <button class="share-btn copy" onclick="copyPickLink(56)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(56)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(56)"><i class="fab fa-reddit-alien"></i></button>
                         </div>
                     </div>
                 </div>
@@ -4891,6 +5585,8 @@ le"></i> Areas to Improve</h4>
                         <div class="social-share">
                             <button class="share-btn twitter" onclick="sharePick('49ers', 'Jahdae Barron', 57)"><i class="fab fa-twitter"></i> Tweet</button>
                             <button class="share-btn copy" onclick="copyPickLink(57)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(57)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(57)"><i class="fab fa-reddit-alien"></i></button>
                         </div>
                     </div>
                 </div>
@@ -4944,6 +5640,8 @@ le"></i> Areas to Improve</h4>
                         <div class="social-share">
                             <button class="share-btn twitter" onclick="sharePick('Texans', 'TreVeyon Henderson', 58)"><i class="fab fa-twitter"></i> Tweet</button>
                             <button class="share-btn copy" onclick="copyPickLink(58)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(58)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(58)"><i class="fab fa-reddit-alien"></i></button>
                         </div>
                     </div>
                 </div>
@@ -4999,6 +5697,8 @@ le"></i> Areas to Improve</h4>
                         <div class="social-share">
                             <button class="share-btn twitter" onclick="sharePick('Rams', 'Xavier Restrepo', 59)"><i class="fab fa-twitter"></i> Tweet</button>
                             <button class="share-btn copy" onclick="copyPickLink(59)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(59)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(59)"><i class="fab fa-reddit-alien"></i></button>
                         </div>
                     </div>
                 </div>
@@ -5052,6 +5752,8 @@ le"></i> Areas to Improve</h4>
                         <div class="social-share">
                             <button class="share-btn twitter" onclick="sharePick('Broncos', 'JC Latham', 60)"><i class="fab fa-twitter"></i> Tweet</button>
                             <button class="share-btn copy" onclick="copyPickLink(60)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(60)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(60)"><i class="fab fa-reddit-alien"></i></button>
                         </div>
                     </div>
                 </div>
@@ -5105,6 +5807,8 @@ le"></i> Areas to Improve</h4>
                         <div class="social-share">
                             <button class="share-btn twitter" onclick="sharePick('Patriots', 'Jack Sawyer', 61)"><i class="fab fa-twitter"></i> Tweet</button>
                             <button class="share-btn copy" onclick="copyPickLink(61)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(61)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(61)"><i class="fab fa-reddit-alien"></i></button>
                         </div>
                     </div>
                 </div>
@@ -5158,6 +5862,8 @@ le"></i> Areas to Improve</h4>
                         <div class="social-share">
                             <button class="share-btn twitter" onclick="sharePick('Seahawks', 'Oluwafemi Oladejo', 62)"><i class="fab fa-twitter"></i> Tweet</button>
                             <button class="share-btn copy" onclick="copyPickLink(62)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(62)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(62)"><i class="fab fa-reddit-alien"></i></button>
                         </div>
                     </div>
                 </div>
@@ -5211,6 +5917,8 @@ le"></i> Areas to Improve</h4>
                         <div class="social-share">
                             <button class="share-btn twitter" onclick="sharePick('Cardinals', 'Rod Moore', 63)"><i class="fab fa-twitter"></i> Tweet</button>
                             <button class="share-btn copy" onclick="copyPickLink(63)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(63)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(63)"><i class="fab fa-reddit-alien"></i></button>
                         </div>
                     </div>
                 </div>
@@ -5264,6 +5972,8 @@ le"></i> Areas to Improve</h4>
                         <div class="social-share">
                             <button class="share-btn twitter" onclick="sharePick('Jets', 'Darien Porter', 64)"><i class="fab fa-twitter"></i> Tweet</button>
                             <button class="share-btn copy" onclick="copyPickLink(64)"><i class="fas fa-link"></i> Copy Link</button>
+                                    <button class="share-btn facebook" onclick="sharePickFacebook(64)"><i class="fab fa-facebook-f"></i></button>
+                                    <button class="share-btn reddit" onclick="sharePickReddit(64)"><i class="fab fa-reddit-alien"></i></button>
                         </div>
                     </div>
                 </div>
@@ -5501,6 +6211,88 @@ le"></i> Areas to Improve</h4>
             </div>
         </div>
 
+        <!-- TEAM DRAFTS TAB -->
+        <div id="teamDrafts" class="tab-content">
+            <h2 class="round-title"><i class="fas fa-shield-alt"></i> Team <span>Drafts</span></h2>
+            
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 2rem; color: var(--text-secondary);">
+                <p>Complete draft breakdown for all 32 NFL teams. See each team's picks, needs, and draft grades.</p>
+            </div>
+
+            <!-- Team Drafts Filter -->
+            <div class="edp-panel">
+                <div class="edp-panel-header">
+                    <div class="edp-panel-title">
+                        <i class="fas fa-filter"></i>
+                        <span>Filter Teams</span>
+                    </div>
+                    <div class="edp-toggle">
+                        <button class="edp-toggle-btn active" onclick="filterTeamDrafts('all')">All Teams</button>
+                        <button class="edp-toggle-btn" onclick="filterTeamDrafts('multiple')">Multiple Picks</button>
+                        <button class="edp-toggle-btn" onclick="filterTeamDrafts('qb')">Drafted QB</button>
+                        <button class="edp-toggle-btn" onclick="filterTeamDrafts('defense')">Defense Heavy</button>
+                        <button class="edp-toggle-btn" onclick="filterTeamDrafts('offense')">Offense Heavy</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Drafts Grid -->
+            <div id="teamDraftsGrid" class="team-drafts-grid">
+                <!-- Populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- DRAFT GRADES TAB -->
+        <div id="draftGrades" class="tab-content">
+            <h2 class="round-title"><i class="fas fa-star"></i> Draft <span>Grades</span></h2>
+            
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 2rem; color: var(--text-secondary);">
+                <p>Automated grades based on value, need fit, and positional importance. All 32 teams ranked from best to worst draft.</p>
+            </div>
+
+            <!-- Grading Methodology -->
+            <div class="edp-panel">
+                <div class="edp-panel-header">
+                    <div class="edp-panel-title">
+                        <i class="fas fa-info-circle"></i>
+                        <span>Grading Methodology</span>
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                    <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px;">
+                        <div style="color: var(--accent); font-weight: 600; margin-bottom: 0.5rem;">Value Score (40%)</div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary);">Based on EDP vs Actual Pick</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px;">
+                        <div style="color: var(--accent); font-weight: 600; margin-bottom: 0.5rem;">Need Fit (30%)</div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary);">Addressing team priorities</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px;">
+                        <div style="color: var(--accent); font-weight: 600; margin-bottom: 0.5rem;">Positional Value (20%)</div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary);">Premium positions weighted higher</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px;">
+                        <div style="color: var(--accent); font-weight: 600; margin-bottom: 0.5rem;">Balance (10%)</div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary);">Overall draft quality</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Draft Grades Leaderboard -->
+            <div class="edp-panel" style="margin-top: 2rem;">
+                <div class="edp-panel-header">
+                    <div class="edp-panel-title">
+                        <i class="fas fa-trophy"></i>
+                        <span>Draft Grades Leaderboard</span>
+                    </div>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary);">Ranked by Overall Grade</div>
+                </div>
+                <div id="draftGradesLeaderboard" class="edp-list">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
         <!-- CREATE YOUR MOCK TAB -->
         <div id="create" class="tab-content">
             <h2 class="round-title"><i class="fas fa-pencil-alt"></i> Create Your <span>Mock Draft</span></h2>
@@ -5654,12 +6446,101 @@ le"></i> Areas to Improve</h4>
         </div>
     </main>
 
+
+    <!-- Export Modal -->
+    <div class="export-modal-overlay" id="exportModal" onclick="closeExportModal(event)">
+        <div class="export-modal" onclick="event.stopPropagation()">
+            <div class="export-modal-header">
+                <h2 class="export-modal-title">
+                    <i class="fas fa-share-alt" style="color: var(--accent);"></i>
+                    Export & Share
+                </h2>
+                <button class="export-modal-close" onclick="closeExportModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="export-options">
+                <div class="export-option" onclick="exportToPDF(); closeExportModal();">
+                    <div class="export-option-icon pdf">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="export-option-content">
+                        <div class="export-option-title">Export as PDF</div>
+                        <div class="export-option-desc">Download a professional PDF of the complete mock draft</div>
+                    </div>
+                    <i class="fas fa-chevron-right" style="color: var(--text-secondary);"></i>
+                </div>
+
+                <div class="export-option" onclick="copyDraftAsText(); closeExportModal();">
+                    <div class="export-option-icon text">
+                        <i class="fas fa-copy"></i>
+                    </div>
+                    <div class="export-option-content">
+                        <div class="export-option-title">Copy as Text</div>
+                        <div class="export-option-desc">Copy the draft to clipboard in clean text format</div>
+                    </div>
+                    <i class="fas fa-chevron-right" style="color: var(--text-secondary);"></i>
+                </div>
+
+                <div class="export-option" onclick="generateShareableURL(); closeExportModal();">
+                    <div class="export-option-icon link">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <div class="export-option-content">
+                        <div class="export-option-title">Get Shareable Link</div>
+                        <div class="export-option-desc">Generate a link to share this mock draft</div>
+                    </div>
+                    <i class="fas fa-chevron-right" style="color: var(--text-secondary);"></i>
+                </div>
+
+                <div class="export-option" onclick="shareTwitter(); closeExportModal();">
+                    <div class="export-option-icon social">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <div class="export-option-content">
+                        <div class="export-option-title">Share on Twitter/X</div>
+                        <div class="export-option-desc">Tweet your mock draft with pre-filled text</div>
+                    </div>
+                    <i class="fas fa-chevron-right" style="color: var(--text-secondary);"></i>
+                </div>
+
+                <div class="export-option" onclick="shareFacebook(); closeExportModal();">
+                    <div class="export-option-icon social" style="background: rgba(66, 103, 178, 0.2); color: #4267B2;">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                    <div class="export-option-content">
+                        <div class="export-option-title">Share on Facebook</div>
+                        <div class="export-option-desc">Post to Facebook</div>
+                    </div>
+                    <i class="fas fa-chevron-right" style="color: var(--text-secondary);"></i>
+                </div>
+
+                <div class="export-option" onclick="shareReddit(); closeExportModal();">
+                    <div class="export-option-icon social" style="background: rgba(255, 69, 0, 0.2); color: #FF4500;">
+                        <i class="fab fa-reddit-alien"></i>
+                    </div>
+                    <div class="export-option-content">
+                        <div class="export-option-title">Share on Reddit</div>
+                        <div class="export-option-desc">Post to r/NFL_Draft</div>
+                    </div>
+                    <i class="fas fa-chevron-right" style="color: var(--text-secondary);"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="footer-social">
             <a href="#" onclick="shareTwitter()" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
             <a href="#" onclick="shareFacebook()" title="Share on Facebook"><i class="fab fa-facebook"></i></a>
             <a href="#" onclick="shareReddit()" title="Share on Reddit"><i class="fab fa-reddit"></i></a>
             <a href="#" onclick="copyLink()" title="Copy Link"><i class="fas fa-link"></i></a>
+        </div>
+        <div class="footer-export-btns">
+            <button class="export-btn" onclick="exportToPDF()"><i class="fas fa-file-pdf"></i> Download PDF</button>
+            <button class="export-btn" onclick="copyDraftAsText()"><i class="fas fa-copy"></i> Copy Text</button>
+            <button class="export-btn" onclick="generateShareableURL()"><i class="fas fa-link"></i> Share Link</button>
         </div>
         <p>2026 NFL Mock Draft • Complete 3 Round Projections</p>
         <p style="margin-top: 0.5rem; font-size: 0.85rem;">This is a speculative mock draft for entertainment purposes only.</p>
@@ -5689,6 +6570,16 @@ le"></i> Areas to Improve</h4>
             // Render Big Board if that tab is selected
             if (tabId === 'bigBoard') {
                 renderBigBoard();
+            }
+            
+            // Render Team Drafts if that tab is selected
+            if (tabId === 'teamDrafts') {
+                renderTeamDrafts();
+            }
+            
+            // Render Draft Grades if that tab is selected
+            if (tabId === 'draftGrades') {
+                renderDraftGrades();
             }
         }
 
@@ -5839,6 +6730,8 @@ le"></i> Areas to Improve</h4>
             addEDPBadgesToPicks();
             renderEDPLeaderboard();
             renderBigBoard();
+            renderTeamDrafts();
+            renderDraftGrades();
         });
 
         // Round 2 Position Counts
@@ -6360,6 +7253,726 @@ le"></i> Areas to Improve</h4>
             updatePositionCounts();
             updateR2PositionCounts();
             showToast(`Filtered by: ${type === 'all' ? 'All Picks' : type.charAt(0).toUpperCase() + type.slice(1) + ' Picks'}`);
+        }
+
+        // ==========================================
+        // TEAM DRAFTS DATA
+        // ==========================================
+        const teamDraftsData = [
+            {
+                name: "Las Vegas Raiders",
+                city: "Las Vegas",
+                record: "3-14",
+                helmet: { color: "#000000", accent: "#A5ACAF" },
+                grade: "A-",
+                needs: [
+                    { position: "QB", priority: "high" },
+                    { position: "EDGE", priority: "high" },
+                    { position: "WR", priority: "medium" }
+                ],
+                picks: [
+                    { pick: 1, player: "Fernando Mendoza", position: "QB", school: "Indiana", value: "fair" }
+                ],
+                summary: "The Raiders finally get their franchise QB in Mendoza. Smart to take the best player in the draft at the top spot. Only one pick limits their ability to fill other holes."
+            },
+            {
+                name: "New York Jets",
+                city: "New York",
+                record: "3-14",
+                helmet: { color: "#125740", accent: "white" },
+                grade: "A",
+                needs: [
+                    { position: "QB", priority: "high" },
+                    { position: "OL", priority: "high" },
+                    { position: "WR", priority: "medium" }
+                ],
+                picks: [
+                    { pick: 2, player: "Ty Simpson", position: "QB", school: "Alabama", value: "fair" },
+                    { pick: 23, player: "Makai Lemon", position: "WR", school: "USC", value: "value" }
+                ],
+                summary: "Excellent draft for the Jets. Land a QB of the future in Simpson and get great value with Lemon late in Round 1. Two premium picks address biggest needs."
+            },
+            {
+                name: "Arizona Cardinals",
+                city: "Arizona",
+                record: "3-14",
+                helmet: { color: "#97233F", accent: "#000000" },
+                grade: "B+",
+                needs: [
+                    { position: "OT", priority: "high" },
+                    { position: "DL", priority: "high" },
+                    { position: "EDGE", priority: "medium" }
+                ],
+                picks: [
+                    { pick: 3, player: "Francis Mauigoa", position: "OT", school: "Miami", value: "fair" }
+                ],
+                summary: "Mauigoa is a mauler who will help protect whoever plays QB. Solid pick but Cardinals need more premium talent."
+            },
+            {
+                name: "Tennessee Titans",
+                city: "Tennessee",
+                record: "3-14",
+                helmet: { color: "#0C2340", accent: "#4C8FB6" },
+                grade: "B",
+                needs: [
+                    { position: "WR", priority: "high" },
+                    { position: "CB", priority: "high" },
+                    { position: "EDGE", priority: "medium" }
+                ],
+                picks: [
+                    { pick: 4, player: "Carnell Tate", position: "WR", school: "Ohio State", value: "reach" }
+                ],
+                summary: "Tate is a great prospect but may be a slight reach at #4. Gives the offense a true WR1 to build around."
+            },
+            {
+                name: "New York Giants",
+                city: "New York",
+                record: "4-13",
+                helmet: { color: "#001E62", accent: "#A5ACAF" },
+                grade: "B-",
+                needs: [
+                    { position: "Interior DL", priority: "high" },
+                    { position: "QB", priority: "medium" },
+                    { position: "WR", priority: "medium" }
+                ],
+                picks: [
+                    { pick: 5, player: "Peter Woods", position: "DL", school: "Clemson", value: "reach" }
+                ],
+                summary: "Woods is a solid player but taking a DT at #5 is questionable value. Giants need more impact from this premium pick."
+            },
+            {
+                name: "Cleveland Browns",
+                city: "Cleveland",
+                record: "5-12",
+                helmet: { color: "#311D00", accent: "#FF3C00" },
+                grade: "A-",
+                needs: [
+                    { position: "QB", priority: "high" },
+                    { position: "WR", priority: "medium" },
+                    { position: "OT", priority: "medium" }
+                ],
+                picks: [
+                    { pick: 6, player: "Trinidad Chambliss", position: "QB", school: "Ole Miss", value: "fair" },
+                    { pick: 27, player: "Mansoor Delane", position: "CB", school: "Virginia Tech", value: "value" }
+                ],
+                summary: "Browns finally get their QB and land excellent value with Delane late in Round 1. Two quality starters from this draft."
+            },
+            {
+                name: "Washington Commanders",
+                city: "Washington",
+                record: "5-12",
+                helmet: { color: "#773141", accent: "#FFB612" },
+                grade: "A-",
+                needs: [
+                    { position: "DE", priority: "high" },
+                    { position: "CB", priority: "high" },
+                    { position: "LB", priority: "medium" }
+                ],
+                picks: [
+                    { pick: 7, player: "Rueben Bain Jr.", position: "EDGE", school: "Miami", value: "value" }
+                ],
+                summary: "Bain is a steal at #7. Violent edge rusher who fills a massive need. Exactly what this defense needs."
+            },
+            {
+                name: "New Orleans Saints",
+                city: "New Orleans",
+                record: "6-11",
+                helmet: { color: "#101820", accent: "#D3BC8D" },
+                grade: "B",
+                needs: [
+                    { position: "WR", priority: "high" },
+                    { position: "OT", priority: "medium" },
+                    { position: "CB", priority: "medium" }
+                ],
+                picks: [
+                    { pick: 8, player: "Jordyn Tyson", position: "WR", school: "Arizona State", value: "reach" }
+                ],
+                summary: "Tyson is a good player but slightly early at #8. Saints get their WR1 but could have traded down."
+            },
+            {
+                name: "Kansas City Chiefs",
+                city: "Kansas City",
+                record: "11-6",
+                helmet: { color: "#E31837", accent: "#FFB81C" },
+                grade: "A",
+                needs: [
+                    { position: "Pass rusher", priority: "high" },
+                    { position: "WR", priority: "medium" },
+                    { position: "CB", priority: "medium" }
+                ],
+                picks: [
+                    { pick: 9, player: "David Bailey", position: "EDGE", school: "Texas Tech", value: "value" }
+                ],
+                summary: "Bailey is excellent value at #9. Elite speed rusher who upgrades their pass rush immediately. Perfect fit."
+            },
+            {
+                name: "Cincinnati Bengals",
+                city: "Cincinnati",
+                record: "13-4",
+                helmet: { color: "#FB4F14", accent: "black" },
+                grade: "A-",
+                needs: [
+                    { position: "Interior DL", priority: "high" },
+                    { position: "OT", priority: "medium" },
+                    { position: "LB", priority: "medium" }
+                ],
+                picks: [
+                    { pick: 10, player: "Kayden McDonald", position: "DL", school: "Ohio State", value: "fair" },
+                    { pick: 40, player: "Dani Dennis-Sutton", position: "EDGE", school: "Penn State", value: "value" }
+                ],
+                summary: "Bengals crush this draft. McDonald anchors the middle and Dennis-Sutton adds pass rush. Two starters for a contender."
+            },
+            {
+                name: "Miami Dolphins",
+                city: "Miami",
+                record: "7-10",
+                helmet: { color: "#008E97", accent: "#FC4C02" },
+                grade: "B+",
+                needs: [
+                    { position: "QB", priority: "high" },
+                    { position: "EDGE", priority: "medium" },
+                    { position: "CB", priority: "medium" }
+                ],
+                picks: [
+                    { pick: 11, player: "Cole Payton", position: "QB", school: "North Dakota State", value: "reach" },
+                    { pick: 41, player: "Donovan Jackson", position: "IOL", school: "Ohio State", value: "fair" }
+                ],
+                summary: "Payton is a reach at #11 but they needed a QB. Jackson is a solid Round 2 add for the offensive line."
+            },
+            {
+                name: "Dallas Cowboys",
+                city: "Dallas",
+                record: "7-9-1",
+                helmet: { color: "#003594", accent: "#869397" },
+                grade: "A+",
+                needs: [
+                    { position: "CB", priority: "high" },
+                    { position: "S", priority: "high" },
+                    { position: "LB", priority: "medium" }
+                ],
+                picks: [
+                    { pick: 15, player: "Jermod McCoy", position: "CB", school: "Tennessee", value: "value" },
+                    { pick: 42, player: "Malaki Starks", position: "S", school: "Georgia", value: "value" }
+                ],
+                summary: "Cowboys absolutely nail this draft. Two defensive studs where they needed them most. Both are value picks too."
+            },
+            {
+                name: "Los Angeles Rams",
+                city: "Los Angeles",
+                record: "14-3",
+                helmet: { color: "#003594", accent: "#FFD100" },
+                grade: "B",
+                needs: [
+                    { position: "QB", priority: "high" },
+                    { position: "DL", priority: "medium" },
+                    { position: "LB", priority: "medium" }
+                ],
+                picks: [
+                    { pick: 29, player: "Drew Allar", position: "QB", school: "Penn State", value: "fair" },
+                    { pick: 43, player: "Kenneth Grant", position: "DL", school: "Michigan", value: "fair" }
+                ],
+                summary: "Rams get their future QB in Allar and add a run-stuffing DT. Solid if unspectacular draft for a contender."
+            },
+            {
+                name: "Baltimore Ravens",
+                city: "Baltimore",
+                record: "8-9",
+                helmet: { color: "#241773", accent: "#9E7C0C" },
+                grade: "A-",
+                needs: [
+                    { position: "EDGE", priority: "high" },
+                    { position: "CB", priority: "high" },
+                    { position: "WR", priority: "medium" }
+                ],
+                picks: [
+                    { pick: 13, player: "Akheem Mesidor", position: "EDGE", school: "Miami", value: "value" },
+                    { pick: 44, player: "Maxwell Hairston", position: "CB", school: "Kentucky", value: "value" }
+                ],
+                summary: "Ravens continue to draft well. Mesidor and Hairston fill two massive needs with excellent value."
+            },
+            {
+                name: "Tampa Bay Buccaneers",
+                city: "Tampa Bay",
+                record: "8-9",
+                helmet: { color: "#D50A0A", accent: "#FF7900" },
+                grade: "B+",
+                needs: [
+                    { position: "EDGE", priority: "high" },
+                    { position: "S", priority: "medium" },
+                    { position: "LB", priority: "medium" }
+                ],
+                picks: [
+                    { pick: 14, player: "Arvell Reese", position: "LB", school: "Ohio State", value: "value" }
+                ],
+                summary: "Reese is a steal at #14. Elite LB prospect who can do it all. Buccaneers get a defensive cornerstone."
+            },
+            {
+                name: "Detroit Lions",
+                city: "Detroit",
+                record: "15-2",
+                helmet: { color: "#0076B6", accent: "#B0B7BC" },
+                grade: "A-",
+                needs: [
+                    { position: "IOL", priority: "high" },
+                    { position: "LB", priority: "high" },
+                    { position: "CB", priority: "medium" }
+                ],
+                picks: [
+                    { pick: 32, player: "Olaivavega Ioane", position: "IOL", school: "Penn State", value: "value" },
+                    { pick: 47, player: "Carson Schwesinger", position: "LB", school: "UCLA", value: "value" }
+                ],
+                summary: "Lions continue their excellent drafting. Two Day 1 starters who fit their physical identity. Great value at both picks."
+            },
+            {
+                name: "Minnesota Vikings",
+                city: "Minnesota",
+                record: "9-8",
+                helmet: { color: "#4F2683", accent: "#FFC62F" },
+                grade: "B+",
+                needs: [
+                    { position: "OT", priority: "high" },
+                    { position: "WR", priority: "high" },
+                    { position: "CB", priority: "medium" }
+                ],
+                picks: [
+                    { pick: 18, player: "Caleb Lomu", position: "OT", school: "Utah", value: "fair" },
+                    { pick: 48, player: "Jayden Higgins", position: "WR", school: "Iowa State", value: "fair" }
+                ],
+                summary: "Vikings address two big needs with solid picks. Lomu protects the QB and Higgins gives them a big target."
+            },
+            {
+                name: "Carolina Panthers",
+                city: "Carolina",
+                record: "6-11",
+                helmet: { color: "#0085CA", accent: "#101820" },
+                grade: "B+",
+                needs: [
+                    { position: "EDGE", priority: "high" },
+                    { position: "TE", priority: "medium" },
+                    { position: "CB", priority: "medium" }
+                ],
+                picks: [
+                    { pick: 20, player: "Keldric Faulk", position: "EDGE", school: "Auburn", value: "fair" }
+                ],
+                summary: "Faulk is a solid pick who brings length and power off the edge. Good fit for what Carolina needs."
+            },
+            {
+                name: "Pittsburgh Steelers",
+                city: "Pittsburgh",
+                record: "13-4",
+                helmet: { color: "#FFB612", accent: "#101820" },
+                grade: "B",
+                needs: [
+                    { position: "QB", priority: "high" },
+                    { position: "IOL", priority: "medium" },
+                    { position: "DL", priority: "medium" }
+                ],
+                picks: [
+                    { pick: 24, player: "Carson Beck", position: "QB", school: "Miami", value: "fair" }
+                ],
+                summary: "Beck is a reach at #24 but Pittsburgh needed a QB. Developmental prospect with some upside."
+            },
+            {
+                name: "Los Angeles Chargers",
+                city: "Los Angeles",
+                record: "11-6",
+                helmet: { color: "#0076B6", accent: "#FFB81C" },
+                grade: "B+",
+                needs: [
+                    { position: "IOL", priority: "high" },
+                    { position: "DL", priority: "medium" },
+                    { position: "CB", priority: "medium" }
+                ],
+                picks: [
+                    { pick: 25, player: "Spencer Fano", position: "OT", school: "Utah", value: "fair" }
+                ],
+                summary: "Fano is a reliable tackle who can start early. Chargers protect their QB with this solid pick."
+            },
+            {
+                name: "Chicago Bears",
+                city: "Chicago",
+                record: "8-9",
+                helmet: { color: "#0B162A", accent: "#C83803" },
+                grade: "B+",
+                needs: [
+                    { position: "EDGE", priority: "high" },
+                    { position: "IOL", priority: "medium" },
+                    { position: "WR", priority: "medium" }
+                ],
+                picks: [
+                    { pick: 26, player: "Sonny Styles", position: "LB", school: "Ohio State", value: "value" }
+                ],
+                summary: "Styles is excellent value at #26. Former safety with elite speed for a linebacker. Bears defense gets a weapon."
+            },
+            {
+                name: "Buffalo Bills",
+                city: "Buffalo",
+                record: "12-5",
+                helmet: { color: "#00338D", accent: "#C60C30" },
+                grade: "B",
+                needs: [
+                    { position: "WR", priority: "high" },
+                    { position: "CB", priority: "medium" },
+                    { position: "EDGE", priority: "medium" }
+                ],
+                picks: [
+                    { pick: 25, player: "Denzel Boston", position: "WR", school: "Washington", value: "fair" }
+                ],
+                summary: "Boston gives Buffalo a big-bodied receiver to complement Diggs. Solid pick that fills a need."
+            },
+            {
+                name: "San Francisco 49ers",
+                city: "San Francisco",
+                record: "10-7",
+                helmet: { color: "#AA0000", accent: "#B3995D" },
+                grade: "B+",
+                needs: [
+                    { position: "EDGE", priority: "high" },
+                    { position: "CB", priority: "medium" },
+                    { position: "S", priority: "medium" }
+                ],
+                picks: [
+                    { pick: 17, player: "CJ Allen", position: "LB", school: "Georgia", value: "value" }
+                ],
+                summary: "Allen is a steal at #17. Elite read-react LB who fits perfectly in the 49ers defense. Great value."
+            },
+            {
+                name: "Houston Texans",
+                city: "Houston",
+                record: "12-5",
+                helmet: { color: "#03202F", accent: "#A71930" },
+                grade: "A-",
+                needs: [
+                    { position: "RB", priority: "high" },
+                    { position: "WR", priority: "medium" },
+                    { position: "DL", priority: "medium" }
+                ],
+                picks: [
+                    { pick: 29, player: "Jeremiyah Love", position: "RB", school: "Notre Dame", value: "value" }
+                ],
+                summary: "Love falling to #29 is a gift for Houston. Elite RB prospect who transforms their offense. Home run pick."
+            },
+            {
+                name: "Philadelphia Eagles",
+                city: "Philadelphia",
+                record: "13-4",
+                helmet: { color: "#004C54", accent: "#A5ACAF" },
+                grade: "B",
+                needs: [
+                    { position: "CB", priority: "high" },
+                    { position: "IOL", priority: "medium" },
+                    { position: "EDGE", priority: "medium" }
+                ],
+                picks: [
+                    { pick: 30, player: "Will Johnson", position: "CB", school: "Michigan", value: "fair" }
+                ],
+                summary: "Johnson is a solid corner who can develop behind Philly's veterans. Good value late in Round 1."
+            },
+            {
+                name: "Denver Broncos",
+                city: "Denver",
+                record: "14-3",
+                helmet: { color: "#FB4F14", accent: "#002244" },
+                grade: "B-",
+                needs: [
+                    { position: "LB", priority: "high" },
+                    { position: "OT", priority: "medium" },
+                    { position: "S", priority: "medium" }
+                ],
+                picks: [
+                    { pick: 31, player: "Sonny Styles", position: "LB", school: "Ohio State", value: "reach" }
+                ],
+                summary: "Styles is a bit of a reach here but fills a need. Former safety with elite athleticism for a LB."
+            },
+            {
+                name: "Green Bay Packers",
+                city: "Green Bay",
+                record: "9-8",
+                helmet: { color: "#203731", accent: "#FFB612" },
+                grade: "B+",
+                needs: [
+                    { position: "WR", priority: "high" },
+                    { position: "CB", priority: "medium" },
+                    { position: "EDGE", priority: "medium" }
+                ],
+                picks: [
+                    { pick: 11, player: "Emmett Johnson", position: "RB", school: "Nebraska", value: "reach" }
+                ],
+                summary: "Johnson is a reach at #11 but Green Bay loves their RBs. Good player but questionable value this early."
+            },
+            {
+                name: "Atlanta Falcons",
+                city: "Atlanta",
+                record: "8-9",
+                helmet: { color: "#000000", accent: "#A71930" },
+                grade: "B",
+                needs: [
+                    { position: "EDGE", priority: "high" },
+                    { position: "CB", priority: "high" },
+                    { position: "WR", priority: "medium" }
+                ],
+                picks: [
+                    { pick: 12, player: "Tacario Davis", position: "CB", school: "Arizona", value: "fair" }
+                ],
+                summary: "Davis gives Atlanta a big, physical corner to pair with their defensive overhaul. Solid selection."
+            },
+            {
+                name: "Indianapolis Colts",
+                city: "Indianapolis",
+                record: "10-7",
+                helmet: { color: "#003594", accent: "#FFB81C" },
+                grade: "C+",
+                needs: [
+                    { position: "WR", priority: "high" },
+                    { position: "EDGE", priority: "medium" },
+                    { position: "CB", priority: "medium" }
+                ],
+                picks: [
+                    { pick: 16, player: "Luther Burden III", position: "WR", school: "Missouri", value: "reach" }
+                ],
+                summary: "Burden is a reach at #16 but Indianapolis needed playmakers. Slot receiver with YAC ability."
+            },
+            {
+                name: "Seattle Seahawks",
+                city: "Seattle",
+                record: "12-5",
+                helmet: { color: "#002244", accent: "#69BE28" },
+                grade: "B",
+                needs: [
+                    { position: "IOL", priority: "high" },
+                    { position: "DL", priority: "medium" },
+                    { position: "LB", priority: "medium" }
+                ],
+                picks: [
+                    { pick: 22, player: "Oluwafemi Oladejo", position: "IOL", school: "UCLA", value: "fair" }
+                ],
+                summary: "Oladejo is a solid interior lineman who fits Seattle's scheme. Good value in the middle of Round 1."
+            },
+            {
+                name: "Jacksonville Jaguars",
+                city: "Jacksonville",
+                record: "10-7",
+                helmet: { color: "#006778", accent: "#D7A22A" },
+                grade: "B",
+                needs: [
+                    { position: "RB", priority: "high" },
+                    { position: "DL", priority: "medium" },
+                    { position: "S", priority: "medium" }
+                ],
+                picks: [
+                    { pick: 33, player: "Kaleb Johnson", position: "RB", school: "Iowa", value: "fair" }
+                ],
+                summary: "Johnson is a workhorse RB who can take pressure off the passing game. Solid pick to start Round 2."
+            },
+            {
+                name: "New England Patriots",
+                city: "New England",
+                record: "10-7",
+                helmet: { color: "#002244", accent: "#C60C30" },
+                grade: "B-",
+                needs: [
+                    { position: "EDGE", priority: "high" },
+                    { position: "WR", priority: "medium" },
+                    { position: "OT", priority: "medium" }
+                ],
+                picks: [
+                    { pick: 34, player: "Jack Sawyer", position: "EDGE", school: "Ohio State", value: "fair" }
+                ],
+                summary: "Sawyer is a high-motor rusher who fits the Patriot Way. Not elite upside but solid contributor."
+            }
+        ];
+
+        let teamDraftsFilter = 'all';
+
+        function renderTeamDrafts() {
+            const container = document.getElementById('teamDraftsGrid');
+            if (!container) return;
+
+            let filtered = teamDraftsData;
+            if (teamDraftsFilter !== 'all') {
+                filtered = teamDraftsData.filter(team => {
+                    if (teamDraftsFilter === 'multiple') return team.picks.length > 1;
+                    if (teamDraftsFilter === 'qb') return team.picks.some(p => p.position === 'QB');
+                    if (teamDraftsFilter === 'defense') {
+                        const defPicks = team.picks.filter(p => ['EDGE', 'DL', 'LB', 'CB', 'S'].includes(p.position)).length;
+                        return defPicks > team.picks.length / 2;
+                    }
+                    if (teamDraftsFilter === 'offense') {
+                        const offPicks = team.picks.filter(p => ['QB', 'RB', 'WR', 'TE', 'OT', 'IOL'].includes(p.position)).length;
+                        return offPicks > team.picks.length / 2;
+                    }
+                    return true;
+                });
+            }
+
+            container.innerHTML = filtered.map(team => {
+                const needsHTML = team.needs.map(need => 
+                    `<span class="need-tag ${need.priority}">${need.position} (${need.priority})</span>`
+                ).join('');
+
+                const picksHTML = team.picks.map(pick => {
+                    const valueClass = pick.value;
+                    const valueText = pick.value === 'value' ? 'VALUE' : pick.value === 'reach' ? 'REACH' : 'FAIR';
+                    return `
+                        <div class="team-draft-pick">
+                            <div class="pick-number-badge">${pick.pick}</div>
+                            <div class="pick-player-info">
+                                <div class="pick-player-name">${pick.player}</div>
+                                <div class="pick-player-meta">${pick.position} | ${pick.school}</div>
+                            </div>
+                            <span class="pick-value-indicator ${valueClass}">${valueText}</span>
+                        </div>
+                    `;
+                }).join('');
+
+                const gradeClass = 'grade-' + team.grade.toLowerCase().replace('+', 'plus').replace('-', 'minus');
+
+                return `
+                    <div class="team-draft-card" data-filter="${teamDraftsFilter}">
+                        <div class="team-draft-header" style="background: linear-gradient(135deg, ${team.helmet.color}22, transparent);">
+                            <svg class="team-draft-logo" viewBox="0 0 100 70">
+                                <ellipse cx="50" cy="35" rx="48" ry="32" fill="${team.helmet.color}" stroke="${team.helmet.accent}" stroke-width="3"/>
+                                <text x="50" y="42" text-anchor="middle" fill="white" font-size="14" font-weight="bold">${team.city.substring(0, 3).toUpperCase()}</text>
+                            </svg>
+                            <div class="team-draft-info">
+                                <h3>${team.name}</h3>
+                                <div class="team-draft-record">${team.record}</div>
+                            </div>
+                            <div class="grade-badge ${gradeClass}">${team.grade}</div>
+                        </div>
+                        <div class="team-draft-needs">
+                            <div class="team-needs-title">Top Needs</div>
+                            <div class="needs-list">${needsHTML}</div>
+                        </div>
+                        <div class="team-draft-picks">
+                            ${picksHTML}
+                        </div>
+                        <div class="team-draft-summary">
+                            <strong>Summary:</strong> ${team.summary}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function filterTeamDrafts(filter) {
+            teamDraftsFilter = filter;
+            document.querySelectorAll('#teamDrafts .edp-toggle-btn').forEach(btn => btn.classList.remove('active'));
+            if (event && event.target) event.target.classList.add('active');
+            renderTeamDrafts();
+            showToast(`Filtered: ${filter === 'all' ? 'All Teams' : filter.charAt(0).toUpperCase() + filter.slice(1)}`);
+        }
+
+        // ==========================================
+        // DRAFT GRADES SYSTEM
+        // ==========================================
+        function calculateDraftGrades() {
+            const grades = teamDraftsData.map(team => {
+                let valueScore = 0;
+                let needScore = 0;
+                let positionalScore = 0;
+                let pickCount = team.picks.length;
+
+                team.picks.forEach(pick => {
+                    // Value Score (based on pick # vs expected range)
+                    const edpInfo = edpData[pick.player];
+                    if (edpInfo) {
+                        const diff = edpInfo.edp - pick.pick;
+                        if (diff >= 5) valueScore += 25; // Excellent value
+                        else if (diff >= 0) valueScore += 20; // Good value
+                        else if (diff >= -5) valueScore += 15; // Fair
+                        else valueScore += 10; // Reach
+                    } else {
+                        valueScore += 15; // Unknown = fair
+                    }
+
+                    // Need Fit Score
+                    const needMatch = team.needs.find(n => n.position === pick.position || 
+                        (n.position === 'Interior DL' && pick.position === 'DL') ||
+                        (n.position === 'Pass rusher' && pick.position === 'EDGE') ||
+                        (n.position === 'DE' && pick.position === 'EDGE'));
+                    if (needMatch) {
+                        if (needMatch.priority === 'high') needScore += 25;
+                        else if (needMatch.priority === 'medium') needScore += 20;
+                        else needScore += 15;
+                    } else {
+                        needScore += 10; // Not a need
+                    }
+
+                    // Positional Value Score
+                    const premiumPositions = ['QB', 'EDGE', 'CB', 'OT'];
+                    const highPositions = ['WR', 'DL', 'S'];
+                    if (premiumPositions.includes(pick.position)) positionalScore += 20;
+                    else if (highPositions.includes(pick.position)) positionalScore += 15;
+                    else positionalScore += 10;
+                });
+
+                // Average the scores
+                valueScore = (valueScore / pickCount) * 0.4;
+                needScore = (needScore / pickCount) * 0.3;
+                positionalScore = (positionalScore / pickCount) * 0.2;
+                const balanceScore = 8; // Default balance score
+
+                const totalScore = valueScore + needScore + positionalScore + balanceScore;
+
+                return {
+                    ...team,
+                    scores: {
+                        value: Math.round(valueScore * 10) / 10,
+                        need: Math.round(needScore * 10) / 10,
+                        positional: Math.round(positionalScore * 10) / 10,
+                        balance: balanceScore,
+                        total: Math.round(totalScore * 10) / 10
+                    }
+                };
+            });
+
+            // Sort by total score descending
+            return grades.sort((a, b) => b.scores.total - a.scores.total);
+        }
+
+        function renderDraftGrades() {
+            const container = document.getElementById('draftGradesLeaderboard');
+            if (!container) return;
+
+            const gradedTeams = calculateDraftGrades();
+
+            container.innerHTML = gradedTeams.map((team, index) => {
+                const gradeClass = 'grade-' + team.grade.toLowerCase().replace('+', 'plus').replace('-', 'minus');
+                const getScoreClass = (score) => score >= 18 ? 'good' : score >= 12 ? 'avg' : 'poor';
+
+                return `
+                    <div class="grade-item">
+                        <div class="grade-rank">${index + 1}</div>
+                        <div class="grade-team-info">
+                            <svg class="grade-team-logo" viewBox="0 0 100 70">
+                                <ellipse cx="50" cy="35" rx="48" ry="32" fill="${team.helmet.color}" stroke="${team.helmet.accent}" stroke-width="3"/>
+                            </svg>
+                            <div>
+                                <div class="grade-team-name">${team.name}</div>
+                                <div class="grade-team-record">${team.record}</div>
+                            </div>
+                        </div>
+                        <div class="score-box">
+                            <div class="score-label">Value</div>
+                            <div class="score-value ${getScoreClass(team.scores.value)}">${team.scores.value}</div>
+                        </div>
+                        <div class="score-box">
+                            <div class="score-label">Need</div>
+                            <div class="score-value ${getScoreClass(team.scores.need)}">${team.scores.need}</div>
+                        </div>
+                        <div class="score-box">
+                            <div class="score-label">Pos</div>
+                            <div class="score-value ${getScoreClass(team.scores.positional)}">${team.scores.positional}</div>
+                        </div>
+                        <div class="score-box">
+                            <div class="score-label">Balance</div>
+                            <div class="score-value">${team.scores.balance}</div>
+                        </div>
+                        <div class="grade-badge ${gradeClass}">${team.grade}</div>
+                    </div>
+                `;
+            }).join('');
         }
 
         // Render EDP Leaderboard
@@ -7030,6 +8643,31 @@ le"></i> Areas to Improve</h4>
             }
         }
 
+        // Share pick on Facebook
+        function sharePickFacebook(pickNum) {
+            const url = `${window.location.href}#pick-${pickNum}`;
+            const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+            window.open(shareUrl, '_blank', 'width=600,height=400');
+        }
+
+        // Share pick on Reddit
+        function sharePickReddit(pickNum) {
+            const pickCard = document.querySelector(`.pick-card[data-player]:has(.pick-number:nth-of-type(1):contains('${pickNum}'))`) ||
+                            Array.from(document.querySelectorAll('.pick-card')).find(p => 
+                                p.querySelector('.pick-number')?.textContent == pickNum
+                            );
+            
+            const team = pickCard?.querySelector('.team-details h3')?.textContent || 'NFL Team';
+            const player = pickCard?.dataset.player || 'Player';
+            const title = `2026 NFL Mock Draft - Pick ${pickNum}: ${team} select ${player}`;
+            const url = `${window.location.href}#pick-${pickNum}`;
+            const shareUrl = `https://reddit.com/submit?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`;
+            window.open(shareUrl, '_blank', 'width=600,height=400');
+        }
+
+
+        }
+
         function executeTrade() {
             if (tradeSelectionA.length === 0 || tradeSelectionB.length === 0) {
                 showToast('Select picks from both teams');
@@ -7154,6 +8792,305 @@ le"></i> Areas to Improve</h4>
                 console.log('Service Worker registration failed:', error);
             });
         }
+
+        // ==========================================
+        // EXPORT & SHARE FUNCTIONS
+        // ==========================================
+
+        // Export Modal Functions
+        function openExportModal() {
+            document.getElementById('exportModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeExportModal(event) {
+            if (!event || event.target.id === 'exportModal' || event.target.closest('.export-modal-close')) {
+                document.getElementById('exportModal').classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeExportModal();
+            }
+        });
+
+        // Export to PDF using html2pdf.js
+        function exportToPDF() {
+            showToast('Generating PDF... This may take a moment.');
+            
+            // Create a clean clone of the main content for PDF
+            const element = document.createElement('div');
+            element.innerHTML = `
+                <div style="font-family: Arial, sans-serif; padding: 20px; max-width: 800px; margin: 0 auto;">
+                    <div style="text-align: center; border-bottom: 3px solid #00d4ff; padding-bottom: 20px; margin-bottom: 30px;">
+                        <h1 style="font-size: 32px; margin: 0; color: #0a0a0f;">2026 NFL Mock Draft</h1>
+                        <p style="font-size: 16px; color: #666; margin: 10px 0 0;">Complete 3 Round Projections with Player Analysis</p>
+                        <p style="font-size: 12px; color: #999; margin: 5px 0 0;">Generated on ${new Date().toLocaleDateString()}</p>
+                    </div>
+                    ${generatePDFContent()}
+                    <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; font-size: 11px; color: #999;">
+                        <div class="footer-export-btns">
+            <button class="export-btn" onclick="exportToPDF()"><i class="fas fa-file-pdf"></i> Download PDF</button>
+            <button class="export-btn" onclick="copyDraftAsText()"><i class="fas fa-copy"></i> Copy Text</button>
+            <button class="export-btn" onclick="generateShareableURL()"><i class="fas fa-link"></i> Share Link</button>
+        </div>
+        <p>2026 NFL Mock Draft - For entertainment purposes only</p>
+                    </div>
+                </div>
+            `;
+            
+            const opt = {
+                margin: [10, 10, 10, 10],
+                filename: '2026-NFL-Mock-Draft.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { 
+                    scale: 2,
+                    useCORS: true,
+                    letterRendering: true
+                },
+                jsPDF: { 
+                    unit: 'mm', 
+                    format: 'a4', 
+                    orientation: 'portrait'
+                }
+            };
+            
+            html2pdf().set(opt).from(element).save().then(() => {
+                showToast('PDF downloaded successfully!');
+            }).catch(err => {
+                console.error('PDF generation error:', err);
+                showToast('Error generating PDF. Please try again.');
+            });
+        }
+
+        // Generate PDF content from draft data
+        function generatePDFContent() {
+            let content = '';
+            
+            // Round 1
+            content += '<h2 style="font-size: 24px; color: #00d4ff; margin: 30px 0 20px; border-bottom: 2px solid #00d4ff; padding-bottom: 10px;">Round 1</h2>';
+            const round1Picks = document.querySelectorAll('#round1Picks .pick-card');
+            round1Picks.forEach((pick, index) => {
+                if (!pick.classList.contains('hidden')) {
+                    content += extractPickData(pick);
+                }
+            });
+            
+            // Round 2
+            content += '<h2 style="font-size: 24px; color: #00d4ff; margin: 30px 0 20px; border-bottom: 2px solid #00d4ff; padding-bottom: 10px;">Round 2</h2>';
+            const round2Picks = document.querySelectorAll('#round2Picks .pick-card');
+            round2Picks.forEach((pick, index) => {
+                if (!pick.classList.contains('hidden')) {
+                    content += extractPickData(pick);
+                }
+            });
+            
+            return content;
+        }
+
+        function extractPickData(pickCard) {
+            const pickNum = pickCard.querySelector('.pick-number')?.textContent || '';
+            const teamName = pickCard.querySelector('.team-details h3')?.textContent || '';
+            const teamRecord = pickCard.querySelector('.team-record')?.textContent || '';
+            const playerName = pickCard.querySelector('.player-info h2')?.textContent || '';
+            const playerPos = pickCard.querySelector('.player-position')?.textContent || '';
+            const playerSchool = pickCard.querySelector('.player-school')?.textContent || '';
+            const reasoning = pickCard.querySelector('.breakdown-content')?.textContent || '';
+            
+            // Get team needs
+            const needs = Array.from(pickCard.querySelectorAll('.need-badge')).map(n => n.textContent).join(', ');
+            
+            return `
+                <div style="margin-bottom: 25px; padding: 15px; border: 1px solid #eee; border-radius: 8px; page-break-inside: avoid;">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
+                        <span style="font-size: 28px; font-weight: bold; color: #00d4ff; min-width: 50px;">${pickNum}</span>
+                        <div>
+                            <div style="font-size: 16px; font-weight: bold; color: #0a0a0f;">${teamName}</div>
+                            <div style="font-size: 12px; color: #666;">${teamRecord}</div>
+                        </div>
+                    </div>
+                    <div style="margin-left: 65px;">
+                        <div style="font-size: 18px; font-weight: bold; color: #0a0a0f; margin-bottom: 5px;">
+                            ${playerName} <span style="color: #00d4ff;">${playerPos}</span> • ${playerSchool}
+                        </div>
+                        ${needs ? `<div style="font-size: 11px; color: #666; margin-bottom: 8px;">Team Needs: ${needs}</div>` : ''}
+                        <div style="font-size: 12px; color: #444; line-height: 1.5;">${reasoning}</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Copy Draft as Text
+        function copyDraftAsText() {
+            let text = '2026 NFL MOCK DRAFT\n';
+            text += '==================\n\n';
+            text += `Generated: ${new Date().toLocaleDateString()}\n\n`;
+            
+            // Round 1
+            text += 'ROUND 1\n-------\n\n';
+            const round1Picks = document.querySelectorAll('#round1Picks .pick-card');
+            round1Picks.forEach((pick, index) => {
+                if (!pick.classList.contains('hidden')) {
+                    text += formatPickAsText(pick);
+                }
+            });
+            
+            text += '\n';
+            
+            // Round 2
+            text += 'ROUND 2\n-------\n\n';
+            const round2Picks = document.querySelectorAll('#round2Picks .pick-card');
+            round2Picks.forEach((pick, index) => {
+                if (!pick.classList.contains('hidden')) {
+                    text += formatPickAsText(pick);
+                }
+            });
+            
+            text += '\n';
+            
+            // Round 3
+            text += 'ROUND 3\n-------\n\n';
+            const round3Picks = document.querySelectorAll('#round3 .quick-pick-card');
+            round3Picks.forEach((pick, index) => {
+                text += formatQuickPickAsText(pick);
+            });
+            
+            navigator.clipboard.writeText(text).then(() => {
+                showToast('Draft copied to clipboard!');
+            }).catch(err => {
+                console.error('Copy error:', err);
+                showToast('Error copying to clipboard');
+            });
+        }
+
+        function formatPickAsText(pickCard) {
+            const pickNum = pickCard.querySelector('.pick-number')?.textContent || '';
+            const teamName = pickCard.querySelector('.team-details h3')?.textContent || '';
+            const playerName = pickCard.querySelector('.player-info h2')?.textContent || '';
+            const playerPos = pickCard.querySelector('.player-position')?.textContent || '';
+            const playerSchool = pickCard.querySelector('.player-school')?.textContent || '';
+            
+            return `${pickNum}. ${teamName} - ${playerName}, ${playerPos}, ${playerSchool}\n`;
+        }
+
+        function formatQuickPickAsText(pickCard) {
+            const pickNum = pickCard.querySelector('.quick-pick-number')?.textContent || '';
+            const teamName = pickCard.querySelector('.quick-pick-team')?.textContent || '';
+            const playerName = pickCard.querySelector('.quick-pick-player')?.textContent || '';
+            const playerPos = pickCard.querySelector('.quick-pick-position')?.textContent || '';
+            
+            return `${pickNum}. ${teamName} - ${playerName} ${playerPos}\n`;
+        }
+
+        // Generate Shareable URL
+        function generateShareableURL() {
+            // Create a simple encoding of the current state
+            const state = {
+                tab: document.querySelector('.tab-content.active')?.id || 'round1',
+                filter: document.querySelector('.controls-bar .filter-btn.active')?.textContent || 'All',
+                timestamp: Date.now()
+            };
+            
+            // Encode state to base64
+            const encoded = btoa(JSON.stringify(state));
+            const url = `${window.location.origin}${window.location.pathname}#share=${encoded}`;
+            
+            navigator.clipboard.writeText(url).then(() => {
+                showToast('Shareable link copied!');
+            }).catch(err => {
+                console.error('Copy error:', err);
+                // Fallback: show the URL in a prompt
+                prompt('Copy this link to share:', url);
+            });
+        }
+
+        // Check for shared URL on load
+        function checkSharedURL() {
+            const hash = window.location.hash;
+            if (hash.startsWith('#share=')) {
+                try {
+                    const encoded = hash.substring(7);
+                    const state = JSON.parse(atob(encoded));
+                    
+                    if (state.tab) {
+                        showTab(state.tab);
+                        // Update active nav tab
+                        document.querySelectorAll('.nav-tab').forEach(btn => btn.classList.remove('active'));
+                        document.querySelector(`.nav-tab[onclick="showTab('${state.tab}')"]`)?.classList.add('active');
+                    }
+                    
+                    showToast('Shared draft loaded!');
+                } catch (e) {
+                    console.error('Error parsing shared URL:', e);
+                }
+            }
+        }
+
+        // Social Media Sharing
+        function shareTwitter() {
+            const text = 'Check out this 2026 NFL Mock Draft with full player analysis and team needs! #NFLDraft2026 #NFLMockDraft';
+            const url = window.location.href;
+            const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+            window.open(shareUrl, '_blank', 'width=600,height=400');
+        }
+
+        function shareFacebook() {
+            const url = window.location.href;
+            const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+            window.open(shareUrl, '_blank', 'width=600,height=400');
+        }
+
+        function shareReddit() {
+            const title = '2026 NFL Mock Draft - 3 Rounds with Player Analysis';
+            const url = window.location.href;
+            const shareUrl = `https://reddit.com/submit?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`;
+            window.open(shareUrl, '_blank', 'width=600,height=400');
+        }
+
+        // Download Pick as Image (using html2canvas)
+        function downloadPickAsImage(pickNum) {
+            const pickCard = document.querySelector(`.pick-card[data-player]:has(.pick-number:nth-of-type(1):contains('${pickNum}'))`) ||
+                            Array.from(document.querySelectorAll('.pick-card')).find(p => 
+                                p.querySelector('.pick-number')?.textContent == pickNum
+                            );
+            
+            if (!pickCard) {
+                showToast('Pick not found');
+                return;
+            }
+            
+            showToast('Generating image...');
+            
+            html2canvas(pickCard, {
+                backgroundColor: '#12121a',
+                scale: 2,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `2026-NFL-Mock-Draft-Pick-${pickNum}.png`;
+                link.href = canvas.toDataURL();
+                link.click();
+                showToast('Image downloaded!');
+            }).catch(err => {
+                console.error('Image generation error:', err);
+                showToast('Error generating image');
+            });
+        }
+
+        // Override existing share functions
+        function copyLink() {
+            generateShareableURL();
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            checkSharedURL();
+        });
+
+
     </script>
 </body>
 </html>
