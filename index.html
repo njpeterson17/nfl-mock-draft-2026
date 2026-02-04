@@ -410,21 +410,32 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid var(--border);
+            border: 2px solid var(--border);
             flex-shrink: 0;
             overflow: hidden;
             position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
         .player-photo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center top;
+            transition: transform 0.3s ease;
+        }
+
+        .player-photo:hover img {
+            transform: scale(1.05);
         }
 
         .player-photo i {
             font-size: 2.5rem;
             color: var(--text-secondary);
+        }
+
+        .player-photo img[src*="players"] {
+            border-radius: 10px;
         }
 
         .player-info h2 {
@@ -1160,7 +1171,7 @@
                     <div class="pick-content">
                         <div class="player-main">
                             <div class="player-photo">
-                                <i class="fas fa-user"></i>
+                                <img src="images/players/fernando-mendoza.jpg" alt="Fernando Mendoza">
                             </div>
                             <div class="player-info">
                                 <h2>Fernando Mendoza</h2>
@@ -1219,7 +1230,7 @@
                     </div>
                     <div class="pick-content">
                         <div class="player-main">
-                            <div class="player-photo"><i class="fas fa-user"></i></div>
+                            <div class="player-photo"><img src="images/players/ty-simpson.jpg" alt="Ty Simpson"></div>
                             <div class="player-info">
                                 <h2>Ty Simpson</h2>
                                 <span class="player-position">QB</span>
@@ -1273,7 +1284,7 @@
                     </div>
                     <div class="pick-content">
                         <div class="player-main">
-                            <div class="player-photo"><i class="fas fa-user"></i></div>
+                            <div class="player-photo"><img src="images/players/francis-mauigoa.jpg" alt="Francis Mauigoa"></div>
                             <div class="player-info">
                                 <h2>Francis Mauigoa</h2>
                                 <span class="player-position">OT</span>
@@ -1326,7 +1337,7 @@
                     </div>
                     <div class="pick-content">
                         <div class="player-main">
-                            <div class="player-photo"><i class="fas fa-user"></i></div>
+                            <div class="player-photo"><img src="images/players/carnell-tate.jpg" alt="Carnell Tate"></div>
                             <div class="player-info">
                                 <h2>Carnell Tate</h2>
                                 <span class="player-position">WR</span>
@@ -1379,7 +1390,7 @@
                     </div>
                     <div class="pick-content">
                         <div class="player-main">
-                            <div class="player-photo"><i class="fas fa-user"></i></div>
+                            <div class="player-photo"><img src="images/players/peter-woods.jpg" alt="Peter Woods"></div>
                             <div class="player-info">
                                 <h2>Peter Woods</h2>
                                 <span class="player-position">DL</span>
@@ -1432,7 +1443,7 @@
                     </div>
                     <div class="pick-content">
                         <div class="player-main">
-                            <div class="player-photo"><i class="fas fa-user"></i></div>
+                            <div class="player-photo"><img src="images/players/trinidad-chambliss.jpg" alt="Trinidad Chambliss"></div>
                             <div class="player-info">
                                 <h2>Trinidad Chambliss</h2>
                                 <span class="player-position">QB</span>
@@ -1485,7 +1496,7 @@
                     </div>
                     <div class="pick-content">
                         <div class="player-main">
-                            <div class="player-photo"><i class="fas fa-user"></i></div>
+                            <div class="player-photo"><img src="images/players/rueben-bain-jr.jpg" alt="Rueben Bain Jr."></div>
                             <div class="player-info">
                                 <h2>Rueben Bain Jr.</h2>
                                 <span class="player-position">EDGE</span>
@@ -1538,7 +1549,7 @@
                     </div>
                     <div class="pick-content">
                         <div class="player-main">
-                            <div class="player-photo"><i class="fas fa-user"></i></div>
+                            <div class="player-photo"><img src="images/players/jordyn-tyson.jpg" alt="Jordyn Tyson"></div>
                             <div class="player-info">
                                 <h2>Jordyn Tyson</h2>
                                 <span class="player-position">WR</span>
@@ -1591,7 +1602,7 @@
                     </div>
                     <div class="pick-content">
                         <div class="player-main">
-                            <div class="player-photo"><i class="fas fa-user"></i></div>
+                            <div class="player-photo"><img src="images/players/david-bailey.jpg" alt="David Bailey"></div>
                             <div class="player-info">
                                 <h2>David Bailey</h2>
                                 <span class="player-position">EDGE</span>
@@ -1644,7 +1655,7 @@
                     </div>
                     <div class="pick-content">
                         <div class="player-main">
-                            <div class="player-photo"><i class="fas fa-user"></i></div>
+                            <div class="player-photo"><img src="images/players/kayden-mcdonald.jpg" alt="Kayden McDonald"></div>
                             <div class="player-info">
                                 <h2>Kayden McDonald</h2>
                                 <span class="player-position">DL</span>
@@ -1697,7 +1708,7 @@
                     </div>
                     <div class="pick-content">
                         <div class="player-main">
-                            <div class="player-photo"><i class="fas fa-user"></i></div>
+                            <div class="player-photo"><img src="images/players/cole-payton.jpg" alt="Cole Payton"></div>
                             <div class="player-info">
                                 <h2>Cole Payton</h2>
                                 <span class="player-position">QB</span>
@@ -1751,7 +1762,7 @@
                     </div>
                     <div class="pick-content">
                         <div class="player-main">
-                            <div class="player-photo"><i class="fas fa-user"></i></div>
+                            <div class="player-photo"><img src="images/players/jermod-mccoy.jpg" alt="Jermod McCoy"></div>
                             <div class="player-info">
                                 <h2>Jermod McCoy</h2>
                                 <span class="player-position">CB</span>
@@ -1806,7 +1817,7 @@
                     </div>
                     <div class="pick-content">
                         <div class="player-main">
-                            <div class="player-photo"><i class="fas fa-user"></i></div>
+                            <div class="player-photo"><img src="images/players/drew-allar.jpg" alt="Drew Allar"></div>
                             <div class="player-info">
                                 <h2>Drew Allar</h2>
                                 <span class="player-position">QB</span>
@@ -1859,7 +1870,7 @@
                     </div>
                     <div class="pick-content">
                         <div class="player-main">
-                            <div class="player-photo"><i class="fas fa-user"></i></div>
+                            <div class="player-photo"><img src="images/players/akheem-mesidor.jpg" alt="Akheem Mesidor"></div>
                             <div class="player-info">
                                 <h2>Akheem Mesidor</h2>
                                 <span class="player-position">EDGE</span>
@@ -1912,7 +1923,7 @@
                     </div>
                     <div class="pick-content">
                         <div class="player-main">
-                            <div class="player-photo"><i class="fas fa-user"></i></div>
+                            <div class="player-photo"><img src="images/players/arvell-reese.jpg" alt="Arvell Reese"></div>
                             <div class="player-info">
                                 <h2>Arvell Reese</h2>
                                 <span class="player-position">LB</span>
@@ -1965,7 +1976,7 @@
                     </div>
                     <div class="pick-content">
                         <div class="player-main">
-                            <div class="player-photo"><i class="fas fa-user"></i></div>
+                            <div class="player-photo"><img src="images/players/makai-lemon.jpg" alt="Makai Lemon"></div>
                             <div class="player-info">
                                 <h2>Makai Lemon</h2>
                                 <span class="player-position">WR</span>
@@ -2018,7 +2029,7 @@
                     </div>
                     <div class="pick-content">
                         <div class="player-main">
-                            <div class="player-photo"><i class="fas fa-user"></i></div>
+                            <div class="player-photo"><img src="images/players/olaivavega-ioane.jpg" alt="Olaivavega Ioane"></div>
                             <div class="player-info">
                                 <h2>Olaivavega Ioane</h2>
                                 <span class="player-position">IOL</span>
@@ -2071,7 +2082,7 @@
                     </div>
                     <div class="pick-content">
                         <div class="player-main">
-                            <div class="player-photo"><i class="fas fa-user"></i></div>
+                            <div class="player-photo"><img src="images/players/caleb-lomu.jpg" alt="Caleb Lomu"></div>
                             <div class="player-info">
                                 <h2>Caleb Lomu</h2>
                                 <span class="player-position">OT/C</span>
@@ -2124,7 +2135,7 @@
                     </div>
                     <div class="pick-content">
                         <div class="player-main">
-                            <div class="player-photo"><i class="fas fa-user"></i></div>
+                            <div class="player-photo"><img src="images/players/keldric-faulk.jpg" alt="Keldric Faulk"></div>
                             <div class="player-info">
                                 <h2>Keldric Faulk</h2>
                                 <span class="player-position">EDGE</span>
@@ -2178,7 +2189,7 @@
                     </div>
                     <div class="pick-content">
                         <div class="player-main">
-                            <div class="player-photo"><i class="fas fa-user"></i></div>
+                            <div class="player-photo"><img src="images/players/caleb-downs.jpg" alt="Caleb Downs"></div>
                             <div class="player-info">
                                 <h2>Caleb Downs</h2>
                                 <span class="player-position">S</span>
@@ -2231,7 +2242,7 @@
                     </div>
                     <div class="pick-content">
                         <div class="player-main">
-                            <div class="player-photo"><i class="fas fa-user"></i></div>
+                            <div class="player-photo"><img src="images/players/carson-beck.jpg" alt="Carson Beck"></div>
                             <div class="player-info">
                                 <h2>Carson Beck</h2>
                                 <span class="player-position">QB</span>
@@ -2284,7 +2295,7 @@
                     </div>
                     <div class="pick-content">
                         <div class="player-main">
-                            <div class="player-photo"><i class="fas fa-user"></i></div>
+                            <div class="player-photo"><img src="images/players/spencer-fano.jpg" alt="Spencer Fano"></div>
                             <div class="player-info">
                                 <h2>Spencer Fano</h2>
                                 <span class="player-position">OT/C</span>
@@ -2337,7 +2348,7 @@
                     </div>
                     <div class="pick-content">
                         <div class="player-main">
-                            <div class="player-photo"><i class="fas fa-user"></i></div>
+                            <div class="player-photo"><img src="images/players/kenyon-sadiq.jpg" alt="Kenyon Sadiq"></div>
                             <div class="player-info">
                                 <h2>Kenyon Sadiq</h2>
                                 <span class="player-position">TE</span>
@@ -2390,7 +2401,7 @@
                     </div>
                     <div class="pick-content">
                         <div class="player-main">
-                            <div class="player-photo"><i class="fas fa-user"></i></div>
+                            <div class="player-photo"><img src="images/players/mansoor-delane.jpg" alt="Mansoor Delane"></div>
                             <div class="player-info">
                                 <h2>Mansoor Delane</h2>
                                 <span class="player-position">CB</span>
@@ -2443,7 +2454,7 @@
                     </div>
                     <div class="pick-content">
                         <div class="player-main">
-                            <div class="player-photo"><i class="fas fa-user"></i></div>
+                            <div class="player-photo"><img src="images/players/sonny-styles.jpg" alt="Sonny Styles"></div>
                             <div class="player-info">
                                 <h2>Sonny Styles</h2>
                                 <span class="player-position">LB/EDGE</span>
@@ -2496,7 +2507,7 @@
                     </div>
                     <div class="pick-content">
                         <div class="player-main">
-                            <div class="player-photo"><i class="fas fa-user"></i></div>
+                            <div class="player-photo"><img src="images/players/denzel-boston.jpg" alt="Denzel Boston"></div>
                             <div class="player-info">
                                 <h2>Denzel Boston</h2>
                                 <span class="player-position">WR</span>
@@ -2549,7 +2560,7 @@
                     </div>
                     <div class="pick-content">
                         <div class="player-main">
-                            <div class="player-photo"><i class="fas fa-user"></i></div>
+                            <div class="player-photo"><img src="images/players/cj-allen.jpg" alt="CJ Allen"></div>
                             <div class="player-info">
                                 <h2>CJ Allen</h2>
                                 <span class="player-position">LB/EDGE</span>
@@ -2602,7 +2613,7 @@
                     </div>
                     <div class="pick-content">
                         <div class="player-main">
-                            <div class="player-photo"><i class="fas fa-user"></i></div>
+                            <div class="player-photo"><img src="images/players/jeremiyah-love.jpg" alt="Jeremiyah Love"></div>
                             <div class="player-info">
                                 <h2>Jeremiyah Love</h2>
                                 <span class="player-position">RB</span>
@@ -2657,7 +2668,7 @@
                     </div>
                     <div class="pick-content">
                         <div class="player-main">
-                            <div class="player-photo"><i class="fas fa-user"></i></div>
+                            <div class="player-photo"><img src="images/players/dillon-thieneman.jpg" alt="Dillon Thieneman"></div>
                             <div class="player-info">
                                 <h2>Dillon Thieneman</h2>
                                 <span class="player-position">S</span>
@@ -2710,7 +2721,7 @@
                     </div>
                     <div class="pick-content">
                         <div class="player-main">
-                            <div class="player-photo"><i class="fas fa-user"></i></div>
+                            <div class="player-photo"><img src="images/players/zachariah-branch.jpg" alt="Zachariah Branch"></div>
                             <div class="player-info">
                                 <h2>Zachariah Branch</h2>
                                 <span class="player-position">WR</span>
