@@ -1049,9 +1049,279 @@
             }
         }
 
+        /* Jump to Pick Dropdown */
+        .jump-to-container {
+            position: relative;
+        }
+
+        .jump-to-select {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 0.5rem 2.5rem 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238b8b9a' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            min-width: 140px;
+        }
+
+        .jump-to-select:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .jump-to-select option {
+            background: var(--secondary);
+            color: var(--text-primary);
+            padding: 0.5rem;
+        }
+
+        /* Image Fallback */
+        .player-photo {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .player-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        .player-photo img[loading] {
+            opacity: 0;
+        }
+
+        .player-photo img.loaded {
+            opacity: 1;
+        }
+
+        .player-photo .fallback-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.5rem;
+            color: var(--text-secondary);
+            display: none;
+        }
+
+        .player-photo img.error + .fallback-icon {
+            display: block;
+        }
+
+        /* Trade Simulator Styles */
+        .trade-simulator-panel {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .trade-simulator-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+        }
+
+        .trade-interface {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 1.5rem;
+            align-items: start;
+        }
+
+        .trade-team-panel {
+            background: rgba(0,0,0,0.2);
+            border-radius: 12px;
+            padding: 1rem;
+        }
+
+        .trade-team-select {
+            width: 100%;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 0.75rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+        }
+
+        .trade-team-select:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .trade-picks-list {
+            max-height: 250px;
+            overflow-y: auto;
+        }
+
+        .trade-pick-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .trade-pick-item:hover {
+            border-color: var(--accent);
+        }
+
+        .trade-pick-item.selected {
+            background: rgba(0,212,255,0.1);
+            border-color: var(--accent);
+        }
+
+        .trade-pick-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: var(--accent);
+        }
+
+        .trade-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .trade-arrow {
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        .trade-btn {
+            background: var(--accent);
+            color: var(--primary);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .trade-btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .trade-btn:disabled {
+            background: var(--border);
+            color: var(--text-secondary);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .trade-value-display {
+            text-align: center;
+            padding: 0.75rem;
+            background: rgba(0,0,0,0.3);
+            border-radius: 8px;
+            font-size: 0.85rem;
+        }
+
+        .trade-value-display.fair {
+            color: var(--success);
+        }
+
+        .trade-value-display.unfair {
+            color: var(--warning);
+        }
+
+        .active-trades {
+            margin-top: 1.5rem;
+        }
+
+        .active-trades h4 {
+            font-family: 'Oswald', sans-serif;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .trade-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            background: rgba(0,0,0,0.2);
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
+            border-left: 3px solid var(--accent);
+        }
+
+        .trade-item-details {
+            flex: 1;
+        }
+
+        .trade-teams {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .trade-picks {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .trade-remove-btn {
+            background: rgba(255,71,87,0.2);
+            border: 1px solid var(--danger);
+            color: var(--danger);
+            padding: 0.4rem 0.75rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .trade-remove-btn:hover {
+            background: var(--danger);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .trade-interface {
+                grid-template-columns: 1fr;
+            }
+
+            .trade-center {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .trade-arrow {
+                transform: rotate(90deg);
+            }
+        }
+
         /* Print Styles */
         @media print {
-            .header, .controls-bar, .nav-container, .back-to-top, .footer, .social-share {
+            .header, .controls-bar, .nav-container, .back-to-top, .footer, .social-share, .jump-to-container {
                 display: none;
             }
 
@@ -1093,6 +1363,14 @@
             <button class="filter-btn" onclick="filterAllPicks('EDGE')">EDGE</button>
             <button class="filter-btn" onclick="filterAllPicks('DL')">DL</button>
             <button class="filter-btn" onclick="filterAllPicks('CB')">CB</button>
+        </div>
+        <div class="control-group">
+            <span class="control-label">Jump to:</span>
+            <div class="jump-to-container">
+                <select class="jump-to-select" id="jumpToSelect" onchange="jumpToPick(this.value)">
+                    <option value="">Select Pick...</option>
+                </select>
+            </div>
         </div>
         <div class="control-group">
             <div class="search-box">
@@ -4653,6 +4931,59 @@ le"></i> Areas to Improve</h4>
                 </div>
             </div>
 
+            <!-- Trade Simulator -->
+            <div class="trade-simulator-panel">
+                <div class="trade-simulator-title">
+                    <i class="fas fa-exchange-alt"></i> Trade Simulator
+                </div>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.9rem;">
+                    Propose trades between teams! Select picks from each side and execute the trade.
+                </p>
+                
+                <div class="trade-interface">
+                    <!-- Team A -->
+                    <div class="trade-team-panel">
+                        <select class="trade-team-select" id="tradeTeamA" onchange="loadTradePicks('A')">
+                            <option value="">Select Team A...</option>
+                        </select>
+                        <div class="trade-picks-list" id="tradePicksA">
+                            <p style="color: var(--text-secondary); text-align: center; padding: 1rem; font-size: 0.85rem;">
+                                Select a team to view their picks
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Center -->
+                    <div class="trade-center">
+                        <div class="trade-value-display" id="tradeValueDisplay">
+                            Select picks to see trade value
+                        </div>
+                        <i class="fas fa-exchange-alt trade-arrow"></i>
+                        <button class="trade-btn" id="executeTradeBtn" onclick="executeTrade()" disabled>
+                            <i class="fas fa-check"></i> Execute Trade
+                        </button>
+                    </div>
+
+                    <!-- Team B -->
+                    <div class="trade-team-panel">
+                        <select class="trade-team-select" id="tradeTeamB" onchange="loadTradePicks('B')">
+                            <option value="">Select Team B...</option>
+                        </select>
+                        <div class="trade-picks-list" id="tradePicksB">
+                            <p style="color: var(--text-secondary); text-align: center; padding: 1rem; font-size: 0.85rem;">
+                                Select a team to view their picks
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Active Trades -->
+                <div class="active-trades" id="activeTrades" style="display: none;">
+                    <h4><i class="fas fa-list"></i> Active Trades</h4>
+                    <div id="tradesList"></div>
+                </div>
+            </div>
+
             <!-- Player Selection Panel -->
             <div class="player-selection-panel" style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem;">
                 <h3 style="font-family: 'Oswald', sans-serif; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
@@ -4890,6 +5221,9 @@ le"></i> Areas to Improve</h4>
         document.addEventListener('DOMContentLoaded', () => {
             updatePositionCounts();
             updateR2PositionCounts();
+            initJumpToSelect();
+            initImageHandling();
+            handleDeepLink();
         });
 
         // Round 2 Position Counts
@@ -5341,11 +5675,358 @@ le"></i> Areas to Improve</h4>
             window.open(url, '_blank', 'width=600,height=400');
         }
 
+        // ==========================================
+        // JUMP TO PICK FUNCTIONALITY
+        // ==========================================
+        
+        function initJumpToSelect() {
+            const select = document.getElementById('jumpToSelect');
+            if (!select) return;
+            
+            // Clear existing options except first
+            while (select.options.length > 1) {
+                select.remove(1);
+            }
+            
+            // Add all 32 picks
+            for (let i = 1; i <= 32; i++) {
+                const team = draftOrder.find(d => d.pick === i);
+                if (team) {
+                    const option = document.createElement('option');
+                    option.value = `pick-${i}`;
+                    option.textContent = `Pick ${i} - ${team.team}`;
+                    select.appendChild(option);
+                }
+            }
+        }
+
+        function jumpToPick(pickId) {
+            if (!pickId) return;
+            
+            // Show Round 1 tab if not active
+            const round1Tab = document.getElementById('round1');
+            if (!round1Tab.classList.contains('active')) {
+                showTab('round1');
+                // Update nav tab
+                document.querySelectorAll('.nav-tab').forEach(btn => btn.classList.remove('active'));
+                document.querySelector('.nav-tab[onclick="showTab(\'round1\')"]').classList.add('active');
+            }
+            
+            // Find the pick element
+            const pickNum = parseInt(pickId.replace('pick-', ''));
+            const pickCards = document.querySelectorAll('#round1Picks .pick-card, #round1 .pick-card');
+            
+            if (pickCards[pickNum - 1]) {
+                pickCards[pickNum - 1].scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // Highlight effect
+                pickCards[pickNum - 1].style.borderColor = 'var(--accent)';
+                pickCards[pickNum - 1].style.boxShadow = '0 0 30px rgba(0,212,255,0.3)';
+                setTimeout(() => {
+                    pickCards[pickNum - 1].style.borderColor = '';
+                    pickCards[pickNum - 1].style.boxShadow = '';
+                }, 2000);
+            }
+            
+            // Update URL hash
+            window.location.hash = pickId;
+        }
+
+        // Handle URL hash on load
+        function handleDeepLink() {
+            const hash = window.location.hash;
+            if (hash && hash.startsWith('#pick-')) {
+                setTimeout(() => {
+                    jumpToPick(hash.substring(1));
+                }, 500);
+            }
+        }
+
+        // ==========================================
+        // IMAGE LAZY LOADING & ERROR HANDLING
+        // ==========================================
+
+        function initImageHandling() {
+            // Add lazy loading to all images
+            const images = document.querySelectorAll('.player-photo img');
+            images.forEach(img => {
+                img.setAttribute('loading', 'lazy');
+                img.classList.add('lazy-image');
+                
+                // Handle successful load
+                img.addEventListener('load', function() {
+                    this.classList.add('loaded');
+                });
+                
+                // Handle error
+                img.addEventListener('error', function() {
+                    this.classList.add('error');
+                    this.style.display = 'none';
+                    
+                    // Show fallback icon
+                    const fallback = this.parentElement.querySelector('.fallback-icon');
+                    if (!fallback) {
+                        const icon = document.createElement('i');
+                        icon.className = 'fas fa-user fallback-icon';
+                        icon.style.cssText = 'font-size: 2.5rem; color: var(--text-secondary); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);';
+                        this.parentElement.appendChild(icon);
+                    }
+                });
+            });
+        }
+
+        // ==========================================
+        // TRADE SIMULATOR
+        // ==========================================
+
+        let trades = [];
+        let tradeSelectionA = [];
+        let tradeSelectionB = [];
+
+        // Jimmy Johnson Trade Value Chart (simplified)
+        const tradeValues = {
+            1: 3000, 2: 2600, 3: 2200, 4: 1800, 5: 1700,
+            6: 1600, 7: 1500, 8: 1400, 9: 1350, 10: 1300,
+            11: 1250, 12: 1200, 13: 1150, 14: 1100, 15: 1050,
+            16: 1000, 17: 950, 18: 900, 19: 875, 20: 850,
+            21: 800, 22: 780, 23: 760, 24: 740, 25: 720,
+            26: 700, 27: 680, 28: 660, 29: 640, 30: 620,
+            31: 600, 32: 590
+        };
+
+        function initTradeSimulator() {
+            // Populate team selects
+            const selectA = document.getElementById('tradeTeamA');
+            const selectB = document.getElementById('tradeTeamB');
+            
+            if (!selectA || !selectB) return;
+            
+            draftOrder.forEach(team => {
+                const optionA = document.createElement('option');
+                optionA.value = team.pick;
+                optionA.textContent = `${team.team} (#${team.pick})`;
+                selectA.appendChild(optionA);
+                
+                const optionB = document.createElement('option');
+                optionB.value = team.pick;
+                optionB.textContent = `${team.team} (#${team.pick})`;
+                selectB.appendChild(optionB);
+            });
+        }
+
+        function loadTradePicks(teamSide) {
+            const teamSelect = document.getElementById(`tradeTeam${teamSide}`);
+            const picksContainer = document.getElementById(`tradePicks${teamSide}`);
+            const selectedTeamPick = parseInt(teamSelect.value);
+            
+            if (!selectedTeamPick) {
+                picksContainer.innerHTML = `<p style="color: var(--text-secondary); text-align: center; padding: 1rem; font-size: 0.85rem;">Select a team to view their picks</p>`;
+                return;
+            }
+            
+            // Get all picks for this team (original + acquired - traded away)
+            const teamPicks = customDraft.filter(p => {
+                const originalTeam = draftOrder.find(d => d.pick === p.pick);
+                return originalTeam.pick === selectedTeamPick;
+            });
+            
+            // For demo, show original pick
+            const team = draftOrder.find(d => d.pick === selectedTeamPick);
+            const currentPick = customDraft.find(p => p.pick === selectedTeamPick);
+            
+            picksContainer.innerHTML = `
+                <div class="trade-pick-item" onclick="toggleTradePick('${teamSide}', ${team.pick})">
+                    <input type="checkbox" id="trade${teamSide}_${team.pick}" onchange="updateTradeSelection('${teamSide}', ${team.pick})" 
+                        ${tradeSelectionA.includes(team.pick) || tradeSelectionB.includes(team.pick) ? 'checked' : ''}>
+                    <svg viewBox="0 0 100 70" style="width: 35px; height: 25px;">
+                        <ellipse cx="50" cy="35" rx="48" ry="32" fill="${team.helmet}" stroke="${team.accent}" stroke-width="2"/>
+                        <text x="50" y="42" text-anchor="middle" fill="white" font-size="12" font-weight="bold">${team.teamCode}</text>
+                    </svg>
+                    <div>
+                        <div style="font-weight: 600; font-size: 0.9rem;">Pick ${team.pick}</div>
+                        <div style="font-size: 0.75rem; color: var(--text-secondary);">
+                            ${currentPick && currentPick.selectedPlayer ? currentPick.selectedPlayer.name : 'No selection'}
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            updateTradeValue();
+        }
+
+        function toggleTradePick(teamSide, pickNum) {
+            const checkbox = document.getElementById(`trade${teamSide}_${pickNum}`);
+            checkbox.checked = !checkbox.checked;
+            updateTradeSelection(teamSide, pickNum);
+        }
+
+        function updateTradeSelection(teamSide, pickNum) {
+            const checkbox = document.getElementById(`trade${teamSide}_${pickNum}`);
+            const selection = teamSide === 'A' ? tradeSelectionA : tradeSelectionB;
+            
+            if (checkbox.checked) {
+                if (!selection.includes(pickNum)) {
+                    selection.push(pickNum);
+                }
+            } else {
+                const index = selection.indexOf(pickNum);
+                if (index > -1) {
+                    selection.splice(index, 1);
+                }
+            }
+            
+            // Update visual state
+            const pickItem = checkbox.closest('.trade-pick-item');
+            if (checkbox.checked) {
+                pickItem.classList.add('selected');
+            } else {
+                pickItem.classList.remove('selected');
+            }
+            
+            updateTradeValue();
+        }
+
+        function updateTradeValue() {
+            const valueA = tradeSelectionA.reduce((sum, pick) => sum + (tradeValues[pick] || 0), 0);
+            const valueB = tradeSelectionB.reduce((sum, pick) => sum + (tradeValues[pick] || 0), 0);
+            
+            const display = document.getElementById('tradeValueDisplay');
+            const executeBtn = document.getElementById('executeTradeBtn');
+            
+            if (valueA === 0 && valueB === 0) {
+                display.textContent = 'Select picks to see trade value';
+                display.className = 'trade-value-display';
+                executeBtn.disabled = true;
+            } else {
+                const diff = Math.abs(valueA - valueB);
+                const ratio = Math.max(valueA, valueB) / Math.min(valueA, valueB || 1);
+                
+                if (ratio <= 1.15) {
+                    display.innerHTML = `<i class="fas fa-check-circle"></i> Fair Trade<br><small>A: ${valueA} | B: ${valueB}</small>`;
+                    display.className = 'trade-value-display fair';
+                    executeBtn.disabled = false;
+                } else {
+                    display.innerHTML = `<i class="fas fa-exclamation-triangle"></i> Unfair Trade<br><small>A: ${valueA} | B: ${valueB}</small>`;
+                    display.className = 'trade-value-display unfair';
+                    executeBtn.disabled = diff > 500;
+                }
+            }
+        }
+
+        function executeTrade() {
+            if (tradeSelectionA.length === 0 || tradeSelectionB.length === 0) {
+                showToast('Select picks from both teams');
+                return;
+            }
+            
+            const teamA = document.getElementById('tradeTeamA');
+            const teamB = document.getElementById('tradeTeamB');
+            
+            const teamAName = teamA.options[teamA.selectedIndex].text.split(' (')[0];
+            const teamBName = teamB.options[teamB.selectedIndex].text.split(' (')[0];
+            
+            const trade = {
+                id: Date.now(),
+                teamA: teamAName,
+                teamB: teamBName,
+                picksA: [...tradeSelectionA],
+                picksB: [...tradeSelectionB]
+            };
+            
+            trades.push(trade);
+            
+            // Update custom draft with trades
+            tradeSelectionA.forEach(pickNum => {
+                const pick = customDraft.find(p => p.pick === pickNum);
+                if (pick) {
+                    const newTeam = draftOrder.find(d => d.pick === parseInt(teamB.value));
+                    if (newTeam) {
+                        pick.tradedTo = newTeam.team;
+                    }
+                }
+            });
+            
+            tradeSelectionB.forEach(pickNum => {
+                const pick = customDraft.find(p => p.pick === pickNum);
+                if (pick) {
+                    const newTeam = draftOrder.find(d => d.pick === parseInt(teamA.value));
+                    if (newTeam) {
+                        pick.tradedTo = newTeam.team;
+                    }
+                }
+            });
+            
+            // Clear selections
+            tradeSelectionA = [];
+            tradeSelectionB = [];
+            document.getElementById('tradeTeamA').value = '';
+            document.getElementById('tradeTeamB').value = '';
+            document.getElementById('tradePicksA').innerHTML = '<p style="color: var(--text-secondary); text-align: center; padding: 1rem; font-size: 0.85rem;">Select a team to view their picks</p>';
+            document.getElementById('tradePicksB').innerHTML = '<p style="color: var(--text-secondary); text-align: center; padding: 1rem; font-size: 0.85rem;">Select a team to view their picks</p>';
+            
+            renderCustomPicksList();
+            updateTradeValue();
+            renderTradesList();
+            
+            showToast('Trade executed successfully!');
+        }
+
+        function renderTradesList() {
+            const container = document.getElementById('activeTrades');
+            const list = document.getElementById('tradesList');
+            
+            if (trades.length === 0) {
+                container.style.display = 'none';
+                return;
+            }
+            
+            container.style.display = 'block';
+            list.innerHTML = trades.map(trade => `
+                <div class="trade-item">
+                    <div class="trade-item-details">
+                        <div class="trade-teams">${trade.teamA} <i class="fas fa-exchange-alt" style="color: var(--accent);"></i> ${trade.teamB}</div>
+                        <div class="trade-picks">
+                            ${trade.teamA} gives: Pick${trade.picksA.length > 1 ? 's' : ''} ${trade.picksA.join(', ')}<br>
+                            ${trade.teamB} gives: Pick${trade.picksB.length > 1 ? 's' : ''} ${trade.picksB.join(', ')}
+                        </div>
+                    </div>
+                    <button class="trade-remove-btn" onclick="undoTrade(${trade.id})">
+                        <i class="fas fa-undo"></i> Undo
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        function undoTrade(tradeId) {
+            const tradeIndex = trades.findIndex(t => t.id === tradeId);
+            if (tradeIndex === -1) return;
+            
+            const trade = trades[tradeIndex];
+            
+            // Reverse the trade
+            trade.picksA.forEach(pickNum => {
+                const pick = customDraft.find(p => p.pick === pickNum);
+                if (pick) delete pick.tradedTo;
+            });
+            
+            trade.picksB.forEach(pickNum => {
+                const pick = customDraft.find(p => p.pick === pickNum);
+                if (pick) delete pick.tradedTo;
+            });
+            
+            trades.splice(tradeIndex, 1);
+            
+            renderCustomPicksList();
+            renderTradesList();
+            showToast('Trade undone');
+        }
+
         // Initialize when tab is shown
         document.querySelector('.nav-tab[onclick="showTab(\'create\')"]').addEventListener('click', () => {
             if (customDraft.length === 0) {
                 initCustomDraft();
             }
+            initTradeSimulator();
         });
 
         // Register Service Worker for PWA
