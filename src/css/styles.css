@@ -3238,22 +3238,22 @@
 
 /* Team Logo Images - ESPN Transparent PNGs */
 .team-helmet-img {
-    width: 60px;
-    height: 60px;
+    width: 120px;
+    height: 120px;
     object-fit: contain;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    filter: drop-shadow(0 3px 6px rgba(0,0,0,0.3));
     transition: transform 0.2s ease;
     background: transparent;
     border-radius: 8px;
 }
 
 .team-helmet-img:hover {
-    transform: scale(1.15);
+    transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
     .team-helmet-img {
-        width: 50px;
-        height: 50px;
+        width: 80px;
+        height: 80px;
     }
 }
