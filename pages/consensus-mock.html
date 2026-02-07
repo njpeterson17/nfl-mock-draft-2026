@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 Consensus Mock Draft | Aggregated from Top Sources</title>
+    <meta name="description" content="Consensus NFL Mock Draft 2026 aggregated from PFF, ESPN, PFN, TDN, and WalterFootball. See where experts agree and disagree on prospects.">
+    <meta property="og:title" content="2026 Consensus NFL Mock Draft">
+    <meta property="og:description" content="Aggregated mock draft from top sources - see expert consensus and disagreements">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../src/css/styles.css">
+    <link rel="stylesheet" href="../src/css/consensus-mock.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+    <!-- Header -->
+    <header class="consensus-header">
+        <div class="header-content">
+            <div class="header-icon">
+                <i class="fas fa-chart-pie"></i>
+            </div>
+            <div class="header-text">
+                <h1>2026 CONSENSUS MOCK DRAFT</h1>
+                <p class="header-subtitle">Aggregated from 5 top sources • <span class="pff-badge">PFF Weighted 35%</span></p>
+            </div>
+        </div>
+        <div class="header-stats">
+            <div class="header-stat">
+                <span class="stat-value" id="highConsensusCount">0</span>
+                <span class="stat-label">High Consensus</span>
+            </div>
+            <div class="header-stat">
+                <span class="stat-value" id="medConsensusCount">0</span>
+                <span class="stat-label">Medium Consensus</span>
+            </div>
+            <div class="header-stat">
+                <span class="stat-value" id="lowConsensusCount">0</span>
+                <span class="stat-label">Split Votes</span>
+            </div>
+            <div class="header-stat">
+                <span class="stat-value" id="totalVotesCount">0</span>
+                <span class="stat-label">User Votes</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="consensus-nav">
+        <button class="consensus-tab active" data-tab="consensus" onclick="switchTab('consensus')">
+            <i class="fas fa-users"></i>
+            <span>Consensus Mock</span>
+        </button>
+        <button class="consensus-tab" data-tab="compare" onclick="switchTab('compare')">
+            <i class="fas fa-columns"></i>
+            <span>Compare Sources</span>
+        </button>
+        <button class="consensus-tab" data-tab="history" onclick="switchTab('history')">
+            <i class="fas fa-history"></i>
+            <span>History</span>
+        </button>
+        <button class="consensus-tab" data-tab="methodology" onclick="switchTab('methodology')">
+            <i class="fas fa-info-circle"></i>
+            <span>Methodology</span>
+        </button>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="consensus-main">
+        
+        <!-- Consensus Mock View -->
+        <div id="consensusTab" class="tab-panel active">
+            <div class="consensus-controls">
+                <div class="filter-group">
+                    <label>Filter by Consensus:</label>
+                    <button class="filter-chip active" onclick="filterConsensus('all')">All Picks</button>
+                    <button class="filter-chip high" onclick="filterConsensus('high')">🟢 High (4-5 agree)</button>
+                    <button class="filter-chip medium" onclick="filterConsensus('medium')">🟡 Medium (3 agree)</button>
+                    <button class="filter-chip low" onclick="filterConsensus('low')">🔴 Split Votes</button>
+                    <button class="filter-chip disagreements" onclick="filterConsensus('disagreements')">⚠️ Disagreements</button>
+                </div>
+                <div class="action-group">
+                    <button class="action-btn" onclick="updateMainMockToConsensus()">
+                        <i class="fas fa-sync"></i> Update Main Mock
+                    </button>
+                    <button class="action-btn secondary" onclick="exportConsensusData()">
+                        <i class="fas fa-download"></i> Export Data
+                    </button>
+                </div>
+            </div>
+
+            <div class="picks-container" id="consensusPicks">
+                <!-- Picks will be rendered here -->
+            </div>
+        </div>
+
+        <!-- Compare Sources View -->
+        <div id="compareTab" class="tab-panel">
+            <div class="compare-controls">
+                <div class="compare-info">
+                    <i class="fas fa-info-circle"></i>
+                    <span>Yellow highlights indicate disagreements between sources</span>
+                </div>
+                <div class="compare-options">
+                    <label>
+                        <input type="checkbox" id="highlightDisagreements" checked onchange="renderComparison()">
+                        Highlight Disagreements
+                    </label>
+                    <label>
+                        <input type="checkbox" id="showConfidence" checked onchange="renderComparison()">
+                        Show Confidence %
+                    </label>
+                </div>
+            </div>
+
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table" id="comparisonTable">
+                    <!-- Comparison table rendered here -->
+                </table>
+            </div>
+
+            <!-- Source Legend -->
+            <div class="source-legend">
+                <h4>Source Weights</h4>
+                <div class="legend-items" id="sourceLegend">
+                    <!-- Legend items rendered here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- History View -->
+        <div id="historyTab" class="tab-panel">
+            <div class="history-header">
+                <h2>Consensus History</h2>
+                <p>Track how expert consensus has changed over time</p>
+            </div>
+            <div class="history-timeline" id="historyTimeline">
+                <!-- History items rendered here -->
+            </div>
+        </div>
+
+        <!-- Methodology View -->
+        <div id="methodologyTab" class="tab-panel">
+            <div class="methodology-content">
+                <h2>How Consensus is Calculated</h2>
+                
+                <div class="method-section">
+                    <h3><i class="fas fa-balance-scale"></i> Weighted Voting System</h3>
+                    <p>Each source contributes to the consensus based on their assigned weight. PFF serves as the primary source with 35% weight.</p>
+                    
+                    <div class="weight-visualization">
+                        <div class="weight-bar">
+                            <div class="weight-segment pff" style="width: 35%">PFF 35%</div>
+                            <div class="weight-segment espn" style="width: 25%">ESPN 25%</div>
+                            <div class="weight-segment pfn" style="width: 20%">PFN 20%</div>
+                            <div class="weight-segment tdn" style="width: 15%">TDN 15%</div>
+                            <div class="weight-segment walter" style="width: 5%">WF 5%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="method-section">
+                    <h3><i class="fas fa-calculator"></i> Confidence Formula</h3>
+                    <div class="formula-box">
+                        <code>Confidence = (Weighted Votes for Consensus Pick) / (Total Weighted Votes)</code>
+                    </div>
+                    <p>For example, if PFF (35%) and ESPN (25%) both pick Player A with 90% confidence:</p>
+                    <ul>
+                        <li>Weighted votes for Player A = (0.35 × 0.90) + (0.25 × 0.90) = 0.54</li>
+                        <li>Total weighted votes = 0.35 + 0.25 = 0.60</li>
+                        <li>Confidence = 0.54 / 0.60 = 90%</li>
+                    </ul>
+                </div>
+
+                <div class="method-section">
+                    <h3><i class="fas fa-users"></i> Source Details</h3>
+                    <div class="sources-grid" id="sourcesGrid">
+                        <!-- Source details rendered here -->
+                    </div>
+                </div>
+
+                <div class="method-section">
+                    <h3><i class="fas fa-vote-yea"></i> User Voting</h3>
+                    <p>Your votes are stored locally and contribute to the community consensus. This helps identify which picks fans agree or disagree with most.</p>
+                    <div class="vote-impact">
+                        <div class="impact-item">
+                            <i class="fas fa-thumbs-up"></i>
+                            <span>Upvotes increase the community score</span>
+                        </div>
+                        <div class="impact-item">
+                            <i class="fas fa-thumbs-down"></i>
+                            <span>Downvotes decrease the community score</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Mobile Bottom Nav -->
+    <nav class="mobile-bottom-nav">
+        <a href="../index.html" class="mobile-nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="consensus-mock.html" class="mobile-nav-item active">
+            <i class="fas fa-chart-pie"></i>
+            <span>Consensus</span>
+        </a>
+        <a href="position-rankings.html" class="mobile-nav-item">
+            <i class="fas fa-users"></i>
+            <span>Rankings</span>
+        </a>
+        <a href="../index.html#create" class="mobile-nav-item">
+            <i class="fas fa-pencil-alt"></i>
+            <span>Create</span>
+        </a>
+    </nav>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Vote recorded!</span>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../src/js/consensus-mock-data.js"></script>
+    <script src="../src/js/consensus-mock.js"></script>
+</body>
+</html>
