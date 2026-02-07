@@ -236,12 +236,10 @@
             initJumpToSelect();
             initImageHandling();
             handleDeepLink();
-            addEDPBadgesToPicks();
             renderEDPLeaderboard();
             renderBigBoard();
             renderTeamDrafts();
             renderDraftGrades();
-            addPickGradeBadges();
             
             // Check for pick hash (runs after a slight delay to ensure all content is loaded)
             setTimeout(() => {
