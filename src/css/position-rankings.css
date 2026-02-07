@@ -709,6 +709,37 @@
     text-transform: uppercase;
 }
 
+/* Stats Section */
+.modal-stats-section {
+    margin-bottom: 1.5rem;
+}
+
+.stats-section-header {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stats-section-header i {
+    color: var(--accent);
+}
+
+.projected-badge {
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.2), rgba(255, 160, 0, 0.1));
+    color: #ffc107;
+    font-size: 0.65rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 193, 7, 0.3);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
 /* Modal Sections */
 .modal-section {
     margin-bottom: 1.5rem;

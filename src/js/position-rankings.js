@@ -5,6 +5,34 @@ let currentFilter = 'all';
 let currentSort = 'rank';
 let comparisonChart = null;
 
+// Helper function to format stat labels nicely
+function formatStatLabel(key) {
+    const labelMap = {
+        forty: '40-Yard',
+        vertical: 'Vertical',
+        broad: 'Broad Jump',
+        bench: 'Bench',
+        arm: 'Arm Length',
+        games: 'Games',
+        carries: 'Carries',
+        yards: 'Yards',
+        avg: 'Avg',
+        tds: 'TDs',
+        ints: 'INTs',
+        catches: 'Catches',
+        receptions: 'Rec',
+        recYds: 'Rec Yds',
+        recTds: 'Rec TDs',
+        completion: 'Comp %',
+        sacks: 'Sacks',
+        tfl: 'TFL',
+        tackles: 'Tackles',
+        pbus: 'PBUs',
+        starts: 'Starts'
+    };
+    return labelMap[key] || key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
+}
+
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
     // Check for position in URL
@@ -250,13 +278,32 @@ function showProspectDetail(pos, index) {
             </div>
         </div>
         
-        <div class="modal-stats">
-            ${Object.entries(prospect.stats).slice(0, 6).map(([key, val]) => `
-                <div class="modal-stat">
-                    <div class="modal-stat-value">${val}</div>
-                    <div class="modal-stat-label">${key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}</div>
-                </div>
-            `).join('')}
+        <div class="modal-stats-section">
+            <h4 class="stats-section-header"><i class="fas fa-stopwatch"></i> Combine Metrics ${typeof combineDataActual !== 'undefined' && !combineDataActual ? '<span class="projected-badge">Projected</span>' : ''}</h4>
+            <div class="modal-stats">
+                ${Object.entries(prospect.stats)
+                    .filter(([key]) => ['forty', 'vertical', 'broad', 'bench', 'arm'].includes(key))
+                    .map(([key, val]) => `
+                    <div class="modal-stat">
+                        <div class="modal-stat-value">${val}</div>
+                        <div class="modal-stat-label">${formatStatLabel(key)}</div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+        <div class="modal-stats-section">
+            <h4 class="stats-section-header"><i class="fas fa-chart-bar"></i> Production Stats</h4>
+            <div class="modal-stats">
+                ${Object.entries(prospect.stats)
+                    .filter(([key]) => !['forty', 'vertical', 'broad', 'bench', 'arm'].includes(key))
+                    .slice(0, 6)
+                    .map(([key, val]) => `
+                    <div class="modal-stat">
+                        <div class="modal-stat-value">${val}</div>
+                        <div class="modal-stat-label">${formatStatLabel(key)}</div>
+                    </div>
+                `).join('')}
+            </div>
         </div>
         
         <div class="modal-section">

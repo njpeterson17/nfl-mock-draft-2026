@@ -1,4 +1,8 @@
 // Position Rankings Data for 2026 NFL Draft
+// Note: Combine stats (40-yard, vertical, broad jump, bench, arm length) are PROJECTED
+// until the 2026 NFL Combine in late February. Update combineDataActual to true once real data is available.
+const combineDataActual = false; // Set to true after 2026 NFL Combine
+
 const positionRankingsData = {
   QB: {
     position: "Quarterback",
