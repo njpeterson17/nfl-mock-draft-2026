@@ -2,19 +2,16 @@
         // THEME TOGGLE FUNCTIONS
         // ==========================================
         
-        // Load saved theme or use system preference
+        // Load saved theme - default to dark
         function loadTheme() {
             const savedTheme = localStorage.getItem('nflDraftTheme');
             if (savedTheme) {
                 document.documentElement.setAttribute('data-theme', savedTheme);
                 updateThemeIcon(savedTheme);
             } else {
-                // Check system preference
-                const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-                if (prefersLight) {
-                    document.documentElement.setAttribute('data-theme', 'light');
-                    updateThemeIcon('light');
-                }
+                // Default to dark theme
+                document.documentElement.setAttribute('data-theme', 'dark');
+                updateThemeIcon('dark');
             }
         }
         
