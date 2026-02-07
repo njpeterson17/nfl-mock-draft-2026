@@ -748,18 +748,7 @@
                             else { pickGrade = 'C+'; gradeClass = 'grade-cplus'; }
                         }
                         
-                        // Add grade badge to pick card if not already present
-                        if (!pickCard.querySelector('.pick-grade-badge')) {
-                            const playerInfo = pickCard.querySelector('.player-info h2');
-                            if (playerInfo) {
-                                const gradeBadge = document.createElement('span');
-                                gradeBadge.className = `pick-grade-badge grade-badge ${gradeClass}`;
-                                gradeBadge.style.cssText = 'margin-left: 0.5rem; font-size: 0.7rem; padding: 0.2rem 0.4rem; vertical-align: middle;';
-                                gradeBadge.textContent = pickGrade;
-                                gradeBadge.title = `Pick Grade: ${pickGrade} (based on EDP vs actual pick)`;
-                                playerInfo.appendChild(gradeBadge);
-                            }
-                        }
+                        // Grade badges removed - now only shown on Draft Grades page
                     }
                 });
             });
@@ -2375,59 +2364,6 @@
             showToast('Draft grades report exported!');
         }
         
-        // Override the renderDraftGrades function to use the new system
-        function renderDraftGrades() {
-            initDraftGradesTab();
-            addPickGradeBadges();
-        }
-        
-        // Add pick grade badges to pick cards
-        function addPickGradeBadges() {
-            if (typeof DraftGradesSystem === 'undefined') return;
-            
-            document.querySelectorAll('.pick-card').forEach(card => {
-                const pickNumber = parseInt(card.querySelector('.pick-number')?.textContent);
-                const teamName = card.querySelector('.team-details h3')?.textContent?.trim();
-                const playerName = card.dataset.player;
-                const position = card.dataset.position;
-                
-                if (pickNumber && teamName && playerName && !card.querySelector('.pick-grade-badge')) {
-                    const grade = DraftGradesSystem.calculatePickGrade(teamName, pickNumber, { name: playerName, position });
-                    
-                    const badge = document.createElement('div');
-                    badge.className = `pick-grade-badge ${grade.bgClass}`;
-                    badge.style.cssText = `
-                        position: absolute;
-                        top: -10px;
-                        right: -10px;
-                        width: 45px;
-                        height: 45px;
-                        border-radius: 50%;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: center;
-                        font-family: 'Oswald', sans-serif;
-                        font-weight: 700;
-                        font-size: 1.1rem;
-                        cursor: pointer;
-                        z-index: 10;
-                        transition: all 0.3s ease;
-                        border: 3px solid var(--secondary);
-                    `;
-                    badge.innerHTML = `<span style="line-height: 1;">${grade.letter}</span>`;
-                    badge.onclick = (e) => {
-                        e.stopPropagation();
-                        openPickGradeModal(teamName, pickNumber, playerName, position);
-                    };
-                    
-                    const playerInfo = card.querySelector('.player-info');
-                    if (playerInfo) {
-                        playerInfo.style.position = 'relative';
-                        playerInfo.appendChild(badge);
-                    }
-                }
-            });
-        }
+        // Draft grades removed from pick cards - now only on Draft Grades page
 
     </script>
