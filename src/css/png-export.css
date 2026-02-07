@@ -1,0 +1,639 @@
+/**
+ * NFL Mock Draft 2026 - PNG Export Styles
+ * Styles for the PNG export modal, preview, and related UI
+ */
+
+/* ==========================================
+   PNG EXPORT MODAL
+   ========================================== */
+
+.png-export-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+}
+
+.png-export-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.png-export-container {
+    background: var(--card-bg, rgba(255, 255, 255, 0.03));
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    border-radius: 20px;
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Modal Header */
+.png-export-header {
+    padding: 24px 28px;
+    border-bottom: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.png-export-title {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary, #fff);
+}
+
+.png-export-title i {
+    color: var(--accent, #00d4ff);
+    font-size: 1.75rem;
+    margin-top: 3px;
+}
+
+.png-export-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    color: var(--text-secondary, #8b8b9a);
+    font-weight: 400;
+    margin-top: 4px;
+}
+
+.png-export-close {
+    background: none;
+    border: none;
+    color: var(--text-secondary, #8b8b9a);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.png-export-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary, #fff);
+}
+
+/* Modal Body */
+.png-export-body {
+    padding: 24px 28px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.png-export-section {
+    margin-bottom: 28px;
+}
+
+.png-export-section:last-child {
+    margin-bottom: 0;
+}
+
+.png-export-section-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-secondary, #8b8b9a);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+/* Export Options Grid */
+.png-export-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.png-export-option {
+    cursor: pointer;
+    position: relative;
+}
+
+.png-export-option input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.png-export-option-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 20px 16px;
+    background: var(--card-bg, rgba(255, 255, 255, 0.03));
+    border: 2px solid var(--border, rgba(255, 255, 255, 0.08));
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.png-export-option-content i {
+    font-size: 1.5rem;
+    color: var(--text-secondary, #8b8b9a);
+    transition: all 0.2s ease;
+}
+
+.png-export-option-content span {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-primary, #fff);
+}
+
+.png-export-option:hover .png-export-option-content {
+    border-color: var(--accent, #00d4ff);
+}
+
+.png-export-option input:checked + .png-export-option-content {
+    border-color: var(--accent, #00d4ff);
+    background: rgba(0, 212, 255, 0.1);
+}
+
+.png-export-option input:checked + .png-export-option-content i {
+    color: var(--accent, #00d4ff);
+}
+
+/* Team Select */
+.png-export-select {
+    width: 100%;
+    padding: 14px 18px;
+    background: var(--card-bg, rgba(255, 255, 255, 0.03));
+    border: 2px solid var(--border, rgba(255, 255, 255, 0.08));
+    border-radius: 12px;
+    color: var(--text-primary, #fff);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238b8b9a' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 18px center;
+    padding-right: 45px;
+}
+
+.png-export-select:focus {
+    outline: none;
+    border-color: var(--accent, #00d4ff);
+}
+
+.png-export-select option {
+    background: var(--secondary, #12121a);
+    color: var(--text-primary, #fff);
+}
+
+/* Checkboxes */
+.png-export-checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.png-export-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    font-size: 0.9375rem;
+    color: var(--text-primary, #fff);
+    user-select: none;
+}
+
+.png-export-checkbox input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.checkmark {
+    width: 22px;
+    height: 22px;
+    background: var(--card-bg, rgba(255, 255, 255, 0.03));
+    border: 2px solid var(--border, rgba(255, 255, 255, 0.08));
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.checkmark::after {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 12px;
+    color: #fff;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.2s ease;
+}
+
+.png-export-checkbox:hover .checkmark {
+    border-color: var(--accent, #00d4ff);
+}
+
+.png-export-checkbox input:checked + .checkmark {
+    background: var(--accent, #00d4ff);
+    border-color: var(--accent, #00d4ff);
+}
+
+.png-export-checkbox input:checked + .checkmark::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Format Buttons */
+.png-export-format-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.png-export-format-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 12px;
+    background: var(--card-bg, rgba(255, 255, 255, 0.03));
+    border: 2px solid var(--border, rgba(255, 255, 255, 0.08));
+    border-radius: 12px;
+    color: var(--text-secondary, #8b8b9a);
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.png-export-format-btn i {
+    font-size: 1.25rem;
+}
+
+.png-export-format-btn:hover {
+    border-color: var(--accent, #00d4ff);
+    color: var(--text-primary, #fff);
+}
+
+.png-export-format-btn.active {
+    border-color: var(--accent, #00d4ff);
+    background: rgba(0, 212, 255, 0.1);
+    color: var(--accent, #00d4ff);
+}
+
+/* Modal Footer */
+.png-export-footer {
+    padding: 20px 28px;
+    border-top: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+/* Export Buttons */
+.png-export-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    font-family: 'Inter', sans-serif;
+}
+
+.png-export-btn.primary {
+    background: var(--accent, #00d4ff);
+    color: var(--primary, #0a0a0f);
+}
+
+.png-export-btn.primary:hover {
+    background: var(--accent-hover, #4ddfff);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+}
+
+.png-export-btn.secondary {
+    background: var(--card-bg, rgba(255, 255, 255, 0.03));
+    color: var(--text-primary, #fff);
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+}
+
+.png-export-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.png-export-btn.twitter {
+    background: #1DA1F2;
+    color: white;
+}
+
+.png-export-btn.twitter:hover {
+    background: #1a91da;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(29, 161, 242, 0.3);
+}
+
+/* ==========================================
+   CONTEXT MENU
+   ========================================== */
+
+.pick-card-context-menu {
+    position: fixed;
+    background: var(--card-bg, rgba(255, 255, 255, 0.05));
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.1));
+    border-radius: 12px;
+    padding: 8px;
+    min-width: 200px;
+    z-index: 10002;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.95);
+    transition: all 0.15s ease;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.pick-card-context-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.context-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    color: var(--text-primary, #fff);
+    font-size: 0.9375rem;
+}
+
+.context-menu-item:hover {
+    background: rgba(0, 212, 255, 0.1);
+    color: var(--accent, #00d4ff);
+}
+
+.context-menu-item i {
+    width: 20px;
+    text-align: center;
+    color: var(--text-secondary, #8b8b9a);
+}
+
+.context-menu-item:hover i {
+    color: var(--accent, #00d4ff);
+}
+
+.context-menu-separator {
+    height: 1px;
+    background: var(--border, rgba(255, 255, 255, 0.1));
+    margin: 8px 0;
+}
+
+/* ==========================================
+   EXPORT BUTTON IN EXPORT BAR
+   ========================================== */
+
+.export-btn.png-export-trigger {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(0, 168, 204, 0.2));
+    border-color: var(--accent, #00d4ff);
+    color: var(--accent, #00d4ff);
+}
+
+.export-btn.png-export-trigger:hover {
+    background: var(--accent, #00d4ff);
+    color: var(--primary, #0a0a0f);
+}
+
+/* ==========================================
+   LOADING SPINNER
+   ========================================== */
+
+#pngExportLoader {
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ==========================================
+   PREVIEW MODAL
+   ========================================== */
+
+#pngPreviewModal {
+    animation: fadeIn 0.3s ease;
+}
+
+#pngPreviewModal img {
+    animation: scaleIn 0.3s ease;
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ==========================================
+   LIGHT MODE ADJUSTMENTS
+   ========================================== */
+
+[data-theme="light"] .png-export-container {
+    background: #fff;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .png-export-header,
+[data-theme="light"] .png-export-footer {
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .png-export-option-content,
+[data-theme="light"] .png-export-format-btn,
+[data-theme="light"] .png-export-select,
+[data-theme="light"] .checkmark {
+    background: #f5f5f7;
+    border-color: rgba(0, 0, 0, 0.1);
+    color: #1a1a2e;
+}
+
+[data-theme="light"] .png-export-option-content span,
+[data-theme="light"] .png-export-checkbox {
+    color: #1a1a2e;
+}
+
+[data-theme="light"] .png-export-close {
+    color: #4a4a5a;
+}
+
+[data-theme="light"] .png-export-close:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: #1a1a2e;
+}
+
+[data-theme="light"] .pick-card-context-menu {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .context-menu-item {
+    color: #1a1a2e;
+}
+
+[data-theme="light"] .context-menu-item i {
+    color: #4a4a5a;
+}
+
+[data-theme="light"] .context-menu-separator {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .png-export-section-title {
+    color: #4a4a5a;
+}
+
+[data-theme="light"] .png-export-subtitle {
+    color: #4a4a5a;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+@media (max-width: 640px) {
+    .png-export-modal {
+        padding: 10px;
+    }
+    
+    .png-export-container {
+        max-height: 95vh;
+        border-radius: 16px;
+    }
+    
+    .png-export-header,
+    .png-export-body,
+    .png-export-footer {
+        padding: 20px;
+    }
+    
+    .png-export-title {
+        font-size: 1.25rem;
+    }
+    
+    .png-export-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .png-export-format-buttons {
+        grid-template-columns: 1fr;
+    }
+    
+    .png-export-footer {
+        flex-direction: column-reverse;
+    }
+    
+    .png-export-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .png-export-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .png-export-close {
+        align-self: flex-end;
+    }
+}
+
+/* ==========================================
+   ANIMATIONS
+   ========================================== */
+
+.png-export-option-content,
+.png-export-format-btn,
+.context-menu-item {
+    will-change: transform, background-color, border-color;
+}
+
+.png-export-btn {
+    will-change: transform, box-shadow;
+}
+
+/* Focus states for accessibility */
+.png-export-option input:focus + .png-export-option-content,
+.png-export-format-btn:focus,
+.png-export-select:focus,
+.png-export-checkbox input:focus + .checkmark,
+.png-export-btn:focus {
+    outline: 2px solid var(--accent, #00d4ff);
+    outline-offset: 2px;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .png-export-modal,
+    .png-export-container,
+    .png-export-option-content,
+    .png-export-format-btn,
+    .png-export-btn,
+    .context-menu-item,
+    .pick-card-context-menu {
+        animation: none;
+        transition: none;
+    }
+}

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboards - NFL Mock Draft 2026</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/leaderboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <i class="fas fa-football-ball"></i>
+                <span>NFL Mock Draft 2026</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Mock Draft</a>
+                <a href="war-room.html">War Room</a>
+                <a href="leaderboard.html" class="active">Leaderboards</a>
+                <a href="profile.html">My Profile</a>
+            </nav>
+            <div class="user-menu">
+                <button id="userMenuBtn" class="user-menu-btn">
+                    <span id="headerUsername">Guest</span>
+                    <i class="fas fa-user-circle"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="leaderboard-main">
+        <!-- Hero Section -->
+        <section class="leaderboard-hero">
+            <div class="hero-content">
+                <h1>🏆 Leaderboards 🏆</h1>
+                <p class="hero-subtitle">Compete with the best mock drafters and climb the ranks!</p>
+                
+                <!-- Current User Stats Summary -->
+                <div class="current-user-stats" id="currentUserStats">
+                    <div class="stat-card rank">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-value" id="userRank">-</div>
+                        <div class="stat-label">Your Rank</div>
+                    </div>
+                    <div class="stat-card score">
+                        <div class="stat-icon">⭐</div>
+                        <div class="stat-value" id="userScore">0</div>
+                        <div class="stat-label">Total Score</div>
+                    </div>
+                    <div class="stat-card level">
+                        <div class="stat-icon">🎖️</div>
+                        <div class="stat-value" id="userLevel">1</div>
+                        <div class="stat-label">Level</div>
+                    </div>
+                    <div class="stat-card percentile">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-value" id="userPercentile">-</div>
+                        <div class="stat-label">Percentile</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeframe Tabs -->
+        <section class="timeframe-section">
+            <div class="container">
+                <div class="timeframe-tabs">
+                    <button class="tab-btn active" data-timeframe="overall">Overall</button>
+                    <button class="tab-btn" data-timeframe="week">This Week</button>
+                    <button class="tab-btn" data-timeframe="month">This Month</button>
+                    <button class="tab-btn" data-timeframe="alltime">All Time</button>
+                </div>
+                <div class="leaderboard-filters">
+                    <select id="sortBy" class="filter-select">
+                        <option value="score">Sort by Score</option>
+                        <option value="mocks">Sort by Mocks Created</option>
+                        <option value="grade">Sort by Best Grade</option>
+                    </select>
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchUser" placeholder="Search users...">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leaderboard Table -->
+        <section class="leaderboard-table-section">
+            <div class="container">
+                <div class="leaderboard-container">
+                    <table class="leaderboard-table" id="leaderboardTable">
+                        <thead>
+                            <tr>
+                                <th class="rank-col">Rank</th>
+                                <th class="user-col">User</th>
+                                <th class="score-col">Score</th>
+                                <th class="mocks-col">Mocks</th>
+                                <th class="grade-col">Best Grade</th>
+                                <th class="level-col">Level</th>
+                                <th class="trend-col">Trend</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaderboardBody">
+                            <!-- Dynamically populated -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="pagination" id="pagination">
+                    <button class="page-btn" id="prevPage" disabled><i class="fas fa-chevron-left"></i></button>
+                    <span class="page-info" id="pageInfo">Page 1 of 10</span>
+                    <button class="page-btn" id="nextPage"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Challenges Section -->
+        <section class="challenges-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-trophy"></i>
+                    Weekly Challenges
+                </h2>
+                <div class="challenges-grid" id="challengesGrid">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Showcase -->
+        <section class="achievements-showcase">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-medal"></i>
+                    Achievement Showcase
+                </h2>
+                <div class="achievements-grid" id="achievementsShowcase">
+                    <!-- Dynamically populated with all achievements -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Friends Leaderboard -->
+        <section class="friends-section" id="friendsSection" style="display: none;">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-users"></i>
+                    Friends Leaderboard
+                </h2>
+                <div class="friends-leaderboard" id="friendsLeaderboard">
+                    <p class="no-friends">Add friends to see how you compare!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Achievement Popup -->
+    <div class="achievement-popup" id="achievementPopup">
+        <div class="achievement-popup-content">
+            <div class="achievement-icon" id="popupIcon">⭐</div>
+            <h3>Achievement Unlocked!</h3>
+            <p class="achievement-name" id="popupName">Perfect Draft</p>
+            <p class="achievement-desc" id="popupDesc">Get A+ overall grade</p>
+            <button class="btn-primary" onclick="closeAchievementPopup()">Awesome!</button>
+        </div>
+    </div>
+
+    <!-- Challenge Modal -->
+    <div class="modal" id="challengeModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="challengeModalTitle">Challenge Details</h2>
+                <button class="close-btn" onclick="closeChallengeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="challengeModalBody">
+                <!-- Challenge details -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 NFL Mock Draft Simulator. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/leaderboard-system.js"></script>
+    <script>
+        // Initialize leaderboard when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            LeaderboardSystem.init();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,576 @@
+/**
+ * NFL Mock Draft 2026 - Team Logo System CSS
+ * Styling for team logos, helmets, and related components
+ */
+
+/* ============================================
+   CORE LOGO STYLES
+   ============================================ */
+
+.team-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: var(--team-primary, #f3f4f6);
+  flex-shrink: 0;
+  position: relative;
+}
+
+.team-logo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.team-logo:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.team-logo:active {
+  transform: scale(0.95);
+}
+
+.team-logo svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Fallback gradient logos */
+.team-logo-fallback {
+  background: linear-gradient(135deg, var(--team-primary, #6B7280), var(--team-secondary, #374151));
+  color: var(--team-text, #FFFFFF);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ============================================
+   SIZE VARIANTS
+   ============================================ */
+
+.team-logo--xs,
+[data-size="24"] .team-logo { 
+  width: 24px; 
+  height: 24px; 
+}
+
+.team-logo--xs .initials,
+[data-size="24"] .team-logo text {
+  font-size: 10px;
+}
+
+.team-logo--sm,
+[data-size="32"] .team-logo { 
+  width: 32px; 
+  height: 32px; 
+}
+
+.team-logo--sm .initials,
+[data-size="32"] .team-logo text {
+  font-size: 14px;
+}
+
+.team-logo--md,
+[data-size="48"] .team-logo { 
+  width: 48px; 
+  height: 48px; 
+}
+
+.team-logo--md .initials,
+[data-size="48"] .team-logo text {
+  font-size: 20px;
+}
+
+.team-logo--lg,
+[data-size="64"] .team-logo { 
+  width: 64px; 
+  height: 64px; 
+}
+
+.team-logo--lg .initials,
+[data-size="64"] .team-logo text {
+  font-size: 28px;
+}
+
+.team-logo--xl,
+[data-size="96"] .team-logo { 
+  width: 96px; 
+  height: 96px; 
+}
+
+.team-logo--xl .initials,
+[data-size="96"] .team-logo text {
+  font-size: 42px;
+}
+
+.team-logo--2xl,
+[data-size="128"] .team-logo { 
+  width: 128px; 
+  height: 128px; 
+}
+
+.team-logo--2xl .initials,
+[data-size="128"] .team-logo text {
+  font-size: 56px;
+}
+
+/* Default sizing */
+.team-logo {
+  width: 50px;
+  height: 50px;
+}
+
+/* ============================================
+   DISPLAY CONTAINER
+   ============================================ */
+
+.team-logo-display {
+  display: inline-block;
+  position: relative;
+}
+
+.team-logo-display[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  padding: 6px 12px;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  font-size: 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+  z-index: 1000;
+}
+
+.team-logo-display[data-tooltip]:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes logoPop {
+  0% { 
+    transform: scale(0); 
+    opacity: 0; 
+  }
+  50% { 
+    transform: scale(1.15); 
+  }
+  100% { 
+    transform: scale(1); 
+    opacity: 1; 
+  }
+}
+
+@keyframes logoBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes logoSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes logoPulse {
+  0%, 100% { box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); }
+  50% { box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); }
+}
+
+.team-logo--animate {
+  animation: logoPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.team-logo--bounce {
+  animation: logoBounce 1s ease infinite;
+}
+
+.team-logo--pulse {
+  animation: logoPulse 2s ease infinite;
+}
+
+.team-logo--spin:hover {
+  animation: logoSpin 0.5s ease;
+}
+
+/* ============================================
+   HELMET STYLES
+   ============================================ */
+
+.team-helmet {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.team-helmet:hover {
+  transform: rotate(-8deg) scale(1.05);
+}
+
+.team-helmet svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Helmet sizes */
+.team-helmet--sm { width: 40px; height: 40px; }
+.team-helmet--md { width: 60px; height: 60px; }
+.team-helmet--lg { width: 80px; height: 80px; }
+.team-helmet--xl { width: 120px; height: 120px; }
+
+/* ============================================
+   INTEGRATION: DRAFT CARDS
+   ============================================ */
+
+.draft-card__logo {
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.draft-card__team-info {
+  display: flex;
+  align-items: center;
+}
+
+.draft-card__team-name {
+  font-weight: 600;
+  color: var(--text-primary, #1f2937);
+}
+
+/* Pick card (current selection) */
+.pick-card {
+  position: relative;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.pick-card__team-logo {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  border: 4px solid white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================
+   INTEGRATION: WAR ROOM
+   ============================================ */
+
+.war-room__team-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: linear-gradient(90deg, var(--team-primary, #333) 0%, var(--team-secondary, #666) 100%);
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.war-room__team-logo {
+  width: 64px;
+  height: 64px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.war-room__team-name {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   INTEGRATION: TEAM HISTORY
+   ============================================ */
+
+.team-history__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px;
+  background: linear-gradient(135deg, var(--team-primary, #1f2937) 0%, var(--team-secondary, #374151) 100%);
+  border-radius: 16px;
+  margin-bottom: 24px;
+}
+
+.team-history__logo {
+  width: 128px;
+  height: 128px;
+  margin-bottom: 16px;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.team-history__name {
+  color: white;
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+/* ============================================
+   INTEGRATION: POSITION RANKINGS
+   ============================================ */
+
+.rankings__player-row {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.15s ease;
+}
+
+.rankings__player-row:hover {
+  background-color: #f9fafb;
+}
+
+.rankings__team-logo {
+  width: 32px;
+  height: 32px;
+  margin-right: 12px;
+  vertical-align: middle;
+}
+
+.rankings__school {
+  display: flex;
+  align-items: center;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+/* ============================================
+   INTEGRATION: LIVE DRAFT TICKER
+   ============================================ */
+
+.draft-ticker {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 12px;
+  background: #111827;
+  border-radius: 8px;
+}
+
+.draft-ticker__item {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 8px 12px;
+  background: #1f2937;
+  border-radius: 6px;
+  min-width: 180px;
+}
+
+.draft-ticker__logo {
+  width: 28px;
+  height: 28px;
+  margin-right: 8px;
+}
+
+.draft-ticker__info {
+  color: white;
+}
+
+.draft-ticker__pick {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.draft-ticker__player {
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+/* ============================================
+   DARK MODE SUPPORT
+   ============================================ */
+
+@media (prefers-color-scheme: dark) {
+  .team-logo {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  }
+  
+  .team-logo:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  }
+  
+  .draft-card__team-name {
+    color: #f3f4f6;
+  }
+  
+  .rankings__player-row:hover {
+    background-color: #1f2937;
+  }
+  
+  .rankings__school {
+    color: #9ca3af;
+  }
+}
+
+/* Manual dark mode class */
+.dark-mode .team-logo {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.dark-mode .draft-card__team-name {
+  color: #f3f4f6;
+}
+
+/* ============================================
+   LOADING STATES
+   ============================================ */
+
+.team-logo--loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ============================================
+   ERROR STATES
+   ============================================ */
+
+.team-logo--error {
+  background: #ef4444;
+  color: white;
+}
+
+.team-logo--error::after {
+  content: '!';
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+  .team-logo--xl,
+  .team-logo--2xl,
+  .team-history__logo {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .war-room__team-logo {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .war-room__team-name {
+    font-size: 1.25rem;
+  }
+  
+  .team-history__name {
+    font-size: 1.5rem;
+  }
+  
+  .team-helmet--xl {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-logo--lg {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .draft-card__logo {
+    margin-right: 8px;
+  }
+  
+  .draft-ticker__item {
+    min-width: 140px;
+    padding: 6px 8px;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  .team-logo {
+    box-shadow: none;
+    border: 1px solid #ccc;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  
+  .team-logo:hover {
+    transform: none;
+  }
+  
+  .team-helmet:hover {
+    transform: none;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+.team-logo:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .team-logo,
+  .team-logo:hover,
+  .team-helmet,
+  .team-helmet:hover {
+    transition: none;
+    animation: none;
+    transform: none;
+  }
+  
+  .team-logo--animate,
+  .team-logo--bounce,
+  .team-logo--pulse {
+    animation: none;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .team-logo {
+    border: 2px solid currentColor;
+  }
+}

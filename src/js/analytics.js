@@ -21,6 +21,7 @@
         searchQueries: [],
         filtersUsed: {},
         exportActions: {},
+        shareActions: {},
         tradesCreated: 0,
         edpLeaderboardViews: 0,
         bigBoardViews: 0,
@@ -136,6 +137,22 @@
         saveAnalytics(analytics);
     }
 
+    function trackShare(platform) {
+        const analytics = getAnalytics();
+        
+        if (!analytics.shareActions) {
+            analytics.shareActions = {};
+        }
+        
+        if (!analytics.shareActions[platform]) {
+            analytics.shareActions[platform] = 0;
+        }
+        analytics.shareActions[platform]++;
+        
+        saveAnalytics(analytics);
+        console.log(`[Analytics] Share: ${platform}`);
+    }
+
     function trackTimeOnPage() {
         window.addEventListener('beforeunload', function() {
             const sessionStart = parseInt(sessionStorage.getItem(SESSION_START_KEY) || '0');
@@ -226,6 +243,15 @@
             console.log(`  ${type}: ${count} times`);
         });
         
+        console.log('%c\n🔗 Social Shares:', 'font-weight: bold; color: #00d4ff;');
+        if (analytics.shareActions && Object.keys(analytics.shareActions).length > 0) {
+            Object.entries(analytics.shareActions).forEach(([platform, count]) => {
+                console.log(`  ${platform}: ${count} times`);
+            });
+        } else {
+            console.log('  No shares yet');
+        }
+        
         console.log('%c\n═══════════════════════════════════════════════════', 'color: #00d4ff;');
         console.log('%cRun showDetailedAnalytics() for raw data', 'color: #8b8b9a; font-style: italic;');
         
@@ -259,6 +285,7 @@
         trackFilter,
         trackExport,
         trackTrade,
+        trackShare,
         showSummary: showAnalyticsSummary,
         showDetailed: showDetailedAnalytics,
         clear: clearAnalytics,

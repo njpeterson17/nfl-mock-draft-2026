@@ -1,0 +1,1020 @@
+/* ============================================
+   DRAFT GRADES SYSTEM STYLES
+   2026 NFL Mock Draft
+   ============================================ */
+
+/* ----------------------------------------
+   GRADE BADGES
+   ---------------------------------------- */
+.grade-badge {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px;
+    padding: 0.35rem 0.75rem;
+    border-radius: 8px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.grade-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.grade-badge .grade-letter {
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.grade-badge .grade-score {
+    font-size: 0.65rem;
+    opacity: 0.9;
+    margin-top: 2px;
+}
+
+/* Grade Colors */
+.grade-a-plus {
+    background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
+    color: #000;
+    box-shadow: 0 2px 10px rgba(0, 255, 136, 0.4);
+}
+
+.grade-a {
+    background: linear-gradient(135deg, #00ff88 0%, #00dd77 100%);
+    color: #000;
+    box-shadow: 0 2px 10px rgba(0, 255, 136, 0.3);
+}
+
+.grade-a-minus {
+    background: linear-gradient(135deg, #00dd77 0%, #00bb66 100%);
+    color: #000;
+    box-shadow: 0 2px 10px rgba(0, 255, 136, 0.25);
+}
+
+.grade-b-plus {
+    background: linear-gradient(135deg, #00d4ff 0%, #00a8cc 100%);
+    color: #000;
+    box-shadow: 0 2px 10px rgba(0, 212, 255, 0.3);
+}
+
+.grade-b {
+    background: linear-gradient(135deg, #00a8cc 0%, #0088aa 100%);
+    color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 212, 255, 0.2);
+}
+
+.grade-b-minus {
+    background: linear-gradient(135deg, #0088aa 0%, #006688 100%);
+    color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 212, 255, 0.15);
+}
+
+.grade-c-plus {
+    background: linear-gradient(135deg, #ffb800 0%, #cc9400 100%);
+    color: #000;
+    box-shadow: 0 2px 10px rgba(255, 184, 0, 0.3);
+}
+
+.grade-c {
+    background: linear-gradient(135deg, #cc9400 0%, #aa7700 100%);
+    color: #fff;
+    box-shadow: 0 2px 10px rgba(255, 184, 0, 0.2);
+}
+
+.grade-c-minus {
+    background: linear-gradient(135deg, #aa7700 0%, #886600 100%);
+    color: #fff;
+    box-shadow: 0 2px 10px rgba(255, 184, 0, 0.15);
+}
+
+.grade-d-plus, .grade-d, .grade-d-minus {
+    background: linear-gradient(135deg, #ff6b35 0%, #cc5522 100%);
+    color: #fff;
+    box-shadow: 0 2px 10px rgba(255, 107, 53, 0.3);
+}
+
+.grade-f {
+    background: linear-gradient(135deg, #ff4757 0%, #cc3333 100%);
+    color: #fff;
+    box-shadow: 0 2px 10px rgba(255, 71, 87, 0.4);
+}
+
+/* Large Grade Badge */
+.grade-badge-large {
+    min-width: 80px;
+    padding: 0.5rem 1rem;
+}
+
+.grade-badge-large .grade-letter {
+    font-size: 2rem;
+}
+
+.grade-badge-large .grade-score {
+    font-size: 0.8rem;
+}
+
+/* ----------------------------------------
+   PICK GRADE BADGE (on cards)
+   ---------------------------------------- */
+.pick-grade-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    border: 3px solid var(--secondary);
+}
+
+.pick-grade-badge:hover {
+    transform: scale(1.15) rotate(5deg);
+}
+
+.pick-grade-badge .grade-letter {
+    line-height: 1;
+}
+
+.pick-grade-badge .grade-tooltip {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--secondary);
+    color: var(--text-primary);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border);
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+
+.pick-grade-badge:hover .grade-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Position the badge container in player info */
+.player-info {
+    position: relative;
+}
+
+/* ----------------------------------------
+   OVERALL GRADE DISPLAY
+   ---------------------------------------- */
+.overall-grade-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    margin-bottom: 2rem;
+}
+
+.grade-circle {
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+
+.grade-progress-ring {
+    transform: rotate(-90deg);
+}
+
+.grade-progress-ring-bg {
+    fill: none;
+    stroke: var(--border);
+    stroke-width: 8;
+}
+
+.grade-progress-ring-progress {
+    fill: none;
+    stroke-width: 8;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1s ease;
+}
+
+.grade-progress-ring-progress.grade-a-plus,
+.grade-progress-ring-progress.grade-a,
+.grade-progress-ring-progress.grade-a-minus {
+    stroke: #00ff88;
+}
+
+.grade-progress-ring-progress.grade-b-plus,
+.grade-progress-ring-progress.grade-b,
+.grade-progress-ring-progress.grade-b-minus {
+    stroke: #00d4ff;
+}
+
+.grade-progress-ring-progress.grade-c-plus,
+.grade-progress-ring-progress.grade-c,
+.grade-progress-ring-progress.grade-c-minus {
+    stroke: #ffb800;
+}
+
+.grade-progress-ring-progress.grade-d-plus,
+.grade-progress-ring-progress.grade-d,
+.grade-progress-ring-progress.grade-d-minus,
+.grade-progress-ring-progress.grade-f {
+    stroke: #ff4757;
+}
+
+.grade-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grade-letter-large {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.grade-score-small {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+}
+
+.grade-summary {
+    margin-top: 1rem;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    max-width: 400px;
+}
+
+/* Animation for grade reveal */
+@keyframes countUp {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.animate-grade .grade-letter-large {
+    animation: countUp 0.5s ease forwards;
+}
+
+.animate-grade .grade-progress-ring-progress {
+    animation: drawCircle 1s ease forwards;
+}
+
+@keyframes drawCircle {
+    from { stroke-dashoffset: 283; }
+}
+
+/* ----------------------------------------
+   GRADE BREAKDOWN MODAL
+   ---------------------------------------- */
+.grade-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.grade-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.grade-modal {
+    background: var(--secondary);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: scale(0.9) translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.grade-modal-overlay.active .grade-modal {
+    transform: scale(1) translateY(0);
+}
+
+.grade-breakdown-modal {
+    padding: 1.5rem;
+}
+
+.grade-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 1.5rem;
+}
+
+.grade-modal-title h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    margin: 0.25rem 0;
+}
+
+.grade-modal-title .pick-label {
+    font-size: 0.8rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.grade-modal-title .position-tag {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--primary);
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}
+
+.grade-modal-title .team-name {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.grade-modal-badge {
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.grade-modal-badge .grade-letter {
+    color: inherit;
+}
+
+/* Grade Components */
+.grade-components {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.grade-component {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 1rem;
+    border: 1px solid var(--border);
+}
+
+.component-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.component-name {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.component-grade {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.component-grade.grade-a {
+    background: rgba(0, 255, 136, 0.2);
+    color: #00ff88;
+}
+
+.component-grade.grade-b {
+    background: rgba(0, 212, 255, 0.2);
+    color: #00d4ff;
+}
+
+.component-grade.grade-c {
+    background: rgba(255, 184, 0, 0.2);
+    color: #ffb800;
+}
+
+.component-grade.grade-d {
+    background: rgba(255, 107, 53, 0.2);
+    color: #ff6b35;
+}
+
+.component-grade.grade-f {
+    background: rgba(255, 71, 87, 0.2);
+    color: #ff4757;
+}
+
+.component-bar {
+    height: 8px;
+    background: var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.component-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--success) 100%);
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+
+.component-details {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+/* Grade Verdict */
+.grade-verdict {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 255, 136, 0.05) 100%);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.verdict-score {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.verdict-text {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}
+
+.grade-weights-info {
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+}
+
+/* Modal Close Button */
+.grade-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.grade-modal-close:hover {
+    color: var(--accent);
+}
+
+/* ----------------------------------------
+   DRAFT GRADES LEADERBOARD
+   ---------------------------------------- */
+.draft-grades-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.draft-grades-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.draft-grades-header h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.draft-grades-header p {
+    color: var(--text-secondary);
+}
+
+.team-grades-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.team-grade-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    transition: all 0.3s ease;
+    animation: slideIn 0.5s ease forwards;
+    opacity: 0;
+}
+
+.team-grade-card:hover {
+    border-color: var(--accent);
+    transform: translateX(5px);
+}
+
+.team-grade-rank {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    min-width: 40px;
+    text-align: center;
+}
+
+.team-grade-info {
+    flex: 1;
+}
+
+.team-grade-name {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.team-grade-picks {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.team-grade-breakdown {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.grade-metric {
+    text-align: center;
+}
+
+.grade-metric-value {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    color: var(--accent);
+    font-size: 0.95rem;
+}
+
+.grade-metric-label {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+.team-grade-score-container {
+    text-align: center;
+}
+
+.team-grade-score {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+}
+
+/* ----------------------------------------
+   HISTORICAL COMPARISON
+   ---------------------------------------- */
+.historical-comparison {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.historical-comparison h3 {
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.historical-comparison h3 i {
+    color: var(--accent);
+}
+
+.comparison-current {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.comparison-similar {
+    background: rgba(0, 212, 255, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.comparison-label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.comparison-value {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    color: var(--accent);
+}
+
+.comparison-history-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.comparison-history-item {
+    background: var(--primary);
+    border-radius: 8px;
+    padding: 0.75rem;
+    text-align: center;
+}
+
+.comparison-history-year {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.comparison-history-grade {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0.25rem 0;
+}
+
+.comparison-history-highlight {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ----------------------------------------
+   BEST/WORST PICKS DISPLAY
+   ---------------------------------------- */
+.picks-highlight {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.picks-highlight-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1rem;
+    border: 1px solid var(--border);
+}
+
+.picks-highlight-card.best {
+    border-color: rgba(0, 255, 136, 0.3);
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.05) 0%, transparent 100%);
+}
+
+.picks-highlight-card.worst {
+    border-color: rgba(255, 107, 53, 0.3);
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, transparent 100%);
+}
+
+.picks-highlight-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.picks-highlight-card.best .picks-highlight-label {
+    color: #00ff88;
+}
+
+.picks-highlight-card.worst .picks-highlight-label {
+    color: #ff6b35;
+}
+
+.picks-highlight-player {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.picks-highlight-details {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+/* ----------------------------------------
+   POSITION BREAKDOWN CHART
+   ---------------------------------------- */
+.position-breakdown {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.position-breakdown h4 {
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 1rem;
+}
+
+.position-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.position-bar-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.position-bar-label {
+    min-width: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.position-bar-track {
+    flex: 1;
+    height: 24px;
+    background: var(--primary);
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.position-bar-fill {
+    height: 100%;
+    border-radius: 12px;
+    transition: width 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 0.75rem;
+}
+
+.position-bar-fill.qb { background: linear-gradient(90deg, #ff6b6b, #ee5a5a); }
+.position-bar-fill.rb { background: linear-gradient(90deg, #4ecdc4, #44b5ad); }
+.position-bar-fill.wr { background: linear-gradient(90deg, #45b7d1, #3ca3bc); }
+.position-bar-fill.te { background: linear-gradient(90deg, #96ceb4, #85b9a0); }
+.position-bar-fill.ot { background: linear-gradient(90deg, #feca57, #e5b54e); }
+.position-bar-fill.iol { background: linear-gradient(90deg, #ff9ff3, #e68edc); }
+.position-bar-fill.edge { background: linear-gradient(90deg, #54a0ff, #4a8fe0); }
+.position-bar-fill.dl { background: linear-gradient(90deg, #5f27cd, #5322b5); }
+.position-bar-fill.lb { background: linear-gradient(90deg, #00d2d3, #00bbbc); }
+.position-bar-fill.cb { background: linear-gradient(90deg, #1dd1a1, #1abc91); }
+.position-bar-fill.s { background: linear-gradient(90deg, #ff9f43, #e68f3c); }
+
+.position-bar-count {
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+/* ----------------------------------------
+   CONFETTI ANIMATION
+   ---------------------------------------- */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    top: -10px;
+    animation: confetti-fall 3s ease-out forwards;
+    z-index: 9999;
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* ----------------------------------------
+   GRADE TOGGLE BUTTON
+   ---------------------------------------- */
+.grades-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.85rem;
+}
+
+.grades-toggle:hover {
+    border-color: var(--accent);
+}
+
+.grades-toggle input[type="checkbox"] {
+    appearance: none;
+    width: 40px;
+    height: 20px;
+    background: var(--border);
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.grades-toggle input[type="checkbox"]:checked {
+    background: var(--accent);
+}
+
+.grades-toggle input[type="checkbox"]::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s ease;
+}
+
+.grades-toggle input[type="checkbox"]:checked::after {
+    transform: translateX(20px);
+}
+
+/* ----------------------------------------
+   RESPONSIVE STYLES
+   ---------------------------------------- */
+@media (max-width: 768px) {
+    .grade-modal {
+        width: 95%;
+        margin: 1rem;
+    }
+    
+    .grade-breakdown-modal {
+        padding: 1rem;
+    }
+    
+    .grade-modal-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .grade-modal-badge {
+        margin-top: 1rem;
+    }
+    
+    .team-grade-card {
+        flex-wrap: wrap;
+        padding: 1rem;
+    }
+    
+    .team-grade-breakdown {
+        width: 100%;
+        justify-content: center;
+        margin-top: 0.5rem;
+    }
+    
+    .picks-highlight {
+        grid-template-columns: 1fr;
+    }
+    
+    .comparison-history-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .pick-grade-badge {
+        width: 38px;
+        height: 38px;
+        font-size: 0.9rem;
+        top: -8px;
+        right: -8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .overall-grade-container {
+        padding: 1.5rem 1rem;
+    }
+    
+    .grade-circle {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .grade-progress-ring {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .grade-letter-large {
+        font-size: 2.5rem;
+    }
+    
+    .team-grade-rank {
+        font-size: 1.2rem;
+        min-width: 30px;
+    }
+    
+    .grade-component {
+        padding: 0.75rem;
+    }
+    
+    .component-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+}
+
+/* ----------------------------------------
+   DARK/LIGHT MODE ADJUSTMENTS
+   ---------------------------------------- */
+[data-theme="light"] .grade-modal-overlay {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="light"] .pick-grade-badge {
+    border-color: #fff;
+}
+
+[data-theme="light"] .team-grade-card:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Print styles for grades */
+@media print {
+    .grade-modal-overlay,
+    .pick-grade-badge,
+    .confetti {
+        display: none !important;
+    }
+    
+    .grade-badge {
+        border: 1px solid #ccc;
+        box-shadow: none !important;
+    }
+}

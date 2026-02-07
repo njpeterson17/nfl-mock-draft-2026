@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - NFL Mock Draft 2026</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/leaderboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <i class="fas fa-football-ball"></i>
+                <span>NFL Mock Draft 2026</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Mock Draft</a>
+                <a href="war-room.html">War Room</a>
+                <a href="leaderboard.html">Leaderboards</a>
+                <a href="profile.html" class="active">My Profile</a>
+            </nav>
+            <div class="user-menu">
+                <button id="userMenuBtn" class="user-menu-btn">
+                    <span id="headerUsername">Guest</span>
+                    <i class="fas fa-user-circle"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="profile-main">
+        <!-- Profile Header -->
+        <section class="profile-header">
+            <div class="container">
+                <div class="profile-card">
+                    <div class="profile-avatar-section">
+                        <div class="profile-avatar">
+                            <span id="profileAvatar">👤</span>
+                            <div class="level-badge" id="levelBadge">12</div>
+                        </div>
+                        <div class="profile-basic-info">
+                            <h1 id="profileUsername">DraftKing42</h1>
+                            <p class="profile-title" id="profileTitle">Director of Scouting</p>
+                            <p class="member-since">Member since <span id="joinDate">Jan 2026</span></p>
+                        </div>
+                    </div>
+                    <div class="profile-quick-stats">
+                        <div class="quick-stat">
+                            <div class="quick-stat-value" id="quickScore">2,450</div>
+                            <div class="quick-stat-label">Total Score</div>
+                        </div>
+                        <div class="quick-stat">
+                            <div class="quick-stat-value" id="quickMocks">12</div>
+                            <div class="quick-stat-label">Mocks Created</div>
+                        </div>
+                        <div class="quick-stat">
+                            <div class="quick-stat-value" id="quickRank">#42</div>
+                            <div class="quick-stat-label">Global Rank</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Level Progress -->
+        <section class="level-section">
+            <div class="container">
+                <div class="level-progress-card">
+                    <div class="level-info">
+                        <span class="current-level">Level <span id="currentLevel">12</span></span>
+                        <span class="next-level">Level <span id="nextLevel">13</span></span>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="levelProgressBar">
+                            <div class="progress-fill" id="levelProgressFill" style="width: 80%"></div>
+                        </div>
+                        <span class="progress-text" id="levelProgressText">2,450 / 3,000 XP</span>
+                    </div>
+                    <p class="level-name" id="levelName">Director of Scouting</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profile Content Grid -->
+        <section class="profile-content">
+            <div class="container">
+                <div class="profile-grid">
+                    <!-- Left Column -->
+                    <div class="profile-left">
+                        <!-- Stats Card -->
+                        <div class="profile-section stats-card">
+                            <h3><i class="fas fa-chart-bar"></i> Statistics</h3>
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <i class="fas fa-star"></i>
+                                    <div class="stat-detail">
+                                        <span class="stat-label">Total Score</span>
+                                        <span class="stat-value" id="statTotalScore">2,450</span>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-clipboard-list"></i>
+                                    <div class="stat-detail">
+                                        <span class="stat-label">Mocks Created</span>
+                                        <span class="stat-value" id="statMocks">12</span>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <div class="stat-detail">
+                                        <span class="stat-label">Avg Grade</span>
+                                        <span class="stat-value" id="statAvgGrade">B+</span>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-trophy"></i>
+                                    <div class="stat-detail">
+                                        <span class="stat-label">Best Grade</span>
+                                        <span class="stat-value" id="statBestGrade">A+</span>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-bullseye"></i>
+                                    <div class="stat-detail">
+                                        <span class="stat-label">Best Pick</span>
+                                        <span class="stat-value" id="statBestPick">Mendoza at #1</span>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-heart"></i>
+                                    <div class="stat-detail">
+                                        <span class="stat-label">Favorite Team</span>
+                                        <span class="stat-value" id="statFavTeam">Raiders</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Achievements Card -->
+                        <div class="profile-section achievements-card">
+                            <h3><i class="fas fa-medal"></i> Achievements</h3>
+                            <div class="achievement-progress">
+                                <span class="progress-text" id="achievementProgress">8/20 Unlocked</span>
+                                <div class="progress-bar-mini">
+                                    <div class="progress-fill-mini" id="achievementProgressBar" style="width: 40%"></div>
+                                </div>
+                            </div>
+                            <div class="achievements-list" id="achievementsList">
+                                <!-- Dynamically populated -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="profile-right">
+                        <!-- Mock History Card -->
+                        <div class="profile-section history-card">
+                            <h3><i class="fas fa-history"></i> Mock Draft History</h3>
+                            <div class="history-filters">
+                                <select id="historySort" class="filter-select">
+                                    <option value="newest">Newest First</option>
+                                    <option value="oldest">Oldest First</option>
+                                    <option value="score">Highest Score</option>
+                                    <option value="grade">Best Grade</option>
+                                </select>
+                                <div class="view-toggle">
+                                    <button class="view-btn active" data-view="list"><i class="fas fa-list"></i></button>
+                                    <button class="view-btn" data-view="grid"><i class="fas fa-th-large"></i></button>
+                                </div>
+                            </div>
+                            <div class="mock-history-list" id="mockHistoryList">
+                                <!-- Dynamically populated -->
+                            </div>
+                            <button class="btn-secondary load-more" id="loadMoreMocks" style="display: none;">
+                                Load More
+                            </button>
+                        </div>
+
+                        <!-- Friends Card -->
+                        <div class="profile-section friends-card">
+                            <h3><i class="fas fa-users"></i> Friends</h3>
+                            <div class="friends-actions">
+                                <div class="search-box">
+                                    <i class="fas fa-search"></i>
+                                    <input type="text" id="addFriendInput" placeholder="Add friend by username...">
+                                </div>
+                                <button class="btn-primary" id="addFriendBtn">
+                                    <i class="fas fa-plus"></i> Add
+                                </button>
+                            </div>
+                            <div class="friends-list" id="friendsList">
+                                <!-- Dynamically populated -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Performance Chart Section -->
+        <section class="performance-section">
+            <div class="container">
+                <div class="profile-section performance-card">
+                    <h3><i class="fas fa-chart-line"></i> Performance Over Time</h3>
+                    <div class="chart-container">
+                        <canvas id="performanceChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Edit Profile Modal -->
+    <div class="modal" id="editProfileModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Profile</h2>
+                <button class="close-btn" onclick="closeEditProfileModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="editProfileForm">
+                    <div class="form-group">
+                        <label for="editUsername">Username</label>
+                        <input type="text" id="editUsername" maxlength="20" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editFavTeam">Favorite Team</label>
+                        <select id="editFavTeam">
+                            <option value="">Select a team...</option>
+                            <option value="ARI">Arizona Cardinals</option>
+                            <option value="ATL">Atlanta Falcons</option>
+                            <option value="BAL">Baltimore Ravens</option>
+                            <option value="BUF">Buffalo Bills</option>
+                            <option value="CAR">Carolina Panthers</option>
+                            <option value="CHI">Chicago Bears</option>
+                            <option value="CIN">Cincinnati Bengals</option>
+                            <option value="CLE">Cleveland Browns</option>
+                            <option value="DAL">Dallas Cowboys</option>
+                            <option value="DEN">Denver Broncos</option>
+                            <option value="DET">Detroit Lions</option>
+                            <option value="GB">Green Bay Packers</option>
+                            <option value="HOU">Houston Texans</option>
+                            <option value="IND">Indianapolis Colts</option>
+                            <option value="JAX">Jacksonville Jaguars</option>
+                            <option value="KC">Kansas City Chiefs</option>
+                            <option value="LV">Las Vegas Raiders</option>
+                            <option value="LAC">Los Angeles Chargers</option>
+                            <option value="LAR">Los Angeles Rams</option>
+                            <option value="MIA">Miami Dolphins</option>
+                            <option value="MIN">Minnesota Vikings</option>
+                            <option value="NE">New England Patriots</option>
+                            <option value="NO">New Orleans Saints</option>
+                            <option value="NYG">New York Giants</option>
+                            <option value="NYJ">New York Jets</option>
+                            <option value="PHI">Philadelphia Eagles</option>
+                            <option value="PIT">Pittsburgh Steelers</option>
+                            <option value="SF">San Francisco 49ers</option>
+                            <option value="SEA">Seattle Seahawks</option>
+                            <option value="TB">Tampa Bay Buccaneers</option>
+                            <option value="TEN">Tennessee Titans</option>
+                            <option value="WAS">Washington Commanders</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" onclick="closeEditProfileModal()">Cancel</button>
+                        <button type="submit" class="btn-primary">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Achievement Popup -->
+    <div class="achievement-popup" id="achievementPopup">
+        <div class="achievement-popup-content">
+            <div class="achievement-icon" id="popupIcon">⭐</div>
+            <h3>Achievement Unlocked!</h3>
+            <p class="achievement-name" id="popupName">Perfect Draft</p>
+            <p class="achievement-desc" id="popupDesc">Get A+ overall grade</p>
+            <button class="btn-primary" onclick="closeAchievementPopup()">Awesome!</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 NFL Mock Draft Simulator. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/leaderboard-system.js"></script>
+    <script>
+        // Initialize profile page when loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            LeaderboardSystem.initProfile();
+        });
+    </script>
+</body>
+</html>

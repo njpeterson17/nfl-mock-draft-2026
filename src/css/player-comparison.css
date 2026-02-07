@@ -1,0 +1,936 @@
+/* ==========================================
+   PLAYER COMPARISON TOOL STYLES
+   ========================================== */
+
+/* Comparison Modal */
+.comparison-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    overflow-y: auto;
+}
+
+.comparison-modal-content {
+    background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
+    margin: 2rem auto;
+    width: 95%;
+    max-width: 1400px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    box-shadow: 0 25px 100px rgba(0, 0, 0, 0.5);
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.comparison-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(90deg, rgba(0, 212, 255, 0.05) 0%, transparent 100%);
+    border-radius: 20px 20px 0 0;
+}
+
+.comparison-modal-header h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.comparison-modal-header h2 i {
+    color: var(--accent);
+}
+
+.comparison-modal-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.comparison-btn {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.comparison-btn:hover {
+    border-color: var(--accent);
+    background: rgba(0, 212, 255, 0.1);
+}
+
+.comparison-btn.primary {
+    background: var(--accent);
+    color: var(--primary);
+    border-color: var(--accent);
+}
+
+.comparison-btn.primary:hover {
+    background: var(--accent-hover);
+}
+
+.comparison-btn.danger {
+    color: var(--danger);
+    border-color: rgba(255, 71, 87, 0.3);
+}
+
+.comparison-btn.danger:hover {
+    background: rgba(255, 71, 87, 0.1);
+}
+
+.close-comparison {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.close-comparison:hover {
+    color: var(--danger);
+    background: rgba(255, 71, 87, 0.1);
+}
+
+/* Comparison Body */
+.comparison-modal-body {
+    padding: 1.5rem 2rem 2rem;
+}
+
+/* Player Selector */
+.comparison-selector-section {
+    margin-bottom: 1.5rem;
+}
+
+.comparison-search-container {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.comparison-search-input {
+    width: 100%;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 0.875rem 1rem 0.875rem 3rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.comparison-search-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+}
+
+.comparison-search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+}
+
+.comparison-search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-top: 0.5rem;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 100;
+    display: none;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.search-result-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.875rem 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid var(--border);
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item:hover {
+    background: rgba(0, 212, 255, 0.1);
+}
+
+.search-result-rank {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.9rem;
+    color: var(--accent);
+    min-width: 35px;
+}
+
+.search-result-name {
+    font-weight: 600;
+    flex: 1;
+}
+
+.search-result-meta {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.search-result-add {
+    background: var(--accent);
+    color: var(--primary);
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.search-result-add:hover {
+    background: var(--accent-hover);
+    transform: scale(1.1);
+}
+
+.search-no-results {
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+/* Selected Players */
+.comparison-selected-players {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.comparison-selected-player {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 212, 255, 0.05));
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    padding: 0.5rem 0.75rem;
+    border-radius: 10px;
+    animation: slideIn 0.3s ease;
+}
+
+.selected-player-rank {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.8rem;
+    color: var(--accent);
+    background: rgba(0, 212, 255, 0.2);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+}
+
+.selected-player-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.selected-player-pos {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.remove-player-btn,
+.swap-player-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: var(--text-secondary);
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    font-size: 0.75rem;
+}
+
+.remove-player-btn:hover {
+    background: var(--danger);
+    color: white;
+}
+
+.swap-player-btn:hover {
+    background: var(--accent);
+    color: var(--primary);
+}
+
+/* Empty State */
+.comparison-empty-state {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-secondary);
+}
+
+.comparison-empty-state i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--accent);
+    opacity: 0.5;
+}
+
+.comparison-empty-state p {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.comparison-empty-state span {
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+/* Comparison Content */
+.comparison-content {
+    min-height: 400px;
+}
+
+.comparison-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.comparison-placeholder i {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.3;
+}
+
+/* Comparison Grid */
+.comparison-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.comparison-grid.comparison-count-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.comparison-grid.comparison-count-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.comparison-player-column {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.comparison-player-column:hover {
+    border-color: var(--accent);
+    box-shadow: 0 10px 40px rgba(0, 212, 255, 0.1);
+}
+
+/* Comparison Header */
+.comparison-header {
+    padding: 1.5rem;
+    text-align: center;
+    border-top: 4px solid var(--accent);
+    background: linear-gradient(180deg, rgba(0, 212, 255, 0.05) 0%, transparent 100%);
+}
+
+.comparison-player-photo {
+    position: relative;
+    width: 100px;
+    height: 120px;
+    margin: 0 auto 1rem;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid var(--border);
+}
+
+.comparison-player-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.comparison-rank {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--accent);
+    color: var(--primary);
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0 0 8px 0;
+}
+
+.comparison-player-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.comparison-player-meta {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.comparison-position {
+    background: var(--accent);
+    color: var(--primary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.comparison-school {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.comparison-grade {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+}
+
+.comparison-grade.elite {
+    border-color: var(--gold);
+    background: rgba(255, 215, 0, 0.1);
+}
+
+.comparison-grade.round1 {
+    border-color: var(--success);
+    background: rgba(0, 255, 136, 0.1);
+}
+
+.comparison-grade.round2 {
+    border-color: var(--accent);
+    background: rgba(0, 212, 255, 0.1);
+}
+
+.comparison-grade.round3 {
+    border-color: var(--warning);
+    background: rgba(255, 184, 0, 0.1);
+}
+
+.grade-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-secondary);
+}
+
+.grade-value {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.grade-tier {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+}
+
+/* Comparison Sections */
+.comparison-section {
+    padding: 1.25rem;
+    border-top: 1px solid var(--border);
+}
+
+.comparison-section h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.comparison-section h4 i {
+    color: var(--accent);
+}
+
+/* Stat Rows */
+.comparison-stat-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.875rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.comparison-stat-row.winner {
+    background: rgba(0, 255, 136, 0.1);
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    min-width: 60px;
+}
+
+.stat-bar-container {
+    flex: 1;
+    height: 8px;
+    background: var(--primary);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.stat-bar {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+
+.comparison-stat-row .stat-value {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.9rem;
+    min-width: 70px;
+    text-align: right;
+}
+
+.winner-badge {
+    color: var(--success);
+    font-size: 0.8rem;
+}
+
+/* Rating Rows */
+.comparison-rating-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    padding: 0.4rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.comparison-rating-row.winner {
+    background: rgba(0, 255, 136, 0.1);
+}
+
+.rating-label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    min-width: 90px;
+}
+
+.rating-stars {
+    flex: 1;
+    color: var(--gold);
+    font-size: 0.75rem;
+}
+
+.rating-stars .far {
+    color: var(--text-secondary);
+    opacity: 0.3;
+}
+
+.rating-value {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.9rem;
+    color: var(--accent);
+    min-width: 30px;
+    text-align: right;
+}
+
+/* Scouting Profile */
+.comparison-strengths,
+.comparison-comparison {
+    margin-bottom: 1rem;
+}
+
+.comparison-strengths strong,
+.comparison-comparison strong {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.comparison-strengths p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+}
+
+.comparison-comparison p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* Chart Section */
+.comparison-chart-section {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem;
+}
+
+.comparison-chart-section h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.comparison-chart-section h4 i {
+    color: var(--accent);
+}
+
+.radar-chart-container {
+    height: 400px;
+    position: relative;
+}
+
+/* Big Board Compare Bar */
+.big-board-compare-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.compare-bar-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.compare-bar-info i {
+    color: var(--accent);
+}
+
+.compare-bar-count {
+    background: var(--accent);
+    color: var(--primary);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+.compare-bar-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+/* Big Board Compare Button */
+.bb-compare-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.big-board-item:hover .bb-compare-btn {
+    opacity: 1;
+}
+
+.bb-compare-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.bb-compare-btn.active {
+    opacity: 1;
+    background: var(--success);
+    border-color: var(--success);
+    color: var(--primary);
+}
+
+.big-board-item {
+    position: relative;
+}
+
+/* Compare Button in Big Board Tab */
+.big-board-compare-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.compare-bar-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.compare-bar-info i {
+    color: var(--accent);
+}
+
+.compare-bar-count {
+    background: var(--accent);
+    color: var(--primary);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+.compare-bar-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+/* Floating Compare Button */
+.floating-compare-btn {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+    color: var(--primary);
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+    transition: all 0.3s ease;
+    z-index: 98;
+    animation: slideInLeft 0.3s ease;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.floating-compare-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 212, 255, 0.4);
+}
+
+.floating-compare-btn i {
+    font-size: 1.1rem;
+}
+
+.compare-count {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.15rem 0.5rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-family: 'Oswald', sans-serif;
+}
+
+/* Context Menu */
+.player-context-menu {
+    position: absolute;
+    background: var(--secondary);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.5rem;
+    min-width: 180px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    animation: fadeIn 0.2s ease;
+}
+
+.context-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.625rem 0.875rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.context-menu-item:hover {
+    background: rgba(0, 212, 255, 0.1);
+}
+
+.context-menu-item i {
+    color: var(--accent);
+    width: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .comparison-grid.comparison-count-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .comparison-grid.comparison-count-3 .comparison-player-column:last-child {
+        grid-column: span 2;
+        max-width: 50%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .comparison-modal-content {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+    
+    .comparison-modal-header {
+        padding: 1rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .comparison-modal-header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .comparison-modal-body {
+        padding: 1rem;
+    }
+    
+    .comparison-grid.comparison-count-2,
+    .comparison-grid.comparison-count-3 {
+        grid-template-columns: 1fr;
+    }
+    
+    .comparison-grid.comparison-count-3 .comparison-player-column:last-child {
+        grid-column: span 1;
+        max-width: 100%;
+    }
+    
+    .radar-chart-container {
+        height: 300px;
+    }
+    
+    .comparison-btn span {
+        display: none;
+    }
+    
+    .floating-compare-btn {
+        bottom: 5rem;
+        left: 1rem;
+        padding: 0.875rem 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .comparison-modal-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .comparison-modal-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .comparison-player-photo {
+        width: 80px;
+        height: 100px;
+    }
+    
+    .comparison-player-name {
+        font-size: 1.1rem;
+    }
+    
+    .rating-label {
+        min-width: 70px;
+        font-size: 0.75rem;
+    }
+}

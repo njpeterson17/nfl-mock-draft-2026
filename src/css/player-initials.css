@@ -1,0 +1,444 @@
+/**
+ * NFL Mock Draft - Player Initials Placeholder Styles
+ * Beautiful CSS-based placeholders when no image is available
+ */
+
+/* ==========================================
+   BASE INITIALS PLACEHOLDER
+   ========================================== */
+
+.player-photo-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--team-color-1, #1a1a2e), var(--team-color-2, #16213e));
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Subtle pattern overlay */
+.player-photo-placeholder::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.player-photo-placeholder .initials {
+    font-size: 48px;
+    font-weight: 800;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+    z-index: 1;
+}
+
+.player-photo-placeholder .position-badge {
+    position: absolute;
+    bottom: 8px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    backdrop-filter: blur(4px);
+    z-index: 1;
+}
+
+/* ==========================================
+   SIZE VARIANTS
+   ========================================== */
+
+/* Small - for tables and lists */
+.player-photo.small .player-photo-placeholder,
+.player-photo-placeholder.small {
+    border-radius: 6px;
+}
+
+.player-photo.small .player-photo-placeholder .initials,
+.player-photo-placeholder.small .initials {
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+.player-photo.small .player-photo-placeholder .position-badge,
+.player-photo-placeholder.small .position-badge {
+    font-size: 9px;
+    padding: 2px 6px;
+    bottom: 4px;
+    border-radius: 8px;
+}
+
+/* Medium - default */
+.player-photo.medium .player-photo-placeholder .initials {
+    font-size: 36px;
+}
+
+/* Large - for featured picks */
+.player-photo.large .player-photo-placeholder,
+.player-photo-placeholder.large {
+    border-radius: 12px;
+}
+
+.player-photo.large .player-photo-placeholder .initials,
+.player-photo-placeholder.large .initials {
+    font-size: 64px;
+    letter-spacing: 3px;
+}
+
+.player-photo.large .player-photo-placeholder .position-badge,
+.player-photo-placeholder.large .position-badge {
+    font-size: 14px;
+    padding: 4px 14px;
+    bottom: 12px;
+    border-radius: 16px;
+}
+
+/* Extra Large - for player profiles */
+.player-photo.xlarge .player-photo-placeholder,
+.player-photo-placeholder.xlarge {
+    border-radius: 16px;
+}
+
+.player-photo.xlarge .player-photo-placeholder .initials,
+.player-photo-placeholder.xlarge .initials {
+    font-size: 80px;
+    letter-spacing: 4px;
+}
+
+.player-photo.xlarge .player-photo-placeholder .position-badge,
+.player-photo-placeholder.xlarge .position-badge {
+    font-size: 16px;
+    padding: 6px 18px;
+    bottom: 16px;
+    border-radius: 20px;
+}
+
+/* ==========================================
+   POSITION-BASED COLOR VARIANTS
+   ========================================== */
+
+/* Quarterback - Cool Blue */
+.player-photo-placeholder[data-position="QB"] {
+    --team-color-1: #1e3a5f;
+    --team-color-2: #0d2137;
+}
+
+.player-photo-placeholder[data-position="QB"] .initials {
+    color: #00d4ff;
+}
+
+/* Running Back - Red */
+.player-photo-placeholder[data-position="RB"] {
+    --team-color-1: #3d1f1f;
+    --team-color-2: #1a0f0f;
+}
+
+.player-photo-placeholder[data-position="RB"] .initials {
+    color: #ff6b6b;
+}
+
+/* Wide Receiver - Green */
+.player-photo-placeholder[data-position="WR"] {
+    --team-color-1: #1f3d1f;
+    --team-color-2: #0f1a0f;
+}
+
+.player-photo-placeholder[data-position="WR"] .initials {
+    color: #51cf66;
+}
+
+/* Tight End - Gold */
+.player-photo-placeholder[data-position="TE"] {
+    --team-color-1: #3d3d1f;
+    --team-color-2: #1a1a0f;
+}
+
+.player-photo-placeholder[data-position="TE"] .initials {
+    color: #ffd43b;
+}
+
+/* Offensive Tackle - Light Blue */
+.player-photo-placeholder[data-position="OT"] {
+    --team-color-1: #1f2d3d;
+    --team-color-2: #0f151a;
+}
+
+.player-photo-placeholder[data-position="OT"] .initials {
+    color: #74c0fc;
+}
+
+/* Interior Offensive Line - Purple */
+.player-photo-placeholder[data-position="IOL"],
+.player-photo-placeholder[data-position="G"],
+.player-photo-placeholder[data-position="C"] {
+    --team-color-1: #2d1f3d;
+    --team-color-2: #150f1a;
+}
+
+.player-photo-placeholder[data-position="IOL"] .initials,
+.player-photo-placeholder[data-position="G"] .initials,
+.player-photo-placeholder[data-position="C"] .initials {
+    color: #da77f2;
+}
+
+/* Edge - Pink/Red */
+.player-photo-placeholder[data-position="EDGE"],
+.player-photo-placeholder[data-position="DE"] {
+    --team-color-1: #3d1f2d;
+    --team-color-2: #1a0f12;
+}
+
+.player-photo-placeholder[data-position="EDGE"] .initials,
+.player-photo-placeholder[data-position="DE"] .initials {
+    color: #ff8787;
+}
+
+/* Defensive Line - Teal */
+.player-photo-placeholder[data-position="DL"],
+.player-photo-placeholder[data-position="DT"] {
+    --team-color-1: #1f3d3d;
+    --team-color-2: #0f1a1a;
+}
+
+.player-photo-placeholder[data-position="DL"] .initials,
+.player-photo-placeholder[data-position="DT"] .initials {
+    color: #63e6be;
+}
+
+/* Linebacker - Orange */
+.player-photo-placeholder[data-position="LB"] {
+    --team-color-1: #3d2d1f;
+    --team-color-2: #1a120f;
+}
+
+.player-photo-placeholder[data-position="LB"] .initials {
+    color: #ffc078;
+}
+
+/* Cornerback - Indigo */
+.player-photo-placeholder[data-position="CB"] {
+    --team-color-1: #1f1f3d;
+    --team-color-2: #0f0f1a;
+}
+
+.player-photo-placeholder[data-position="CB"] .initials {
+    color: #91a7ff;
+}
+
+/* Safety - Light Green */
+.player-photo-placeholder[data-position="S"] {
+    --team-color-1: #2d3d1f;
+    --team-color-2: #121a0f;
+}
+
+.player-photo-placeholder[data-position="S"] .initials {
+    color: #b2f2bb;
+}
+
+/* Default/Fallback */
+.player-photo-placeholder[data-position="P"],
+.player-photo-placeholder:not([data-position]) {
+    --team-color-1: #2d3748;
+    --team-color-2: #1a202c;
+}
+
+.player-photo-placeholder[data-position="P"] .initials,
+.player-photo-placeholder:not([data-position]) .initials {
+    color: #a0aec0;
+}
+
+/* ==========================================
+   HOVER EFFECTS
+   ========================================== */
+
+.player-photo:hover .player-photo-placeholder {
+    transform: translateY(-2px);
+    box-shadow: 
+        inset 0 0 20px rgba(0, 0, 0, 0.2),
+        0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.player-photo:hover .player-photo-placeholder .initials {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+}
+
+/* ==========================================
+   ANIMATIONS
+   ========================================== */
+
+@keyframes initials-pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+.player-photo-placeholder.loading .initials {
+    animation: initials-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.player-photo-placeholder.loading {
+    background: linear-gradient(
+        90deg,
+        var(--team-color-1, #2d3748) 25%,
+        rgba(255, 255, 255, 0.1) 50%,
+        var(--team-color-1, #2d3748) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* ==========================================
+   DARK MODE SUPPORT
+   ========================================== */
+
+@media (prefers-color-scheme: dark) {
+    .player-photo-placeholder {
+        box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.4);
+    }
+    
+    .player-photo-placeholder .position-badge {
+        background: rgba(0, 0, 0, 0.6);
+    }
+}
+
+/* ==========================================
+   HIGH CONTRAST MODE
+   ========================================== */
+
+@media (prefers-contrast: high) {
+    .player-photo-placeholder {
+        border: 2px solid currentColor;
+    }
+    
+    .player-photo-placeholder .initials {
+        text-shadow: none;
+        -webkit-text-stroke: 1px currentColor;
+    }
+    
+    .player-photo-placeholder .position-badge {
+        border: 1px solid currentColor;
+    }
+}
+
+/* ==========================================
+   REDUCED MOTION
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .player-photo-placeholder,
+    .player-photo-placeholder .initials {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* ==========================================
+   PRINT STYLES
+   ========================================== */
+
+@media print {
+    .player-photo-placeholder {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+        border: 1px solid #ccc;
+    }
+    
+    .player-photo-placeholder .position-badge {
+        background: #333 !important;
+        color: white !important;
+    }
+}
+
+/* ==========================================
+   RESPONSIVE ADJUSTMENTS
+   ========================================== */
+
+@media (max-width: 768px) {
+    .player-photo.large .player-photo-placeholder .initials {
+        font-size: 48px;
+    }
+    
+    .player-photo.xlarge .player-photo-placeholder .initials {
+        font-size: 64px;
+    }
+}
+
+@media (max-width: 480px) {
+    .player-photo .player-photo-placeholder .initials {
+        font-size: 28px;
+    }
+    
+    .player-photo.small .player-photo-placeholder .initials {
+        font-size: 20px;
+    }
+    
+    .player-photo.large .player-photo-placeholder .initials {
+        font-size: 40px;
+    }
+    
+    .player-photo.xlarge .player-photo-placeholder .initials {
+        font-size: 52px;
+    }
+}
+
+/* ==========================================
+   UTILITY CLASSES
+   ========================================== */
+
+/* Circle variant */
+.player-photo-placeholder.circle {
+    border-radius: 50%;
+}
+
+/* Square variant */
+.player-photo-placeholder.square {
+    border-radius: 0;
+}
+
+/* With border */
+.player-photo-placeholder.bordered {
+    border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+/* With shadow */
+.player-photo-placeholder.shadow {
+    box-shadow: 
+        inset 0 0 20px rgba(0, 0, 0, 0.2),
+        0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Gradient text effect */
+.player-photo-placeholder.gradient-text .initials {
+    background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}

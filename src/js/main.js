@@ -2032,5 +2032,402 @@
             checkPickHash();
         });
 
+        // ==========================================
+        // COMPREHENSIVE DRAFT GRADES FUNCTIONS
+        // ==========================================
+        
+        // Initialize Draft Grades Tab
+        function initDraftGradesTab() {
+            renderTeamGradesLeaderboard();
+            renderDetailedTeamAnalysis();
+        }
+        
+        // Render Team Grades Leaderboard
+        function renderTeamGradesLeaderboard() {
+            const container = document.getElementById('teamGradesLeaderboard');
+            if (!container || typeof DraftGradesSystem === 'undefined') return;
+            
+            // Get all picks from DOM
+            const picks = extractAllPicksForGrading();
+            
+            // Calculate grades for each team
+            const teamGrades = [];
+            const teams = {};
+            
+            picks.forEach(pick => {
+                if (!teams[pick.team]) {
+                    teams[pick.team] = [];
+                }
+                teams[pick.team].push(pick);
+            });
+            
+            Object.entries(teams).forEach(([teamName, teamPicks]) => {
+                const grade = DraftGradesSystem.calculateOverallDraftGrade(teamPicks);
+                teamGrades.push({
+                    teamName,
+                    ...grade
+                });
+            });
+            
+            // Sort by score descending
+            teamGrades.sort((a, b) => b.score - a.score);
+            
+            // Render
+            container.innerHTML = teamGrades.map((team, index) => `
+                <div class="team-grade-card" style="display: flex; align-items: center; gap: 1rem; background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.5rem; margin-bottom: 0.75rem; animation: slideIn 0.5s ease forwards; animation-delay: ${index * 0.05}s; opacity: 0;">
+                    <div class="team-grade-rank" style="font-family: 'Oswald', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--accent); min-width: 40px; text-align: center;">#${index + 1}</div>
+                    <div class="team-grade-info" style="flex: 1;">
+                        <div class="team-grade-name" style="display: flex; align-items: center; gap: 0.75rem; font-weight: 600; margin-bottom: 0.25rem;">
+                            ${getTeamHelmetSVG(team.teamName)}
+                            ${team.teamName}
+                        </div>
+                        <div class="team-grade-picks" style="font-size: 0.8rem; color: var(--text-secondary);">${team.picks.length} picks analyzed</div>
+                        <div class="team-grade-breakdown" style="display: flex; gap: 1rem; margin-top: 0.5rem;">
+                            <div class="grade-metric" style="text-align: center;">
+                                <span class="grade-metric-value" style="display: block; font-family: 'Oswald', sans-serif; font-weight: 600; color: var(--accent); font-size: 0.95rem;">${Math.round(team.picks.reduce((sum, p) => sum + p.breakdown.value.score, 0) / team.picks.length)}</span>
+                                <span class="grade-metric-label" style="font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase;">Value</span>
+                            </div>
+                            <div class="grade-metric" style="text-align: center;">
+                                <span class="grade-metric-value" style="display: block; font-family: 'Oswald', sans-serif; font-weight: 600; color: var(--accent); font-size: 0.95rem;">${Math.round(team.picks.reduce((sum, p) => sum + p.breakdown.need.score, 0) / team.picks.length)}</span>
+                                <span class="grade-metric-label" style="font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase;">Need</span>
+                            </div>
+                            <div class="grade-metric" style="text-align: center;">
+                                <span class="grade-metric-value" style="display: block; font-family: 'Oswald', sans-serif; font-weight: 600; color: var(--accent); font-size: 0.95rem;">${Math.round(team.picks.reduce((sum, p) => sum + p.breakdown.fit.score, 0) / team.picks.length)}</span>
+                                <span class="grade-metric-label" style="font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase;">Fit</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-grade-score-container" style="text-align: center;">
+                        <div class="grade-badge ${team.bgClass}" style="display: inline-flex; flex-direction: column; align-items: center; justify-content: center; min-width: 50px; padding: 0.35rem 0.75rem; border-radius: 8px; font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase;">
+                            <span class="grade-letter" style="font-size: 1.2rem; line-height: 1;">${team.letter}</span>
+                        </div>
+                        <span class="team-grade-score" style="display: block; font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.25rem;">${team.score}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        // Render Detailed Team Analysis
+        function renderDetailedTeamAnalysis() {
+            const container = document.getElementById('detailedTeamAnalysis');
+            if (!container || typeof DraftGradesSystem === 'undefined') return;
+            
+            const picks = extractAllPicksForGrading();
+            const teams = {};
+            
+            picks.forEach(pick => {
+                if (!teams[pick.team]) {
+                    teams[pick.team] = [];
+                }
+                teams[pick.team].push(pick);
+            });
+            
+            // Calculate and sort
+            const teamGrades = Object.entries(teams).map(([teamName, teamPicks]) => ({
+                teamName,
+                ...DraftGradesSystem.calculateOverallDraftGrade(teamPicks)
+            })).sort((a, b) => b.score - a.score);
+            
+            container.innerHTML = teamGrades.map((team, index) => `
+                <div class="detailed-team-card" style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; margin-bottom: 1.5rem; overflow: hidden;">
+                    <div class="detailed-team-header" onclick="toggleTeamDetails(this)" style="display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 1.5rem; background: linear-gradient(90deg, rgba(0, 212, 255, 0.05) 0%, transparent 100%); border-bottom: 1px solid var(--border); cursor: pointer; transition: all 0.3s ease;">
+                        <div class="detailed-team-info" style="display: flex; align-items: center; gap: 1rem;">
+                            ${getTeamHelmetSVG(team.teamName)}
+                            <div>
+                                <h4 style="font-family: 'Oswald', sans-serif; font-size: 1.2rem;">${team.teamName}</h4>
+                                <div class="detailed-team-meta" style="font-size: 0.8rem; color: var(--text-secondary);">Rank #${index + 1} • ${team.picks.length} picks</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div class="grade-badge ${team.bgClass}" style="display: inline-flex; flex-direction: column; align-items: center; justify-content: center; min-width: 50px; padding: 0.35rem 0.75rem; border-radius: 8px; font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase;">
+                                <span class="grade-letter" style="font-size: 1.2rem; line-height: 1;">${team.letter}</span>
+                            </div>
+                            <i class="fas fa-chevron-down expand-icon" style="transition: transform 0.3s ease; color: var(--text-secondary);"></i>
+                        </div>
+                    </div>
+                    <div class="detailed-team-content" style="padding: 1.5rem; display: none;">
+                        ${renderTeamOverallGrade(team)}
+                        ${renderPicksHighlight(team)}
+                        ${renderPositionBreakdown(team)}
+                        ${renderTeamPicksList(team)}
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        // Render Team Overall Grade
+        function renderTeamOverallGrade(team) {
+            const circumference = 2 * Math.PI * 45;
+            const offset = circumference - (team.score / 100) * circumference;
+            
+            return `
+                <div class="overall-grade-container" style="display: flex; flex-direction: column; align-items: center; padding: 2rem; background: var(--card-bg); border-radius: 16px; border: 1px solid var(--border); margin-bottom: 1.5rem;">
+                    <div class="grade-circle" style="position: relative; width: 120px; height: 120px;">
+                        <svg class="grade-progress-ring" width="120" height="120" style="transform: rotate(-90deg);">
+                            <circle class="grade-progress-ring-bg" cx="60" cy="60" r="45" fill="none" stroke="var(--border)" stroke-width="8"></circle>
+                            <circle class="grade-progress-ring-progress ${team.bgClass}" cx="60" cy="60" r="45" fill="none" stroke-width="8" stroke-linecap="round" stroke-dasharray="${circumference}" stroke-dashoffset="${offset}" style="transition: stroke-dashoffset 1s ease; stroke: ${team.score >= 90 ? '#00ff88' : team.score >= 80 ? '#00d4ff' : team.score >= 70 ? '#ffb800' : '#ff4757'};"></circle>
+                        </svg>
+                        <div class="grade-content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center;">
+                            <span class="grade-letter-large" style="font-family: 'Oswald', sans-serif; font-size: 3rem; font-weight: 700; line-height: 1; background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">${team.letter}</span>
+                            <span class="grade-score-small" style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.25rem;">${team.score}</span>
+                        </div>
+                    </div>
+                    <div class="grade-summary" style="margin-top: 1rem; text-align: center; color: var(--text-secondary); font-size: 0.95rem; max-width: 400px;">${team.summary}</div>
+                </div>
+            `;
+        }
+        
+        // Render Picks Highlight
+        function renderPicksHighlight(team) {
+            if (!team.bestPick || !team.worstPick) return '';
+            
+            return `
+                <div class="picks-highlight" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0;">
+                    <div class="picks-highlight-card best" style="background: var(--card-bg); border-radius: 12px; padding: 1rem; border: 1px solid rgba(0, 255, 136, 0.3); background: linear-gradient(135deg, rgba(0, 255, 136, 0.05) 0%, transparent 100%);">
+                        <div class="picks-highlight-label" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; color: #00ff88;"><i class="fas fa-thumbs-up"></i> Best Pick</div>
+                        <div class="picks-highlight-player" style="font-weight: 600; margin-bottom: 0.25rem;">${team.bestPick.player}</div>
+                        <div class="picks-highlight-details" style="font-size: 0.8rem; color: var(--text-secondary);">#${team.bestPick.pickNumber} • ${team.bestPick.position} • Grade: ${team.bestPick.letter}</div>
+                    </div>
+                    <div class="picks-highlight-card worst" style="background: var(--card-bg); border-radius: 12px; padding: 1rem; border: 1px solid rgba(255, 107, 53, 0.3); background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, transparent 100%);">
+                        <div class="picks-highlight-label" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; color: #ff6b35;"><i class="fas fa-thumbs-down"></i> Room for Improvement</div>
+                        <div class="picks-highlight-player" style="font-weight: 600; margin-bottom: 0.25rem;">${team.worstPick.player}</div>
+                        <div class="picks-highlight-details" style="font-size: 0.8rem; color: var(--text-secondary);">#${team.worstPick.pickNumber} • ${team.worstPick.position} • Grade: ${team.worstPick.letter}</div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Render Position Breakdown
+        function renderPositionBreakdown(team) {
+            const positions = team.positionBreakdown;
+            const maxCount = Math.max(...Object.values(positions), 1);
+            
+            return `
+                <div class="position-breakdown" style="background: var(--card-bg); border-radius: 12px; padding: 1.5rem; margin-top: 1.5rem;">
+                    <h4 style="font-family: 'Oswald', sans-serif; margin-bottom: 1rem;">Position Breakdown</h4>
+                    <div class="position-bars" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        ${Object.entries(positions).map(([pos, count]) => `
+                            <div class="position-bar-item" style="display: flex; align-items: center; gap: 1rem;">
+                                <span class="position-bar-label" style="min-width: 50px; font-weight: 600; font-size: 0.9rem;">${pos}</span>
+                                <div class="position-bar-track" style="flex: 1; height: 24px; background: var(--primary); border-radius: 12px; overflow: hidden; position: relative;">
+                                    <div class="position-bar-fill" style="height: 100%; border-radius: 12px; transition: width 0.5s ease; display: flex; align-items: center; justify-content: flex-end; padding-right: 0.75rem; width: ${(count / maxCount) * 100}%; background: var(--accent); opacity: ${0.4 + (count / maxCount) * 0.6};">
+                                        <span class="position-bar-count" style="color: #fff; font-weight: 600; font-size: 0.85rem;">${count}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Render Team Picks List
+        function renderTeamPicksList(team) {
+            return `
+                <div style="margin-top: 1.5rem;">
+                    <h4 style="margin-bottom: 1rem; font-family: 'Oswald', sans-serif;">All Picks</h4>
+                    <div class="team-picks-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        ${team.picks.map(pick => `
+                            <div class="team-pick-item" onclick="openPickGradeModal('${team.teamName}', ${pick.pickNumber}, '${pick.player}', '${pick.position}')" style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: var(--primary); border-radius: 8px; border: 1px solid var(--border); cursor: pointer; transition: all 0.3s ease;">
+                                <span class="team-pick-number" style="font-family: 'Oswald', sans-serif; font-weight: 700; color: var(--accent); min-width: 35px;">#${pick.pickNumber}</span>
+                                <div class="team-pick-info" style="flex: 1;">
+                                    <div class="team-pick-name" style="font-weight: 600;">${pick.player}</div>
+                                    <div class="team-pick-position" style="font-size: 0.8rem; color: var(--text-secondary);">${pick.position}</div>
+                                </div>
+                                <div class="team-pick-grade" style="display: flex; flex-direction: column; align-items: flex-end;">
+                                    <span class="grade-badge ${pick.bgClass}" style="min-width: 40px; padding: 0.25rem 0.5rem; display: inline-flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 8px; font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase;">
+                                        <span class="grade-letter" style="font-size: 1rem;">${pick.letter}</span>
+                                    </span>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Toggle Team Details
+        function toggleTeamDetails(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.expand-icon');
+            const isExpanded = content.style.display === 'block';
+            
+            content.style.display = isExpanded ? 'none' : 'block';
+            icon.style.transform = isExpanded ? 'rotate(0deg)' : 'rotate(180deg)';
+            
+            if (!isExpanded) {
+                content.style.animation = 'slideDown 0.3s ease';
+            }
+        }
+        
+        // Open Pick Grade Modal
+        function openPickGradeModal(team, pickNumber, player, position) {
+            if (typeof DraftGradesSystem === 'undefined') return;
+            
+            const modal = document.getElementById('gradeModal');
+            const content = document.getElementById('gradeModalContent');
+            
+            if (modal && content) {
+                content.innerHTML = DraftGradesSystem.renderGradeBreakdownModal({ team, pickNumber, player, position });
+                modal.style.display = 'flex';
+                
+                // Trigger confetti for A+ grades
+                const grade = DraftGradesSystem.calculatePickGrade(team, pickNumber, { name: player, position });
+                if (grade.letter === 'A+') {
+                    triggerConfetti();
+                }
+            }
+        }
+        
+        // Close Grade Modal
+        function closeGradeModal() {
+            const modal = document.getElementById('gradeModal');
+            if (modal) {
+                modal.style.display = 'none';
+            }
+        }
+        
+        // Close modal on overlay click
+        document.addEventListener('click', function(e) {
+            const modal = document.getElementById('gradeModal');
+            if (e.target === modal) {
+                closeGradeModal();
+            }
+        });
+        
+        // Trigger Confetti
+        function triggerConfetti() {
+            const colors = ['#00ff88', '#00d4ff', '#ffd700', '#ff6b35'];
+            const confettiCount = 50;
+            
+            for (let i = 0; i < confettiCount; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.style.cssText = `
+                        position: fixed;
+                        width: 10px;
+                        height: 10px;
+                        top: -10px;
+                        left: ${Math.random() * 100}vw;
+                        background: ${colors[Math.floor(Math.random() * colors.length)]};
+                        z-index: 9999;
+                        animation: confetti-fall 3s ease-out forwards;
+                    `;
+                    document.body.appendChild(confetti);
+                    setTimeout(() => confetti.remove(), 3000);
+                }, i * 30);
+            }
+        }
+        
+        // Extract All Picks for Grading
+        function extractAllPicksForGrading() {
+            const picks = [];
+            
+            document.querySelectorAll('.pick-card').forEach(card => {
+                const pickNumber = parseInt(card.querySelector('.pick-number')?.textContent);
+                const teamName = card.querySelector('.team-details h3')?.textContent?.trim();
+                const playerName = card.dataset.player;
+                const position = card.dataset.position;
+                
+                if (pickNumber && teamName && playerName) {
+                    picks.push({ pickNumber, team: teamName, player: playerName, position });
+                }
+            });
+            
+            return picks;
+        }
+        
+        // Get Team Helmet SVG
+        function getTeamHelmetSVG(teamName) {
+            const abbrev = getTeamAbbreviation(teamName);
+            return `
+                <svg class="team-helmet" viewBox="0 0 100 70" style="width: 40px; height: 28px;">
+                    <ellipse cx="50" cy="35" rx="45" ry="30" fill="rgba(0,212,255,0.2)" stroke="var(--accent)" stroke-width="2"/>
+                    <text x="50" y="42" text-anchor="middle" fill="var(--accent)" font-size="14" font-weight="bold" font-family="Arial">${abbrev}</text>
+                </svg>
+            `;
+        }
+        
+        // Toggle Grades Display
+        function toggleGradesDisplay() {
+            const show = document.getElementById('showGradesToggle')?.checked;
+            document.querySelectorAll('.pick-grade-badge').forEach(badge => {
+                badge.style.display = show ? 'flex' : 'none';
+            });
+        }
+        
+        // Export Grades Report
+        function exportGradesReport() {
+            if (typeof DraftGradesSystem === 'undefined') return;
+            
+            const report = DraftGradesSystem.exportGradesSummary();
+            
+            const blob = new Blob([report], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = '2026_NFL_Mock_Draft_Grades.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            showToast('Draft grades report exported!');
+        }
+        
+        // Override the renderDraftGrades function to use the new system
+        function renderDraftGrades() {
+            initDraftGradesTab();
+            addPickGradeBadges();
+        }
+        
+        // Add pick grade badges to pick cards
+        function addPickGradeBadges() {
+            if (typeof DraftGradesSystem === 'undefined') return;
+            
+            document.querySelectorAll('.pick-card').forEach(card => {
+                const pickNumber = parseInt(card.querySelector('.pick-number')?.textContent);
+                const teamName = card.querySelector('.team-details h3')?.textContent?.trim();
+                const playerName = card.dataset.player;
+                const position = card.dataset.position;
+                
+                if (pickNumber && teamName && playerName && !card.querySelector('.pick-grade-badge')) {
+                    const grade = DraftGradesSystem.calculatePickGrade(teamName, pickNumber, { name: playerName, position });
+                    
+                    const badge = document.createElement('div');
+                    badge.className = `pick-grade-badge ${grade.bgClass}`;
+                    badge.style.cssText = `
+                        position: absolute;
+                        top: -10px;
+                        right: -10px;
+                        width: 45px;
+                        height: 45px;
+                        border-radius: 50%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        font-family: 'Oswald', sans-serif;
+                        font-weight: 700;
+                        font-size: 1.1rem;
+                        cursor: pointer;
+                        z-index: 10;
+                        transition: all 0.3s ease;
+                        border: 3px solid var(--secondary);
+                    `;
+                    badge.innerHTML = `<span style="line-height: 1;">${grade.letter}</span>`;
+                    badge.onclick = (e) => {
+                        e.stopPropagation();
+                        openPickGradeModal(teamName, pickNumber, playerName, position);
+                    };
+                    
+                    const playerInfo = card.querySelector('.player-info');
+                    if (playerInfo) {
+                        playerInfo.style.position = 'relative';
+                        playerInfo.appendChild(badge);
+                    }
+                }
+            });
+        }
 
     </script>

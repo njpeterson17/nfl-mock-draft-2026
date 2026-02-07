@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFL Draft Central - Latest News, Analysis & Rumors | 2026 NFL Mock Draft</title>
+    <meta name="description" content="Your source for NFL Draft news, prospect analysis, breaking news, and trade rumors. Stay updated on the 2026 NFL Draft with expert analysis.">
+    <meta name="keywords" content="NFL Draft News, NFL Draft Analysis, NFL Draft Rumors, 2026 NFL Draft, Fernando Mendoza, Arvell Reese, Draft Prospects">
+    <meta property="og:title" content="NFL Draft Central - Latest News & Analysis">
+    <meta property="og:description" content="Latest NFL Draft news, prospect analysis, and breaking updates">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#00d4ff" id="themeColor">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/news-section.css">
+    <link rel="alternate" type="application/rss+xml" title="NFL Draft Central RSS" href="rss.xml">
+</head>
+<body>
+    <!-- Breaking News Ticker -->
+    <div class="breaking-ticker">
+        <div class="ticker-wrapper">
+            <span class="ticker-label"><i class="fas fa-bolt"></i> BREAKING:</span>
+            <div class="ticker-content">
+                <span class="ticker-item">Fernando Mendoza declares for 2026 NFL Draft: "Excited to take next step"</span>
+                <span class="ticker-item">•</span>
+                <span class="ticker-item">Jeremiyah Love stock rising after impressive pro day showing</span>
+                <span class="ticker-item">•</span>
+                <span class="ticker-item">Raiders hire new QB coach to work with potential #1 pick</span>
+                <span class="ticker-item">•</span>
+                <span class="ticker-item">NFL Combine invites sent out - full list announced</span>
+                <span class="ticker-item">•</span>
+                <span class="ticker-item">Arvell Reese measured at 6'3", 240 lbs at weigh-in</span>
+                <span class="ticker-item">•</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="news-header">
+        <div class="header-content">
+            <h1><i class="fas fa-newspaper"></i> NFL DRAFT CENTRAL</h1>
+            <p class="header-subtitle">Latest News, Analysis & Rumors</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-tabs">
+            <button class="nav-tab" onclick="window.location.href='index.html'">
+                <i class="fas fa-home"></i> Home
+            </button>
+            <button class="nav-tab active">
+                <i class="fas fa-newspaper"></i> News
+            </button>
+            <button class="nav-tab" onclick="window.location.href='position-rankings.html'">
+                <i class="fas fa-list-ol"></i> Rankings
+            </button>
+            <button class="nav-tab" onclick="window.location.href='war-room.html'">
+                <i class="fas fa-crosshairs"></i> War Room
+            </button>
+            <button class="nav-tab" onclick="window.location.href='7-round-simulator.html'">
+                <i class="fas fa-football-ball"></i> Simulator
+            </button>
+            <button class="nav-tab" onclick="window.location.href='combine-tracker.html'" style="background: linear-gradient(135deg, rgba(255, 193, 7, 0.2), rgba(255, 160, 0, 0.1)); border-color: rgba(255, 193, 7, 0.3);">
+                <i class="fas fa-stopwatch"></i> Combine
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="news-container">
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+            <div class="filter-group">
+                <span class="filter-label">Filter:</span>
+                <button class="filter-btn active" data-filter="all" onclick="filterArticles('all')">All</button>
+                <button class="filter-btn" data-filter="news" onclick="filterArticles('news')">News</button>
+                <button class="filter-btn" data-filter="analysis" onclick="filterArticles('analysis')">Analysis</button>
+                <button class="filter-btn" data-filter="rumors" onclick="filterArticles('rumors')">Rumors</button>
+                <button class="filter-btn" data-filter="mock" onclick="filterArticles('mock')">Mock Drafts</button>
+                <button class="filter-btn" data-filter="video" onclick="filterArticles('video')">Video</button>
+            </div>
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search articles..." onkeyup="searchArticles()">
+            </div>
+            <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark/Light Mode">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </button>
+        </div>
+
+        <!-- Featured Articles Section -->
+        <section class="featured-section">
+            <div class="featured-grid" id="featuredGrid">
+                <!-- Featured articles will be populated by JS -->
+            </div>
+        </section>
+
+        <!-- Content Layout: Main + Sidebar -->
+        <div class="content-layout">
+            <!-- Main Content Area -->
+            <div class="main-content-area">
+                <!-- Section Header -->
+                <div class="section-header">
+                    <h2 class="section-title" id="sectionTitle">Latest News</h2>
+                    <div class="sort-options">
+                        <select id="sortSelect" onchange="sortArticles()">
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="popular">Most Popular</option>
+                            <option value="readTime">Read Time</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Articles List -->
+                <div class="articles-list" id="articlesList">
+                    <!-- Articles will be populated by JS -->
+                </div>
+
+                <!-- Load More -->
+                <div class="load-more-container">
+                    <button class="load-more-btn" onclick="loadMoreArticles()">
+                        <i class="fas fa-spinner fa-spin" style="display: none;"></i>
+                        <span>Load More Articles</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Draft Calendar Widget -->
+                <div class="widget">
+                    <h3 class="widget-title"><i class="fas fa-calendar-alt"></i> Draft Calendar</h3>
+                    <div class="calendar-widget">
+                        <div class="calendar-event">
+                            <span class="event-date">Feb 27</span>
+                            <span class="event-name">NFL Combine Begins</span>
+                        </div>
+                        <div class="calendar-event">
+                            <span class="event-date">Mar 15</span>
+                            <span class="event-name">Pro Days Begin</span>
+                        </div>
+                        <div class="calendar-event">
+                            <span class="event-date">Apr 24</span>
+                            <span class="event-name">NFL Draft Day 1</span>
+                        </div>
+                        <div class="calendar-event">
+                            <span class="event-date">Apr 25</span>
+                            <span class="event-name">NFL Draft Day 2</span>
+                        </div>
+                        <div class="calendar-event">
+                            <span class="event-date">Apr 26</span>
+                            <span class="event-name">NFL Draft Day 3</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trending Widget -->
+                <div class="widget">
+                    <h3 class="widget-title"><i class="fas fa-fire"></i> Trending Now</h3>
+                    <ul class="trending-list" id="trendingList">
+                        <!-- Populated by JS -->
+                    </ul>
+                </div>
+
+                <!-- Hot Takes Widget -->
+                <div class="widget">
+                    <h3 class="widget-title"><i class="fas fa-fire-alt"></i> Hot Takes</h3>
+                    <div class="hot-takes-list" id="hotTakesList">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Expert Picks Widget -->
+                <div class="widget">
+                    <h3 class="widget-title"><i class="fas fa-user-tie"></i> Expert Picks</h3>
+                    <div class="expert-picks-list" id="expertPicksList">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Video of the Day Widget -->
+                <div class="widget">
+                    <h3 class="widget-title"><i class="fas fa-video"></i> Video of the Day</h3>
+                    <div class="video-widget">
+                        <div class="video-thumbnail">
+                            <i class="fas fa-play-circle"></i>
+                            <span class="video-duration">8:42</span>
+                        </div>
+                        <h4>Fernando Mendoza Full 2025 Highlights</h4>
+                        <p>Breaking down every touchdown from the Heisman winner</p>
+                    </div>
+                </div>
+
+                <!-- Reader Poll Widget -->
+                <div class="widget">
+                    <h3 class="widget-title"><i class="fas fa-poll"></i> Reader Poll</h3>
+                    <div class="poll-widget">
+                        <p class="poll-question">Who should be the #1 overall pick?</p>
+                        <div class="poll-options">
+                            <label class="poll-option">
+                                <input type="radio" name="poll1" value="mendoza">
+                                <span class="poll-bar">
+                                    <span class="poll-fill" style="width: 62%"></span>
+                                </span>
+                                <span class="poll-label">Fernando Mendoza (62%)</span>
+                            </label>
+                            <label class="poll-option">
+                                <input type="radio" name="poll1" value="rees">
+                                <span class="poll-bar">
+                                    <span class="poll-fill" style="width: 23%"></span>
+                                </span>
+                                <span class="poll-label">Arvell Reese (23%)</span>
+                            </label>
+                            <label class="poll-option">
+                                <input type="radio" name="poll1" value="mauigoa">
+                                <span class="poll-bar">
+                                    <span class="poll-fill" style="width: 15%"></span>
+                                </span>
+                                <span class="poll-label">Francis Mauigoa (15%)</span>
+                            </label>
+                        </div>
+                        <p class="poll-votes">2,847 votes</p>
+                    </div>
+                </div>
+
+                <!-- Newsletter Widget -->
+                <div class="widget newsletter-widget">
+                    <h3 class="widget-title"><i class="fas fa-envelope"></i> Get Draft Updates</h3>
+                    <p class="newsletter-desc">Subscribe to our newsletter for the latest news and analysis delivered to your inbox.</p>
+                    <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                    <p class="newsletter-privacy"><i class="fas fa-lock"></i> We respect your privacy</p>
+                </div>
+
+                <!-- Team Needs Quick Links -->
+                <div class="widget">
+                    <h3 class="widget-title"><i class="fas fa-shield-alt"></i> Team Needs</h3>
+                    <div class="team-needs-grid">
+                        <a href="#" class="team-need-link">
+                            <span class="team-abbr">LV</span>
+                            <span class="team-need">QB, EDGE, WR</span>
+                        </a>
+                        <a href="#" class="team-need-link">
+                            <span class="team-abbr">NYJ</span>
+                            <span class="team-need">OL, RB, EDGE</span>
+                        </a>
+                        <a href="#" class="team-need-link">
+                            <span class="team-abbr">ARI</span>
+                            <span class="team-need">OT, DL, EDGE</span>
+                        </a>
+                        <a href="#" class="team-need-link">
+                            <span class="team-abbr">CLE</span>
+                            <span class="team-need">CB, WR, S</span>
+                        </a>
+                        <a href="#" class="team-need-link">
+                            <span class="team-abbr">DAL</span>
+                            <span class="team-need">CB, RB, WR</span>
+                        </a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Article Modal -->
+    <div class="article-modal" id="articleModal">
+        <div class="modal-backdrop" onclick="closeArticleModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeArticleModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body" id="modalBody">
+                <!-- Article content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-social">
+                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="rss.xml" title="RSS Feed"><i class="fas fa-rss"></i></a>
+            </div>
+            <p>&copy; 2026 NFL Draft Central. All rights reserved.</p>
+            <p class="footer-links">
+                <a href="index.html">Mock Draft</a> • 
+                <a href="position-rankings.html">Rankings</a> • 
+                <a href="war-room.html">War Room</a> • 
+                <a href="rss.xml">RSS Feed</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Scripts -->
+    <script src="js/news-data.js"></script>
+    <script src="js/news-section.js"></script>
+</body>
+</html>

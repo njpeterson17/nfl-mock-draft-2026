@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Mock Draft - 2026 NFL Mock Draft</title>
+    <meta name="description" content="Real-time multi-user NFL mock draft. Draft against friends live with chat, timers, and AI teams.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/live-draft.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>🏈 Live Mock Draft</h1>
+            <p class="header-subtitle">Real-Time Multi-User Draft Experience</p>
+        </div>
+    </header>
+
+    <!-- User Setup Modal -->
+    <div id="userSetupModal" class="modal active">
+        <div class="modal-content">
+            <h2>Enter Draft Central</h2>
+            <div class="form-group">
+                <label>Your Username</label>
+                <input type="text" id="usernameInput" placeholder="DraftKing42" maxlength="20">
+            </div>
+            <button class="btn-primary" onclick="LiveDraftApp.enterLobby()">
+                <i class="fas fa-sign-in-alt"></i> Enter Lobby
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div id="appContainer" class="app-container" style="display: none;">
+        
+        <!-- LOBBY VIEW -->
+        <div id="lobbyView" class="view active">
+            <div class="lobby-header">
+                <div class="user-info">
+                    <span class="user-avatar" id="currentUserAvatar">👤</span>
+                    <span class="username" id="currentUsername">Guest</span>
+                </div>
+                <div class="online-count">
+                    <span class="status-dot online"></span>
+                    <span id="onlineCount">12 online</span>
+                </div>
+            </div>
+
+            <div class="lobby-grid">
+                <!-- Create Draft Card -->
+                <div class="create-draft-card">
+                    <h2><i class="fas fa-plus-circle"></i> Create New Draft</h2>
+                    
+                    <div class="draft-type-selector">
+                        <button class="type-btn active" data-type="public">
+                            <i class="fas fa-globe"></i> Public
+                        </button>
+                        <button class="type-btn" data-type="private">
+                            <i class="fas fa-lock"></i> Private
+                        </button>
+                        <button class="type-btn" data-type="friends">
+                            <i class="fas fa-user-friends"></i> Friends
+                        </button>
+                    </div>
+
+                    <div class="settings-grid">
+                        <div class="setting-group">
+                            <label>Rounds</label>
+                            <div class="option-buttons">
+                                <button class="option-btn active" data-rounds="1">1</button>
+                                <button class="option-btn" data-rounds="3">3</button>
+                                <button class="option-btn" data-rounds="7">7</button>
+                            </div>
+                        </div>
+
+                        <div class="setting-group">
+                            <label>Timer</label>
+                            <div class="option-buttons">
+                                <button class="option-btn" data-timer="30">30s</button>
+                                <button class="option-btn active" data-timer="60">60s</button>
+                                <button class="option-btn" data-timer="90">90s</button>
+                                <button class="option-btn" data-timer="0">Off</button>
+                            </div>
+                        </div>
+
+                        <div class="setting-group">
+                            <label>Teams (Users + AI)</label>
+                            <div class="option-buttons">
+                                <button class="option-btn" data-teams="12">12</button>
+                                <button class="option-btn" data-teams="24">24</button>
+                                <button class="option-btn active" data-teams="32">32</button>
+                            </div>
+                        </div>
+
+                        <div class="setting-group" id="teamSelectGroup">
+                            <label>Your Team</label>
+                            <select id="teamSelect" class="team-select">
+                                <option value="">Random Team</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button class="btn-create-draft" onclick="LiveDraftApp.createDraft()">
+                        <i class="fas fa-play"></i> Create Draft Room
+                    </button>
+                </div>
+
+                <!-- Available Drafts -->
+                <div class="available-drafts">
+                    <div class="section-header">
+                        <h2><i class="fas fa-list"></i> Available Drafts</h2>
+                        <button class="btn-refresh" onclick="LiveDraftApp.refreshDrafts()">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                    </div>
+                    
+                    <div id="draftsList" class="drafts-list">
+                        <!-- Draft rooms will be populated here -->
+                        <div class="empty-state">
+                            <i class="fas fa-search"></i>
+                            <p>No active drafts found</p>
+                            <span>Create one to get started!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Drafts -->
+            <div class="recent-drafts-section">
+                <h3><i class="fas fa-history"></i> Your Recent Drafts</h3>
+                <div id="recentDraftsList" class="recent-drafts-list">
+                    <!-- Recent drafts will be populated here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- DRAFT ROOM VIEW -->
+        <div id="draftRoomView" class="view">
+            <!-- Draft Header -->
+            <div class="draft-header">
+                <div class="draft-info">
+                    <button class="btn-back" onclick="LiveDraftApp.leaveDraft()">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <div class="draft-title">
+                        <h2 id="draftRoomTitle">Draft Room #0000</h2>
+                        <span class="draft-status" id="draftStatus">Waiting to start...</span>
+                    </div>
+                </div>
+                
+                <div class="draft-timer-section">
+                    <div class="on-the-clock">
+                        <span class="label">On the Clock:</span>
+                        <span class="team-name" id="onTheClockTeam">---</span>
+                        <span class="username" id="onTheClockUser">Waiting...</span>
+                    </div>
+                    <div class="timer" id="draftTimer">
+                        <span class="time" id="timerDisplay">--:--</span>
+                    </div>
+                </div>
+
+                <div class="draft-actions">
+                    <button id="commissionerBtn" class="btn-icon" onclick="LiveDraftApp.toggleCommissionerPanel()" style="display: none;">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <button class="btn-icon" onclick="LiveDraftApp.toggleSound()">
+                        <i class="fas fa-volume-up" id="soundIcon"></i>
+                    </button>
+                    <button class="btn-icon" onclick="LiveDraftApp.shareDraft()">
+                        <i class="fas fa-share-alt"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Draft Layout -->
+            <div class="draft-layout">
+                <!-- Left: Draft Board -->
+                <div class="draft-board-section">
+                    <div class="section-title">
+                        <i class="fas fa-th"></i> Draft Board
+                        <span class="pick-indicator" id="currentPickIndicator">Round 1, Pick 1</span>
+                    </div>
+                    <div id="draftBoard" class="draft-board">
+                        <!-- Draft picks will be populated here -->
+                    </div>
+                </div>
+
+                <!-- Center: Chat -->
+                <div class="chat-section">
+                    <div class="section-title">
+                        <i class="fas fa-comments"></i> Draft Chat
+                        <span class="user-count" id="chatUserCount">0 users</span>
+                    </div>
+                    <div id="chatMessages" class="chat-messages">
+                        <!-- Chat messages will be populated here -->
+                    </div>
+                    <div class="chat-input-area">
+                        <div class="chat-input-wrapper">
+                            <input type="text" id="chatInput" placeholder="Type a message... (use @username to mention)" maxlength="200">
+                            <button class="btn-emoji" onclick="LiveDraftApp.toggleEmojiPicker()">
+                                <i class="far fa-smile"></i>
+                            </button>
+                        </div>
+                        <button class="btn-send" onclick="LiveDraftApp.sendChatMessage()">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right: Available Players & Queue -->
+                <div class="players-section">
+                    <!-- Draft Queue -->
+                    <div class="queue-section" id="queueSection">
+                        <div class="section-title">
+                            <i class="fas fa-list-ol"></i> Your Queue
+                            <span class="help-text" title="Players are auto-selected if timer expires">ⓘ</span>
+                        </div>
+                        <div id="draftQueue" class="draft-queue">
+                            <div class="empty-queue">Add players to your queue for auto-draft</div>
+                        </div>
+                    </div>
+
+                    <!-- Available Players -->
+                    <div class="available-players-section">
+                        <div class="section-title">
+                            <i class="fas fa-users"></i> Available Players
+                        </div>
+                        <div class="players-filter">
+                            <div class="search-box">
+                                <i class="fas fa-search"></i>
+                                <input type="text" id="playerSearch" placeholder="Search players..." onkeyup="LiveDraftApp.filterPlayers()">
+                            </div>
+                            <select id="positionFilter" onchange="LiveDraftApp.filterPlayers()">
+                                <option value="all">All Positions</option>
+                                <option value="QB">QB</option>
+                                <option value="RB">RB</option>
+                                <option value="WR">WR</option>
+                                <option value="TE">TE</option>
+                                <option value="OT">OT</option>
+                                <option value="IOL">IOL</option>
+                                <option value="EDGE">EDGE</option>
+                                <option value="DL">DL</option>
+                                <option value="LB">LB</option>
+                                <option value="CB">CB</option>
+                                <option value="S">S</option>
+                            </select>
+                        </div>
+                        <div id="availablePlayersList" class="available-players-list">
+                            <!-- Players will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- My Team Panel -->
+            <div class="my-team-panel" id="myTeamPanel">
+                <div class="my-team-header" onclick="LiveDraftApp.toggleMyTeam()">
+                    <span><i class="fas fa-shield-alt"></i> My Team</span>
+                    <i class="fas fa-chevron-up" id="myTeamToggle"></i>
+                </div>
+                <div class="my-team-content" id="myTeamContent">
+                    <div id="myTeamPicks" class="my-team-picks">
+                        <!-- My picks will be shown here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- POST-DRAFT VIEW -->
+        <div id="postDraftView" class="view">
+            <div class="post-draft-container">
+                <div class="draft-complete-header">
+                    <i class="fas fa-trophy"></i>
+                    <h2>Draft Complete!</h2>
+                    <p id="postDraftRoomName">Draft Room #0000</p>
+                </div>
+
+                <div class="draft-summary-grid">
+                    <!-- Final Standings -->
+                    <div class="standings-card">
+                        <h3><i class="fas fa-medal"></i> Final Standings</h3>
+                        <div id="finalStandings" class="standings-list">
+                            <!-- Standings populated here -->
+                        </div>
+                    </div>
+
+                    <!-- Best Value Picks -->
+                    <div value-picks-card">
+                        <h3><i class="fas fa-gem"></i> Best Value Picks</h3>
+                        <div id="bestValuePicks" class="value-picks-list">
+                            <!-- Value picks populated here -->
+                        </div>
+                    </div>
+
+                    <!-- Draft Stats -->
+                    <div class="draft-stats-card">
+                        <h3><i class="fas fa-chart-bar"></i> Draft Stats</h3>
+                        <div id="draftStats" class="stats-grid">
+                            <!-- Stats populated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="post-draft-actions">
+                    <button class="btn-primary" onclick="LiveDraftApp.viewFullResults()">
+                        <i class="fas fa-eye"></i> View Full Results
+                    </button>
+                    <button class="btn-secondary" onclick="LiveDraftApp.exportDraft()">
+                        <i class="fas fa-download"></i> Export
+                    </button>
+                    <button class="btn-secondary" onclick="LiveDraftApp.rematch()">
+                        <i class="fas fa-redo"></i> Rematch
+                    </button>
+                    <button class="btn-secondary" onclick="LiveDraftApp.returnToLobby()">
+                        <i class="fas fa-home"></i> Back to Lobby
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Commissioner Panel Modal -->
+    <div id="commissionerModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-crown"></i> Commissioner Controls</h2>
+                <button class="btn-close" onclick="LiveDraftApp.toggleCommissionerPanel()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="commissioner-controls">
+                <div class="control-group">
+                    <label>Draft Status</label>
+                    <div class="control-buttons">
+                        <button class="btn-control" onclick="LiveDraftApp.startDraft()">
+                            <i class="fas fa-play"></i> Start Draft
+                        </button>
+                        <button class="btn-control" onclick="LiveDraftApp.pauseDraft()">
+                            <i class="fas fa-pause"></i> Pause
+                        </button>
+                        <button class="btn-control danger" onclick="LiveDraftApp.resetDraft()">
+                            <i class="fas fa-redo"></i> Reset
+                        </button>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label>Pick Management</label>
+                    <div class="control-buttons">
+                        <button class="btn-control" onclick="LiveDraftApp.undoLastPick()">
+                            <i class="fas fa-undo"></i> Undo Last Pick
+                        </button>
+                        <button class="btn-control" onclick="LiveDraftApp.skipPick()">
+                            <i class="fas fa-forward"></i> Skip Pick
+                        </button>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label>Timer Settings</label>
+                    <div class="timer-adjust">
+                        <button class="btn-adjust" onclick="LiveDraftApp.adjustTimer(-10)">-10s</button>
+                        <span id="commissionerTimerDisplay">60s</span>
+                        <button class="btn-adjust" onclick="LiveDraftApp.adjustTimer(10)">+10s</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Emoji Picker -->
+    <div id="emojiPicker" class="emoji-picker">
+        <div class="emoji-grid">
+            <span onclick="LiveDraftApp.insertEmoji('🏈')">🏈</span>
+            <span onclick="LiveDraftApp.insertEmoji('🔥')">🔥</span>
+            <span onclick="LiveDraftApp.insertEmoji('💪')">💪</span>
+            <span onclick="LiveDraftApp.insertEmoji('👏')">👏</span>
+            <span onclick="LiveDraftApp.insertEmoji('😱')">😱</span>
+            <span onclick="LiveDraftApp.insertEmoji('🤯')">🤯</span>
+            <span onclick="LiveDraftApp.insertEmoji('💯')">💯</span>
+            <span onclick="LiveDraftApp.insertEmoji('🎯')">🎯</span>
+            <span onclick="LiveDraftApp.insertEmoji('⚡')">⚡</span>
+            <span onclick="LiveDraftApp.insertEmoji('🏆')">🏆</span>
+            <span onclick="LiveDraftApp.insertEmoji('👀')">👀</span>
+            <span onclick="LiveDraftApp.insertEmoji('🙌')">🙌</span>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- Load Data -->
+    <script src="../bigBoardData.js"></script>
+    <script src="js/data.js"></script>
+    <!-- Load Live Draft System -->
+    <script src="js/live-draft.js"></script>
+</body>
+</html>

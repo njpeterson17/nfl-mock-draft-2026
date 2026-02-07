@@ -1,0 +1,520 @@
+/**
+ * NFL Mock Draft - Player Image System Styles
+ * Loading states, placeholders, and image container styles
+ */
+
+/* ==========================================
+   BASE CONTAINER STYLES
+   ========================================== */
+
+.player-photo {
+    position: relative;
+    width: 80px;
+    height: 100px;
+    background: var(--card-bg, #1a1d23);
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.player-photo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.player-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+/* ==========================================
+   SIZE VARIANTS
+   ========================================== */
+
+.player-photo.small {
+    width: 60px;
+    height: 75px;
+    border-radius: 6px;
+}
+
+.player-photo.medium {
+    width: 80px;
+    height: 100px;
+    border-radius: 8px;
+}
+
+.player-photo.large {
+    width: 120px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.player-photo.xlarge {
+    width: 160px;
+    height: 200px;
+    border-radius: 12px;
+}
+
+/* ==========================================
+   LOADING STATES
+   ========================================== */
+
+.player-photo.loading {
+    position: relative;
+}
+
+.player-photo.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    margin: -12px 0 0 -12px;
+    border: 2px solid var(--accent, #00d4ff);
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: player-image-spin 0.8s linear infinite;
+}
+
+@keyframes player-image-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ==========================================
+   SKELETON LOADING
+   ========================================== */
+
+.player-image-skeleton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        var(--skeleton-base, #2a2d35) 25%,
+        var(--skeleton-shine, #3a3d45) 50%,
+        var(--skeleton-base, #2a2d35) 75%
+    );
+    background-size: 200% 100%;
+    animation: player-image-shimmer 1.5s infinite;
+}
+
+@keyframes player-image-shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.skeleton-shimmer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.03) 50%,
+        transparent 100%
+    );
+    animation: shimmer-wave 2s infinite;
+}
+
+@keyframes shimmer-wave {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* ==========================================
+   INITIALS PLACEHOLDER
+   ========================================== */
+
+.player-photo.initials-placeholder {
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+}
+
+.player-photo.initials-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* ==========================================
+   ERROR STATE
+   ========================================== */
+
+.player-photo.error {
+    background: var(--error-bg, #3d1f1f);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.player-photo.error::before {
+    content: '\f071';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 24px;
+    color: var(--error-color, #ff6b6b);
+    opacity: 0.5;
+}
+
+/* ==========================================
+   TEAM LOGO FALLBACK
+   ========================================== */
+
+.player-photo.team-logo-fallback {
+    background: var(--card-bg, #1a1d23);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+}
+
+.player-photo.team-logo-fallback img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    opacity: 0.9;
+}
+
+/* ==========================================
+   CACHED STATE INDICATOR
+   ========================================== */
+
+.player-photo.cached::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 8px;
+    height: 8px;
+    background: #51cf66;
+    border-radius: 50%;
+    box-shadow: 0 0 4px rgba(81, 207, 102, 0.5);
+    z-index: 1;
+}
+
+/* ==========================================
+   IMAGE TRANSITIONS
+   ========================================== */
+
+.player-photo img {
+    opacity: 0;
+}
+
+.player-photo img.loaded {
+    opacity: 1;
+}
+
+.player-photo img.fade-in {
+    animation: player-image-fade-in 0.3s ease forwards;
+}
+
+@keyframes player-image-fade-in {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ==========================================
+   GRAY PLACEHOLDER (Ultimate fallback)
+   ========================================== */
+
+.player-photo.gray-placeholder {
+    background: linear-gradient(135deg, #3a3d45 0%, #2a2d35 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.player-photo.gray-placeholder::after {
+    content: '\f007';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 32px;
+    color: #5a5d65;
+}
+
+.player-photo.small.gray-placeholder::after {
+    font-size: 24px;
+}
+
+.player-photo.large.gray-placeholder::after,
+.player-photo.xlarge.gray-placeholder::after {
+    font-size: 48px;
+}
+
+/* ==========================================
+   POSITION BADGE OVERLAY
+   ========================================== */
+
+.player-photo .position-badge {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.player-photo.large .position-badge,
+.player-photo.xlarge .position-badge {
+    font-size: 12px;
+    padding: 3px 8px;
+    bottom: 6px;
+    right: 6px;
+}
+
+/* ==========================================
+   PLAYER INFO OVERLAY (for large sizes)
+   ========================================== */
+
+.player-photo .player-info-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    padding: 30px 8px 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.player-photo:hover .player-info-overlay {
+    opacity: 1;
+}
+
+.player-photo .player-info-overlay .player-name {
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.player-photo .player-info-overlay .player-school {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ==========================================
+   GRID LAYOUT HELPERS
+   ========================================== */
+
+.player-image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 12px;
+    padding: 16px;
+}
+
+.player-image-grid.compact {
+    gap: 8px;
+}
+
+.player-image-grid.spacious {
+    gap: 20px;
+}
+
+/* ==========================================
+   LIST LAYOUT
+   ========================================== */
+
+.player-image-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.player-image-list-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px;
+    background: var(--card-bg, #1a1d23);
+    border-radius: 8px;
+    transition: background 0.2s ease;
+}
+
+.player-image-list-item:hover {
+    background: var(--card-hover, #2a2d35);
+}
+
+.player-image-list-item .player-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.player-image-list-item .player-name {
+    font-weight: 600;
+    color: var(--text-primary, #e5e7eb);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.player-image-list-item .player-details {
+    font-size: 12px;
+    color: var(--text-secondary, #9ca3af);
+}
+
+/* ==========================================
+   DARK MODE SUPPORT
+   ========================================== */
+
+@media (prefers-color-scheme: dark) {
+    .player-photo {
+        --skeleton-base: #2a2d35;
+        --skeleton-shine: #3a3d45;
+    }
+}
+
+/* ==========================================
+   HIGH CONTRAST MODE
+   ========================================== */
+
+@media (prefers-contrast: high) {
+    .player-photo {
+        border: 2px solid currentColor;
+    }
+    
+    .player-photo.loading::after {
+        border-width: 3px;
+    }
+}
+
+/* ==========================================
+   REDUCED MOTION
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .player-photo,
+    .player-photo img,
+    .player-image-skeleton,
+    .skeleton-shimmer {
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    .player-image-skeleton {
+        background: var(--skeleton-base, #2a2d35);
+    }
+}
+
+/* ==========================================
+   PRINT STYLES
+   ========================================== */
+
+@media print {
+    .player-photo {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+    
+    .player-image-skeleton,
+    .player-photo.loading::after {
+        display: none;
+    }
+    
+    .player-photo img {
+        opacity: 1 !important;
+    }
+}
+
+/* ==========================================
+   RESPONSIVE ADJUSTMENTS
+   ========================================== */
+
+@media (max-width: 768px) {
+    .player-photo.large {
+        width: 100px;
+        height: 125px;
+    }
+    
+    .player-photo.xlarge {
+        width: 140px;
+        height: 175px;
+    }
+    
+    .player-image-grid {
+        grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+        gap: 8px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .player-photo {
+        width: 70px;
+        height: 88px;
+    }
+    
+    .player-photo.small {
+        width: 50px;
+        height: 63px;
+    }
+    
+    .player-photo.large {
+        width: 90px;
+        height: 113px;
+    }
+    
+    .player-photo.xlarge {
+        width: 120px;
+        height: 150px;
+    }
+}
+
+/* ==========================================
+   UTILITY CLASSES
+   ========================================== */
+
+.player-photo.circle {
+    border-radius: 50%;
+}
+
+.player-photo.square {
+    border-radius: 0;
+}
+
+.player-photo.bordered {
+    border: 2px solid var(--accent, #00d4ff);
+}
+
+.player-photo.shadow {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.player-photo.shadow-lg {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}

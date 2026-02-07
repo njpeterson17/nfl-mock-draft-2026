@@ -1,0 +1,744 @@
+/**
+ * NFL Mock Draft 2026 - Social Sharing Styles
+ * Styles for share modal, preview cards, and social buttons
+ */
+
+/* ==========================================
+   SHARE MODAL
+   ========================================== */
+
+.social-share-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.social-share-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.social-share-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.social-share-content {
+    position: relative;
+    background: var(--secondary, #12121a);
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    border-radius: 16px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+.social-share-modal.active .social-share-content {
+    transform: scale(1);
+}
+
+.social-share-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--card-bg, rgba(255, 255, 255, 0.03));
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    color: var(--text-secondary, #8b8b9a);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.social-share-close:hover {
+    background: var(--danger, #ff4757);
+    color: white;
+    transform: rotate(90deg);
+}
+
+.social-share-header {
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    background: linear-gradient(90deg, rgba(0, 212, 255, 0.05) 0%, transparent 100%);
+}
+
+.social-share-header h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-primary, #ffffff);
+}
+
+.social-share-header h2 i {
+    color: var(--accent, #00d4ff);
+}
+
+.social-share-body {
+    padding: 1.5rem 2rem;
+}
+
+/* ==========================================
+   PREVIEW CARD
+   ========================================== */
+
+.preview-card-container {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.preview-card-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 3rem;
+    color: var(--text-secondary, #8b8b9a);
+}
+
+.preview-card-loading i {
+    color: var(--accent, #00d4ff);
+    font-size: 1.5rem;
+}
+
+.preview-card-social {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-radius: 16px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(0, 212, 255, 0.2);
+}
+
+.preview-card-header {
+    background: linear-gradient(90deg, rgba(0, 212, 255, 0.1) 0%, transparent 100%);
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+.preview-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--accent, #00d4ff);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.preview-logo i {
+    font-size: 1.25rem;
+}
+
+.preview-card-body {
+    padding: 1.5rem;
+}
+
+.preview-top-picks {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.preview-pick-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 0.875rem 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.preview-pick-number {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent, #00d4ff);
+    min-width: 40px;
+}
+
+.preview-team-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    color: white;
+    flex-shrink: 0;
+}
+
+.preview-pick-info {
+    flex: 1;
+}
+
+.preview-player-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary, #ffffff);
+    margin-bottom: 0.25rem;
+}
+
+.preview-player-meta {
+    font-size: 0.8rem;
+    color: var(--text-secondary, #8b8b9a);
+}
+
+.preview-stats-bar {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+}
+
+.preview-stat {
+    text-align: center;
+}
+
+.preview-stat .stat-value {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--accent, #00d4ff);
+    display: block;
+}
+
+.preview-stat .stat-value.grade-A { color: #00ff88; }
+.preview-stat .stat-value.grade-A-plus { color: #00ff88; }
+.preview-stat .stat-value.grade-A-minus { color: #00ff88; }
+.preview-stat .stat-value.grade-B-plus { color: #ffd700; }
+.preview-stat .stat-value.grade-B { color: #ffb800; }
+.preview-stat .stat-value.grade-B-minus { color: #ff9500; }
+
+.preview-stat .stat-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary, #8b8b9a);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.preview-card-footer {
+    padding: 1rem 1.5rem;
+    background: rgba(0, 212, 255, 0.05);
+    border-top: 1px solid rgba(0, 212, 255, 0.1);
+    text-align: center;
+}
+
+.preview-cta {
+    color: var(--accent, #00d4ff);
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.preview-cta i {
+    transition: transform 0.3s ease;
+}
+
+.preview-card-social:hover .preview-cta i {
+    transform: translateX(4px);
+}
+
+/* ==========================================
+   SHARE QUOTE
+   ========================================== */
+
+.share-quote {
+    background: var(--card-bg, rgba(255, 255, 255, 0.03));
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    position: relative;
+}
+
+.share-quote .fa-quote-left {
+    position: absolute;
+    top: 0.75rem;
+    left: 1rem;
+    color: var(--accent, #00d4ff);
+    opacity: 0.3;
+    font-size: 1.25rem;
+}
+
+.share-quote .fa-quote-right {
+    position: absolute;
+    bottom: 0.75rem;
+    right: 1rem;
+    color: var(--accent, #00d4ff);
+    opacity: 0.3;
+    font-size: 1.25rem;
+}
+
+.share-quote p {
+    margin: 0;
+    font-style: italic;
+    color: var(--text-primary, #ffffff);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   SHARE PLATFORMS
+   ========================================== */
+
+.share-platforms {
+    margin-bottom: 1.5rem;
+}
+
+.share-platforms h3 {
+    font-size: 0.9rem;
+    color: var(--text-secondary, #8b8b9a);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.share-buttons-row {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.share-buttons-row.secondary {
+    opacity: 0.8;
+}
+
+.share-btn-platform {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 0.5rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.share-btn-platform i {
+    font-size: 1.5rem;
+}
+
+.share-btn-platform span {
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* Platform-specific colors */
+.share-btn-platform.twitter {
+    background: rgba(29, 161, 242, 0.1);
+    color: #1da1f2;
+}
+
+.share-btn-platform.twitter:hover {
+    background: #1da1f2;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.share-btn-platform.facebook {
+    background: rgba(24, 119, 242, 0.1);
+    color: #1877f2;
+}
+
+.share-btn-platform.facebook:hover {
+    background: #1877f2;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.share-btn-platform.reddit {
+    background: rgba(255, 69, 0, 0.1);
+    color: #ff4500;
+}
+
+.share-btn-platform.reddit:hover {
+    background: #ff4500;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.share-btn-platform.whatsapp {
+    background: rgba(37, 211, 102, 0.1);
+    color: #25d366;
+}
+
+.share-btn-platform.whatsapp:hover {
+    background: #25d366;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.share-btn-platform.native {
+    background: var(--card-bg, rgba(255, 255, 255, 0.03));
+    color: var(--text-secondary, #8b8b9a);
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+}
+
+.share-btn-platform.native:hover {
+    background: var(--accent, #00d4ff);
+    color: var(--primary, #0a0a0f);
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   SHARE ACTIONS
+   ========================================== */
+
+.share-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.share-action-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1rem;
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    border-radius: 10px;
+    background: var(--card-bg, rgba(255, 255, 255, 0.03));
+    color: var(--text-primary, #ffffff);
+    font-family: inherit;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.share-action-btn:hover {
+    border-color: var(--accent, #00d4ff);
+    background: rgba(0, 212, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.share-action-btn i {
+    color: var(--accent, #00d4ff);
+}
+
+/* ==========================================
+   TEXT SUMMARY SECTION
+   ========================================== */
+
+.share-text-summary {
+    background: var(--card-bg, rgba(255, 255, 255, 0.03));
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.text-summary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1rem 1rem 1.25rem;
+    border-bottom: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.text-summary-header h3 {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.text-format-tabs {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.format-tab {
+    padding: 0.4rem 0.75rem;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary, #8b8b9a);
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.format-tab:hover {
+    color: var(--text-primary, #ffffff);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.format-tab.active {
+    background: var(--accent, #00d4ff);
+    color: var(--primary, #0a0a0f);
+}
+
+.share-text-area {
+    width: 100%;
+    min-height: 150px;
+    max-height: 250px;
+    padding: 1rem 1.25rem;
+    border: none;
+    background: transparent;
+    color: var(--text-primary, #ffffff);
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    resize: vertical;
+    outline: none;
+}
+
+.copy-text-btn {
+    width: 100%;
+    padding: 0.875rem;
+    border: none;
+    border-top: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    background: rgba(0, 212, 255, 0.05);
+    color: var(--accent, #00d4ff);
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.copy-text-btn:hover {
+    background: var(--accent, #00d4ff);
+    color: var(--primary, #0a0a0f);
+}
+
+/* ==========================================
+   RESPONSIVE STYLES
+   ========================================== */
+
+@media (max-width: 640px) {
+    .social-share-content {
+        width: 95%;
+        max-height: 95vh;
+    }
+    
+    .social-share-header,
+    .social-share-body {
+        padding: 1rem 1.25rem;
+    }
+    
+    .social-share-header h2 {
+        font-size: 1.25rem;
+    }
+    
+    .share-buttons-row {
+        flex-wrap: wrap;
+    }
+    
+    .share-btn-platform {
+        flex: 1 1 calc(33.333% - 0.5rem);
+        min-width: 80px;
+        padding: 0.75rem 0.25rem;
+    }
+    
+    .share-btn-platform span {
+        font-size: 0.7rem;
+    }
+    
+    .preview-pick-item {
+        padding: 0.75rem;
+    }
+    
+    .preview-player-name {
+        font-size: 0.95rem;
+    }
+    
+    .share-actions {
+        flex-direction: column;
+    }
+    
+    .text-summary-header {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 380px) {
+    .preview-card-social {
+        border-radius: 12px;
+    }
+    
+    .preview-card-body {
+        padding: 1rem;
+    }
+    
+    .preview-pick-number {
+        font-size: 1.25rem;
+        min-width: 32px;
+    }
+    
+    .preview-team-logo {
+        width: 32px;
+        height: 32px;
+        font-size: 0.65rem;
+    }
+}
+
+/* ==========================================
+   TOAST NOTIFICATION
+   ========================================== */
+
+.social-toast {
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* ==========================================
+   SHARE BUTTON IN HEADER
+   ========================================== */
+
+.header-share-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--card-bg, rgba(255, 255, 255, 0.03));
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    color: var(--text-secondary, #8b8b9a);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.header-share-btn:hover {
+    background: var(--accent, #00d4ff);
+    color: var(--primary, #0a0a0f);
+    border-color: var(--accent, #00d4ff);
+}
+
+/* ==========================================
+   FLOATING SHARE BUTTON (MOBILE)
+   ========================================== */
+
+.floating-share-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 1.5rem;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent, #00d4ff);
+    color: var(--primary, #0a0a0f);
+    border: none;
+    box-shadow: 0 4px 20px rgba(0, 212, 255, 0.4);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.floating-share-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(0, 212, 255, 0.5);
+}
+
+.floating-share-btn:active {
+    transform: scale(0.95);
+}
+
+@media (min-width: 768px) {
+    .floating-share-btn {
+        display: none;
+    }
+}
+
+/* ==========================================
+   LIGHT MODE ADJUSTMENTS
+   ========================================== */
+
+[data-theme="light"] .preview-card-social {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f0f5 100%);
+    border-color: rgba(0, 168, 204, 0.2);
+}
+
+[data-theme="light"] .preview-pick-item {
+    background: rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .preview-stats-bar {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .share-quote {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+[data-theme="light"] .share-text-summary {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+[data-theme="light"] .copy-text-btn {
+    background: rgba(0, 168, 204, 0.05);
+}
+
+[data-theme="light"] .social-share-backdrop {
+    background: rgba(0, 0, 0, 0.6);
+}

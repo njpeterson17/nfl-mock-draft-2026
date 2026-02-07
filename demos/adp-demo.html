@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADP System Demo - NFL Mock Draft 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/adp-system.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0d2137 0%, #1e3a5f 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+        
+        .demo-section {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .demo-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #1e3a5f;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .demo-section h2 i {
+            color: #00d4ff;
+        }
+        
+        /* Pick Card Demo */
+        .pick-card-demo {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0d2137 100%);
+            border-radius: 12px;
+            padding: 20px;
+            color: white;
+            position: relative;
+            max-width: 500px;
+        }
+        
+        .pick-header-demo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .pick-number-demo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #00d4ff;
+        }
+        
+        .pick-card-demo .adp-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+        
+        /* ADP Legend */
+        .adp-legend {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f9fafb;
+            border-radius: 8px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .legend-badge {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .legend-badge.value {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+        }
+        
+        .legend-badge.reach {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            color: white;
+        }
+        
+        .legend-badge.fair {
+            background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+            color: white;
+        }
+        
+        /* Code Example */
+        .code-example {
+            background: #1f2937;
+            color: #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .code-example .comment {
+            color: #6b7280;
+        }
+        
+        .code-example .keyword {
+            color: #c084fc;
+        }
+        
+        .code-example .string {
+            color: #4ade80;
+        }
+        
+        .code-example .function {
+            color: #60a5fa;
+        }
+        
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .feature-card {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #00d4ff;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #1e3a5f;
+        }
+        
+        .feature-card p {
+            font-size: 0.9rem;
+            color: #4b5563;
+            line-height: 1.5;
+        }
+        
+        /* Toggle Demo */
+        .toggle-demo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.75rem;
+            }
+            
+            .demo-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-chart-line"></i> ADP Overlay System</h1>
+            <p>Average Draft Position tracking for NFL Mock Draft 2026</p>
+        </header>
+
+        <!-- Features Overview -->
+        <div class="demo-section">
+            <h2><i class="fas fa-star"></i> Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>📊 Real-time ADP Calculation</h3>
+                    <p>ADP is calculated from all mock drafts saved on the site, updating automatically as users create new mocks.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💎 Value Pick Detection</h3>
+                    <p>Green badges indicate when you're picking a player 5+ spots after their ADP (great value!).</p>
+                </div>
+                <div class="feature-card">
+                    <h3>⚠️ Reach Warnings</h3>
+                    <p>Red badges warn when you're picking a player 5+ spots before their ADP (potential reach).</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📈 Trend Tracking</h3>
+                    <p>See which players are rising (green) or falling (red) in the ADP leaderboard with sparkline charts.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🏈 Team Matching</h3>
+                    <p>Click "Teams" on any player to see which teams hold picks in their ADP range.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💾 Data Persistence</h3>
+                    <p>ADP data is saved to localStorage and updates weekly with simulated server data.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ADP Legend -->
+        <div class="demo-section">
+            <h2><i class="fas fa-palette"></i> ADP Badge Legend</h2>
+            <div class="adp-legend">
+                <div class="legend-item">
+                    <span class="legend-badge value">↑ Value!</span>
+                    <span>Picking 5+ spots AFTER ADP (Great value)</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-badge reach">↓ Reach</span>
+                    <span>Picking 5+ spots BEFORE ADP (Potential reach)</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-badge fair">• Fair</span>
+                    <span>Within 4 picks of ADP (Fair value)</span>
+                </div>
+            </div>
+            
+            <h3 style="margin-top: 30px; margin-bottom: 15px; color: #1e3a5f;">Example Pick Cards</h3>
+            
+            <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                <!-- Value Pick Example -->
+                <div class="pick-card-demo">
+                    <div class="pick-header-demo">
+                        <span class="pick-number-demo">28</span>
+                        <div>
+                            <div style="font-weight: 600;">Houston Texans</div>
+                            <div style="font-size: 0.85rem; opacity: 0.8;">Pick #28</div>
+                        </div>
+                    </div>
+                    <h3 style="font-size: 1.3rem; margin-bottom: 5px;">Jeremiyah Love</h3>
+                    <p style="opacity: 0.8; font-size: 0.9rem;">RB | Notre Dame</p>
+                    <div class="adp-badge value-badge" style="position: absolute; top: 15px; right: 15px;">
+                        <span class="adp-icon">↑</span>
+                        <span class="adp-text">Value</span>
+                    </div>
+                    <p style="margin-top: 15px; font-size: 0.85rem; opacity: 0.9;">
+                        <i class="fas fa-info-circle"></i> ADP: #6.7 | You're getting great value!
+                    </p>
+                </div>
+                
+                <!-- Reach Example -->
+                <div class="pick-card-demo">
+                    <div class="pick-header-demo">
+                        <span class="pick-number-demo">4</span>
+                        <div>
+                            <div style="font-weight: 600;">New York Giants</div>
+                            <div style="font-size: 0.85rem; opacity: 0.8;">Pick #4</div>
+                        </div>
+                    </div>
+                    <h3 style="font-size: 1.3rem; margin-bottom: 5px;">Peter Woods</h3>
+                    <p style="opacity: 0.8; font-size: 0.9rem;">DL | Clemson</p>
+                    <div class="adp-badge reach-badge" style="position: absolute; top: 15px; right: 15px;">
+                        <span class="adp-icon">↓</span>
+                        <span class="adp-text">Reach</span>
+                    </div>
+                    <p style="margin-top: 15px; font-size: 0.85rem; opacity: 0.9;">
+                        <i class="fas fa-info-circle"></i> ADP: #9.2 | Consider trading down
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- JavaScript API -->
+        <div class="demo-section">
+            <h2><i class="fas fa-code"></i> JavaScript API</h2>
+            <div class="code-example">
+<span class="comment">// Get ADP data for a player</span>
+<span class="keyword">const</span> adp = <span class="function">getADPForPlayer</span>(<span class="string">"Fernando Mendoza"</span>);
+<span class="comment">// Returns: { adp: 2.3, min: 1, max: 5, count: 156, ... }</span>
+
+<span class="comment">// Check if a pick is good value</span>
+<span class="keyword">const</span> value = <span class="function">isValuePick</span>(<span class="string">"Jeremiyah Love"</span>, 28);
+<span class="comment">// Returns: { type: 'value', diff: 21.3, label: '↑ Value!', class: 'value-badge' }</span>
+
+<span class="comment">// Get ADP trend for a player</span>
+<span class="keyword">const</span> trend = <span class="function">getADPTrend</span>(<span class="string">"Arvell Reese"</span>);
+<span class="comment">// Returns: { trend: 'rising', diff: 2.1, label: '↑ Rising', class: 'trend-rising' }</span>
+
+<span class="comment">// Create an ADP badge for a pick card</span>
+<span class="keyword">const</span> badgeHTML = <span class="function">createADPBadge</span>(<span class="string">"Carnell Tate"</span>, 10);
+
+<span class="comment">// Record a player being drafted (updates ADP calculation)</span>
+<span class="function">recordPlayerDrafted</span>(<span class="string">"Player Name"</span>, 15, <span class="string">"Team Name"</span>);
+            </div>
+        </div>
+
+        <!-- Data Structure -->
+        <div class="demo-section">
+            <h2><i class="fas fa-database"></i> ADP Data Structure</h2>
+            <div class="code-example">
+<span class="keyword">const</span> adpData = {
+  <span class="string">"Fernando Mendoza"</span>: {
+    adp: 2.3,           <span class="comment">// Average Draft Position</span>
+    min: 1,             <span class="comment">// Lowest pick in mocks</span>
+    max: 5,             <span class="comment">// Highest pick in mocks</span>
+    count: 156,         <span class="comment">// Number of mocks included</span>
+    position: <span class="string">"QB"</span>,   <span class="comment">// Player position</span>
+    school: <span class="string">"Indiana"</span>, <span class="comment">// College</span>
+    lastWeekADP: 2.5,   <span class="comment">// Previous week's ADP (for trends)</span>
+    draftedIn: 98       <span class="comment">// % of mocks where player was drafted</span>
+  },
+  <span class="comment">// ... more players</span>
+};
+            </div>
+        </div>
+
+        <!-- Integration Instructions -->
+        <div class="demo-section">
+            <h2><i class="fas fa-plug"></i> Integration</h2>
+            <p style="margin-bottom: 20px; color: #4b5563;">
+                The ADP system is automatically integrated into the main NFL Mock Draft site. 
+                Here's how it works:
+            </p>
+            <ol style="padding-left: 20px; line-height: 2; color: #374151;">
+                <li><strong>Navigation Tab:</strong> Click the "ADP" tab in the main navigation to view the ADP Leaderboard</li>
+                <li><strong>Pick Cards:</strong> ADP badges appear on pick cards showing value/reach/fair status</li>
+                <li><strong>Big Board:</strong> ADP column is added to the Big Board view</li>
+                <li><strong>Toggle:</strong> Use the "Show ADP" checkbox in the controls bar to toggle visibility</li>
+                <li><strong>Tooltips:</strong> Click any ADP badge to see detailed information</li>
+            </ol>
+        </div>
+
+        <!-- Link back to main site -->
+        <div style="text-align: center; padding: 40px;">
+            <a href="index.html" style="display: inline-flex; align-items: center; gap: 10px; padding: 15px 30px; background: linear-gradient(135deg, #00d4ff 0%, #00a8cc 100%); color: #0d2137; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 1.1rem;">
+                <i class="fas fa-arrow-left"></i> Back to Mock Draft
+            </a>
+        </div>
+    </div>
+
+    <script src="js/adp-system.js"></script>
+    <script>
+        // Demo: Add interactive tooltips
+        document.querySelectorAll('.adp-badge').forEach(badge => {
+            badge.addEventListener('click', function(e) {
+                // Show demo tooltip
+                const existing = document.querySelector('.demo-tooltip');
+                if (existing) existing.remove();
+                
+                const tooltip = document.createElement('div');
+                tooltip.className = 'demo-tooltip';
+                tooltip.innerHTML = `
+                    <div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); min-width: 250px; position: fixed; z-index: 10000;">
+                        <div style="font-weight: 600; margin-bottom: 10px; color: #1e3a5f;">ADP Details</div>
+                        <div style="font-size: 0.9rem; color: #4b5563; line-height: 1.6;">
+                            <div>ADP: #${(Math.random() * 30 + 1).toFixed(1)}</div>
+                            <div>Range: Pick ${Math.floor(Math.random() * 5 + 1)} - ${Math.floor(Math.random() * 10 + 20)}</div>
+                            <div>Drafted in: ${Math.floor(Math.random() * 30 + 70)}% of mocks</div>
+                        </div>
+                    </div>
+                `;
+                
+                document.body.appendChild(tooltip);
+                
+                const rect = this.getBoundingClientRect();
+                tooltip.style.left = rect.left + 'px';
+                tooltip.style.top = (rect.bottom + 10) + 'px';
+                
+                setTimeout(() => {
+                    document.addEventListener('click', function removeTooltip() {
+                        tooltip.remove();
+                        document.removeEventListener('click', removeTooltip);
+                    });
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>

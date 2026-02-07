@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>NFL Draft Central - Latest News &amp; Analysis</title>
+        <link>https://yourdomain.com/news.html</link>
+        <description>Your source for NFL Draft news, prospect analysis, breaking news, and trade rumors. Stay updated on the 2026 NFL Draft with expert analysis.</description>
+        <language>en-us</language>
+        <lastBuildDate>Wed, 05 Feb 2026 12:00:00 GMT</lastBuildDate>
+        <atom:link href="https://yourdomain.com/rss.xml" rel="self" type="application/rss+xml"/>
+        <image>
+            <url>https://yourdomain.com/images/logo.png</url>
+            <title>NFL Draft Central</title>
+            <link>https://yourdomain.com/news.html</link>
+        </image>
+        
+        <item>
+            <title>Fernando Mendoza Officially Declares for 2026 NFL Draft</title>
+            <link>https://yourdomain.com/news.html#article-1</link>
+            <guid isPermaLink="false">article-1</guid>
+            <pubDate>Mon, 20 Jan 2026 08:00:00 GMT</pubDate>
+            <category>News</category>
+            <category>QB</category>
+            <category>Indiana</category>
+            <author>Nick B.</author>
+            <description>Heisman Trophy winner and Indiana quarterback Fernando Mendoza announces his decision to enter the NFL Draft, ending speculation about his future.</description>
+            <content:encoded><![CDATA[
+                <p>Indiana quarterback Fernando Mendoza, the 2025 Heisman Trophy winner and architect of one of the most remarkable turnarounds in college football history, has officially declared for the 2026 NFL Draft.</p>
+                <p>Mendoza's decision was widely expected after leading the Hoosiers to the Big Ten Championship and a berth in the College Football Playoff. He threw for 4,283 yards, 41 touchdowns, and just 8 interceptions while completing 72.3% of his passes.</p>
+                <p>The 6'5", 225-pound signal-caller is the consensus top prospect in this year's draft class and is expected to be the first overall selection by the Las Vegas Raiders.</p>
+            ]]></content:encoded>
+        </item>
+        
+        <item>
+            <title>Is Arvell Reese the Best Defensive Prospect Since Micah Parsons?</title>
+            <link>https://yourdomain.com/news.html#article-2</link>
+            <guid isPermaLink="false">article-2</guid>
+            <pubDate>Sat, 01 Feb 2026 10:00:00 GMT</pubDate>
+            <category>Analysis</category>
+            <category>LB</category>
+            <category>Ohio State</category>
+            <author>Draft Analyst</author>
+            <description>Breaking down what makes the Ohio State linebacker special and why scouts are comparing him to the Cowboys superstar.</description>
+            <content:encoded><![CDATA[
+                <p>When Ohio State linebacker Arvell Reese declared for the 2026 NFL Draft, it set off a wave of excitement throughout the scouting community. The junior's combination of size, speed, and instinct has drawn comparisons to some of the best defensive players to come out of college in recent memory.</p>
+                <p>Reese's production backs up the measurables. In 2025, he recorded 94 tackles, 12.5 sacks, 3 interceptions, and 2 forced fumbles.</p>
+                <p>The comparison to Micah Parsons isn't made lightly. Like Parsons, Reese played multiple positions in college, lining up as an edge rusher, off-ball linebacker, and even slot corner.</p>
+            ]]></content:encoded>
+        </item>
+        
+        <item>
+            <title>Jeremiyah Love Stock Rising After Pro Day Performance</title>
+            <link>https://yourdomain.com/news.html#article-3</link>
+            <guid isPermaLink="false">article-3</guid>
+            <pubDate>Thu, 05 Feb 2026 14:00:00 GMT</pubDate>
+            <category>Rumors</category>
+            <category>RB</category>
+            <category>Notre Dame</category>
+            <author>Nick B.</author>
+            <description>Notre Dame running back showed elite athleticism at his pro day, running a 4.42 40-yard dash and posting a 38-inch vertical jump.</description>
+            <content:encoded><![CDATA[
+                <p>Notre Dame running back Jeremiyah Love may have cemented himself as the RB1 of the 2026 draft class with an outstanding pro day performance Wednesday.</p>
+                <p>Love, who measured 5'11" and 205 pounds, ran an official 4.42-second 40-yard dash and posted a 38-inch vertical jump - numbers that would have ranked among the best at the position had he run them at the Combine.</p>
+                <p>The performance has reportedly caught the attention of several teams with first-round picks, including the New York Jets at No. 2 and the Cleveland Browns at No. 6.</p>
+            ]]></content:encoded>
+        </item>
+        
+        <item>
+            <title>NFL Combine 2026: Top Prospects Announced</title>
+            <link>https://yourdomain.com/news.html#article-4</link>
+            <guid isPermaLink="false">article-4</guid>
+            <pubDate>Tue, 03 Feb 2026 09:00:00 GMT</pubDate>
+            <category>News</category>
+            <category>NFL Combine</category>
+            <category>Indianapolis</category>
+            <author>Staff Writer</author>
+            <description>The NFL has released the full list of 324 invited players for the 2026 NFL Scouting Combine in Indianapolis.</description>
+            <content:encoded><![CDATA[
+                <p>The NFL announced today the 324 players invited to participate in the 2026 NFL Scouting Combine, which will be held February 27 through March 8 at Lucas Oil Stadium in Indianapolis.</p>
+                <p>Headliners include Heisman winner Fernando Mendoza (QB, Indiana), edge rusher Rueben Bain Jr. (Miami), offensive tackle Francis Mauigoa (Miami), and cornerback Jermod McCoy (Tennessee).</p>
+                <p>The event will follow its traditional format, with on-field workouts beginning March 1.</p>
+            ]]></content:encoded>
+        </item>
+        
+        <item>
+            <title>Mock Draft 4.0: Post-Combine Shakeups</title>
+            <link>https://yourdomain.com/news.html#article-5</link>
+            <guid isPermaLink="false">article-5</guid>
+            <pubDate>Wed, 04 Feb 2026 11:00:00 GMT</pubDate>
+            <category>Mock Draft</category>
+            <category>First Round</category>
+            <category>Combine</category>
+            <author>Nick B.</author>
+            <description>Our latest projection after the NFL Combine, with big movers and shakers throughout the first round.</description>
+            <content:encoded><![CDATA[
+                <p>The NFL Combine always shakes up draft boards, and this year was no exception. Here's our latest look at how the first round might shake out:</p>
+                <p><strong>1. Las Vegas Raiders - Fernando Mendoza, QB, Indiana</strong></p>
+                <p>The Raiders need a franchise quarterback, and Mendoza is the clear QB1.</p>
+                <p><strong>2. New York Jets - Ty Simpson, QB, Alabama</strong></p>
+                <p>The Jets go quarterback for the second straight year.</p>
+                <p>Check out the full mock draft for all 32 first-round picks.</p>
+            ]]></content:encoded>
+        </item>
+        
+        <item>
+            <title>2026 Running Back Rankings: A Deep Dive</title>
+            <link>https://yourdomain.com/news.html#article-6</link>
+            <guid isPermaLink="false">article-6</guid>
+            <pubDate>Mon, 02 Feb 2026 13:00:00 GMT</pubDate>
+            <category>Analysis</category>
+            <category>RB</category>
+            <category>Rankings</category>
+            <author>Draft Analyst</author>
+            <description>Breaking down the top running back prospects in the 2026 draft class, from first-round talents to late-round sleepers.</description>
+            <content:encoded><![CDATA[
+                <p>The 2026 running back class is considered one of the deepest in recent memory. Here's our comprehensive breakdown:</p>
+                <p><strong>Tier 1: First Round Talents</strong></p>
+                <p>1. Jeremiyah Love, Notre Dame</p>
+                <p>2. Omarion Hampton, North Carolina</p>
+                <p>3. Treveyon Henderson, Ohio State</p>
+                <p><strong>Tier 2: Day 2 Targets</strong></p>
+                <p>4. Kaleb Johnson, Iowa</p>
+                <p>5. CJ Allen, Georgia</p>
+            ]]></content:encoded>
+        </item>
+        
+        <item>
+            <title>Scout: Arvell Reese is "Best Defensive Player in This Class"</title>
+            <link>https://yourdomain.com/news.html#article-7</link>
+            <guid isPermaLink="false">article-7</guid>
+            <pubDate>Thu, 05 Feb 2026 16:00:00 GMT</pubDate>
+            <category>Rumors</category>
+            <category>LB</category>
+            <category>Ohio State</category>
+            <author>Nick B.</author>
+            <description>An anonymous NFC scout shared their thoughts on the Ohio State linebacker, saying he compares favorably to past top-5 picks.</description>
+            <content:encoded><![CDATA[
+                <p>Multiple scouts and executives have praised the junior's tape, but one NFC area scout didn't hold back when asked about Reese's ceiling.</p>
+                <p>"He's the best defensive player in this class, and it's not particularly close," the scout said. "I haven't seen a linebacker with his combination of size, speed, and instincts since Micah Parsons."</p>
+                <p>Reese is currently projected as a top-5 pick, with several teams reportedly very interested.</p>
+            ]]></content:encoded>
+        </item>
+        
+        <item>
+            <title>Big Board Update: Top 100 Prospects Post-Combine</title>
+            <link>https://yourdomain.com/news.html#article-8</link>
+            <guid isPermaLink="false">article-8</guid>
+            <pubDate>Thu, 05 Feb 2026 12:00:00 GMT</pubDate>
+            <category>News</category>
+            <category>Big Board</category>
+            <category>Rankings</category>
+            <author>Staff Writer</author>
+            <description>Our comprehensive ranking of the top 100 prospects in the 2026 NFL Draft after the combine.</description>
+            <content:encoded><![CDATA[
+                <p>The NFL Combine is in the books, and draft boards across the league are being updated. Here's our comprehensive ranking of the top 100 prospects:</p>
+                <p><strong>Top 10:</strong></p>
+                <p>1. Fernando Mendoza, QB, Indiana</p>
+                <p>2. Arvell Reese, LB, Ohio State</p>
+                <p>3. Francis Mauigoa, OT, Miami</p>
+                <p>4. Rueben Bain Jr., EDGE, Miami</p>
+                <p>5. Carnell Tate, WR, Ohio State</p>
+                <p>See the full top 100 rankings on our Big Board page.</p>
+            ]]></content:encoded>
+        </item>
+        
+        <item>
+            <title>Why the Raiders Must Take Mendoza at No. 1</title>
+            <link>https://yourdomain.com/news.html#article-9</link>
+            <guid isPermaLink="false">article-9</guid>
+            <pubDate>Wed, 04 Feb 2026 15:00:00 GMT</pubDate>
+            <category>Opinion</category>
+            <category>QB</category>
+            <category>Raiders</category>
+            <author>Nick B.</author>
+            <description>An opinion piece on why Las Vegas cannot afford to pass on the Heisman winner with the first overall pick.</description>
+            <content:encoded><![CDATA[
+                <p>The Las Vegas Raiders have the first overall pick in the 2026 NFL Draft for the first time in franchise history. And there's only one right answer: Fernando Mendoza.</p>
+                <p>The Raiders' quarterback room is arguably the worst in football. They don't have a single player under contract who should be starting in the NFL next season.</p>
+                <p>Mendoza isn't just the best quarterback in this class; he's one of the best prospects to come out in the last decade. His 72.3% completion percentage is the highest ever for a Heisman winner.</p>
+            ]]></content:encoded>
+        </item>
+        
+        <item>
+            <title>Film Room: Breaking Down Rueben Bain Jr.'s Tape</title>
+            <link>https://yourdomain.com/news.html#article-10</link>
+            <guid isPermaLink="false">article-10</guid>
+            <pubDate>Tue, 03 Feb 2026 14:00:00 GMT</pubDate>
+            <category>Video</category>
+            <category>EDGE</category>
+            <category>Miami</category>
+            <author>Film Room Staff</author>
+            <description>Scouting report and film analysis of Miami edge rusher Rueben Bain Jr., projected top-10 pick.</description>
+            <content:encoded><![CDATA[
+                <p>In the latest edition of our Film Room series, we break down Miami edge rusher Rueben Bain Jr., one of the most productive pass rushers in college football last season.</p>
+                <p>Bain recorded 11.5 sacks and 18.5 tackles for loss in 2025, earning First-Team All-ACC honors.</p>
+                <p>Bain's first-step quickness is elite. He consistently beats offensive tackles off the snap, forcing them into recovery mode immediately.</p>
+                <p>Current projection: Top 10 pick.</p>
+            ]]></content:encoded>
+        </item>
+    </channel>
+</rss>

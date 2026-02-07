@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 NFL Combine & Pro Day Tracker | Measurables & RAS Scores</title>
+    <meta name="description" content="Complete 2026 NFL Combine and Pro Day tracker with real-time measurables, RAS scores, leaderboards, and draft stock analysis.">
+    <meta name="keywords" content="NFL Combine 2026, Pro Day Tracker, RAS Scores, Draft Stock, NFL Draft Measurables">
+    <meta property="og:title" content="2026 NFL Combine & Pro Day Tracker">
+    <meta property="og:description" content="Track NFL Combine measurables, RAS scores, and Pro Day results">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#00d4ff" id="themeColor">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js for visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- PapaParse for CSV export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/combine-tracker.css">
+    <link rel="stylesheet" href="css/mobile-bottom-nav.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1><i class="fas fa-stopwatch"></i> NFL COMBINE & PRO DAY TRACKER</h1>
+            <p class="header-subtitle">2026 Draft Class • <span class="header-accent">Measurables, RAS Scores & Analysis</span></p>
+        </div>
+    </header>
+
+    <!-- Event Info Bar -->
+    <div class="combine-info-bar">
+        <div class="combine-info-content">
+            <div class="combine-info-item">
+                <i class="fas fa-calendar-alt"></i>
+                <div>
+                    <span class="info-label">Dates</span>
+                    <span class="info-value">Feb 27 - Mar 2, 2026</span>
+                </div>
+            </div>
+            <div class="combine-info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <span class="info-label">Location</span>
+                    <span class="info-value">Indianapolis, IN</span>
+                </div>
+            </div>
+            <div class="combine-info-item">
+                <i class="fas fa-users"></i>
+                <div>
+                    <span class="info-label">Prospects</span>
+                    <span class="info-value" id="totalProspects">324 Invited</span>
+                </div>
+            </div>
+            <div class="combine-info-item status-live">
+                <i class="fas fa-broadcast-tower"></i>
+                <div>
+                    <span class="info-label">Status</span>
+                    <span class="info-value live">🔴 LIVE</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Breaking News Ticker -->
+    <div class="breaking-news-ticker">
+        <div class="ticker-label">BREAKING</div>
+        <div class="ticker-content">
+            <span class="ticker-item">🏃 Fernando Mendoza runs 4.78 40-yard dash - Slightly slower than expected (proj: 4.75)</span>
+            <span class="ticker-item">⭐ Zachariah Branch clocks 4.35 40 - Fastest WR at combine so far</span>
+            <span class="ticker-item">📈 David Bailey (EDGE) rising up boards with 4.58 at 250lbs</span>
+            <span class="ticker-item">🏋️ Francis Mauigoa puts up 32 reps on bench - Elite for OT</span>
+        </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-container combine-nav">
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="showCombineTab('dashboard')">
+                <i class="fas fa-tachometer-alt"></i> Dashboard
+            </button>
+            <button class="nav-tab" onclick="showCombineTab('measurements')">
+                <i class="fas fa-ruler-combined"></i> Measurements
+            </button>
+            <button class="nav-tab" onclick="showCombineTab('drills')">
+                <i class="fas fa-running"></i> Drills
+            </button>
+            <button class="nav-tab" onclick="showCombineTab('ras')">
+                <i class="fas fa-chart-line"></i> RAS Scores
+            </button>
+            <button class="nav-tab" onclick="showCombineTab('freaks')">
+                <i class="fas fa-star"></i> Freaks List
+            </button>
+            <button class="nav-tab" onclick="showCombineTab('stock')">
+                <i class="fas fa-exchange-alt"></i> Stock Movers
+            </button>
+            <button class="nav-tab" onclick="showCombineTab('prodays')">
+                <i class="fas fa-calendar-day"></i> Pro Days
+            </button>
+            <button class="nav-tab" onclick="window.location.href='index.html'">
+                <i class="fas fa-arrow-left"></i> Back to Mock
+            </button>
+        </div>
+    </nav>
+
+    <main class="main-content combine-main">
+        <!-- Dashboard Tab -->
+        <div id="dashboard" class="tab-content combine-tab active">
+            <!-- Day Schedule -->
+            <div class="schedule-panel">
+                <h2 class="panel-title"><i class="fas fa-calendar-week"></i> Today's Schedule</h2>
+                <div class="schedule-grid" id="scheduleGrid">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <!-- Leaderboards Grid -->
+            <div class="leaderboards-grid">
+                <!-- Fastest 40 -->
+                <div class="leaderboard-card">
+                    <div class="leaderboard-header">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Fastest 40-Yard Dash</h3>
+                    </div>
+                    <div class="leaderboard-list" id="fastest40List">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Best Vertical -->
+                <div class="leaderboard-card">
+                    <div class="leaderboard-header">
+                        <i class="fas fa-arrow-up"></i>
+                        <h3>Highest Vertical Jump</h3>
+                    </div>
+                    <div class="leaderboard-list" id="bestVerticalList">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Best Broad Jump -->
+                <div class="leaderboard-card">
+                    <div class="leaderboard-header">
+                        <i class="fas fa-arrows-alt-h"></i>
+                        <h3>Best Broad Jump</h3>
+                    </div>
+                    <div class="leaderboard-list" id="bestBroadList">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Top RAS Scores -->
+                <div class="leaderboard-card highlight">
+                    <div class="leaderboard-header">
+                        <i class="fas fa-trophy"></i>
+                        <h3>Top RAS Scores</h3>
+                    </div>
+                    <div class="leaderboard-list" id="topRasList">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Position Breakdown -->
+            <div class="position-breakdown-panel">
+                <h2 class="panel-title"><i class="fas fa-chart-pie"></i> Position Group Averages</h2>
+                <div class="position-charts-grid">
+                    <div class="chart-container">
+                        <h4>40-Yard Dash by Position</h4>
+                        <canvas id="fortyByPositionChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h4>Average RAS by Position</h4>
+                        <canvas id="rasByPositionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Measurements Tab -->
+        <div id="measurements" class="tab-content combine-tab">
+            <div class="filter-bar">
+                <div class="filter-group">
+                    <label>Position:</label>
+                    <select id="measurePositionFilter" onchange="filterMeasurements()">
+                        <option value="all">All Positions</option>
+                        <option value="QB">Quarterback</option>
+                        <option value="RB">Running Back</option>
+                        <option value="WR">Wide Receiver</option>
+                        <option value="TE">Tight End</option>
+                        <option value="OT">Offensive Tackle</option>
+                        <option value="IOL">Interior OL</option>
+                        <option value="EDGE">EDGE</option>
+                        <option value="DL">Defensive Line</option>
+                        <option value="LB">Linebacker</option>
+                        <option value="CB">Cornerback</option>
+                        <option value="S">Safety</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>School:</label>
+                    <input type="text" id="measureSchoolFilter" placeholder="Search school..." onkeyup="filterMeasurements()">
+                </div>
+                <div class="filter-group">
+                    <label>Sort By:</label>
+                    <select id="measureSortBy" onchange="filterMeasurements()">
+                        <option value="name">Name</option>
+                        <option value="height">Height</option>
+                        <option value="weight">Weight</option>
+                        <option value="hand">Hand Size</option>
+                        <option value="arm">Arm Length</option>
+                    </select>
+                </div>
+                <div class="export-group">
+                    <button class="export-btn small" onclick="exportMeasurements('csv')">
+                        <i class="fas fa-file-csv"></i> CSV
+                    </button>
+                    <button class="export-btn small" onclick="exportMeasurements('json')">
+                        <i class="fas fa-file-code"></i> JSON
+                    </button>
+                </div>
+            </div>
+
+            <div class="measurements-table-container">
+                <table class="measurements-table" id="measurementsTable">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Player</th>
+                            <th>Pos</th>
+                            <th>School</th>
+                            <th>Height</th>
+                            <th>Weight</th>
+                            <th>Hand</th>
+                            <th>Arm</th>
+                            <th>Wingspan</th>
+                            <th>RAS</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="measurementsTableBody">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Drills Tab -->
+        <div id="drills" class="tab-content combine-tab">
+            <div class="day-tabs">
+                <button class="day-tab active" onclick="showDayDrills('day1')">
+                    Day 1 <span class="day-label">QB/WR/TE</span>
+                </button>
+                <button class="day-tab" onclick="showDayDrills('day2')">
+                    Day 2 <span class="day-label">RB/OL</span>
+                </button>
+                <button class="day-tab" onclick="showDayDrills('day3')">
+                    Day 3 <span class="day-label">DL/LB</span>
+                </button>
+                <button class="day-tab" onclick="showDayDrills('day4')">
+                    Day 4 <span class="day-label">DB</span>
+                </button>
+            </div>
+
+            <div class="drills-content" id="drillsContent">
+                <!-- Populated by JS based on selected day -->
+            </div>
+        </div>
+
+        <!-- RAS Scores Tab -->
+        <div id="ras" class="tab-content combine-tab">
+            <div class="ras-explanation">
+                <h3><i class="fas fa-info-circle"></i> What is RAS?</h3>
+                <p>Relative Athletic Score (RAS) is a metric that compares a player's combine measurements to historical data on a 0-10 scale. 
+                <strong>5.0 = Average, 8.0+ = Elite, 9.5+ = Freak Athlete</strong></p>
+            </div>
+
+            <div class="ras-filters">
+                <div class="filter-group">
+                    <label>Position:</label>
+                    <select id="rasPositionFilter" onchange="filterRAS()">
+                        <option value="all">All Positions</option>
+                        <option value="QB">QB</option>
+                        <option value="RB">RB</option>
+                        <option value="WR">WR</option>
+                        <option value="TE">TE</option>
+                        <option value="OT">OT</option>
+                        <option value="IOL">IOL</option>
+                        <option value="EDGE">EDGE</option>
+                        <option value="DL">DL</option>
+                        <option value="LB">LB</option>
+                        <option value="CB">CB</option>
+                        <option value="S">S</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Min RAS:</label>
+                    <input type="range" id="rasMinFilter" min="0" max="10" step="0.1" value="0" oninput="updateRasRangeLabel(); filterRAS()">
+                    <span id="rasRangeLabel">0.0</span>
+                </div>
+            </div>
+
+            <div class="ras-grid" id="rasGrid">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
+        <!-- Freaks List Tab -->
+        <div id="freaks" class="tab-content combine-tab">
+            <div class="freaks-header">
+                <div class="freaks-title">
+                    <i class="fas fa-crown"></i>
+                    <h2>2026 COMBINE FREAKS</h2>
+                </div>
+                <p class="freaks-subtitle">Elite Athletes with RAS 9.5+</p>
+            </div>
+
+            <div class="freaks-list" id="freaksList">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
+        <!-- Stock Movers Tab -->
+        <div id="stock" class="tab-content combine-tab">
+            <div class="stock-movers-grid">
+                <div class="stock-panel risers">
+                    <div class="stock-header">
+                        <i class="fas fa-arrow-trend-up"></i>
+                        <h3>📈 Stock Risers</h3>
+                    </div>
+                    <div class="stock-list" id="stockRisersList">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <div class="stock-panel fallers">
+                    <div class="stock-header">
+                        <i class="fas fa-arrow-trend-down"></i>
+                        <h3>📉 Stock Fallers</h3>
+                    </div>
+                    <div class="stock-list" id="stockFallersList">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stock Movement Chart -->
+            <div class="stock-chart-panel">
+                <h3>Draft Stock Movement Visualization</h3>
+                <div class="chart-container large">
+                    <canvas id="stockMovementChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pro Days Tab -->
+        <div id="prodays" class="tab-content combine-tab">
+            <div class="proday-calendar">
+                <h2 class="panel-title"><i class="fas fa-calendar-alt"></i> Pro Day Schedule</h2>
+                <div class="proday-timeline" id="prodayTimeline">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <div class="proday-results">
+                <h2 class="panel-title"><i class="fas fa-clipboard-list"></i> Recent Pro Day Results</h2>
+                <div class="proday-grid" id="prodayGrid">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Player Detail Modal -->
+    <div class="modal" id="playerModal">
+        <div class="modal-content player-modal">
+            <div class="modal-header">
+                <h2 id="modalPlayerName">Player Name</h2>
+                <button class="modal-close" onclick="closePlayerModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modalPlayerBody">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="modal" id="videoModal">
+        <div class="modal-content video-modal">
+            <div class="modal-header">
+                <h2 id="videoModalTitle">Workout Video</h2>
+                <button class="modal-close" onclick="closeVideoModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="video-container" id="videoContainer">
+                    <!-- YouTube embed will go here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comparison Modal -->
+    <div class="modal" id="compareModal">
+        <div class="modal-content compare-modal">
+            <div class="modal-header">
+                <h2>Player Comparison</h2>
+                <button class="modal-close" onclick="closeCompareModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="compareModalBody">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/combine-data.js"></script>
+    <script src="js/combine-tracker.js"></script>
+    <script src="js/mobile-nav.js"></script>
+</body>
+</html>

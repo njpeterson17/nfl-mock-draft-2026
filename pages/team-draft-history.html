@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Draft History | NFL Mock Draft 2026</title>
+    <meta name="description" content="Comprehensive NFL team draft history with performance metrics, hit rates, best picks, biggest misses, and draft tendencies for all 32 teams.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js for Visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/team-draft-history.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>Team Draft History</h1>
+            <p class="header-subtitle">Historical Performance • <span class="header-accent">Hits, Misses & Trends</span></p>
+        </div>
+    </header>
+
+    <!-- Navigation Breadcrumb -->
+    <nav class="history-breadcrumb">
+        <div class="breadcrumb-content">
+            <a href="index.html" class="breadcrumb-link"><i class="fas fa-home"></i> Home</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">Team Draft History</span>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main class="team-history-container">
+        
+        <!-- Team Selection Hub -->
+        <section id="teamSelectionHub" class="team-selection-hub">
+            <div class="hub-header">
+                <h2><i class="fas fa-football-ball"></i> Select a Team to View Draft History</h2>
+                <div class="hub-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="teamSearchInput" placeholder="Search teams..." autocomplete="off">
+                </div>
+            </div>
+
+            <!-- Conference Tabs -->
+            <div class="conference-tabs">
+                <button class="conf-tab active" data-conference="all">All Teams</button>
+                <button class="conf-tab" data-conference="afc">AFC</button>
+                <button class="conf-tab" data-conference="nfc">NFC</button>
+                <button class="conf-tab" data-conference="recent">Recently Viewed</button>
+            </div>
+
+            <!-- Team Grid -->
+            <div class="team-grid" id="teamGrid">
+                <!-- Teams populated by JavaScript -->
+            </div>
+
+            <!-- Recent Teams -->
+            <div class="recent-teams" id="recentTeams">
+                <h3><i class="fas fa-history"></i> Recently Viewed</h3>
+                <div class="recent-chips" id="recentChips">
+                    <span class="no-recent">No teams viewed recently</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Detail View (Hidden by default) -->
+        <section id="teamDetailView" class="team-detail-view hidden">
+            <!-- Team Header -->
+            <div class="team-detail-header" id="teamDetailHeader">
+                <button class="back-to-hub" onclick="showTeamHub()">
+                    <i class="fas fa-arrow-left"></i> Back to Teams
+                </button>
+                <div class="team-header-content">
+                    <div class="team-logo-large" id="teamLogoLarge">
+                        <!-- Team logo/helmet -->
+                    </div>
+                    <div class="team-header-info">
+                        <h1 id="teamName">Team Name</h1>
+                        <p class="team-meta" id="teamMeta">Est. 1960 • 2026 Draft Capital: 3 picks</p>
+                        <div class="team-tags" id="teamTags">
+                            <!-- Tags like "Active Traders", "QB Seekers", etc. -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Performance Overview -->
+            <div class="performance-overview">
+                <h2><i class="fas fa-chart-line"></i> Draft Performance (Last 10 Years)</h2>
+                <div class="performance-cards">
+                    <div class="perf-card">
+                        <div class="perf-value" id="hitRate">--</div>
+                        <div class="perf-label">Hit Rate</div>
+                        <div class="perf-sublabel">Starters / Total Picks</div>
+                    </div>
+                    <div class="perf-card">
+                        <div class="perf-value" id="avgPick">--</div>
+                        <div class="perf-label">Avg Pick Value</div>
+                        <div class="perf-sublabel">1-7 Scale</div>
+                    </div>
+                    <div class="perf-card">
+                        <div class="perf-value" id="proBowlers">--</div>
+                        <div class="perf-label">Pro Bowlers</div>
+                        <div class="perf-sublabel">Last 10 Years</div>
+                    </div>
+                    <div class="perf-card">
+                        <div class="perf-value" id="starters">--</div>
+                        <div class="perf-label">Starters</div>
+                        <div class="perf-sublabel">Still Starting</div>
+                    </div>
+                </div>
+                <div class="overall-grade">
+                    <span class="grade-label">Overall Grade:</span>
+                    <span class="grade-value" id="overallGrade">--</span>
+                    <span class="grade-rank" id="leagueRank">League Rank: --</span>
+                </div>
+            </div>
+
+            <!-- Year Selector -->
+            <div class="year-selector">
+                <h3><i class="fas fa-calendar-alt"></i> Recent Drafts</h3>
+                <div class="year-tabs" id="yearTabs">
+                    <!-- Year tabs populated by JS -->
+                </div>
+            </div>
+
+            <!-- Draft Class View -->
+            <div class="draft-class-view" id="draftClassView">
+                <div class="draft-class-header">
+                    <h3 id="draftClassYear">2025 Draft Class</h3>
+                    <div class="draft-class-grade">
+                        <span class="class-grade-label">Class Grade:</span>
+                        <span class="class-grade-value" id="classGrade">--</span>
+                    </div>
+                </div>
+                <div class="draft-picks-list" id="draftPicksList">
+                    <!-- Draft picks populated by JS -->
+                </div>
+            </div>
+
+            <!-- Best Picks & Biggest Misses -->
+            <div class="hits-misses-section">
+                <div class="hits-section">
+                    <h3><i class="fas fa-star"></i> Best Picks (Last 10 Years)</h3>
+                    <div class="picks-list" id="bestPicksList">
+                        <!-- Best picks populated by JS -->
+                    </div>
+                </div>
+                <div class="misses-section">
+                    <h3><i class="fas fa-skull"></i> Biggest Misses</h3>
+                    <div class="picks-list" id="biggestMissesList">
+                        <!-- Biggest misses populated by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Draft Tendencies -->
+            <div class="tendencies-section">
+                <h3><i class="fas fa-chart-pie"></i> Draft Tendencies</h3>
+                <div class="tendencies-grid">
+                    <div class="tendency-card">
+                        <div class="tendency-icon"><i class="fas fa-users"></i></div>
+                        <div class="tendency-info">
+                            <div class="tendency-value" id="mostDraftedPos">--</div>
+                            <div class="tendency-label">Most Drafted Position</div>
+                        </div>
+                    </div>
+                    <div class="tendency-card">
+                        <div class="tendency-icon"><i class="fas fa-exchange-alt"></i></div>
+                        <div class="tendency-info">
+                            <div class="tendency-value" id="tradeFreq">--</div>
+                            <div class="tendency-label">Trades per Draft</div>
+                        </div>
+                    </div>
+                    <div class="tendency-card">
+                        <div class="tendency-icon"><i class="fas fa-bullseye"></i></div>
+                        <div class="tendency-info">
+                            <div class="tendency-value" id="bestRound">--</div>
+                            <div class="tendency-label">Best Round (Hit Rate)</div>
+                        </div>
+                    </div>
+                    <div class="tendency-card">
+                        <div class="tendency-icon"><i class="fas fa-clipboard-list"></i></div>
+                        <div class="tendency-info">
+                            <div class="tendency-value" id="commonPicks">--</div>
+                            <div class="tendency-label">Common Position Types</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-section">
+                <div class="chart-container">
+                    <h4>Position Breakdown</h4>
+                    <canvas id="positionChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h4>Hit Rate by Round</h4>
+                    <canvas id="roundChart"></canvas>
+                </div>
+                <div class="chart-container wide">
+                    <h4>Draft Grade Trend (Last 10 Years)</h4>
+                    <canvas id="trendChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Comparison Section -->
+            <div class="comparison-section">
+                <h3><i class="fas fa-balance-scale"></i> Compare with Another Team</h3>
+                <div class="comparison-selector">
+                    <select id="compareTeamSelect">
+                        <option value="">Select a team to compare...</option>
+                        <!-- Teams populated by JS -->
+                    </select>
+                    <button class="compare-btn" onclick="compareTeams()">
+                        <i class="fas fa-exchange-alt"></i> Compare
+                    </button>
+                </div>
+                <div class="comparison-results hidden" id="comparisonResults">
+                    <!-- Comparison results populated by JS -->
+                </div>
+            </div>
+
+            <!-- Related Links -->
+            <div class="related-links">
+                <h3><i class="fas fa-link"></i> Related</h3>
+                <div class="link-chips">
+                    <a href="index.html" class="link-chip"><i class="fas fa-home"></i> Mock Draft</a>
+                    <a href="position-rankings.html" class="link-chip"><i class="fas fa-list-ol"></i> Position Rankings</a>
+                    <a href="7-round-simulator.html" class="link-chip"><i class="fas fa-gamepad"></i> 7-Round Simulator</a>
+                    <a href="war-room.html" class="link-chip"><i class="fas fa-crosshairs"></i> War Room</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="history-footer">
+        <div class="footer-content">
+            <p>&copy; 2026 NFL Mock Draft. Data compiled from multiple sources for educational purposes.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/team-draft-history-data.js"></script>
+    <script src="js/team-draft-history.js"></script>
+</body>
+</html>

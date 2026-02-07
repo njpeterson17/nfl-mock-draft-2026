@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 NFL Draft Position Rankings | Complete Prospect Analysis</title>
+    <meta name="description" content="Comprehensive position rankings for the 2026 NFL Draft. Deep dive analysis of QBs, RBs, WRs, OL, EDGE, DL, LBs, CBs, and Safeties.">
+    <meta name="keywords" content="2026 NFL Draft Position Rankings, QB Rankings, NFL Prospects, Draft Prospects">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/position-rankings.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>Position Rankings</h1>
+            <p class="header-subtitle">2026 NFL Draft <span class="header-accent">| Deep Dive Analysis by Position</span></p>
+        </div>
+    </header>
+
+    <!-- Main Navigation -->
+    <nav class="nav-container">
+        <div class="nav-tabs">
+            <button class="nav-tab" onclick="window.location.href='index.html'">
+                <i class="fas fa-home"></i> Mock Draft
+            </button>
+            <button class="nav-tab" onclick="window.location.href='news.html'">
+                <i class="fas fa-newspaper"></i> News
+            </button>
+            <button class="nav-tab active" onclick="window.location.href='position-rankings.html'">
+                <i class="fas fa-users"></i> Rankings
+            </button>
+            <button class="nav-tab" onclick="window.location.href='war-room.html'">
+                <i class="fas fa-crosshairs"></i> War Room
+            </button>
+            <button class="nav-tab" onclick="window.location.href='7-round-simulator.html'">
+                <i class="fas fa-football-ball"></i> Simulator
+            </button>
+            <button class="nav-tab" onclick="window.location.href='combine-tracker.html'" style="background: linear-gradient(135deg, rgba(255, 193, 7, 0.2), rgba(255, 160, 0, 0.1)); border-color: rgba(255, 193, 7, 0.3);">
+                <i class="fas fa-stopwatch"></i> Combine
+            </button>
+        </div>
+    </nav>
+
+    <!-- Position Navigation -->
+    <nav class="position-nav">
+        <div class="position-nav-container">
+            <a href="position-rankings.html" class="position-nav-item active">
+                <i class="fas fa-th-large"></i>
+                <span>All Positions</span>
+            </a>
+            <a href="position-rankings.html?pos=QB" class="position-nav-item" data-pos="QB">
+                <i class="fas fa-football-ball"></i>
+                <span>QB</span>
+            </a>
+            <a href="position-rankings.html?pos=RB" class="position-nav-item" data-pos="RB">
+                <i class="fas fa-running"></i>
+                <span>RB</span>
+            </a>
+            <a href="position-rankings.html?pos=WR" class="position-nav-item" data-pos="WR">
+                <i class="fas fa-hands"></i>
+                <span>WR</span>
+            </a>
+            <a href="position-rankings.html?pos=TE" class="position-nav-item" data-pos="TE">
+                <i class="fas fa-user"></i>
+                <span>TE</span>
+            </a>
+            <a href="position-rankings.html?pos=OT" class="position-nav-item" data-pos="OT">
+                <i class="fas fa-shield-alt"></i>
+                <span>OT</span>
+            </a>
+            <a href="position-rankings.html?pos=IOL" class="position-nav-item" data-pos="IOL">
+                <i class="fas fa-shield-alt"></i>
+                <span>IOL</span>
+            </a>
+            <a href="position-rankings.html?pos=EDGE" class="position-nav-item" data-pos="EDGE">
+                <i class="fas fa-bolt"></i>
+                <span>EDGE</span>
+            </a>
+            <a href="position-rankings.html?pos=DL" class="position-nav-item" data-pos="DL">
+                <i class="fas fa-cube"></i>
+                <span>DL</span>
+            </a>
+            <a href="position-rankings.html?pos=LB" class="position-nav-item" data-pos="LB">
+                <i class="fas fa-compress-arrows-alt"></i>
+                <span>LB</span>
+            </a>
+            <a href="position-rankings.html?pos=CB" class="position-nav-item" data-pos="CB">
+                <i class="fas fa-user-shield"></i>
+                <span>CB</span>
+            </a>
+            <a href="position-rankings.html?pos=S" class="position-nav-item" data-pos="S">
+                <i class="fas fa-lock"></i>
+                <span>S</span>
+            </a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <!-- All Positions Grid View -->
+        <div id="allPositionsView" class="positions-grid">
+            <h2 class="section-title">Select a Position Group</h2>
+            <div class="positions-grid-container">
+                <a href="position-rankings.html?pos=QB" class="position-card qb-card">
+                    <div class="position-icon"><i class="fas fa-football-ball"></i></div>
+                    <div class="position-info">
+                        <h3>Quarterback</h3>
+                        <p class="position-count">12 prospects</p>
+                        <p class="position-top">Top: Fernando Mendoza</p>
+                    </div>
+                    <div class="position-grade">Deep Class</div>
+                </a>
+
+                <a href="position-rankings.html?pos=RB" class="position-card rb-card">
+                    <div class="position-icon"><i class="fas fa-running"></i></div>
+                    <div class="position-info">
+                        <h3>Running Back</h3>
+                        <p class="position-count">12 prospects</p>
+                        <p class="position-top">Top: Jeremiyah Love</p>
+                    </div>
+                    <div class="position-grade">Elite Talent</div>
+                </a>
+
+                <a href="position-rankings.html?pos=WR" class="position-card wr-card">
+                    <div class="position-icon"><i class="fas fa-hands"></i></div>
+                    <div class="position-info">
+                        <h3>Wide Receiver</h3>
+                        <p class="position-count">15 prospects</p>
+                        <p class="position-top">Top: Carnell Tate</p>
+                    </div>
+                    <div class="position-grade">Loaded</div>
+                </a>
+
+                <a href="position-rankings.html?pos=TE" class="position-card te-card">
+                    <div class="position-icon"><i class="fas fa-user"></i></div>
+                    <div class="position-info">
+                        <h3>Tight End</h3>
+                        <p class="position-count">10 prospects</p>
+                        <p class="position-top">Top: Kenyon Sadiq</p>
+                    </div>
+                    <div class="position-grade">Athletic</div>
+                </a>
+
+                <a href="position-rankings.html?pos=OT" class="position-card ot-card">
+                    <div class="position-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="position-info">
+                        <h3>Offensive Tackle</h3>
+                        <p class="position-count">10 prospects</p>
+                        <p class="position-top">Top: Francis Mauigoa</p>
+                    </div>
+                    <div class="position-grade">Solid</div>
+                </a>
+
+                <a href="position-rankings.html?pos=IOL" class="position-card iol-card">
+                    <div class="position-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="position-info">
+                        <h3>Interior OL</h3>
+                        <p class="position-count">10 prospects</p>
+                        <p class="position-top">Top: Olaivavega Ioane</p>
+                    </div>
+                    <div class="position-grade">Strong</div>
+                </a>
+
+                <a href="position-rankings.html?pos=EDGE" class="position-card edge-card">
+                    <div class="position-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="position-info">
+                        <h3>Edge Rusher</h3>
+                        <p class="position-count">12 prospects</p>
+                        <p class="position-top">Top: Rueben Bain Jr.</p>
+                    </div>
+                    <div class="position-grade">Explosive</div>
+                </a>
+
+                <a href="position-rankings.html?pos=DL" class="position-card dl-card">
+                    <div class="position-icon"><i class="fas fa-cube"></i></div>
+                    <div class="position-info">
+                        <h3>Defensive Line</h3>
+                        <p class="position-count">10 prospects</p>
+                        <p class="position-top">Top: Kayden McDonald</p>
+                    </div>
+                    <div class="position-grade">Deep</div>
+                </a>
+
+                <a href="position-rankings.html?pos=LB" class="position-card lb-card">
+                    <div class="position-icon"><i class="fas fa-compress-arrows-alt"></i></div>
+                    <div class="position-info">
+                        <h3>Linebacker</h3>
+                        <p class="position-count">10 prospects</p>
+                        <p class="position-top">Top: Arvell Reese</p>
+                    </div>
+                    <div class="position-grade">Versatile</div>
+                </a>
+
+                <a href="position-rankings.html?pos=CB" class="position-card cb-card">
+                    <div class="position-icon"><i class="fas fa-user-shield"></i></div>
+                    <div class="position-info">
+                        <h3>Cornerback</h3>
+                        <p class="position-count">12 prospects</p>
+                        <p class="position-top">Top: Jermod McCoy</p>
+                    </div>
+                    <div class="position-grade">Talented</div>
+                </a>
+
+                <a href="position-rankings.html?pos=S" class="position-card s-card">
+                    <div class="position-icon"><i class="fas fa-lock"></i></div>
+                    <div class="position-info">
+                        <h3>Safety</h3>
+                        <p class="position-count">10 prospects</p>
+                        <p class="position-top">Top: Caleb Downs</p>
+                    </div>
+                    <div class="position-grade">Elite</div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Position Detail View -->
+        <div id="positionDetailView" class="position-detail" style="display: none;">
+            <!-- Position Overview Section -->
+            <div class="position-overview">
+                <div class="position-header">
+                    <div class="position-title-section">
+                        <span class="position-badge" id="positionBadge">QB</span>
+                        <h2 id="positionTitle">Quarterback Rankings</h2>
+                        <p id="positionSubtitle">Top Prospects at the Most Important Position</p>
+                    </div>
+                    <div class="position-meta">
+                        <div class="meta-item">
+                            <span class="meta-value" id="prospectCount">12</span>
+                            <span class="meta-label">Ranked Prospects</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-value" id="round1Count">5</span>
+                            <span class="meta-label">Projected R1</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-value highlight" id="topGrade">7.4</span>
+                            <span class="meta-label">Top Grade</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overview-cards">
+                    <div class="overview-card strength">
+                        <div class="overview-icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="overview-content">
+                            <h4>Class Strength</h4>
+                            <p id="classStrength">Deep class with 5 potential R1 QBs</p>
+                        </div>
+                    </div>
+                    <div class="overview-card sleeper">
+                        <div class="overview-icon"><i class="fas fa-bed"></i></div>
+                        <div class="overview-content">
+                            <h4>Biggest Sleeper</h4>
+                            <p id="biggestSleeper">Cole Payton (NDSU)</p>
+                        </div>
+                    </div>
+                    <div class="overview-card riser">
+                        <div class="overview-icon"><i class="fas fa-arrow-trend-up"></i></div>
+                        <div class="overview-content">
+                            <h4>Notable Riser</h4>
+                            <p id="notableRiser">Ty Simpson (Alabama)</p>
+                        </div>
+                    </div>
+                    <div class="overview-card projection">
+                        <div class="overview-icon"><i class="fas fa-bullseye"></i></div>
+                        <div class="overview-content">
+                            <h4>Round Projection</h4>
+                            <p id="roundProjection">5-7 in first 3 rounds</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Position Traits Being Evaluated -->
+                <div class="traits-section">
+                    <h4><i class="fas fa-clipboard-check"></i> Key Evaluation Traits</h4>
+                    <div class="traits-grid" id="traitsGrid">
+                        <!-- Dynamically populated -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filter Controls -->
+            <div class="filter-controls">
+                <span class="filter-label">Filter:</span>
+                <button class="filter-btn active" onclick="filterByRound('all')">All</button>
+                <button class="filter-btn" onclick="filterByRound('1')">Round 1</button>
+                <button class="filter-btn" onclick="filterByRound('2-3')">Rounds 2-3</button>
+                <button class="filter-btn" onclick="filterByRound('4-7')">Day 3</button>
+                <div class="sort-control">
+                    <span>Sort by:</span>
+                    <select id="sortSelect" onchange="sortRankings(this.value)">
+                        <option value="rank">Ranking</option>
+                        <option value="grade">Grade</option>
+                        <option value="name">Name</option>
+                        <option value="school">School</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Rankings Table -->
+            <div class="rankings-table-container">
+                <table class="rankings-table">
+                    <thead>
+                        <tr>
+                            <th class="col-rank">Rank</th>
+                            <th class="col-player">Player</th>
+                            <th class="col-school">School</th>
+                            <th class="col-grade">Grade</th>
+                            <th class="col-projection">Projection</th>
+                            <th class="col-action">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rankingsTableBody">
+                        <!-- Dynamically populated -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Comparison Section -->
+            <div class="comparison-section" id="comparisonSection" style="display: none;">
+                <h3><i class="fas fa-balance-scale"></i> Prospect Comparison</h3>
+                <div class="comparison-container">
+                    <div class="comparison-players" id="comparisonPlayers">
+                        <!-- Dynamically populated -->
+                    </div>
+                    <div class="comparison-chart-container">
+                        <canvas id="comparisonChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Prospect Detail Modal -->
+    <div id="prospectModal" class="prospect-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeProspectModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body" id="modalBody">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Position Navigation Footer -->
+    <div class="position-nav-footer" id="positionNavFooter">
+        <a href="#" class="nav-prev" id="prevPosition">
+            <i class="fas fa-chevron-left"></i>
+            <span>Previous Position</span>
+        </a>
+        <span class="nav-current" id="currentPositionNav">QB Rankings</span>
+        <a href="#" class="nav-next" id="nextPosition">
+            <span>Next Position</span>
+            <i class="fas fa-chevron-right"></i>
+        </a>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 NFL Mock Draft Database. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="position-rankings.html">Position Rankings</a>
+                <a href="war-room.html">War Room</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/position-rankings-data.js"></script>
+    <script src="js/position-rankings.js"></script>
+    <script>
+        // Theme Toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+        
+        // Initialize Theme
+        (function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            }
+        })();
+    </script>
+</body>
+</html>

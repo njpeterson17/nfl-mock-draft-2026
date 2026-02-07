@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7-Round NFL Mock Draft Simulator 2026</title>
+    <meta name="description" content="Experience the full 7-round 2026 NFL Draft with 257 picks. Be the GM, make trades, and build your franchise.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&family=Chakra+Petch:wght@400;500;600;700&family=Teko:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/7-round-simulator.css">
+</head>
+<body>
+    <!-- Audio Elements -->
+    <audio id="pickSound" preload="auto">
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIG2m98OScTgwOUarm7blmFgU7k9n1yngsBSh+zPLaizsIHGu98+OWT" type="audio/wav">
+    </audio>
+    <audio id="fanfareSound" preload="auto">
+        <source src="data:audio/wav;base64,UklGRi4AAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAAAAACAgICAgICAgICAgICAAAAA" type="audio/wav">
+    </audio>
+
+    <!-- Entry Screen -->
+    <div id="entryScreen" class="entry-screen">
+        <div class="entry-content">
+            <div class="sim-badge">
+                <i class="fas fa-football-ball"></i>
+                <span>7-ROUND SIMULATOR</span>
+            </div>
+            
+            <h1 class="entry-title">
+                <span class="highlight">2026</span> NFL MOCK DRAFT
+                <div class="subtitle">7 ROUNDS • 257 PICKS • FULL EXPERIENCE</div>
+            </h1>
+            
+            <div class="entry-form">
+                <!-- Team Selection -->
+                <div class="form-group">
+                    <label><i class="fas fa-users"></i> Select Your Team</label>
+                    <select id="teamSelect" class="form-select">
+                        <option value="">Choose a team...</option>
+                    </select>
+                </div>
+                
+                <!-- Difficulty Selection -->
+                <div class="form-group">
+                    <label><i class="fas fa-tachometer-alt"></i> Difficulty Level</label>
+                    <div class="difficulty-options">
+                        <button class="difficulty-btn" data-difficulty="rookie" data-time="300">
+                            <div class="diff-icon">🌱</div>
+                            <div class="diff-name">Rookie</div>
+                            <div class="diff-desc">5 min/pick</div>
+                        </button>
+                        <button class="difficulty-btn active" data-difficulty="veteran" data-time="180">
+                            <div class="diff-icon">⚡</div>
+                            <div class="diff-name">Veteran</div>
+                            <div class="diff-desc">3 min/pick</div>
+                        </button>
+                        <button class="difficulty-btn" data-difficulty="gm" data-time="120">
+                            <div class="diff-icon">👔</div>
+                            <div class="diff-name">GM Mode</div>
+                            <div class="diff-desc">2 min/pick</div>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Simulation Speed -->
+                <div class="form-group">
+                    <label><i class="fas fa-forward"></i> AI Draft Speed</label>
+                    <div class="speed-options">
+                        <button class="speed-btn" data-speed="instant">Instant</button>
+                        <button class="speed-btn active" data-speed="fast">Fast (0.5s)</button>
+                        <button class="speed-btn" data-speed="normal">Normal (2s)</button>
+                        <button class="speed-btn" data-speed="slow">Slow (5s)</button>
+                        <button class="speed-btn" data-speed="realistic">Realistic</button>
+                    </div>
+                </div>
+                
+                <!-- Options -->
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label class="toggle-label">
+                            <input type="checkbox" id="enableTrades" checked>
+                            <span class="toggle-slider"></span>
+                            <span class="toggle-text">Enable Trades</span>
+                        </label>
+                    </div>
+                    <div class="form-group half">
+                        <label class="toggle-label">
+                            <input type="checkbox" id="enableSound" checked>
+                            <span class="toggle-slider"></span>
+                            <span class="toggle-text">Sound Effects</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Start Button -->
+                <button id="startDraft" class="start-btn">
+                    <span>START DRAFT</span>
+                    <i class="fas fa-play"></i>
+                </button>
+                
+                <a href="index.html" class="back-link">
+                    <i class="fas fa-arrow-left"></i> Back to Mock Draft
+                </a>
+            </div>
+        </div>
+        
+        <!-- Animated Background -->
+        <div class="bg-grid"></div>
+        <div class="bg-glow"></div>
+        <div class="floating-particles"></div>
+    </div>
+
+    <!-- Main Simulator Interface -->
+    <div id="simulatorInterface" class="simulator-interface hidden">
+        <!-- Top Navigation Bar -->
+        <header class="sim-header">
+            <div class="header-left">
+                <div class="logo">
+                    <i class="fas fa-football-ball"></i>
+                    <span>2026 NFL DRAFT</span>
+                </div>
+                <div class="day-indicator" id="dayIndicator">
+                    <i class="fas fa-calendar-day"></i>
+                    <span>Day 1 - Rounds 1-3</span>
+                </div>
+            </div>
+            
+            <div class="header-center">
+                <div class="round-tabs" id="roundTabs">
+                    <!-- Generated dynamically -->
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <button class="control-btn" id="pauseBtn" title="Pause/Resume">
+                    <i class="fas fa-pause"></i>
+                </button>
+                <button class="control-btn" id="settingsBtn" title="Settings">
+                    <i class="fas fa-cog"></i>
+                </button>
+                <button class="control-btn danger" id="exitBtn" title="Exit">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- On The Clock Banner -->
+        <div class="on-clock-banner" id="onClockBanner">
+            <div class="banner-content">
+                <div class="on-clock-label">
+                    <i class="fas fa-clock"></i>
+                    <span>ON THE CLOCK</span>
+                </div>
+                <div class="pick-display">
+                    <div class="team-helmet-large" id="currentTeamHelmet"></div>
+                    <div class="pick-info">
+                        <div class="pick-team" id="currentTeamName">Team Name</div>
+                        <div class="pick-details">
+                            <span class="pick-round" id="currentRound">Round 1</span>
+                            <span class="pick-number" id="currentPickNumber">Pick #1</span>
+                            <span class="pick-overall" id="currentOverall">(1st Overall)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timer-section">
+                    <div class="timer-display" id="timerDisplay">02:34</div>
+                    <div class="timer-progress">
+                        <div class="timer-bar" id="timerBar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="sim-main">
+            <!-- Left Sidebar: My Picks & Draft Board -->
+            <aside class="sidebar left-sidebar">
+                <div class="sidebar-section">
+                    <div class="section-header">
+                        <i class="fas fa-user"></i>
+                        <span>MY PICKS</span>
+                    </div>
+                    <div class="my-picks-list" id="myPicksList">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+                
+                <div class="sidebar-section">
+                    <div class="section-header">
+                        <i class="fas fa-th"></i>
+                        <span>DRAFT BOARD</span>
+                    </div>
+                    <div class="draft-board-mini" id="draftBoardMini">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Center: Player Selection -->
+            <section class="center-panel">
+                <div class="panel-header">
+                    <div class="header-tabs">
+                        <button class="tab-btn active" data-tab="available">
+                            <i class="fas fa-users"></i> Available Players
+                        </button>
+                        <button class="tab-btn" data-tab="bigboard">
+                            <i class="fas fa-list-ol"></i> Big Board
+                        </button>
+                        <button class="tab-btn" data-tab="history">
+                            <i class="fas fa-history"></i> Pick History
+                        </button>
+                    </div>
+                    
+                    <!-- Quick Pick Buttons -->
+                    <div class="quick-picks">
+                        <button class="quick-btn best-available" id="quickBestAvailable">
+                            <i class="fas fa-star"></i> Best Available
+                        </button>
+                        <button class="quick-btn best-value" id="quickBestValue">
+                            <i class="fas fa-chart-line"></i> Best Value
+                        </button>
+                        <button class="quick-btn need-fill" id="quickNeedFill">
+                            <i class="fas fa-bullseye"></i> Fill Need
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Filters -->
+                <div class="filters-bar">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="playerSearch" placeholder="Search players...">
+                    </div>
+                    <div class="position-filters" id="positionFilters">
+                        <button class="pos-filter active" data-pos="all">ALL</button>
+                        <button class="pos-filter" data-pos="QB">QB</button>
+                        <button class="pos-filter" data-pos="RB">RB</button>
+                        <button class="pos-filter" data-pos="WR">WR</button>
+                        <button class="pos-filter" data-pos="TE">TE</button>
+                        <button class="pos-filter" data-pos="OT">OT</button>
+                        <button class="pos-filter" data-pos="IOL">IOL</button>
+                        <button class="pos-filter" data-pos="EDGE">EDGE</button>
+                        <button class="pos-filter" data-pos="DL">DL</button>
+                        <button class="pos-filter" data-pos="LB">LB</button>
+                        <button class="pos-filter" data-pos="CB">CB</button>
+                        <button class="pos-filter" data-pos="S">S</button>
+                    </div>
+                </div>
+                
+                <!-- Tab Contents -->
+                <div class="panel-content">
+                    <!-- Available Players Tab -->
+                    <div class="tab-content active" id="availableTab">
+                        <div class="players-grid" id="playersGrid">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+                    
+                    <!-- Big Board Tab -->
+                    <div class="tab-content" id="bigBoardTab">
+                        <div class="big-board-list" id="bigBoardList">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+                    
+                    <!-- Pick History Tab -->
+                    <div class="tab-content" id="historyTab">
+                        <div class="history-list" id="historyList">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Auto Draft Control -->
+                <div class="auto-draft-bar">
+                    <button class="auto-btn" id="simulateToNext">
+                        <i class="fas fa-forward"></i> Simulate to My Next Pick
+                    </button>
+                    <button class="auto-btn secondary" id="simulateRound">
+                        <i class="fas fa-play-circle"></i> Complete This Round
+                    </button>
+                    <button class="auto-btn secondary" id="simulateAll">
+                        <i class="fas fa-fast-forward"></i> Complete Draft
+                    </button>
+                </div>
+            </section>
+
+            <!-- Right Sidebar: Team Info & Recent Picks -->
+            <aside class="sidebar right-sidebar">
+                <div class="sidebar-section">
+                    <div class="section-header">
+                        <i class="fas fa-clipboard-list"></i>
+                        <span>TEAM NEEDS</span>
+                    </div>
+                    <div class="team-needs-list" id="teamNeedsList">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+                
+                <div class="sidebar-section">
+                    <div class="section-header">
+                        <i class="fas fa-broadcast-tower"></i>
+                        <span>RECENT PICKS</span>
+                    </div>
+                    <div class="recent-picks-list" id="recentPicksList">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+                
+                <div class="sidebar-section">
+                    <div class="section-header">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>DRAFT STATS</span>
+                    </div>
+                    <div class="draft-stats" id="draftStats">
+                        <div class="stat-item">
+                            <span class="stat-label">Completed</span>
+                            <span class="stat-value" id="statCompleted">0/257</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Your Picks</span>
+                            <span class="stat-value" id="statYourPicks">0/7</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Current Grade</span>
+                            <span class="stat-value grade" id="statGrade">-</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </main>
+
+        <!-- Trade Offer Modal -->
+        <div id="tradeModal" class="modal hidden">
+            <div class="modal-content trade-modal-content">
+                <div class="trade-header">
+                    <div class="incoming-call">
+                        <i class="fas fa-phone-alt ringing"></i>
+                        <span>INCOMING TRADE OFFER</span>
+                    </div>
+                    <div class="trade-timer">
+                        <i class="fas fa-hourglass-half"></i>
+                        <span id="tradeTimer">30s</span>
+                    </div>
+                </div>
+                
+                <div class="trade-body">
+                    <div class="trade-team-info">
+                        <div class="trade-team-logo" id="tradeTeamLogo"></div>
+                        <div class="trade-team-name" id="tradeTeamName">Team Name</div>
+                        <div class="trade-gm" id="tradeGM">GM offers:</div>
+                    </div>
+                    
+                    <div class="trade-offer-comparison">
+                        <div class="offer-side">
+                            <h4><i class="fas fa-hand-holding"></i> They Receive</h4>
+                            <ul id="theyReceiveList"></ul>
+                        </div>
+                        
+                        <div class="trade-arrows">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        
+                        <div class="offer-side">
+                            <h4><i class="fas fa-hand-holding"></i> You Receive</h4>
+                            <ul id="youReceiveList"></ul>
+                        </div>
+                    </div>
+                    
+                    <div class="trade-value-meter">
+                        <div class="value-label">Trade Value</div>
+                        <div class="value-bar-container">
+                            <div class="value-bar" id="tradeValueBar"></div>
+                        </div>
+                        <div class="value-verdict" id="tradeVerdict">Fair Trade</div>
+                    </div>
+                </div>
+                
+                <div class="trade-actions">
+                    <button class="trade-btn accept" id="acceptTrade">
+                        <i class="fas fa-check"></i> Accept
+                    </button>
+                    <button class="trade-btn counter" id="counterTrade">
+                        <i class="fas fa-reply"></i> Counter
+                    </button>
+                    <button class="trade-btn decline" id="declineTrade">
+                        <i class="fas fa-times"></i> Decline
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Player Detail Modal -->
+        <div id="playerModal" class="modal hidden">
+            <div class="modal-content player-modal-content">
+                <button class="modal-close" id="closePlayerModal">
+                    <i class="fas fa-times"></i>
+                </button>
+                
+                <div class="player-detail-header">
+                    <div class="player-rank-badge" id="playerDetailRank">#1</div>
+                    <div class="player-photo-large" id="playerDetailPhoto">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="player-detail-info">
+                        <h2 id="playerDetailName">Player Name</h2>
+                        <div class="player-meta">
+                            <span class="position-badge" id="playerDetailPosition">QB</span>
+                            <span class="school-badge" id="playerDetailSchool">School</span>
+                        </div>
+                        <div class="player-measurements" id="playerDetailMeasurements">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="player-detail-body">
+                    <div class="detail-section">
+                        <h4><i class="fas fa-chart-line"></i> Big Board Ranking</h4>
+                        <div class="ranking-display">
+                            <div class="rank-box">
+                                <span class="rank-label">Overall</span>
+                                <span class="rank-value" id="detailOverallRank">#5</span>
+                            </div>
+                            <div class="rank-box">
+                                <span class="rank-label">Position</span>
+                                <span class="rank-value" id="detailPositionRank">#1 QB</span>
+                            </div>
+                            <div class="rank-box">
+                                <span class="rank-label">Grade</span>
+                                <span class="rank-value" id="detailGrade">7.4</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h4><i class="fas fa-star"></i> Strengths</h4>
+                        <ul id="detailStrengths"></ul>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Areas to Improve</h4>
+                        <ul id="detailWeaknesses"></ul>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h4><i class="fas fa-user-tie"></i> NFL Comparison</h4>
+                        <p id="detailComparison"></p>
+                    </div>
+                </div>
+                
+                <div class="player-detail-actions">
+                    <button class="draft-btn" id="modalDraftBtn">
+                        <i class="fas fa-check-circle"></i> DRAFT THIS PLAYER
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Draft Summary Modal -->
+        <div id="summaryModal" class="modal hidden">
+            <div class="modal-content summary-modal-content">
+                <div class="summary-header">
+                    <div class="completion-trophy">🏆</div>
+                    <h1>DRAFT COMPLETE!</h1>
+                    <p class="summary-subtitle">Your 7-round draft is in the books</p>
+                </div>
+                
+                <div class="grade-display">
+                    <div class="grade-circle" id="finalGradeCircle">
+                        <span class="grade-letter" id="finalGradeLetter">A</span>
+                        <span class="grade-score" id="finalGradeScore">92/100</span>
+                    </div>
+                </div>
+                
+                <div class="summary-stats">
+                    <div class="summary-stat">
+                        <i class="fas fa-list-ol"></i>
+                        <span class="stat-value" id="summaryTotalPicks">7</span>
+                        <span class="stat-label">Picks Made</span>
+                    </div>
+                    <div class="summary-stat">
+                        <i class="fas fa-arrow-up"></i>
+                        <span class="stat-value" id="summaryValuePicks">3</span>
+                        <span class="stat-label">Value Picks</span>
+                    </div>
+                    <div class="summary-stat">
+                        <i class="fas fa-arrow-down"></i>
+                        <span class="stat-value" id="summaryReaches">1</span>
+                        <span class="stat-label">Reaches</span>
+                    </div>
+                    <div class="summary-stat">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span class="stat-value" id="summaryTrades">2</span>
+                        <span class="stat-label">Trades</span>
+                    </div>
+                </div>
+                
+                <div class="your-picks-summary">
+                    <h3><i class="fas fa-users"></i> Your Draft Class</h3>
+                    <div class="picks-by-position" id="picksByPosition">
+                        <!-- Populated dynamically -->
+                    </div>
+                    <div class="picks-list-detailed" id="summaryPicksList">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+                
+                <div class="summary-actions">
+                    <button class="summary-btn primary" id="shareResults">
+                        <i class="fas fa-share-alt"></i> Share Results
+                    </button>
+                    <button class="summary-btn" id="viewDraftBoard">
+                        <i class="fas fa-th"></i> View Full Draft Board
+                    </button>
+                    <button class="summary-btn" id="exportResults">
+                        <i class="fas fa-download"></i> Export
+                    </button>
+                    <button class="summary-btn secondary" id="draftAgain">
+                        <i class="fas fa-redo"></i> Draft Again
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pause Menu -->
+        <div id="pauseMenu" class="pause-overlay hidden">
+            <div class="pause-content">
+                <h2><i class="fas fa-pause-circle"></i> PAUSED</h2>
+                <button class="pause-btn" id="resumeBtn">
+                    <i class="fas fa-play"></i> Resume Draft
+                </button>
+                <button class="pause-btn" id="restartBtn">
+                    <i class="fas fa-redo"></i> Start New Draft
+                </button>
+                <a href="index.html" class="pause-btn exit">
+                    <i class="fas fa-door-open"></i> Exit to Main Menu
+                </a>
+            </div>
+        </div>
+
+        <!-- Mr. Irrelevant Special Screen -->
+        <div id="mrIrrelevantScreen" class="mr-irrelevant hidden">
+            <div class="mr-content">
+                <div class="mr-badge">
+                    <i class="fas fa-crown"></i>
+                    <span>MR. IRRELEVANT</span>
+                </div>
+                <h1>Pick #257</h1>
+                <p class="mr-quote">"The draft may be over, but your NFL journey is just beginning."</p>
+                <div class="mr-player" id="mrIrrelevantPlayer">
+                    <!-- Populated dynamically -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Picks Ticker -->
+        <div class="picks-ticker">
+            <div class="ticker-label">
+                <i class="fas fa-broadcast-tower"></i>
+                <span>LATEST PICKS</span>
+            </div>
+            <div class="ticker-scroll" id="tickerScroll">
+                <!-- Populated dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/7-round-simulator.js"></script>
+</body>
+</html>

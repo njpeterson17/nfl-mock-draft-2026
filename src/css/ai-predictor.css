@@ -1,0 +1,322 @@
+/* ==========================================
+   AI DRAFT PREDICTOR STYLES
+   NFL Mock Draft 2026
+   ========================================== */
+
+/* CSS Variables */
+:root {
+    --ai-cyan: #00d4ff;
+    --ai-purple: #a855f7;
+    --ai-green: #22c55e;
+    --ai-yellow: #f59e0b;
+    --ai-red: #ef4444;
+    --ai-bg-grid: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300d4ff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* AI Predictor Button Styles in Main Nav */
+.nav-tab[onclick*="ai-draft-predictor"] {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-tab[onclick*="ai-draft-predictor"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: ai-shimmer 3s infinite;
+}
+
+@keyframes ai-shimmer {
+    0% { left: -100%; }
+    50% { left: 100%; }
+    100% { left: 100%; }
+}
+
+.nav-tab[onclick*="ai-draft-predictor"] i {
+    animation: ai-pulse 2s infinite;
+}
+
+@keyframes ai-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.1); }
+}
+
+/* Prediction Badge for Pick Cards */
+.prediction-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.prediction-badge.high {
+    background: rgba(34, 197, 94, 0.15);
+    color: var(--ai-green);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.prediction-badge.medium {
+    background: rgba(245, 158, 11, 0.15);
+    color: var(--ai-yellow);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.prediction-badge.low {
+    background: rgba(239, 68, 68, 0.15);
+    color: var(--ai-red);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.prediction-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* AI Prediction Tooltip */
+.ai-tooltip {
+    position: fixed;
+    background: var(--bg-card, #1e1e1e);
+    border: 1px solid var(--border-color, #2a2a2a);
+    border-radius: 12px;
+    padding: 1rem;
+    z-index: 1000;
+    max-width: 300px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.2s;
+}
+
+.ai-tooltip.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.ai-tooltip-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--ai-cyan);
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color, #2a2a2a);
+}
+
+.ai-tooltip-prediction {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+}
+
+.ai-tooltip-prob {
+    font-size: 1.25rem;
+    font-weight: 700;
+    min-width: 45px;
+    color: var(--ai-cyan);
+}
+
+.ai-tooltip-player {
+    flex: 1;
+    font-size: 0.875rem;
+}
+
+.ai-tooltip-position {
+    font-size: 0.75rem;
+    color: var(--text-secondary, #a0a0a0);
+    padding: 0.2rem 0.5rem;
+    background: var(--bg-tertiary, #1a1a1a);
+    border-radius: 4px;
+}
+
+/* Mini Prediction Bar (for pick cards) */
+.mini-prediction-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    background: var(--bg-tertiary, #1a1a1a);
+    border-radius: 6px;
+    font-size: 0.8rem;
+}
+
+.mini-prediction-bar .prob-fill {
+    flex: 1;
+    height: 4px;
+    background: var(--bg-primary, #0a0a0a);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.mini-prediction-bar .prob-fill-inner {
+    height: 100%;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--ai-cyan), var(--ai-purple));
+    transition: width 0.5s ease;
+}
+
+/* Live Update Animation */
+.prediction-updating {
+    animation: updating-pulse 1s infinite;
+}
+
+@keyframes updating-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+/* Surprise Pick Alert Banner */
+.surprise-banner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(239, 68, 68, 0.1));
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: 12px;
+    margin: 1rem 0;
+}
+
+.surprise-banner-icon {
+    font-size: 2rem;
+    color: var(--ai-yellow);
+    animation: surprise-bounce 1s infinite;
+}
+
+@keyframes surprise-bounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.surprise-banner-content h4 {
+    color: var(--ai-yellow);
+    margin-bottom: 0.25rem;
+}
+
+.surprise-banner-content p {
+    font-size: 0.875rem;
+    color: var(--text-secondary, #a0a0a0);
+}
+
+/* AI Integration Button (for pick cards) */
+.ai-predict-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(168, 85, 247, 0.1));
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 6px;
+    color: var(--ai-cyan);
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.ai-predict-btn:hover {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(168, 85, 247, 0.2));
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 212, 255, 0.2);
+}
+
+.ai-predict-btn i {
+    animation: ai-brain-pulse 2s infinite;
+}
+
+@keyframes ai-brain-pulse {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; text-shadow: 0 0 10px var(--ai-cyan); }
+}
+
+/* Prediction Accuracy Indicator */
+.accuracy-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--text-secondary, #a0a0a0);
+}
+
+.accuracy-dots {
+    display: flex;
+    gap: 2px;
+}
+
+.accuracy-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--bg-tertiary, #1a1a1a);
+}
+
+.accuracy-dot.correct {
+    background: var(--ai-green);
+}
+
+.accuracy-dot.incorrect {
+    background: var(--ai-red);
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .prediction-badge {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.5rem;
+    }
+    
+    .ai-tooltip {
+        max-width: 250px;
+        padding: 0.75rem;
+    }
+    
+    .surprise-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    .mini-prediction-bar {
+        font-size: 0.75rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .ai-tooltip,
+    .ai-predict-btn,
+    .prediction-badge {
+        display: none !important;
+    }
+}
+
+/* Dark/Light Theme Adaptations */
+[data-theme="light"] {
+    --ai-cyan: #0891b2;
+    --ai-purple: #7c3aed;
+}
+
+[data-theme="light"] .prediction-badge.high {
+    background: rgba(34, 197, 94, 0.1);
+}
+
+[data-theme="light"] .prediction-badge.medium {
+    background: rgba(245, 158, 11, 0.1);
+}
+
+[data-theme="light"] .prediction-badge.low {
+    background: rgba(239, 68, 68, 0.1);
+}
