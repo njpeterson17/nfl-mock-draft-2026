@@ -48,13 +48,13 @@ const PlayerImageDatabase = {
             teamColorKey: "ohioState"
         },
         "Jeremiyah Love": {
-            rank: 4,
+            rank: 2,
             position: "RB",
             school: "Notre Dame",
-            local: "images/players/jeremiyah-love.jpg",
+            local: null,
             espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432859.png",
             cbs: "https://sports.cbsimg.net/images/football/players/600x800/28845761.jpg",
-            hasLocal: true,
+            hasLocal: false,
             teamColorKey: "notreDame"
         },
         "Rueben Bain Jr.": {
@@ -293,10 +293,10 @@ const PlayerImageDatabase = {
             rank: 28,
             position: "RB",
             school: "Nebraska",
-            local: null,
+            local: "images/players/emmett-johnson.jpg",
             espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431420.png",
             cbs: null,
-            hasLocal: false,
+            hasLocal: true,
             teamColorKey: "nebraska"
         },
         "Denzel Boston": {
@@ -1022,6 +1022,16 @@ const PlayerImageDatabase = {
             cbs: null,
             hasLocal: false,
             teamColorKey: "tennessee"
+        },
+        "Luther Burden III": {
+            rank: 31,
+            position: "WR",
+            school: "Missouri",
+            local: "images/players/luther-burden.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431349.png",
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "missouri"
         }
     },
 
