@@ -382,6 +382,7 @@ const state = {
     availablePlayers: [],
     completedPicks: [],
     isSimulating: false,
+    isProcessingPick: false,
     simulationSpeed: 'fast',
     timerRemaining: CONFIG.TIMER_DEFAULT,
     timerInterval: null,
@@ -720,14 +721,30 @@ function processNextPick() {
 }
 
 function handleUserPick(pickData) {
+    // Stop any ongoing simulation
     state.isSimulating = false;
+    state.paused = false;  // Make sure we're not paused
+    state.isProcessingPick = false;  // Reset processing flag
+    
+    // Start the timer for user to make selection
     startTimer();
+    
+    // Render the player selection grid
     renderPlayersGrid();
     updateStats();
     
-    // Maybe offer a trade
+    // Highlight that it's user's turn
+    highlightUserTurn();
+    
+    // Maybe offer a trade after a few seconds
     if (state.enableTrades && Math.random() > 0.7) {
-        setTimeout(() => offerTrade(pickData), 2000);
+        setTimeout(() => {
+            // Only offer trade if still on this pick
+            const currentPick = state.draftOrder.find(p => p.overall === state.currentPick);
+            if (currentPick?.isUser && !state.isProcessingPick) {
+                offerTrade(pickData);
+            }
+        }, 3000);
     }
 }
 
@@ -797,13 +814,30 @@ function makePick(pickData, player) {
 }
 
 function selectPlayer(playerId) {
+    // Prevent double-clicking or selecting when not on user's turn
+    const currentPickData = state.draftOrder.find(p => p.overall === state.currentPick);
+    if (!currentPickData?.isUser) {
+        console.log('Not your turn to pick');
+        return;
+    }
+    
+    // Check if pick is already being processed
+    if (state.isProcessingPick) {
+        console.log('Pick already in progress');
+        return;
+    }
+    
     const player = state.availablePlayers.find(p => p.id === playerId);
     if (!player) return;
     
-    const pickData = state.draftOrder.find(p => p.overall === state.currentPick);
-    
+    state.isProcessingPick = true;
     stopTimer();
-    makePick(pickData, player);
+    makePick(currentPickData, player);
+    
+    // Reset after pick is made
+    setTimeout(() => {
+        state.isProcessingPick = false;
+    }, 1000);
 }
 
 // ==========================================
@@ -968,9 +1002,37 @@ function startTimer() {
         updateTimerDisplay();
         
         if (state.timerRemaining <= 0) {
-            // Auto-pick
-            stopTimer();
-            selectBestAvailable();
+            // Timer expired - check if it's user pick or AI pick
+            const currentPickData = state.draftOrder.find(p => p.overall === state.currentPick);
+            
+            if (currentPickData?.isUser) {
+                // User's turn - pause and wait for selection, don't auto-pick
+                stopTimer();
+                state.paused = true;
+                elements.timerDisplay.classList.add('danger');
+                elements.timerBar.classList.add('danger');
+                
+                // Show timeout message
+                const banner = document.getElementById('onClockBanner');
+                if (banner) {
+                    banner.innerHTML = `
+                        <div class="on-clock-content">
+                            <span class="on-clock-label">TIME EXPIRED - YOUR TURN</span>
+                            <span class="on-clock-team">${state.userTeam}</span>
+                            <span class="on-clock-pick">Pick #${state.currentPick}</span>
+                        </div>
+                    `;
+                    banner.style.background = 'linear-gradient(90deg, #dc2626, #991b1b)';
+                }
+                
+                // Enable player selection
+                state.isSimulating = false;
+                renderPlayersGrid();
+            } else {
+                // AI pick - auto-pick best available
+                stopTimer();
+                selectBestAvailable();
+            }
         }
     }, 1000);
 }
@@ -1105,6 +1167,26 @@ function updateOnClockBanner(pickData) {
     } else {
         dayIndicator.innerHTML = '<i class="fas fa-calendar-day"></i><span>Day 2 - Rounds 4-7</span>';
         dayIndicator.className = 'day-indicator day2';
+    }
+}
+
+function highlightUserTurn() {
+    // Add visual indication that it's the user's turn
+    const banner = document.getElementById('onClockBanner');
+    if (banner && state.userTeam) {
+        banner.style.background = 'linear-gradient(90deg, #00d4ff, #0099cc)';
+        banner.style.animation = 'pulse 2s infinite';
+        
+        // Add a visual cue to the player grid
+        const centerPanel = document.querySelector('.center-panel');
+        if (centerPanel) {
+            centerPanel.style.boxShadow = '0 0 20px rgba(0, 212, 255, 0.3)';
+            
+            // Remove highlight after a few seconds
+            setTimeout(() => {
+                centerPanel.style.boxShadow = '';
+            }, 3000);
+        }
     }
 }
 
