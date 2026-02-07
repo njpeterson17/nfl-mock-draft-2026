@@ -331,6 +331,57 @@ class PlayerImageLoader {
             failed: this.failedUrls.size
         };
     }
+
+    /**
+     * Process all .player-photo containers on the page
+     */
+    processAllContainers() {
+        const containers = document.querySelectorAll('.player-photo');
+        console.log(`🖼️ Processing ${containers.length} player photo containers`);
+
+        containers.forEach(container => {
+            // Check if already has an img that loaded successfully
+            const existingImg = container.querySelector('img');
+            if (existingImg && existingImg.complete && existingImg.naturalHeight > 0) {
+                return; // Image already loaded
+            }
+
+            // Get player info from img alt or data attributes
+            let playerName = container.dataset.playerName;
+            let position = container.dataset.playerPosition;
+            let school = container.dataset.playerSchool;
+
+            // Try to extract from img alt if not in data attributes
+            if (!playerName && existingImg) {
+                playerName = existingImg.alt;
+            }
+
+            if (playerName) {
+                // Use lazy loading via observer
+                container.dataset.playerName = playerName;
+                if (position) container.dataset.playerPosition = position;
+                if (school) container.dataset.playerSchool = school;
+                this.observe(container);
+            }
+        });
+    }
+
+    /**
+     * Process immediately visible containers (above fold)
+     */
+    processVisibleContainers() {
+        const containers = document.querySelectorAll('.player-photo');
+        const viewportHeight = window.innerHeight;
+
+        containers.forEach(container => {
+            const rect = container.getBoundingClientRect();
+            if (rect.top < viewportHeight) {
+                this.loadIntoContainer(container);
+            } else {
+                this.observe(container);
+            }
+        });
+    }
 }
 
 // Create global instance

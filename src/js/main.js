@@ -2330,7 +2330,47 @@
             
             showToast('Draft grades report exported!');
         }
-        
+
         // Draft grades removed from pick cards - now only on Draft Grades page
 
-    </script>
+        // Initialize player image handling on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add load and error handlers to all player photos
+            document.querySelectorAll('.player-photo img').forEach(img => {
+                // Show image when loaded
+                img.onload = function() {
+                    this.classList.add('loaded');
+                };
+
+                // Handle error - show initials
+                img.onerror = function() {
+                    const container = this.parentElement;
+                    const playerName = this.alt || 'Unknown';
+                    const initials = playerName.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
+
+                    // Hide failed image
+                    this.style.display = 'none';
+
+                    // Create initials placeholder if not already present
+                    if (!container.querySelector('.player-initials-placeholder')) {
+                        const placeholder = document.createElement('div');
+                        placeholder.className = 'player-initials-placeholder';
+                        placeholder.innerHTML = initials;
+                        container.appendChild(placeholder);
+                    }
+                };
+
+                // If image is already cached/complete
+                if (img.complete && img.naturalHeight > 0) {
+                    img.classList.add('loaded');
+                } else if (img.complete) {
+                    // Image complete but no height = error
+                    img.onerror();
+                }
+            });
+
+            // Process player image loader if available
+            if (window.playerImageLoader) {
+                window.playerImageLoader.processAllContainers();
+            }
+        });
