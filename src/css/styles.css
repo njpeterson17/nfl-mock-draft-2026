@@ -411,6 +411,7 @@
         .pick-card {
             background: var(--card-bg);
             border: 1px solid var(--border);
+            border-left: 4px solid var(--team-color, var(--border));
             border-radius: 16px;
             margin-bottom: 1.5rem;
             overflow: hidden;
@@ -420,6 +421,40 @@
             animation: slideIn 0.5s ease forwards;
         }
 
+        /* Team Color Definitions */
+        .pick-card[data-team="Raiders"] { --team-color: #000000; --team-accent: #A5ACAF; }
+        .pick-card[data-team="Jets"] { --team-color: #125740; --team-accent: #FFFFFF; }
+        .pick-card[data-team="Cardinals"] { --team-color: #97233F; --team-accent: #000000; }
+        .pick-card[data-team="Titans"] { --team-color: #0C2340; --team-accent: #4C8FB6; }
+        .pick-card[data-team="Giants"] { --team-color: #001E62; --team-accent: #A5ACAF; }
+        .pick-card[data-team="Browns"] { --team-color: #311D00; --team-accent: #FF3C00; }
+        .pick-card[data-team="Commanders"] { --team-color: #773141; --team-accent: #FFB612; }
+        .pick-card[data-team="Saints"] { --team-color: #101820; --team-accent: #D3BC8D; }
+        .pick-card[data-team="Chiefs"] { --team-color: #E31837; --team-accent: #FFB81C; }
+        .pick-card[data-team="Bengals"] { --team-color: #FB4F14; --team-accent: #000000; }
+        .pick-card[data-team="Dolphins"] { --team-color: #008E97; --team-accent: #FC4C02; }
+        .pick-card[data-team="Cowboys"] { --team-color: #003594; --team-accent: #869397; }
+        .pick-card[data-team="Rams"] { --team-color: #003594; --team-accent: #FFD100; }
+        .pick-card[data-team="Ravens"] { --team-color: #241773; --team-accent: #9E7C0C; }
+        .pick-card[data-team="Buccaneers"] { --team-color: #D50A0A; --team-accent: #FF7900; }
+        .pick-card[data-team="Colts"] { --team-color: #003594; --team-accent: #FFB81C; }
+        .pick-card[data-team="49ers"] { --team-color: #AA0000; --team-accent: #B3995D; }
+        .pick-card[data-team="Vikings"] { --team-color: #4F2683; --team-accent: #FFC62F; }
+        .pick-card[data-team="Panthers"] { --team-color: #0085CA; --team-accent: #101820; }
+        .pick-card[data-team="Steelers"] { --team-color: #FFB612; --team-accent: #101820; }
+        .pick-card[data-team="Chargers"] { --team-color: #0076B6; --team-accent: #FFB81C; }
+        .pick-card[data-team="Eagles"] { --team-color: #004C54; --team-accent: #A5ACAF; }
+        .pick-card[data-team="Bears"] { --team-color: #0B162A; --team-accent: #C83803; }
+        .pick-card[data-team="Bills"] { --team-color: #00338D; --team-accent: #C60C30; }
+        .pick-card[data-team="Texans"] { --team-color: #03202F; --team-accent: #A71930; }
+        .pick-card[data-team="Broncos"] { --team-color: #FB4F14; --team-accent: #002244; }
+        .pick-card[data-team="Patriots"] { --team-color: #002244; --team-accent: #C60C30; }
+        .pick-card[data-team="Lions"] { --team-color: #0076B6; --team-accent: #B0B7BC; }
+        .pick-card[data-team="Packers"] { --team-color: #203731; --team-accent: #FFB612; }
+        .pick-card[data-team="Falcons"] { --team-color: #A71930; --team-accent: #000000; }
+        .pick-card[data-team="Seahawks"] { --team-color: #002244; --team-accent: #69BE28; }
+        .pick-card[data-team="Jaguars"] { --team-color: #006778; --team-accent: #D7A22A; }
+
         @keyframes slideIn {
             to {
                 opacity: 1;
@@ -428,8 +463,9 @@
         }
 
         .pick-card:hover {
-            border-color: var(--accent);
-            box-shadow: 0 0 30px var(--shadow-color);
+            border-color: var(--team-color, var(--accent));
+            border-left-color: var(--team-color, var(--accent));
+            box-shadow: 0 0 20px color-mix(in srgb, var(--team-color, var(--accent)) 20%, transparent);
         }
 
         .pick-card.hidden {
@@ -440,7 +476,7 @@
             display: flex;
             align-items: center;
             padding: 1.5rem 2rem;
-            background: linear-gradient(90deg, rgba(0,212,255,0.05) 0%, transparent 100%);
+            background: linear-gradient(90deg, color-mix(in srgb, var(--team-color, #00d4ff) 8%, transparent) 0%, transparent 100%);
             border-bottom: 1px solid var(--border);
             gap: 1.5rem;
         }
@@ -449,7 +485,7 @@
             font-family: 'Oswald', sans-serif;
             font-size: 2.5rem;
             font-weight: 700;
-            color: var(--accent);
+            color: var(--team-color, var(--accent));
             min-width: 60px;
             line-height: 1;
         }
