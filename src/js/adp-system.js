@@ -542,21 +542,14 @@ function isValuePick(playerName, pickNumber) {
             class: 'value-badge',
             shortLabel: '↑ Value'
         };
-    } else if (diff <= -5) {
-        return { 
-            type: 'reach', 
-            diff: Math.abs(diff), 
-            label: `↓ Reach (ADP #${data.adp})`, 
-            class: 'reach-badge',
-            shortLabel: '↓ Reach'
-        };
     } else {
+        // Reach and Fair picks don't show a badge
         return { 
-            type: 'fair', 
+            type: 'none', 
             diff: Math.abs(diff), 
-            label: `→ Fair (ADP #${data.adp})`, 
-            class: 'fair-badge',
-            shortLabel: 'Fair'
+            label: '', 
+            class: '',
+            shortLabel: ''
         };
     }
 }
@@ -782,12 +775,15 @@ function createADPBadge(playerName, pickNumber) {
     
     const assessment = isValuePick(playerName, pickNumber);
     
+    // Only show badge for value picks
+    if (assessment.type !== 'value') return '';
+    
     return `
         <div class="adp-badge ${assessment.class}" 
              data-player="${playerName}" 
              data-pick="${pickNumber}"
              onclick="event.stopPropagation(); showADPTooltip(event, '${playerName}', ${pickNumber})">
-            <span class="adp-icon">${assessment.type === 'value' ? '↑' : assessment.type === 'reach' ? '↓' : '•'}</span>
+            <span class="adp-icon">↑</span>
             <span class="adp-text">${assessment.shortLabel}</span>
         </div>
     `;

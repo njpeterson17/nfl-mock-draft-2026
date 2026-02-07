@@ -1283,9 +1283,9 @@ function renderPlayersGrid() {
                         <span class="player-stat-label">40-Yard</span>
                     </div>
                 </div>
-                <div class="value-indicator ${valueDiff < 0 ? 'positive' : valueDiff > 20 ? 'negative' : 'neutral'}">
-                    <i class="fas fa-${valueDiff < 0 ? 'arrow-up' : valueDiff > 20 ? 'arrow-down' : 'minus'}"></i>
-                    <span>${valueDiff < 0 ? `+${Math.abs(valueDiff)} value` : valueDiff > 20 ? 'Reach' : 'Fair'}</span>
+                <div class="value-indicator ${valueDiff < 0 ? 'positive' : 'neutral'}">
+                    <i class="fas fa-${valueDiff < 0 ? 'arrow-up' : 'minus'}"></i>
+                    <span>${valueDiff < 0 ? `+${Math.abs(valueDiff)} value` : ''}</span>
                 </div>
             </div>
         `;
