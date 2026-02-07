@@ -95,19 +95,14 @@
         </div>
     </div>
 
+    <!-- Main Navigation -->
     <nav class="nav-container">
         <div class="nav-tabs">
-            <button class="nav-tab active" onclick="showTab('round1')">
-                Round 1 <span class="round-badge">32 Picks</span>
-            </button>
-            <button class="nav-tab" onclick="showTab('round2')">
-                Round 2 <span class="round-badge">32 Picks</span>
-            </button>
-            <button class="nav-tab" onclick="showTab('round3')">
-                Round 3 <span class="round-badge">41 Picks</span>
-            </button>
             <button class="nav-tab" onclick="window.location.href='pages/news.html'">
                 <i class="fas fa-newspaper"></i> News
+            </button>
+            <button class="nav-tab active" onclick="showTab('round1')">
+                <i class="fas fa-list-ol"></i> Mock Draft
             </button>
             <button class="nav-tab" onclick="showTab('adpLeaderboard')">
                 <i class="fas fa-chart-line"></i> ADP
@@ -115,38 +110,45 @@
             <button class="nav-tab" onclick="showTab('bigBoard')">
                 <i class="fas fa-list-ol"></i> Big Board
             </button>
-
             <button class="nav-tab" onclick="showTab('teamDrafts')">
                 <i class="fas fa-shield-alt"></i> Team Drafts
             </button>
             <button class="nav-tab" onclick="showTab('draftGrades')">
-                <i class="fas fa-star"></i> Draft Grades
+                <i class="fas fa-star"></i> Grades
             </button>
             <button class="nav-tab" onclick="showTab('create')">
-                <i class="fas fa-pencil-alt"></i> Create Your Mock
+                <i class="fas fa-pencil-alt"></i> Create
             </button>
             <button class="nav-tab" onclick="openTradeCalculator()">
-                <i class="fas fa-calculator"></i> Trade Calculator
+                <i class="fas fa-calculator"></i> Trades
             </button>
-
             <button class="nav-tab war-room-tab" onclick="window.location.href='pages/war-room.html'">
                 <i class="fas fa-crosshairs"></i> War Room
             </button>
-            <button class="nav-tab" onclick="window.location.href='pages/7-round-simulator.html'" style="background: linear-gradient(135deg, rgba(155, 89, 182, 0.2), rgba(142, 68, 173, 0.1)); border-color: rgba(155, 89, 182, 0.3);">
-                <i class="fas fa-football-ball"></i> 7-Round Sim
-            </button>
-            <button class="nav-tab" onclick="window.location.href='pages/live-draft.html'" style="background: linear-gradient(135deg, rgba(46, 204, 113, 0.2), rgba(39, 174, 96, 0.1)); border-color: rgba(46, 204, 113, 0.3);">
-                <i class="fas fa-users"></i> Live Draft
-            </button>
-            <button class="nav-tab" onclick="window.location.href='pages/ai-draft-predictor.html'" style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(168, 85, 247, 0.1)); border-color: rgba(0, 212, 255, 0.3);">
-                <i class="fas fa-robot"></i> AI Predictor
-            </button>
-            <button class="nav-tab" onclick="window.location.href='pages/combine-tracker.html'" style="background: linear-gradient(135deg, rgba(255, 193, 7, 0.2), rgba(255, 160, 0, 0.1)); border-color: rgba(255, 193, 7, 0.3);">
-                <i class="fas fa-stopwatch"></i> Combine
-            </button>
-            <button class="nav-tab" onclick="window.location.href='pages/team-draft-history.html'" style="background: linear-gradient(135deg, rgba(231, 76, 60, 0.2), rgba(192, 57, 43, 0.1)); border-color: rgba(231, 76, 60, 0.3);">
-                <i class="fas fa-history"></i> Team History
-            </button>
+            
+            <!-- More Dropdown -->
+            <div class="nav-dropdown" style="position: relative;">
+                <button class="nav-tab" onclick="toggleMoreDropdown()" style="display: flex; align-items: center; gap: 0.4rem;">
+                    <i class="fas fa-ellipsis-h"></i> More <i class="fas fa-chevron-down" style="font-size: 0.6rem;"></i>
+                </button>
+                <div id="moreDropdown" class="dropdown-menu" style="display: none; position: absolute; top: 100%; right: 0; background: var(--secondary); border: 1px solid var(--border); border-radius: 8px; padding: 0.5rem; min-width: 180px; box-shadow: 0 8px 24px rgba(0,0,0,0.3); z-index: 1000;">
+                    <a href="pages/7-round-simulator.html" class="dropdown-item" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 0.8rem; color: var(--text-primary); text-decoration: none; border-radius: 4px; font-size: 0.8rem;">
+                        <i class="fas fa-football-ball" style="color: var(--accent);"></i> 7-Round Sim
+                    </a>
+                    <a href="pages/live-draft.html" class="dropdown-item" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 0.8rem; color: var(--text-primary); text-decoration: none; border-radius: 4px; font-size: 0.8rem;">
+                        <i class="fas fa-users" style="color: var(--success);"></i> Live Draft
+                    </a>
+                    <a href="pages/ai-draft-predictor.html" class="dropdown-item" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 0.8rem; color: var(--text-primary); text-decoration: none; border-radius: 4px; font-size: 0.8rem;">
+                        <i class="fas fa-robot" style="color: #a855f7;"></i> AI Predictor
+                    </a>
+                    <a href="pages/combine-tracker.html" class="dropdown-item" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 0.8rem; color: var(--text-primary); text-decoration: none; border-radius: 4px; font-size: 0.8rem;">
+                        <i class="fas fa-stopwatch" style="color: #f59e0b;"></i> Combine
+                    </a>
+                    <a href="pages/team-draft-history.html" class="dropdown-item" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 0.8rem; color: var(--text-primary); text-decoration: none; border-radius: 4px; font-size: 0.8rem;">
+                        <i class="fas fa-history" style="color: #e74c3c;"></i> Team History
+                    </a>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -154,6 +156,19 @@
         <!-- ROUND 1 -->
         <div id="round1" class="tab-content active">
             <h2 class="round-title">Round <span>1</span> - First Round Analysis</h2>
+            
+            <!-- Round Navigation -->
+            <div class="round-nav" style="display: flex; justify-content: center; gap: 1rem; margin: 1.5rem 0; flex-wrap: wrap;">
+                <button class="round-nav-btn active" onclick="showTab('round1')" style="padding: 0.75rem 1.5rem; border-radius: 8px; border: 2px solid var(--accent); background: var(--accent); color: var(--primary); font-weight: 600; cursor: pointer; transition: all 0.2s;">
+                    <i class="fas fa-circle" style="font-size: 0.5rem; margin-right: 0.5rem;"></i> Round 1
+                </button>
+                <button class="round-nav-btn" onclick="showTab('round2')" style="padding: 0.75rem 1.5rem; border-radius: 8px; border: 2px solid var(--border); background: var(--card-bg); color: var(--text-primary); font-weight: 600; cursor: pointer; transition: all 0.2s;">
+                    <i class="fas fa-circle" style="font-size: 0.5rem; margin-right: 0.5rem;"></i> Round 2
+                </button>
+                <button class="round-nav-btn" onclick="showTab('round3')" style="padding: 0.75rem 1.5rem; border-radius: 8px; border: 2px solid var(--border); background: var(--card-bg); color: var(--text-primary); font-weight: 600; cursor: pointer; transition: all 0.2s;">
+                    <i class="fas fa-circle" style="font-size: 0.5rem; margin-right: 0.5rem;"></i> Round 3
+                </button>
+            </div>
             
             <div class="stats-bar">
                 <div class="stat-item">
@@ -169,12 +184,36 @@
                     <div class="stat-item-label">WRs</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-item-value" id="olCount">0</div>
-                    <div class="stat-item-label">OL</div>
+                    <div class="stat-item-value" id="teCount">0</div>
+                    <div class="stat-item-label">TEs</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-item-value" id="otCount">0</div>
+                    <div class="stat-item-label">OTs</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-item-value" id="iolCount">0</div>
+                    <div class="stat-item-label">IOL</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-item-value" id="edgeCount">0</div>
+                    <div class="stat-item-label">EDGE</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-item-value" id="dlCount">0</div>
                     <div class="stat-item-label">DL</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-item-value" id="lbCount">0</div>
+                    <div class="stat-item-label">LBs</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-item-value" id="cbCount">0</div>
+                    <div class="stat-item-label">CBs</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-item-value" id="sCount">0</div>
+                    <div class="stat-item-label">S</div>
                 </div>
             </div>
 
@@ -1904,11 +1943,35 @@
                 <h3>No picks found</h3>
                 <p>Try adjusting your filters or search terms</p>
             </div>
+            
+            <!-- Round Navigation - Bottom -->
+            <div class="round-nav" style="display: flex; justify-content: center; gap: 1rem; margin: 2rem 0; padding-top: 2rem; border-top: 1px solid var(--border); flex-wrap: wrap;">
+                <span style="color: var(--text-secondary); margin-right: 0.5rem; align-self: center;">Continue to:</span>
+                <button class="round-nav-btn" onclick="showTab('round2')" style="padding: 0.75rem 1.5rem; border-radius: 8px; border: 2px solid var(--accent); background: var(--card-bg); color: var(--text-primary); font-weight: 600; cursor: pointer; transition: all 0.2s;">
+                    <i class="fas fa-arrow-down" style="margin-right: 0.5rem;"></i> Round 2
+                </button>
+                <button class="round-nav-btn" onclick="showTab('round3')" style="padding: 0.75rem 1.5rem; border-radius: 8px; border: 2px solid var(--border); background: var(--card-bg); color: var(--text-primary); font-weight: 600; cursor: pointer; transition: all 0.2s;">
+                    <i class="fas fa-arrow-down" style="margin-right: 0.5rem;"></i> Round 3
+                </button>
+            </div>
         </div>
 
         <!-- ROUND 2 - FULL DETAILED PICKS -->
 <div id="round2" class="tab-content">
     <h2 class="round-title">Round <span>2</span> - Best Available</h2>
+    
+    <!-- Round Navigation -->
+    <div class="round-nav" style="display: flex; justify-content: center; gap: 1rem; margin: 1.5rem 0; flex-wrap: wrap;">
+        <button class="round-nav-btn" onclick="showTab('round1')" style="padding: 0.75rem 1.5rem; border-radius: 8px; border: 2px solid var(--border); background: var(--card-bg); color: var(--text-primary); font-weight: 600; cursor: pointer; transition: all 0.2s;">
+            <i class="fas fa-arrow-up" style="margin-right: 0.5rem;"></i> Round 1
+        </button>
+        <button class="round-nav-btn active" onclick="showTab('round2')" style="padding: 0.75rem 1.5rem; border-radius: 8px; border: 2px solid var(--accent); background: var(--accent); color: var(--primary); font-weight: 600; cursor: pointer; transition: all 0.2s;">
+            <i class="fas fa-circle" style="font-size: 0.5rem; margin-right: 0.5rem;"></i> Round 2
+        </button>
+        <button class="round-nav-btn" onclick="showTab('round3')" style="padding: 0.75rem 1.5rem; border-radius: 8px; border: 2px solid var(--border); background: var(--card-bg); color: var(--text-primary); font-weight: 600; cursor: pointer; transition: all 0.2s;">
+            <i class="fas fa-circle" style="font-size: 0.5rem; margin-right: 0.5rem;"></i> Round 3
+        </button>
+    </div>
     
     <div class="stats-bar">
         <div class="stat-item">
@@ -1924,12 +1987,36 @@
             <div class="stat-item-label">WRs</div>
         </div>
         <div class="stat-item">
-            <div class="stat-item-value" id="r2olCount">0</div>
-            <div class="stat-item-label">OL</div>
+            <div class="stat-item-value" id="r2teCount">0</div>
+            <div class="stat-item-label">TEs</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-item-value" id="r2otCount">0</div>
+            <div class="stat-item-label">OTs</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-item-value" id="r2iolCount">0</div>
+            <div class="stat-item-label">IOL</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-item-value" id="r2edgeCount">0</div>
+            <div class="stat-item-label">EDGE</div>
         </div>
         <div class="stat-item">
             <div class="stat-item-value" id="r2dlCount">0</div>
             <div class="stat-item-label">DL</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-item-value" id="r2lbCount">0</div>
+            <div class="stat-item-label">LBs</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-item-value" id="r2cbCount">0</div>
+            <div class="stat-item-label">CBs</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-item-value" id="r2sCount">0</div>
+            <div class="stat-item-label">S</div>
         </div>
     </div>
 
@@ -3691,11 +3778,31 @@ le"></i> Concerns/Areas to Improve</h4>
         <h3>No picks found</h3>
         <p>Try adjusting your filters or search terms</p>
     </div>
+    
+    <!-- Round Navigation - Bottom -->
+    <div class="round-nav" style="display: flex; justify-content: center; gap: 1rem; margin: 2rem 0; padding-top: 2rem; border-top: 1px solid var(--border); flex-wrap: wrap;">
+        <span style="color: var(--text-secondary); margin-right: 0.5rem; align-self: center;">Continue to:</span>
+        <button class="round-nav-btn" onclick="showTab('round3')" style="padding: 0.75rem 1.5rem; border-radius: 8px; border: 2px solid var(--accent); background: var(--card-bg); color: var(--text-primary); font-weight: 600; cursor: pointer; transition: all 0.2s;">
+            <i class="fas fa-arrow-down" style="margin-right: 0.5rem;"></i> Round 3
+        </button>
+    </div>
 </div>
 
 
         <!-- ROUND 3 - FULL DETAILED PICKS -->
         <div id="round3" class="tab-content">
+            <!-- Round Navigation - Top -->
+            <div class="round-nav" style="display: flex; justify-content: center; gap: 1rem; margin: 1.5rem 0; flex-wrap: wrap;">
+                <button class="round-nav-btn" onclick="showTab('round1')" style="padding: 0.75rem 1.5rem; border-radius: 8px; border: 2px solid var(--border); background: var(--card-bg); color: var(--text-primary); font-weight: 600; cursor: pointer; transition: all 0.2s;">
+                    <i class="fas fa-arrow-up" style="margin-right: 0.5rem;"></i> Round 1
+                </button>
+                <button class="round-nav-btn" onclick="showTab('round2')" style="padding: 0.75rem 1.5rem; border-radius: 8px; border: 2px solid var(--border); background: var(--card-bg); color: var(--text-primary); font-weight: 600; cursor: pointer; transition: all 0.2s;">
+                    <i class="fas fa-arrow-up" style="margin-right: 0.5rem;"></i> Round 2
+                </button>
+                <button class="round-nav-btn active" onclick="showTab('round3')" style="padding: 0.75rem 1.5rem; border-radius: 8px; border: 2px solid var(--accent); background: var(--accent); color: var(--primary); font-weight: 600; cursor: pointer; transition: all 0.2s;">
+                    <i class="fas fa-circle" style="font-size: 0.5rem; margin-right: 0.5rem;"></i> Round 3
+                </button>
+            </div>
             <h2 class="round-title">Round <span>3</span> - Value Picks</h2>
             
             <div class="stats-bar">
@@ -3712,12 +3819,36 @@ le"></i> Concerns/Areas to Improve</h4>
                     <div class="stat-item-label">WRs</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-item-value" id="r3olCount">0</div>
-                    <div class="stat-item-label">OL</div>
+                    <div class="stat-item-value" id="r3teCount">0</div>
+                    <div class="stat-item-label">TEs</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-item-value" id="r3otCount">0</div>
+                    <div class="stat-item-label">OTs</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-item-value" id="r3iolCount">0</div>
+                    <div class="stat-item-label">IOL</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-item-value" id="r3edgeCount">0</div>
+                    <div class="stat-item-label">EDGE</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-item-value" id="r3dlCount">0</div>
                     <div class="stat-item-label">DL</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-item-value" id="r3lbCount">0</div>
+                    <div class="stat-item-label">LBs</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-item-value" id="r3cbCount">0</div>
+                    <div class="stat-item-label">CBs</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-item-value" id="r3sCount">0</div>
+                    <div class="stat-item-label">S</div>
                 </div>
             </div>
 
@@ -3925,6 +4056,17 @@ le"></i> Concerns/Areas to Improve</h4>
                 <h3>No picks found</h3>
                 <p>Try adjusting your filters or search terms</p>
             </div>
+            
+            <!-- Round Navigation - Bottom -->
+            <div class="round-nav" style="display: flex; justify-content: center; gap: 1rem; margin: 2rem 0; padding-top: 2rem; border-top: 1px solid var(--border); flex-wrap: wrap;">
+                <span style="color: var(--text-secondary); margin-right: 0.5rem; align-self: center;">Navigate:</span>
+                <button class="round-nav-btn" onclick="showTab('round1')" style="padding: 0.75rem 1.5rem; border-radius: 8px; border: 2px solid var(--border); background: var(--card-bg); color: var(--text-primary); font-weight: 600; cursor: pointer; transition: all 0.2s;">
+                    <i class="fas fa-arrow-up" style="margin-right: 0.5rem;"></i> Round 1
+                </button>
+                <button class="round-nav-btn" onclick="showTab('round2')" style="padding: 0.75rem 1.5rem; border-radius: 8px; border: 2px solid var(--border); background: var(--card-bg); color: var(--text-primary); font-weight: 600; cursor: pointer; transition: all 0.2s;">
+                    <i class="fas fa-arrow-up" style="margin-right: 0.5rem;"></i> Round 2
+                </button>
+            </div>
 
             <!-- Export Bar -->
             <div class="export-bar" style="margin-top: 2rem; margin-bottom: 2rem;">
@@ -4074,11 +4216,22 @@ le"></i> Concerns/Areas to Improve</h4>
                         <span>Filter Big Board</span>
                     </div>
                     <div class="edp-toggle">
-                        <button class="filter-toggle-btn active" onclick="filterBigBoard('all')">All</button>
-                        <button class="filter-toggle-btn" onclick="filterBigBoard('Elite')">Elite</button>
-                        <button class="filter-toggle-btn" onclick="filterBigBoard('Round 1')">Round 1</button>
-                        <button class="filter-toggle-btn" onclick="filterBigBoard('Round 2')">Round 2</button>
-                        <button class="filter-toggle-btn" onclick="filterBigBoard('Round 3')">Round 3</button>
+                        <span style="color: var(--text-secondary); font-size: 0.85rem; margin-right: 0.5rem;">Source:</span>
+                        <button class="filter-toggle-btn active" onclick="switchBigBoardSource('espn')">ESPN (100)</button>
+                        <button class="filter-toggle-btn" onclick="switchBigBoardSource('pff')">PFF (154)</button>
+                    </div>
+                </div>
+                <div class="edp-panel-header" style="margin-top: 1rem;">
+                    <div class="edp-panel-title">
+                        <i class="fas fa-layer-group"></i>
+                        <span>Tier</span>
+                    </div>
+                    <div class="edp-toggle">
+                        <button class="filter-toggle-btn tier-filter active" onclick="filterBigBoard('all')">All</button>
+                        <button class="filter-toggle-btn tier-filter" onclick="filterBigBoard('Elite')">Elite</button>
+                        <button class="filter-toggle-btn tier-filter" onclick="filterBigBoard('Round 1')">Round 1</button>
+                        <button class="filter-toggle-btn tier-filter" onclick="filterBigBoard('Round 2')">Round 2</button>
+                        <button class="filter-toggle-btn tier-filter" onclick="filterBigBoard('Round 3')">Round 3</button>
                     </div>
                 </div>
                 <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem;">
@@ -4766,6 +4919,7 @@ le"></i> Concerns/Areas to Improve</h4>
     <script src="src/js/player-image-database.js"></script>
     <script src="src/js/player-image-loader.js"></script>
     <script src="src/js/data.js"></script>
+    <script src="src/js/pff-data.js"></script>
     <script src="src/js/main.js"></script>
     <!-- Player Comparison Module -->
     <script src="src/js/player-comparison.js"></script>

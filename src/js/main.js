@@ -76,6 +76,24 @@
             }
         }
 
+        // More dropdown toggle
+        function toggleMoreDropdown() {
+            const dropdown = document.getElementById('moreDropdown');
+            if (dropdown) {
+                const isVisible = dropdown.style.display === 'block';
+                dropdown.style.display = isVisible ? 'none' : 'block';
+            }
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            const dropdown = document.getElementById('moreDropdown');
+            const moreBtn = e.target.closest('.nav-dropdown');
+            if (dropdown && !moreBtn) {
+                dropdown.style.display = 'none';
+            }
+        });
+
         // Filter by position
         function filterPicks(position) {
             // Update active button
@@ -147,8 +165,14 @@
             document.getElementById('qbCount').textContent = counts.QB;
             document.getElementById('rbCount').textContent = counts.RB;
             document.getElementById('wrCount').textContent = counts.WR;
-            document.getElementById('olCount').textContent = counts.OT + counts.IOL;
-            document.getElementById('dlCount').textContent = counts.EDGE + counts.DL + counts.LB;
+            document.getElementById('teCount').textContent = counts.TE;
+            document.getElementById('otCount').textContent = counts.OT;
+            document.getElementById('iolCount').textContent = counts.IOL;
+            document.getElementById('edgeCount').textContent = counts.EDGE;
+            document.getElementById('dlCount').textContent = counts.DL;
+            document.getElementById('lbCount').textContent = counts.LB;
+            document.getElementById('cbCount').textContent = counts.CB;
+            document.getElementById('sCount').textContent = counts.S;
         }
 
         // Share pick on Twitter
@@ -253,20 +277,45 @@
                 }
             });
 
-            const r2qbCount = document.getElementById('r2qbCount');
-            const r2rbCount = document.getElementById('r2rbCount');
-            const r2wrCount = document.getElementById('r2wrCount');
-            const r2olCount = document.getElementById('r2olCount');
-            const r2dlCount = document.getElementById('r2dlCount');
-            
-            if (r2qbCount) r2qbCount.textContent = counts.QB;
-            if (r2rbCount) r2rbCount.textContent = counts.RB;
-            if (r2wrCount) r2wrCount.textContent = counts.WR;
-            if (r2olCount) r2olCount.textContent = counts.OT + counts.IOL;
-            if (r2dlCount) r2dlCount.textContent = counts.EDGE + counts.DL + counts.LB;
+            if (document.getElementById('r2qbCount')) document.getElementById('r2qbCount').textContent = counts.QB;
+            if (document.getElementById('r2rbCount')) document.getElementById('r2rbCount').textContent = counts.RB;
+            if (document.getElementById('r2wrCount')) document.getElementById('r2wrCount').textContent = counts.WR;
+            if (document.getElementById('r2teCount')) document.getElementById('r2teCount').textContent = counts.TE;
+            if (document.getElementById('r2otCount')) document.getElementById('r2otCount').textContent = counts.OT;
+            if (document.getElementById('r2iolCount')) document.getElementById('r2iolCount').textContent = counts.IOL;
+            if (document.getElementById('r2edgeCount')) document.getElementById('r2edgeCount').textContent = counts.EDGE;
+            if (document.getElementById('r2dlCount')) document.getElementById('r2dlCount').textContent = counts.DL;
+            if (document.getElementById('r2lbCount')) document.getElementById('r2lbCount').textContent = counts.LB;
+            if (document.getElementById('r2cbCount')) document.getElementById('r2cbCount').textContent = counts.CB;
+            if (document.getElementById('r2sCount')) document.getElementById('r2sCount').textContent = counts.S;
         }
 
-        // Enhanced filter function that works for both rounds
+        // Round 3 Position Counts
+        function updateR3PositionCounts() {
+            const picks = document.querySelectorAll('#round3Picks .pick-card:not(.hidden)');
+            const counts = { QB: 0, RB: 0, WR: 0, TE: 0, OT: 0, IOL: 0, EDGE: 0, DL: 0, LB: 0, CB: 0, S: 0 };
+
+            picks.forEach(pick => {
+                const pos = pick.dataset.position;
+                if (counts.hasOwnProperty(pos)) {
+                    counts[pos]++;
+                }
+            });
+
+            if (document.getElementById('r3qbCount')) document.getElementById('r3qbCount').textContent = counts.QB;
+            if (document.getElementById('r3rbCount')) document.getElementById('r3rbCount').textContent = counts.RB;
+            if (document.getElementById('r3wrCount')) document.getElementById('r3wrCount').textContent = counts.WR;
+            if (document.getElementById('r3teCount')) document.getElementById('r3teCount').textContent = counts.TE;
+            if (document.getElementById('r3otCount')) document.getElementById('r3otCount').textContent = counts.OT;
+            if (document.getElementById('r3iolCount')) document.getElementById('r3iolCount').textContent = counts.IOL;
+            if (document.getElementById('r3edgeCount')) document.getElementById('r3edgeCount').textContent = counts.EDGE;
+            if (document.getElementById('r3dlCount')) document.getElementById('r3dlCount').textContent = counts.DL;
+            if (document.getElementById('r3lbCount')) document.getElementById('r3lbCount').textContent = counts.LB;
+            if (document.getElementById('r3cbCount')) document.getElementById('r3cbCount').textContent = counts.CB;
+            if (document.getElementById('r3sCount')) document.getElementById('r3sCount').textContent = counts.S;
+        }
+
+        // Enhanced filter function that works for all rounds
         function filterAllPicks(position) {
             // Update active button
             document.querySelectorAll('.controls-bar .filter-btn').forEach(btn => btn.classList.remove('active'));
@@ -304,8 +353,25 @@
             const r2noResults = document.getElementById('r2noResults');
             if (r2noResults) r2noResults.style.display = r2visibleCount === 0 && position !== 'all' ? 'block' : 'none';
 
+            // Filter Round 3
+            const r3picks = document.querySelectorAll('#round3Picks .pick-card');
+            let r3visibleCount = 0;
+            r3picks.forEach(pick => {
+                if (position === 'all' || pick.dataset.position === position) {
+                    pick.classList.remove('hidden');
+                    r3visibleCount++;
+                } else {
+                    pick.classList.add('hidden');
+                }
+            });
+            
+            // Show/hide Round 3 no results
+            const r3noResults = document.getElementById('r3noResults');
+            if (r3noResults) r3noResults.style.display = r3visibleCount === 0 && position !== 'all' ? 'block' : 'none';
+
             updatePositionCounts();
             updateR2PositionCounts();
+            updateR3PositionCounts();
             showToast(`Filtered by: ${position === 'all' ? 'All Positions' : position}`);
             
             // Track filter usage in analytics
@@ -580,18 +646,54 @@
         // ==========================================
         // BIG BOARD FUNCTIONS
         // ==========================================
-        
+
+        // Big Board data source and filters
+        let currentBigBoardSource = 'espn';
+        let bigBoardTierFilter = 'all';
+        let bigBoardPositionFilter = 'all';
+
+        // Switch between ESPN and PFF big boards
+        function switchBigBoardSource(source) {
+            currentBigBoardSource = source;
+
+            // Update active button
+            document.querySelectorAll('.edp-toggle button').forEach((btn, idx) => {
+                if (idx < 2) { // Only update source buttons
+                    btn.classList.remove('active');
+                }
+            });
+            event.target.classList.add('active');
+
+            // Reset filters when switching sources
+            bigBoardTierFilter = 'all';
+            bigBoardPositionFilter = 'all';
+
+            // Update tier filter buttons
+            document.querySelectorAll('.tier-filter').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tier-filter')[0].classList.add('active');
+
+            // Re-render big board with new source
+            renderBigBoard();
+
+            const sourceName = source === 'espn' ? 'ESPN' : 'PFF';
+            showToast(`Switched to ${sourceName} rankings`);
+        }
+
         function renderBigBoard() {
             const container = document.getElementById('bigBoardList');
             if (!container) return;
-            
-            let filtered = bigBoardData.filter(player => {
+
+            // Select data source based on current selection
+            const dataSource = currentBigBoardSource === 'espn' ? bigBoardData : pffBigBoardData;
+
+            let filtered = dataSource.filter(player => {
                 const matchesTier = bigBoardTierFilter === 'all' || player.tier === bigBoardTierFilter;
                 const matchesPosition = bigBoardPositionFilter === 'all' || player.position === bigBoardPositionFilter;
                 return matchesTier && matchesPosition;
             });
-            
-            document.getElementById('bigBoardCount').textContent = `Showing ${filtered.length} prospects`;
+
+            const sourceName = currentBigBoardSource === 'espn' ? 'ESPN' : 'PFF';
+            document.getElementById('bigBoardCount').textContent = `Showing ${filtered.length} of ${dataSource.length} prospects (${sourceName})`;
             
             container.innerHTML = filtered.map(player => {
                 const tierClass = player.tier === 'Elite' ? 'elite-tier' : 
@@ -602,16 +704,27 @@
                                   player.tier === 'Round 2' ? 'round2' : 'round3';
                 const tierLabel = player.tier === 'Elite' ? 'ELITE' : player.tier.toUpperCase();
                 
+                // Build meta info based on available data
+                const metaParts = [player.school];
+                if (player.height) metaParts.push(player.height);
+                if (player.weight) metaParts.push(`${player.weight} lbs`);
+                const metaInfo = metaParts.join(' | ');
+
+                const strengthsHtml = player.strengths ?
+                    `<span style="font-size: 0.75rem; color: var(--text-secondary); font-style: italic;">${player.strengths}</span>` : '';
+
+                const gradeDisplay = player.grade || tierLabel;
+
                 return `
                     <div class="big-board-item ${tierClass}">
                         <div class="bb-rank">${player.rank}</div>
                         <div class="bb-player-info">
                             <span class="bb-player-name">${player.name}</span>
-                            <span class="bb-player-meta">${player.school} | ${player.height} | ${player.weight} lbs</span>
-                            <span style="font-size: 0.75rem; color: var(--text-secondary); font-style: italic;">${player.strengths}</span>
+                            <span class="bb-player-meta">${metaInfo}</span>
+                            ${strengthsHtml}
                         </div>
                         <div class="bb-position">${player.position}</div>
-                        <div class="bb-grade ${gradeClass}">${player.grade}</div>
+                        <div class="bb-grade ${gradeClass}">${gradeDisplay}</div>
                         <div class="bb-tier ${gradeClass}">${tierLabel}</div>
                     </div>
                 `;
