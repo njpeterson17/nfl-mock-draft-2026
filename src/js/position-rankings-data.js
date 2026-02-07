@@ -741,8 +741,8 @@ const positionRankingsData = {
     riser: "Zachariah Branch (Georgia)",
     faller: "Ja'Kobi Lane (USC)",
     projection: "6-8 in first round, 15-18 in top 100",
-    round1Count: 4,
-    prospectCount: 15,
+    round1Count: 9,
+    prospectCount: 20,
     topGrade: "6.9",
     traits: [
       { name: "Speed", weight: 20 },
