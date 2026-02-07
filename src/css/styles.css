@@ -3236,22 +3236,23 @@
     font-family: 'Oswald', sans-serif;
 }
 
-/* Team Helmet Images */
+/* Team Helmet Images - PNG from reference */
 .team-helmet-img {
-    width: 80px;
-    height: 67px;
+    width: 100px;
+    height: 100px;
     object-fit: contain;
-    filter: drop-shadow(0 3px 6px rgba(0,0,0,0.4));
-    transition: transform 0.3s ease;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+    transition: transform 0.2s ease;
+    background: transparent;
 }
 
 .team-helmet-img:hover {
-    transform: scale(1.08);
+    transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
     .team-helmet-img {
-        width: 60px;
-        height: 50px;
+        width: 70px;
+        height: 70px;
     }
 }
