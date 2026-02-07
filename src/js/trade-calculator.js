@@ -463,7 +463,7 @@ let tradeCalculatorState = {
 function openTradeCalculator() {
     const modal = document.getElementById('tradeCalculatorModal');
     if (modal) {
-        modal.style.display = 'block';
+        modal.classList.add('active');
         document.body.style.overflow = 'hidden';
         initializeTradeCalculator();
     }
@@ -475,7 +475,7 @@ function openTradeCalculator() {
 function closeTradeCalculator() {
     const modal = document.getElementById('tradeCalculatorModal');
     if (modal) {
-        modal.style.display = 'none';
+        modal.classList.remove('active');
         document.body.style.overflow = '';
     }
 }

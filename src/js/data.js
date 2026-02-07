@@ -252,8 +252,10 @@
                 grade: "A",
                 needs: [
                     { position: "QB", priority: "high" },
-                    { position: "OL", priority: "high" },
-                    { position: "WR", priority: "medium" }
+                    { position: "EDGE", priority: "high" },
+                    { position: "OT", priority: "high" },
+                    { position: "CB", priority: "medium" },
+                    { position: "S", priority: "medium" }
                 ],
                 picks: [
                     { pick: 2, player: "Ty Simpson", position: "QB", school: "Alabama", value: "fair" },
@@ -269,8 +271,10 @@
                 grade: "B+",
                 needs: [
                     { position: "OT", priority: "high" },
-                    { position: "DL", priority: "high" },
-                    { position: "EDGE", priority: "medium" }
+                    { position: "S", priority: "high" },
+                    { position: "IOL", priority: "medium" },
+                    { position: "WR", priority: "medium" },
+                    { position: "EDGE", priority: "low" }
                 ],
                 picks: [
                     { pick: 3, player: "Francis Mauigoa", position: "OT", school: "Miami", value: "fair" }
@@ -284,9 +288,11 @@
                 helmet: { color: "#0C2340", accent: "#4C8FB6" },
                 grade: "B",
                 needs: [
-                    { position: "WR", priority: "high" },
                     { position: "CB", priority: "high" },
-                    { position: "EDGE", priority: "medium" }
+                    { position: "EDGE", priority: "high" },
+                    { position: "WR", priority: "medium" },
+                    { position: "TE", priority: "medium" },
+                    { position: "IOL", priority: "low" }
                 ],
                 picks: [
                     { pick: 4, player: "Carnell Tate", position: "WR", school: "Ohio State", value: "reach" }
@@ -300,9 +306,11 @@
                 helmet: { color: "#001E62", accent: "#A5ACAF" },
                 grade: "B-",
                 needs: [
-                    { position: "Interior DL", priority: "high" },
-                    { position: "QB", priority: "medium" },
-                    { position: "WR", priority: "medium" }
+                    { position: "CB", priority: "high" },
+                    { position: "OT", priority: "high" },
+                    { position: "WR", priority: "medium" },
+                    { position: "IOL", priority: "medium" },
+                    { position: "LB", priority: "low" }
                 ],
                 picks: [
                     { pick: 5, player: "Peter Woods", position: "DL", school: "Clemson", value: "reach" }
@@ -316,9 +324,11 @@
                 helmet: { color: "#311D00", accent: "#FF3C00" },
                 grade: "A-",
                 needs: [
+                    { position: "OT", priority: "high" },
+                    { position: "WR", priority: "high" },
                     { position: "QB", priority: "high" },
-                    { position: "WR", priority: "medium" },
-                    { position: "OT", priority: "medium" }
+                    { position: "IOL", priority: "medium" },
+                    { position: "TE", priority: "low" }
                 ],
                 picks: [
                     { pick: 6, player: "Trinidad Chambliss", position: "QB", school: "Ole Miss", value: "fair" },
@@ -333,9 +343,11 @@
                 helmet: { color: "#773141", accent: "#FFB612" },
                 grade: "A-",
                 needs: [
-                    { position: "DE", priority: "high" },
+                    { position: "EDGE", priority: "high" },
                     { position: "CB", priority: "high" },
-                    { position: "LB", priority: "medium" }
+                    { position: "S", priority: "medium" },
+                    { position: "WR", priority: "medium" },
+                    { position: "TE", priority: "low" }
                 ],
                 picks: [
                     { pick: 7, player: "Rueben Bain Jr.", position: "EDGE", school: "Miami", value: "value" }
@@ -349,9 +361,15 @@
                 helmet: { color: "#101820", accent: "#D3BC8D" },
                 grade: "B",
                 needs: [
-                    { position: "WR", priority: "high" },
-                    { position: "OT", priority: "medium" },
-                    { position: "CB", priority: "medium" }
+                    { position: "DL", priority: "high" },
+                    { position: "CB", priority: "high" },
+                    { position: "IOL", priority: "medium" },
+                    { position: "LB", priority: "medium" },
+                    { position: "EDGE", priority: "low" }
+                    { position: "IOL", priority: "high" },
+                    { position: "EDGE", priority: "medium" },
+                    { position: "LB", priority: "medium" },
+                    { position: "S", priority: "low" }
                 ],
                 picks: [
                     { pick: 8, player: "Jordyn Tyson", position: "WR", school: "Arizona State", value: "reach" }
@@ -365,9 +383,11 @@
                 helmet: { color: "#E31837", accent: "#FFB81C" },
                 grade: "A",
                 needs: [
-                    { position: "Pass rusher", priority: "high" },
-                    { position: "WR", priority: "medium" },
-                    { position: "CB", priority: "medium" }
+                    { position: "WR", priority: "high" },
+                    { position: "DL", priority: "high" },
+                    { position: "RB", priority: "medium" },
+                    { position: "TE", priority: "medium" },
+                    { position: "IOL", priority: "low" }
                 ],
                 picks: [
                     { pick: 9, player: "David Bailey", position: "EDGE", school: "Texas Tech", value: "value" }
@@ -381,9 +401,11 @@
                 helmet: { color: "#FB4F14", accent: "black" },
                 grade: "A-",
                 needs: [
-                    { position: "Interior DL", priority: "high" },
-                    { position: "OT", priority: "medium" },
-                    { position: "LB", priority: "medium" }
+                    { position: "EDGE", priority: "high" },
+                    { position: "S", priority: "high" },
+                    { position: "DL", priority: "medium" },
+                    { position: "LB", priority: "medium" },
+                    { position: "CB", priority: "low" }
                 ],
                 picks: [
                     { pick: 10, player: "Kayden McDonald", position: "DL", school: "Ohio State", value: "fair" },
@@ -398,9 +420,11 @@
                 helmet: { color: "#008E97", accent: "#FC4C02" },
                 grade: "B+",
                 needs: [
+                    { position: "CB", priority: "high" },
+                    { position: "EDGE", priority: "high" },
                     { position: "QB", priority: "high" },
-                    { position: "EDGE", priority: "medium" },
-                    { position: "CB", priority: "medium" }
+                    { position: "IOL", priority: "medium" },
+                    { position: "TE", priority: "low" }
                 ],
                 picks: [
                     { pick: 11, player: "Cole Payton", position: "QB", school: "North Dakota State", value: "reach" },
@@ -417,7 +441,9 @@
                 needs: [
                     { position: "CB", priority: "high" },
                     { position: "S", priority: "high" },
-                    { position: "LB", priority: "medium" }
+                    { position: "EDGE", priority: "medium" },
+                    { position: "LB", priority: "medium" },
+                    { position: "WR", priority: "low" }
                 ],
                 picks: [
                     { pick: 15, player: "Jermod McCoy", position: "CB", school: "Tennessee", value: "value" },
@@ -432,9 +458,11 @@
                 helmet: { color: "#003594", accent: "#FFD100" },
                 grade: "B",
                 needs: [
-                    { position: "QB", priority: "high" },
-                    { position: "DL", priority: "medium" },
-                    { position: "LB", priority: "medium" }
+                    { position: "CB", priority: "high" },
+                    { position: "OT", priority: "high" },
+                    { position: "WR", priority: "medium" },
+                    { position: "QB", priority: "medium" },
+                    { position: "LB", priority: "low" }
                 ],
                 picks: [
                     { pick: 29, player: "Drew Allar", position: "QB", school: "Penn State", value: "fair" },
@@ -450,8 +478,10 @@
                 grade: "A-",
                 needs: [
                     { position: "EDGE", priority: "high" },
-                    { position: "CB", priority: "high" },
-                    { position: "WR", priority: "medium" }
+                    { position: "DL", priority: "high" },
+                    { position: "IOL", priority: "medium" },
+                    { position: "CB", priority: "medium" },
+                    { position: "TE", priority: "low" }
                 ],
                 picks: [
                     { pick: 13, player: "Akheem Mesidor", position: "EDGE", school: "Miami", value: "value" },
@@ -466,9 +496,11 @@
                 helmet: { color: "#D50A0A", accent: "#FF7900" },
                 grade: "B+",
                 needs: [
-                    { position: "EDGE", priority: "high" },
-                    { position: "S", priority: "medium" },
-                    { position: "LB", priority: "medium" }
+                    { position: "RB", priority: "high" },
+                    { position: "CB", priority: "high" },
+                    { position: "EDGE", priority: "medium" },
+                    { position: "IOL", priority: "medium" },
+                    { position: "WR", priority: "low" }
                 ],
                 picks: [
                     { pick: 14, player: "Arvell Reese", position: "LB", school: "Ohio State", value: "value" }
@@ -483,8 +515,10 @@
                 grade: "A-",
                 needs: [
                     { position: "IOL", priority: "high" },
-                    { position: "LB", priority: "high" },
-                    { position: "CB", priority: "medium" }
+                    { position: "OT", priority: "high" },
+                    { position: "EDGE", priority: "medium" },
+                    { position: "S", priority: "medium" },
+                    { position: "CB", priority: "low" }
                 ],
                 picks: [
                     { pick: 32, player: "Olaivavega Ioane", position: "IOL", school: "Penn State", value: "value" },
@@ -499,9 +533,11 @@
                 helmet: { color: "#4F2683", accent: "#FFC62F" },
                 grade: "B+",
                 needs: [
-                    { position: "OT", priority: "high" },
-                    { position: "WR", priority: "high" },
-                    { position: "CB", priority: "medium" }
+                    { position: "CB", priority: "high" },
+                    { position: "S", priority: "high" },
+                    { position: "IOL", priority: "medium" },
+                    { position: "RB", priority: "medium" },
+                    { position: "TE", priority: "low" }
                 ],
                 picks: [
                     { pick: 18, player: "Caleb Lomu", position: "OT", school: "Utah", value: "fair" },
@@ -516,9 +552,11 @@
                 helmet: { color: "#0085CA", accent: "#101820" },
                 grade: "B+",
                 needs: [
+                    { position: "LB", priority: "high" },
                     { position: "EDGE", priority: "high" },
                     { position: "TE", priority: "medium" },
-                    { position: "CB", priority: "medium" }
+                    { position: "IOL", priority: "medium" },
+                    { position: "OT", priority: "low" }
                 ],
                 picks: [
                     { pick: 20, player: "Keldric Faulk", position: "EDGE", school: "Auburn", value: "fair" }
@@ -533,8 +571,10 @@
                 grade: "B",
                 needs: [
                     { position: "QB", priority: "high" },
+                    { position: "WR", priority: "high" },
+                    { position: "CB", priority: "medium" },
                     { position: "IOL", priority: "medium" },
-                    { position: "DL", priority: "medium" }
+                    { position: "EDGE", priority: "low" }
                 ],
                 picks: [
                     { pick: 24, player: "Carson Beck", position: "QB", school: "Miami", value: "fair" }
@@ -548,9 +588,11 @@
                 helmet: { color: "#0076B6", accent: "#FFB81C" },
                 grade: "B+",
                 needs: [
-                    { position: "IOL", priority: "high" },
-                    { position: "DL", priority: "medium" },
-                    { position: "CB", priority: "medium" }
+                    { position: "EDGE", priority: "high" },
+                    { position: "WR", priority: "high" },
+                    { position: "IOL", priority: "medium" },
+                    { position: "OT", priority: "medium" },
+                    { position: "RB", priority: "low" }
                 ],
                 picks: [
                     { pick: 25, player: "Spencer Fano", position: "OT", school: "Utah", value: "fair" }
@@ -564,9 +606,11 @@
                 helmet: { color: "#0B162A", accent: "#C83803" },
                 grade: "B+",
                 needs: [
+                    { position: "DL", priority: "high" },
                     { position: "EDGE", priority: "high" },
-                    { position: "IOL", priority: "medium" },
-                    { position: "WR", priority: "medium" }
+                    { position: "S", priority: "medium" },
+                    { position: "OT", priority: "medium" },
+                    { position: "LB", priority: "low" }
                 ],
                 picks: [
                     { pick: 26, player: "Sonny Styles", position: "LB", school: "Ohio State", value: "value" }
@@ -581,8 +625,10 @@
                 grade: "B",
                 needs: [
                     { position: "WR", priority: "high" },
-                    { position: "CB", priority: "medium" },
-                    { position: "EDGE", priority: "medium" }
+                    { position: "CB", priority: "high" },
+                    { position: "EDGE", priority: "medium" },
+                    { position: "LB", priority: "medium" },
+                    { position: "S", priority: "low" }
                 ],
                 picks: [
                     { pick: 25, player: "Denzel Boston", position: "WR", school: "Washington", value: "fair" }
@@ -597,8 +643,10 @@
                 grade: "B+",
                 needs: [
                     { position: "EDGE", priority: "high" },
+                    { position: "WR", priority: "high" },
                     { position: "CB", priority: "medium" },
-                    { position: "S", priority: "medium" }
+                    { position: "S", priority: "medium" },
+                    { position: "DL", priority: "low" }
                 ],
                 picks: [
                     { pick: 17, player: "CJ Allen", position: "LB", school: "Georgia", value: "value" }
@@ -612,9 +660,11 @@
                 helmet: { color: "#03202F", accent: "#A71930" },
                 grade: "A-",
                 needs: [
+                    { position: "IOL", priority: "high" },
                     { position: "RB", priority: "high" },
-                    { position: "WR", priority: "medium" },
-                    { position: "DL", priority: "medium" }
+                    { position: "S", priority: "medium" },
+                    { position: "DL", priority: "medium" },
+                    { position: "WR", priority: "low" }
                 ],
                 picks: [
                     { pick: 29, player: "Jeremiyah Love", position: "RB", school: "Notre Dame", value: "value" }
@@ -628,9 +678,11 @@
                 helmet: { color: "#004C54", accent: "#A5ACAF" },
                 grade: "B",
                 needs: [
-                    { position: "CB", priority: "high" },
-                    { position: "IOL", priority: "medium" },
-                    { position: "EDGE", priority: "medium" }
+                    { position: "TE", priority: "high" },
+                    { position: "EDGE", priority: "high" },
+                    { position: "WR", priority: "medium" },
+                    { position: "S", priority: "medium" },
+                    { position: "CB", priority: "low" }
                 ],
                 picks: [
                     { pick: 30, player: "Will Johnson", position: "CB", school: "Michigan", value: "fair" }
@@ -644,9 +696,11 @@
                 helmet: { color: "#FB4F14", accent: "#002244" },
                 grade: "B-",
                 needs: [
+                    { position: "WR", priority: "high" },
                     { position: "LB", priority: "high" },
-                    { position: "OT", priority: "medium" },
-                    { position: "S", priority: "medium" }
+                    { position: "IOL", priority: "medium" },
+                    { position: "RB", priority: "medium" },
+                    { position: "TE", priority: "low" }
                 ],
                 picks: [
                     { pick: 31, player: "Sonny Styles", position: "LB", school: "Ohio State", value: "reach" }
