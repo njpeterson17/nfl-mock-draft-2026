@@ -1032,6 +1032,128 @@ const PlayerImageDatabase = {
             cbs: null,
             hasLocal: true,
             teamColorKey: "missouri"
+        },
+
+        // ADDITIONAL 2026 PROSPECTS WITH ESPN IDs
+        "Cade Klubnik": {
+            rank: 101,
+            position: "QB",
+            school: "Clemson",
+            local: null,
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4685413.png",
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "clemson"
+        },
+        "Taylen Green": {
+            rank: 102,
+            position: "QB",
+            school: "Arkansas",
+            local: null,
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431325.png",
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "arkansas"
+        },
+        "Evan Stewart": {
+            rank: 103,
+            position: "WR",
+            school: "Oregon",
+            local: null,
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4685565.png",
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "oregon"
+        },
+        "Kevin Coleman Jr.": {
+            rank: 104,
+            position: "WR",
+            school: "Missouri",
+            local: null,
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4685307.png",
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "missouri"
+        },
+        "Barion Brown": {
+            rank: 105,
+            position: "WR",
+            school: "LSU",
+            local: null,
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4698597.png",
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "lsu"
+        },
+        "Tackett Curtis": {
+            rank: 106,
+            position: "LB",
+            school: "UCF",
+            local: null,
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4870659.png",
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "ucf"
+        },
+        "Anthony Hill Jr.": {
+            rank: 107,
+            position: "LB",
+            school: "Texas",
+            local: null,
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4870805.png",
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "texas"
+        },
+        "Avieon Terrell": {
+            rank: 108,
+            position: "CB",
+            school: "Clemson",
+            local: null,
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4870988.png",
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "clemson"
+        },
+        "Malik Muhammad": {
+            rank: 109,
+            position: "CB",
+            school: "Texas",
+            local: null,
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4870953.png",
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "texas"
+        },
+        "AJ Haulcy": {
+            rank: 110,
+            position: "S",
+            school: "LSU",
+            local: null,
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4905664.png",
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "lsu"
+        },
+        "KJ Bolden": {
+            rank: 111,
+            position: "S",
+            school: "Georgia",
+            local: null,
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/5079334.png",
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "georgia"
+        },
+        "Zion Branch": {
+            rank: 112,
+            position: "S",
+            school: "Georgia",
+            local: null,
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4685282.png",
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "georgia"
         }
     },
 
