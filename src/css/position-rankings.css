@@ -445,6 +445,27 @@
     justify-content: center;
     font-size: 1rem;
     color: var(--text-secondary);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.player-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.player-avatar .avatar-initials {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: 'Oswald', sans-serif;
 }
 
 .player-info-cell h4 {
@@ -556,6 +577,37 @@
     border-radius: 50%;
 }
 
+.comparison-player-avatar {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, var(--secondary), var(--primary));
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.comparison-player-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.comparison-player-avatar .avatar-initials {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: 'Oswald', sans-serif;
+}
+
 .comparison-player-info {
     flex: 1;
 }
@@ -649,9 +701,28 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
-    color: var(--text-secondary);
     flex-shrink: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.modal-player-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.modal-player-photo .player-initials {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: 'Oswald', sans-serif;
 }
 
 .modal-player-info h2 {

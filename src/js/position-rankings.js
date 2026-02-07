@@ -5,6 +5,28 @@ let currentFilter = 'all';
 let currentSort = 'rank';
 let comparisonChart = null;
 
+// Helper function to generate player image path from name
+function getPlayerImagePath(name) {
+    const slug = name.toLowerCase()
+        .replace(/\s+/g, '-')
+        .replace(/[.']/g, '')
+        .replace(/jr$/i, '')
+        .replace(/iii$/i, '')
+        .replace(/ii$/i, '')
+        .replace(/-+$/, '')
+        .trim();
+    return `../images/players/${slug}.jpg`;
+}
+
+// Helper function to get player initials for fallback
+function getPlayerInitials(name) {
+    return name.split(' ')
+        .map(part => part[0])
+        .join('')
+        .toUpperCase()
+        .slice(0, 2);
+}
+
 // Helper function to format stat labels nicely
 function formatStatLabel(key) {
     const labelMap = {
@@ -182,11 +204,13 @@ function renderRankings() {
     const tbody = document.getElementById('rankingsTableBody');
     tbody.innerHTML = prospects.map((p, index) => {
         const medal = p.rank === 1 ? '🥇' : p.rank === 2 ? '🥈' : p.rank === 3 ? '🥉' : '';
-        const gradeClass = parseFloat(p.grade) >= 7.0 ? 'elite' : 
+        const gradeClass = parseFloat(p.grade) >= 7.0 ? 'elite' :
                           parseFloat(p.grade) >= 6.5 ? 'round1' :
                           parseFloat(p.grade) >= 6.0 ? 'round2' :
                           parseFloat(p.grade) >= 5.5 ? 'round3' : 'day3';
-        
+        const imgPath = getPlayerImagePath(p.name);
+        const initials = getPlayerInitials(p.name);
+
         return `
             <tr>
                 <td class="rank-cell">
@@ -195,7 +219,8 @@ function renderRankings() {
                 </td>
                 <td class="player-cell">
                     <div class="player-avatar">
-                        <i class="fas fa-user"></i>
+                        <img src="${imgPath}" alt="${p.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <span class="avatar-initials" style="display: none;">${initials}</span>
                     </div>
                     <div class="player-info-cell">
                         <h4>${p.name}</h4>
@@ -261,10 +286,14 @@ function showProspectDetail(pos, index) {
         runSupport: 'Run Support'
     };
     
+    const imagePath = getPlayerImagePath(prospect.name);
+    const initials = getPlayerInitials(prospect.name);
+
     modalBody.innerHTML = `
         <div class="modal-header">
             <div class="modal-player-photo">
-                <i class="fas fa-user"></i>
+                <img src="${imagePath}" alt="${prospect.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="player-initials" style="display: none;">${initials}</div>
             </div>
             <div class="modal-player-info">
                 <span class="position-badge">${pos} #${prospect.rank}</span>
@@ -403,15 +432,23 @@ function compareProspects(pos, ranks) {
     const container = document.getElementById('comparisonPlayers');
     const colors = ['#00d4ff', '#00ff88', '#ffd700', '#ff6b6b'];
     
-    container.innerHTML = selectedProspects.map((p, i) => `
-        <div class="comparison-player" onclick="toggleComparisonPlayer(${i})">
-            <div class="comparison-player-color" style="background: ${colors[i]}"></div>
-            <div class="comparison-player-info">
-                <h5>${p.name}</h5>
-                <span>${p.school}</span>
+    container.innerHTML = selectedProspects.map((p, i) => {
+        const imgPath = getPlayerImagePath(p.name);
+        const initials = getPlayerInitials(p.name);
+        return `
+            <div class="comparison-player" onclick="toggleComparisonPlayer(${i})">
+                <div class="comparison-player-avatar">
+                    <img src="${imgPath}" alt="${p.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <span class="avatar-initials" style="display: none;">${initials}</span>
+                </div>
+                <div class="comparison-player-info">
+                    <h5>${p.name}</h5>
+                    <span>${p.school}</span>
+                </div>
+                <div class="comparison-player-color" style="background: ${colors[i]}"></div>
             </div>
-        </div>
-    `).join('');
+        `;
+    }).join('');
     
     // Create radar chart
     createComparisonChart(selectedProspects, colors);
