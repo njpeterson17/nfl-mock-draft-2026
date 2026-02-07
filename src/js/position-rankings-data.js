@@ -79,31 +79,32 @@ const positionRankingsData = {
       },
       {
         rank: 3,
-        name: "Drew Allar",
-        school: "Penn State",
-        height: "6'5",
-        weight: 235,
-        grade: "6.5",
+        name: "Carson Beck",
+        school: "Miami",
+        height: "6'4",
+        weight: 220,
+        grade: "6.4",
         tier: "Round 1-2",
         projection: "Late R1 - R2",
         round: 1,
-        oneLineSummary: "Big-armed pocket passer with ideal size (6-5, 235). Fits best in vertical passing system.",
+        oneLineSummary: "Smart, accurate passer with good size. Transferred from Georgia to Miami after injury.",
         strengths: [
-          "Prototypical NFL size (6'5, 235)",
-          "Elite arm strength and velocity",
-          "Pocket presence and composure",
-          "Big-game experience at Penn State"
+          "High football IQ and processing",
+          "Accurate on intermediate routes",
+          "Good pocket presence",
+          "Experience in elite program at Georgia"
         ],
         weaknesses: [
-          "Decision-making under pressure",
-          "Touch on intermediate routes",
-          "Limited mobility outside pocket"
+          "Coming off elbow injury",
+          "Average arm strength",
+          "Limited mobility",
+          "Inconsistent under pressure"
         ],
-        stats: { forty: "4.82", vertical: "30.5", broad: "9'2", games: 26, completion: "64%", yards: 6120, tds: 45, ints: 18 },
-        metrics: { arm: 5, accuracy: 3, mobility: 2, processing: 3, leadership: 4 },
-        comparison: "Ceiling: Ben Roethlisberger | Floor: Josh Dobbs",
-        bestFits: ["Rams", "Steelers", "Buccaneers"],
-        report: "Allar is a classic pocket passer with the size and arm strength teams covet. Best fit in a vertical passing system that can maximize his arm talent while minimizing mobility concerns."
+        stats: { forty: "4.85", vertical: "29.0", broad: "9'0", games: 24, completion: "67%", yards: 5800, tds: 42, ints: 14 },
+        metrics: { arm: 3, accuracy: 4, mobility: 2, processing: 4, leadership: 4 },
+        comparison: "Ceiling: Kirk Cousins | Floor: Andy Dalton",
+        bestFits: ["Rams", "Steelers", "Browns"],
+        report: "Beck is a smart, efficient passer who can run an NFL offense. Injury concerns and arm strength questions may push him to late R1 or R2."
       }
     ]
   },
