@@ -210,25 +210,6 @@
                 </div>
             </div>
 
-            <!-- EDP Filter Panel -->
-            <div class="edp-panel">
-                <div class="edp-panel-header">
-                    <div class="edp-panel-title">
-                        <i class="fas fa-chart-line"></i>
-                        <span>Grinding the Mocks <span style="color: var(--text-secondary); font-weight: 400;">| Expected Draft Position</span></span>
-                    </div>
-                    <div class="edp-toggle">
-                        <button class="edp-toggle-btn active" onclick="filterByEDP('all')">All</button>
-                        <button class="edp-toggle-btn" onclick="filterByEDP('value')">Value Picks</button>
-                        <button class="edp-toggle-btn" onclick="filterByEDP('reach')">Reaches</button>
-                    </div>
-                </div>
-                <div class="gtm-attribution">
-                    <i class="fas fa-database"></i>
-                    <span>EDP data based on aggregated mock draft analysis. <a href="https://grindingthemocks.shinyapps.io/Dashboard/" target="_blank">View Grinding the Mocks <i class="fas fa-external-link-alt" style="font-size: 0.7rem;"></i></a></span>
-                </div>
-            </div>
-
             <div id="round1Picks">
                 <!-- Pick 1: Raiders -->
                 <div class="pick-card" data-position="QB" data-team="Raiders" data-player="Fernando Mendoza" style="animation-delay: 0.05s">
@@ -239,6 +220,7 @@
                             <h3>Las Vegas Raiders</h3>
                             <span class="team-record">3-14 | #1 Overall</span>
                             <div class="team-needs">
+                                <span class="need-badge need-high">QB</span>
                                 <span class="need-badge need-high">EDGE</span>
                                 <span class="need-badge need-high">WR</span>
                                 <span class="need-badge need-high">OL</span>
@@ -3977,6 +3959,25 @@ le"></i> Concerns/Areas to Improve</h4>
                 <i class="fas fa-search"></i>
                 <h3>No picks found</h3>
                 <p>Try adjusting your filters or search terms</p>
+            </div>
+
+            <!-- EDP Filter Panel -->
+            <div class="edp-panel" style="margin-top: 3rem;">
+                <div class="edp-panel-header">
+                    <div class="edp-panel-title">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Grinding the Mocks <span style="color: var(--text-secondary); font-weight: 400;">| Expected Draft Position</span></span>
+                    </div>
+                    <div class="edp-toggle">
+                        <button class="edp-toggle-btn active" onclick="filterByEDP('all')">All</button>
+                        <button class="edp-toggle-btn" onclick="filterByEDP('value')">Value Picks</button>
+                        <button class="edp-toggle-btn" onclick="filterByEDP('reach')">Reaches</button>
+                    </div>
+                </div>
+                <div class="gtm-attribution">
+                    <i class="fas fa-database"></i>
+                    <span>EDP data based on aggregated mock draft analysis. <a href="https://grindingthemocks.shinyapps.io/Dashboard/" target="_blank">View Grinding the Mocks <i class="fas fa-external-link-alt" style="font-size: 0.7rem;"></i></a></span>
+                </div>
             </div>
         </div>
 
