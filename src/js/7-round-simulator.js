@@ -779,6 +779,8 @@ function makePick(pickData, player) {
     addToRecentPicks(pickData, player);
     renderDraftBoardMini();
     renderHistoryList();
+    renderMyPicks();
+    renderTeamNeeds();
     updateStats();
     
     // Show pick announcement

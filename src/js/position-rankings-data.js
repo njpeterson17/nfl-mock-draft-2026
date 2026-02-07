@@ -185,6 +185,90 @@ const positionRankingsData = {
         comparison: "Ceiling: Alvin Kamara | Floor: Nyheim Hines",
         bestFits: ["Saints", "Eagles", "Bears"],
         report: "Price is a dynamic playmaker with elite return skills. Best suited for a complementary role or committee lead."
+      },
+      {
+        rank: 3,
+        name: "Emmett Johnson",
+        school: "Nebraska",
+        height: "5'11",
+        weight: 200,
+        grade: "6.3",
+        tier: "Round 2-3",
+        projection: "R2-R3",
+        round: 2,
+        oneLineSummary: "Patient, lateral-movement specialist with rare vision and contact balance. Low-center-of-gravity processor.",
+        strengths: [
+          "Elite patience and vision",
+          "Exceptional lateral agility",
+          "Outstanding contact balance",
+          "Improved receiving role"
+        ],
+        weaknesses: [
+          "Undersized frame lacks power",
+          "Limited long speed",
+          "Inconsistent pass protection"
+        ],
+        stats: { forty: "4.50", vertical: "34.0", broad: "9'8", games: 24, carries: 290, yards: 1580, avg: "5.4", tds: 14, receptions: 46, recYds: 370, recTds: 3 },
+        metrics: { speed: 3, power: 2, vision: 5, receiving: 4, passPro: 2 },
+        comparison: "Ceiling: Alex Mattison | Floor: Situational back",
+        bestFits: ["Broncos", "Packers", "Vikings"],
+        report: "Johnson is a patient runner with excellent lateral movement. Best in zone schemes where his vision can shine."
+      },
+      {
+        rank: 4,
+        name: "Kaytron Allen",
+        school: "Penn State",
+        height: "5'11",
+        weight: 229,
+        grade: "6.2",
+        tier: "Round 2-3",
+        projection: "R2-R3",
+        round: 2,
+        oneLineSummary: "Durable downhill power back with NFL-ready techniques. All-time Penn State rusher who excels between the tackles.",
+        strengths: [
+          "Downhill, bully-ball running style",
+          "Exceptional durability (41 games)",
+          "Outstanding pass protector",
+          "Excellent contact balance"
+        ],
+        weaknesses: [
+          "Limited hip looseness and lateral quickness",
+          "Average receiving threat",
+          "No elite physical upside"
+        ],
+        stats: { forty: "4.55", vertical: "32.0", broad: "9'4", games: 41, carries: 680, yards: 3200, avg: "4.7", tds: 35, receptions: 48, recYds: 380, recTds: 4 },
+        metrics: { speed: 3, power: 5, vision: 4, receiving: 3, passPro: 5 },
+        comparison: "Ceiling: Kareem Hunt | Floor: Cam Akers",
+        bestFits: ["Ravens", "Titans", "Colts"],
+        report: "Allen is a reliable power back with excellent pass protection. Day 2 starter ceiling with high floor."
+      },
+      {
+        rank: 5,
+        name: "Mike Washington Jr.",
+        school: "Arkansas",
+        height: "6'2",
+        weight: 223,
+        grade: "6.0",
+        tier: "Round 3",
+        projection: "R3",
+        round: 3,
+        oneLineSummary: "Physical power runner with rare burst and playmaking ability. High-motor complement back with big-play potential.",
+        strengths: [
+          "Rare size and speed combination",
+          "Decisive north-south runner",
+          "Excellent yards-after-contact",
+          "High-motor performer"
+        ],
+        weaknesses: [
+          "Ball security liability (10 career fumbles)",
+          "Inconsistent pass protection",
+          "Limited receiving threat"
+        ],
+        stats: { forty: "4.52", vertical: "35.0", broad: "10'0", games: 22, carries: 245, yards: 1070, avg: "6.4", tds: 8, receptions: 18, recYds: 140, recTds: 1 },
+        metrics: { speed: 4, power: 4, vision: 3, receiving: 2, passPro: 2 },
+        comparison: "Ceiling: AJ Dillon | Floor: Complementary back",
+        bestFits: ["Packers", "Bills", "Eagles"],
+        report: "Washington has size and burst but fumble issues hurt his stock. Day 3 steal potential if he cleans up ball security."
       }
     ]
   },
@@ -265,6 +349,118 @@ const positionRankingsData = {
         comparison: "Ceiling: DeAndre Hopkins | Floor: Tre'Quan Smith",
         bestFits: ["Saints", "Patriots", "Jaguars"],
         report: "Tyson is a contested catch specialist who dominates in the red zone. His ability to win 50/50 balls makes him a valuable target."
+      },
+      {
+        rank: 3,
+        name: "Makai Lemon",
+        school: "USC",
+        height: "5'11",
+        weight: 195,
+        grade: "6.6",
+        tier: "Round 1-2",
+        projection: "Late R1 - R2",
+        round: 1,
+        oneLineSummary: "Pound-for-pound toughest receiver in the nation. Elite route runner with YAC ability. Biletnikoff winner.",
+        strengths: [
+          "Elite route-running polish",
+          "Exceptional toughness and tackle-breaking",
+          "Strong spatial awareness",
+          "2025 Biletnikoff Award winner"
+        ],
+        weaknesses: [
+          "Struggles against elite press coverage",
+          "Smaller frame limits outside role",
+          "Lacks elite vertical speed"
+        ],
+        stats: { forty: "4.45", vertical: "35.0", broad: "10'0", games: 26, catches: 142, yards: 1820, avg: "12.8", tds: 16 },
+        metrics: { speed: 4, routeRunning: 5, hands: 5, contested: 3, yac: 5 },
+        comparison: "Ceiling: Amon-Ra St. Brown | Floor: Jaxon Smith-Njigba",
+        bestFits: ["Chiefs", "Eagles", "Lions"],
+        report: "Lemon wins with polish, football IQ, and elite tackle-breaking ability. Projects as a slot-to-Z receiver with WR2 upside."
+      },
+      {
+        rank: 4,
+        name: "Chris Brazzell II",
+        school: "Tennessee",
+        height: "6'5",
+        weight: 200,
+        grade: "6.4",
+        tier: "Round 2",
+        projection: "R2",
+        round: 2,
+        oneLineSummary: "Explosive field-stretching receiver with elite vertical ability and quick-twitch athleticism.",
+        strengths: [
+          "Elite length and field-stretching speed",
+          "Quick-twitch route running",
+          "High-point specialist",
+          "Strong run blocker for size"
+        ],
+        weaknesses: [
+          "Concentration drops concern",
+          "Lacks lateral agility",
+          "Could add 10-15 pounds of strength"
+        ],
+        stats: { forty: "4.42", vertical: "38.0", broad: "10'6", games: 24, catches: 98, yards: 1580, avg: "16.1", tds: 14 },
+        metrics: { speed: 5, routeRunning: 3, hands: 3, contested: 4, yac: 3 },
+        comparison: "Ceiling: Sidney Rice | Floor: Jordan Addison",
+        bestFits: ["Titans", "Saints", "Browns"],
+        report: "Brazzell is a vertical threat with elite size and speed. Drop issues concern, but talent is undeniable."
+      },
+      {
+        rank: 5,
+        name: "Denzel Boston",
+        school: "Washington",
+        height: "6'4",
+        weight: 209,
+        grade: "6.3",
+        tier: "Round 2",
+        projection: "R2",
+        round: 2,
+        oneLineSummary: "Size/weight/speed specimen who plays bigger than his frame. Dominates at catch point.",
+        strengths: [
+          "Elite catch radius and hands",
+          "Exceptional body control",
+          "Physical play through contact",
+          "DK Metcalf-like profile"
+        ],
+        weaknesses: [
+          "Lacks elite separation ability",
+          "Limited route-running refinement",
+          "May be limited to outside role"
+        ],
+        stats: { forty: "4.48", vertical: "37.0", broad: "10'4", games: 26, catches: 112, yards: 1650, avg: "14.7", tds: 12 },
+        metrics: { speed: 4, routeRunning: 3, hands: 5, contested: 5, yac: 3 },
+        comparison: "Ceiling: DK Metcalf | Floor: N'Keal Harry",
+        bestFits: ["Seahawks", "Dolphins", "Jets"],
+        report: "Boston has elite size and catch point skills. Needs to refine routes but has X-receiver upside."
+      },
+      {
+        rank: 6,
+        name: "Elijah Sarratt",
+        school: "Indiana",
+        height: "6'0",
+        weight: 210,
+        grade: "6.2",
+        tier: "Round 2-3",
+        projection: "R2-R3",
+        round: 2,
+        oneLineSummary: "Physical, clutch performer with strong hands. Reliable producer who makes plays when it matters.",
+        strengths: [
+          "Exceptional competitive toughness",
+          "Polished route-running",
+          "Clutch performer in big games",
+          "Strong hands at catch point"
+        ],
+        weaknesses: [
+          "Average top-end speed",
+          "Not a dynamic YAC creator",
+          "May project as WR3"
+        ],
+        stats: { forty: "4.52", vertical: "34.0", broad: "9'10", games: 28, catches: 118, yards: 1480, avg: "12.5", tds: 14 },
+        metrics: { speed: 3, routeRunning: 4, hands: 5, contested: 4, yac: 3 },
+        comparison: "Ceiling: Keenan Allen | Floor: Reliable WR3",
+        bestFits: ["Colts", "Texans", "Broncos"],
+        report: "Sarratt is a reliable chain-mover with strong hands and clutch gene. Day 2 value with WR2 upside."
       }
     ]
   },
@@ -317,6 +513,90 @@ const positionRankingsData = {
         comparison: "Ceiling: George Kittle | Floor: Juwan Johnson",
         bestFits: ["Chargers", "Jets", "Packers"],
         report: "Sadiq is the top TE in the class with rare athleticism. Best utilized as a move TE who can create mismatches all over the field."
+      },
+      {
+        rank: 2,
+        name: "Max Klare",
+        school: "Ohio State",
+        height: "6'5",
+        weight: 243,
+        grade: "6.3",
+        tier: "Round 2-3",
+        projection: "R2-R3",
+        round: 2,
+        oneLineSummary: "Elite route-running receiver with butter-smooth athleticism. Pure pass-game weapon.",
+        strengths: [
+          "Masterful route runner",
+          "Great short-area quickness",
+          "Creates separation with subtle movements",
+          "Fluent in reading coverage"
+        ],
+        weaknesses: [
+          "Significant blocking deficiencies",
+          "Focus drops and hand technique issues",
+          "Limited three-down potential"
+        ],
+        stats: { forty: "4.62", vertical: "34.0", broad: "10'0", games: 26, catches: 78, yards: 980, avg: "12.6", tds: 8 },
+        metrics: { receiving: 5, blocking: 1, athleticism: 4, size: 4, routeRunning: 5 },
+        comparison: "Ceiling: Kyle Pitts-lite | Floor: Receiving specialist",
+        bestFits: ["Eagles", "Bengals", "Cardinals"],
+        report: "Klare is a pure receiving TE with elite route running. Blocking issues limit his Day 1 role but pass-game upside is high."
+      },
+      {
+        rank: 3,
+        name: "Jack Endries",
+        school: "Texas",
+        height: "6'4",
+        weight: 236,
+        grade: "6.1",
+        tier: "Round 3",
+        projection: "R3",
+        round: 3,
+        oneLineSummary: "Sure-handed receiver with crisp routes and excellent zone understanding.",
+        strengths: [
+          "Sure hands with 1.3% drop rate",
+          "Crisp route running",
+          "Excellent zone awareness",
+          "Reliable over the middle"
+        ],
+        weaknesses: [
+          "Frame appears maxed out",
+          "Weak run blocker",
+          "Three-down potential limited"
+        ],
+        stats: { forty: "4.68", vertical: "32.5", broad: "9'8", games: 24, catches: 62, yards: 820, avg: "13.2", tds: 6 },
+        metrics: { receiving: 4, blocking: 2, athleticism: 3, size: 3, routeRunning: 4 },
+        comparison: "Ceiling: Dalton Schultz | Floor: Reliable TE2",
+        bestFits: ["Cowboys", "Steelers", "Broncos"],
+        report: "Endries is a reliable pass catcher with solid hands. Limited blocking but can be a quality TE2 in the right system."
+      },
+      {
+        rank: 4,
+        name: "Michael Trigg",
+        school: "Baylor",
+        height: "6'4",
+        weight: 240,
+        grade: "5.9",
+        tier: "Round 3-4",
+        projection: "R3-R4",
+        round: 3,
+        oneLineSummary: "True mismatch with elite athleticism. Dangerous in red zone but inconsistent blocker.",
+        strengths: [
+          "Elite athleticism and movement",
+          "Strong hands with great catch radius",
+          "Elite red zone threat",
+          "Dangerous after the catch"
+        ],
+        weaknesses: [
+          "Inconsistent blocking technique",
+          "Concentration drops throughout tape",
+          "Durability concerns"
+        ],
+        stats: { forty: "4.58", vertical: "35.0", broad: "10'2", games: 22, catches: 54, yards: 720, avg: "13.3", tds: 8 },
+        metrics: { receiving: 4, blocking: 2, athleticism: 5, size: 3, routeRunning: 3 },
+        comparison: "Ceiling: Jordan Reed | Floor: Tucker Kraft",
+        bestFits: ["Chiefs", "Ravens", "49ers"],
+        report: "Trigg has mismatch ability but needs to clean up drops and blocking. High ceiling with developmental path."
       }
     ]
   },
