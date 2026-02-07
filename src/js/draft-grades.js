@@ -553,15 +553,7 @@ function addPickGradesToCards() {
             const grade = calculatePickGrade(playerName, teamName, position, pickNumber);
             const letterGrade = scoreToGrade(grade.weightedScore);
             
-            // Find player info section
-            const playerInfo = card.querySelector('.player-info h2');
-            if (playerInfo && !playerInfo.querySelector('.pick-grade')) {
-                const gradeBadge = document.createElement('span');
-                gradeBadge.className = `pick-grade ${letterGrade.class}`;
-                gradeBadge.textContent = letterGrade.grade;
-                gradeBadge.title = `Pick Grade: ${letterGrade.grade} (${Math.round(grade.weightedScore)})`;
-                playerInfo.appendChild(gradeBadge);
-            }
+            // Grade badges removed from pick cards - grades only shown on Draft Grades page
         }
     });
 }
