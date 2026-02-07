@@ -2371,3 +2371,66 @@
                 window.playerImageLoader.processAllContainers();
             }
         });
+
+// ==========================================
+// NEXT PICK DISPLAY
+// ==========================================
+
+function displayNextPicks() {
+    // Get all pick cards
+    const pickCards = document.querySelectorAll('.pick-card');
+    
+    // Build a map of team -> array of their picks (sorted by pick number)
+    const teamPicks = {};
+    
+    pickCards.forEach(card => {
+        const team = card.dataset.team;
+        const pickNumber = parseInt(card.querySelector('.pick-number')?.textContent);
+        
+        if (team && !isNaN(pickNumber)) {
+            if (!teamPicks[team]) {
+                teamPicks[team] = [];
+            }
+            teamPicks[team].push({ pickNumber, card });
+        }
+    });
+    
+    // Sort each team's picks
+    Object.keys(teamPicks).forEach(team => {
+        teamPicks[team].sort((a, b) => a.pickNumber - b.pickNumber);
+    });
+    
+    // Add next pick info to each card
+    Object.keys(teamPicks).forEach(team => {
+        const picks = teamPicks[team];
+        
+        picks.forEach((pick, index) => {
+            const nextPick = picks[index + 1];
+            const teamDetails = pick.card.querySelector('.team-details');
+            
+            if (teamDetails && !teamDetails.querySelector('.next-pick')) {
+                const nextPickDiv = document.createElement('div');
+                nextPickDiv.className = 'next-pick';
+                
+                if (nextPick) {
+                    nextPickDiv.innerHTML = `<span class="next-pick-label">Next Pick:</span> <span class="next-pick-number">#${nextPick.pickNumber}</span>`;
+                } else {
+                    nextPickDiv.innerHTML = `<span class="next-pick-label">Next Pick:</span> <span class="next-pick-number">None</span>`;
+                }
+                
+                // Insert after team record
+                const teamRecord = teamDetails.querySelector('.team-record');
+                if (teamRecord) {
+                    teamRecord.after(nextPickDiv);
+                } else {
+                    teamDetails.appendChild(nextPickDiv);
+                }
+            }
+        });
+    });
+}
+
+// Run when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(displayNextPicks, 500);
+});

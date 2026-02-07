@@ -45,7 +45,7 @@ const ConsensusMockData = {
 
     // Team data for picks
     teams: {
-        1: { name: 'Las Vegas Raiders', code: 'LV', record: '3-14', needs: ['EDGE', 'WR', 'OL'] },
+        1: { name: 'Las Vegas Raiders', code: 'LV', record: '3-14', needs: ['QB', 'EDGE', 'WR', 'OL'] },
         2: { name: 'New York Jets', code: 'NYJ', record: '3-14', needs: ['OL', 'RB', 'EDGE'] },
         3: { name: 'Arizona Cardinals', code: 'ARI', record: '3-14', needs: ['OT', 'DL', 'EDGE'] },
         4: { name: 'Tennessee Titans', code: 'TEN', record: '3-14', needs: ['WR', 'CB', 'EDGE'] },
@@ -72,7 +72,7 @@ const ConsensusMockData = {
         25: { name: 'Dallas Cowboys', code: 'DAL', record: '12-5', needs: ['Defense', 'WR', 'RB'] },
         26: { name: 'Philadelphia Eagles', code: 'PHI', record: '13-4', needs: ['CB', 'IOL', 'EDGE'] },
         27: { name: 'Cincinnati Bengals', code: 'CIN', record: '13-4', needs: ['Interior DL', 'OT', 'LB'] },
-        28: { name: 'Las Vegas Raiders', code: 'LV', record: '13-4', needs: ['EDGE', 'WR', 'OL'] },
+        28: { name: 'Las Vegas Raiders', code: 'LV', record: '3-14', needs: ['QB', 'EDGE', 'WR', 'OL'] },
         29: { name: 'Pittsburgh Steelers', code: 'PIT', record: '13-4', needs: ['QB', 'IOL', 'DL'] },
         30: { name: 'Denver Broncos', code: 'DEN', record: '14-3', needs: ['LB', 'OT', 'S'] },
         31: { name: 'Los Angeles Rams', code: 'LAR', record: '14-3', needs: ['QB', 'DL', 'LB'] },
