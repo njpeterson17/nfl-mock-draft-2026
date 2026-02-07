@@ -435,48 +435,6 @@
             `;
         }
 
-        // Add EDP badges to pick cards on page load
-        function addEDPBadgesToPicks() {
-            // Round 1 picks
-            document.querySelectorAll('#round1Picks .pick-card').forEach(card => {
-                const playerName = card.dataset.player;
-                const pickNumber = parseInt(card.querySelector('.pick-number').textContent);
-                const playerInfo = card.querySelector('.player-info');
-                
-                if (playerName && edpData[playerName]) {
-                    const edpHTML = generateEDPBadge(playerName, pickNumber);
-                    const edpContainer = document.createElement('div');
-                    edpContainer.className = 'edp-container';
-                    edpContainer.innerHTML = edpHTML;
-                    
-                    // Insert after player stats
-                    const statsDiv = playerInfo.querySelector('.player-stats');
-                    if (statsDiv) {
-                        statsDiv.after(edpContainer);
-                    }
-                }
-            });
-            
-            // Round 2 picks
-            document.querySelectorAll('#round2Picks .pick-card').forEach(card => {
-                const playerName = card.dataset.player;
-                const pickNumber = parseInt(card.querySelector('.pick-number').textContent);
-                const playerInfo = card.querySelector('.player-info');
-                
-                if (playerName && edpData[playerName]) {
-                    const edpHTML = generateEDPBadge(playerName, pickNumber);
-                    const edpContainer = document.createElement('div');
-                    edpContainer.className = 'edp-container';
-                    edpContainer.innerHTML = edpHTML;
-                    
-                    const statsDiv = playerInfo.querySelector('.player-stats');
-                    if (statsDiv) {
-                        statsDiv.after(edpContainer);
-                    }
-                }
-            });
-        }
-
         // Filter picks by value/reach
         function filterByEDP(type) {
             edpFilter = type;
