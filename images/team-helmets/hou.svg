@@ -1,57 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 90">
   <defs>
-    <linearGradient id="helmetShellHOU" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#03202F;stop-opacity:1" />
+    <linearGradient id="shellGradHOU" x1="30%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" style="stop-color:#365362;stop-opacity:1" />
       <stop offset="50%" style="stop-color:#03202F;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#000c1b;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="helmetHighlightHOU" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.4" />
-      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
     </linearGradient>
     <filter id="shadowHOU" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="1" dy="1" stdDeviation="1" flood-opacity="0.3"/>
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-opacity="0.3"/>
     </filter>
   </defs>
   
-  <!-- Helmet shell (side profile) -->
-  <path d="M 25 65 Q 25 25 65 20 Q 100 20 105 55 Q 108 75 95 85 L 85 88 Q 70 92 50 90 Q 30 88 25 65 Z" 
-        fill="url(#helmetShellHOU)" stroke="#A71930" stroke-width="2" filter="url(#shadowHOU)"/>
+  <!-- Helmet shell (classic side profile) -->
+  <path d="M 25 70 C 20 70 18 55 22 40 C 26 25 45 15 70 15 C 95 15 105 30 105 50 C 105 65 100 75 90 80 L 75 85" 
+        fill="url(#shellGradHOU)" stroke="#333333" stroke-width="1.5" filter="url(#shadowHOU)"/>
   
-  <!-- Helmet highlight -->
-  <ellipse cx="55" cy="38" rx="30" ry="15" fill="url(#helmetHighlightHOU)"/>
+  <!-- Helmet highlight (glossy effect) -->
+  <ellipse cx="55" cy="30" rx="25" ry="12" fill="#FFFFFF" opacity="0.25"/>
   
-  <!-- Logo on helmet side -->
-  <g transform="translate(45, 45) scale(0.5)">
-    <path d="M 40 45 Q 50 40 60 45 L 58 50 L 60 55 Q 50 60 40 55 L 42 50 Z" fill="#FFFFFF" stroke="#A71930" stroke-width="1"/>
-  </g>
-  
-  <!-- Facemask attachment points -->
-  <circle cx="28" cy="58" r="4" fill="#888888" stroke="#666666" stroke-width="1"/>
-  <circle cx="32" cy="72" r="3" fill="#888888" stroke="#666666" stroke-width="1"/>
-  
-  <!-- Facemask (side profile bars) -->
-  <g stroke="#A71930" stroke-width="3" fill="none" stroke-linecap="round">
-    <!-- Top bar -->
-    <path d="M 28 58 Q 45 52 70 58"/>
-    <!-- Middle bar -->
-    <path d="M 30 65 Q 50 58 75 65"/>
-    <!-- Bottom bar -->
-    <path d="M 32 72 Q 52 65 78 72"/>
-    <!-- Vertical connectors -->
-    <path d="M 45 55 L 45 68" stroke-width="2"/>
-    <path d="M 60 57 L 60 70" stroke-width="2"/>
-  </g>
-  
-  <!-- Facemask outline (darker for depth) -->
-  <path d="M 28 58 Q 45 52 70 58" stroke="#444444" stroke-width="1" fill="none"/>
-  <path d="M 30 65 Q 50 58 75 65" stroke="#444444" stroke-width="1" fill="none"/>
-  <path d="M 32 72 Q 52 65 78 72" stroke="#444444" stroke-width="1" fill="none"/>
+  <!-- Logo on side -->
+  <circle cx="55" cy="40" r="10" fill="#A71930"/>
+              <path d="M 49 36 L 61 44 M 61 36 L 49 44" stroke="#FFFFFF" stroke-width="2"/>
   
   <!-- Ear hole -->
-  <ellipse cx="35" cy="52" rx="5" ry="8" fill="#222222" stroke="#444444" stroke-width="1"/>
+  <ellipse cx="32" cy="48" rx="6" ry="10" fill="#222222" stroke="#444444" stroke-width="1"/>
+  
+  <!-- Facemask clips -->
+  <circle cx="28" cy="55" r="3" fill="#888888"/>
+  <circle cx="32" cy="68" r="2.5" fill="#888888"/>
+  
+  <!-- Facemask bars (classic style) -->
+  <g stroke="#A71930" stroke-width="3.5" fill="none" stroke-linecap="round">
+    <!-- Top bar -->
+    <path d="M 28 55 Q 50 48 78 55"/>
+    <!-- Middle bar -->
+    <path d="M 30 62 Q 52 55 80 62"/>
+    <!-- Bottom bar -->
+    <path d="M 32 68 Q 54 62 82 68"/>
+    <!-- Vertical supports -->
+    <path d="M 45 52 L 45 70" stroke-width="2.5"/>
+    <path d="M 62 54 L 62 71" stroke-width="2.5"/>
+  </g>
   
   <!-- Chin strap -->
-  <path d="M 80 75 Q 85 80 82 88" stroke="#888888" stroke-width="3" fill="none"/>
-  <circle cx="82" cy="88" r="3" fill="#666666"/>
+  <path d="M 82 68 Q 88 72 85 82" stroke="#666666" stroke-width="3" fill="none"/>
 </svg>
