@@ -6,7 +6,7 @@
             --gold: #ffd700;
             --text-primary: #ffffff;
             --text-secondary: #8b8b9a;
-            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-bg: rgba(255, 255, 255, 0.07);
             --border: rgba(255, 255, 255, 0.08);
             --success: #00ff88;
             --info: #00d4ff;
@@ -465,7 +465,7 @@
         .pick-card:hover {
             border-color: var(--team-color, var(--accent));
             border-left-color: var(--team-color, var(--accent));
-            box-shadow: 0 0 20px color-mix(in srgb, var(--team-color, var(--accent)) 20%, transparent);
+            box-shadow: 0 0 20px var(--team-shadow, var(--shadow-color));
         }
 
         .pick-card.hidden {
@@ -476,10 +476,44 @@
             display: flex;
             align-items: center;
             padding: 1.5rem 2rem;
-            background: linear-gradient(90deg, color-mix(in srgb, var(--team-color, #00d4ff) 8%, transparent) 0%, transparent 100%);
+            background: var(--team-gradient, linear-gradient(90deg, rgba(0,212,255,0.05) 0%, transparent 100%));
             border-bottom: 1px solid var(--border);
             gap: 1.5rem;
         }
+
+        /* Team-specific gradients for pick headers */
+        .pick-card[data-team="Raiders"] { --team-gradient: linear-gradient(90deg, rgba(0,0,0,0.08) 0%, transparent 100%); --team-shadow: rgba(165,172,175,0.3); }
+        .pick-card[data-team="Jets"] { --team-gradient: linear-gradient(90deg, rgba(18,87,64,0.08) 0%, transparent 100%); --team-shadow: rgba(18,87,64,0.3); }
+        .pick-card[data-team="Cardinals"] { --team-gradient: linear-gradient(90deg, rgba(151,35,63,0.08) 0%, transparent 100%); --team-shadow: rgba(151,35,63,0.3); }
+        .pick-card[data-team="Titans"] { --team-gradient: linear-gradient(90deg, rgba(12,35,64,0.08) 0%, transparent 100%); --team-shadow: rgba(76,143,182,0.3); }
+        .pick-card[data-team="Giants"] { --team-gradient: linear-gradient(90deg, rgba(0,30,98,0.08) 0%, transparent 100%); --team-shadow: rgba(0,30,98,0.3); }
+        .pick-card[data-team="Browns"] { --team-gradient: linear-gradient(90deg, rgba(49,29,0,0.08) 0%, transparent 100%); --team-shadow: rgba(255,60,0,0.3); }
+        .pick-card[data-team="Commanders"] { --team-gradient: linear-gradient(90deg, rgba(119,49,65,0.08) 0%, transparent 100%); --team-shadow: rgba(255,182,18,0.3); }
+        .pick-card[data-team="Saints"] { --team-gradient: linear-gradient(90deg, rgba(16,24,32,0.08) 0%, transparent 100%); --team-shadow: rgba(211,188,141,0.3); }
+        .pick-card[data-team="Chiefs"] { --team-gradient: linear-gradient(90deg, rgba(227,24,55,0.08) 0%, transparent 100%); --team-shadow: rgba(227,24,55,0.3); }
+        .pick-card[data-team="Bengals"] { --team-gradient: linear-gradient(90deg, rgba(251,79,20,0.08) 0%, transparent 100%); --team-shadow: rgba(251,79,20,0.3); }
+        .pick-card[data-team="Dolphins"] { --team-gradient: linear-gradient(90deg, rgba(0,142,151,0.08) 0%, transparent 100%); --team-shadow: rgba(0,142,151,0.3); }
+        .pick-card[data-team="Cowboys"] { --team-gradient: linear-gradient(90deg, rgba(0,53,148,0.08) 0%, transparent 100%); --team-shadow: rgba(0,53,148,0.3); }
+        .pick-card[data-team="Rams"] { --team-gradient: linear-gradient(90deg, rgba(0,53,148,0.08) 0%, transparent 100%); --team-shadow: rgba(255,209,0,0.3); }
+        .pick-card[data-team="Ravens"] { --team-gradient: linear-gradient(90deg, rgba(36,23,115,0.08) 0%, transparent 100%); --team-shadow: rgba(158,124,12,0.3); }
+        .pick-card[data-team="Buccaneers"] { --team-gradient: linear-gradient(90deg, rgba(213,10,10,0.08) 0%, transparent 100%); --team-shadow: rgba(213,10,10,0.3); }
+        .pick-card[data-team="Colts"] { --team-gradient: linear-gradient(90deg, rgba(0,53,148,0.08) 0%, transparent 100%); --team-shadow: rgba(0,53,148,0.3); }
+        .pick-card[data-team="49ers"] { --team-gradient: linear-gradient(90deg, rgba(170,0,0,0.08) 0%, transparent 100%); --team-shadow: rgba(170,0,0,0.3); }
+        .pick-card[data-team="Vikings"] { --team-gradient: linear-gradient(90deg, rgba(79,38,131,0.08) 0%, transparent 100%); --team-shadow: rgba(79,38,131,0.3); }
+        .pick-card[data-team="Panthers"] { --team-gradient: linear-gradient(90deg, rgba(0,133,202,0.08) 0%, transparent 100%); --team-shadow: rgba(0,133,202,0.3); }
+        .pick-card[data-team="Steelers"] { --team-gradient: linear-gradient(90deg, rgba(255,182,18,0.08) 0%, transparent 100%); --team-shadow: rgba(255,182,18,0.3); }
+        .pick-card[data-team="Chargers"] { --team-gradient: linear-gradient(90deg, rgba(0,118,182,0.08) 0%, transparent 100%); --team-shadow: rgba(0,118,182,0.3); }
+        .pick-card[data-team="Eagles"] { --team-gradient: linear-gradient(90deg, rgba(0,76,84,0.08) 0%, transparent 100%); --team-shadow: rgba(0,76,84,0.3); }
+        .pick-card[data-team="Bears"] { --team-gradient: linear-gradient(90deg, rgba(11,22,42,0.08) 0%, transparent 100%); --team-shadow: rgba(200,56,3,0.3); }
+        .pick-card[data-team="Bills"] { --team-gradient: linear-gradient(90deg, rgba(0,51,141,0.08) 0%, transparent 100%); --team-shadow: rgba(0,51,141,0.3); }
+        .pick-card[data-team="Texans"] { --team-gradient: linear-gradient(90deg, rgba(3,32,47,0.08) 0%, transparent 100%); --team-shadow: rgba(167,25,48,0.3); }
+        .pick-card[data-team="Broncos"] { --team-gradient: linear-gradient(90deg, rgba(251,79,20,0.08) 0%, transparent 100%); --team-shadow: rgba(251,79,20,0.3); }
+        .pick-card[data-team="Patriots"] { --team-gradient: linear-gradient(90deg, rgba(0,34,68,0.08) 0%, transparent 100%); --team-shadow: rgba(198,12,48,0.3); }
+        .pick-card[data-team="Lions"] { --team-gradient: linear-gradient(90deg, rgba(0,118,182,0.08) 0%, transparent 100%); --team-shadow: rgba(0,118,182,0.3); }
+        .pick-card[data-team="Packers"] { --team-gradient: linear-gradient(90deg, rgba(32,55,49,0.08) 0%, transparent 100%); --team-shadow: rgba(255,182,18,0.3); }
+        .pick-card[data-team="Falcons"] { --team-gradient: linear-gradient(90deg, rgba(167,25,48,0.08) 0%, transparent 100%); --team-shadow: rgba(167,25,48,0.3); }
+        .pick-card[data-team="Seahawks"] { --team-gradient: linear-gradient(90deg, rgba(0,34,68,0.08) 0%, transparent 100%); --team-shadow: rgba(105,190,40,0.3); }
+        .pick-card[data-team="Jaguars"] { --team-gradient: linear-gradient(90deg, rgba(0,103,120,0.08) 0%, transparent 100%); --team-shadow: rgba(215,162,42,0.3); }
 
         .pick-number {
             font-family: 'Oswald', sans-serif;

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draft Grades | NFL Mock Draft Central 2026</title>
+    <link rel="stylesheet" href="../src/css/styles.css">
+    <link rel="stylesheet" href="../src/css/draft-grades.css">
+    <link rel="stylesheet" href="../src/css/7-round-simulator.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <i class="fas fa-football-ball"></i>
+                <span>NFL Draft Central</span>
+            </a>
+            <div class="nav-links">
+                <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="../pages/7-round-simulator.html"><i class="fas fa-random"></i> 7-Round Simulator</a>
+                <a href="../pages/consensus-mock.html"><i class="fas fa-chart-line"></i> Consensus Mock</a>
+                <a href="../pages/draft-grades.html" class="active"><i class="fas fa-graduation-cap"></i> Draft Grades</a>
+                <a href="../pages/live-draft.html"><i class="fas fa-broadcast-tower"></i> Live Draft</a>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header style="text-align: center; margin-bottom: 2rem;">
+            <h1 class="round-title">Grade Your <span>Mock Draft</span></h1>
+            <p style="color: var(--text-secondary); margin-top: 0.5rem;">
+                Load one of your saved mock drafts and get a detailed grade based on value, need fit, and positional importance.
+            </p>
+        </header>
+
+        <!-- Mock Selection Panel -->
+        <div class="grades-panel" style="margin-bottom: 2rem;">
+            <div class="grades-panel-header">
+                <div class="grades-panel-title">
+                    <i class="fas fa-folder-open"></i>
+                    <span>Select Mock Draft to Grade</span>
+                </div>
+            </div>
+            
+            <div style="padding: 1.5rem;">
+                <div id="mockSelectionArea">
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                        <i class="fas fa-info-circle"></i> 
+                        Choose a saved mock draft or create a new one in the <a href="../pages/7-round-simulator.html" style="color: var(--accent);">7-Round Simulator</a>.
+                    </p>
+                    <div id="savedMocksList" style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                        <!-- Saved mocks will be loaded here -->
+                        <div style="text-align: center; padding: 2rem; width: 100%; color: var(--text-secondary);">
+                            <i class="fas fa-spinner fa-spin" style="font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
+                            <p>Loading saved mocks...</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="currentMockArea" style="display: none;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <div>
+                            <h3 id="currentMockName" style="color: var(--accent); margin: 0;"></h3>
+                            <p id="currentMockInfo" style="color: var(--text-secondary); margin: 0.25rem 0 0 0; font-size: 0.9rem;"></p>
+                        </div>
+                        <button onclick="showMockSelection()" class="btn btn-secondary">
+                            <i class="fas fa-arrow-left"></i> Choose Different Mock
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Methodology Panel -->
+        <div class="grades-panel" style="margin-bottom: 2rem;">
+            <div class="grades-panel-header">
+                <div class="grades-panel-title">
+                    <i class="fas fa-calculator"></i>
+                    <span>Grading Methodology</span>
+                </div>
+                <div class="grades-legend">
+                    <div class="legend-item">
+                        <div class="legend-box grade-a-plus"></div>
+                        <span>A (90-100)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-box grade-b-plus"></div>
+                        <span>B (80-89)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-box grade-c-plus"></div>
+                        <span>C (70-79)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-box grade-d-plus"></div>
+                        <span>D/F (&lt;70)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grading-methodology">
+                <h4><i class="fas fa-chart-pie"></i> Grade Breakdown (Weighted Scoring)</h4>
+                <div class="grading-criteria">
+                    <div class="criteria-item">
+                        <span class="criteria-name">Value Score</span>
+                        <span class="criteria-weight">40% weight</span>
+                        <span class="criteria-desc">EDP vs Your Pick: 5+ picks later = Excellent, within 5 = Fair, 5+ earlier = Reach</span>
+                    </div>
+                    <div class="criteria-item">
+                        <span class="criteria-name">Need Fit</span>
+                        <span class="criteria-weight">30% weight</span>
+                        <span class="criteria-desc">High need filled = Great, Medium = Good, Low/Non-need = Poor</span>
+                    </div>
+                    <div class="criteria-item">
+                        <span class="criteria-name">Positional Value</span>
+                        <span class="criteria-weight">20% weight</span>
+                        <span class="criteria-desc">Premium: QB/EDGE/CB/OT (x1.5), High: WR/DL/S (x1.2), Med: LB/IOL/TE (x1.0), Low: RB (x0.8)</span>
+                    </div>
+                    <div class="criteria-item">
+                        <span class="criteria-name">Draft Balance</span>
+                        <span class="criteria-weight">10% weight</span>
+                        <span class="criteria-desc">Multiple value picks = Bonus, Multiple reaches = Penalty</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gtm-attribution">
+                <i class="fas fa-info-circle"></i>
+                <span>Grades are calculated automatically based on consensus EDP data and team needs. Compare your picks to see how well you did!</span>
+            </div>
+        </div>
+
+        <!-- Overall Summary -->
+        <div id="overallSummary" style="display: none; margin-bottom: 2rem;">
+            <div class="grades-panel">
+                <div class="grades-panel-header">
+                    <div class="grades-panel-title">
+                        <i class="fas fa-star"></i>
+                        <span>Your Mock Draft Summary</span>
+                    </div>
+                </div>
+                <div id="summaryContent" style="padding: 1.5rem;">
+                    <!-- Summary content -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Grades Leaderboard -->
+        <h2 class="round-title" style="margin-top: 2rem;">Team <span>Grades</span></h2>
+        <div id="draftGradesList">
+            <div style="text-align: center; padding: 3rem; color: var(--text-secondary);">
+                <i class="fas fa-clipboard-check" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
+                <p>Select a mock draft above to see team grades.</p>
+            </div>
+        </div>
+
+        <!-- Team Drafts Section -->
+        <h2 class="round-title" style="margin-top: 3rem;">Detailed <span>Pick Analysis</span></h2>
+        <div id="teamDraftsList">
+            <div style="text-align: center; padding: 3rem; color: var(--text-secondary);">
+                <i class="fas fa-list-alt" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
+                <p>Select a mock draft to see detailed pick-by-pick analysis.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>NFL Draft Central</h4>
+                <p>Your home for 2026 NFL Mock Draft simulations, analysis, and prospect rankings.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <p><a href="../index.html">Home</a></p>
+                <p><a href="../pages/7-round-simulator.html">7-Round Simulator</a></p>
+                <p><a href="../pages/consensus-mock.html">Consensus Mock</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <p>Built by Nick B.</p>
+                <p><a href="https://github.com/njpeterson17/nfl-mock-draft-2026" target="_blank"><i class="fab fa-github"></i> GitHub</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NFL Draft Central. Educational mock draft simulation.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../src/js/data.js"></script>
+    <script src="../src/js/save-load-system.js"></script>
+    <script src="../src/js/consensus-mock-data.js"></script>
+    <script src="../src/js/draft-grades.js"></script>
+    <script>
+        // Load saved mocks and display them
+        function loadSavedMocksList() {
+            const container = document.getElementById('savedMocksList');
+            const mocks = MockDraftStorage.getAllMocks();
+            
+            if (mocks.length === 0) {
+                container.innerHTML = `
+                    <div style="text-align: center; padding: 2rem; width: 100%; color: var(--text-secondary);">
+                        <i class="fas fa-folder-open" style="font-size: 2rem; margin-bottom: 1rem; opacity: 0.5;"></i>
+                        <p>No saved mock drafts found.</p>
+                        <a href="../pages/7-round-simulator.html" class="btn btn-primary" style="margin-top: 1rem;">
+                            <i class="fas fa-plus"></i> Create Your First Mock
+                        </a>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Sort by most recent
+            mocks.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+            
+            container.innerHTML = mocks.map(mock => {
+                const pickCount = mock.picks ? mock.picks.length : 0;
+                const date = new Date(mock.createdAt).toLocaleDateString();
+                return `
+                    <div class="mock-card" onclick="loadMockForGrading('${mock.id}')" style="cursor: pointer; flex: 1; min-width: 280px; max-width: 350px;">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div>
+                                <h4 style="margin: 0 0 0.5rem 0; color: var(--accent);">${mock.name}</h4>
+                                <p style="margin: 0; color: var(--text-secondary); font-size: 0.85rem;">
+                                    <i class="fas fa-calendar"></i> ${date}
+                                </p>
+                                <p style="margin: 0.25rem 0 0 0; color: var(--text-secondary); font-size: 0.85rem;">
+                                    <i class="fas fa-user"></i> ${mock.pickerName || 'Anonymous'}
+                                </p>
+                            </div>
+                            <div style="text-align: right;">
+                                <span class="pick-count" style="font-size: 1.5rem; font-weight: 700; color: var(--accent);">${pickCount}</span>
+                                <p style="margin: 0; font-size: 0.75rem; color: var(--text-secondary);">picks</p>
+                            </div>
+                        </div>
+                        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+                            <span class="btn btn-primary" style="width: 100%; text-align: center;">
+                                <i class="fas fa-chart-bar"></i> Grade This Mock
+                            </span>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Current mock being graded
+        let currentMockData = null;
+
+        // Load a specific mock for grading
+        function loadMockForGrading(mockId) {
+            const mock = MockDraftStorage.getMock(mockId);
+            if (!mock) {
+                alert('Mock draft not found!');
+                return;
+            }
+            
+            currentMockData = mock;
+            
+            // Hide selection area, show current mock
+            document.getElementById('mockSelectionArea').style.display = 'none';
+            document.getElementById('currentMockArea').style.display = 'block';
+            
+            // Update mock info
+            document.getElementById('currentMockName').textContent = mock.name;
+            const date = new Date(mock.createdAt).toLocaleDateString();
+            const pickCount = mock.picks ? mock.picks.length : 0;
+            document.getElementById('currentMockInfo').innerHTML = `
+                Created by <strong>${mock.pickerName || 'Anonymous'}</strong> on ${date} • 
+                <strong>${pickCount}</strong> picks
+            `;
+            
+            // Calculate and display grades
+            calculateAndDisplayGrades(mock);
+        }
+
+        // Show mock selection again
+        function showMockSelection() {
+            currentMockData = null;
+            document.getElementById('mockSelectionArea').style.display = 'block';
+            document.getElementById('currentMockArea').style.display = 'none';
+            document.getElementById('overallSummary').style.display = 'none';
+            document.getElementById('draftGradesList').innerHTML = `
+                <div style="text-align: center; padding: 3rem; color: var(--text-secondary);">
+                    <i class="fas fa-clipboard-check" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
+                    <p>Select a mock draft above to see team grades.</p>
+                </div>
+            `;
+            document.getElementById('teamDraftsList').innerHTML = `
+                <div style="text-align: center; padding: 3rem; color: var(--text-secondary);">
+                    <i class="fas fa-list-alt" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
+                    <p>Select a mock draft to see detailed pick-by-pick analysis.</p>
+                </div>
+            `;
+        }
+
+        // Calculate and display grades for the selected mock
+        function calculateAndDisplayGrades(mock) {
+            if (!mock.picks || mock.picks.length === 0) {
+                document.getElementById('draftGradesList').innerHTML = `
+                    <div style="text-align: center; padding: 3rem; color: var(--text-secondary);">
+                        <i class="fas fa-exclamation-circle" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                        <p>This mock draft has no picks to grade.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Convert mock picks to format expected by draft grades system
+            const formattedPicks = mock.picks.map(pick => ({
+                player: pick.playerName,
+                position: pick.position,
+                team: pick.team,
+                pickNumber: pick.pickNumber,
+                round: pick.round || Math.ceil(pick.pickNumber / 32)
+            }));
+            
+            // Group by team
+            const teamPicks = {};
+            formattedPicks.forEach(pick => {
+                if (!teamPicks[pick.team]) {
+                    teamPicks[pick.team] = [];
+                }
+                teamPicks[pick.team].push(pick);
+            });
+            
+            // Calculate grades for each team
+            const teamGrades = [];
+            for (const [teamName, picks] of Object.entries(teamPicks)) {
+                const grade = calculateTeamGrade(teamName, picks);
+                teamGrades.push({
+                    teamName: teamName,
+                    ...grade,
+                    numPicks: picks.length
+                });
+            }
+            
+            // Sort by score
+            teamGrades.sort((a, b) => b.overallScore - a.overallScore);
+            
+            // Display summary
+            displayOverallSummary(teamGrades);
+            
+            // Display team grades
+            displayTeamGrades(teamGrades);
+            
+            // Display detailed picks
+            displayDetailedPicks(teamPicks, teamGrades);
+        }
+
+        // Display overall summary
+        function displayOverallSummary(teamGrades) {
+            const container = document.getElementById('overallSummary');
+            const content = document.getElementById('summaryContent');
+            
+            const totalPicks = teamGrades.reduce((sum, t) => sum + t.numPicks, 0);
+            const avgScore = teamGrades.reduce((sum, t) => sum + t.overallScore, 0) / teamGrades.length;
+            const bestTeam = teamGrades[0];
+            const worstTeam = teamGrades[teamGrades.length - 1];
+            const letterGrade = scoreToGrade(avgScore);
+            
+            content.innerHTML = `
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                    <div style="text-align: center; padding: 1.5rem; background: var(--bg-card); border-radius: 12px;">
+                        <div style="font-size: 3rem; font-weight: 700; color: var(--accent); margin-bottom: 0.5rem;">${letterGrade.grade}</div>
+                        <div style="color: var(--text-secondary);">Overall Grade</div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.25rem;">${Math.round(avgScore)}/100 avg</div>
+                    </div>
+                    <div style="text-align: center; padding: 1.5rem; background: var(--bg-card); border-radius: 12px;">
+                        <div style="font-size: 3rem; font-weight: 700; color: var(--accent); margin-bottom: 0.5rem;">${totalPicks}</div>
+                        <div style="color: var(--text-secondary);">Total Picks</div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.25rem;">across ${teamGrades.length} teams</div>
+                    </div>
+                    <div style="text-align: center; padding: 1.5rem; background: var(--bg-card); border-radius: 12px;">
+                        <div style="font-size: 1.5rem; font-weight: 600; color: var(--success); margin-bottom: 0.5rem;">${bestTeam.overallGrade.grade}</div>
+                        <div style="color: var(--text-secondary);">Best Grade</div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.25rem;">${bestTeam.teamName}</div>
+                    </div>
+                    <div style="text-align: center; padding: 1.5rem; background: var(--bg-card); border-radius: 12px;">
+                        <div style="font-size: 1.5rem; font-weight: 600; color: var(--warning); margin-bottom: 0.5rem;">${worstTeam.overallGrade.grade}</div>
+                        <div style="color: var(--text-secondary);">Needs Work</div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.25rem;">${worstTeam.teamName}</div>
+                    </div>
+                </div>
+            `;
+            
+            container.style.display = 'block';
+        }
+
+        // Display team grades
+        function displayTeamGrades(teamGrades) {
+            const container = document.getElementById('draftGradesList');
+            
+            container.innerHTML = teamGrades.map((team, index) => `
+                <div class="team-grade-card" style="animation-delay: ${index * 0.03}s">
+                    <div class="team-grade-rank">#${index + 1}</div>
+                    <div class="team-grade-info">
+                        <div class="team-grade-name">
+                            ${getTeamHelmetSVG(team.teamName)}
+                            ${team.teamName}
+                        </div>
+                        <div class="team-grade-picks">${team.numPicks} picks</div>
+                        <div class="team-grade-breakdown">
+                            <div class="grade-metric">
+                                <span class="grade-metric-value">${Math.round(team.componentScores.value)}</span>
+                                <span class="grade-metric-label">Value</span>
+                            </div>
+                            <div class="grade-metric">
+                                <span class="grade-metric-value">${Math.round(team.componentScores.need)}</span>
+                                <span class="grade-metric-label">Need</span>
+                            </div>
+                            <div class="grade-metric">
+                                <span class="grade-metric-value">${Math.round(team.componentScores.positional)}</span>
+                                <span class="grade-metric-label">Pos</span>
+                            </div>
+                            <div class="grade-metric">
+                                <span class="grade-metric-value">${Math.round(team.componentScores.balance)}</span>
+                                <span class="grade-metric-label">Bal</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-grade-badge-container">
+                        <div class="grade-badge ${team.overallGrade.class}">${team.overallGrade.grade}</div>
+                        <span class="team-grade-score">${Math.round(team.overallScore)}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Display detailed pick analysis
+        function displayDetailedPicks(teamPicks, teamGrades) {
+            const container = document.getElementById('teamDraftsList');
+            
+            container.innerHTML = teamGrades.map((team, index) => {
+                const picks = teamPicks[team.teamName] || [];
+                
+                return `
+                    <div class="team-draft-card" style="animation-delay: ${index * 0.05}s">
+                        <div class="team-draft-header">
+                            ${getTeamHelmetSVG(team.teamName)}
+                            <div>
+                                <div style="font-family: 'Oswald', sans-serif; font-size: 1.1rem; font-weight: 600;">${team.teamName}</div>
+                                <div style="font-size: 0.8rem; color: var(--text-secondary);">Rank #${index + 1} • ${picks.length} picks</div>
+                            </div>
+                            <div class="team-draft-grade">
+                                <div class="team-draft-grade-label">Grade</div>
+                                <div class="grade-badge ${team.overallGrade.class}">${team.overallGrade.grade}</div>
+                            </div>
+                        </div>
+                        <div class="team-draft-picks">
+                            ${picks.map(pick => {
+                                const grade = calculatePickGrade(pick.player, team.teamName, pick.position, pick.pickNumber);
+                                const letterGrade = scoreToGrade(grade.weightedScore);
+                                const valueClass = grade.valueScore.classification;
+                                
+                                return `
+                                    <div class="team-draft-pick">
+                                        <span class="pick-number-small">#${pick.pickNumber}</span>
+                                        <div class="pick-player-info">
+                                            <div class="pick-player-name">${pick.player}</div>
+                                            <div class="pick-player-position">${pick.position} • Round ${pick.round}</div>
+                                        </div>
+                                        <div class="pick-analysis">
+                                            <span class="pick-value-indicator ${valueClass}">${valueClass.toUpperCase()}</span>
+                                            <span class="pick-grade ${letterGrade.class}" style="padding: 0.2rem 0.4rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700;">${letterGrade.grade}</span>
+                                        </div>
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadSavedMocksList();
+        });
+    </script>
+</body>
+</html>
