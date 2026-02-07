@@ -226,48 +226,7 @@
             ]
         };
 
-        // ==========================================
-        // GRINDING THE MOCKS - EXPECTED DRAFT POSITION DATA
-        // Based on aggregated mock draft analysis
-        // ==========================================
-        const edpData = {
-            // Top 32 prospects with Expected Draft Position
-            'Fernando Mendoza': { edp: 1.2, variance: 0.8, consensusRank: 1 },
-            'Ty Simpson': { edp: 8.5, variance: 4.2, consensusRank: 2 },
-            'Francis Mauigoa': { edp: 6.3, variance: 3.1, consensusRank: 3 },
-            'Carnell Tate': { edp: 5.8, variance: 2.9, consensusRank: 4 },
-            'Peter Woods': { edp: 9.2, variance: 4.5, consensusRank: 5 },
-            'Trinidad Chambliss': { edp: 12.4, variance: 5.8, consensusRank: 6 },
-            'Rueben Bain Jr.': { edp: 7.1, variance: 3.5, consensusRank: 7 },
-            'Jordyn Tyson': { edp: 11.8, variance: 4.9, consensusRank: 8 },
-            'David Bailey': { edp: 8.9, variance: 4.1, consensusRank: 9 },
-            'Kayden McDonald': { edp: 14.6, variance: 6.2, consensusRank: 10 },
-            'Cole Payton': { edp: 15.2, variance: 6.8, consensusRank: 11 },
-            'Jermod McCoy': { edp: 13.1, variance: 5.4, consensusRank: 12 },
-            'Drew Allar': { edp: 18.3, variance: 7.5, consensusRank: 13 },
-            'Akheem Mesidor': { edp: 16.7, variance: 6.9, consensusRank: 14 },
-            'Arvell Reese': { edp: 4.2, variance: 2.1, consensusRank: 15 },
-            'Makai Lemon': { edp: 10.5, variance: 4.7, consensusRank: 16 },
-            'Olaivavega Ioane': { edp: 19.8, variance: 7.2, consensusRank: 17 },
-            'Caleb Lomu': { edp: 17.4, variance: 6.1, consensusRank: 18 },
-            'Keldric Faulk': { edp: 12.1, variance: 5.2, consensusRank: 19 },
-            'Caleb Downs': { edp: 9.6, variance: 4.3, consensusRank: 20 },
-            'Carson Beck': { edp: 22.1, variance: 8.4, consensusRank: 21 },
-            'Spencer Fano': { edp: 14.2, variance: 5.6, consensusRank: 22 },
-            'Mansoor Delane': { edp: 20.5, variance: 7.8, consensusRank: 23 },
-            'Sonny Styles': { edp: 15.8, variance: 6.4, consensusRank: 24 },
-            'Denzel Boston': { edp: 21.3, variance: 8.1, consensusRank: 25 },
-            'CJ Allen': { edp: 24.6, variance: 9.2, consensusRank: 26 },
-            'Jeremiyah Love': { edp: 6.7, variance: 3.2, consensusRank: 27 },
-            'Dillon Thieneman': { edp: 28.4, variance: 10.5, consensusRank: 28 },
-            'Daylen Everette': { edp: 31.2, variance: 11.8, consensusRank: 29 },
-            'Luther Burden III': { edp: 26.8, variance: 9.6, consensusRank: 30 },
-            'Kaleb Johnson': { edp: 29.5, variance: 10.8, consensusRank: 31 },
-            'Tacario Davis': { edp: 32.1, variance: 12.4, consensusRank: 32 }
-        };
-
-        // Calculate pick value based on EDP difference
-        let edpFilter = 'all';
+        // Team Drafts Data
         const teamDraftsData = [
             {
                 name: "Las Vegas Raiders",

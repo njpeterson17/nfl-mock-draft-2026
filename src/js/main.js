@@ -59,11 +59,6 @@
                 window.NFLDraftAnalytics.trackTabClick(tabId);
             }
             
-            // Render EDP leaderboard if that tab is selected
-            if (tabId === 'edpLeaderboard') {
-                renderEDPLeaderboard();
-            }
-            
             // Render Big Board if that tab is selected
             if (tabId === 'bigBoard') {
                 renderBigBoard();
@@ -236,7 +231,6 @@
             initJumpToSelect();
             initImageHandling();
             handleDeepLink();
-            renderEDPLeaderboard();
             renderBigBoard();
             renderTeamDrafts();
             renderDraftGrades();
@@ -393,97 +387,6 @@
         // CUSTOM MOCK DRAFT BUILDER
         // ==========================================
 
-        // Draft data
-        function getPickValue(playerName, actualPick) {
-            const edpInfo = edpData[playerName];
-            if (!edpInfo) return null;
-            
-            const diff = edpInfo.edp - actualPick;
-            const percentDiff = (diff / edpInfo.edp) * 100;
-            
-            return {
-                edp: edpInfo.edp,
-                diff: diff,
-                percentDiff: percentDiff,
-                variance: edpInfo.variance,
-                consensusRank: edpInfo.consensusRank,
-                classification: diff >= 5 ? 'value' : diff <= -5 ? 'reach' : 'fair'
-            };
-        }
-
-        // Generate EDP badge HTML
-        function generateEDPBadge(playerName, actualPick) {
-            const value = getPickValue(playerName, actualPick);
-            if (!value) return '';
-            
-            const icon = value.classification === 'value' ? 'fa-arrow-down' : 
-                        value.classification === 'reach' ? 'fa-arrow-up' : 'fa-equals';
-            const label = value.classification === 'value' ? 'VALUE' : 
-                         value.classification === 'reach' ? 'REACH' : 'FAIR';
-            
-            return `
-                <div class="edp-badge ${value.classification}-pick">
-                    <i class="fas ${icon}"></i>
-                    <span>${label} PICK</span>
-                </div>
-                <div class="edp-comparison">
-                    <span>EDP: <span class="edp-value">#${value.edp.toFixed(1)}</span></span>
-                    <span class="edp-diff ${value.diff > 0 ? 'positive' : value.diff < 0 ? 'negative' : ''}">
-                        ${value.diff > 0 ? '+' : ''}${value.diff.toFixed(1)}
-                    </span>
-                </div>
-            `;
-        }
-
-        // Filter picks by value/reach
-        function filterByEDP(type) {
-            edpFilter = type;
-            
-            // Update active button
-            document.querySelectorAll('.edp-toggle-btn').forEach(btn => btn.classList.remove('active'));
-            if (event && event.target) {
-                event.target.classList.add('active');
-            }
-            
-            // Filter Round 1
-            document.querySelectorAll('#round1Picks .pick-card').forEach(card => {
-                const playerName = card.dataset.player;
-                const pickNumber = parseInt(card.querySelector('.pick-number').textContent);
-                
-                if (type === 'all') {
-                    card.classList.remove('hidden');
-                } else {
-                    const value = getPickValue(playerName, pickNumber);
-                    if (value && value.classification === type) {
-                        card.classList.remove('hidden');
-                    } else {
-                        card.classList.add('hidden');
-                    }
-                }
-            });
-            
-            // Filter Round 2
-            document.querySelectorAll('#round2Picks .pick-card').forEach(card => {
-                const playerName = card.dataset.player;
-                const pickNumber = parseInt(card.querySelector('.pick-number').textContent);
-                
-                if (type === 'all') {
-                    card.classList.remove('hidden');
-                } else {
-                    const value = getPickValue(playerName, pickNumber);
-                    if (value && value.classification === type) {
-                        card.classList.remove('hidden');
-                    } else {
-                        card.classList.add('hidden');
-                    }
-                }
-            });
-            
-            updatePositionCounts();
-            updateR2PositionCounts();
-            showToast(`Filtered by: ${type === 'all' ? 'All Picks' : type.charAt(0).toUpperCase() + type.slice(1) + ' Picks'}`);
-        }
-
         // ==========================================
         // TEAM DRAFTS DATA
         // ==========================================
@@ -560,7 +463,7 @@
 
         function filterTeamDrafts(filter) {
             teamDraftsFilter = filter;
-            document.querySelectorAll('#teamDrafts .edp-toggle-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('#teamDrafts .filter-toggle-btn').forEach(btn => btn.classList.remove('active'));
             if (event && event.target) event.target.classList.add('active');
             renderTeamDrafts();
             showToast(`Filtered: ${filter === 'all' ? 'All Teams' : filter.charAt(0).toUpperCase() + filter.slice(1)}`);
@@ -577,17 +480,11 @@
                 let pickCount = team.picks.length;
 
                 team.picks.forEach(pick => {
-                    // Value Score (based on pick # vs expected range)
-                    const edpInfo = edpData[pick.player];
-                    if (edpInfo) {
-                        const diff = edpInfo.edp - pick.pick;
-                        if (diff >= 5) valueScore += 25; // Excellent value
-                        else if (diff >= 0) valueScore += 20; // Good value
-                        else if (diff >= -5) valueScore += 15; // Fair
-                        else valueScore += 10; // Reach
-                    } else {
-                        valueScore += 15; // Unknown = fair
-                    }
+                    // Value Score (based on pick round)
+                    if (pick.pick <= 10) valueScore += 25; // Top 10 = excellent
+                    else if (pick.pick <= 32) valueScore += 20; // Round 1 = good
+                    else if (pick.pick <= 64) valueScore += 15; // Round 2 = fair
+                    else valueScore += 10; // Round 3+ = lower value
 
                     // Need Fit Score
                     const needMatch = team.needs.find(n => n.position === pick.position || 
@@ -680,63 +577,6 @@
 
         // Pick grade badges removed - now only shown on Draft Grades page
 
-        // Render EDP Leaderboard
-        function renderEDPLeaderboard() {
-            const container = document.getElementById('edpLeaderboardList');
-            if (!container) return;
-            
-            // Sort players by EDP (ascending)
-            const sortedPlayers = Object.entries(edpData)
-                .sort((a, b) => a[1].edp - b[1].edp)
-                .slice(0, 32);
-            
-            container.innerHTML = sortedPlayers.map(([name, data], index) => {
-                // Find where this player is actually drafted
-                let actualPick = 'N/A';
-                let pickDiff = '';
-                document.querySelectorAll('.pick-card').forEach(card => {
-                    if (card.dataset.player === name) {
-                        actualPick = card.querySelector('.pick-number').textContent;
-                        const diff = parseInt(actualPick) - data.edp;
-                        if (diff < 0) {
-                            pickDiff = `<span style="color: var(--success);">+${Math.abs(diff).toFixed(1)}</span>`;
-                        } else if (diff > 0) {
-                            pickDiff = `<span style="color: var(--danger);">-${Math.abs(diff).toFixed(1)}</span>`;
-                        } else {
-                            pickDiff = `<span style="color: var(--accent);">0.0</span>`;
-                        }
-                    }
-                });
-                
-                // Get position from player data
-                let position = '';
-                let school = '';
-                const playerCard = document.querySelector(`.pick-card[data-player="${name}"]`);
-                if (playerCard) {
-                    position = playerCard.dataset.position;
-                    const schoolEl = playerCard.querySelector('.player-school');
-                    if (schoolEl) school = schoolEl.textContent;
-                }
-                
-                return `
-                    <div class="edp-item">
-                        <div class="edp-rank">${index + 1}</div>
-                        <div class="edp-player-info">
-                            <span class="edp-player-name">${name}</span>
-                            <span class="edp-player-meta">${position} ${school ? '| ' + school : ''}</span>
-                        </div>
-                        <div class="edp-expected">
-                            <span class="edp-expected-value">#${data.edp.toFixed(1)}</span>
-                            <div style="font-size: 0.7rem; color: var(--text-secondary);">±${data.variance.toFixed(1)}</div>
-                        </div>
-                        <div class="edp-variance">
-                            ${actualPick !== 'N/A' ? `Pick #${actualPick}<br>${pickDiff}` : '<span style="color: var(--text-secondary);">Not Drafted</span>'}
-                        </div>
-                    </div>
-                `;
-            }).join('');
-        }
-
         // ==========================================
         // BIG BOARD FUNCTIONS
         // ==========================================
@@ -782,7 +622,7 @@
             bigBoardTierFilter = tier;
             
             // Update active button
-            document.querySelectorAll('#bigBoard .edp-toggle-btn').forEach(btn => {
+            document.querySelectorAll('#bigBoard .filter-toggle-btn').forEach(btn => {
                 if (btn.textContent === tier || (tier === 'all' && btn.textContent === 'All')) {
                     btn.classList.add('active');
                 } else if (['All', 'Elite', 'Round 1', 'Round 2', 'Round 3'].includes(btn.textContent)) {
@@ -798,7 +638,7 @@
             bigBoardPositionFilter = position;
             
             // Update active button
-            const positionButtons = document.querySelectorAll('#bigBoard .edp-toggle-btn');
+            const positionButtons = document.querySelectorAll('#bigBoard .filter-toggle-btn');
             positionButtons.forEach(btn => {
                 const btnPos = btn.getAttribute('onclick');
                 if (btnPos && btnPos.includes(`filterBigBoardByPosition('${position}')`)) {

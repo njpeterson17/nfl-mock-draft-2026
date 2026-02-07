@@ -106,9 +106,6 @@
             <button class="nav-tab" onclick="showTab('round3')">
                 Round 3 <span class="round-badge">41 Picks</span>
             </button>
-            <button class="nav-tab" onclick="showTab('edpLeaderboard')">
-                <i class="fas fa-chart-bar"></i> EDP
-            </button>
             <button class="nav-tab" onclick="window.location.href='pages/news.html'">
                 <i class="fas fa-newspaper"></i> News
             </button>
@@ -3936,25 +3933,6 @@ le"></i> Concerns/Areas to Improve</h4>
                 <p>Try adjusting your filters or search terms</p>
             </div>
 
-            <!-- EDP Filter Panel -->
-            <div class="edp-panel" style="margin-top: 3rem;">
-                <div class="edp-panel-header">
-                    <div class="edp-panel-title">
-                        <i class="fas fa-chart-line"></i>
-                        <span>Grinding the Mocks <span style="color: var(--text-secondary); font-weight: 400;">| Expected Draft Position</span></span>
-                    </div>
-                    <div class="edp-toggle">
-                        <button class="edp-toggle-btn active" onclick="filterByEDP('all')">All</button>
-                        <button class="edp-toggle-btn" onclick="filterByEDP('value')">Value Picks</button>
-                        <button class="edp-toggle-btn" onclick="filterByEDP('reach')">Reaches</button>
-                    </div>
-                </div>
-                <div class="gtm-attribution">
-                    <i class="fas fa-database"></i>
-                    <span>EDP data based on aggregated mock draft analysis. <a href="https://grindingthemocks.shinyapps.io/Dashboard/" target="_blank">View Grinding the Mocks <i class="fas fa-external-link-alt" style="font-size: 0.7rem;"></i></a></span>
-                </div>
-            </div>
-
             <!-- Export Bar -->
             <div class="export-bar" style="margin-top: 2rem; margin-bottom: 2rem;">
                 <button class="export-btn primary" onclick="SocialShareManager.openShareModal()">
@@ -3978,48 +3956,6 @@ le"></i> Concerns/Areas to Improve</h4>
                 <button class="export-btn" onclick="shareTwitter()">
                     <i class="fab fa-twitter"></i> Tweet
                 </button>
-            </div>
-        </div>
-
-        <!-- EDP LEADERBOARD TAB -->
-        <div id="edpLeaderboard" class="tab-content">
-            <h2 class="round-title"><i class="fas fa-chart-line"></i> Expected Draft <span>Position</span></h2>
-            
-            <div style="text-align: center; max-width: 800px; margin: 0 auto 2rem; color: var(--text-secondary);">
-                <p>Based on aggregated mock draft data using the Grinding the Mocks methodology. EDP represents the average predicted draft position across multiple expert mocks.</p>
-            </div>
-
-            <!-- EDP Stats -->
-            <div class="stats-bar">
-                <div class="stat-item">
-                    <div class="stat-item-value" style="font-size: 1.5rem;">32</div>
-                    <div class="stat-item-label">Prospects Tracked</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-item-value" style="font-size: 1.5rem;">50+</div>
-                    <div class="stat-item-label">Mock Drafts</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-item-value" style="font-size: 1.5rem;">±4.2</div>
-                    <div class="stat-item-label">Avg Variance</div>
-                </div>
-            </div>
-
-            <!-- EDP Leaderboard -->
-            <div class="edp-panel">
-                <div class="edp-panel-header">
-                    <div class="edp-panel-title">
-                        <i class="fas fa-list-ol"></i>
-                        <span>Top 32 Prospects by Expected Draft Position</span>
-                    </div>
-                </div>
-                <div id="edpLeaderboardList" class="edp-list">
-                    <!-- Populated by JavaScript -->
-                </div>
-                <div class="gtm-attribution">
-                    <i class="fas fa-info-circle"></i>
-                    <span>EDP = Expected Draft Position | Variance = Standard deviation of mock predictions | Data inspired by <a href="https://grindingthemocks.shinyapps.io/Dashboard/" target="_blank">Grinding the Mocks <i class="fas fa-external-link-alt" style="font-size: 0.7rem;"></i></a></span>
-                </div>
             </div>
         </div>
 
@@ -4145,27 +4081,27 @@ le"></i> Concerns/Areas to Improve</h4>
                         <span>Filter Big Board</span>
                     </div>
                     <div class="edp-toggle">
-                        <button class="edp-toggle-btn active" onclick="filterBigBoard('all')">All</button>
-                        <button class="edp-toggle-btn" onclick="filterBigBoard('Elite')">Elite</button>
-                        <button class="edp-toggle-btn" onclick="filterBigBoard('Round 1')">Round 1</button>
-                        <button class="edp-toggle-btn" onclick="filterBigBoard('Round 2')">Round 2</button>
-                        <button class="edp-toggle-btn" onclick="filterBigBoard('Round 3')">Round 3</button>
+                        <button class="filter-toggle-btn active" onclick="filterBigBoard('all')">All</button>
+                        <button class="filter-toggle-btn" onclick="filterBigBoard('Elite')">Elite</button>
+                        <button class="filter-toggle-btn" onclick="filterBigBoard('Round 1')">Round 1</button>
+                        <button class="filter-toggle-btn" onclick="filterBigBoard('Round 2')">Round 2</button>
+                        <button class="filter-toggle-btn" onclick="filterBigBoard('Round 3')">Round 3</button>
                     </div>
                 </div>
                 <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem;">
                     <span style="color: var(--text-secondary); font-size: 0.85rem;">Position:</span>
-                    <button class="edp-toggle-btn active" onclick="filterBigBoardByPosition('all')">All</button>
-                    <button class="edp-toggle-btn" onclick="filterBigBoardByPosition('QB')">QB</button>
-                    <button class="edp-toggle-btn" onclick="filterBigBoardByPosition('RB')">RB</button>
-                    <button class="edp-toggle-btn" onclick="filterBigBoardByPosition('WR')">WR</button>
-                    <button class="edp-toggle-btn" onclick="filterBigBoardByPosition('TE')">TE</button>
-                    <button class="edp-toggle-btn" onclick="filterBigBoardByPosition('OT')">OT</button>
-                    <button class="edp-toggle-btn" onclick="filterBigBoardByPosition('IOL')">IOL</button>
-                    <button class="edp-toggle-btn" onclick="filterBigBoardByPosition('EDGE')">EDGE</button>
-                    <button class="edp-toggle-btn" onclick="filterBigBoardByPosition('DL')">DL</button>
-                    <button class="edp-toggle-btn" onclick="filterBigBoardByPosition('LB')">LB</button>
-                    <button class="edp-toggle-btn" onclick="filterBigBoardByPosition('CB')">CB</button>
-                    <button class="edp-toggle-btn" onclick="filterBigBoardByPosition('S')">S</button>
+                    <button class="filter-toggle-btn active" onclick="filterBigBoardByPosition('all')">All</button>
+                    <button class="filter-toggle-btn" onclick="filterBigBoardByPosition('QB')">QB</button>
+                    <button class="filter-toggle-btn" onclick="filterBigBoardByPosition('RB')">RB</button>
+                    <button class="filter-toggle-btn" onclick="filterBigBoardByPosition('WR')">WR</button>
+                    <button class="filter-toggle-btn" onclick="filterBigBoardByPosition('TE')">TE</button>
+                    <button class="filter-toggle-btn" onclick="filterBigBoardByPosition('OT')">OT</button>
+                    <button class="filter-toggle-btn" onclick="filterBigBoardByPosition('IOL')">IOL</button>
+                    <button class="filter-toggle-btn" onclick="filterBigBoardByPosition('EDGE')">EDGE</button>
+                    <button class="filter-toggle-btn" onclick="filterBigBoardByPosition('DL')">DL</button>
+                    <button class="filter-toggle-btn" onclick="filterBigBoardByPosition('LB')">LB</button>
+                    <button class="filter-toggle-btn" onclick="filterBigBoardByPosition('CB')">CB</button>
+                    <button class="filter-toggle-btn" onclick="filterBigBoardByPosition('S')">S</button>
                 </div>
             </div>
 
@@ -4244,7 +4180,7 @@ le"></i> Concerns/Areas to Improve</h4>
                         <i class="fas fa-list-ol"></i>
                         <span id="positionalRankingsTitle">Position Rankings</span>
                     </div>
-                    <button class="edp-toggle-btn" onclick="hidePositionalRankings()">
+                    <button class="filter-toggle-btn" onclick="hidePositionalRankings()">
                         <i class="fas fa-times"></i> Close
                     </button>
                 </div>
@@ -4270,11 +4206,11 @@ le"></i> Concerns/Areas to Improve</h4>
                         <span>Filter Teams</span>
                     </div>
                     <div class="edp-toggle">
-                        <button class="edp-toggle-btn active" onclick="filterTeamDrafts('all')">All Teams</button>
-                        <button class="edp-toggle-btn" onclick="filterTeamDrafts('multiple')">Multiple Picks</button>
-                        <button class="edp-toggle-btn" onclick="filterTeamDrafts('qb')">Drafted QB</button>
-                        <button class="edp-toggle-btn" onclick="filterTeamDrafts('defense')">Defense Heavy</button>
-                        <button class="edp-toggle-btn" onclick="filterTeamDrafts('offense')">Offense Heavy</button>
+                        <button class="filter-toggle-btn active" onclick="filterTeamDrafts('all')">All Teams</button>
+                        <button class="filter-toggle-btn" onclick="filterTeamDrafts('multiple')">Multiple Picks</button>
+                        <button class="filter-toggle-btn" onclick="filterTeamDrafts('qb')">Drafted QB</button>
+                        <button class="filter-toggle-btn" onclick="filterTeamDrafts('defense')">Defense Heavy</button>
+                        <button class="filter-toggle-btn" onclick="filterTeamDrafts('offense')">Offense Heavy</button>
                     </div>
                 </div>
             </div>

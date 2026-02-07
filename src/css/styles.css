@@ -1907,111 +1907,8 @@
                 background: white;
             }
         }
-        /* EDP (Expected Draft Position) Styles - Grinding the Mocks */
-        .edp-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            padding: 0.35rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-top: 0.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .edp-badge.value-pick {
-            background: rgba(0, 255, 136, 0.15);
-            color: var(--success);
-            border: 1px solid rgba(0, 255, 136, 0.3);
-        }
-
-        .edp-badge.reach-pick {
-            background: rgba(255, 71, 87, 0.15);
-            color: var(--danger);
-            border: 1px solid rgba(255, 71, 87, 0.3);
-        }
-
-        .edp-badge.fair-pick {
-            background: rgba(0, 212, 255, 0.15);
-            color: var(--accent);
-            border: 1px solid rgba(0, 212, 255, 0.3);
-        }
-
-        .edp-badge i {
-            font-size: 0.75rem;
-        }
-
-        .edp-comparison {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            margin-top: 0.25rem;
-        }
-
-        .edp-value {
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .edp-diff {
-            font-size: 0.75rem;
-            padding: 0.1rem 0.4rem;
-            border-radius: 10px;
-            font-weight: 600;
-        }
-
-        .edp-diff.positive {
-            background: rgba(0, 255, 136, 0.2);
-            color: var(--success);
-        }
-
-        .edp-diff.negative {
-            background: rgba(255, 71, 87, 0.2);
-            color: var(--danger);
-        }
-
-        /* EDP Leaderboard Styles */
-        .edp-panel {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .edp-panel-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .edp-panel-title {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.2rem;
-            color: var(--accent);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .edp-panel-subtitle {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            font-weight: 400;
-        }
-
-        .edp-toggle {
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .edp-toggle-btn {
+        /* Filter Toggle Button Styles */
+        .filter-toggle-btn {
             background: var(--card-bg);
             border: 1px solid var(--border);
             color: var(--text-secondary);
@@ -2022,106 +1919,10 @@
             transition: all 0.3s ease;
         }
 
-        .edp-toggle-btn:hover, .edp-toggle-btn.active {
+        .filter-toggle-btn:hover, .filter-toggle-btn.active {
             background: var(--accent);
             color: var(--primary);
             border-color: var(--accent);
-        }
-
-        .edp-list {
-            display: grid;
-            gap: 0.5rem;
-        }
-
-        .edp-item {
-            display: grid;
-            grid-template-columns: 40px 1fr 80px 80px;
-            align-items: center;
-            gap: 1rem;
-            padding: 0.75rem 1rem;
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 8px;
-            border: 1px solid transparent;
-            transition: all 0.3s ease;
-        }
-
-        .edp-item:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: var(--border);
-        }
-
-        .edp-rank {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--accent);
-            text-align: center;
-        }
-
-        .edp-player-info {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .edp-player-name {
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .edp-player-meta {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-        }
-
-        .edp-expected {
-            text-align: center;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .edp-expected-value {
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .edp-variance {
-            text-align: center;
-        }
-
-        /* Grinding the Mocks Attribution */
-        .gtm-attribution {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            margin-top: 0.5rem;
-            padding-top: 0.5rem;
-            border-top: 1px solid var(--border);
-        }
-
-        .gtm-attribution a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        .gtm-attribution a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            .edp-item {
-                grid-template-columns: 35px 1fr 60px;
-            }
-            
-            .edp-variance {
-                display: none;
-            }
-            
-            .edp-panel-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
         }
 
         /* Pick Highlight Animation for Deep Links */
@@ -2762,14 +2563,6 @@
         }
 
         /* Light Mode Specific Fixes */
-        [data-theme="light"] .edp-item {
-            background: rgba(0, 0, 0, 0.02);
-        }
-
-        [data-theme="light"] .edp-item:hover {
-            background: rgba(0, 0, 0, 0.04);
-        }
-
         [data-theme="light"] .big-board-item {
             background: rgba(0, 0, 0, 0.02);
         }
@@ -2807,7 +2600,7 @@
             color: #ffffff;
         }
 
-        [data-theme="light"] .edp-toggle-btn.active {
+        [data-theme="light"] .filter-toggle-btn.active {
             color: #ffffff;
         }
 
