@@ -80,7 +80,7 @@
             // Render Draft Grades if that tab is selected
             if (tabId === 'draftGrades') {
                 renderDraftGrades();
-                addPickGradeBadges();
+                // Pick grades removed
             }
         }
 
@@ -725,34 +725,7 @@
             }).join('');
         }
 
-        // Add pick grade badges to individual pick cards
-        function addPickGradeBadges() {
-            const gradedTeams = calculateDraftGrades();
-            
-            gradedTeams.forEach(team => {
-                team.picks.forEach(pick => {
-                    const pickCard = document.querySelector(`.pick-card[data-player="${pick.player}"]`);
-                    if (pickCard) {
-                        // Calculate individual pick grade
-                        const edpInfo = edpData[pick.player];
-                        let pickGrade = 'B';
-                        let gradeClass = 'grade-b';
-                        
-                        if (edpInfo) {
-                            const diff = edpInfo.edp - pick.pick;
-                            if (diff >= 5) { pickGrade = 'A+'; gradeClass = 'grade-aplus'; }
-                            else if (diff >= 2) { pickGrade = 'A'; gradeClass = 'grade-a'; }
-                            else if (diff >= 0) { pickGrade = 'A-'; gradeClass = 'grade-aminus'; }
-                            else if (diff >= -2) { pickGrade = 'B+'; gradeClass = 'grade-bplus'; }
-                            else if (diff >= -5) { pickGrade = 'B'; gradeClass = 'grade-b'; }
-                            else { pickGrade = 'C+'; gradeClass = 'grade-cplus'; }
-                        }
-                        
-                        // Grade badges removed - now only shown on Draft Grades page
-                    }
-                });
-            });
-        }
+        // Pick grade badges removed - now only shown on Draft Grades page
 
         // Render EDP Leaderboard
         function renderEDPLeaderboard() {
@@ -2337,13 +2310,7 @@
             `;
         }
         
-        // Toggle Grades Display
-        function toggleGradesDisplay() {
-            const show = document.getElementById('showGradesToggle')?.checked;
-            document.querySelectorAll('.pick-grade-badge').forEach(badge => {
-                badge.style.display = show ? 'flex' : 'none';
-            });
-        }
+        // Toggle Grades Display removed - grades only on Draft Grades page
         
         // Export Grades Report
         function exportGradesReport() {
