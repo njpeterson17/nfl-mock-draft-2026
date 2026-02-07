@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150">
+  <defs>
+    <linearGradient id="helmetGradHOU" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#03202F;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#03202F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A71930;stop-opacity:0.8" />
+    </linearGradient>
+    <linearGradient id="highlightHOU" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Helmet shell -->
+  <ellipse cx="100" cy="75" rx="85" ry="60" fill="url(#helmetGradHOU)" stroke="#A71930" stroke-width="3"/>
+  
+  <!-- Helmet highlight -->
+  <ellipse cx="70" cy="55" rx="40" ry="25" fill="url(#highlightHOU)"/>
+  
+  <!-- Center stripe (for teams that have them) -->
+  
+  <path d="M 95 20 L 105 20 L 105 130 L 95 130 Z" fill="#A71930" opacity="0.8"/>
+  
+  
+  <!-- Facemask -->
+  <path d="M 175 55 Q 190 75 175 95" fill="none" stroke="#888888" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 170 60 Q 182 75 170 90" fill="none" stroke="#666666" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Team Code Text -->
+  <text x="100" y="85" font-family="Arial, sans-serif" font-size="32" font-weight="bold" 
+        text-anchor="middle" fill="#A71930" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
+    HOU
+  </text>
+  
+  <!-- Team Name (smaller) -->
+  <text x="100" y="110" font-family="Arial, sans-serif" font-size="10" font-weight="600" 
+        text-anchor="middle" fill="#A71930" opacity="0.9">
+    TEXANS
+  </text>
+</svg>
