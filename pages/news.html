@@ -179,6 +179,33 @@
                     </div>
                 </div>
 
+                <!-- Live Headlines Widget -->
+                <div class="widget live-headlines-widget">
+                    <div class="widget-title-row">
+                        <h3 class="widget-title"><i class="fas fa-rss"></i> Live Headlines</h3>
+                        <button class="refresh-headlines-btn" onclick="refreshLiveHeadlines()" title="Refresh headlines">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                    </div>
+                    <div class="live-headlines-container">
+                        <div class="live-headlines-loading" id="liveHeadlinesLoading">
+                            <div class="loading-skeleton"></div>
+                            <div class="loading-skeleton"></div>
+                            <div class="loading-skeleton"></div>
+                        </div>
+                        <ul class="live-headlines-list" id="liveHeadlinesList">
+                            <!-- Populated by JS -->
+                        </ul>
+                        <div class="live-headlines-error" id="liveHeadlinesError" style="display: none;">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <p>Unable to load live headlines</p>
+                            <button class="retry-headlines-btn" onclick="refreshLiveHeadlines()">
+                                <i class="fas fa-redo"></i> Try Again
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Trending Widget -->
                 <div class="widget">
                     <h3 class="widget-title"><i class="fas fa-fire"></i> Trending Now</h3>
