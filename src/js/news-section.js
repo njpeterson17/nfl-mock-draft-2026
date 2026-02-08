@@ -7,6 +7,9 @@ let displayedArticles = [];
 let currentPage = 1;
 const articlesPerPage = 6;
 
+// Share counts stored in localStorage
+const SHARE_COUNTS_KEY = 'nfl-draft-share-counts';
+
 // Initialize News Section
 document.addEventListener('DOMContentLoaded', () => {
     initNewsSection();
@@ -178,6 +181,20 @@ function renderArticles() {
                             <span><i class="far fa-clock"></i> ${article.readTime} min</span>
                         </div>
                     </div>
+                    <div class="article-share-buttons" onclick="event.stopPropagation()">
+                        <button class="share-btn share-twitter" onclick="shareToTwitter(${article.id})" title="Share on X/Twitter">
+                            <i class="fab fa-x-twitter"></i>
+                        </button>
+                        <button class="share-btn share-facebook" onclick="shareToFacebook(${article.id})" title="Share on Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </button>
+                        <button class="share-btn share-linkedin" onclick="shareToLinkedIn(${article.id})" title="Share on LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </button>
+                        <button class="share-btn share-copy" onclick="copyArticleLink(${article.id}, event)" title="Copy link">
+                            <i class="fas fa-link"></i>
+                        </button>
+                    </div>
                 </div>
             </article>
         `;
@@ -327,12 +344,20 @@ function openArticleModal(articleId) {
             <button class="modal-action-btn" onclick="likeArticle(this, ${article.id})">
                 <i class="far fa-heart"></i> ${article.likes} Likes
             </button>
-            <button class="modal-action-btn" onclick="shareArticle(${article.id})">
-                <i class="fas fa-share-alt"></i> Share
-            </button>
-            <button class="modal-action-btn" onclick="copyArticleLink(${article.id})">
-                <i class="fas fa-link"></i> Copy Link
-            </button>
+            <div class="modal-share-group">
+                <button class="modal-share-btn share-twitter" onclick="shareToTwitter(${article.id})" title="Share on X/Twitter">
+                    <i class="fab fa-x-twitter"></i> Twitter
+                </button>
+                <button class="modal-share-btn share-facebook" onclick="shareToFacebook(${article.id})" title="Share on Facebook">
+                    <i class="fab fa-facebook-f"></i> Facebook
+                </button>
+                <button class="modal-share-btn share-linkedin" onclick="shareToLinkedIn(${article.id})" title="Share on LinkedIn">
+                    <i class="fab fa-linkedin-in"></i> LinkedIn
+                </button>
+                <button class="modal-share-btn share-copy" onclick="copyArticleLink(${article.id}, event)" title="Copy link">
+                    <i class="fas fa-link"></i> <span class="copy-text">Copy Link</span>
+                </button>
+            </div>
         </div>
         ${relatedArticles.length > 0 ? `
             <div class="modal-related">
@@ -379,28 +404,205 @@ function likeArticle(btn, articleId) {
     renderArticles();
 }
 
-// Share Article
+// ==========================================
+// Social Sharing Functions
+// ==========================================
+
+// Get article URL
+function getArticleUrl(articleId) {
+    return window.location.origin + window.location.pathname + '#article-' + articleId;
+}
+
+// Track share count
+function trackShare(articleId, platform) {
+    const counts = getShareCounts();
+    if (!counts[articleId]) {
+        counts[articleId] = {
+            twitter: 0,
+            facebook: 0,
+            linkedin: 0,
+            copy: 0,
+            total: 0
+        };
+    }
+    counts[articleId][platform]++;
+    counts[articleId].total++;
+    localStorage.setItem(SHARE_COUNTS_KEY, JSON.stringify(counts));
+}
+
+// Get share counts from localStorage
+function getShareCounts() {
+    const counts = localStorage.getItem(SHARE_COUNTS_KEY);
+    return counts ? JSON.parse(counts) : {};
+}
+
+// Get share count for an article
+function getArticleShareCount(articleId) {
+    const counts = getShareCounts();
+    return counts[articleId] ? counts[articleId].total : 0;
+}
+
+// Share to Twitter/X
+function shareToTwitter(articleId) {
+    const article = getArticleById(articleId);
+    if (!article) return;
+
+    const url = getArticleUrl(articleId);
+    const text = `${article.title} - NFL Draft Central`;
+    const hashtags = 'NFLDraft,NFLDraft2026';
+
+    const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}&hashtags=${hashtags}`;
+
+    // Track share
+    trackShare(articleId, 'twitter');
+
+    // Open in new window
+    window.open(shareUrl, '_blank', 'width=600,height=400,scrollbars=yes,resizable=yes');
+
+    // Show success animation
+    showShareSuccess('Shared to Twitter!');
+}
+
+// Share to Facebook
+function shareToFacebook(articleId) {
+    const article = getArticleById(articleId);
+    if (!article) return;
+
+    const url = getArticleUrl(articleId);
+    const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+
+    // Track share
+    trackShare(articleId, 'facebook');
+
+    // Open in new window
+    window.open(shareUrl, '_blank', 'width=600,height=400,scrollbars=yes,resizable=yes');
+
+    // Show success animation
+    showShareSuccess('Shared to Facebook!');
+}
+
+// Share to LinkedIn
+function shareToLinkedIn(articleId) {
+    const article = getArticleById(articleId);
+    if (!article) return;
+
+    const url = getArticleUrl(articleId);
+    const shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+
+    // Track share
+    trackShare(articleId, 'linkedin');
+
+    // Open in new window
+    window.open(shareUrl, '_blank', 'width=600,height=400,scrollbars=yes,resizable=yes');
+
+    // Show success animation
+    showShareSuccess('Shared to LinkedIn!');
+}
+
+// Copy Article Link
+function copyArticleLink(articleId, event) {
+    if (event) {
+        event.stopPropagation();
+    }
+
+    const url = getArticleUrl(articleId);
+
+    // Use modern clipboard API
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(() => {
+            // Track share
+            trackShare(articleId, 'copy');
+
+            // Show success with animation
+            showCopySuccess(event);
+        }).catch(() => {
+            // Fallback
+            fallbackCopyToClipboard(url, articleId, event);
+        });
+    } else {
+        // Fallback for older browsers
+        fallbackCopyToClipboard(url, articleId, event);
+    }
+}
+
+// Fallback copy method for older browsers
+function fallbackCopyToClipboard(text, articleId, event) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.left = '-999999px';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+
+    try {
+        document.execCommand('copy');
+        trackShare(articleId, 'copy');
+        showCopySuccess(event);
+    } catch (err) {
+        showToast('Failed to copy link');
+    }
+
+    document.body.removeChild(textArea);
+}
+
+// Show copy success animation
+function showCopySuccess(event) {
+    // Update button text temporarily
+    let button;
+    if (event && event.target) {
+        button = event.target.closest('.share-btn, .modal-share-btn');
+    }
+
+    if (button) {
+        const originalHTML = button.innerHTML;
+        button.classList.add('copied');
+
+        // Update button content
+        if (button.classList.contains('modal-share-btn')) {
+            button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        } else {
+            button.innerHTML = '<i class="fas fa-check"></i>';
+        }
+
+        // Reset after animation
+        setTimeout(() => {
+            button.classList.remove('copied');
+            button.innerHTML = originalHTML;
+        }, 2000);
+    }
+
+    // Show toast notification
+    showToast('Link copied to clipboard!');
+}
+
+// Show share success animation
+function showShareSuccess(message) {
+    showToast(message);
+}
+
+// Generic Share Article (fallback for native share)
 function shareArticle(articleId) {
     const article = getArticleById(articleId);
     if (!article) return;
-    
+
     if (navigator.share) {
         navigator.share({
             title: article.title,
             text: article.excerpt,
-            url: window.location.href + '#article-' + articleId
+            url: getArticleUrl(articleId)
+        }).then(() => {
+            trackShare(articleId, 'native');
+            showToast('Article shared!');
+        }).catch((err) => {
+            if (err.name !== 'AbortError') {
+                console.error('Error sharing:', err);
+            }
         });
     } else {
-        showToast('Share feature coming soon!');
+        // Fallback to Twitter share
+        shareToTwitter(articleId);
     }
-}
-
-// Copy Article Link
-function copyArticleLink(articleId) {
-    const url = window.location.href + '#article-' + articleId;
-    navigator.clipboard.writeText(url).then(() => {
-        showToast('Link copied to clipboard!');
-    });
 }
 
 // Subscribe to Newsletter

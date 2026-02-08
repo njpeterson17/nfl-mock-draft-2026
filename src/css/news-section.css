@@ -536,6 +536,122 @@
     gap: 0.35rem;
 }
 
+/* Article Share Buttons */
+.article-share-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+}
+
+.share-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: var(--primary);
+    color: var(--text-secondary);
+    position: relative;
+    overflow: hidden;
+}
+
+.share-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+.share-btn:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+.share-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Twitter/X Share Button */
+.share-twitter {
+    background: rgba(29, 155, 240, 0.1);
+    color: #1d9bf0;
+}
+
+.share-twitter:hover {
+    background: #1d9bf0;
+    color: white;
+}
+
+/* Facebook Share Button */
+.share-facebook {
+    background: rgba(24, 119, 242, 0.1);
+    color: #1877f2;
+}
+
+.share-facebook:hover {
+    background: #1877f2;
+    color: white;
+}
+
+/* LinkedIn Share Button */
+.share-linkedin {
+    background: rgba(0, 119, 181, 0.1);
+    color: #0077b5;
+}
+
+.share-linkedin:hover {
+    background: #0077b5;
+    color: white;
+}
+
+/* Copy Link Button */
+.share-copy {
+    background: rgba(108, 117, 125, 0.1);
+    color: #6c757d;
+}
+
+.share-copy:hover {
+    background: #6c757d;
+    color: white;
+}
+
+.share-copy.copied {
+    background: #00ff88;
+    color: var(--primary);
+    animation: copyPulse 0.4s ease;
+}
+
+@keyframes copyPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Active/Click Animation */
+.share-btn:active {
+    transform: translateY(0) scale(0.95);
+}
+
 /* Load More */
 .load-more-container {
     text-align: center;

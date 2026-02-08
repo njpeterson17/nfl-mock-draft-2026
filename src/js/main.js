@@ -1279,9 +1279,16 @@
         // ==========================================
 
         function initImageHandling() {
-            // Add lazy loading to all images
+            // Add lazy loading to images
             const images = document.querySelectorAll('.player-photo img');
             images.forEach(img => {
+                // If image is already loaded, don't hide it
+                if (img.complete && img.naturalWidth > 0) {
+                    img.classList.add('loaded');
+                    return;
+                }
+                
+                // Only apply lazy loading to images not yet loaded
                 img.setAttribute('loading', 'lazy');
                 img.classList.add('lazy-image');
                 
@@ -1573,13 +1580,16 @@
             showToast('Trade undone');
         }
 
-        // Initialize when tab is shown
-        document.querySelector('.nav-tab[onclick="showTab(\'create\')"]').addEventListener('click', () => {
-            if (customDraft.length === 0) {
-                initCustomDraft();
-            }
-            initTradeSimulator();
-        });
+        // Initialize when create tab is shown (if it exists)
+        const createTab = document.querySelector('.nav-tab[onclick="showTab(\'create\')"]');
+        if (createTab) {
+            createTab.addEventListener('click', () => {
+                if (customDraft.length === 0) {
+                    initCustomDraft();
+                }
+                initTradeSimulator();
+            });
+        }
 
         // Register Service Worker for PWA
         if ('serviceWorker' in navigator) {

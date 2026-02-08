@@ -1410,11 +1410,13 @@
             transition: opacity 0.3s ease;
         }
 
-        .player-photo img[loading] {
+        .player-photo img.lazy-image {
             opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
-        .player-photo img.loaded {
+        .player-photo img.loaded,
+        .player-photo img:not(.lazy-image) {
             opacity: 1;
         }
 
