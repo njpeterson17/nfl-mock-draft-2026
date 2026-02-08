@@ -326,10 +326,6 @@
         }
 
         .war-room-tab {
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 255, 136, 0.1));
-            border: 1px solid var(--accent);
-            position: relative;
-            overflow: hidden;
         }
 
         /* Dropdown styles */
@@ -338,18 +334,6 @@
             color: var(--accent);
         }
 
-        .war-room-tab::before {
-            content: 'NEW';
-            position: absolute;
-            top: 2px;
-            right: -20px;
-            background: var(--danger);
-            color: white;
-            font-size: 0.5rem;
-            padding: 2px 20px;
-            transform: rotate(45deg);
-            font-weight: 700;
-        }
 
         .war-room-tab:hover {
             background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(0, 255, 136, 0.2));
