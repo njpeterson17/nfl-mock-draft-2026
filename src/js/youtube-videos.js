@@ -824,7 +824,7 @@ let isCinemaMode = false;
 // ==========================================
 
 /**
- * Open video player modal for a player
+ * Open YouTube highlights for a player in new tab
  * @param {string} playerName - Name of the player
  * @param {string} videoId - Optional specific video ID
  */
@@ -835,33 +835,14 @@ function openVideoPlayer(playerName, videoId = null) {
     return;
   }
   
-  currentPlayerName = playerName;
-  currentVideoId = videoId || playerData.mainHighlight;
-  currentPlaylistIndex = 0;
-  
-  // Find playlist index if videoId specified
-  if (videoId) {
-    const index = playerData.playlist.findIndex(v => v.id === videoId);
-    if (index !== -1) currentPlaylistIndex = index;
-  }
-  
-  createVideoModal();
-  loadVideo(currentVideoId);
-  renderPlaylist();
-  updateVideoInfo();
+  const targetVideoId = videoId || playerData.mainHighlight;
+  const youtubeUrl = `https://www.youtube.com/watch?v=${targetVideoId}`;
   
   // Track play event
-  videoAnalytics.trackPlay(playerName, currentVideoId);
+  videoAnalytics.trackPlay(playerName, targetVideoId);
   
-  // Show modal with animation
-  const modal = document.getElementById('videoPlayerModal');
-  if (modal) {
-    modal.style.display = 'flex';
-    setTimeout(() => modal.classList.add('active'), 10);
-  }
-  
-  // Prevent body scroll
-  document.body.style.overflow = 'hidden';
+  // Open YouTube in new tab
+  window.open(youtubeUrl, '_blank', 'noopener,noreferrer');
 }
 
 /**
@@ -1324,9 +1305,8 @@ function addVideoIndicators() {
       if (playerPhoto && !playerPhoto.querySelector('.video-indicator')) {
         const videoCount = playerVideos[playerName].playlist.length;
         playerPhoto.insertAdjacentHTML('beforeend', `
-          <div class="video-indicator" onclick="event.stopPropagation(); openVideoPlayer('${playerName}')">
-            <i class="fas fa-play"></i>
-            <span class="video-count">${videoCount}</span>
+          <div class="video-indicator" onclick="event.stopPropagation(); openVideoPlayer('${playerName}')" title="Watch on YouTube">
+            <i class="fab fa-youtube"></i>
           </div>
         `);
       }
@@ -1338,7 +1318,7 @@ function addVideoIndicators() {
         if (socialShare) {
           socialShare.insertAdjacentHTML('afterbegin', `
             <button class="share-btn watch-highlights-link" onclick="openVideoPlayer('${playerName}')">
-              <i class="fas fa-play-circle"></i> Watch Highlights
+              <i class="fab fa-youtube"></i> YouTube
             </button>
           `);
         }
@@ -1353,8 +1333,8 @@ function addVideoIndicators() {
       const rankElement = item.querySelector('.bb-rank');
       if (rankElement) {
         rankElement.insertAdjacentHTML('afterend', `
-          <button class="bb-video-btn" onclick="event.stopPropagation(); openVideoPlayer('${playerName}')" title="Watch Highlights">
-            <i class="fas fa-play"></i>
+          <button class="bb-video-btn" onclick="event.stopPropagation(); openVideoPlayer('${playerName}')" title="Watch on YouTube">
+            <i class="fab fa-youtube"></i>
           </button>
         `);
       }
