@@ -2348,4 +2348,6 @@ function displayNextPicks() {
 // Run when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
     setTimeout(displayNextPicks, 500);
+    setTimeout(displayNextPicks, 1500);
+    setTimeout(displayNextPicks, 3000);
 });
