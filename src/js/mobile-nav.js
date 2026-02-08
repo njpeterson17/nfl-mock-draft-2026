@@ -36,7 +36,6 @@ const MobileNav = {
         create: { name: 'Create', icon: 'fa-plus-circle', context: 'createMock' },
         edpLeaderboard: { name: 'EDP', icon: 'fa-chart-bar', context: 'leaderboard' },
         adpLeaderboard: { name: 'ADP', icon: 'fa-chart-line', context: 'leaderboard' },
-        teamDrafts: { name: 'Teams', icon: 'fa-shield-alt', context: 'teams' },
         draftGrades: { name: 'Grades', icon: 'fa-star', context: 'grades' }
     }
 };
@@ -219,13 +218,6 @@ function createMoreMenuSheet() {
             
             <div class="sheet-section">
                 <div class="sheet-section-title">Draft Tools</div>
-                <button class="sheet-item touch-feedback" onclick="handleNavClick('teamDrafts'); closeMoreMenu();">
-                    <i class="fas fa-shield-alt"></i>
-                    <div class="sheet-item-content">
-                        <div class="sheet-item-title">Team Drafts</div>
-                        <div class="sheet-item-subtitle">View by team</div>
-                    </div>
-                </button>
                 <button class="sheet-item touch-feedback" onclick="handleNavClick('draftGrades'); closeMoreMenu();">
                     <i class="fas fa-star"></i>
                     <div class="sheet-item-content">
@@ -783,12 +775,7 @@ function closePickDetails() {
 // ACTION HANDLERS
 // ============================================
 
-function filterAllPicks(position) {
-    if (typeof window.filterAllPicks === 'function') {
-        window.filterAllPicks(position);
-    }
-    showToast(`Filtered by ${position}`);
-}
+
 
 function showPositionFilter() {
     // Scroll to filter buttons

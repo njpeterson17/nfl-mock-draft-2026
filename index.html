@@ -104,17 +104,8 @@
             <button class="nav-tab active" onclick="showTab('round1')">
                 <i class="fas fa-list-ol"></i> Mock Draft
             </button>
-            <button class="nav-tab" onclick="showTab('adpLeaderboard')">
-                <i class="fas fa-chart-line"></i> ADP
-            </button>
             <button class="nav-tab" onclick="showTab('bigBoard')">
                 <i class="fas fa-list-ol"></i> Big Board
-            </button>
-            <button class="nav-tab" onclick="showTab('teamDrafts')">
-                <i class="fas fa-shield-alt"></i> Team Drafts
-            </button>
-            <button class="nav-tab" onclick="showTab('draftGrades')">
-                <i class="fas fa-star"></i> Grades
             </button>
             <button class="nav-tab" onclick="openTradeCalculator()">
                 <i class="fas fa-calculator"></i> Trades
@@ -143,6 +134,12 @@
                     </a>
                     <a href="pages/team-draft-history.html" class="dropdown-item" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 0.8rem; color: var(--text-primary); text-decoration: none; border-radius: 4px; font-size: 0.8rem;">
                         <i class="fas fa-history" style="color: #e74c3c;"></i> Team History
+                    </a>
+                    <a href="#" class="dropdown-item" onclick="showTab('adpLeaderboard'); document.getElementById('moreDropdown').style.display='none'; return false;" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 0.8rem; color: var(--text-primary); text-decoration: none; border-radius: 4px; font-size: 0.8rem;">
+                        <i class="fas fa-chart-line" style="color: #10b981;"></i> ADP
+                    </a>
+                    <a href="#" class="dropdown-item" onclick="showTab('draftGrades'); document.getElementById('moreDropdown').style.display='none'; return false;" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 0.8rem; color: var(--text-primary); text-decoration: none; border-radius: 4px; font-size: 0.8rem;">
+                        <i class="fas fa-star" style="color: #f59e0b;"></i> Grades
                     </a>
                 </div>
             </div>

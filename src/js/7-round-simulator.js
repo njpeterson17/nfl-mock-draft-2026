@@ -158,7 +158,64 @@ function generateRound3Order() {
 // PLAYER DATABASE (300+ prospects)
 // ==========================================
 
-const PLAYERS = generatePlayers();
+// Use real prospects from pff-data.js if available, otherwise generate
+const PLAYERS = (typeof pffBigBoardData !== 'undefined' && pffBigBoardData.length > 0) 
+    ? adaptPFFData(pffBigBoardData) 
+    : generatePlayers();
+
+function adaptPFFData(pffData) {
+    return pffData.map((player, idx) => {
+        // Parse grade (convert from string like "7.4" or "6.5" to 0-100 scale)
+        const gradeVal = parseFloat(player.grade);
+        const normalizedGrade = Math.min(98, Math.max(55, gradeVal * 12));
+        
+        // Parse comparison for strengths/weaknesses
+        const strengths = player.strengths ? player.strengths.split(',').map(s => s.trim()).slice(0, 3) : ['Athleticism', 'Potential', 'Work ethic'];
+        const weaknesses = ['Development needed', 'Experience', 'Technique refinement'];
+        
+        // Extract player comp from comparison string
+        let comparison = 'NFL Starter';
+        const match = player.comparison.match(/Ceiling:\s*([^,]+)/);
+        if (match) comparison = match[1].trim();
+        
+        return {
+            id: idx + 1,
+            rank: player.rank,
+            name: player.name,
+            position: player.position,
+            school: player.school,
+            height: player.height,
+            weight: player.weight,
+            forty: generateFortyTime(player.position),
+            grade: normalizedGrade.toFixed(1),
+            round: estimateRound(normalizedGrade),
+            strengths: strengths,
+            weaknesses: weaknesses,
+            comparison: comparison,
+            selected: false,
+            selectedBy: null,
+            selectedAt: null
+        };
+    });
+}
+
+function generateFortyTime(position) {
+    // Generate realistic 40 times based on position
+    const times = {
+        'QB': () => (4.65 + Math.random() * 0.35).toFixed(2),
+        'RB': () => (4.30 + Math.random() * 0.35).toFixed(2),
+        'WR': () => (4.30 + Math.random() * 0.30).toFixed(2),
+        'TE': () => (4.50 + Math.random() * 0.35).toFixed(2),
+        'OT': () => (4.90 + Math.random() * 0.50).toFixed(2),
+        'IOL': () => (5.00 + Math.random() * 0.50).toFixed(2),
+        'EDGE': () => (4.50 + Math.random() * 0.35).toFixed(2),
+        'DL': () => (4.80 + Math.random() * 0.40).toFixed(2),
+        'LB': () => (4.50 + Math.random() * 0.30).toFixed(2),
+        'CB': () => (4.35 + Math.random() * 0.25).toFixed(2),
+        'S': () => (4.40 + Math.random() * 0.25).toFixed(2)
+    };
+    return times[position] ? times[position]() : (4.60 + Math.random() * 0.30).toFixed(2);
+}
 
 function generatePlayers() {
     const positions = ['QB', 'RB', 'WR', 'TE', 'OT', 'IOL', 'EDGE', 'DL', 'LB', 'CB', 'S'];
