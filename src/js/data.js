@@ -878,9 +878,6 @@
 
         let teamDraftsFilter = 'all';
 
-        let bigBoardTierFilter = 'all';
-        let bigBoardPositionFilter = 'all';
-        
         let trades = [];
         let tradeSelectionA = [];
         let tradeSelectionB = [];
