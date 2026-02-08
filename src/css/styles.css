@@ -1197,16 +1197,18 @@
                 padding: 0;
                 overflow-x: auto;
                 -webkit-overflow-scrolling: touch;
+                -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+                mask-image: linear-gradient(to right, black 85%, transparent 100%);
             }
 
             .nav-tabs {
-                justify-content: center;
+                justify-content: flex-start;
                 padding: 0 1rem;
                 gap: 0;
             }
 
             .nav-tab {
-                padding: 1rem 1.25rem;
+                padding: 0.875rem 1rem;
                 font-size: 0.8rem;
                 white-space: nowrap;
             }
@@ -1238,23 +1240,38 @@
 
             .pick-header {
                 flex-direction: row;
-                flex-wrap: wrap;
+                flex-wrap: nowrap;
                 align-items: center;
-                padding: 0.75rem 1rem;
-                gap: 0.5rem;
+                padding: 12px 16px;
+                gap: 16px;
             }
 
             .header-left {
-                flex: 1 1 100%;
-                justify-content: flex-start;
+                flex: 0 0 auto;
+                justify-content: center;
             }
 
-            .header-center, .header-right {
+            .header-center {
+                display: flex;
+                flex: 1;
+                gap: 6px;
+            }
+
+            .header-center .team-helmet-img {
+                width: 70px;
+                height: 70px;
+            }
+
+            .header-center h3 {
+                font-size: 1rem;
+            }
+
+            .header-right {
                 display: none;
             }
 
             .pick-number {
-                font-size: 1.75rem;
+                font-size: 2rem;
                 min-width: 40px;
             }
 
@@ -1295,6 +1312,10 @@
 
             .player-info h2 {
                 font-size: 1.3rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                max-width: 100%;
             }
 
             .player-position {
@@ -1314,9 +1335,9 @@
             }
 
             .player-stats {
-                justify-content: center;
-                flex-wrap: wrap;
-                gap: 1rem;
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                gap: 0.5rem;
                 margin-top: 1rem;
             }
 
@@ -1325,12 +1346,18 @@
             }
 
             .stat-box .stat-label {
-                font-size: 0.65rem;
+                font-size: 0.7rem;
             }
 
             .social-share {
                 justify-content: center;
                 flex-wrap: wrap;
+            }
+
+            .player-main > .social-share {
+                flex-direction: row;
+                margin-left: 0;
+                margin-top: 12px;
             }
 
             .breakdown-section {
@@ -1415,7 +1442,7 @@
             }
 
             .nav-tab {
-                padding: 0.875rem 1rem;
+                padding: 0.875rem 0.75rem;
                 font-size: 0.75rem;
             }
 
@@ -1436,16 +1463,32 @@
             }
 
             .player-info h2 {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
 
             .pick-header {
-                gap: 0.75rem;
+                gap: 12px;
+            }
+
+            .header-center .team-helmet-img {
+                width: 55px;
+                height: 55px;
+            }
+
+            .header-center h3 {
+                font-size: 0.85rem;
             }
 
             .team-helmet {
                 width: 55px;
                 height: 40px;
+            }
+        }
+
+        /* Very Small Screens - Stats grid adjustment */
+        @media (max-width: 380px) {
+            .player-stats {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
@@ -3264,13 +3307,13 @@
 
 /* ===== COMPACT HEADER LAYOUT - NEW STRUCTURE ===== */
 .pick-header {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    padding: 16px 32px !important;
-    gap: 32px !important;
-    min-height: auto !important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+    gap: 32px;
+    min-height: auto;
 }
 
 /* Left Section - Pick Number */
@@ -3345,147 +3388,111 @@
 
 /* ===== COMPACT PLAYER INFO ===== */
 .player-main {
-    display: flex !important;
-    flex-direction: row !important;
-    gap: 16px !important;
-    align-items: flex-start !important;
-    padding: 16px 24px !important;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 16px 24px;
     position: relative;
 }
 
 .player-main .player-photo {
     flex-shrink: 0;
-    width: 120px !important;
-    height: 155px !important;
+    width: 120px;
+    height: 155px;
 }
 
 .player-main .player-photo img {
-    width: 120px !important;
-    height: 155px !important;
-    object-fit: cover !important;
+    width: 120px;
+    height: 155px;
+    object-fit: cover;
 }
 
 .player-main .player-info {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 6px !important;
-    flex: 1 !important;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
     min-width: 0;
 }
 
 .player-main .player-info h2 {
-    font-size: 1.5rem !important;
-    margin: 0 !important;
-    line-height: 1.2 !important;
+    font-size: 1.5rem;
+    margin: 0;
+    line-height: 1.2;
 }
 
 .player-main .player-school {
-    font-size: 0.9rem !important;
-    margin: 0 !important;
+    font-size: 0.9rem;
+    margin: 0;
 }
 
 /* ===== POSITION BADGE - COMPACT SIZE ===== */
 .player-position {
-    display: inline-block !important;
-    width: auto !important;
-    max-width: fit-content !important;
-    padding: 4px 16px !important;
-    font-size: 0.85rem !important;
-    font-weight: 600 !important;
+    display: inline-block;
+    width: auto;
+    max-width: fit-content;
+    padding: 4px 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
 }
 
 /* ===== SOCIAL SHARE BUTTONS - POSITIONED RIGHT ===== */
 .player-main > .social-share {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 6px !important;
-    margin-left: auto !important;
-    flex-shrink: 0 !important;
-    align-self: flex-start !important;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-left: auto;
+    flex-shrink: 0;
+    align-self: flex-start;
 }
 
 .player-main > .social-share .share-btn {
-    padding: 6px 12px !important;
-    font-size: 0.75rem !important;
-    white-space: nowrap !important;
-    border-radius: 4px !important;
-    background: rgba(255, 255, 255, 0.05) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    color: var(--text-secondary, #94a3b8) !important;
-    cursor: pointer !important;
-    transition: all 0.2s !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 6px !important;
-    justify-content: flex-start !important;
-    min-width: 140px !important;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary, #94a3b8);
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: flex-start;
+    min-width: 140px;
 }
 
 .player-main > .social-share .share-btn:hover {
-    background: rgba(255, 255, 255, 0.1) !important;
-    border-color: var(--accent, #00d4ff) !important;
-    color: var(--accent, #00d4ff) !important;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent, #00d4ff);
+    color: var(--accent, #00d4ff);
 }
 
 .player-main > .social-share .share-btn i {
-    font-size: 0.85rem !important;
+    font-size: 0.85rem;
 }
 
 /* ===== COMPACT STATS ===== */
 .player-stats {
-    display: flex !important;
-    gap: 12px !important;
-    flex-wrap: nowrap !important;
-    margin-top: 6px !important;
+    display: flex;
+    gap: 12px;
+    flex-wrap: nowrap;
+    margin-top: 6px;
 }
 
 .stat-box {
-    min-width: 55px !important;
+    min-width: 55px;
 }
 
 .stat-value {
-    font-size: 1.1rem !important;
-    line-height: 1.2 !important;
+    font-size: 1.1rem;
+    line-height: 1.2;
 }
 
 .stat-label {
-    font-size: 0.65rem !important;
-}
-
-/* Mobile responsive for new header */
-@media (max-width: 768px) {
-    .pick-header {
-        padding: 12px 16px !important;
-        gap: 16px !important;
-    }
-    
-    .header-left .pick-number {
-        font-size: 2rem !important;
-    }
-    
-    .header-center .team-helmet-img {
-        width: 70px !important;
-        height: 70px !important;
-    }
-    
-    .header-center h3 {
-        font-size: 1rem !important;
-    }
-    
-    .header-right {
-        display: none !important;
-    }
-    
-    .player-main {
-        flex-direction: column !important;
-        align-items: center !important;
-    }
-    
-    .player-main > .social-share {
-        flex-direction: row !important;
-        margin-left: 0 !important;
-        margin-top: 12px !important;
-    }
+    font-size: 0.65rem;
 }
 
 /* ===== PLAYER ACTION BUTTONS (TOP RIGHT OF PLAYER-INFO) ===== */

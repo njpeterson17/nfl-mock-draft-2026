@@ -452,16 +452,21 @@
    ========================================== */
 
 @media (max-width: 768px) {
+    .player-photo {
+        width: 120px;
+        height: 145px;
+    }
+
     .player-photo.large {
         width: 100px;
         height: 125px;
     }
-    
+
     .player-photo.xlarge {
         width: 140px;
         height: 175px;
     }
-    
+
     .player-image-grid {
         grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
         gap: 8px;
