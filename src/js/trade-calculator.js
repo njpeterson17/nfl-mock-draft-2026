@@ -86,7 +86,7 @@ const historicalTrades = [
         teamUp: 'San Francisco 49ers',
         teamDown: 'Miami Dolphins',
         picksUp: [3],
-        picksDown: [12, 2022 1st, 2023 1st, 2022 3rd],
+        picksDown: [12, '2022 1st', '2023 1st', '2022 3rd'],
         description: '49ers trade up for Trey Lance',
         valueDifference: -450
     },
@@ -95,7 +95,7 @@ const historicalTrades = [
         teamUp: 'Chicago Bears',
         teamDown: 'New York Giants',
         picksUp: [11],
-        picksDown: [20, 164, 2022 1st, 2022 4th],
+        picksDown: [20, 164, '2022 1st', '2022 4th'],
         description: 'Bears trade up for Justin Fields',
         valueDifference: -200
     },
@@ -104,7 +104,7 @@ const historicalTrades = [
         teamUp: 'Houston Texans',
         teamDown: 'Arizona Cardinals',
         picksUp: [3],
-        picksDown: [12, 33, 2024 1st, 2024 2nd],
+        picksDown: [12, 33, '2024 1st', '2024 2nd'],
         description: 'Texans trade up for Will Anderson Jr.',
         valueDifference: -300
     },
@@ -113,7 +113,7 @@ const historicalTrades = [
         teamUp: 'Tennessee Titans',
         teamDown: 'Chicago Bears',
         picksUp: [1],
-        picksDown: [11, 2024 1st, 2025 1st, 2024 4th],
+        picksDown: [11, '2024 1st', '2025 1st', '2024 4th'],
         description: 'Bears trade down with Titans',
         valueDifference: +400
     },
@@ -122,7 +122,7 @@ const historicalTrades = [
         teamUp: 'Minnesota Vikings',
         teamDown: 'New York Jets',
         picksUp: [10],
-        picksDown: [11, 129, 2024 4th],
+        picksDown: [11, 129, '2024 4th'],
         description: 'Vikings trade up for J.J. McCarthy',
         valueDifference: -50
     },
@@ -140,7 +140,7 @@ const historicalTrades = [
         teamUp: 'Los Angeles Rams',
         teamDown: 'Tennessee Titans',
         picksUp: [1, 113, 177],
-        picksDown: [15, 43, 45, 76, 2017 1st, 2017 3rd],
+        picksDown: [15, 43, 45, 76, '2017 1st', '2017 3rd'],
         description: 'Rams trade up for Jared Goff',
         valueDifference: -850
     },
@@ -149,7 +149,7 @@ const historicalTrades = [
         teamUp: 'Philadelphia Eagles',
         teamDown: 'Cleveland Browns',
         picksUp: [2],
-        picksDown: [8, 77, 100, 2017 1st, 2018 2nd],
+        picksDown: [8, 77, 100, '2017 1st', '2018 2nd'],
         description: 'Eagles trade up for Carson Wentz',
         valueDifference: -400
     },
@@ -158,7 +158,7 @@ const historicalTrades = [
         teamUp: 'Kansas City Chiefs',
         teamDown: 'Buffalo Bills',
         picksUp: [10],
-        picksDown: [27, 91, 2018 1st],
+        picksDown: [27, 91, '2018 1st'],
         description: 'Chiefs trade up for Patrick Mahomes',
         valueDifference: -350
     },
@@ -167,7 +167,7 @@ const historicalTrades = [
         teamUp: 'Houston Texans',
         teamDown: 'Cleveland Browns',
         picksUp: [12],
-        picksDown: [25, 2018 1st],
+        picksDown: [25, '2018 1st'],
         description: 'Texans trade up for Deshaun Watson',
         valueDifference: -280
     }
