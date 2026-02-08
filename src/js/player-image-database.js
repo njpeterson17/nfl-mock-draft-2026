@@ -239,16 +239,6 @@ const PlayerImageDatabase = {
             hasLocal: true,
             teamColorKey: "georgia"
         },
-        "Dante Moore": {
-            rank: 23,
-            position: "QB",
-            school: "Oregon",
-            local: null,
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432473.png",
-            cbs: null,
-            hasLocal: false,
-            teamColorKey: "oregon"
-        },
         "Kadyn Proctor": {
             rank: 24,
             position: "OT",
