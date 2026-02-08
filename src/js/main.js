@@ -658,7 +658,7 @@
 
             // Update active button
             document.querySelectorAll('.edp-toggle button').forEach((btn, idx) => {
-                if (idx < 2) { // Only update source buttons
+                if (idx < 3) { // Only update source buttons (ESPN, PFF, FantasyPros)
                     btn.classList.remove('active');
                 }
             });
@@ -675,7 +675,7 @@
             // Re-render big board with new source
             renderBigBoard();
 
-            const sourceName = source === 'espn' ? 'ESPN' : 'PFF';
+            const sourceName = source === 'espn' ? 'ESPN' : source === 'pff' ? 'PFF' : 'FantasyPros';
             showToast(`Switched to ${sourceName} rankings`);
         }
 
@@ -684,7 +684,9 @@
             if (!container) return;
 
             // Select data source based on current selection
-            const dataSource = currentBigBoardSource === 'espn' ? bigBoardData : pffBigBoardData;
+            const dataSource = currentBigBoardSource === 'espn' ? bigBoardData :
+                              currentBigBoardSource === 'pff' ? pffBigBoardData :
+                              fantasyProsBigBoardData;
 
             let filtered = dataSource.filter(player => {
                 const matchesTier = bigBoardTierFilter === 'all' || player.tier === bigBoardTierFilter;
@@ -692,7 +694,8 @@
                 return matchesTier && matchesPosition;
             });
 
-            const sourceName = currentBigBoardSource === 'espn' ? 'ESPN' : 'PFF';
+            const sourceName = currentBigBoardSource === 'espn' ? 'ESPN' :
+                              currentBigBoardSource === 'pff' ? 'PFF' : 'FantasyPros';
             document.getElementById('bigBoardCount').textContent = `Showing ${filtered.length} of ${dataSource.length} prospects (${sourceName})`;
             
             container.innerHTML = filtered.map(player => {
