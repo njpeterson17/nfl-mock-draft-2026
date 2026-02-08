@@ -418,9 +418,9 @@ const combineData = {
         },
         {
             id: 'te002',
-            name: 'Colston Loveland',
+            name: 'Terrance Ferguson',
             position: 'TE',
-            school: 'Michigan',
+            school: 'Oregon',
             height: "6'5\"",
             heightInches: 77,
             weight: 245,

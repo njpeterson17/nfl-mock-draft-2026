@@ -530,7 +530,7 @@ const ConsensusMockData = {
                     espn: { player: 'Olaivavega Ioane', confidence: 0.65, note: 'IOL' }, // Different!
                     pfn: { player: 'Spencer Fano', confidence: 0.75, note: 'Zone fit' },
                     tdn: { player: 'Spencer Fano', confidence: 0.70, note: 'Footwork' },
-                    walter: { player: 'JC Latham', confidence: 0.55, note: 'Wisconsin' } // Different!
+                    walter: { player: 'Kage Casey', confidence: 0.55, note: 'Boise State' } // Different!
                 }
             },
             votes: { up: 723, down: 512 },

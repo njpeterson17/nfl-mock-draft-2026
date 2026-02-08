@@ -61,7 +61,7 @@ const articles = [
             
             <p><strong>Interior Offensive Line:</strong> Beyond Olaivavega Ioane (Penn State) and a few others, this is not a deep IOL class.</p>
             
-            <p><strong>Tight End:</strong> While Mason Taylor (LSU) and Colston Loveland (Michigan) are solid prospects, this class lacks the elite top-end talent at the position.</p>
+            <p><strong>Tight End:</strong> While Mason Taylor (LSU) and Terrance Ferguson (Oregon) are solid prospects, this class lacks the elite top-end talent at the position.</p>
         `,
         date: '2026-01-25',
         author: 'Draft Analyst',
@@ -1495,7 +1495,7 @@ const articles = [
             <p><strong>Available at #8:</strong></p>
             <ul>
                 <li><strong>Mason Taylor (LSU):</strong> Complete TE who can block and catch. 6'6", 245 lbs with good hands and route running.</li>
-                <li><strong>Colston Loveland (Michigan):</strong> Athletic receiving TE with YAC ability. More receiving-focused than Taylor.</li>
+                <li><strong>Terrance Ferguson (Oregon):</strong> Athletic receiving TE with YAC ability. More receiving-focused than Taylor.</li>
             </ul>
 
             <p><strong>Pros:</strong></p>
