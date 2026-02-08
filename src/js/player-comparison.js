@@ -26,8 +26,8 @@ function enhanceBigBoardDataWithRatings() {
         'Jadarian Price': { athleticism: 9.0, size: 8.0, production: 8.0, upside: 8.5, technique: 7.5 },
         'Emmett Johnson': { athleticism: 8.0, size: 8.0, production: 8.5, upside: 7.5, technique: 8.5 },
         'Kaytron Allen': { athleticism: 7.5, size: 8.5, production: 8.0, upside: 8.0, technique: 8.0 },
-        'Omarion Hampton': { athleticism: 8.0, size: 8.5, production: 8.0, upside: 8.0, technique: 8.0 },
-        'Kaleb Johnson': { athleticism: 7.5, size: 8.5, production: 7.5, upside: 7.5, technique: 8.0 },
+        'Mike Washington Jr.': { athleticism: 8.0, size: 8.5, production: 8.0, upside: 8.0, technique: 8.0 },
+        'Rahsul Faison': { athleticism: 7.5, size: 8.5, production: 7.5, upside: 7.5, technique: 8.0 },
         
         // WRs
         'Carnell Tate': { athleticism: 8.0, size: 9.0, production: 9.0, upside: 9.0, technique: 8.5 },
@@ -36,12 +36,12 @@ function enhanceBigBoardDataWithRatings() {
         'Zachariah Branch': { athleticism: 9.5, size: 6.0, production: 8.0, upside: 9.0, technique: 7.5 },
         'Denzel Boston': { athleticism: 7.5, size: 9.0, production: 8.0, upside: 8.0, technique: 7.5 },
         'Jayden Higgins': { athleticism: 7.0, size: 8.5, production: 7.5, upside: 7.5, technique: 8.0 },
-        'Luther Burden III': { athleticism: 8.5, size: 7.5, production: 8.5, upside: 8.5, technique: 8.0 },
+        'K.C. Concepcion': { athleticism: 8.5, size: 7.5, production: 8.5, upside: 8.5, technique: 8.0 },
         'Xavier Restrepo': { athleticism: 7.5, size: 7.0, production: 8.0, upside: 7.0, technique: 8.5 },
         
         // TEs
         'Kenyon Sadiq': { athleticism: 8.5, size: 8.0, production: 8.0, upside: 8.5, technique: 7.5 },
-        'Mason Taylor': { athleticism: 8.0, size: 8.0, production: 7.5, upside: 8.0, technique: 7.5 },
+        'Eli Stowers': { athleticism: 8.0, size: 8.0, production: 7.5, upside: 8.0, technique: 7.5 },
         'Eli Stowers': { athleticism: 8.5, size: 7.5, production: 7.0, upside: 8.0, technique: 7.0 },
         'Max Klare': { athleticism: 7.5, size: 7.5, production: 7.5, upside: 7.5, technique: 7.5 },
         
@@ -69,22 +69,22 @@ function enhanceBigBoardDataWithRatings() {
         'Keldric Faulk': { athleticism: 7.5, size: 9.0, production: 8.0, upside: 8.5, technique: 7.5 },
         'TJ Parker': { athleticism: 8.0, size: 7.5, production: 7.5, upside: 8.0, technique: 7.5 },
         'Dani Dennis-Sutton': { athleticism: 8.5, size: 8.0, production: 7.5, upside: 8.5, technique: 7.5 },
-        'Landon Jackson': { athleticism: 7.0, size: 9.0, production: 7.5, upside: 7.5, technique: 7.5 },
-        'Jack Sawyer': { athleticism: 7.5, size: 8.0, production: 7.5, upside: 7.5, technique: 8.0 },
+        'T.J. Parker': { athleticism: 7.0, size: 9.0, production: 7.5, upside: 7.5, technique: 7.5 },
+        'Matayo Uiagalelei': { athleticism: 7.5, size: 8.0, production: 7.5, upside: 7.5, technique: 8.0 },
         
         // DL
         'Peter Woods': { athleticism: 8.0, size: 8.5, production: 8.5, upside: 8.5, technique: 8.0 },
         'Kayden McDonald': { athleticism: 6.5, size: 9.5, production: 8.0, upside: 7.5, technique: 7.5 },
-        'Deone Walker': { athleticism: 6.0, size: 9.5, production: 7.5, upside: 7.0, technique: 7.5 },
-        'Tyleik Williams': { athleticism: 7.0, size: 8.5, production: 7.5, upside: 7.5, technique: 7.5 },
-        'Kenneth Grant': { athleticism: 6.5, size: 9.5, production: 7.0, upside: 7.0, technique: 7.0 },
-        'Shemar Stewart': { athleticism: 8.5, size: 8.5, production: 6.5, upside: 8.5, technique: 6.5 },
+        'Gracen Halton': { athleticism: 6.0, size: 9.5, production: 7.5, upside: 7.0, technique: 7.5 },
+        'Chris McClellan': { athleticism: 7.0, size: 8.5, production: 7.5, upside: 7.5, technique: 7.5 },
+        'Lee Hunter': { athleticism: 6.5, size: 9.5, production: 7.0, upside: 7.0, technique: 7.0 },
+        'Caleb Banks': { athleticism: 8.5, size: 8.5, production: 6.5, upside: 8.5, technique: 6.5 },
         
         // LBs
         'Arvell Reese': { athleticism: 9.0, size: 8.5, production: 8.5, upside: 9.0, technique: 8.0 },
         'Sonny Styles': { athleticism: 9.0, size: 8.5, production: 8.0, upside: 9.0, technique: 7.5 },
         'CJ Allen': { athleticism: 8.5, size: 8.0, production: 8.5, upside: 8.0, technique: 8.5 },
-        'Jihaad Campbell': { athleticism: 8.5, size: 8.0, production: 7.5, upside: 8.5, technique: 7.5 },
+        'Anthony Hill Jr.': { athleticism: 8.5, size: 8.0, production: 7.5, upside: 8.5, technique: 7.5 },
         'Anthony Hill Jr.': { athleticism: 8.0, size: 8.0, production: 7.5, upside: 8.0, technique: 7.5 },
         'Carson Schwesinger': { athleticism: 7.5, size: 7.5, production: 8.5, upside: 7.0, technique: 8.0 },
         

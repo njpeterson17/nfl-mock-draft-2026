@@ -339,35 +339,35 @@ const playerVideos = {
     position: "QB",
     school: "North Dakota State"
   },
-  "Kaleb Johnson": {
+  "Rahsul Faison": {
     mainHighlight: "xHygm9J1iUA",
     playlist: [
-      { id: "xHygm9J1iUA", title: "Kaleb Johnson | 2024 Highlights", duration: "7:15", thumbnail: "hqdefault" },
-      { id: "gxC3u_r8LVM", title: "Kaleb Johnson - Iowa Highlights 2024", duration: "5:28", thumbnail: "mqdefault" }
+      { id: "xHygm9J1iUA", title: "Rahsul Faison | 2024 Highlights", duration: "7:15", thumbnail: "hqdefault" },
+      { id: "gxC3u_r8LVM", title: "Rahsul Faison - South Carolina Highlights 2024", duration: "5:28", thumbnail: "mqdefault" }
     ],
     stats: {
       views: "390K",
       likes: "13K",
-      channel: "Iowa Football",
+      channel: "South Carolina Football",
       videoCount: 2
     },
     position: "RB",
-    school: "Iowa"
+    school: "South Carolina"
   },
-  "Landon Jackson": {
+  "T.J. Parker": {
     mainHighlight: "ECp9nBIDXVM",
     playlist: [
-      { id: "ECp9nBIDXVM", title: "Landon Jackson Full College Football Highlights | Arkansas EDGE", duration: "8:30", thumbnail: "hqdefault" },
-      { id: "Mg0p5_lH-30", title: "Landon Jackson - Arkansas | 2024 Highlights", duration: "5:45", thumbnail: "mqdefault" }
+      { id: "ECp9nBIDXVM", title: "T.J. Parker Full College Football Highlights | Clemson EDGE", duration: "8:30", thumbnail: "hqdefault" },
+      { id: "Mg0p5_lH-30", title: "T.J. Parker - Clemson | 2024 Highlights", duration: "5:45", thumbnail: "mqdefault" }
     ],
     stats: {
       views: "260K",
       likes: "8K",
-      channel: "Arkansas Football",
+      channel: "Clemson Football",
       videoCount: 2
     },
     position: "EDGE",
-    school: "Arkansas"
+    school: "Clemson"
   },
   "Caleb Lomu": {
     mainHighlight: "lomu2025abc",
@@ -532,20 +532,20 @@ const playerVideos = {
     position: "CB",
     school: "Arizona"
   },
-  "Princely Umanmielen": {
+  "Cashius Howell": {
     mainHighlight: "C3mxBGUv46o",
     playlist: [
-      { id: "C3mxBGUv46o", title: "Princely Umanmielen Full College Football Highlights | Ole Miss EDGE", duration: "9:45", thumbnail: "hqdefault" },
-      { id: "IYzIi7fZJVQ", title: "NFL DRAFT: Princely Umanmielen Highlights", duration: "3:30", thumbnail: "mqdefault" }
+      { id: "C3mxBGUv46o", title: "Cashius Howell Full College Football Highlights | Texas A&M EDGE", duration: "9:45", thumbnail: "hqdefault" },
+      { id: "IYzIi7fZJVQ", title: "NFL DRAFT: Cashius Howell Highlights", duration: "3:30", thumbnail: "mqdefault" }
     ],
     stats: {
       views: "230K",
       likes: "7K",
-      channel: "Ole Miss Football",
+      channel: "Texas A&M Football",
       videoCount: 2
     },
     position: "EDGE",
-    school: "Ole Miss"
+    school: "Texas A&M"
   },
   "Rod Moore": {
     mainHighlight: "moore2025abc",
@@ -576,20 +576,20 @@ const playerVideos = {
     position: "CB",
     school: "Georgia"
   },
-  "TreVeyon Henderson": {
+  "Darius Taylor": {
     mainHighlight: "POpRSIInnls",
     playlist: [
-      { id: "POpRSIInnls", title: "Treveyon Henderson 2024 Ohio State Highlights", duration: "8:12", thumbnail: "hqdefault" },
-      { id: "QaDN1HN3dD8", title: "Treveyon Henderson full 2024 highlights! Ohio State RB", duration: "12:35", thumbnail: "mqdefault" }
+      { id: "POpRSIInnls", title: "Darius Taylor 2024 Minnesota Highlights", duration: "8:12", thumbnail: "hqdefault" },
+      { id: "QaDN1HN3dD8", title: "Darius Taylor full 2024 highlights! Minnesota RB", duration: "12:35", thumbnail: "mqdefault" }
     ],
     stats: {
       views: "450K",
       likes: "15K",
-      channel: "Ohio State Football",
+      channel: "Minnesota Football",
       videoCount: 2
     },
     position: "RB",
-    school: "Ohio State"
+    school: "Minnesota"
   },
   "Ty Simpson": {
     mainHighlight: "3xjAOHbJCec",
@@ -606,19 +606,19 @@ const playerVideos = {
     position: "QB",
     school: "Alabama"
   },
-  "Mason Taylor": {
+  "Eli Stowers": {
     mainHighlight: "taylor2025abc",
     playlist: [
-      { id: "taylor2025abc", title: "LSU TE Highlights", duration: "8:30", thumbnail: "hqdefault" }
+      { id: "taylor2025abc", title: "Vanderbilt TE Highlights", duration: "8:30", thumbnail: "hqdefault" }
     ],
     stats: {
       views: "250K",
       likes: "8K",
-      channel: "LSU Football",
+      channel: "Vanderbilt Football",
       videoCount: 1
     },
     position: "TE",
-    school: "LSU"
+    school: "Vanderbilt"
   },
   "Maxwell Hairston": {
     mainHighlight: "hairston2025xyz",
@@ -648,47 +648,47 @@ const playerVideos = {
     position: "S",
     school: "Toledo"
   },
-  "Shemar Stewart": {
+  "Caleb Banks": {
     mainHighlight: "stewart2025xyz",
     playlist: [
-      { id: "stewart2025xyz", title: "Texas A&M EDGE Highlights", duration: "8:25", thumbnail: "hqdefault" }
+      { id: "stewart2025xyz", title: "Florida EDGE Highlights", duration: "8:25", thumbnail: "hqdefault" }
     ],
     stats: {
       views: "275K",
       likes: "9K",
-      channel: "Texas A&M Football",
+      channel: "Florida Football",
       videoCount: 1
     },
     position: "EDGE",
-    school: "Texas A&M"
+    school: "Florida"
   },
-  "Jihaad Campbell": {
+  "Anthony Hill Jr.": {
     mainHighlight: "campbell2025abc",
     playlist: [
-      { id: "campbell2025abc", title: "Alabama LB Highlights", duration: "8:40", thumbnail: "hqdefault" }
+      { id: "campbell2025abc", title: "Texas LB Highlights", duration: "8:40", thumbnail: "hqdefault" }
     ],
     stats: {
       views: "295K",
       likes: "10K",
-      channel: "Alabama Football",
+      channel: "Texas Football",
       videoCount: 1
     },
     position: "LB",
-    school: "Alabama"
+    school: "Texas"
   },
-  "Jonah Savaiinaea": {
+  "Nishad Strother": {
     mainHighlight: "savaiinaea2025xyz",
     playlist: [
-      { id: "savaiinaea2025xyz", title: "Arizona IOL Highlights", duration: "7:35", thumbnail: "hqdefault" }
+      { id: "savaiinaea2025xyz", title: "Texas IOL Highlights", duration: "7:35", thumbnail: "hqdefault" }
     ],
     stats: {
       views: "160K",
       likes: "5K",
-      channel: "Arizona Football",
+      channel: "Texas Football",
       videoCount: 1
     },
     position: "IOL",
-    school: "Arizona"
+    school: "Texas"
   },
   "Xavier Restrepo": {
     mainHighlight: "restrepo2025abc",
@@ -704,19 +704,19 @@ const playerVideos = {
     position: "WR",
     school: "Miami"
   },
-  "Luther Burden III": {
+  "K.C. Concepcion": {
     mainHighlight: "burden2025xyz",
     playlist: [
-      { id: "burden2025xyz", title: "Missouri WR Highlights", duration: "9:50", thumbnail: "hqdefault" }
+      { id: "burden2025xyz", title: "Texas A&M WR Highlights", duration: "9:50", thumbnail: "hqdefault" }
     ],
     stats: {
       views: "420K",
       likes: "14K",
-      channel: "Missouri Football",
+      channel: "Texas A&M Football",
       videoCount: 1
     },
     position: "WR",
-    school: "Missouri"
+    school: "Texas A&M"
   }
 };
 

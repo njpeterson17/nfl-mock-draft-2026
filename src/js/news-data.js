@@ -16,10 +16,10 @@ const articles = [
             
             <p>Other notable declarations include:</p>
             <ul>
-                <li><strong>Arvell Reese (LB, Ohio State)</strong> - The Butkus Award finalist brings elite athleticism and production from the nation's top defense.</li>
+                <li><strong>Arvell Reese (LB, Georgia)</strong> - The Butkus Award finalist brings elite athleticism and production from the nation's top defense.</li>
                 <li><strong>Jeremiyah Love (RB, Notre Dame)</strong> - Explosive runner with home run ability who helped lead the Irish to the CFP.</li>
-                <li><strong>Carnell Tate (WR, Ohio State)</strong> - Big-bodied receiver who emerged as the Buckeyes' top target.</li>
-                <li><strong>Caleb Downs (S, Ohio State)</strong> - Former Alabama five-star who made an immediate impact in Columbus.</li>
+                <li><strong>Carnell Tate (WR, Georgia)</strong> - Big-bodied receiver who emerged as the Buckeyes' top target.</li>
+                <li><strong>Caleb Downs (S, Georgia)</strong> - Former Alabama five-star who made an immediate impact in Columbus.</li>
             </ul>
             
             <p>The NFL Scouting Combine will take place February 26 - March 3 in Indianapolis, where these prospects will undergo measurements, athletic testing, and team interviews.</p>
@@ -51,9 +51,9 @@ const articles = [
             
             <p><strong>Edge Rushers:</strong> This class is loaded with pass rushing talent. Rueben Bain Jr. (Miami, ACC DPOY), David Bailey (Texas Tech), and Akheem Mesidor (Miami) headline a deep group that could see 5+ players selected in Round 1.</p>
             
-            <p><strong>Running Back:</strong> After several down years, the 2026 RB class looks revitalized. Jeremiyah Love (Notre Dame), Kaleb Johnson (Iowa), and Omarion Hampton (North Carolina) all bring different skill sets and could hear their names called early.</p>
+            <p><strong>Running Back:</strong> After several down years, the 2026 RB class looks revitalized. Jeremiyah Love (Notre Dame), Rahsul Faison (South Carolina), and Mike Washington Jr. (Arkansas) all bring different skill sets and could hear their names called early.</p>
             
-            <p><strong>Safety:</strong> Caleb Downs (Ohio State) leads a talented group of defensive backs with versatility to play multiple spots. Emmanuel McNeil-Warren (Toledo) and Dillon Thieneman (Oregon) provide quality depth.</p>
+            <p><strong>Safety:</strong> Caleb Downs (Georgia) leads a talented group of defensive backs with versatility to play multiple spots. Emmanuel McNeil-Warren (Toledo) and Dillon Thieneman (Oregon) provide quality depth.</p>
             
             <h3>Weaknesses</h3>
             
@@ -61,7 +61,7 @@ const articles = [
             
             <p><strong>Interior Offensive Line:</strong> Beyond Olaivavega Ioane (Penn State) and a few others, this is not a deep IOL class.</p>
             
-            <p><strong>Tight End:</strong> While Mason Taylor (LSU) and Terrance Ferguson (Oregon) are solid prospects, this class lacks the elite top-end talent at the position.</p>
+            <p><strong>Tight End:</strong> While Eli Stowers (Vanderbilt) and Terrance Ferguson (Oregon) are solid prospects, this class lacks the elite top-end talent at the position.</p>
         `,
         date: '2026-01-25',
         author: 'Draft Analyst',
@@ -178,9 +178,9 @@ const articles = [
             
             <h3>Solidifying Stock</h3>
             
-            <p><strong>Mason Taylor (TE, LSU)</strong> - Didn't wow, but showed he's a complete tight end who can block and catch. Safe Day 2 pick.</p>
-            
-            <p><strong>Kaleb Johnson (RB, Iowa)</strong> - Physical runner who looked the part. Limited in passing game work but showed well in team drills.</p>
+            <p><strong>Eli Stowers (TE, Vanderbilt)</strong> - Didn't wow, but showed he's a complete tight end who can block and catch. Safe Day 2 pick.</p>
+
+            <p><strong>Rahsul Faison (RB, South Carolina)</strong> - Physical runner who looked the part. Limited in passing game work but showed well in team drills.</p>
             
             <h3>Fallers</h3>
             
@@ -211,9 +211,9 @@ const articles = [
             
             <h3>Tier 1: Elite Prospects</h3>
             
-            <p><strong>Arvell Reese (Ohio State)</strong> - The complete package. At 6'4", 243 lbs, Reese has the size to take on blocks and the speed (projected 4.55 forty) to run sideline to sideline. He's a three-down player who can rush the passer, cover tight ends, and defend the run. Potential top-5 pick.</p>
+            <p><strong>Arvell Reese (Georgia)</strong> - The complete package. At 6'4", 243 lbs, Reese has the size to take on blocks and the speed (projected 4.55 forty) to run sideline to sideline. He's a three-down player who can rush the passer, cover tight ends, and defend the run. Potential top-5 pick.</p>
             
-            <p><strong>Sonny Styles (Ohio State)</strong> - Slightly less production than Reese but similar athletic traits. Styles played multiple positions in college and offers scheme versatility. Projects as a Will linebacker in a 4-3 or ILB in a 3-4.</p>
+            <p><strong>Sonny Styles (Georgia)</strong> - Slightly less production than Reese but similar athletic traits. Styles played multiple positions in college and offers scheme versatility. Projects as a Will linebacker in a 4-3 or ILB in a 3-4.</p>
             
             <h3>Tier 2: Quality Starters</h3>
             
@@ -309,9 +309,9 @@ const articles = [
             
             <p>Several other edge rushers project as Day 2 picks with starter potential:</p>
             <ul>
-                <li>James Pearce Jr. (Tennessee) - Former five-star with elite traits</li>
+                <li>Mikail Kamara (Indiana) - Former five-star with elite traits</li>
                 <li>Mykel Williams (Georgia) - Athletic but needs refinement</li>
-                <li>Shemar Stewart (Texas A&M) - Length and power, limited production</li>
+                <li>Caleb Banks (Florida) - Length and power, limited production</li>
             </ul>
             
             <p><strong>Bottom Line:</strong> Teams needing pass rush help are in luck. This class has 4+ players with Round 1 grades and quality depth through Round 3.</p>
@@ -534,7 +534,7 @@ const articles = [
 
             <p><strong>Francis Mauigoa (OT, Miami):</strong> The top tackle prospect measured well at the combine (6'5", 326 lbs, 34-inch arms). He's a mauler in the run game but needs work in pass protection. Selecting him at #2 would be a reach, but trading down to #4-6 makes sense.</p>
 
-            <p><strong>Arvell Reese (LB, Ohio State):</strong> If the Jets go best player available, Reese is a generational linebacker prospect. But taking a LB at #2 when you can't protect your 41-year-old QB is questionable.</p>
+            <p><strong>Arvell Reese (LB, Georgia):</strong> If the Jets go best player available, Reese is a generational linebacker prospect. But taking a LB at #2 when you can't protect your 41-year-old QB is questionable.</p>
 
             <p><strong>Free Agency Route:</strong> The Jets could sign a veteran LT in free agency (Jonah Williams, Charles Leno Jr.) and use #2 on an edge rusher, receiver, or trade back.</p>
 
@@ -560,13 +560,13 @@ const articles = [
         id: 14,
         type: 'analysis',
         title: 'WR Class Deep Dive: Why 2026 Could See 7+ First Round Receivers',
-        excerpt: 'The 2026 wide receiver class has elite depth. From Carnell Tate to Tetairoa McMillan to Emeka Egbuka, this could be a historic year for pass catchers.',
+        excerpt: 'The 2026 wide receiver class has elite depth. From Carnell Tate to Tetairoa McMillan to Dillon Bell, this could be a historic year for pass catchers.',
         content: `
             <p>The 2026 NFL Draft wide receiver class is shaping up to be one of the deepest in recent memory. While there's no clear-cut WR1, the depth through the first two rounds is exceptional.</p>
 
             <h3>Tier 1: Round 1 Locks</h3>
 
-            <p><strong>Carnell Tate (Ohio State)</strong> - 6'3", 195 lbs - Big-bodied X receiver with contested catch ability. Safe pick for teams needing a red zone threat. <em>Projection: Picks 15-20</em></p>
+            <p><strong>Carnell Tate (Georgia)</strong> - 6'3", 195 lbs - Big-bodied X receiver with contested catch ability. Safe pick for teams needing a red zone threat. <em>Projection: Picks 15-20</em></p>
 
             <p><strong>Jordyn Tyson (Arizona State)</strong> - 6'2", 200 lbs - Polished route runner with great hands. Limited ceiling but high floor. <em>Projection: Picks 18-25</em></p>
 
@@ -574,13 +574,13 @@ const articles = [
 
             <p><strong>Tetairoa McMillan (Arizona)</strong> - 6'5", 212 lbs - Massive catch radius and alpha mindset. Needs to improve route running. <em>Projection: Picks 12-18</em></p>
 
-            <p><strong>Emeka Egbuka (Ohio State)</strong> - 6'1", 205 lbs - Do-everything receiver who can play inside/outside. Consistent and reliable. <em>Projection: Picks 22-32</em></p>
+            <p><strong>Dillon Bell (Georgia)</strong> - 6'1", 205 lbs - Do-everything receiver who can play inside/outside. Consistent and reliable. <em>Projection: Picks 22-32</em></p>
 
             <h3>Tier 2: Late Round 1 / Early Round 2</h3>
 
             <p><strong>Isaiah Bond (Texas)</strong> - 6'0", 190 lbs - Speed demon who can take the top off defenses. One-trick pony concerns. <em>Projection: Picks 28-40</em></p>
 
-            <p><strong>Kyren Lacy (LSU)</strong> - 6'3", 215 lbs - Physical receiver who wins with strength. Limited separation ability. <em>Projection: Picks 30-45</em></p>
+            <p><strong>Kyren Lacy (Vanderbilt)</strong> - 6'3", 215 lbs - Physical receiver who wins with strength. Limited separation ability. <em>Projection: Picks 30-45</em></p>
 
             <p><strong>Denzel Boston (North Dakota State)</strong> - 6'4", 210 lbs - Small school standout who dominated at Senior Bowl. Size and hands stand out. <em>Projection: Picks 35-50</em></p>
 
@@ -597,7 +597,7 @@ const articles = [
             <h3>Historical Context</h3>
             <p>The 2020 draft saw 6 receivers go in Round 1. The 2004 draft famously had 7 (including Larry Fitzgerald and Roy Williams). The 2026 class could match or exceed these historic numbers.</p>
 
-            <p><strong>Bold Prediction:</strong> 8 wide receivers go in Round 1, with Emeka Egbuka sneaking in at #32 to the Buffalo Bills.</p>
+            <p><strong>Bold Prediction:</strong> 8 wide receivers go in Round 1, with Dillon Bell sneaking in at #32 to the Buffalo Bills.</p>
         `,
         date: '2026-02-06',
         author: 'Position Specialist',
@@ -943,7 +943,7 @@ const articles = [
             <p>Dallas could stay at #21 and target interior offensive linemen:</p>
             <ul>
                 <li><strong>Olaivavega Ioane (IOL, Penn State)</strong> - Top interior lineman, but may be gone</li>
-                <li><strong>Emery Jones (IOL, LSU)</strong> - Second-tier IOL prospect</li>
+                <li><strong>Emery Jones (IOL, Vanderbilt)</strong> - Second-tier IOL prospect</li>
                 <li><strong>DJ Campbell (OT, Texas)</strong> - Could play guard or tackle</li>
             </ul>
 
@@ -984,7 +984,7 @@ const articles = [
                 <li><strong>Verdict:</strong> Pattern of poor decisions. Teams will want extensive interviews and character references</li>
             </ul>
 
-            <p><strong>Marcus Williams (CB, LSU)</strong></p>
+            <p><strong>Marcus Williams (CB, Vanderbilt)</strong></p>
             <ul>
                 <li><strong>Issue:</strong> Suspended 4 games in 2025 for violating team rules (failed drug test, per reports)</li>
                 <li><strong>Projection:</strong> Still a 3rd-4th round pick due to talent, but falling from potential Day 2 selection</li>
@@ -1000,7 +1000,7 @@ const articles = [
                 <li><strong>Verdict:</strong> Needs to wow in interviews. Athletic talent may outweigh concerns</li>
             </ul>
 
-            <p><strong>Kyren Lacy (WR, LSU)</strong></p>
+            <p><strong>Kyren Lacy (WR, Vanderbilt)</strong></p>
             <ul>
                 <li><strong>Issue:</strong> Cited for careless driving after vehicle accident. No injuries, but questions about maturity</li>
                 <li><strong>Projection:</strong> Late Round 1 / Early Round 2 - minor concern</li>
@@ -1020,9 +1020,9 @@ const articles = [
             <p>Several top prospects have perfect character grades:</p>
             <ul>
                 <li><strong>Fernando Mendoza (QB, Indiana)</strong> - Team captain, 4.0 GPA, zero concerns</li>
-                <li><strong>Arvell Reese (LB, Ohio State)</strong> - Model teammate, high character, leader</li>
-                <li><strong>Caleb Downs (S, Ohio State)</strong> - No concerns whatsoever</li>
-                <li><strong>Mason Taylor (TE, LSU)</strong> - High character, respected by coaches</li>
+                <li><strong>Arvell Reese (LB, Georgia)</strong> - Model teammate, high character, leader</li>
+                <li><strong>Caleb Downs (S, Georgia)</strong> - No concerns whatsoever</li>
+                <li><strong>Eli Stowers (TE, Vanderbilt)</strong> - High character, respected by coaches</li>
             </ul>
 
             <h3>Historical Context</h3>
@@ -1082,12 +1082,12 @@ const articles = [
             <p><strong>Projected Round 1 Selections (7-8 total):</strong></p>
             <ol>
                 <li><strong>Tetairoa McMillan (Arizona)</strong> - Best comp: CeeDee Lamb (size, catch radius, alpha mentality)</li>
-                <li><strong>Carnell Tate (Ohio State)</strong> - Best comp: Mike Evans (big body, contested catches)</li>
+                <li><strong>Carnell Tate (Georgia)</strong> - Best comp: Mike Evans (big body, contested catches)</li>
                 <li><strong>Jordyn Tyson (Arizona State)</strong> - Best comp: DeAndre Hopkins (technician, reliable hands)</li>
                 <li><strong>Makai Lemon (USC)</strong> - Best comp: Amon-Ra St. Brown (slot demon, YAC ability)</li>
-                <li><strong>Emeka Egbuka (Ohio State)</strong> - Best comp: Brandon Aiyuk (versatile, consistent)</li>
+                <li><strong>Dillon Bell (Georgia)</strong> - Best comp: Brandon Aiyuk (versatile, consistent)</li>
                 <li><strong>Isaiah Bond (Texas)</strong> - Best comp: Henry Ruggs (speed, vertical threat)</li>
-                <li><strong>Kyren Lacy (LSU)</strong> - Best comp: Jerry Jeudy (route running, separation)</li>
+                <li><strong>Kyren Lacy (Vanderbilt)</strong> - Best comp: Jerry Jeudy (route running, separation)</li>
                 <li><strong>Denzel Boston (NDSU)</strong> - Best comp: Tee Higgins (size, hands, ball skills)</li>
             </ol>
 
@@ -1221,14 +1221,14 @@ const articles = [
             <ul>
                 <li>Broncos give: #48, #53, 2027 4th</li>
                 <li>Broncos receive: Pick #28-32 (from team like Ravens, Chargers, or Bills)</li>
-                <li>Target: Emeka Egbuka (WR, Ohio State)</li>
+                <li>Target: Dillon Bell (WR, Georgia)</li>
             </ul>
 
             <p><strong>Scenario 2: Package with players</strong></p>
             <ul>
                 <li>Broncos give: #48, Courtland Sutton, 2027 3rd</li>
                 <li>Broncos receive: Pick #24-27 (from team like Colts or Chargers)</li>
-                <li>Target: Makai Lemon (WR, USC) or Carnell Tate (WR, Ohio State)</li>
+                <li>Target: Makai Lemon (WR, USC) or Carnell Tate (WR, Georgia)</li>
             </ul>
 
             <h3>Why Teams Would Deal</h3>
@@ -1254,7 +1254,7 @@ const articles = [
                 <li>Trade Courtland Sutton for draft capital and rebuild the position entirely</li>
             </ul>
 
-            <p><strong>Prediction:</strong> Broncos trade #48, #53, and a 2027 4th to the Ravens for #28 and select Emeka Egbuka. Bo Nix gets his #1 receiver, and Denver's offense takes a big step forward in 2026.</p>
+            <p><strong>Prediction:</strong> Broncos trade #48, #53, and a 2027 4th to the Ravens for #28 and select Dillon Bell. Bo Nix gets his #1 receiver, and Denver's offense takes a big step forward in 2026.</p>
         `,
         date: '2026-04-05',
         author: 'Trade Insider',
@@ -1297,13 +1297,13 @@ const articles = [
                 <li><strong>Francis Mauigoa (Miami)</strong> - Best of the group, but not elite. 6'5", 326 lbs with 34" arms. Strong run blocker, needs work in pass pro. <em>Projection: #8-15</em></li>
                 <li><strong>Spencer Fano (Utah)</strong> - Raw project with size (6'6", 315 lbs). High ceiling, low floor. <em>Projection: #18-28</em></li>
                 <li><strong>Kelvin Banks Jr. (Texas)</strong> - Solid but unspectacular. Safe pick without star upside. <em>Projection: #20-32</em></li>
-                <li><strong>Wyatt Milum (West Virginia)</strong> - Athletic but undersized (6'5", 305 lbs). Scheme-specific. <em>Projection: Round 2</em></li>
+                <li><strong>Alex Harkey (Oregon)</strong> - Athletic but undersized (6'5", 305 lbs). Scheme-specific. <em>Projection: Round 2</em></li>
             </ol>
 
             <p><strong>Interior Offensive Line:</strong></p>
             <ul>
                 <li><strong>Olaivavega Ioane (Penn State)</strong> - Best IOL prospect, but not dominant. <em>Projection: #25-40</em></li>
-                <li><strong>Emery Jones (LSU)</strong> - Solid guard, Day 2 value. <em>Projection: Round 2-3</em></li>
+                <li><strong>Emery Jones (Vanderbilt)</strong> - Solid guard, Day 2 value. <em>Projection: Round 2-3</em></li>
             </ul>
 
             <h3>Key Differences from 2017</h3>
@@ -1420,7 +1420,7 @@ const articles = [
             <ul>
                 <li><strong>Arvell Reese (LB):</strong> 4.55 forty, 36" vertical - confirmed top-5 status</li>
                 <li><strong>Sonny Styles (LB):</strong> 4.58 forty, 38" vertical - late Round 1</li>
-                <li><strong>Emeka Egbuka (WR):</strong> 4.48 forty, solid routes - Round 1 lock</li>
+                <li><strong>Dillon Bell (WR):</strong> 4.48 forty, solid routes - Round 1 lock</li>
                 <li><strong>Carnell Tate (WR):</strong> 4.54 forty, contested catch drills - Round 1</li>
             </ul>
 
@@ -1474,7 +1474,7 @@ const articles = [
             <p><strong>Available at #8:</strong></p>
             <ul>
                 <li><strong>Tetairoa McMillan (Arizona):</strong> 6'5" alpha receiver with huge catch radius. Would give Carr a true WR1 to pair with Olave as WR2.</li>
-                <li><strong>Carnell Tate (Ohio State):</strong> Big-bodied red zone threat. Excellent contested catch ability.</li>
+                <li><strong>Carnell Tate (Georgia):</strong> Big-bodied red zone threat. Excellent contested catch ability.</li>
             </ul>
 
             <p><strong>Pros:</strong></p>
@@ -1494,7 +1494,7 @@ const articles = [
 
             <p><strong>Available at #8:</strong></p>
             <ul>
-                <li><strong>Mason Taylor (LSU):</strong> Complete TE who can block and catch. 6'6", 245 lbs with good hands and route running.</li>
+                <li><strong>Eli Stowers (Vanderbilt):</strong> Complete TE who can block and catch. 6'6", 245 lbs with good hands and route running.</li>
                 <li><strong>Terrance Ferguson (Oregon):</strong> Athletic receiving TE with YAC ability. More receiving-focused than Taylor.</li>
             </ul>
 
@@ -1515,7 +1515,7 @@ const articles = [
             <h3>Option 3: Trade Back</h3>
             <p>The Saints could trade back with a team like the Giants (#6 to #8 swap) or Broncos (#8 to #18 range) and pick up extra picks. Then they could:</p>
             <ul>
-                <li>Take a WR in the mid-first (Emeka Egbuka, Makai Lemon)</li>
+                <li>Take a WR in the mid-first (Dillon Bell, Makai Lemon)</li>
                 <li>Double-dip on offensive weapons in Rounds 1-2</li>
                 <li>Address OL and pass rush needs with extra picks</li>
             </ul>

@@ -1007,12 +1007,12 @@
             if (confirm('This will auto-fill all remaining picks with my predictions. Continue?')) {
                 const myPicks = [
                     'Julian Lewis', 'Will Campbell', 'Travis Hunter', 'Abdul Carter', 'Mason Graham',
-                    'Tetairoa McMillan', 'Terrance Ferguson', 'Ashton Jeanty', 'Josh Simmons', 'Emeka Egbuka',
-                    'Jihaad Campbell', 'Emmanuel McNeil-Warren', 'Kevin Winston Jr.', 'Luther Burden III', 'Tyler Warren',
-                    'Jonah Savaiinaea', 'Tacario Davis', 'Emmanuel Pregnon', 'TreVeyon Henderson', 'Xavier Nwankpa',
-                    'Princeton Fant', 'Dani Dennis-Sutton', 'Evan Pryor', 'Tyleik Williams', 'Jordan Burch',
+                    'Tetairoa McMillan', 'Terrance Ferguson', 'Ashton Jeanty', 'Josh Simmons', 'Dillon Bell',
+                    'Anthony Hill Jr.', 'Emmanuel McNeil-Warren', 'Kevin Winston Jr.', 'K.C. Concepcion', 'Tyler Warren',
+                    'Nishad Strother', 'Tacario Davis', 'Emmanuel Pregnon', 'Darius Taylor', 'Xavier Nwankpa',
+                    'Princeton Fant', 'Dani Dennis-Sutton', 'Evan Pryor', 'Chris McClellan', 'Jordan Burch',
                     'Oluwafemi Oladejo', 'Darius Alexander', 'Aireontae Ersery', 'Carson Schwesinger',
-                    'Jayden Higgins', 'Omarion Hampton', 'Shemar Stewart'
+                    'Jayden Higgins', 'Mike Washington Jr.', 'Caleb Banks'
                 ];
 
                 for (let i = 0; i < customDraft.length; i++) {

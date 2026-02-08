@@ -177,36 +177,36 @@
             { rank: 99, name: "Roman Hemby", position: "RB", school: "Indiana", tier: "Round 3" },
             { rank: 100, name: "Jack Endries", position: "TE", school: "Texas", tier: "Round 3" },
             { rank: 101, name: "Jake Golday", position: "LB", school: "Cincinnati", tier: "Round 4" },
-            { rank: 102, name: "Jonah Savaiinaea", position: "OG", school: "Arizona", tier: "Round 4" },
+            { rank: 102, name: "Nishad Strother", position: "OG", school: "Texas", tier: "Round 4" },
             { rank: 103, name: "Nadame Tucker", position: "EDGE", school: "Western Michigan", tier: "Round 4" },
-            { rank: 104, name: "Tyleik Williams", position: "DT", school: "Ohio State", tier: "Round 4" },
+            { rank: 104, name: "Chris McClellan", position: "DT", school: "Missouri", tier: "Round 4" },
             { rank: 105, name: "Daylen Everette", position: "CB", school: "Georgia", tier: "Round 4" },
-            { rank: 106, name: "TreVeyon Henderson", position: "RB", school: "Ohio State", tier: "Round 4" },
+            { rank: 106, name: "Darius Taylor", position: "RB", school: "Minnesota", tier: "Round 4" },
             { rank: 107, name: "Drew Allar", position: "QB", school: "Penn State", tier: "Round 4" },
             { rank: 108, name: "Maxwell Burton", position: "OT", school: "Texas A&M", tier: "Round 4" },
-            { rank: 109, name: "Jahdae Barron", position: "CB", school: "Texas", tier: "Round 4" },
-            { rank: 110, name: "Deone Walker", position: "DT", school: "Kentucky", tier: "Round 4" },
-            { rank: 111, name: "Landon Jackson", position: "EDGE", school: "Arkansas", tier: "Round 4" },
-            { rank: 112, name: "Emeka Egbuka", position: "WR", school: "Ohio State", tier: "Round 4" },
-            { rank: 113, name: "Princely Umanmielen", position: "EDGE", school: "Ole Miss", tier: "Round 4" },
+            { rank: 109, name: "Brandon Cisse", position: "CB", school: "South Carolina", tier: "Round 4" },
+            { rank: 110, name: "Gracen Halton", position: "DT", school: "Oklahoma", tier: "Round 4" },
+            { rank: 111, name: "T.J. Parker", position: "EDGE", school: "Clemson", tier: "Round 4" },
+            { rank: 112, name: "Dillon Bell", position: "WR", school: "Georgia", tier: "Round 4" },
+            { rank: 113, name: "Cashius Howell", position: "EDGE", school: "Texas A&M", tier: "Round 4" },
             { rank: 114, name: "Kevin Winston Jr.", position: "S", school: "Penn State", tier: "Round 4" },
             { rank: 115, name: "Oluwafemi Oladejo", position: "OG", school: "UCLA", tier: "Round 4" },
-            { rank: 116, name: "Jihaad Campbell", position: "LB", school: "Alabama", tier: "Round 4" },
+            { rank: 116, name: "Anthony Hill Jr.", position: "LB", school: "Texas", tier: "Round 4" },
             { rank: 117, name: "Aireontae Ersery", position: "OT", school: "Minnesota", tier: "Round 4" },
-            { rank: 118, name: "Will Johnson", position: "CB", school: "Michigan", tier: "Round 4" },
-            { rank: 119, name: "Kaleb Johnson", position: "RB", school: "Iowa", tier: "Round 4" },
+            { rank: 118, name: "Colton Hood", position: "CB", school: "Tennessee", tier: "Round 4" },
+            { rank: 119, name: "Rahsul Faison", position: "RB", school: "South Carolina", tier: "Round 4" },
             { rank: 120, name: "Marcus Washington", position: "WR", school: "Texas", tier: "Round 4" },
-            { rank: 121, name: "Kenneth Grant", position: "DT", school: "Michigan", tier: "Round 4" },
-            { rank: 122, name: "Mason Taylor", position: "TE", school: "LSU", tier: "Round 4" },
-            { rank: 123, name: "Shemar Stewart", position: "DT", school: "Texas A&M", tier: "Round 4" },
-            { rank: 124, name: "Luther Burden III", position: "WR", school: "Missouri", tier: "Round 4" },
+            { rank: 121, name: "Lee Hunter", position: "DT", school: "Texas Tech", tier: "Round 4" },
+            { rank: 122, name: "Eli Stowers", position: "TE", school: "Vanderbilt", tier: "Round 4" },
+            { rank: 123, name: "Caleb Banks", position: "DT", school: "Florida", tier: "Round 4" },
+            { rank: 124, name: "K.C. Concepcion", position: "WR", school: "Texas A&M", tier: "Round 4" },
             { rank: 125, name: "Jonah Coleman", position: "RB", school: "Washington", tier: "Round 4" },
-            { rank: 126, name: "Jack Sawyer", position: "EDGE", school: "Ohio State", tier: "Round 4" },
+            { rank: 126, name: "Matayo Uiagalelei", position: "EDGE", school: "Oregon", tier: "Round 4" },
             { rank: 127, name: "Rod Moore", position: "S", school: "Michigan", tier: "Round 4" },
             { rank: 128, name: "Chase Bisontis", position: "OG", school: "Texas A&M", tier: "Round 4" },
             { rank: 129, name: "Xavier Nwankpa", position: "S", school: "Iowa", tier: "Round 5" },
             { rank: 130, name: "Taurean York", position: "LB", school: "Texas A&M", tier: "Round 5" },
-            { rank: 131, name: "Jordan Phillips", position: "DT", school: "Maryland", tier: "Round 5" },
+            { rank: 131, name: "Zane Durant", position: "DT", school: "Penn State", tier: "Round 5" },
             { rank: 132, name: "Michael Trigg", position: "TE", school: "Baylor", tier: "Round 5" },
             { rank: 133, name: "Jayden Higgins", position: "WR", school: "Iowa State", tier: "Round 5" },
             { rank: 134, name: "Tacario Davis", position: "CB", school: "Arizona", tier: "Round 5" },
@@ -215,7 +215,7 @@
             { rank: 137, name: "Sawyer Robertson", position: "QB", school: "Baylor", tier: "Round 5" },
             { rank: 138, name: "Caleb Tiernan", position: "OT", school: "Northwestern", tier: "Round 5" },
             { rank: 139, name: "Darien Porter", position: "CB", school: "Iowa State", tier: "Round 5" },
-            { rank: 140, name: "Omarion Hampton", position: "RB", school: "North Carolina", tier: "Round 5" },
+            { rank: 140, name: "Mike Washington Jr.", position: "RB", school: "Arkansas", tier: "Round 5" },
             { rank: 141, name: "Kaleb Proctor", position: "DT", school: "SE Louisiana", tier: "Round 5" },
             { rank: 142, name: "Cole Payton", position: "QB", school: "North Dakota State", tier: "Round 5" },
             { rank: 143, name: "Will Hardy", position: "CB", school: "Notre Dame", tier: "Round 5" },
@@ -225,13 +225,13 @@
             { rank: 147, name: "Ar'Maj Reed-Adams", position: "OG", school: "Texas A&M", tier: "Round 5" },
             { rank: 148, name: "Tyreese Fearbry", position: "EDGE", school: "Pittsburgh", tier: "Round 5" },
             { rank: 149, name: "Jalon Walker", position: "LB", school: "Georgia", tier: "Round 5" },
-            { rank: 150, name: "Colby Wooden", position: "DT", school: "Auburn", tier: "Round 5" },
+            { rank: 150, name: "Dontay Corleone", position: "DT", school: "Cincinnati", tier: "Round 5" },
             { rank: 151, name: "Isaiah Bond", position: "WR", school: "Texas", tier: "Round 5" },
             { rank: 152, name: "Javon Kilgore", position: "S", school: "South Carolina", tier: "Round 5" },
-            { rank: 153, name: "Trey Amos", position: "CB", school: "Alabama", tier: "Round 5" },
-            { rank: 154, name: "Cedric Gray", position: "LB", school: "North Carolina", tier: "Round 5" },
+            { rank: 153, name: "Jaylon Guilbeau", position: "CB", school: "Texas", tier: "Round 5" },
+            { rank: 154, name: "Lander Barton", position: "LB", school: "Utah", tier: "Round 5" },
             { rank: 155, name: "Nick Singleton", position: "RB", school: "Penn State", tier: "Round 5" },
-            { rank: 156, name: "Wyatt Milum", position: "OT", school: "West Virginia", tier: "Round 5" },
+            { rank: 156, name: "Alex Harkey", position: "OT", school: "Oregon", tier: "Round 5" },
             { rank: 157, name: "Sebastian Castro", position: "CB", school: "Iowa", tier: "Round 5" },
             { rank: 158, name: "Evan Stewart", position: "WR", school: "Oregon", tier: "Round 5" },
             { rank: 159, name: "Derrick Harmon", position: "DT", school: "Oregon", tier: "Round 5" },
@@ -246,7 +246,7 @@
             { rank: 168, name: "Sam Hecht", position: "C", school: "Kansas State", tier: "Round 6" },
             { rank: 169, name: "Cole Hutson", position: "LB", school: "Oklahoma State", tier: "Round 6" },
             { rank: 170, name: "Theo Wease Jr.", position: "WR", school: "Ole Miss", tier: "Round 6" },
-            { rank: 171, name: "James Pearce Jr.", position: "EDGE", school: "Tennessee", tier: "Round 6" },
+            { rank: 171, name: "Mikail Kamara", position: "EDGE", school: "Indiana", tier: "Round 6" },
             { rank: 172, name: "DeShon Singleton", position: "S", school: "Nebraska", tier: "Round 6" },
             { rank: 173, name: "Jared Wilson", position: "OT", school: "Georgia", tier: "Round 6" },
             { rank: 174, name: "Devin Neal", position: "RB", school: "Kansas", tier: "Round 6" },
@@ -254,21 +254,21 @@
             { rank: 176, name: "Damieon George", position: "OG", school: "Florida", tier: "Round 6" },
             { rank: 177, name: "Hezekiah Masses", position: "CB", school: "California", tier: "Round 6" },
             { rank: 178, name: "Will Mallory", position: "TE", school: "Miami", tier: "Round 6" },
-            { rank: 179, name: "Jaheim Bell", position: "TE", school: "Florida State", tier: "Round 6" },
+            { rank: 179, name: "Ted Hurst", position: "TE", school: "Georgia State", tier: "Round 6" },
             { rank: 180, name: "Raul Aguirre", position: "OT", school: "TCU", tier: "Round 6" },
             { rank: 181, name: "Anthony Lucas", position: "EDGE", school: "Arkansas", tier: "Round 6" },
             { rank: 182, name: "Brian Parker II", position: "C", school: "Duke", tier: "Round 6" },
             { rank: 183, name: "Peny Boone", position: "DT", school: "Maryland", tier: "Round 6" },
             { rank: 184, name: "Elic Ayomanor", position: "WR", school: "Stanford", tier: "Round 6" },
-            { rank: 185, name: "Nick Emmanwori", position: "S", school: "South Carolina", tier: "Round 6" },
+            { rank: 185, name: "D.Q. Smith", position: "S", school: "South Carolina", tier: "Round 6" },
             { rank: 186, name: "T.J. Sanders", position: "LB", school: "South Carolina", tier: "Round 6" },
             { rank: 187, name: "Kitan Crawford", position: "CB", school: "NC State", tier: "Round 6" },
-            { rank: 188, name: "Johnny Wilson", position: "WR", school: "Florida State", tier: "Round 6" },
+            { rank: 188, name: "Rara Thomas", position: "WR", school: "Troy", tier: "Round 6" },
             { rank: 189, name: "Mason Murphy", position: "OG", school: "Auburn", tier: "Round 6" },
             { rank: 190, name: "Trey Moore", position: "EDGE", school: "UTSA", tier: "Round 6" },
             { rank: 191, name: "Jaylen Reed", position: "S", school: "Penn State", tier: "Round 6" },
             { rank: 192, name: "Bryce Cosby", position: "WR", school: "Ball State", tier: "Round 6" },
-            { rank: 193, name: "Denzel Burke", position: "CB", school: "Ohio State", tier: "Round 7" },
+            { rank: 193, name: "Tony Grimes", position: "CB", school: "Purdue", tier: "Round 7" },
             { rank: 194, name: "Josh Proctor", position: "S", school: "Ohio State", tier: "Round 7" },
             { rank: 195, name: "Treshaun Ward", position: "RB", school: "Florida State", tier: "Round 7" },
             { rank: 196, name: "Brayden Schager", position: "QB", school: "Hawaii", tier: "Round 7" },
@@ -286,16 +286,16 @@
             { rank: 208, name: "Sam Hartman", position: "QB", school: "Notre Dame", tier: "Round 7" },
             { rank: 209, name: "JaCorey Thomas", position: "S", school: "Georgia", tier: "Round 7" },
             { rank: 210, name: "Terrance Ferguson", position: "TE", school: "Oregon", tier: "Round 7" },
-            { rank: 211, name: "Ryan Watts", position: "CB", school: "Texas", tier: "Round 7" },
-            { rank: 212, name: "Jonah Monheim", position: "C", school: "USC", tier: "Round 7" },
-            { rank: 213, name: "Darrell Luter Jr.", position: "CB", school: "South Alabama", tier: "Round 7" },
+            { rank: 211, name: "Coltin Wright", position: "CB", school: "Stanford", tier: "Round 7" },
+            { rank: 212, name: "Grey Zabel", position: "C", school: "North Dakota State", tier: "Round 7" },
+            { rank: 213, name: "DeVonta Smith", position: "CB", school: "Notre Dame", tier: "Round 7" },
             { rank: 214, name: "Emmett Johnson", position: "RB", school: "Nebraska", tier: "Round 7" },
             { rank: 215, name: "Parker Brailsford", position: "C", school: "Alabama", tier: "Round 7" },
             { rank: 216, name: "Marcus Harris", position: "S", school: "Auburn", tier: "Round 7" },
             { rank: 217, name: "Branson Robinson", position: "RB", school: "Georgia", tier: "Round 7" },
             { rank: 218, name: "Nate Clifton", position: "OT", school: "Purdue", tier: "Round 7" },
             { rank: 219, name: "Jaylen Sneed", position: "LB", school: "South Carolina", tier: "Round 7" },
-            { rank: 220, name: "Marvin Harrison III", position: "WR", school: "Ohio State", tier: "Round 7" },
+            { rank: 220, name: "Kaden Wetjen", position: "WR", school: "Iowa", tier: "Round 7" },
             { rank: 221, name: "Mitchell Agude", position: "EDGE", school: "Miami", tier: "Round 7" },
             { rank: 222, name: "Taurean York", position: "LB", school: "Texas A&M", tier: "Round 7" },
             { rank: 223, name: "Gavin Bartholomew", position: "TE", school: "Wisconsin", tier: "Round 7" },
@@ -317,12 +317,12 @@
             ],
             RB: [
                 { rank: 1, name: "Jeremiyah Love", school: "Notre Dame", overallRank: 2, grade: 91.5, oneLineSummary: "Reggie Bush-like dynamo with vision, burst, and elite receiving ability." },
-                { rank: 2, name: "TreVeyon Henderson", school: "Ohio State", overallRank: 34, grade: 88.0, oneLineSummary: "Explosive burst, receiving ability, and vision." },
+                { rank: 2, name: "Darius Taylor", school: "Minnesota", overallRank: 34, grade: 88.0, oneLineSummary: "Explosive burst, receiving ability, and vision." },
                 { rank: 3, name: "Jadarian Price", school: "Notre Dame", overallRank: 35, grade: 86.5, oneLineSummary: "Compact runner with terrific vision and elite kick return ability." },
                 { rank: 4, name: "Emmett Johnson", school: "Nebraska", overallRank: 27, grade: 85.0, oneLineSummary: "Special lateral agility with elite vision and patience." },
                 { rank: 5, name: "Jonah Coleman", school: "Washington", overallRank: 42, grade: 85.5, oneLineSummary: "Three-down back despite limited athleticism. Reliable in pass pro." },
                 { rank: 6, name: "Kaytron Allen", school: "Penn State", overallRank: 62, grade: 84.5, oneLineSummary: "Decisive downhill hammer who can punish defenses." },
-                { rank: 7, name: "Omarion Hampton", school: "North Carolina", overallRank: 55, grade: 84.0, oneLineSummary: "Complete three-down back with excellent vision." },
+                { rank: 7, name: "Mike Washington Jr.", school: "Arkansas", overallRank: 55, grade: 84.0, oneLineSummary: "Complete three-down back with excellent vision." },
                 { rank: 8, name: "Nicholas Singleton", school: "Penn State", overallRank: 58, grade: 83.5, oneLineSummary: "Explosive blend of power and speed with home run potential." }
             ],
             WR: [
@@ -332,13 +332,12 @@
                 { rank: 4, name: "Zachariah Branch", school: "Georgia", overallRank: 22, grade: 87.0, oneLineSummary: "Lightning quick with track speed. Dynamic after catch." },
                 { rank: 5, name: "Denzel Boston", school: "Washington", overallRank: 23, grade: 86.5, oneLineSummary: "Big-framed wideout with exceptional ball skills." },
                 { rank: 6, name: "Marcus Washington", school: "Texas", overallRank: 38, grade: 86.0, oneLineSummary: "Route running, contested catches, and speed." },
-                { rank: 7, name: "Emeka Egbuka", school: "Ohio State", overallRank: 39, grade: 85.5, oneLineSummary: "Slot ability, route running, and hands." },
+                { rank: 7, name: "Dillon Bell", school: "Georgia", overallRank: 39, grade: 85.5, oneLineSummary: "Slot ability, route running, and hands." },
                 { rank: 8, name: "Jayden Higgins", school: "Iowa State", overallRank: 45, grade: 85.0, oneLineSummary: "Big-bodied target who can win contested catches." }
             ],
             TE: [
                 { rank: 1, name: "Kenyon Sadiq", school: "Oregon", overallRank: 29, grade: 88.0, oneLineSummary: "Versatile explosive weapon for modern NFL." },
-                { rank: 2, name: "Mason Taylor", school: "LSU", overallRank: 55, grade: 85.5, oneLineSummary: "Athletic move TE with receiving upside." },
-                { rank: 3, name: "Eli Stowers", school: "Vanderbilt", overallRank: 60, grade: 85.0, oneLineSummary: "Former QB with elite athleticism. Movable chess piece." },
+                { rank: 2, name: "Eli Stowers", school: "Vanderbilt", overallRank: 55, grade: 85.5, oneLineSummary: "Former QB with elite athleticism. Movable chess piece." },
                 { rank: 4, name: "Max Klare", school: "Ohio State", overallRank: 68, grade: 84.0, oneLineSummary: "Natural receiving gifts with blocking limitations." },
                 { rank: 5, name: "Joe Royer", school: "Cincinnati", overallRank: 70, grade: 83.5, oneLineSummary: "Matchup problem with natural receiving ability." },
                 { rank: 6, name: "Jack Endries", school: "Texas", overallRank: 75, grade: 83.0, oneLineSummary: "Fundamentally sound receiver who gets open." },
@@ -357,7 +356,7 @@
             ],
             IOL: [
                 { rank: 1, name: "Olaivavega Ioane", school: "Penn State", overallRank: 17, grade: 88.5, oneLineSummary: "Dominant LG with strength and agility." },
-                { rank: 2, name: "Jonah Savaiinaea", school: "Arizona", overallRank: 37, grade: 87.5, oneLineSummary: "Power, anchor, and run blocking." },
+                { rank: 2, name: "Nishad Strother", school: "Texas", overallRank: 37, grade: 87.5, oneLineSummary: "Power, anchor, and run blocking." },
                 { rank: 3, name: "Connor Lew", school: "Auburn", overallRank: 35, grade: 87.0, oneLineSummary: "Center with exceptional movement skills." },
                 { rank: 4, name: "Oluwafemi Oladejo", school: "UCLA", overallRank: 41, grade: 86.5, oneLineSummary: "Athleticism, pass protection, and versatility." },
                 { rank: 5, name: "Emmanuel Pregnon", school: "Oregon", overallRank: 42, grade: 86.0, oneLineSummary: "Day-one contributor with power and technique." },
@@ -370,27 +369,26 @@
                 { rank: 2, name: "David Bailey", school: "Texas Tech", overallRank: 6, grade: 92.0, oneLineSummary: "Ultra-explosive with elite production and get-off." },
                 { rank: 3, name: "Akheem Mesidor", school: "Miami", overallRank: 13, grade: 89.5, oneLineSummary: "Ideal frame with relentless motor and power rush." },
                 { rank: 4, name: "Keldric Faulk", school: "Auburn", overallRank: 14, grade: 89.0, oneLineSummary: "Perfect 4-3 DE frame with powerful hands." },
-                { rank: 5, name: "Princely Umanmielen", school: "Ole Miss", overallRank: 35, grade: 87.5, oneLineSummary: "Speed rush, bend, and motor." },
-                { rank: 6, name: "TJ Parker", school: "Clemson", overallRank: 38, grade: 86.5, oneLineSummary: "Versatile rusher who can slide inside." },
+                { rank: 5, name: "Cashius Howell", school: "Texas A&M", overallRank: 35, grade: 87.5, oneLineSummary: "Speed rush, bend, and motor." },
+                { rank: 6, name: "T.J. Parker", school: "Clemson", overallRank: 38, grade: 86.5, oneLineSummary: "Versatile rusher who can slide inside." },
                 { rank: 7, name: "Dani Dennis-Sutton", school: "Penn State", overallRank: 42, grade: 86.0, oneLineSummary: "Long, athletic edge with elite burst and bend." },
-                { rank: 8, name: "Landon Jackson", school: "Arkansas", overallRank: 55, grade: 85.0, oneLineSummary: "Length and power with run defense ability." }
+                { rank: 8, name: "T.J. Parker", school: "Clemson", overallRank: 55, grade: 85.0, oneLineSummary: "Length and power with run defense ability." }
             ],
             DL: [
                 { rank: 1, name: "Peter Woods", school: "Clemson", overallRank: 15, grade: 87.5, oneLineSummary: "First-step quickness with scheme versatility." },
                 { rank: 2, name: "Kayden McDonald", school: "Ohio State", overallRank: 18, grade: 87.0, oneLineSummary: "Big Ten DL of the Year with strength and quickness." },
-                { rank: 3, name: "Jordan Phillips", school: "Maryland", overallRank: 40, grade: 86.0, oneLineSummary: "Power, run stuffing, and size." },
-                { rank: 4, name: "Deone Walker", school: "Kentucky", overallRank: 45, grade: 85.0, oneLineSummary: "Massive run-stuffer who demands double teams." },
-                { rank: 5, name: "Tyleik Williams", school: "Ohio State", overallRank: 48, grade: 84.5, oneLineSummary: "Disruptive 3-technique with violent hands." },
-                { rank: 6, name: "Kenneth Grant", school: "Michigan", overallRank: 55, grade: 84.0, oneLineSummary: "Massive nose tackle who occupies blockers." },
+                { rank: 3, name: "Zane Durant", school: "Penn State", overallRank: 40, grade: 86.0, oneLineSummary: "Power, run stuffing, and size." },
+                { rank: 4, name: "Gracen Halton", school: "Oklahoma", overallRank: 45, grade: 85.0, oneLineSummary: "Massive run-stuffer who demands double teams." },
+                { rank: 5, name: "Chris McClellan", school: "Missouri", overallRank: 48, grade: 84.5, oneLineSummary: "Disruptive 3-technique with violent hands." },
+                { rank: 6, name: "Lee Hunter", school: "Texas Tech", overallRank: 55, grade: 84.0, oneLineSummary: "Massive nose tackle who occupies blockers." },
                 { rank: 7, name: "Caleb Banks", school: "Florida", overallRank: 58, grade: 83.5, oneLineSummary: "Tall, long athlete with twitch in hands." },
-                { rank: 8, name: "Shemar Stewart", school: "Texas A&M", overallRank: 62, grade: 83.0, oneLineSummary: "Athletic freak with rare traits but raw." }
+                { rank: 8, name: "Caleb Banks", school: "Florida", overallRank: 62, grade: 83.0, oneLineSummary: "Athletic freak with rare traits but raw." }
             ],
             LB: [
                 { rank: 1, name: "Arvell Reese", school: "Ohio State", overallRank: 4, grade: 92.0, oneLineSummary: "Complete player with elite burst and pass-rush ability." },
                 { rank: 2, name: "Sonny Styles", school: "Ohio State", overallRank: 8, grade: 90.0, oneLineSummary: "Former safety with LB size and elite speed." },
                 { rank: 3, name: "CJ Allen", school: "Georgia", overallRank: 21, grade: 87.0, oneLineSummary: "Three-down LB with excellent read-react skills." },
-                { rank: 4, name: "Jihaad Campbell", school: "Alabama", overallRank: 50, grade: 86.0, oneLineSummary: "Modern LB built for speed and versatility." },
-                { rank: 5, name: "Anthony Hill Jr.", school: "Texas", overallRank: 52, grade: 85.5, oneLineSummary: "Downhill thumper with sideline-to-sideline range." },
+                { rank: 4, name: "Anthony Hill Jr.", school: "Texas", overallRank: 50, grade: 86.0, oneLineSummary: "Downhill thumper with sideline-to-sideline range." },
                 { rank: 6, name: "Jake Golday", school: "Cincinnati", overallRank: 55, grade: 85.0, oneLineSummary: "Speed-based LB with fantastic lateral range." },
                 { rank: 7, name: "Josiah Trotter", school: "Missouri", overallRank: 62, grade: 84.0, oneLineSummary: "Physical downhill linebacker who fills gaps." },
                 { rank: 8, name: "Taurean York", school: "Texas A&M", overallRank: 65, grade: 83.5, oneLineSummary: "Elite tackling technique and run defense instincts." }
@@ -399,12 +397,10 @@
                 { rank: 1, name: "Jermod McCoy", school: "Tennessee", overallRank: 16, grade: 89.0, oneLineSummary: "Scheme versatile with ball-hawking traits." },
                 { rank: 2, name: "Mansoor Delane", school: "Virginia Tech", overallRank: 24, grade: 88.0, oneLineSummary: "Most instinctive CB in class with elite ball skills." },
                 { rank: 3, name: "Avieon Terrell", school: "Clemson", overallRank: 32, grade: 87.0, oneLineSummary: "Elite ball skills and fluid athleticism." },
-                { rank: 4, name: "Will Johnson", school: "Michigan", overallRank: 33, grade: 86.5, oneLineSummary: "Size, press coverage, and ball skills." },
-                { rank: 5, name: "Jahdae Barron", school: "Texas", overallRank: 36, grade: 85.5, oneLineSummary: "Versatility, tackling, and instincts." },
+                { rank: 4, name: "Colton Hood", school: "Tennessee", overallRank: 33, grade: 86.5, oneLineSummary: "Complete player with 4.4 speed and production." },
+                { rank: 5, name: "Brandon Cisse", school: "South Carolina", overallRank: 36, grade: 85.5, oneLineSummary: "Versatility, tackling, and instincts." },
                 { rank: 6, name: "Daylen Everette", school: "Georgia", overallRank: 45, grade: 85.5, oneLineSummary: "Technique, experience, and physicality." },
-                { rank: 7, name: "Colton Hood", school: "Tennessee", overallRank: 48, grade: 85.0, oneLineSummary: "Complete player with 4.4 speed and production." },
-                { rank: 8, name: "Maxwell Hairston", school: "Kentucky", overallRank: 52, grade: 84.5, oneLineSummary: "Physical press corner with elite speed." },
-                { rank: 9, name: "Brandon Cisse", school: "South Carolina", overallRank: 58, grade: 84.0, oneLineSummary: "Twitchy cover corner with elite 4.35 speed." },
+                { rank: 7, name: "Maxwell Hairston", school: "Kentucky", overallRank: 52, grade: 84.5, oneLineSummary: "Physical press corner with elite speed." },
                 { rank: 10, name: "Tacario Davis", school: "Arizona", overallRank: 62, grade: 83.5, oneLineSummary: "Size, length, and press coverage ability." },
                 { rank: 11, name: "Darien Porter", school: "Iowa State", overallRank: 42, grade: 83.0, oneLineSummary: "Size, physicality, and ball skills." },
                 { rank: 12, name: "Will Hardy", school: "Notre Dame", overallRank: 43, grade: 82.5, oneLineSummary: "Coverage ability, instincts, and quickness." }
@@ -658,9 +654,9 @@
                 ],
                 picks: [
                     { pick: 29, player: "Avieon Terrell", position: "CB", school: "Clemson", value: "value" },
-                    { pick: 43, player: "Kenneth Grant", position: "DL", school: "Michigan", value: "fair" }
+                    { pick: 43, player: "Lee Hunter", position: "DL", school: "Texas Tech", value: "fair" }
                 ],
-                summary: "Rams address their biggest need with Terrell, a lockdown corner with length. Grant adds run-stuffing presence inside. Two starters for a contender."
+                summary: "Rams address their biggest need with Terrell, a lockdown corner with length. Hunter adds run-stuffing presence inside. Two starters for a contender."
             },
             {
                 name: "Baltimore Ravens",
@@ -877,9 +873,9 @@
                     { position: "CB", priority: "low" }
                 ],
                 picks: [
-                    { pick: 30, player: "Will Johnson", position: "CB", school: "Michigan", value: "fair" }
+                    { pick: 30, player: "Colton Hood", position: "CB", school: "Tennessee", value: "fair" }
                 ],
-                summary: "Johnson is a solid corner who can develop behind Philly's veterans. Good value late in Round 1."
+                summary: "Hood is a solid corner who can develop behind Philly's veterans. Good value late in Round 1."
             },
             {
                 name: "Denver Broncos",
@@ -943,7 +939,7 @@
                     { position: "CB", priority: "medium" }
                 ],
                 picks: [
-                    { pick: 16, player: "Luther Burden III", position: "WR", school: "Missouri", value: "reach" }
+                    { pick: 16, player: "K.C. Concepcion", position: "WR", school: "Texas A&M", value: "reach" }
                 ],
                 summary: "Burden is a reach at #16 but Indianapolis needed playmakers. Slot receiver with YAC ability."
             },
@@ -975,9 +971,9 @@
                     { position: "S", priority: "medium" }
                 ],
                 picks: [
-                    { pick: 33, player: "Kaleb Johnson", position: "RB", school: "Iowa", value: "fair" }
+                    { pick: 33, player: "Rahsul Faison", position: "RB", school: "South Carolina", value: "fair" }
                 ],
-                summary: "Johnson is a workhorse RB who can take pressure off the passing game. Solid pick to start Round 2."
+                summary: "Faison is a workhorse RB who can take pressure off the passing game. Solid pick to start Round 2."
             },
             {
                 name: "New England Patriots",
@@ -991,9 +987,9 @@
                     { position: "OT", priority: "medium" }
                 ],
                 picks: [
-                    { pick: 34, player: "Jack Sawyer", position: "EDGE", school: "Ohio State", value: "fair" }
+                    { pick: 34, player: "Matayo Uiagalelei", position: "EDGE", school: "Oregon", value: "fair" }
                 ],
-                summary: "Sawyer is a high-motor rusher who fits the Patriot Way. Not elite upside but solid contributor."
+                summary: "Uiagalelei is a high-motor rusher who fits the Patriot Way. Not elite upside but solid contributor."
             }
         ];
 

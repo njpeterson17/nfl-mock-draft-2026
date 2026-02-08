@@ -111,8 +111,8 @@ const ConsensusMockData = {
         'Trinidad Chambliss': { position: 'QB', school: 'Ole Miss', rank: 28 },
         'Carson Beck': { position: 'QB', school: 'Miami', rank: 29 },
         'Tacario Davis': { position: 'CB', school: 'Arizona', rank: 30 },
-        'Luther Burden III': { position: 'WR', school: 'Missouri', rank: 31 },
-        'Kaleb Johnson': { position: 'RB', school: 'Iowa', rank: 32 }
+        'K.C. Concepcion': { position: 'WR', school: 'Texas A&M', rank: 31 },
+        'Rahsul Faison': { position: 'RB', school: 'South Carolina', rank: 32 }
     },
 
     // Consensus picks with source predictions
@@ -443,14 +443,14 @@ const ConsensusMockData = {
                     espn: { player: 'Makai Lemon', confidence: 0.70, note: 'Route running' },
                     pfn: { player: 'Denzel Boston', confidence: 0.60, note: 'Size' }, // Different!
                     tdn: { player: 'Makai Lemon', confidence: 0.70, note: 'YAC ability' },
-                    walter: { player: 'Luther Burden III', confidence: 0.55, note: 'Missouri WR' } // Different!
+                    walter: { player: 'K.C. Concepcion', confidence: 0.55, note: 'Texas A&M WR' } // Different!
                 }
             },
             votes: { up: 745, down: 523 },
             history: [
                 { date: '2026-02-05', player: 'Makai Lemon', confidence: 0.72 }
             ],
-            dissent: 'PFN has Boston, Walter has Burden'
+            dissent: 'PFN has Boston, Walter has Concepcion'
         },
         16: {
             team: 'Falcons',
@@ -595,7 +595,7 @@ const ConsensusMockData = {
                     pff: { player: 'CJ Allen', confidence: 0.85, note: 'Read-react' },
                     espn: { player: 'CJ Allen', confidence: 0.80, note: 'Physical' },
                     pfn: { player: 'CJ Allen', confidence: 0.75, note: 'Coverage' },
-                    tdn: { player: 'Jihaad Campbell', confidence: 0.65, note: 'Alabama' }, // Different!
+                    tdn: { player: 'Anthony Hill Jr.', confidence: 0.65, note: 'Texas' }, // Different!
                     walter: { player: 'CJ Allen', confidence: 0.80, note: 'Tackling' }
                 }
             },
@@ -603,7 +603,7 @@ const ConsensusMockData = {
             history: [
                 { date: '2026-02-05', player: 'CJ Allen', confidence: 0.80 }
             ],
-            dissent: 'TDN prefers Jihaad Campbell'
+            dissent: 'TDN prefers Anthony Hill Jr.'
         },
         23: {
             team: 'Bills',
@@ -762,44 +762,44 @@ const ConsensusMockData = {
         30: {
             team: 'Broncos',
             consensus: {
-                player: 'Luther Burden III',
+                player: 'K.C. Concepcion',
                 position: 'WR',
                 school: 'Missouri',
                 confidence: 0.70,
                 agreement: 3,
                 sources: {
-                    pff: { player: 'Luther Burden III', confidence: 0.75, note: 'YAC' },
-                    espn: { player: 'Luther Burden III', confidence: 0.70, note: 'Slot' },
+                    pff: { player: 'K.C. Concepcion', confidence: 0.75, note: 'YAC' },
+                    espn: { player: 'K.C. Concepcion', confidence: 0.70, note: 'Slot' },
                     pfn: { player: 'Zachariah Branch', confidence: 0.60, note: 'Georgia' }, // Different!
-                    tdn: { player: 'Luther Burden III', confidence: 0.65, note: 'Explosive' },
+                    tdn: { player: 'K.C. Concepcion', confidence: 0.65, note: 'Explosive' },
                     walter: { player: 'Jayden Higgins', confidence: 0.60, note: 'Iowa State' } // Different!
                 }
             },
             votes: { up: 445, down: 334 },
             history: [
-                { date: '2026-02-05', player: 'Luther Burden III', confidence: 0.70 }
+                { date: '2026-02-05', player: 'K.C. Concepcion', confidence: 0.70 }
             ],
             dissent: 'PFN has Branch, Walter has Higgins'
         },
         31: {
             team: 'Rams',
             consensus: {
-                player: 'Kaleb Johnson',
+                player: 'Rahsul Faison',
                 position: 'RB',
                 school: 'Iowa',
                 confidence: 0.72,
                 agreement: 4,
                 sources: {
-                    pff: { player: 'Kaleb Johnson', confidence: 0.75, note: 'Physical' },
-                    espn: { player: 'Kaleb Johnson', confidence: 0.70, note: 'Workhorse' },
-                    pfn: { player: 'Kaleb Johnson', confidence: 0.75, note: 'Vision' },
+                    pff: { player: 'Rahsul Faison', confidence: 0.75, note: 'Physical' },
+                    espn: { player: 'Rahsul Faison', confidence: 0.70, note: 'Workhorse' },
+                    pfn: { player: 'Rahsul Faison', confidence: 0.75, note: 'Vision' },
                     tdn: { player: 'Jadarian Price', confidence: 0.60, note: 'Notre Dame' }, // Different!
-                    walter: { player: 'Kaleb Johnson', confidence: 0.70, note: 'Contact' }
+                    walter: { player: 'Rahsul Faison', confidence: 0.70, note: 'Contact' }
                 }
             },
             votes: { up: 534, down: 312 },
             history: [
-                { date: '2026-02-05', player: 'Kaleb Johnson', confidence: 0.72 }
+                { date: '2026-02-05', player: 'Rahsul Faison', confidence: 0.72 }
             ],
             dissent: 'TDN prefers Jadarian Price'
         },

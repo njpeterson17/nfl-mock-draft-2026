@@ -206,9 +206,9 @@ const combineData = {
         },
         {
             id: 'rb003',
-            name: 'Kaleb Johnson',
+            name: 'Rahsul Faison',
             position: 'RB',
-            school: 'Iowa',
+            school: 'South Carolina',
             height: "6'1\"",
             heightInches: 73,
             weight: 225,
@@ -232,9 +232,9 @@ const combineData = {
         },
         {
             id: 'rb004',
-            name: 'Omarion Hampton',
+            name: 'Mike Washington Jr.',
             position: 'RB',
-            school: 'North Carolina',
+            school: 'Arkansas',
             height: "5'11\"",
             heightInches: 71,
             weight: 220,
@@ -364,9 +364,9 @@ const combineData = {
         },
         {
             id: 'wr005',
-            name: 'Luther Burden III',
+            name: 'K.C. Concepcion',
             position: 'WR',
-            school: 'Missouri',
+            school: 'Texas A&M',
             height: "5'11\"",
             heightInches: 71,
             weight: 208,
@@ -392,9 +392,9 @@ const combineData = {
         // TIGHT ENDS
         {
             id: 'te001',
-            name: 'Mason Taylor',
+            name: 'Eli Stowers',
             position: 'TE',
-            school: 'LSU',
+            school: 'Vanderbilt',
             height: "6'5\"",
             heightInches: 77,
             weight: 250,
