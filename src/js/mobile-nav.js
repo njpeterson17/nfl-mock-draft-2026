@@ -611,11 +611,14 @@ function setupHammerGestures() {
     const mainContent = document.querySelector('.main-content');
     if (!mainContent || typeof Hammer === 'undefined') return;
     
-    MobileNav.hammerInstance = new Hammer(mainContent);
-    
-    // Configure recognizers
-    MobileNav.hammerInstance.get('swipe').set({ direction: Hammer.DIRECTION_HORIZONTAL });
-    MobileNav.hammerInstance.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL });
+    MobileNav.hammerInstance = new Hammer(mainContent, {
+        touchAction: 'pan-y', // Allow vertical scrolling
+        recognizers: [
+            [Hammer.Swipe, { direction: Hammer.DIRECTION_HORIZONTAL }],
+            [Hammer.Tap, { event: 'doubletap', taps: 2 }],
+            [Hammer.Press, { time: 500 }]
+        ]
+    });
     
     // Swipe left - next pick/tab
     MobileNav.hammerInstance.on('swipeleft', () => {
@@ -625,16 +628,6 @@ function setupHammerGestures() {
     // Swipe right - previous pick/tab
     MobileNav.hammerInstance.on('swiperight', () => {
         handleSwipe('right');
-    });
-    
-    // Swipe up - show details/quick actions
-    MobileNav.hammerInstance.on('swipeup', () => {
-        handleSwipe('up');
-    });
-    
-    // Swipe down - close details
-    MobileNav.hammerInstance.on('swipedown', () => {
-        handleSwipe('down');
     });
     
     // Double tap - toggle theme

@@ -271,7 +271,7 @@
             display: flex;
             justify-content: center;
             gap: 0.25rem;
-            overflow-x: auto;
+            overflow: visible;
             scrollbar-width: none;
             -ms-overflow-style: none;
             max-width: 1200px;

@@ -77,7 +77,10 @@
         }
 
         // More dropdown toggle
-        function toggleMoreDropdown() {
+        function toggleMoreDropdown(event) {
+            if (event) {
+                event.stopPropagation();
+            }
             const dropdown = document.getElementById('moreDropdown');
             if (dropdown) {
                 const isVisible = dropdown.style.display === 'block';

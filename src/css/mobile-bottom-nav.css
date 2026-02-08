@@ -10,11 +10,21 @@
         display: none !important;
     }
 
+    /* Enable smooth scrolling on mobile */
+    html, body {
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-y: auto;
+    }
+
     /* Adjust main content padding for bottom nav */
     .main-content {
         padding-bottom: 90px !important;
         padding-left: 1rem;
         padding-right: 1rem;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-y;
     }
 
     /* Adjust export bar for mobile */
@@ -682,13 +692,11 @@
        ============================================ */
     .swipeable-pick-container {
         position: relative;
-        overflow: hidden;
-        touch-action: pan-y;
+        overflow: visible;
     }
 
     .pick-card-swipeable {
         transition: transform 0.3s ease;
-        touch-action: pan-y;
     }
 
     .pick-card-swipeable.swiping-left {

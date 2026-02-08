@@ -47,10 +47,10 @@ const ConsensusMockData = {
     teams: {
         1: { name: 'Las Vegas Raiders', code: 'LV', record: '3-14', needs: ['QB', 'IOL', 'WR', 'LB'] },
         2: { name: 'New York Jets', code: 'NYJ', record: '3-14', needs: ['QB', 'EDGE', 'OT', 'CB'] },
-        3: { name: 'Arizona Cardinals', code: 'ARI', record: '3-14', needs: ['OT', 'S', 'IOL', 'WR'] },
+        3: { name: 'Arizona Cardinals', code: 'ARI', record: '3-14', needs: ['OT', 'S', 'IOL', 'WR', 'EDGE'] },
         4: { name: 'Tennessee Titans', code: 'TEN', record: '3-14', needs: ['CB', 'EDGE', 'WR', 'TE'] },
         5: { name: 'New York Giants', code: 'NYG', record: '4-13', needs: ['CB', 'OT', 'WR', 'IOL'] },
-        6: { name: 'Cleveland Browns', code: 'CLE', record: '5-12', needs: ['OT', 'WR', 'QB', 'IOL'] },
+        6: { name: 'Cleveland Browns', code: 'CLE', record: '5-12', needs: ['QB', 'CB', 'WR', 'S', 'IOL'] },
         7: { name: 'Washington Commanders', code: 'WAS', record: '5-12', needs: ['EDGE', 'CB', 'S', 'WR'] },
         8: { name: 'New Orleans Saints', code: 'NO', record: '6-11', needs: ['WR', 'IOL', 'EDGE', 'LB'] },
         9: { name: 'Kansas City Chiefs', code: 'KC', record: '6-11', needs: ['WR', 'DL', 'RB', 'TE'] },
