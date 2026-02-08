@@ -329,10 +329,10 @@
                     { position: "S", priority: "medium" }
                 ],
                 picks: [
-                    { pick: 2, player: "Caleb Downs", position: "S", school: "Ohio State", value: "value" },
+                    { pick: 2, player: "Arvell Reese", position: "LB", school: "Ohio State", value: "value" },
                     { pick: 23, player: "Makai Lemon", position: "WR", school: "USC", value: "value" }
                 ],
-                summary: "Jets go BPA with Downs, one of the best players in the draft regardless of position. Elite safety with range and playmaking ability. Lemon adds a dynamic weapon late in Round 1."
+                summary: "Jets take the most NFL-ready defender in the class. Reese is a rare athletic specimen at LB who can cover, blitz, and play the run. Lemon adds a dynamic weapon late in Round 1."
             },
             {
                 name: "Arizona Cardinals",
@@ -571,9 +571,9 @@
                     { position: "WR", priority: "low" }
                 ],
                 picks: [
-                    { pick: 14, player: "Arvell Reese", position: "LB", school: "Ohio State", value: "value" }
+                    { pick: 14, player: "Caleb Downs", position: "S", school: "Ohio State", value: "value" }
                 ],
-                summary: "Reese is a steal at #14. Elite LB prospect who can do it all. Buccaneers get a defensive cornerstone."
+                summary: "Downs at #14 is a steal. Elite safety who pairs with Antoine Winfield Jr. for a dominant safety duo. Tampa upgrades their secondary with a ball-hawking playmaker."
             },
             {
                 name: "Detroit Lions",
