@@ -589,12 +589,7 @@
             line-height: 1;
         }
 
-        .pick-number::before {
-            content: "#";
-            font-size: 0.6em;
-            vertical-align: super;
-            margin-right: 2px;
-        }
+
 
         .pick-header .team-helmet-img {
             width: 50px;
@@ -3225,5 +3220,231 @@
 @media (max-width: 768px) {
     .next-pick {
         font-size: 0.75rem;
+    }
+}
+
+/* ===== COMPACT HEADER LAYOUT - NEW STRUCTURE ===== */
+.pick-header {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 16px 32px !important;
+    gap: 32px !important;
+    min-height: auto !important;
+}
+
+/* Left Section - Pick Number */
+.header-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+}
+
+.header-left .pick-number {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--accent, #00d4ff);
+    line-height: 1;
+    margin: 0;
+}
+
+/* Center Section - Logo and Team Name */
+.header-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+}
+
+.header-center .team-helmet-img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.header-center h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary, #fff);
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Right Section - Next Pick */
+.header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: 100px;
+}
+
+.header-right .next-pick {
+    font-size: 0.9rem;
+    color: var(--text-secondary, #94a3b8);
+    text-align: center;
+}
+
+.header-right .next-pick-label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-secondary, #64748b);
+}
+
+.header-right .next-pick-number {
+    display: block;
+    font-size: 1.25rem;
+    color: var(--accent, #00d4ff);
+    font-weight: 700;
+}
+
+/* ===== COMPACT PLAYER INFO ===== */
+.player-main {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 16px !important;
+    align-items: flex-start !important;
+    padding: 16px 24px !important;
+    position: relative;
+}
+
+.player-main .player-photo {
+    flex-shrink: 0;
+    width: 120px !important;
+    height: 155px !important;
+}
+
+.player-main .player-photo img {
+    width: 120px !important;
+    height: 155px !important;
+    object-fit: cover !important;
+}
+
+.player-main .player-info {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    flex: 1 !important;
+    min-width: 0;
+}
+
+.player-main .player-info h2 {
+    font-size: 1.5rem !important;
+    margin: 0 !important;
+    line-height: 1.2 !important;
+}
+
+.player-main .player-school {
+    font-size: 0.9rem !important;
+    margin: 0 !important;
+}
+
+/* ===== POSITION BADGE - COMPACT SIZE ===== */
+.player-position {
+    display: inline-block !important;
+    width: auto !important;
+    max-width: fit-content !important;
+    padding: 4px 16px !important;
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+}
+
+/* ===== SOCIAL SHARE BUTTONS - POSITIONED RIGHT ===== */
+.player-main > .social-share {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    margin-left: auto !important;
+    flex-shrink: 0 !important;
+    align-self: flex-start !important;
+}
+
+.player-main > .social-share .share-btn {
+    padding: 6px 12px !important;
+    font-size: 0.75rem !important;
+    white-space: nowrap !important;
+    border-radius: 4px !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: var(--text-secondary, #94a3b8) !important;
+    cursor: pointer !important;
+    transition: all 0.2s !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    justify-content: flex-start !important;
+    min-width: 140px !important;
+}
+
+.player-main > .social-share .share-btn:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: var(--accent, #00d4ff) !important;
+    color: var(--accent, #00d4ff) !important;
+}
+
+.player-main > .social-share .share-btn i {
+    font-size: 0.85rem !important;
+}
+
+/* ===== COMPACT STATS ===== */
+.player-stats {
+    display: flex !important;
+    gap: 12px !important;
+    flex-wrap: nowrap !important;
+    margin-top: 6px !important;
+}
+
+.stat-box {
+    min-width: 55px !important;
+}
+
+.stat-value {
+    font-size: 1.1rem !important;
+    line-height: 1.2 !important;
+}
+
+.stat-label {
+    font-size: 0.65rem !important;
+}
+
+/* Mobile responsive for new header */
+@media (max-width: 768px) {
+    .pick-header {
+        padding: 12px 16px !important;
+        gap: 16px !important;
+    }
+    
+    .header-left .pick-number {
+        font-size: 2rem !important;
+    }
+    
+    .header-center .team-helmet-img {
+        width: 45px !important;
+        height: 45px !important;
+    }
+    
+    .header-center h3 {
+        font-size: 1rem !important;
+    }
+    
+    .header-right {
+        display: none !important;
+    }
+    
+    .player-main {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    
+    .player-main > .social-share {
+        flex-direction: row !important;
+        margin-left: 0 !important;
+        margin-top: 12px !important;
     }
 }
