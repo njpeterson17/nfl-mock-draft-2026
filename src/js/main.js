@@ -2310,7 +2310,8 @@ function displayNextPicks() {
     
     pickCards.forEach(card => {
         const team = card.dataset.team;
-        const pickNumber = parseInt(card.querySelector('.pick-number')?.textContent);
+        const pickNumberText = card.querySelector('.pick-number')?.textContent;
+        const pickNumber = parseInt(pickNumberText?.replace('#', ''));
         
         if (team && !isNaN(pickNumber)) {
             if (!teamPicks[team]) {
@@ -2325,30 +2326,19 @@ function displayNextPicks() {
         teamPicks[team].sort((a, b) => a.pickNumber - b.pickNumber);
     });
     
-    // Add next pick info to each card
+    // Update next pick info in each card's header-right
     Object.keys(teamPicks).forEach(team => {
         const picks = teamPicks[team];
         
         picks.forEach((pick, index) => {
             const nextPick = picks[index + 1];
-            const teamDetails = pick.card.querySelector('.team-details');
+            const nextPickNumberEl = pick.card.querySelector('.header-right .next-pick-number');
             
-            if (teamDetails && !teamDetails.querySelector('.next-pick')) {
-                const nextPickDiv = document.createElement('div');
-                nextPickDiv.className = 'next-pick';
-                
+            if (nextPickNumberEl) {
                 if (nextPick) {
-                    nextPickDiv.innerHTML = `<span class="next-pick-label">Next Pick:</span> <span class="next-pick-number">#${nextPick.pickNumber}</span>`;
+                    nextPickNumberEl.textContent = '#' + nextPick.pickNumber;
                 } else {
-                    nextPickDiv.innerHTML = `<span class="next-pick-label">Next Pick:</span> <span class="next-pick-number">None</span>`;
-                }
-                
-                // Insert after team record
-                const teamRecord = teamDetails.querySelector('.team-record');
-                if (teamRecord) {
-                    teamRecord.after(nextPickDiv);
-                } else {
-                    teamDetails.appendChild(nextPickDiv);
+                    nextPickNumberEl.textContent = 'None';
                 }
             }
         });
