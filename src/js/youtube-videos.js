@@ -908,7 +908,8 @@ function getPlayerVideos(playerName) {
  * @returns {string} Thumbnail URL
  */
 function getVideoThumbnail(videoId, quality = 'mqdefault') {
-  return `https://img.youtube.com/vi/${videoId}/${quality}.jpg`;
+  // Use i.ytimg.com which is more reliable than img.youtube.com
+  return `https://i.ytimg.com/vi/${videoId}/${quality}.jpg`;
 }
 
 /**
