@@ -235,8 +235,37 @@ function generateRandomNews(team, player) {
 // ==========================================
 
 document.addEventListener('DOMContentLoaded', () => {
-    initializeEntryScreen();
+    // Check for config from war-room-config.html
+    const savedConfig = sessionStorage.getItem('warRoomConfig');
+    if (savedConfig) {
+        const config = JSON.parse(savedConfig);
+        sessionStorage.removeItem('warRoomConfig'); // Clear after reading
+        autoStartWarRoom(config);
+    } else {
+        initializeEntryScreen();
+    }
 });
+
+function autoStartWarRoom(config) {
+    // Apply config from URL parameters
+    WarRoomState.userTeam = config.team;
+    WarRoomState.difficulty = config.difficulty;
+    WarRoomState.roundsToComplete = config.rounds;
+    WarRoomState.practiceMode = config.practice;
+    WarRoomState.soundEnabled = config.sound;
+    WarRoomState.tradesEnabled = config.trades;
+    
+    // Set timer based on difficulty
+    const timePerPick = config.time || 300;
+    document.getElementById('timerValue').textContent = formatTime(timePerPick);
+    
+    // Hide entry screen, show interface
+    document.getElementById('entryScreen').classList.add('hidden');
+    document.getElementById('warRoomInterface').classList.remove('hidden');
+    
+    // Initialize the war room
+    initializeWarRoom();
+}
 
 function initializeEntryScreen() {
     // Populate team select
