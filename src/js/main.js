@@ -72,7 +72,10 @@
             // Render Draft Grades if that tab is selected
             if (tabId === 'draftGrades') {
                 renderDraftGrades();
-                // Pick grades removed
+            }
+            
+            // Initialize ads for newly visible tab
+            setTimeout(initAds, 100);
             }
         }
 
@@ -2353,9 +2356,29 @@ function displayNextPicks() {
     });
 }
 
+// Initialize ads when visible
+function initAds() {
+    const adElements = document.querySelectorAll('.adsbygoogle:not([data-ads-loaded])');
+    adElements.forEach(ad => {
+        // Only load if visible
+        if (ad.offsetParent !== null) {
+            ad.setAttribute('data-ads-loaded', 'true');
+            try {
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            } catch (e) {
+                console.log('[Ads] Failed to load ad:', e);
+            }
+        }
+    });
+}
+
 // Run when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
     setTimeout(displayNextPicks, 500);
     setTimeout(displayNextPicks, 1500);
     setTimeout(displayNextPicks, 3000);
+    
+    // Initialize ads after page load
+    setTimeout(initAds, 1000);
+    setTimeout(initAds, 3000);
 });
