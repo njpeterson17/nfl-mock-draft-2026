@@ -320,6 +320,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function autoStartWarRoom(config) {
     // Apply config from URL parameters
     WarRoomState.userTeam = config.team;
+    WarRoomState.selectedTeam = getTeamById(config.team);
     WarRoomState.difficulty = config.difficulty;
     WarRoomState.roundsToComplete = config.rounds;
     WarRoomState.practiceMode = config.practice;
