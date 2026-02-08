@@ -1129,7 +1129,6 @@
         // Scroll to a specific pick with highlighting (supports all rounds)
         function scrollToPick(pickNumber) {
             if (!pickNumber || pickNumber < 1 || pickNumber > 105) {
-                console.warn('Invalid pick number:', pickNumber);
                 return false;
             }
             
@@ -1156,7 +1155,6 @@
             // Switch to the correct tab
             const tabContent = document.getElementById(targetTab);
             if (!tabContent) {
-                console.warn('Tab not found:', targetTab);
                 return false;
             }
             
@@ -1231,7 +1229,6 @@
                 return true;
             }
             
-            console.warn('Pick not found:', pickNumber);
             return false;
         }
         
@@ -1599,11 +1596,7 @@
 
         // Register Service Worker for PWA
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js').then(() => {
-                console.log('Service Worker registered');
-            }).catch((error) => {
-                console.log('Service Worker registration failed:', error);
-            });
+            navigator.serviceWorker.register('sw.js').catch(() => {});
         }
 
         // ==========================================
@@ -2307,8 +2300,7 @@
 function displayNextPicks() {
     // Get all pick cards
     const pickCards = document.querySelectorAll('.pick-card');
-    console.log('[NextPick] Found', pickCards.length, 'pick cards');
-    
+
     // Build a map of team -> array of their picks (sorted by pick number)
     const teamPicks = {};
     
@@ -2324,9 +2316,7 @@ function displayNextPicks() {
             teamPicks[team].push({ pickNumber, card });
         }
     });
-    
-    console.log('[NextPick] Team picks map:', Object.keys(teamPicks).length, 'teams');
-    
+
     // Sort each team's picks
     Object.keys(teamPicks).forEach(team => {
         teamPicks[team].sort((a, b) => a.pickNumber - b.pickNumber);
@@ -2335,7 +2325,6 @@ function displayNextPicks() {
     // Update next pick info in each card's header-right
     Object.keys(teamPicks).forEach(team => {
         const picks = teamPicks[team];
-        console.log('[NextPick] Team', team, 'has', picks.length, 'picks');
 
         picks.forEach((pick, index) => {
             const nextPick = picks[index + 1];
@@ -2344,7 +2333,6 @@ function displayNextPicks() {
             if (nextPickNumberEl) {
                 if (nextPick) {
                     nextPickNumberEl.textContent = '#' + nextPick.pickNumber;
-                    console.log('[NextPick] Pick #' + pick.pickNumber + ' -> Next: #' + nextPick.pickNumber);
                 } else {
                     // No next pick in current rounds - calculate theoretical next round pick
                     // Each round has 32 picks, so if this is pick 65-96 (round 3), next pick is 32 picks later
@@ -2354,14 +2342,10 @@ function displayNextPicks() {
                     // Only show theoretical pick for rounds 1-3 (picks 1-96)
                     if (currentPick <= 96 && theoreticalNextPick <= 256) { // 256 = 8 rounds max
                         nextPickNumberEl.textContent = '#' + theoreticalNextPick;
-                        console.log('[NextPick] Pick #' + pick.pickNumber + ' -> Next (theoretical): #' + theoreticalNextPick);
                     } else {
                         nextPickNumberEl.textContent = 'None';
-                        console.log('[NextPick] Pick #' + pick.pickNumber + ' -> Next: None');
                     }
                 }
-            } else {
-                console.log('[NextPick] No next-pick-number element for pick #' + pick.pickNumber);
             }
         });
     });
@@ -2377,7 +2361,7 @@ function initAds() {
             try {
                 (adsbygoogle = window.adsbygoogle || []).push({});
             } catch (e) {
-                console.log('[Ads] Failed to load ad:', e);
+                // Ad loading failed silently
             }
         }
     });

@@ -55,7 +55,6 @@ function initMobileNav() {
     const pickCards = document.querySelectorAll('.pick-card');
     if (pickCards.length > 0) {
         MobileNav.totalPicks = pickCards.length;
-        console.log('[MobileNav] Detected ' + MobileNav.totalPicks + ' picks');
     }
 
     // Create mobile navigation elements
@@ -749,8 +748,6 @@ function jumpToPick(pickNumber) {
     if (pickElement) {
         pickElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
         MobileNav.currentPick = pickNumber;
-    } else {
-        console.warn('[JumpToPick] Could not find pick #' + pickNumber);
     }
 }
 
