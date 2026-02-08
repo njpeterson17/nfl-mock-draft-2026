@@ -104,10 +104,13 @@ const SocialShareManager = {
 
     generateSharePreview(mockData) {
         const data = mockData || this.getDefaultMockData();
-        const topPick = data.picks[0];
+        const topPick = data.picks && data.picks[0];
         
         // Generate title based on top pick
-        let title = `My 2026 NFL Mock Draft - ${topPick.team} take ${topPick.player} #1`;
+        let title = topPick 
+            ? `My 2026 NFL Mock Draft - ${topPick.team} take ${topPick.player} #1`
+            : `My 2026 NFL Mock Draft`;}}  
+�{
         if (data.trades && data.trades.length > 0) {
             title += ` (${data.trades.length} trades!)`;
         }

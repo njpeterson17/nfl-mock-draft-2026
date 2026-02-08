@@ -76,7 +76,6 @@
             
             // Initialize ads for newly visible tab
             setTimeout(initAds, 100);
-            }
         }
 
         // More dropdown toggle
