@@ -551,6 +551,33 @@
         </div>
     </div>
 
+    <!-- URL Parameter Handler -->
+    <script>
+        // Check for configuration in URL parameters
+        (function() {
+            const params = new URLSearchParams(window.location.search);
+            
+            // If we have config params, store them and auto-enter
+            if (params.has('team')) {
+                const config = {
+                    team: params.get('team'),
+                    difficulty: params.get('difficulty') || 'veteran',
+                    time: parseInt(params.get('time')) || 300,
+                    rounds: params.get('rounds') || 'all',
+                    practice: params.get('practice') === 'true',
+                    sound: params.get('sound') !== 'false',
+                    trades: params.get('trades') === 'true'
+                };
+                
+                // Store config in sessionStorage for war-room.js to pick up
+                sessionStorage.setItem('warRoomConfig', JSON.stringify(config));
+                
+                // Add class to body to indicate we have config
+                document.body.dataset.hasConfig = 'true';
+            }
+        })();
+    </script>
+    
     <!-- Scripts -->
     <script src="../src/js/data.js"></script>
     <script src="../src/js/war-room.js"></script>
