@@ -222,7 +222,7 @@
             { rank: 144, name: "Carson Schwesinger", position: "LB", school: "UCLA", tier: "Round 5" },
             { rank: 145, name: "Justin Joly", position: "TE", school: "NC State", tier: "Round 5" },
             { rank: 146, name: "Garrett Nussmeier", position: "QB", school: "LSU", tier: "Round 5" },
-            { rank: 147, name: "Donovan Jackson", position: "OG", school: "Ohio State", tier: "Round 5" },
+            { rank: 147, name: "Ar'Maj Reed-Adams", position: "OG", school: "Texas A&M", tier: "Round 5" },
             { rank: 148, name: "Tyreese Fearbry", position: "EDGE", school: "Pittsburgh", tier: "Round 5" },
             { rank: 149, name: "Jalon Walker", position: "LB", school: "Georgia", tier: "Round 5" },
             { rank: 150, name: "Colby Wooden", position: "DT", school: "Auburn", tier: "Round 5" },
@@ -362,7 +362,7 @@
                 { rank: 4, name: "Oluwafemi Oladejo", school: "UCLA", overallRank: 41, grade: 86.5, oneLineSummary: "Athleticism, pass protection, and versatility." },
                 { rank: 5, name: "Emmanuel Pregnon", school: "Oregon", overallRank: 42, grade: 86.0, oneLineSummary: "Day-one contributor with power and technique." },
                 { rank: 6, name: "Chase Bisontis", school: "Texas A&M", overallRank: 55, grade: 85.0, oneLineSummary: "Thick, powerful guard with run-blocking temperament." },
-                { rank: 7, name: "Donovan Jackson", school: "Ohio State", overallRank: 58, grade: 84.5, oneLineSummary: "Versatile interior presence with starter traits." },
+                { rank: 7, name: "Ar'Maj Reed-Adams", school: "Texas A&M", overallRank: 58, grade: 84.5, oneLineSummary: "Athletic guard with excellent lateral movement." },
                 { rank: 8, name: "Jake Slaughter", school: "Florida", overallRank: 48, grade: 85.5, oneLineSummary: "Center with blend of intellect and physicality." }
             ],
             EDGE: [
@@ -620,9 +620,9 @@
                 ],
                 picks: [
                     { pick: 11, player: "Ty Simpson", position: "QB", school: "Alabama", value: "value" },
-                    { pick: 41, player: "Donovan Jackson", position: "IOL", school: "Ohio State", value: "fair" }
+                    { pick: 41, player: "Emmanuel Pregnon", position: "IOL", school: "Oregon", value: "value" }
                 ],
-                summary: "Simpson slides to 11 and Miami pounces on a franchise QB. Great value for a first-round talent. Jackson shores up the interior line in Round 2."
+                summary: "Simpson slides to 11 and Miami pounces on a franchise QB. Great value for a first-round talent. Pregnon shores up the interior line in Round 2."
             },
             {
                 name: "Dallas Cowboys",

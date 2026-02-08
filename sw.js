@@ -79,7 +79,7 @@ const PLAYER_IMAGES = [
   '/nfl-mock-draft-2026/images/players/daylen-everette.jpg',
   '/nfl-mock-draft-2026/images/players/caleb-lomu.jpg',
   '/nfl-mock-draft-2026/images/players/rod-moore.jpg',
-  '/nfl-mock-draft-2026/images/players/donovan-jackson.jpg',
+  '/nfl-mock-draft-2026/images/players/emmanuel-pregnon.jpg',
   '/nfl-mock-draft-2026/images/players/olaivavega-ioane.jpg',
   '/nfl-mock-draft-2026/images/players/jc-latham.jpg',
   '/nfl-mock-draft-2026/images/players/jahdae-barron.jpg'

@@ -551,7 +551,7 @@ const ConsensusMockData = {
                     pff: { player: 'Olaivavega Ioane', confidence: 0.85, note: 'Dominant LG' },
                     espn: { player: 'Olaivavega Ioane', confidence: 0.80, note: 'Power' },
                     pfn: { player: 'Olaivavega Ioane', confidence: 0.85, note: 'Anchor' },
-                    tdn: { player: 'Donovan Jackson', confidence: 0.60, note: 'Ohio State' }, // Different!
+                    tdn: { player: 'Emmanuel Pregnon', confidence: 0.60, note: 'Oregon' }, // Different!
                     walter: { player: 'Olaivavega Ioane', confidence: 0.80, note: 'Run blocking' }
                 }
             },
@@ -559,7 +559,7 @@ const ConsensusMockData = {
             history: [
                 { date: '2026-02-05', player: 'Olaivavega Ioane', confidence: 0.82 }
             ],
-            dissent: 'TDN prefers Donovan Jackson'
+            dissent: 'TDN prefers Emmanuel Pregnon'
         },
         21: {
             team: 'Cardinals',
@@ -806,22 +806,22 @@ const ConsensusMockData = {
         32: {
             team: 'Lions',
             consensus: {
-                player: 'Donovan Jackson',
+                player: 'Emmanuel Pregnon',
                 position: 'IOL',
-                school: 'Ohio State',
+                school: 'Oregon',
                 confidence: 0.68,
                 agreement: 3,
                 sources: {
-                    pff: { player: 'Donovan Jackson', confidence: 0.70, note: 'Versatile' },
-                    espn: { player: 'Donovan Jackson', confidence: 0.70, note: 'Power' },
+                    pff: { player: 'Emmanuel Pregnon', confidence: 0.70, note: 'Versatile' },
+                    espn: { player: 'Emmanuel Pregnon', confidence: 0.70, note: 'Power' },
                     pfn: { player: 'Connor Lew', confidence: 0.60, note: 'Auburn' }, // Different!
-                    tdn: { player: 'Donovan Jackson', confidence: 0.65, note: 'Anchor' },
+                    tdn: { player: 'Emmanuel Pregnon', confidence: 0.65, note: 'Anchor' },
                     walter: { player: 'Chase Bisontis', confidence: 0.55, note: 'Texas A&M' } // Different!
                 }
             },
             votes: { up: 423, down: 278 },
             history: [
-                { date: '2026-02-05', player: 'Donovan Jackson', confidence: 0.68 }
+                { date: '2026-02-05', player: 'Emmanuel Pregnon', confidence: 0.68 }
             ],
             dissent: 'PFN has Lew, Walter has Bisontis'
         }

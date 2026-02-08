@@ -60,7 +60,7 @@ function enhanceBigBoardDataWithRatings() {
         'Connor Lew': { athleticism: 8.0, size: 8.0, production: 8.0, upside: 8.0, technique: 8.5 },
         'Emmanuel Pregnon': { athleticism: 7.0, size: 8.5, production: 7.5, upside: 7.5, technique: 8.0 },
         'Chase Bisontis': { athleticism: 7.0, size: 8.5, production: 7.5, upside: 7.5, technique: 7.5 },
-        'Donovan Jackson': { athleticism: 7.5, size: 8.0, production: 7.5, upside: 7.5, technique: 8.0 },
+        'Ar\'Maj Reed-Adams': { athleticism: 7.5, size: 8.0, production: 7.5, upside: 7.5, technique: 8.0 },
         
         // EDGE
         'Rueben Bain Jr.': { athleticism: 8.0, size: 8.5, production: 9.0, upside: 8.5, technique: 8.0 },

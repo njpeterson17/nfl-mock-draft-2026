@@ -488,19 +488,19 @@ const playerVideos = {
     position: "LB",
     school: "Georgia"
   },
-  "Donovan Jackson": {
-    mainHighlight: "jackson2025abc",
+  "Emmanuel Pregnon": {
+    mainHighlight: "pregnon2025abc",
     playlist: [
-      { id: "jackson2025abc", title: "Ohio State IOL Highlights", duration: "7:30", thumbnail: "hqdefault" }
+      { id: "pregnon2025abc", title: "Oregon IOL Highlights", duration: "7:30", thumbnail: "hqdefault" }
     ],
     stats: {
-      views: "200K",
-      likes: "6K",
-      channel: "Ohio State Football",
+      views: "180K",
+      likes: "5K",
+      channel: "Oregon Football",
       videoCount: 1
     },
     position: "IOL",
-    school: "Ohio State"
+    school: "Oregon"
   },
   "Dillon Thieneman": {
     mainHighlight: "thieneman2025xyz",
