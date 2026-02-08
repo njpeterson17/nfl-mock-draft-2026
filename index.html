@@ -30,7 +30,6 @@
     <link rel="stylesheet" href="src/css/styles.css">
     <link rel="stylesheet" href="src/css/trade-calculator.css">
     <link rel="stylesheet" href="src/css/draft-grades.css">
-    <link rel="stylesheet" href="src/css/adp-system.css">
     <link rel="stylesheet" href="src/css/png-export.css">
     <link rel="stylesheet" href="src/css/social-sharing.css">
 
@@ -115,7 +114,7 @@
             
             <!-- More Dropdown -->
             <div class="nav-dropdown" style="position: relative;">
-                <button class="nav-tab" onclick="toggleMoreDropdown()" style="display: flex; align-items: center; gap: 0.4rem;">
+                <button class="nav-tab" onclick="toggleMoreDropdown(event)" style="display: flex; align-items: center; gap: 0.4rem;">
                     <i class="fas fa-ellipsis-h"></i> More <i class="fas fa-chevron-down" style="font-size: 0.6rem;"></i>
                 </button>
                 <div id="moreDropdown" class="dropdown-menu" style="display: none; position: absolute; top: 100%; right: 0; background: var(--secondary); border: 1px solid var(--border); border-radius: 8px; padding: 0.5rem; min-width: 180px; box-shadow: 0 8px 24px rgba(0,0,0,0.3); z-index: 1000;">
@@ -287,8 +286,9 @@
                             <span class="team-record">3-14 | #3 Overall</span>
                             <div class="team-needs">
                                 <span class="need-badge need-high">OT</span>
-                                <span class="need-badge need-high">DL</span>
-                                <span class="need-badge need-medium">EDGE</span>
+                                <span class="need-badge need-high">S</span>
+                                <span class="need-badge need-high">IOL</span>
+                                <span class="need-badge need-medium">WR</span>
                             </div>
                         </div>
                     </div>
@@ -448,12 +448,10 @@
                             <h3>Cleveland Browns</h3>
                             <span class="team-record">5-12 | #6 Overall</span>
                             <div class="team-needs">
-                                <span class="need-badge need-high">CB</span>
+                                <span class="need-badge need-high">QB</span>
+                                <span class="need-badge need-high">OT</span>
                                 <span class="need-badge need-high">WR</span>
-                                <span class="need-badge need-high">S</span>
-                                <span class="need-badge need-medium">OT</span>
-                                <span class="need-badge need-medium">DL</span>
-                                <span class="need-badge need-low">RB</span>
+                                <span class="need-badge need-medium">IOL</span>
                             </div>
                         </div>
                     </div>
@@ -4943,9 +4941,6 @@ le"></i> Concerns/Areas to Improve</h4>
     <!-- Trade Notification Container -->
     <div id="tradeNotification" class="trade-notification-container"></div>
 
-    <!-- ADP System -->
-    <script src="src/js/adp-system.js"></script>
-    
     <!-- PNG Export System -->
     <script src="src/js/png-export.js"></script>
     <!-- Social Sharing System -->
