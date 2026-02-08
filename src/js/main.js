@@ -257,13 +257,14 @@
             loadTheme(); // Load saved theme preference first
             updatePositionCounts();
             updateR2PositionCounts();
+            updateR3PositionCounts();
             initJumpToSelect();
             initImageHandling();
             handleDeepLink();
             renderBigBoard();
             renderTeamDrafts();
             renderDraftGrades();
-            
+
             // Check for pick hash (runs after a slight delay to ensure all content is loaded)
             setTimeout(() => {
                 checkPickHash();
