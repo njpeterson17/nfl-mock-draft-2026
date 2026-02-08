@@ -329,10 +329,10 @@
                     { position: "S", priority: "medium" }
                 ],
                 picks: [
-                    { pick: 2, player: "Ty Simpson", position: "QB", school: "Alabama", value: "fair" },
+                    { pick: 2, player: "Caleb Downs", position: "S", school: "Ohio State", value: "value" },
                     { pick: 23, player: "Makai Lemon", position: "WR", school: "USC", value: "value" }
                 ],
-                summary: "Excellent draft for the Jets. Land a QB of the future in Simpson and get great value with Lemon late in Round 1. Two premium picks address biggest needs."
+                summary: "Jets go BPA with Downs, one of the best players in the draft regardless of position. Elite safety with range and playmaking ability. Lemon adds a dynamic weapon late in Round 1."
             },
             {
                 name: "Arizona Cardinals",
@@ -403,7 +403,7 @@
                 ],
                 picks: [
                     { pick: 6, player: "Trinidad Chambliss", position: "QB", school: "Ole Miss", value: "fair" },
-                    { pick: 27, player: "Mansoor Delane", position: "CB", school: "Virginia Tech", value: "value" }
+                    { pick: 27, player: "Mansoor Delane", position: "CB", school: "LSU", value: "value" }
                 ],
                 summary: "Browns finally get their QB and land excellent value with Delane late in Round 1. Two quality starters from this draft."
             },
@@ -434,12 +434,9 @@
                 needs: [
                     { position: "DL", priority: "high" },
                     { position: "CB", priority: "high" },
-                    { position: "IOL", priority: "medium" },
-                    { position: "LB", priority: "medium" },
-                    { position: "EDGE", priority: "low" },
                     { position: "IOL", priority: "high" },
-                    { position: "EDGE", priority: "medium" },
                     { position: "LB", priority: "medium" },
+                    { position: "EDGE", priority: "medium" },
                     { position: "S", priority: "low" }
                 ],
                 picks: [
@@ -498,10 +495,10 @@
                     { position: "TE", priority: "low" }
                 ],
                 picks: [
-                    { pick: 11, player: "Rueben Bain Jr.", position: "EDGE", school: "Miami", value: "value" },
+                    { pick: 11, player: "Ty Simpson", position: "QB", school: "Alabama", value: "value" },
                     { pick: 41, player: "Donovan Jackson", position: "IOL", school: "Ohio State", value: "fair" }
                 ],
-                summary: "Bain is an elite pass rusher and local product - great value at 11. Jackson is a solid Round 2 add for the offensive line."
+                summary: "Simpson slides to 11 and Miami pounces on a franchise QB. Great value for a first-round talent. Jackson shores up the interior line in Round 2."
             },
             {
                 name: "Dallas Cowboys",
@@ -702,9 +699,9 @@
                     { position: "S", priority: "low" }
                 ],
                 picks: [
-                    { pick: 25, player: "Denzel Boston", position: "WR", school: "Washington", value: "fair" }
+                    { pick: 21, player: "Denzel Boston", position: "WR", school: "Washington", value: "value" }
                 ],
-                summary: "Boston gives Buffalo a big-bodied receiver to complement Diggs. Solid pick that fills a need."
+                summary: "Boston at #21 is excellent value for Buffalo. Big-bodied receiver who fills a major need."
             },
             {
                 name: "San Francisco 49ers",
@@ -738,9 +735,9 @@
                     { position: "WR", priority: "low" }
                 ],
                 picks: [
-                    { pick: 29, player: "Jeremiyah Love", position: "RB", school: "Notre Dame", value: "value" }
+                    { pick: 28, player: "Jeremiyah Love", position: "RB", school: "Notre Dame", value: "value" }
                 ],
-                summary: "Love falling to #29 is a gift for Houston. Elite RB prospect who transforms their offense. Home run pick."
+                summary: "Love falling to #28 is a gift for Houston. Elite RB prospect who transforms their offense. Home run pick."
             },
             {
                 name: "Philadelphia Eagles",
@@ -774,9 +771,9 @@
                     { position: "TE", priority: "low" }
                 ],
                 picks: [
-                    { pick: 31, player: "Sonny Styles", position: "LB", school: "Ohio State", value: "reach" }
+                    { pick: 31, player: "KC Conception", position: "WR", school: "Texas A&M", value: "fair" }
                 ],
-                summary: "Styles is a bit of a reach here but fills a need. Former safety with elite athleticism for a LB."
+                summary: "Conception gives Denver a big-play receiver with route-running polish. Fills their biggest offensive need."
             },
             {
                 name: "Green Bay Packers",
@@ -790,9 +787,9 @@
                     { position: "EDGE", priority: "medium" }
                 ],
                 picks: [
-                    { pick: 11, player: "Emmett Johnson", position: "RB", school: "Nebraska", value: "reach" }
+                    { pick: 19, player: "Emmett Johnson", position: "RB", school: "Nebraska", value: "fair" }
                 ],
-                summary: "Johnson is a reach at #11 but Green Bay loves their RBs. Good player but questionable value this early."
+                summary: "Johnson at #19 is a better value for Green Bay. Physical runner who fits their scheme well."
             },
             {
                 name: "Atlanta Falcons",
