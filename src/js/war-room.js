@@ -379,14 +379,28 @@ function autoStartWarRoom(config) {
     document.getElementById('timerValue').textContent = formatTime(WarRoomState.timeRemaining);
     
     // Hide entry screen, show interface
-    document.getElementById('entryScreen').classList.add('hidden');
-    document.getElementById('warRoomInterface').classList.remove('hidden');
+    const entryScreen = document.getElementById('entryScreen');
+    const warRoomInterface = document.getElementById('warRoomInterface');
+    
+    if (entryScreen) {
+        entryScreen.classList.add('hidden');
+        entryScreen.style.display = 'none';
+    }
+    if (warRoomInterface) {
+        warRoomInterface.classList.remove('hidden');
+        warRoomInterface.style.display = 'block';
+    }
+    console.log('[WarRoom] Entry screen hidden, interface shown');
     
     // Initialize UI
+    console.log('[WarRoom] Initializing UI...');
     initializeWarRoomUI();
     
     // Start the draft
+    console.log('[WarRoom] Starting draft...');
+    console.log('[WarRoom] WarRoomState:', WarRoomState);
     startPick();
+    console.log('[WarRoom] Draft started!');
 }
 
 function initializeEntryScreen() {
