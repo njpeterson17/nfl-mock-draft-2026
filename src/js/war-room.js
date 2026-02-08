@@ -306,11 +306,21 @@ function generateRandomNews(team, player) {
 // ==========================================
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Check for config from war-room-config.html
-    const savedConfig = sessionStorage.getItem('warRoomConfig');
-    if (savedConfig) {
-        const config = JSON.parse(savedConfig);
-        sessionStorage.removeItem('warRoomConfig'); // Clear after reading
+    // Check for config from URL parameters (from war-room-config.html)
+    const urlParams = new URLSearchParams(window.location.search);
+    const team = urlParams.get('team');
+    
+    if (team) {
+        // Build config from URL params
+        const config = {
+            team: team,
+            difficulty: urlParams.get('difficulty') || 'veteran',
+            time: parseInt(urlParams.get('time')) || 300,
+            rounds: urlParams.get('rounds') || 'all',
+            practice: urlParams.get('practice') === 'true',
+            sound: urlParams.get('sound') === 'true',
+            trades: urlParams.get('trades') === 'true'
+        };
         autoStartWarRoom(config);
     } else {
         initializeEntryScreen();
