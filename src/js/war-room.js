@@ -574,13 +574,19 @@ function getTeamLogoSVG(team) {
 
 function startPick() {
     if (!WarRoomState.isActive) return;
-    
+
+    // If paused, wait and retry
+    if (WarRoomState.isPaused) {
+        setTimeout(() => startPick(), 500);
+        return;
+    }
+
     // Check if this is user's pick
     const isUserPick = isUserOnClock();
-    
+
     // Update UI
     updatePickDisplay();
-    
+
     if (isUserPick) {
         // Start user pick
         startUserPick();
@@ -753,35 +759,49 @@ function makeSelection(playerName) {
 }
 
 function makeAIPick() {
-    // AI team makes a selection based on needs and value
-    const aiTeam = getCurrentAIPickTeam();
+    try {
+        // AI team makes a selection based on needs and value
+        const aiTeam = getCurrentAIPickTeam();
 
-    // Safety check: if no players available, end the draft
-    if (WarRoomState.availablePlayers.length === 0) {
-        completeDraft();
-        return;
-    }
+        // Safety check: if no players available, end the draft
+        if (WarRoomState.availablePlayers.length === 0) {
+            completeDraft();
+            return;
+        }
 
-    const selectedPlayer = selectPlayerForAI(aiTeam);
+        let selectedPlayer = selectPlayerForAI(aiTeam);
 
-    if (selectedPlayer) {
-        const pick = {
-            pickNumber: WarRoomState.currentPick,
-            round: WarRoomState.currentRound,
-            team: aiTeam,
-            player: selectedPlayer
-        };
-        
-        WarRoomState.aiPicks.push(pick);
-        WarRoomState.allPicks.push(pick);
-        
-        // Remove from available players
-        WarRoomState.availablePlayers = WarRoomState.availablePlayers.filter(p => p.name !== selectedPlayer.name);
-        
-        // Update ticker
-        addToTicker(aiTeam, selectedPlayer);
-        
-        // Advance
+        // Fallback: if selection failed, pick best available
+        if (!selectedPlayer) {
+            selectedPlayer = WarRoomState.availablePlayers[0];
+        }
+
+        if (selectedPlayer) {
+            const pick = {
+                pickNumber: WarRoomState.currentPick,
+                round: WarRoomState.currentRound,
+                team: aiTeam,
+                player: selectedPlayer
+            };
+
+            WarRoomState.aiPicks.push(pick);
+            WarRoomState.allPicks.push(pick);
+
+            // Remove from available players
+            WarRoomState.availablePlayers = WarRoomState.availablePlayers.filter(p => p.name !== selectedPlayer.name);
+
+            // Update ticker
+            addToTicker(aiTeam, selectedPlayer);
+
+            // Advance
+            advancePick();
+        } else {
+            // No players left at all - end draft
+            completeDraft();
+        }
+    } catch (err) {
+        console.error('[WarRoom] Error during AI pick:', err);
+        // Don't let errors break the chain - advance anyway
         advancePick();
     }
 }
@@ -936,9 +956,10 @@ function renderDraftBoard() {
 function updatePickDisplay() {
     document.getElementById('currentPickNum').textContent = WarRoomState.currentPick;
     document.getElementById('roundBadge').textContent = `Round ${WarRoomState.currentRound}`;
-    
-    // Update pick history
+
+    // Update pick history and draft board
     renderPickHistory();
+    renderDraftBoard();
 }
 
 function renderPickHistory() {
