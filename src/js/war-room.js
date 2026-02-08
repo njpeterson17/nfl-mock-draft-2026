@@ -318,9 +318,35 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function autoStartWarRoom(config) {
+    console.log('[WarRoom] Auto-starting with config:', config);
+    
+    // Validate config
+    if (!config || !config.team) {
+        console.error('[WarRoom] Invalid config - missing team');
+        // Show entry screen instead
+        document.getElementById('entryScreen').classList.remove('hidden');
+        document.getElementById('warRoomInterface').classList.add('hidden');
+        initializeEntryScreen();
+        return;
+    }
+    
     // Apply config from URL parameters
     WarRoomState.userTeam = config.team;
     WarRoomState.selectedTeam = getTeamById(config.team);
+    
+    // Check if team was found
+    if (!WarRoomState.selectedTeam) {
+        console.error('[WarRoom] Team not found:', config.team);
+        console.error('[WarRoom] Available teams:', TEAM_DATA.map(t => t.id));
+        // Show entry screen instead
+        document.getElementById('entryScreen').classList.remove('hidden');
+        document.getElementById('warRoomInterface').classList.add('hidden');
+        initializeEntryScreen();
+        return;
+    }
+    
+    console.log('[WarRoom] Selected team:', WarRoomState.selectedTeam);
+    
     WarRoomState.difficulty = config.difficulty;
     WarRoomState.roundsToComplete = config.rounds;
     WarRoomState.practiceMode = config.practice;
