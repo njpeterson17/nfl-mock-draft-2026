@@ -1,488 +1,123 @@
 /**
  * NFL Mock Draft - Player Image Database
- * Complete mapping of top 100 prospects to image sources
- * 
+ * Complete mapping of all prospects to image sources
+ *
+ * Rebuilt: 2026-02-08T01:40:00.288Z
+ * Total Players: 280
+ * Players with Local Images: 119
+ *
  * Data sources:
- * - Local: images/players/{name}.jpg (66 available)
+ * - Local: images/players/{name}.jpg
  * - ESPN: https://a.espncdn.com/i/headshots/college-football/players/full/{ID}.png
  * - CBS: https://sports.cbsimg.net/images/football/players/600x800/{ID}.jpg
- * - Sports Reference: https://sports-reference.com/...
- * - Team logos: ESPN CDN team logos as fallback
  */
 
 const PlayerImageDatabase = {
     // ==========================================
-    // TOP 100 PROSPECTS - COMPLETE IMAGE DATA
+    // PLAYER IMAGE DATA
     // ==========================================
-    
+
     playerImageData: {
-        // TIER 1: ELITE (Top 5)
-        "Fernando Mendoza": {
-            rank: 1,
-            position: "QB",
-            school: "Indiana",
-            local: "images/players/fernando-mendoza.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431460.png",
-            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28843907.jpg",
-            hasLocal: true,
-            teamColorKey: "indiana"
-        },
-        "Caleb Downs": {
-            rank: 2,
+        "A.J. Haulcy": {
             position: "S",
-            school: "Ohio State",
-            local: "images/players/caleb-downs.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431612.png",
-            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28844025.jpg",
-            hasLocal: true,
-            teamColorKey: "ohioState"
-        },
-        "Arvell Reese": {
-            rank: 3,
-            position: "LB",
-            school: "Ohio State",
-            local: "images/players/arvell-reese.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431614.png",
-            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28844027.jpg",
-            hasLocal: true,
-            teamColorKey: "ohioState"
-        },
-        "Jeremiyah Love": {
-            rank: 2,
-            position: "RB",
-            school: "Notre Dame",
-            local: "images/players/jeremiyah-love.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432859.png",
-            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28845761.jpg",
-            hasLocal: true,
-            teamColorKey: "notreDame"
-        },
-        "Rueben Bain Jr.": {
-            rank: 5,
-            position: "EDGE",
-            school: "Miami",
-            local: "images/players/rueben-bain.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431648.png",
-            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28843935.jpg",
-            hasLocal: true,
-            teamColorKey: "miami"
-        },
-
-        // TIER 2: ROUND 1 (Picks 6-32)
-        "David Bailey": {
-            rank: 6,
-            position: "EDGE",
-            school: "Texas Tech",
-            local: "images/players/david-bailey.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431439.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "texasTech"
-        },
-        "Francis Mauigoa": {
-            rank: 7,
-            position: "OT",
-            school: "Miami",
-            local: "images/players/francis-mauigoa.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431647.png",
-            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28843934.jpg",
-            hasLocal: true,
-            teamColorKey: "miami"
-        },
-        "Carnell Tate": {
-            rank: 8,
-            position: "WR",
-            school: "Ohio State",
-            local: "images/players/carnell-tate.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431610.png",
-            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28844024.jpg",
-            hasLocal: true,
-            teamColorKey: "ohioState"
-        },
-        "Sonny Styles": {
-            rank: 9,
-            position: "LB",
-            school: "Ohio State",
-            local: "images/players/sonny-styles.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431615.png",
-            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28844028.jpg",
-            hasLocal: true,
-            teamColorKey: "ohioState"
-        },
-        "Jordyn Tyson": {
-            rank: 10,
-            position: "WR",
-            school: "Arizona State",
-            local: "images/players/jordyn-tyson.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432851.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "arizonaState"
-        },
-        "Mansoor Delane": {
-            rank: 11,
-            position: "CB",
-            school: "Virginia Tech",
-            local: "images/players/mansoor-delane.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431607.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "virginiaTech"
-        },
-        "Spencer Fano": {
-            rank: 12,
-            position: "OT",
-            school: "Utah",
-            local: "images/players/spencer-fano.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431938.png",
-            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28844130.jpg",
-            hasLocal: true,
-            teamColorKey: "utah"
-        },
-        "Makai Lemon": {
-            rank: 13,
-            position: "WR",
-            school: "USC",
-            local: "images/players/makai-lemon.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432856.png",
-            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28845765.jpg",
-            hasLocal: true,
-            teamColorKey: "usc"
-        },
-        "Keldric Faulk": {
-            rank: 14,
-            position: "EDGE",
-            school: "Auburn",
-            local: "images/players/keldric-faulk.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431109.png",
-            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28843385.jpg",
-            hasLocal: true,
-            teamColorKey: "auburn"
-        },
-        "Peter Woods": {
-            rank: 15,
-            position: "DL",
-            school: "Clemson",
-            local: "images/players/peter-woods.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431443.png",
-            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28843751.jpg",
-            hasLocal: true,
-            teamColorKey: "clemson"
-        },
-        "Jermod McCoy": {
-            rank: 16,
-            position: "CB",
-            school: "Tennessee",
-            local: "images/players/jermod-mccoy.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432535.png",
-            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28845342.jpg",
-            hasLocal: true,
-            teamColorKey: "tennessee"
-        },
-        "T.J. Parker": {
-            rank: 17,
-            position: "EDGE",
-            school: "Clemson",
-            local: "images/players/tj-parker.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431444.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "clemson"
-        },
-        "Kenyon Sadiq": {
-            rank: 18,
-            position: "TE",
-            school: "Oregon",
-            local: "images/players/kenyon-sadiq.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431965.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "oregon"
-        },
-        "Ty Simpson": {
-            rank: 19,
-            position: "QB",
-            school: "Alabama",
-            local: "images/players/ty-simpson.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4433312.png",
-            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28845835.jpg",
-            hasLocal: true,
-            teamColorKey: "alabama"
-        },
-        "Caleb Lomu": {
-            rank: 20,
-            position: "OT",
-            school: "Utah",
-            local: "images/players/caleb-lomu.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431939.png",
-            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28844131.jpg",
-            hasLocal: true,
-            teamColorKey: "utah"
-        },
-        "Olaivavega Ioane": {
-            rank: 21,
-            position: "IOL",
-            school: "Penn State",
-            local: "images/players/olaivavega-ioane.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431266.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "pennState"
-        },
-        "Zachariah Branch": {
-            rank: 22,
-            position: "WR",
-            school: "Georgia",
-            local: "images/players/zachariah-branch.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432862.png",
-            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28845763.jpg",
-            hasLocal: true,
-            teamColorKey: "georgia"
-        },
-        "Kadyn Proctor": {
-            rank: 24,
-            position: "OT",
-            school: "Alabama",
-            local: "images/players/kadyn-proctor.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431387.png",
-            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28843631.jpg",
-            hasLocal: true,
-            teamColorKey: "alabama"
-        },
-        "Trinidad Chambliss": {
-            rank: 25,
-            position: "QB",
-            school: "Ole Miss",
-            local: null,
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432528.png",
-            cbs: null,
-            hasLocal: false,
-            teamColorKey: "oleMiss"
-        },
-        "LT Overton": {
-            rank: 26,
-            position: "DL",
-            school: "Texas A&M",
-            local: "images/players/lt-overton.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432451.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "texasAm"
-        },
-        "Emmett Johnson": {
-            rank: 28,
-            position: "RB",
-            school: "Nebraska",
-            local: "images/players/emmett-johnson.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431420.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "nebraska"
-        },
-        "Denzel Boston": {
-            rank: 29,
-            position: "WR",
-            school: "Washington",
-            local: "images/players/denzel-boston.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431145.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "washington"
-        },
-        "Emmanuel Pregnon": {
-            rank: 30,
-            position: "IOL",
-            school: "Oregon",
-            local: "images/players/emmanuel-pregnon.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431963.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "oregon"
-        },
-        "Ja'Kobi Lane": {
-            rank: 31,
-            position: "WR",
-            school: "USC",
-            local: "images/players/jakobi-lane.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432857.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "usc"
-        },
-        "Ahmad Moten": {
-            rank: 32,
-            position: "DL",
-            school: "Ohio State",
-            local: "images/players/ahmad-moten.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431619.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "ohioState"
-        },
-
-        // TIER 3: ROUND 2 (Picks 33-64)
-        "Drew Allar": {
-            rank: 33,
-            position: "QB",
-            school: "Penn State",
-            local: "images/players/drew-allar.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431264.png",
-            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28843851.jpg",
-            hasLocal: true,
-            teamColorKey: "pennState"
-        },
-        "Monroe Freeling": {
-            rank: 34,
-            position: "OT",
-            school: "Georgia",
-            local: "images/players/monroe-freeling.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432875.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "georgia"
-        },
-        "KC Concepcion": {
-            rank: 35,
-            position: "WR",
-            school: "Texas A&M",
-            local: "images/players/kc-concepcion.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432458.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "texasAm"
-        },
-        "Jadarian Price": {
-            rank: 36,
-            position: "RB",
-            school: "Notre Dame",
-            local: "images/players/jadarian-price.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432860.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "notreDame"
-        },
-        "Eli Stowers": {
-            rank: 37,
-            position: "TE",
-            school: "Vanderbilt",
-            local: "images/players/eli-stowers.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432559.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "vanderbilt"
-        },
-        "Chase Bisontis": {
-            rank: 39,
-            position: "IOL",
-            school: "Texas A&M",
-            local: "images/players/chase-bisontis.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432452.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "texasAm"
-        },
-        "Jonah Coleman": {
-            rank: 40,
-            position: "RB",
-            school: "Washington",
-            local: "images/players/jonah-coleman.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4430916.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "washington"
-        },
-        "Garrett Nussmeier": {
-            rank: 43,
-            position: "QB",
             school: "LSU",
-            local: "images/players/garrett-nussmeier.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431373.png",
+            local: "images/players/aj-haulcy.jpg",
+            espn: null,
             cbs: null,
             hasLocal: true,
             teamColorKey: "lsu"
         },
-        "Max Klare": {
-            rank: 45,
-            position: "TE",
-            school: "Ohio State",
-            local: "images/players/max-klare.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431618.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "ohioState"
-        },
-        "Jaeden Roberts": {
-            rank: 46,
-            position: "IOL",
-            school: "Alabama",
+        "Aamil Wagner": {
+            position: "OT",
+            school: "Notre Dame",
             local: null,
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4433335.png",
+            espn: null,
             cbs: null,
             hasLocal: false,
-            teamColorKey: "alabama"
+            teamColorKey: "notreDame"
         },
-        "Carson Beck": {
-            rank: 47,
-            position: "QB",
+        "Aaron Anderson": {
+            position: "WR",
+            school: "LSU",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "lsu"
+        },
+        "Adam Randall": {
+            position: "RB",
+            school: "Clemson",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "clemson"
+        },
+        "Ahmad Moten Sr.": {
+            position: "DT",
+            school: "Indiana",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "indiana"
+        },
+        "Aiden Fisher": {
+            position: "LB",
+            school: "Indiana",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "indiana"
+        },
+        "Akheem Mesidor": {
+            position: "EDGE",
             school: "Miami",
-            local: "images/players/carson-beck.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4428972.png",
+            local: "images/players/akheem-mesidor.jpg",
+            espn: null,
             cbs: null,
             hasLocal: true,
             teamColorKey: "miami"
         },
-        "Tacario Davis": {
-            rank: 51,
-            position: "CB",
-            school: "Arizona",
-            local: "images/players/tacario-davis.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4430923.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "arizona"
-        },
-        "Nicholas Singleton": {
-            rank: 52,
-            position: "RB",
-            school: "Penn State",
-            local: "images/players/nicholas-singleton.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431268.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "pennState"
-        },
-        "Jack Endries": {
-            rank: 54,
-            position: "TE",
-            school: "Texas",
-            local: "images/players/jack-endries.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4430931.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "texas"
-        },
-        "Keylan Rutledge": {
-            rank: 55,
-            position: "IOL",
-            school: "Georgia Tech",
+        "Akheem Mesidor (Miami": {
+            position: "DT",
+            school: "FL",
             local: null,
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4433100.png",
+            espn: null,
             cbs: null,
             hasLocal: false,
-            teamColorKey: "georgiaTech"
+            teamColorKey: "indiana"
         },
-        "Donovan Jackson": {
-            rank: 56,
-            position: "IOL",
-            school: "Ohio State",
-            local: "images/players/donovan-jackson.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431620.png",
+        "Albert Regis": {
+            position: "DT",
+            school: "Indiana",
+            local: null,
+            espn: null,
             cbs: null,
-            hasLocal: true,
-            teamColorKey: "ohioState"
+            hasLocal: false,
+            teamColorKey: "indiana"
+        },
+        "Amare Ferrell": {
+            position: "S",
+            school: "Indiana",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "indiana"
+        },
+        "Andre Greene": {
+            position: "WR",
+            school: "North Carolina",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "northCarolina"
         },
         "Anthony Hill Jr.": {
-            rank: 57,
             position: "LB",
             school: "Texas",
             local: "images/players/anthony-hill-jr.jpg",
@@ -491,160 +126,70 @@ const PlayerImageDatabase = {
             hasLocal: true,
             teamColorKey: "texas"
         },
-        "Cade Klubnik": {
-            rank: 59,
-            position: "QB",
+        "Anthony Lucas": {
+            position: "EDGE",
+            school: "USC",
+            local: "images/players/anthony-lucas.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "usc"
+        },
+        "Antonio Williams": {
+            position: "WR",
             school: "Clemson",
-            local: "images/players/cade-klubnik.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431446.png",
+            local: "images/players/antonio-williams.jpg",
+            espn: null,
             cbs: null,
             hasLocal: true,
             teamColorKey: "clemson"
         },
-        "Caleb Tiernan": {
-            rank: 60,
-            position: "OT",
-            school: "Northwestern",
-            local: "images/players/caleb-tiernan.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432062.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "northwestern"
-        },
-        "Joe Royer": {
-            rank: 62,
-            position: "TE",
-            school: "Cincinnati",
-            local: "images/players/joe-royer.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431223.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "cincinnati"
-        },
-        "Sawyer Robertson": {
-            rank: 64,
-            position: "QB",
-            school: "Baylor",
-            local: null,
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431956.png",
-            cbs: null,
-            hasLocal: false,
-            teamColorKey: "baylor"
-        },
-
-        // TIER 4: ROUND 3 (Picks 65-100)
-        "Demond Claiborne": {
-            rank: 65,
-            position: "RB",
-            school: "Wake Forest",
-            local: "images/players/demond-claiborne.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432160.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "wakeForest"
-        },
-        "Landon Jackson": {
-            rank: 68,
-            position: "EDGE",
-            school: "Arkansas",
-            local: "images/players/landon-jackson.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431134.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "arkansas"
-        },
-        "Princely Umanmielen": {
-            rank: 71,
-            position: "EDGE",
-            school: "Ole Miss",
-            local: "images/players/princely-umanmielen.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431178.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "oleMiss"
-        },
-        "D.J. Campbell": {
-            rank: 73,
+        "Ar'maj Reed-Adams": {
             position: "IOL",
-            school: "Texas",
-            local: "images/players/dj-campbell.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4430938.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "texas"
-        },
-        "Daylen Everette": {
-            rank: 79,
-            position: "CB",
-            school: "Georgia",
-            local: "images/players/daylen-everette.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431182.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "georgia"
-        },
-        "Jalen Milroe": {
-            rank: 81,
-            position: "QB",
-            school: "Alabama",
+            school: "Texas A&M",
             local: null,
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4433314.png",
+            espn: null,
             cbs: null,
             hasLocal: false,
-            teamColorKey: "alabama"
+            teamColorKey: "texasAm"
         },
-        "TreVeyon Henderson": {
-            rank: 82,
-            position: "RB",
+        "Ar'Maj Reed-Adams": {
+            position: "OG",
+            school: "Texas A&M",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "texasAm"
+        },
+        "Arvell Reese": {
+            position: "LB",
             school: "Ohio State",
-            local: "images/players/treveyon-henderson.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431624.png",
-            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28844036.jpg",
+            local: "images/players/arvell-reese.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431614.png",
+            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28844027.jpg",
             hasLocal: true,
             teamColorKey: "ohioState"
         },
-        "Rod Moore": {
-            rank: 83,
-            position: "S",
-            school: "Michigan",
-            local: "images/players/rod-moore.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431327.png",
+        "Austin Barber": {
+            position: "OT",
+            school: "Florida",
+            local: "images/players/austin-barber.jpg",
+            espn: null,
             cbs: null,
             hasLocal: true,
-            teamColorKey: "michigan"
+            teamColorKey: "florida"
         },
-        "Justin Joly": {
-            rank: 87,
-            position: "TE",
-            school: "NC State",
-            local: "images/players/justin-joly.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431510.png",
+        "Avery Johnson": {
+            position: "QB",
+            school: "Kansas State",
+            local: null,
+            espn: null,
             cbs: null,
-            hasLocal: true,
-            teamColorKey: "ncState"
-        },
-        "Kevin Coleman Jr.": {
-            rank: 104,
-            position: "WR",
-            school: "Missouri",
-            local: "images/players/kevin-coleman-jr.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4685307.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "missouri"
-        },
-        "Barion Brown": {
-            rank: 105,
-            position: "WR",
-            school: "LSU",
-            local: "images/players/barion-brown.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4698597.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "lsu"
+            hasLocal: false,
+            teamColorKey: "kansasState"
         },
         "Avieon Terrell": {
-            rank: 108,
             position: "CB",
             school: "Clemson",
             local: "images/players/avieon-terrell.jpg",
@@ -653,8 +198,1627 @@ const PlayerImageDatabase = {
             hasLocal: true,
             teamColorKey: "clemson"
         },
+        "Barion Brown": {
+            position: "WR",
+            school: "Kentucky",
+            local: "images/players/barion-brown.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4698597.png",
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "kentucky"
+        },
+        "Beau Stephens": {
+            position: "IOL",
+            school: "Indiana",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "indiana"
+        },
+        "Billy Schrauth": {
+            position: "OG",
+            school: "Notre Dame",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "notreDame"
+        },
+        "Bishop Fitzgerald": {
+            position: "S",
+            school: "USC",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "usc"
+        },
+        "Blake Miller": {
+            position: "OT",
+            school: "Clemson",
+            local: "images/players/blake-miller.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "clemson"
+        },
+        "Brady Cook": {
+            position: "QB",
+            school: "Missouri",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "missouri"
+        },
+        "Brandon Cisse": {
+            position: "CB",
+            school: "South Carolina",
+            local: "images/players/brandon-cisse.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "southCarolina"
+        },
+        "Branson Robinson": {
+            position: "RB",
+            school: "Georgia",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "georgia"
+        },
+        "Brenen Thompson": {
+            position: "WR",
+            school: "Mississippi State",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "mississippiState"
+        },
+        "Brian Parker II": {
+            position: "OT",
+            school: "Duke",
+            local: "images/players/brian-parker-ii.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "duke"
+        },
+        "Brock Vandagriff": {
+            position: "QB",
+            school: "Georgia",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "georgia"
+        },
+        "Bud Clark": {
+            position: "S",
+            school: "TCU",
+            local: "images/players/bud-clark.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "tcu"
+        },
+        "C.J. Allen": {
+            position: "LB",
+            school: "Georgia",
+            local: "images/players/cj-allen.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "georgia"
+        },
+        "C.J. Daniels": {
+            position: "WR",
+            school: "Miami-FL",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "indiana"
+        },
+        "Cade Klubnik": {
+            position: "QB",
+            school: "Clemson",
+            local: "images/players/cade-klubnik.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431446.png",
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "clemson"
+        },
+        "Caden Curry": {
+            position: "EDGE",
+            school: "Ohio State",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "ohioState"
+        },
+        "Caleb Banks": {
+            position: "DT",
+            school: "Florida",
+            local: "images/players/caleb-banks.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "florida"
+        },
+        "Caleb Downs": {
+            position: "S",
+            school: "Ohio State",
+            local: "images/players/caleb-downs.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431612.png",
+            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28844025.jpg",
+            hasLocal: true,
+            teamColorKey: "ohioState"
+        },
+        "Caleb Lomu": {
+            position: "OT",
+            school: "Utah",
+            local: "images/players/caleb-lomu.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431939.png",
+            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28844131.jpg",
+            hasLocal: true,
+            teamColorKey: "utah"
+        },
+        "Caleb Tiernan": {
+            position: "OT",
+            school: "Northwestern",
+            local: "images/players/caleb-tiernan.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432062.png",
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "northwestern"
+        },
+        "Cam Skattebo": {
+            position: "RB",
+            school: "Arizona State",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "arizonaState"
+        },
+        "Cameron Ball": {
+            position: "DT",
+            school: "Arkansas",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "arkansas"
+        },
+        "Cameron Scott": {
+            position: "WR",
+            school: "South Carolina",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "southCarolina"
+        },
+        "Carnell Tate": {
+            position: "WR",
+            school: "Ohio State",
+            local: "images/players/carnell-tate.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431610.png",
+            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28844024.jpg",
+            hasLocal: true,
+            teamColorKey: "ohioState"
+        },
+        "Carson Beck": {
+            position: "QB",
+            school: "Miami",
+            local: "images/players/carson-beck.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4428972.png",
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "miami"
+        },
+        "Cashius Howell": {
+            position: "EDGE",
+            school: "Texas A&M",
+            local: "images/players/cashius-howell.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "texasAm"
+        },
+        "Chandler Rivers": {
+            position: "CB",
+            school: "Duke",
+            local: "images/players/chandler-rivers.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "duke"
+        },
+        "Charles Demmings": {
+            position: "CB",
+            school: "Stephen F. Austin",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "texasState"
+        },
+        "Chase Bisontis": {
+            position: "IOL",
+            school: "Texas A&M",
+            local: "images/players/chase-bisontis.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432452.png",
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "texasAm"
+        },
+        "Chevan Cordeiro": {
+            position: "QB",
+            school: "San Jose State",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "indiana"
+        },
+        "Chip Trayanum": {
+            position: "RB",
+            school: "Toledo",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "cincinnati"
+        },
+        "Chris Bell": {
+            position: "WR",
+            school: "Louisville",
+            local: "images/players/chris-bell.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "louisville"
+        },
+        "Chris Brazzell II": {
+            position: "WR",
+            school: "Tennessee",
+            local: "images/players/chris-brazzell-ii.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "tennessee"
+        },
+        "Chris Johnson": {
+            position: "CB",
+            school: "San Diego State",
+            local: "images/players/chris-johnson.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "sanDiegoState"
+        },
+        "Chris McClellan": {
+            position: "DL",
+            school: "Missouri",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "missouri"
+        },
+        "Christen Miller": {
+            position: "DT",
+            school: "Georgia",
+            local: "images/players/christen-miller.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "georgia"
+        },
+        "Christian Lewis": {
+            position: "WR",
+            school: "Alabama",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "alabama"
+        },
+        "Christian Miller": {
+            position: "DT",
+            school: "Georgia",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "georgia"
+        },
+        "CJ Allen": {
+            position: "LB",
+            school: "Georgia",
+            local: "images/players/cj-allen.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "georgia"
+        },
+        "CJ Daniels": {
+            position: "WR",
+            school: "Miami",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "miami"
+        },
+        "Cole Payton": {
+            position: "QB",
+            school: "North Dakota State",
+            local: "images/players/cole-payton.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "northDakotaState"
+        },
+        "Colton Hood": {
+            position: "CB",
+            school: "Tennessee",
+            local: "images/players/colton-hood.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "tennessee"
+        },
+        "Conner Weigman": {
+            position: "QB",
+            school: "Texas A&M",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "texasAm"
+        },
+        "Connor Gibson": {
+            position: "WR",
+            school: "Texas",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "texas"
+        },
+        "Connor Lew": {
+            position: "C",
+            school: "Auburn",
+            local: "images/players/connor-lew.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "auburn"
+        },
+        "D.J. Campbell": {
+            position: "IOL",
+            school: "Texas",
+            local: "images/players/dj-campbell.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4430938.png",
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "texas"
+        },
+        "D'Angelo Ponds": {
+            position: "CB",
+            school: "Indiana",
+            local: "images/players/dangelo-ponds.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "indiana"
+        },
+        "Dae'Quan Wright": {
+            position: "TE",
+            school: "Ole Miss",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "oleMiss"
+        },
+        "Dallen Bentley": {
+            position: "TE",
+            school: "Utah",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "utah"
+        },
+        "Dametrious Crownover": {
+            position: "OT",
+            school: "Texas A&M",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "texasAm"
+        },
+        "Damien Martinez": {
+            position: "RB",
+            school: "Texas A&M",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "texasAm"
+        },
+        "Dani Dennis-Sutton": {
+            position: "EDGE",
+            school: "Penn State",
+            local: "images/players/dani-dennis-sutton.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "pennState"
+        },
+        "Dante Reno": {
+            position: "QB",
+            school: "Boston College",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "bostonCollege"
+        },
+        "Dante Wright": {
+            position: "WR",
+            school: "Colorado",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "colorado"
+        },
+        "Darrell Jackson Jr.": {
+            position: "DT",
+            school: "Florida State",
+            local: "images/players/darrell-jackson-jr.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "floridaState"
+        },
+        "David Bailey": {
+            position: "EDGE",
+            school: "Texas Tech",
+            local: "images/players/david-bailey.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431439.png",
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "texasTech"
+        },
+        "Davison Igbinosun": {
+            position: "CB",
+            school: "Ohio State",
+            local: "images/players/davison-igbinosun.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "ohioState"
+        },
+        "Daylen Everette": {
+            position: "CB",
+            school: "Georgia",
+            local: "images/players/daylen-everette.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431182.png",
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "georgia"
+        },
+        "Deion Burks": {
+            position: "WR",
+            school: "Oklahoma",
+            local: "images/players/deion-burks.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "oklahoma"
+        },
+        "Demond Claiborne": {
+            position: "RB",
+            school: "Wake Forest",
+            local: "images/players/demond-claiborne.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432160.png",
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "wakeForest"
+        },
+        "DeMonte Capehart": {
+            position: "DL",
+            school: "Clemson",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "clemson"
+        },
+        "Denzel Boston": {
+            position: "WR",
+            school: "Washington",
+            local: "images/players/denzel-boston.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431145.png",
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "washington"
+        },
+        "Deontae Lawson": {
+            position: "LB",
+            school: "Alabama",
+            local: "images/players/deontae-lawson.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "alabama"
+        },
+        "Derrick Moore": {
+            position: "EDGE",
+            school: "Michigan",
+            local: "images/players/derrick-moore.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "michigan"
+        },
+        "Desmond Reid": {
+            position: "RB",
+            school: "Pittsburgh",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "pittsburgh"
+        },
+        "Devin Brown": {
+            position: "QB",
+            school: "Oklahoma",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "oklahoma"
+        },
+        "Devin Moore": {
+            position: "CB",
+            school: "Florida",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "florida"
+        },
+        "Devin Price": {
+            position: "WR",
+            school: "Florida State",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "floridaState"
+        },
+        "Diego Pounds": {
+            position: "OT",
+            school: "Indiana",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "indiana"
+        },
+        "Dillon Thieneman": {
+            position: "S",
+            school: "Oregon",
+            local: "images/players/dillon-thieneman.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "oregon"
+        },
+        "Domani Jackson": {
+            position: "CB",
+            school: "Alabama",
+            local: "images/players/domani-jackson.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "alabama"
+        },
+        "Domonique Orange": {
+            position: "DL",
+            school: "Iowa State",
+            local: "images/players/domonique-orange.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "iowaState"
+        },
+        "Donovan Edwards": {
+            position: "RB",
+            school: "Michigan",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "michigan"
+        },
+        "Dontay Corleone": {
+            position: "DL",
+            school: "Cincinnati",
+            local: "images/players/dontay-corleone.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "cincinnati"
+        },
+        "Drew Allar": {
+            position: "QB",
+            school: "Penn State",
+            local: "images/players/drew-allar.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431264.png",
+            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28843851.jpg",
+            hasLocal: true,
+            teamColorKey: "pennState"
+        },
+        "Drew Shelton": {
+            position: "OT",
+            school: "Penn State",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "pennState"
+        },
+        "Earnest Greene III": {
+            position: "OT",
+            school: "Georgia",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "georgia"
+        },
+        "Eli Raridon": {
+            position: "TE",
+            school: "Notre Dame",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "notreDame"
+        },
+        "Eli Stowers": {
+            position: "TE",
+            school: "Vanderbilt",
+            local: "images/players/eli-stowers.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432559.png",
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "vanderbilt"
+        },
+        "Elic Ayomanor": {
+            position: "WR",
+            school: "Stanford",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "stanford"
+        },
+        "Elijah Banks": {
+            position: "WR",
+            school: "Ole Miss",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "oleMiss"
+        },
+        "Elijah Sarratt": {
+            position: "WR",
+            school: "Indiana",
+            local: "images/players/elijah-sarratt.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "indiana"
+        },
+        "Elijah Sarrett": {
+            position: "WR",
+            school: "Indiana",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "indiana"
+        },
+        "Emmanuel McNeil-Warren": {
+            position: "S",
+            school: "Toledo",
+            local: "images/players/emmanuel-mcneil-warren.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "cincinnati"
+        },
+        "Emmanuel Pregnon": {
+            position: "OG",
+            school: "Oregon",
+            local: "images/players/emmanuel-pregnon.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431963.png",
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "oregon"
+        },
+        "Emmett Johnson": {
+            position: "RB",
+            school: "Nebraska",
+            local: "images/players/emmett-johnson.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431420.png",
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "nebraska"
+        },
+        "Eric McAlister": {
+            position: "WR",
+            school: "TCU",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "tcu"
+        },
+        "Eric Rivers": {
+            position: "WR",
+            school: "Georgia Tech",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "georgiaTech"
+        },
+        "Evan Prater": {
+            position: "WR",
+            school: "Cincinnati",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "cincinnati"
+        },
+        "Fernando Carmona": {
+            position: "IOL",
+            school: "Indiana",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "indiana"
+        },
+        "Fernando Mendoza": {
+            position: "QB",
+            school: "Indiana",
+            local: "images/players/fernando-mendoza.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431460.png",
+            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28843907.jpg",
+            hasLocal: true,
+            teamColorKey: "indiana"
+        },
+        "Francis Mauigoa": {
+            position: "OT",
+            school: "Miami",
+            local: "images/players/francis-mauigoa.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431647.png",
+            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28843934.jpg",
+            hasLocal: true,
+            teamColorKey: "miami"
+        },
+        "Gabe Jacas": {
+            position: "EDGE",
+            school: "Illinois",
+            local: "images/players/gabe-jacas.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "illinois"
+        },
+        "Garrett Greene": {
+            position: "QB",
+            school: "West Virginia",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "westVirginia"
+        },
+        "Garrett Nussmeier": {
+            position: "QB",
+            school: "LSU",
+            local: "images/players/garrett-nussmeier.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431373.png",
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "lsu"
+        },
+        "Genesis Smith": {
+            position: "S",
+            school: "Arizona",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "arizona"
+        },
+        "Gennings Dunker": {
+            position: "OT",
+            school: "Iowa",
+            local: "images/players/gennings-dunker.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "iowa"
+        },
+        "Germie Bernard": {
+            position: "WR",
+            school: "Alabama",
+            local: "images/players/germie-bernard.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "alabama"
+        },
+        "Gracen Halton": {
+            position: "DT",
+            school: "Oklahoma",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "oklahoma"
+        },
+        "Grayson McCall": {
+            position: "QB",
+            school: "NC State",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "ncState"
+        },
+        "Harold Perkins Jr.": {
+            position: "LB",
+            school: "LSU",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "lsu"
+        },
+        "Hayden Wolff": {
+            position: "QB",
+            school: "Western Kentucky",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "westernKentucky"
+        },
+        "Hezekiah Masses": {
+            position: "CB",
+            school: "Indiana",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "indiana"
+        },
+        "Isaac TeSlaa": {
+            position: "WR",
+            school: "Arkansas",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "arkansas"
+        },
+        "Isaiah World": {
+            position: "OT",
+            school: "Oregon",
+            local: "images/players/isaiah-world.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "oregon"
+        },
+        "J.C. Davis": {
+            position: "OT",
+            school: "Illinois",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "illinois"
+        },
+        "J'Mari Taylor": {
+            position: "RB",
+            school: "Virginia",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "virginia"
+        },
+        "Ja'Kobi Lane": {
+            position: "WR",
+            school: "USC",
+            local: "images/players/jakobi-lane.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432857.png",
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "usc"
+        },
+        "Jabari Camper": {
+            position: "WR",
+            school: "Louisville",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "louisville"
+        },
+        "Jack Bech": {
+            position: "WR",
+            school: "TCU",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "tcu"
+        },
+        "Jack Endries": {
+            position: "TE",
+            school: "Texas",
+            local: "images/players/jack-endries.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4430931.png",
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "texas"
+        },
+        "Jack Larsen": {
+            position: "QB",
+            school: "NC State",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "ncState"
+        },
+        "Jacob Rodriguez": {
+            position: "LB",
+            school: "Texas Tech",
+            local: "images/players/jacob-rodriguez.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "texasTech"
+        },
+        "Jadarian Price": {
+            position: "RB",
+            school: "Notre Dame",
+            local: "images/players/jadarian-price.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432860.png",
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "notreDame"
+        },
+        "Jaeden Roberts": {
+            position: "IOL",
+            school: "Alabama",
+            local: null,
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4433335.png",
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "alabama"
+        },
+        "Jaishawn Barham": {
+            position: "LB",
+            school: "Michigan",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "michigan"
+        },
+        "Jake Golday": {
+            position: "LB",
+            school: "Cincinnati",
+            local: "images/players/jake-golday.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "cincinnati"
+        },
+        "Jake Slaughter": {
+            position: "C",
+            school: "Florida",
+            local: "images/players/jake-slaughter.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "florida"
+        },
+        "Jalen Milroe": {
+            position: "QB",
+            school: "Alabama",
+            local: null,
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4433314.png",
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "alabama"
+        },
+        "Jalen Royals": {
+            position: "WR",
+            school: "Utah State",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "indiana"
+        },
+        "Jalen White": {
+            position: "RB",
+            school: "Georgia Southern",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "georgiaSouthern"
+        },
+        "Jalon Kilgore": {
+            position: "S",
+            school: "South Carolina",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "southCarolina"
+        },
+        "Jamari Johnson": {
+            position: "TE",
+            school: "Oregon",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "oregon"
+        },
+        "Jarquez Hunter": {
+            position: "RB",
+            school: "Auburn",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "auburn"
+        },
+        "Jaxson Dart": {
+            position: "QB",
+            school: "Ole Miss",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "oleMiss"
+        },
+        "Jaydn Ott": {
+            position: "RB",
+            school: "California",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "california"
+        },
+        "Jaylon Guilbeau": {
+            position: "CB",
+            school: "Texas",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "texas"
+        },
+        "Jeremiyah Love": {
+            position: "RB",
+            school: "Notre Dame",
+            local: "images/players/jeremiyah-love.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432859.png",
+            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28845761.jpg",
+            hasLocal: true,
+            teamColorKey: "notreDame"
+        },
+        "Jermod McCoy": {
+            position: "CB",
+            school: "Tennessee",
+            local: "images/players/jermod-mccoy.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432535.png",
+            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28845342.jpg",
+            hasLocal: true,
+            teamColorKey: "tennessee"
+        },
+        "Joe Royer": {
+            position: "TE",
+            school: "Cincinnati",
+            local: "images/players/joe-royer.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431223.png",
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "cincinnati"
+        },
+        "John Mateer": {
+            position: "QB",
+            school: "Washington State",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "washingtonState"
+        },
+        "John Michael Gyllenborg": {
+            position: "TE",
+            school: "Wyoming",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "indiana"
+        },
+        "Jonah Coleman": {
+            position: "RB",
+            school: "Washington",
+            local: "images/players/jonah-coleman.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4430916.png",
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "washington"
+        },
+        "Jordan McCloud": {
+            position: "QB",
+            school: "Texas State",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "texasState"
+        },
+        "Jordan Moore": {
+            position: "WR",
+            school: "Texas A&M",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "texasAm"
+        },
+        "Jordyn Tyson": {
+            position: "WR",
+            school: "Arizona State",
+            local: "images/players/jordyn-tyson.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432851.png",
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "arizonaState"
+        },
+        "Josh Cameron": {
+            position: "WR",
+            school: "Baylor",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "baylor"
+        },
+        "Joshua Josephs": {
+            position: "EDGE",
+            school: "Tennessee",
+            local: "images/players/joshua-josephs.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "tennessee"
+        },
+        "Josiah Trotter": {
+            position: "LB",
+            school: "Missouri",
+            local: "images/players/josiah-trotter.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "missouri"
+        },
+        "Jude Bowry": {
+            position: "OT",
+            school: "Boston College",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "bostonCollege"
+        },
+        "Julian Neal": {
+            position: "CB",
+            school: "Arkansas",
+            local: "images/players/julian-neal.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "arkansas"
+        },
+        "Justin Joly": {
+            position: "TE",
+            school: "NC State",
+            local: "images/players/justin-joly.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431510.png",
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "ncState"
+        },
+        "K.C. Concepcion": {
+            position: "WR",
+            school: "Texas A&M",
+            local: "images/players/kc-concepcion.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "texasAm"
+        },
+        "Kaden Davis": {
+            position: "WR",
+            school: "Kansas State",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "kansasState"
+        },
+        "Kadyn Proctor": {
+            position: "OT",
+            school: "Alabama",
+            local: "images/players/kadyn-proctor.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431387.png",
+            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28843631.jpg",
+            hasLocal: true,
+            teamColorKey: "alabama"
+        },
+        "Kaelon Black": {
+            position: "RB",
+            school: "Army",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "army"
+        },
+        "Kage Casey": {
+            position: "OT",
+            school: "Boise State",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "boiseState"
+        },
+        "Kaleb Johnson": {
+            position: "RB",
+            school: "Iowa",
+            local: "images/players/kaleb-johnson.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "iowa"
+        },
+        "Kalel Mullings": {
+            position: "RB",
+            school: "Michigan",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "michigan"
+        },
+        "Kamari Ramsey": {
+            position: "S",
+            school: "USC",
+            local: "images/players/kamari-ramsey.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "usc"
+        },
+        "Kayden McDonald": {
+            position: "DT",
+            school: "Ohio State",
+            local: "images/players/kayden-mcdonald.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "ohioState"
+        },
+        "Kaytron Allen": {
+            position: "RB",
+            school: "Penn State",
+            local: "images/players/kaytron-allen.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "pennState"
+        },
+        "KC Conception": {
+            position: "WR",
+            school: "Texas A&M",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "texasAm"
+        },
+        "Keionte Scott": {
+            position: "CB",
+            school: "Miami",
+            local: "images/players/keionte-scott.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "miami"
+        },
+        "Keith Abney II": {
+            position: "CB",
+            school: "Arizona State",
+            local: "images/players/keith-abney-ii.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "arizonaState"
+        },
+        "Keldric Faulk": {
+            position: "EDGE",
+            school: "Auburn",
+            local: "images/players/keldric-faulk.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431109.png",
+            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28843385.jpg",
+            hasLocal: true,
+            teamColorKey: "auburn"
+        },
+        "Kenyon Sadiq": {
+            position: "TE",
+            school: "Oregon",
+            local: "images/players/kenyon-sadiq.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431965.png",
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "oregon"
+        },
+        "Keon Sabb": {
+            position: "S",
+            school: "Alabama",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "alabama"
+        },
+        "Kevin Coleman Jr.": {
+            position: "WR",
+            school: "Missouri",
+            local: "images/players/kevin-coleman-jr.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4685307.png",
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "missouri"
+        },
+        "Keylan Rutledge": {
+            position: "IOL",
+            school: "Georgia Tech",
+            local: null,
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4433100.png",
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "georgiaTech"
+        },
+        "Keyron Crawford": {
+            position: "EDGE",
+            school: "Auburn",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "auburn"
+        },
+        "Khalib Johnson": {
+            position: "QB",
+            school: "Eastern Michigan",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "indiana"
+        },
+        "Kris Mitchell": {
+            position: "WR",
+            school: "Miami",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "miami"
+        },
+        "Kye Robichaux": {
+            position: "RB",
+            school: "Baylor",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "baylor"
+        },
+        "Kyle Louis": {
+            position: "LB",
+            school: "Pittsburgh",
+            local: "images/players/kyle-louis.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "pittsburgh"
+        },
+        "Kyle McCord": {
+            position: "QB",
+            school: "Syracuse",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "syracuse"
+        },
+        "Kyle Williams": {
+            position: "WR",
+            school: "Washington State",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "washingtonState"
+        },
+        "Lander Barton": {
+            position: "LB",
+            school: "Utah",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "utah"
+        },
+        "LaNorris Sellers": {
+            position: "QB",
+            school: "South Carolina",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "southCarolina"
+        },
+        "Le'Veon Moss": {
+            position: "RB",
+            school: "Texas A&M",
+            local: "images/players/leveon-moss.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "texasAm"
+        },
+        "Lee Hunter": {
+            position: "DT",
+            school: "Texas Tech",
+            local: "images/players/lee-hunter.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "texasTech"
+        },
+        "Logan Jones": {
+            position: "C",
+            school: "Iowa",
+            local: "images/players/logan-jones.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "iowa"
+        },
+        "Lonnie Galloway": {
+            position: "WR",
+            school: "West Virginia",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "westVirginia"
+        },
+        "Louis Moore": {
+            position: "S",
+            school: "Indiana",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "indiana"
+        },
+        "LT Overton": {
+            position: "EDGE",
+            school: "Alabama",
+            local: "images/players/lt-overton.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432451.png",
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "alabama"
+        },
+        "Luther Burden": {
+            position: "WR",
+            school: "Georgia",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "georgia"
+        },
+        "Maalik Murphy": {
+            position: "QB",
+            school: "Duke",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "duke"
+        },
+        "Makai Lemon": {
+            position: "WR",
+            school: "USC",
+            local: "images/players/makai-lemon.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432856.png",
+            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28845765.jpg",
+            hasLocal: true,
+            teamColorKey: "usc"
+        },
+        "Malachi Fields": {
+            position: "WR",
+            school: "Notre Dame",
+            local: "images/players/malachi-fields.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "notreDame"
+        },
+        "Malachi Lawrence": {
+            position: "EDGE",
+            school: "UCF",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "ucf"
+        },
         "Malik Muhammad": {
-            rank: 109,
             position: "CB",
             school: "Texas",
             local: "images/players/malik-muhammad.jpg",
@@ -663,22 +1827,723 @@ const PlayerImageDatabase = {
             hasLocal: true,
             teamColorKey: "texas"
         },
-        "AJ Haulcy": {
-            rank: 110,
-            position: "S",
+        "Mansoor Delane": {
+            position: "CB",
             school: "LSU",
-            local: "images/players/aj-haulcy.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4905664.png",
+            local: "images/players/mansoor-delane.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431607.png",
             cbs: null,
             hasLocal: true,
             teamColorKey: "lsu"
+        },
+        "Marcus Alexander": {
+            position: "WR",
+            school: "NC State",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "ncState"
+        },
+        "Marcus Rosemy-Jacksaint": {
+            position: "WR",
+            school: "Georgia",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "georgia"
+        },
+        "Marlin Klein": {
+            position: "TE",
+            school: "Michigan",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "michigan"
+        },
+        "Matt Gulbin": {
+            position: "IOL",
+            school: "Indiana",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "indiana"
+        },
+        "Max Iheanachor": {
+            position: "OT",
+            school: "Arizona State",
+            local: "images/players/max-iheanachor.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "arizonaState"
+        },
+        "Max Klare": {
+            position: "TE",
+            school: "Ohio State",
+            local: "images/players/max-klare.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431618.png",
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "ohioState"
+        },
+        "Max Llewellyn": {
+            position: "EDGE",
+            school: "Iowa",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "iowa"
+        },
+        "Michael Taaffe": {
+            position: "S",
+            school: "Texas",
+            local: "images/players/michael-taaffe.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "texas"
+        },
+        "Michael Trigg": {
+            position: "TE",
+            school: "Baylor",
+            local: "images/players/michael-trigg.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "baylor"
+        },
+        "Mikail Kamara": {
+            position: "EDGE",
+            school: "Indiana",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "indiana"
+        },
+        "Mike Washington Jr.": {
+            position: "RB",
+            school: "Arkansas",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "arkansas"
+        },
+        "Miller Moss": {
+            position: "QB",
+            school: "Louisville",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "louisville"
+        },
+        "Monroe Freeling": {
+            position: "OT",
+            school: "Georgia",
+            local: "images/players/monroe-freeling.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432875.png",
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "georgia"
+        },
+        "Montrell Johnson": {
+            position: "WR",
+            school: "Florida",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "florida"
+        },
+        "Nathaniel Gilliam": {
+            position: "WR",
+            school: "Pittsburgh",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "pittsburgh"
+        },
+        "Nicholas Singleton": {
+            position: "RB",
+            school: "Penn State",
+            local: "images/players/nicholas-singleton.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431268.png",
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "pennState"
+        },
+        "Olaivavega Ioane": {
+            position: "OG",
+            school: "Penn State",
+            local: "images/players/olaivavega-ioane.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431266.png",
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "pennState"
+        },
+        "Omar Cooper Jr.": {
+            position: "WR",
+            school: "Indiana",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "indiana"
+        },
+        "Omarion Cooper Jr.": {
+            position: "WR",
+            school: "Indiana",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "indiana"
+        },
+        "Oscar Delp": {
+            position: "TE",
+            school: "Georgia",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "georgia"
+        },
+        "Parker Brailsford": {
+            position: "IOL",
+            school: "Alabama",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "alabama"
+        },
+        "Pat Bryant": {
+            position: "WR",
+            school: "Florida State",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "floridaState"
+        },
+        "Patrick Payton": {
+            position: "DT",
+            school: "Florida State",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "floridaState"
+        },
+        "Peter Woods": {
+            position: "DT",
+            school: "Clemson",
+            local: "images/players/peter-woods.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431443.png",
+            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28843751.jpg",
+            hasLocal: true,
+            teamColorKey: "clemson"
+        },
+        "Phil Mafah": {
+            position: "RB",
+            school: "Clemson",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "clemson"
+        },
+        "Preston Stone": {
+            position: "QB",
+            school: "Tulsa",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "indiana"
+        },
+        "R Mason Thomas": {
+            position: "EDGE",
+            school: "Oklahoma",
+            local: "images/players/r-mason-thomas.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "oklahoma"
+        },
+        "Rahsul Faison": {
+            position: "RB",
+            school: "South Carolina",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "southCarolina"
+        },
+        "Rayshaun Benny": {
+            position: "DL",
+            school: "Michigan",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "michigan"
+        },
+        "RJ Harvey": {
+            position: "RB",
+            school: "UCF",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "ucf"
+        },
+        "Roman Hemby": {
+            position: "RB",
+            school: "Indiana",
+            local: "images/players/roman-hemby.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "indiana"
+        },
+        "Romello Height": {
+            position: "EDGE",
+            school: "Texas Tech",
+            local: "images/players/romello-height.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "texasTech"
+        },
+        "Rueben Bain Jr.": {
+            position: "EDGE",
+            school: "Miami",
+            local: null,
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431648.png",
+            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28843935.jpg",
+            hasLocal: false,
+            teamColorKey: "miami"
+        },
+        "Sam Hecht": {
+            position: "IOL",
+            school: "Kansas State",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "kansasState"
+        },
+        "Sam Roush": {
+            position: "TE",
+            school: "Stanford",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "stanford"
+        },
+        "Samuel Patterson": {
+            position: "WR",
+            school: "Washington",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "washington"
+        },
+        "Sawyer Robertson": {
+            position: "QB",
+            school: "Baylor",
+            local: null,
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431956.png",
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "baylor"
+        },
+        "Seth McGowan": {
+            position: "RB",
+            school: "Kentucky",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "kentucky"
+        },
+        "Skyler Bell": {
+            position: "WR",
+            school: "UConn",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "indiana"
+        },
+        "Skyler Gill-Howard": {
+            position: "DT",
+            school: "Texas Tech",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "texasTech"
+        },
+        "Sonny Styles": {
+            position: "LB",
+            school: "Ohio State",
+            local: "images/players/sonny-styles.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431615.png",
+            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28844028.jpg",
+            hasLocal: true,
+            teamColorKey: "ohioState"
+        },
+        "Spencer Fano": {
+            position: "OT",
+            school: "Utah",
+            local: "images/players/spencer-fano.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431938.png",
+            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28844130.jpg",
+            hasLocal: true,
+            teamColorKey: "utah"
+        },
+        "T.J. Parker": {
+            position: "EDGE",
+            school: "Clemson",
+            local: "images/players/tj-parker.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431444.png",
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "clemson"
+        },
+        "Tacario Davis": {
+            position: "CB",
+            school: "Arizona",
+            local: "images/players/tacario-davis.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4430923.png",
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "arizona"
+        },
+        "Tahj Brooks": {
+            position: "RB",
+            school: "Texas Tech",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "texasTech"
+        },
+        "Tahj Washington": {
+            position: "WR",
+            school: "USC",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "usc"
+        },
+        "Taurean York": {
+            position: "LB",
+            school: "Texas A&M",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "texasAm"
+        },
+        "Tavien St. Clair": {
+            position: "QB",
+            school: "Ohio State",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "ohioState"
+        },
+        "Ted Hurst": {
+            position: "WR",
+            school: "Georgia State",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "georgiaState"
+        },
+        "Tez Johnson": {
+            position: "WR",
+            school: "Oregon",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "oregon"
+        },
+        "Thaddeus Dixon": {
+            position: "CB",
+            school: "North Carolina",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "northCarolina"
+        },
+        "Tim Keenan III": {
+            position: "DT",
+            school: "Alabama",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "alabama"
+        },
+        "TJ Hall": {
+            position: "CB",
+            school: "Iowa",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "iowa"
+        },
+        "TJ Parker": {
+            position: "EDGE",
+            school: "Clemson",
+            local: "images/players/tj-parker.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "clemson"
+        },
+        "Tre Harris": {
+            position: "WR",
+            school: "Ole Miss",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "oleMiss"
+        },
+        "TreShawn Holden": {
+            position: "WR",
+            school: "Oregon",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "oregon"
+        },
+        "Trevor Etienne": {
+            position: "RB",
+            school: "Georgia",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "georgia"
+        },
+        "Trey Moore": {
+            position: "EDGE",
+            school: "Texas",
+            local: "images/players/trey-moore.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "texas"
+        },
+        "Trey Zuhn III": {
+            position: "OT",
+            school: "Texas A&M",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "texasAm"
+        },
+        "Treydan Stukes": {
+            position: "CB",
+            school: "Arizona",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "arizona"
+        },
+        "Trinidad Chambliss": {
+            position: "QB",
+            school: "Ole Miss",
+            local: null,
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432528.png",
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "oleMiss"
+        },
+        "Ty Simpson": {
+            position: "QB",
+            school: "Alabama",
+            local: "images/players/ty-simpson.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4433312.png",
+            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28845835.jpg",
+            hasLocal: true,
+            teamColorKey: "alabama"
+        },
+        "Tyler Shough": {
+            position: "QB",
+            school: "Louisville",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "louisville"
+        },
+        "Tyler Van Dyke": {
+            position: "QB",
+            school: "Wisconsin",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "wisconsin"
+        },
+        "Tyreak Sapp": {
+            position: "EDGE",
+            school: "Florida",
+            local: "images/players/tyreak-sapp.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "florida"
+        },
+        "Tyrone Ellis": {
+            position: "WR",
+            school: "Auburn",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "auburn"
+        },
+        "Ulysses Bentley": {
+            position: "RB",
+            school: "Ole Miss",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "oleMiss"
+        },
+        "Will Lee III": {
+            position: "CB",
+            school: "Texas A&M",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "texasAm"
+        },
+        "Will Rogers": {
+            position: "QB",
+            school: "Washington",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "washington"
+        },
+        "Will Sheppard": {
+            position: "WR",
+            school: "Colorado",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "colorado"
+        },
+        "Xavier Restrepo": {
+            position: "WR",
+            school: "Miami",
+            local: "images/players/xavier-restrepo.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "miami"
+        },
+        "Xavier Robinson": {
+            position: "WR",
+            school: "Georgia",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "georgia"
+        },
+        "Xavier Scott": {
+            position: "CB",
+            school: "Illinois",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "illinois"
+        },
+        "Zachariah Branch": {
+            position: "WR",
+            school: "Georgia",
+            local: "images/players/zachariah-branch.jpg",
+            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432862.png",
+            cbs: "https://sports.cbsimg.net/images/football/players/600x800/28845763.jpg",
+            hasLocal: true,
+            teamColorKey: "georgia"
+        },
+        "Zakee Wheatley": {
+            position: "S",
+            school: "Penn State",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "pennState"
+        },
+        "Zane Durant": {
+            position: "DL",
+            school: "Penn State",
+            local: "images/players/zane-durant.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "pennState"
+        },
+        "Zion Young": {
+            position: "EDGE",
+            school: "Missouri",
+            local: "images/players/zion-young.jpg",
+            espn: null,
+            cbs: null,
+            hasLocal: true,
+            teamColorKey: "missouri"
+        },
+        "Zxavian Harris": {
+            position: "DL",
+            school: "Ole Miss",
+            local: null,
+            espn: null,
+            cbs: null,
+            hasLocal: false,
+            teamColorKey: "oleMiss"
         }
     },
 
     // ==========================================
     // TEAM COLOR MAPPINGS
     // ==========================================
-    
+
     teamColors: {
         // SEC
         alabama: { primary: '#9E1B32', secondary: '#828A8F', name: 'Alabama' },
@@ -999,3 +2864,4 @@ const PlayerImageDatabase = {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { PlayerImageDatabase };
 }
+
