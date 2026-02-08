@@ -328,15 +328,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function autoStartWarRoom(config) {
-    console.log('[WarRoom] Auto-starting with config:', config);
+    console.log('[WarRoom] Auto-starting with config:', JSON.stringify(config));
     
     // Validate config
     if (!config || !config.team) {
         console.error('[WarRoom] Invalid config - missing team');
-        // Show entry screen instead
-        document.getElementById('entryScreen').classList.remove('hidden');
-        document.getElementById('warRoomInterface').classList.add('hidden');
-        initializeEntryScreen();
+        alert('Error: No team selected. Please go back and select a team.');
+        window.location.href = 'war-room-config.html';
         return;
     }
     
@@ -348,10 +346,8 @@ function autoStartWarRoom(config) {
     if (!WarRoomState.selectedTeam) {
         console.error('[WarRoom] Team not found:', config.team);
         console.error('[WarRoom] Available teams:', TEAM_DATA.map(t => t.id));
-        // Show entry screen instead
-        document.getElementById('entryScreen').classList.remove('hidden');
-        document.getElementById('warRoomInterface').classList.add('hidden');
-        initializeEntryScreen();
+        alert('Error: Team "' + config.team + '" not found. Please go back and try again.');
+        window.location.href = 'war-room-config.html';
         return;
     }
     
