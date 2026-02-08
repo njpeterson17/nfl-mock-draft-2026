@@ -335,7 +335,7 @@ function autoStartWarRoom(config) {
     document.getElementById('warRoomInterface').classList.remove('hidden');
     
     // Initialize the war room
-    initializeWarRoom();
+    initializeWarRoomUI();
 }
 
 function initializeEntryScreen() {
