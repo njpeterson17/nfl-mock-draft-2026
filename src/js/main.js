@@ -2304,6 +2304,7 @@
 function displayNextPicks() {
     // Get all pick cards
     const pickCards = document.querySelectorAll('.pick-card');
+    console.log('[NextPick] Found', pickCards.length, 'pick cards');
     
     // Build a map of team -> array of their picks (sorted by pick number)
     const teamPicks = {};
@@ -2321,6 +2322,8 @@ function displayNextPicks() {
         }
     });
     
+    console.log('[NextPick] Team picks map:', Object.keys(teamPicks).length, 'teams');
+    
     // Sort each team's picks
     Object.keys(teamPicks).forEach(team => {
         teamPicks[team].sort((a, b) => a.pickNumber - b.pickNumber);
@@ -2329,6 +2332,7 @@ function displayNextPicks() {
     // Update next pick info in each card's header-right
     Object.keys(teamPicks).forEach(team => {
         const picks = teamPicks[team];
+        console.log('[NextPick] Team', team, 'has', picks.length, 'picks');
         
         picks.forEach((pick, index) => {
             const nextPick = picks[index + 1];
@@ -2337,9 +2341,13 @@ function displayNextPicks() {
             if (nextPickNumberEl) {
                 if (nextPick) {
                     nextPickNumberEl.textContent = '#' + nextPick.pickNumber;
+                    console.log('[NextPick] Pick #' + pick.pickNumber + ' -> Next: #' + nextPick.pickNumber);
                 } else {
                     nextPickNumberEl.textContent = 'None';
+                    console.log('[NextPick] Pick #' + pick.pickNumber + ' -> Next: None');
                 }
+            } else {
+                console.log('[NextPick] No next-pick-number element for pick #' + pick.pickNumber);
             }
         });
     });
