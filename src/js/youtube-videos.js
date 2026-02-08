@@ -1301,16 +1301,6 @@ function addVideoIndicators() {
   document.querySelectorAll('.pick-card').forEach(card => {
     const playerName = card.dataset.player;
     if (playerName && playerVideos[playerName]) {
-      const playerPhoto = card.querySelector('.player-photo');
-      if (playerPhoto && !playerPhoto.querySelector('.video-indicator')) {
-        const videoCount = playerVideos[playerName].playlist.length;
-        playerPhoto.insertAdjacentHTML('beforeend', `
-          <div class="video-indicator" onclick="event.stopPropagation(); openVideoPlayer('${playerName}')" title="Watch on YouTube">
-            <i class="fab fa-youtube"></i>
-          </div>
-        `);
-      }
-      
       // Add watch highlights link
       const playerInfo = card.querySelector('.player-info');
       if (playerInfo && !playerInfo.querySelector('.watch-highlights-link')) {
@@ -1318,7 +1308,7 @@ function addVideoIndicators() {
         if (socialShare) {
           socialShare.insertAdjacentHTML('afterbegin', `
             <button class="share-btn watch-highlights-link" onclick="openVideoPlayer('${playerName}')">
-              <i class="fab fa-youtube"></i> YouTube
+              <i class="fab fa-youtube"></i> YouTube Highlights
             </button>
           `);
         }
