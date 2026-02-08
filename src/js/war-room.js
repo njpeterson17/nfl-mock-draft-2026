@@ -353,54 +353,69 @@ function autoStartWarRoom(config) {
     
     console.log('[WarRoom] Selected team:', WarRoomState.selectedTeam);
     
-    // Initialize game state
-    WarRoomState.isActive = true;
-    WarRoomState.currentPick = 1;
-    WarRoomState.currentRound = 1;
-    WarRoomState.difficulty = config.difficulty;
-    WarRoomState.roundsToComplete = config.rounds;
-    WarRoomState.practiceMode = config.practice;
-    WarRoomState.soundEnabled = config.sound;
-    WarRoomState.tradesEnabled = config.trades;
-    
-    // Initialize available players
-    WarRoomState.availablePlayers = [...PLAYER_DATABASE].sort((a, b) => a.rank - b.rank);
-    
-    // Initialize team needs with priorities
-    WarRoomState.userTeamNeeds = WarRoomState.selectedTeam.needs.map((need, idx) => ({
-        position: need,
-        priority: idx < 2 ? 'high' : idx < 4 ? 'medium' : 'low',
-        filled: false
-    }));
-    
-    // Set timer based on difficulty
-    const timePerPick = config.time || 300;
-    WarRoomState.timeRemaining = WarRoomState.practiceMode ? 999999 : timePerPick;
-    document.getElementById('timerValue').textContent = formatTime(WarRoomState.timeRemaining);
-    
-    // Hide entry screen, show interface
-    const entryScreen = document.getElementById('entryScreen');
-    const warRoomInterface = document.getElementById('warRoomInterface');
-    
-    if (entryScreen) {
-        entryScreen.classList.add('hidden');
-        entryScreen.style.display = 'none';
+    try {
+        // Initialize game state
+        console.log('[WarRoom] Setting game state...');
+        WarRoomState.isActive = true;
+        WarRoomState.currentPick = 1;
+        WarRoomState.currentRound = 1;
+        WarRoomState.difficulty = config.difficulty;
+        WarRoomState.roundsToComplete = config.rounds;
+        WarRoomState.practiceMode = config.practice;
+        WarRoomState.soundEnabled = config.sound;
+        WarRoomState.tradesEnabled = config.trades;
+        console.log('[WarRoom] Game state set');
+        
+        // Initialize available players
+        console.log('[WarRoom] Initializing available players...');
+        WarRoomState.availablePlayers = [...PLAYER_DATABASE].sort((a, b) => a.rank - b.rank);
+        console.log('[WarRoom] Available players set:', WarRoomState.availablePlayers.length);
+        
+        // Initialize team needs with priorities
+        console.log('[WarRoom] Initializing team needs...');
+        console.log('[WarRoom] Team needs:', WarRoomState.selectedTeam.needs);
+        WarRoomState.userTeamNeeds = WarRoomState.selectedTeam.needs.map((need, idx) => ({
+            position: need,
+            priority: idx < 2 ? 'high' : idx < 4 ? 'medium' : 'low',
+            filled: false
+        }));
+        console.log('[WarRoom] Team needs initialized');
+        
+        // Set timer based on difficulty
+        console.log('[WarRoom] Setting timer...');
+        const timePerPick = config.time || 300;
+        WarRoomState.timeRemaining = WarRoomState.practiceMode ? 999999 : timePerPick;
+        document.getElementById('timerValue').textContent = formatTime(WarRoomState.timeRemaining);
+        console.log('[WarRoom] Timer set');
+        
+        // Hide entry screen, show interface
+        console.log('[WarRoom] Hiding entry screen...');
+        const entryScreen = document.getElementById('entryScreen');
+        const warRoomInterface = document.getElementById('warRoomInterface');
+        
+        if (entryScreen) {
+            entryScreen.classList.add('hidden');
+            entryScreen.style.display = 'none';
+        }
+        if (warRoomInterface) {
+            warRoomInterface.classList.remove('hidden');
+            warRoomInterface.style.display = 'block';
+        }
+        console.log('[WarRoom] Entry screen hidden, interface shown');
+        
+        // Initialize UI
+        console.log('[WarRoom] Initializing UI...');
+        initializeWarRoomUI();
+        console.log('[WarRoom] UI initialized');
+        
+        // Start the draft
+        console.log('[WarRoom] Starting draft...');
+        startPick();
+        console.log('[WarRoom] Draft started!');
+    } catch (err) {
+        console.error('[WarRoom] ERROR:', err);
+        alert('Error starting War Room: ' + err.message);
     }
-    if (warRoomInterface) {
-        warRoomInterface.classList.remove('hidden');
-        warRoomInterface.style.display = 'block';
-    }
-    console.log('[WarRoom] Entry screen hidden, interface shown');
-    
-    // Initialize UI
-    console.log('[WarRoom] Initializing UI...');
-    initializeWarRoomUI();
-    
-    // Start the draft
-    console.log('[WarRoom] Starting draft...');
-    console.log('[WarRoom] WarRoomState:', WarRoomState);
-    startPick();
-    console.log('[WarRoom] Draft started!');
 }
 
 function initializeEntryScreen() {
