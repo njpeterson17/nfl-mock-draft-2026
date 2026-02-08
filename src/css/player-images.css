@@ -9,8 +9,8 @@
 
 .player-photo {
     position: relative;
-    width: 80px;
-    height: 100px;
+    width: 140px;
+    height: 170px;
     background: var(--card-bg, #1a1d23);
     border-radius: 8px;
     overflow: hidden;
