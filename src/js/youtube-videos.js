@@ -1301,15 +1301,29 @@ function addVideoIndicators() {
   document.querySelectorAll('.pick-card').forEach(card => {
     const playerName = card.dataset.player;
     if (playerName && playerVideos[playerName]) {
-      // Add watch highlights link
+      // Remove old YouTube button from social-share if exists
+      const oldYoutubeBtn = card.querySelector('.watch-highlights-link');
+      if (oldYoutubeBtn) oldYoutubeBtn.remove();
+      
+      // Add action buttons at top right of player-info
       const playerInfo = card.querySelector('.player-info');
-      if (playerInfo && !playerInfo.querySelector('.watch-highlights-link')) {
-        const socialShare = playerInfo.querySelector('.social-share');
-        if (socialShare) {
-          socialShare.insertAdjacentHTML('afterbegin', `
-            <button class="share-btn watch-highlights-link" onclick="openVideoPlayer('${playerName}')">
-              <i class="fab fa-youtube"></i> YouTube Highlights
-            </button>
+      if (playerInfo && !playerInfo.querySelector('.player-action-buttons')) {
+        const playerNameEl = playerInfo.querySelector('h2');
+        const pickNum = card.querySelector('.pick-number')?.textContent?.replace('#', '') || '1';
+        const teamName = card.dataset.team || '';
+        if (playerNameEl) {
+          playerNameEl.insertAdjacentHTML('afterend', `
+            <div class="player-action-buttons">
+              <button class="action-btn youtube" onclick="openVideoPlayer('${playerName}')" title="Watch YouTube Highlights">
+                <i class="fab fa-youtube"></i>
+              </button>
+              <button class="action-btn twitter" onclick="sharePick('${teamName}', '${playerName}', ${pickNum})" title="Share on Twitter">
+                <i class="fab fa-twitter"></i>
+              </button>
+              <button class="action-btn copy" onclick="copyPickLink(${pickNum})" title="Copy Link">
+                <i class="fas fa-link"></i>
+              </button>
+            </div>
           `);
         }
       }

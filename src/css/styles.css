@@ -3448,3 +3448,79 @@
         margin-top: 12px !important;
     }
 }
+
+/* ===== PLAYER ACTION BUTTONS (TOP RIGHT OF PLAYER-INFO) ===== */
+.player-action-buttons {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.player-info {
+    position: relative;
+    padding-top: 8px;
+}
+
+.action-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-secondary, #94a3b8);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.action-btn.youtube {
+    color: #ff0000;
+}
+
+.action-btn.youtube:hover {
+    background: rgba(255, 0, 0, 0.1);
+    border-color: rgba(255, 0, 0, 0.3);
+}
+
+.action-btn.twitter {
+    color: #1da1f2;
+}
+
+.action-btn.twitter:hover {
+    background: rgba(29, 161, 242, 0.1);
+    border-color: rgba(29, 161, 242, 0.3);
+}
+
+.action-btn.copy {
+    color: var(--accent, #00d4ff);
+}
+
+.action-btn.copy:hover {
+    background: rgba(0, 212, 255, 0.1);
+    border-color: rgba(0, 212, 255, 0.3);
+}
+
+/* Mobile responsive for action buttons */
+@media (max-width: 768px) {
+    .player-action-buttons {
+        position: static;
+        justify-content: center;
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+    
+    .player-info {
+        padding-top: 0;
+    }
+}
