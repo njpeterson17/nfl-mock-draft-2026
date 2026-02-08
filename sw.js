@@ -3,7 +3,7 @@
  * Implements cache-first strategy for images, versioning, and offline support
  */
 
-const CACHE_VERSION = 'v2';
+const CACHE_VERSION = 'v3';
 const CACHE_NAME = `nfl-mock-draft-2026-${CACHE_VERSION}`;
 const IMAGE_CACHE_NAME = `nfl-mock-draft-images-${CACHE_VERSION}`;
 
