@@ -634,20 +634,19 @@ const playerVideos = {
     position: "CB",
     school: "Kentucky"
   },
-  "Malaki Starks": {
-    mainHighlight: "M4ynTQF3xPQ",
+  "Emmanuel McNeil-Warren": {
+    mainHighlight: "mcneilwarren2025abc",
     playlist: [
-      { id: "M4ynTQF3xPQ", title: "Malaki Starks Full College Football Highlights | Georgia Safety", duration: "10:15", thumbnail: "hqdefault" },
-      { id: "arBs57bAi_M", title: "Georgia Safety Malaki Starks 2024 Highlights", duration: "6:30", thumbnail: "mqdefault" }
+      { id: "mcneilwarren2025abc", title: "Emmanuel McNeil-Warren Toledo Safety Highlights", duration: "8:15", thumbnail: "hqdefault" }
     ],
     stats: {
-      views: "310K",
-      likes: "10K",
-      channel: "Georgia Football",
+      views: "120K",
+      likes: "4K",
+      channel: "Toledo Football",
       videoCount: 1
     },
     position: "S",
-    school: "Georgia"
+    school: "Toledo"
   },
   "Shemar Stewart": {
     mainHighlight: "stewart2025xyz",

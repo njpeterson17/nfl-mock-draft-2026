@@ -204,7 +204,7 @@
             { rank: 126, name: "Jack Sawyer", position: "EDGE", school: "Ohio State", tier: "Round 4" },
             { rank: 127, name: "Rod Moore", position: "S", school: "Michigan", tier: "Round 4" },
             { rank: 128, name: "Chase Bisontis", position: "OG", school: "Texas A&M", tier: "Round 4" },
-            { rank: 129, name: "Malaki Starks", position: "S", school: "Georgia", tier: "Round 5" },
+            { rank: 129, name: "Xavier Nwankpa", position: "S", school: "Iowa", tier: "Round 5" },
             { rank: 130, name: "Taurean York", position: "LB", school: "Texas A&M", tier: "Round 5" },
             { rank: 131, name: "Jordan Phillips", position: "DT", school: "Maryland", tier: "Round 5" },
             { rank: 132, name: "Michael Trigg", position: "TE", school: "Baylor", tier: "Round 5" },
@@ -411,7 +411,7 @@
             ],
             S: [
                 { rank: 1, name: "Caleb Downs", school: "Ohio State", overallRank: 9, grade: 92.0, oneLineSummary: "Defensive coordinator on the field with elite instincts." },
-                { rank: 2, name: "Malaki Starks", school: "Georgia", overallRank: 32, grade: 87.5, oneLineSummary: "Versatile playmaker who can play free or box." },
+                { rank: 2, name: "Emmanuel McNeil-Warren", school: "Toledo", overallRank: 32, grade: 87.5, oneLineSummary: "Versatile playmaker with elite ball production." },
                 { rank: 3, name: "Dillon Thieneman", school: "Oregon", overallRank: 28, grade: 87.0, oneLineSummary: "Tall, long safety with fantastic production." },
                 { rank: 4, name: "Kevin Winston Jr.", school: "Penn State", overallRank: 55, grade: 85.0, oneLineSummary: "Physical box safety with good instincts." },
                 { rank: 5, name: "Kamari Ramsey", school: "USC", overallRank: 58, grade: 84.5, oneLineSummary: "Coverage instincts border on exceptional." },
@@ -639,9 +639,9 @@
                 ],
                 picks: [
                     { pick: 15, player: "Jermod McCoy", position: "CB", school: "Tennessee", value: "value" },
-                    { pick: 42, player: "Malaki Starks", position: "S", school: "Georgia", value: "value" }
+                    { pick: 42, player: "Emmanuel McNeil-Warren", position: "S", school: "Toledo", value: "value" }
                 ],
-                summary: "Cowboys absolutely nail this draft. Two defensive studs where they needed them most. Both are value picks too."
+                summary: "Cowboys absolutely nail this draft. Two defensive studs where they needed them most. McNeil-Warren is a value pick with elite ball production."
             },
             {
                 name: "Los Angeles Rams",

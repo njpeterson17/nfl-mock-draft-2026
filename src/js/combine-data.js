@@ -894,12 +894,12 @@ const combineData = {
         },
         {
             id: 'db005',
-            name: 'Malaki Starks',
+            name: 'Emmanuel McNeil-Warren',
             position: 'S',
-            school: 'Georgia',
+            school: 'Toledo',
             height: "6'1\"",
             heightInches: 73,
-            weight: 205,
+            weight: 210,
             hand: null,
             arm: null,
             wingspan: null,
@@ -916,7 +916,7 @@ const combineData = {
             videoUrls: {},
             stockImpact: 'pending',
             stockChange: 0,
-            notes: 'Ball hawk. Instincts translate to testing?'
+            notes: 'Ball hawk from Toledo. Elite production, small-school prospect.'
         }
     ],
 

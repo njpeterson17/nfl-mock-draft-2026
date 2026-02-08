@@ -107,7 +107,7 @@ const ConsensusMockData = {
         'Drew Allar': { position: 'QB', school: 'Penn State', rank: 24 },
         'CJ Allen': { position: 'LB', school: 'Georgia', rank: 25 },
         'Dillon Thieneman': { position: 'S', school: 'Oregon', rank: 26 },
-        'Malaki Starks': { position: 'S', school: 'Georgia', rank: 27 },
+        'Emmanuel McNeil-Warren': { position: 'S', school: 'Toledo', rank: 27 },
         'Trinidad Chambliss': { position: 'QB', school: 'Ole Miss', rank: 28 },
         'Carson Beck': { position: 'QB', school: 'Miami', rank: 29 },
         'Tacario Davis': { position: 'CB', school: 'Arizona', rank: 30 },
@@ -652,22 +652,22 @@ const ConsensusMockData = {
         25: {
             team: 'Cowboys',
             consensus: {
-                player: 'Malaki Starks',
+                player: 'Emmanuel McNeil-Warren',
                 position: 'S',
-                school: 'Georgia',
+                school: 'Toledo',
                 confidence: 0.78,
                 agreement: 4,
                 sources: {
-                    pff: { player: 'Malaki Starks', confidence: 0.80, note: 'Versatility' },
-                    espn: { player: 'Malaki Starks', confidence: 0.75, note: 'Coverage' },
-                    pfn: { player: 'Malaki Starks', confidence: 0.80, note: 'Range' },
+                    pff: { player: 'Emmanuel McNeil-Warren', confidence: 0.80, note: 'Versatility' },
+                    espn: { player: 'Emmanuel McNeil-Warren', confidence: 0.75, note: 'Coverage' },
+                    pfn: { player: 'Emmanuel McNeil-Warren', confidence: 0.80, note: 'Range' },
                     tdn: { player: 'Kevin Winston Jr.', confidence: 0.60, note: 'Penn State' }, // Different!
-                    walter: { player: 'Malaki Starks', confidence: 0.75, note: 'Instincts' }
+                    walter: { player: 'Emmanuel McNeil-Warren', confidence: 0.75, note: 'Instincts' }
                 }
             },
             votes: { up: 645, down: 334 },
             history: [
-                { date: '2026-02-05', player: 'Malaki Starks', confidence: 0.78 }
+                { date: '2026-02-05', player: 'Emmanuel McNeil-Warren', confidence: 0.78 }
             ],
             dissent: 'TDN prefers Kevin Winston Jr.'
         },

@@ -53,7 +53,7 @@ const PLAYER_IMAGES = [
   '/nfl-mock-draft-2026/images/players/carson-beck.jpg',
   '/nfl-mock-draft-2026/images/players/drew-allar.jpg',
   '/nfl-mock-draft-2026/images/players/kenneth-grant.jpg',
-  '/nfl-mock-draft-2026/images/players/malaki-starks.jpg',
+  '/nfl-mock-draft-2026/images/players/emmanuel-mcneil-warren.jpg',
   '/nfl-mock-draft-2026/images/players/landon-jackson.jpg',
   '/nfl-mock-draft-2026/images/players/deone-walker.jpg',
   '/nfl-mock-draft-2026/images/players/cole-payton.jpg',

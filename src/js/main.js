@@ -1008,7 +1008,7 @@
                 const myPicks = [
                     'Julian Lewis', 'Will Campbell', 'Travis Hunter', 'Abdul Carter', 'Mason Graham',
                     'Tetairoa McMillan', 'Colston Loveland', 'Ashton Jeanty', 'Josh Simmons', 'Emeka Egbuka',
-                    'Jihaad Campbell', 'Malaki Starks', 'Kevin Winston Jr.', 'Luther Burden III', 'Tyler Warren',
+                    'Jihaad Campbell', 'Emmanuel McNeil-Warren', 'Kevin Winston Jr.', 'Luther Burden III', 'Tyler Warren',
                     'Jonah Savaiinaea', 'Tacario Davis', 'Emmanuel Pregnon', 'TreVeyon Henderson', 'Xavier Nwankpa',
                     'Princeton Fant', 'Dani Dennis-Sutton', 'Evan Pryor', 'Tyleik Williams', 'Jordan Burch',
                     'Oluwafemi Oladejo', 'Darius Alexander', 'Aireontae Ersery', 'Carson Schwesinger',

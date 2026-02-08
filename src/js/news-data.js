@@ -53,7 +53,7 @@ const articles = [
             
             <p><strong>Running Back:</strong> After several down years, the 2026 RB class looks revitalized. Jeremiyah Love (Notre Dame), Kaleb Johnson (Iowa), and Omarion Hampton (North Carolina) all bring different skill sets and could hear their names called early.</p>
             
-            <p><strong>Safety:</strong> Caleb Downs (Ohio State) leads a talented group of defensive backs with versatility to play multiple spots. Malaki Starks (Georgia) and Dillon Thieneman (Oregon) provide quality depth.</p>
+            <p><strong>Safety:</strong> Caleb Downs (Ohio State) leads a talented group of defensive backs with versatility to play multiple spots. Emmanuel McNeil-Warren (Toledo) and Dillon Thieneman (Oregon) provide quality depth.</p>
             
             <h3>Weaknesses</h3>
             

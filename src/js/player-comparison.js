@@ -100,7 +100,7 @@ function enhanceBigBoardDataWithRatings() {
         
         // Safeties
         'Caleb Downs': { athleticism: 8.5, size: 8.0, production: 9.0, upside: 9.0, technique: 8.5 },
-        'Malaki Starks': { athleticism: 8.5, size: 8.0, production: 8.0, upside: 8.5, technique: 8.0 },
+        'Emmanuel McNeil-Warren': { athleticism: 8.5, size: 8.0, production: 8.0, upside: 8.5, technique: 8.0 },
         'Dillon Thieneman': { athleticism: 8.0, size: 8.5, production: 8.5, upside: 8.0, technique: 8.0 },
         'Kevin Winston Jr.': { athleticism: 7.5, size: 8.0, production: 7.5, upside: 7.5, technique: 7.5 },
         'Rod Moore': { athleticism: 7.5, size: 7.5, production: 7.5, upside: 7.5, technique: 7.5 }
