@@ -109,8 +109,8 @@ const SocialShareManager = {
         // Generate title based on top pick
         let title = topPick 
             ? `My 2026 NFL Mock Draft - ${topPick.team} take ${topPick.player} #1`
-            : `My 2026 NFL Mock Draft`;}}  
-�{
+            : `My 2026 NFL Mock Draft`;
+        
         if (data.trades && data.trades.length > 0) {
             title += ` (${data.trades.length} trades!)`;
         }
