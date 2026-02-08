@@ -22,9 +22,9 @@
         padding-bottom: 90px !important;
         padding-left: 1rem;
         padding-right: 1rem;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-        touch-action: pan-y;
+        /* Let the body handle scrolling */
+        overflow: visible;
+        touch-action: auto;
     }
 
     /* Adjust export bar for mobile */

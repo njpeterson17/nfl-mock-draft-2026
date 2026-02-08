@@ -602,15 +602,29 @@ function initGestures() {
 
 /**
  * Setup Hammer.js gestures
+ * Note: touch-action is set to 'auto' to allow native scrolling.
+ * Swipe detection relies on the velocity and direction of the gesture
+ * rather than blocking scroll events.
  */
 function setupHammerGestures() {
     const mainContent = document.querySelector('.main-content');
     if (!mainContent || typeof Hammer === 'undefined') return;
     
+    // Check if user prefers reduced motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+        // Skip gesture setup for accessibility
+        return;
+    }
+    
     MobileNav.hammerInstance = new Hammer(mainContent, {
-        touchAction: 'pan-y', // Allow vertical scrolling
+        touchAction: 'auto', // Allow native browser scrolling
         recognizers: [
-            [Hammer.Swipe, { direction: Hammer.DIRECTION_HORIZONTAL }],
+            [Hammer.Swipe, { 
+                direction: Hammer.DIRECTION_HORIZONTAL,
+                threshold: 50,      // Minimum distance for a swipe
+                velocity: 0.3       // Minimum velocity - helps distinguish from scroll
+            }],
             [Hammer.Tap, { event: 'doubletap', taps: 2 }],
             [Hammer.Press, { time: 500 }]
         ]
@@ -859,48 +873,12 @@ function openDraftSubmenu() {
 }
 
 // ============================================
-// PULL TO REFRESH
+// PULL TO REFRESH (DISABLED - causing scroll issues)
 // ============================================
 
 function initPullToRefresh() {
-    const mainContent = document.querySelector('.main-content');
-    if (!mainContent) return;
-    
-    let startY = 0;
-    let isPulling = false;
-    
-    mainContent.addEventListener('touchstart', (e) => {
-        if (mainContent.scrollTop === 0) {
-            startY = e.touches[0].clientY;
-            isPulling = true;
-        }
-    }, { passive: true });
-    
-    mainContent.addEventListener('touchmove', (e) => {
-        if (!isPulling) return;
-        
-        const currentY = e.touches[0].clientY;
-        const diff = currentY - startY;
-        
-        if (diff > 0 && diff < 100) {
-            // Visual feedback during pull
-        }
-    }, { passive: true });
-    
-    mainContent.addEventListener('touchend', (e) => {
-        if (!isPulling) return;
-        
-        const currentY = e.changedTouches[0].clientY;
-        const diff = currentY - startY;
-        
-        if (diff > 80 && mainContent.scrollTop === 0) {
-            // Trigger refresh
-            showToast('Refreshing...');
-            location.reload();
-        }
-        
-        isPulling = false;
-    }, { passive: true });
+    // Disabled to prevent interference with normal scrolling
+    // Pull-to-refresh can be re-enabled once scroll issues are resolved
 }
 
 // ============================================
@@ -908,14 +886,23 @@ function initPullToRefresh() {
 // ============================================
 
 function initScrollProgress() {
+    // Use requestAnimationFrame for better performance
+    let ticking = false;
+    
     window.addEventListener('scroll', () => {
-        const scrollTop = window.scrollY;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const scrollPercent = (scrollTop / docHeight) * 100;
-        
-        const progressBar = document.getElementById('scrollProgress');
-        if (progressBar) {
-            progressBar.style.width = scrollPercent + '%';
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                const scrollTop = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPercent = (scrollTop / docHeight) * 100;
+                
+                const progressBar = document.getElementById('scrollProgress');
+                if (progressBar) {
+                    progressBar.style.width = scrollPercent + '%';
+                }
+                ticking = false;
+            });
+            ticking = true;
         }
     }, { passive: true });
 }

@@ -54,12 +54,15 @@
             scroll-behavior: smooth;
         }
 
-        body {
+        html, body {
             font-family: 'Inter', sans-serif;
             background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
             color: var(--text-primary);
             min-height: 100vh;
             line-height: 1.6;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior-y: auto;
         }
 
         [data-theme="light"] body {
