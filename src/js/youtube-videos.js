@@ -18,12 +18,10 @@
 const playerVideos = {
   // Elite Tier - Top Prospects
   "Fernando Mendoza": {
-    mainHighlight: "dQw4w9WgXcQ",
+    mainHighlight: "3488F7xvfVM",
     playlist: [
-      { id: "dQw4w9WgXcQ", title: "2025 Season Highlights", duration: "8:42", thumbnail: "hqdefault" },
-      { id: "abc123xyz", title: "vs Ohio State Championship", duration: "4:15", thumbnail: "mqdefault" },
-      { id: "def456uvw", title: "NFL Draft Profile", duration: "6:30", thumbnail: "mqdefault" },
-      { id: "ghi789rst", title: "Indiana Football Journey", duration: "12:20", thumbnail: "mqdefault" }
+      { id: "3488F7xvfVM", title: "Fernando Mendoza | 2025 Highlights", duration: "8:32", thumbnail: "hqdefault" },
+      { id: "XaJuaPkhh_g", title: "Fernando Mendoza 2025 Indiana Hoosiers Season Highlights", duration: "12:45", thumbnail: "mqdefault" }
     ],
     stats: {
       views: "1.2M",
@@ -35,11 +33,10 @@ const playerVideos = {
     school: "Indiana"
   },
   "Caleb Downs": {
-    mainHighlight: "xyz789abc",
+    mainHighlight: "UO-nc1_k3Qo",
     playlist: [
-      { id: "xyz789abc", title: "2025 Defensive Highlights", duration: "7:25", thumbnail: "hqdefault" },
-      { id: "mno345pqr", title: "All-American Bowl", duration: "5:10", thumbnail: "mqdefault" },
-      { id: "stu678vwx", title: "Interception Compilation", duration: "3:45", thumbnail: "mqdefault" }
+      { id: "UO-nc1_k3Qo", title: "Caleb Downs | 2024 Ohio State Highlights", duration: "5:30", thumbnail: "hqdefault" },
+      { id: "bWY7mceYjjU", title: "Caleb Downs Best Safety in College Football", duration: "4:15", thumbnail: "mqdefault" }
     ],
     stats: {
       views: "890K",
@@ -51,11 +48,10 @@ const playerVideos = {
     school: "Ohio State"
   },
   "Arvell Reese": {
-    mainHighlight: "lbm123xyz",
+    mainHighlight: "KWhz99QXnro",
     playlist: [
-      { id: "lbm123xyz", title: "Linebacker Highlights 2025", duration: "9:15", thumbnail: "hqdefault" },
-      { id: "sack456def", title: "Sack Compilation", duration: "4:30", thumbnail: "mqdefault" },
-      { id: "cov789ghi", title: "Coverage Skills", duration: "5:45", thumbnail: "mqdefault" }
+      { id: "KWhz99QXnro", title: "2026 NFL DRAFT HIGHLIGHTS: LB Arvell Reese | Ohio State", duration: "2:15", thumbnail: "hqdefault" },
+      { id: "sRVw_34A0R0", title: "Arvell Reese Best Linebacker in College Football", duration: "3:45", thumbnail: "mqdefault" }
     ],
     stats: {
       views: "750K",
@@ -67,11 +63,10 @@ const playerVideos = {
     school: "Ohio State"
   },
   "Jeremiyah Love": {
-    mainHighlight: "rb2025abc",
+    mainHighlight: "EVLrDQIHquQ",
     playlist: [
-      { id: "rb2025abc", title: "2025 Season Highlights", duration: "10:20", thumbnail: "hqdefault" },
-      { id: "td456def", title: "Touchdown Compilation", duration: "6:15", thumbnail: "mqdefault" },
-      { id: "rec789ghi", title: "Receiving Highlights", duration: "4:50", thumbnail: "mqdefault" }
+      { id: "EVLrDQIHquQ", title: "Jeremiyah Love | 2025 Highlights", duration: "8:32", thumbnail: "hqdefault" },
+      { id: "8iIezi5qktA", title: "Jeremiyah Love Scariest RB in College Football", duration: "6:45", thumbnail: "mqdefault" }
     ],
     stats: {
       views: "1.1M",
@@ -83,11 +78,10 @@ const playerVideos = {
     school: "Notre Dame"
   },
   "Rueben Bain Jr.": {
-    mainHighlight: "edge2025xyz",
+    mainHighlight: "avYVgI-9PVs",
     playlist: [
-      { id: "edge2025xyz", title: "2025 Pass Rush Highlights", duration: "8:30", thumbnail: "hqdefault" },
-      { id: "sack123abc", title: "Sack Highlights", duration: "5:20", thumbnail: "mqdefault" },
-      { id: "pro456def", title: "Pro Day Workout", duration: "7:10", thumbnail: "mqdefault" }
+      { id: "avYVgI-9PVs", title: "Rueben Bain Jr. 2025 Regular Season Highlights | Miami Edge", duration: "4:30", thumbnail: "hqdefault" },
+      { id: "h0KPmLIWjH4", title: "Rueben Bain Jr. | 2025 Highlights", duration: "3:15", thumbnail: "mqdefault" }
     ],
     stats: {
       views: "680K",
@@ -101,10 +95,10 @@ const playerVideos = {
   
   // Round 1 Prospects
   "David Bailey": {
-    mainHighlight: "bailey2025abc",
+    mainHighlight: "-RKz2pdyHpM",
     playlist: [
-      { id: "bailey2025abc", title: "2025 Highlights", duration: "9:45", thumbnail: "hqdefault" },
-      { id: "quick456def", title: "Quick First Step", duration: "3:30", thumbnail: "mqdefault" }
+      { id: "-RKz2pdyHpM", title: "David Bailey Regular Season Highlights | 2025 Big 12", duration: "4:15", thumbnail: "hqdefault" },
+      { id: "sbbww4ouiCI", title: "Texas Tech Football: David Bailey 2025 Highlights", duration: "3:30", thumbnail: "mqdefault" }
     ],
     stats: {
       views: "520K",
@@ -132,11 +126,10 @@ const playerVideos = {
     school: "Miami"
   },
   "Carnell Tate": {
-    mainHighlight: "tate2025abc",
+    mainHighlight: "VjEjysu0Je4",
     playlist: [
-      { id: "tate2025abc", title: "2025 WR Highlights", duration: "11:20", thumbnail: "hqdefault" },
-      { id: "catch456def", title: "Best Catches", duration: "5:30", thumbnail: "mqdefault" },
-      { id: "route789ghi", title: "Route Running", duration: "4:15", thumbnail: "mqdefault" }
+      { id: "VjEjysu0Je4", title: "Carnell Tate | 2025 Highlights", duration: "7:45", thumbnail: "hqdefault" },
+      { id: "S7Bvgh59OkA", title: "Carnell Tate | Ohio State WR Highlights (2024–2025)", duration: "10:18", thumbnail: "mqdefault" }
     ],
     stats: {
       views: "920K",
@@ -163,10 +156,10 @@ const playerVideos = {
     school: "Ohio State"
   },
   "Jordyn Tyson": {
-    mainHighlight: "tyson2025abc",
+    mainHighlight: "OMoPpRnH2s8",
     playlist: [
-      { id: "tyson2025abc", title: "ASU Highlights", duration: "9:30", thumbnail: "hqdefault" },
-      { id: "redzone456def", title: "Red Zone Threats", duration: "5:10", thumbnail: "mqdefault" }
+      { id: "OMoPpRnH2s8", title: "Jordyn Tyson 2024 Regular Season Highlights", duration: "8:22", thumbnail: "hqdefault" },
+      { id: "5CJfGAHim_4", title: "Jordyn Tyson | 2024 Arizona State Highlights", duration: "6:50", thumbnail: "mqdefault" }
     ],
     stats: {
       views: "410K",
@@ -178,10 +171,10 @@ const playerVideos = {
     school: "Arizona State"
   },
   "Mansoor Delane": {
-    mainHighlight: "delane2025xyz",
+    mainHighlight: "q7j-7-kPKyQ",
     playlist: [
-      { id: "delane2025xyz", title: "Cornerback Highlights", duration: "7:45", thumbnail: "hqdefault" },
-      { id: "pick6123abc", title: "Interceptions", duration: "3:50", thumbnail: "mqdefault" }
+      { id: "q7j-7-kPKyQ", title: "Mansoor Delane 2024 Regular Season Highlights | Virginia Tech CB", duration: "4:45", thumbnail: "hqdefault" },
+      { id: "VJ_49L06HcA", title: "Mansoor Delane Top Corner in College Football", duration: "3:30", thumbnail: "mqdefault" }
     ],
     stats: {
       views: "380K",
@@ -208,10 +201,10 @@ const playerVideos = {
     school: "Utah"
   },
   "Makai Lemon": {
-    mainHighlight: "lemon2025xyz",
+    mainHighlight: "s_wV_zk6Zs4",
     playlist: [
-      { id: "lemon2025xyz", title: "WR Highlights 2025", duration: "10:15", thumbnail: "hqdefault" },
-      { id: "yac123abc", title: "YAC Compilation", duration: "4:40", thumbnail: "mqdefault" }
+      { id: "s_wV_zk6Zs4", title: "Makai Lemon 2025 USC Trojans Junior Season Highlights", duration: "7:35", thumbnail: "hqdefault" },
+      { id: "poJQn7dxuhc", title: "Makai Lemon - 2025 USC Season Highlights", duration: "8:15", thumbnail: "mqdefault" }
     ],
     stats: {
       views: "490K",
@@ -223,10 +216,10 @@ const playerVideos = {
     school: "USC"
   },
   "Keldric Faulk": {
-    mainHighlight: "faulk2025abc",
+    mainHighlight: "ODacFbfHoT0",
     playlist: [
-      { id: "faulk2025abc", title: "EDGE Highlights", duration: "7:30", thumbnail: "hqdefault" },
-      { id: "power456def", title: "Power Rush", duration: "4:10", thumbnail: "mqdefault" }
+      { id: "ODacFbfHoT0", title: "Keldric Faulk College Football Highlights | Auburn EDGE", duration: "5:15", thumbnail: "hqdefault" },
+      { id: "KZBl31UokuY", title: "Keldric Faulk 2024 Auburn Season Highlights", duration: "4:00", thumbnail: "mqdefault" }
     ],
     stats: {
       views: "290K",
@@ -238,10 +231,10 @@ const playerVideos = {
     school: "Auburn"
   },
   "Peter Woods": {
-    mainHighlight: "woods2025xyz",
+    mainHighlight: "ZL6YMbTTHGE",
     playlist: [
-      { id: "woods2025xyz", title: "DL Highlights 2025", duration: "8:45", thumbnail: "hqdefault" },
-      { id: "interior123abc", title: "Interior Pressure", duration: "5:00", thumbnail: "mqdefault" }
+      { id: "ZL6YMbTTHGE", title: "Peter Woods 2025 Regular Season Highlights | Clemson IDL", duration: "4:45", thumbnail: "hqdefault" },
+      { id: "9OGztXg02SU", title: "Peter Woods | 2025 Highlights", duration: "3:20", thumbnail: "mqdefault" }
     ],
     stats: {
       views: "340K",
@@ -253,10 +246,10 @@ const playerVideos = {
     school: "Clemson"
   },
   "Jermod McCoy": {
-    mainHighlight: "mccoy2025abc",
+    mainHighlight: "uPXje9hbs7A",
     playlist: [
-      { id: "mccoy2025abc", title: "CB Highlights", duration: "9:00", thumbnail: "hqdefault" },
-      { id: "press456def", title: "Press Coverage", duration: "4:30", thumbnail: "mqdefault" }
+      { id: "uPXje9hbs7A", title: "Jermod McCoy Top Corner in College Football", duration: "4:20", thumbnail: "hqdefault" },
+      { id: "byn8RVHBdP8", title: "Tennessee CB Jermod McCoy 2024 Highlights", duration: "5:00", thumbnail: "mqdefault" }
     ],
     stats: {
       views: "420K",
@@ -270,11 +263,10 @@ const playerVideos = {
   
   // QBs
   "Ty Simpson": {
-    mainHighlight: "simpson2025xyz",
+    mainHighlight: "3xjAOHbJCec",
     playlist: [
-      { id: "simpson2025xyz", title: "Alabama QB Highlights", duration: "10:30", thumbnail: "hqdefault" },
-      { id: "touchdown123abc", title: "Touchdown Passes", duration: "6:45", thumbnail: "mqdefault" },
-      { id: "mobility456def", title: "Mobility Showcase", duration: "4:20", thumbnail: "mqdefault" }
+      { id: "3xjAOHbJCec", title: "Ty Simpson | 2025 Highlights", duration: "9:18", thumbnail: "hqdefault" },
+      { id: "xa66Ol2jtY0", title: "Ty Simpson | 2024 Highlights | HD | Alabama QB", duration: "3:06", thumbnail: "mqdefault" }
     ],
     stats: {
       views: "850K",
@@ -286,10 +278,10 @@ const playerVideos = {
     school: "Alabama"
   },
   "Drew Allar": {
-    mainHighlight: "allar2025abc",
+    mainHighlight: "nSby5tQEV_A",
     playlist: [
-      { id: "allar2025abc", title: "Penn State Highlights", duration: "9:45", thumbnail: "hqdefault" },
-      { id: "arm123abc", title: "Arm Strength", duration: "5:30", thumbnail: "mqdefault" }
+      { id: "nSby5tQEV_A", title: "Drew Allar | 2025 Highlights", duration: "6:42", thumbnail: "hqdefault" },
+      { id: "8k1QRSBMbV4", title: "Drew Allar | 2024 Highlights", duration: "12:15", thumbnail: "mqdefault" }
     ],
     stats: {
       views: "560K",
@@ -301,10 +293,10 @@ const playerVideos = {
     school: "Penn State"
   },
   "Carson Beck": {
-    mainHighlight: "beck2025xyz",
+    mainHighlight: "5BqtDssS9Y8",
     playlist: [
-      { id: "beck2025xyz", title: "Miami Transfer Highlights", duration: "8:20", thumbnail: "hqdefault" },
-      { id: "pocket123abc", title: "Pocket Presence", duration: "4:50", thumbnail: "mqdefault" }
+      { id: "5BqtDssS9Y8", title: "Carson Beck 2025 Regular Season Highlights | Miami QB", duration: "10:24", thumbnail: "hqdefault" },
+      { id: "i5FTHC1qDOc", title: "Miami QB Carson Beck Midseason Highlights | 2025 ACC Football", duration: "8:15", thumbnail: "mqdefault" }
     ],
     stats: {
       views: "480K",
@@ -316,10 +308,10 @@ const playerVideos = {
     school: "Miami"
   },
   "Trinidad Chambliss": {
-    mainHighlight: "chambliss2025abc",
+    mainHighlight: "qpSftWoVsaY",
     playlist: [
-      { id: "chambliss2025abc", title: "Ole Miss Highlights", duration: "9:10", thumbnail: "hqdefault" },
-      { id: "accuracy456def", title: "Accuracy Showcase", duration: "5:15", thumbnail: "mqdefault" }
+      { id: "qpSftWoVsaY", title: "Trinidad Chambliss | 2025 Highlights", duration: "9:45", thumbnail: "hqdefault" },
+      { id: "9vyw1JlwbAg", title: "Trinidad Chambliss - Ole Miss | 2025 Highlights", duration: "8:32", thumbnail: "mqdefault" }
     ],
     stats: {
       views: "310K",
@@ -333,10 +325,10 @@ const playerVideos = {
   
   // Additional prospects with sample data
   "Cole Payton": {
-    mainHighlight: "payton2025xyz",
+    mainHighlight: "ZToprkqufUA",
     playlist: [
-      { id: "payton2025xyz", title: "North Dakota State Highlights", duration: "10:00", thumbnail: "hqdefault" },
-      { id: "fcs123abc", title: "FCS Championship Moments", duration: "6:30", thumbnail: "mqdefault" }
+      { id: "ZToprkqufUA", title: "Cole Payton North Dakota State Highlights", duration: "7:18", thumbnail: "hqdefault" },
+      { id: "h_Yc3S3Inu4", title: "Every Cole Payton TD at NDSU | NDSU Football Highlights", duration: "10:05", thumbnail: "mqdefault" }
     ],
     stats: {
       views: "280K",
@@ -348,10 +340,10 @@ const playerVideos = {
     school: "North Dakota State"
   },
   "Kaleb Johnson": {
-    mainHighlight: "johnson2025abc",
+    mainHighlight: "xHygm9J1iUA",
     playlist: [
-      { id: "johnson2025abc", title: "Iowa RB Highlights", duration: "9:30", thumbnail: "hqdefault" },
-      { id: "power456def", title: "Power Running", duration: "5:00", thumbnail: "mqdefault" }
+      { id: "xHygm9J1iUA", title: "Kaleb Johnson | 2024 Highlights", duration: "7:15", thumbnail: "hqdefault" },
+      { id: "gxC3u_r8LVM", title: "Kaleb Johnson - Iowa Highlights 2024", duration: "5:28", thumbnail: "mqdefault" }
     ],
     stats: {
       views: "390K",
@@ -363,10 +355,10 @@ const playerVideos = {
     school: "Iowa"
   },
   "Landon Jackson": {
-    mainHighlight: "jackson2025xyz",
+    mainHighlight: "ECp9nBIDXVM",
     playlist: [
-      { id: "jackson2025xyz", title: "Arkansas EDGE Highlights", duration: "8:40", thumbnail: "hqdefault" },
-      { id: "length123abc", title: "Length Advantage", duration: "4:15", thumbnail: "mqdefault" }
+      { id: "ECp9nBIDXVM", title: "Landon Jackson Full College Football Highlights | Arkansas EDGE", duration: "8:30", thumbnail: "hqdefault" },
+      { id: "Mg0p5_lH-30", title: "Landon Jackson - Arkansas | 2024 Highlights", duration: "5:45", thumbnail: "mqdefault" }
     ],
     stats: {
       views: "260K",
@@ -407,11 +399,10 @@ const playerVideos = {
     school: "Penn State"
   },
   "Zachariah Branch": {
-    mainHighlight: "branch2025abc",
+    mainHighlight: "9UWlF6EAcQY",
     playlist: [
-      { id: "branch2025abc", title: "Georgia WR Highlights", duration: "9:20", thumbnail: "hqdefault" },
-      { id: "speed123abc", title: "Speed Showcase", duration: "4:30", thumbnail: "mqdefault" },
-      { id: "return456def", title: "Return Highlights", duration: "5:10", thumbnail: "mqdefault" }
+      { id: "9UWlF6EAcQY", title: "Zachariah Branch | Wide Receiver | 2025 Georgia Highlights", duration: "6:42", thumbnail: "hqdefault" },
+      { id: "W8b9gobD2Gw", title: "Zachariah Branch 2025 Georgia Bulldogs Highlights", duration: "5:55", thumbnail: "mqdefault" }
     ],
     stats: {
       views: "610K",
@@ -423,10 +414,10 @@ const playerVideos = {
     school: "Georgia"
   },
   "Denzel Boston": {
-    mainHighlight: "boston2025xyz",
+    mainHighlight: "mPp9PIKSSIU",
     playlist: [
-      { id: "boston2025xyz", title: "Washington WR Highlights", duration: "8:30", thumbnail: "hqdefault" },
-      { id: "deep123abc", title: "Deep Threats", duration: "4:45", thumbnail: "mqdefault" }
+      { id: "mPp9PIKSSIU", title: "DENZEL BOSTON (Washington) II Full 2025 Highlights", duration: "8:48", thumbnail: "hqdefault" },
+      { id: "kyyV-9nyK0Q", title: "Denzel Boston | 2025 Highlights", duration: "7:22", thumbnail: "mqdefault" }
     ],
     stats: {
       views: "350K",
@@ -453,10 +444,10 @@ const playerVideos = {
     school: "Ohio State"
   },
   "Akheem Mesidor": {
-    mainHighlight: "mesidor2025xyz",
+    mainHighlight: "0NEAv5BOY7o",
     playlist: [
-      { id: "mesidor2025xyz", title: "Miami EDGE Highlights", duration: "8:00", thumbnail: "hqdefault" },
-      { id: "motor123abc", title: "High Motor Plays", duration: "4:10", thumbnail: "mqdefault" }
+      { id: "0NEAv5BOY7o", title: "Akheem Mesidor 2025 Regular Season Highlights | Miami Edge", duration: "4:20", thumbnail: "hqdefault" },
+      { id: "12L26sGwzBc", title: "Akheem Mesidor College Football Highlights | Miami EDGE", duration: "5:30", thumbnail: "mqdefault" }
     ],
     stats: {
       views: "270K",
@@ -527,10 +518,10 @@ const playerVideos = {
     school: "Oregon"
   },
   "Tacario Davis": {
-    mainHighlight: "davis2025abc",
+    mainHighlight: "tjtAz4n3xSU",
     playlist: [
-      { id: "davis2025abc", title: "Arizona CB Highlights", duration: "7:45", thumbnail: "hqdefault" },
-      { id: "size123abc", title: "Size Advantage", duration: "4:00", thumbnail: "mqdefault" }
+      { id: "tjtAz4n3xSU", title: "The Next Tariq Woolen? - Arizona CB Tacario Davis Scouting Report", duration: "7:30", thumbnail: "hqdefault" },
+      { id: "hkgsswo4MRg", title: "Tacario Davis Is An NFL Cornerback And An X-FACTOR", duration: "5:15", thumbnail: "mqdefault" }
     ],
     stats: {
       views: "210K",
@@ -542,10 +533,10 @@ const playerVideos = {
     school: "Arizona"
   },
   "Princely Umanmielen": {
-    mainHighlight: "umanmielen2025xyz",
+    mainHighlight: "C3mxBGUv46o",
     playlist: [
-      { id: "umanmielen2025xyz", title: "Ole Miss EDGE Highlights", duration: "8:05", thumbnail: "hqdefault" },
-      { id: "bend123abc", title: "Bend & Speed", duration: "4:10", thumbnail: "mqdefault" }
+      { id: "C3mxBGUv46o", title: "Princely Umanmielen Full College Football Highlights | Ole Miss EDGE", duration: "9:45", thumbnail: "hqdefault" },
+      { id: "IYzIi7fZJVQ", title: "NFL DRAFT: Princely Umanmielen Highlights", duration: "3:30", thumbnail: "mqdefault" }
     ],
     stats: {
       views: "230K",
@@ -571,10 +562,10 @@ const playerVideos = {
     school: "Michigan"
   },
   "Daylen Everette": {
-    mainHighlight: "everette2025xyz",
+    mainHighlight: "nKd1knO7JXo",
     playlist: [
-      { id: "everette2025xyz", title: "Georgia CB Highlights", duration: "8:00", thumbnail: "hqdefault" },
-      { id: "tech123abc", title: "Technique", duration: "4:20", thumbnail: "mqdefault" }
+      { id: "nKd1knO7JXo", title: "Daylen Everette Top CB in the 2026 NFL Draft", duration: "5:00", thumbnail: "hqdefault" },
+      { id: "8WFMrHUiNbg", title: "Daylen Everette 2026 NFL Draft Scouting Report", duration: "12:30", thumbnail: "mqdefault" }
     ],
     stats: {
       views: "220K",
@@ -586,10 +577,10 @@ const playerVideos = {
     school: "Georgia"
   },
   "TreVeyon Henderson": {
-    mainHighlight: "henderson2025abc",
+    mainHighlight: "POpRSIInnls",
     playlist: [
-      { id: "henderson2025abc", title: "Ohio State RB Highlights", duration: "9:45", thumbnail: "hqdefault" },
-      { id: "burst123abc", title: "Burst & Speed", duration: "4:30", thumbnail: "mqdefault" }
+      { id: "POpRSIInnls", title: "Treveyon Henderson 2024 Ohio State Highlights", duration: "8:12", thumbnail: "hqdefault" },
+      { id: "QaDN1HN3dD8", title: "Treveyon Henderson full 2024 highlights! Ohio State RB", duration: "12:35", thumbnail: "mqdefault" }
     ],
     stats: {
       views: "450K",
@@ -601,9 +592,10 @@ const playerVideos = {
     school: "Ohio State"
   },
   "Ty Simpson": {
-    mainHighlight: "tysimpson2025xyz",
+    mainHighlight: "3xjAOHbJCec",
     playlist: [
-      { id: "tysimpson2025xyz", title: "Alabama QB Highlights", duration: "10:15", thumbnail: "hqdefault" }
+      { id: "3xjAOHbJCec", title: "Ty Simpson | 2025 Highlights", duration: "9:18", thumbnail: "hqdefault" },
+      { id: "xa66Ol2jtY0", title: "Ty Simpson | 2024 Highlights | HD | Alabama QB", duration: "3:06", thumbnail: "mqdefault" }
     ],
     stats: {
       views: "380K",
@@ -643,9 +635,10 @@ const playerVideos = {
     school: "Kentucky"
   },
   "Malaki Starks": {
-    mainHighlight: "starks2025abc",
+    mainHighlight: "M4ynTQF3xPQ",
     playlist: [
-      { id: "starks2025abc", title: "Georgia Safety Highlights", duration: "8:10", thumbnail: "hqdefault" }
+      { id: "M4ynTQF3xPQ", title: "Malaki Starks Full College Football Highlights | Georgia Safety", duration: "10:15", thumbnail: "hqdefault" },
+      { id: "arBs57bAi_M", title: "Georgia Safety Malaki Starks 2024 Highlights", duration: "6:30", thumbnail: "mqdefault" }
     ],
     stats: {
       views: "310K",
