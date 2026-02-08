@@ -498,10 +498,10 @@
                     { position: "TE", priority: "low" }
                 ],
                 picks: [
-                    { pick: 11, player: "Cole Payton", position: "QB", school: "North Dakota State", value: "reach" },
+                    { pick: 11, player: "Rueben Bain Jr.", position: "EDGE", school: "Miami", value: "value" },
                     { pick: 41, player: "Donovan Jackson", position: "IOL", school: "Ohio State", value: "fair" }
                 ],
-                summary: "Payton is a reach at #11 but they needed a QB. Jackson is a solid Round 2 add for the offensive line."
+                summary: "Bain is an elite pass rusher and local product - great value at 11. Jackson is a solid Round 2 add for the offensive line."
             },
             {
                 name: "Dallas Cowboys",
@@ -536,10 +536,10 @@
                     { position: "LB", priority: "low" }
                 ],
                 picks: [
-                    { pick: 29, player: "Drew Allar", position: "QB", school: "Penn State", value: "fair" },
+                    { pick: 29, player: "Avieon Terrell", position: "CB", school: "Clemson", value: "value" },
                     { pick: 43, player: "Kenneth Grant", position: "DL", school: "Michigan", value: "fair" }
                 ],
-                summary: "Rams get their future QB in Allar and add a run-stuffing DT. Solid if unspectacular draft for a contender."
+                summary: "Rams address their biggest need with Terrell, a lockdown corner with length. Grant adds run-stuffing presence inside. Two starters for a contender."
             },
             {
                 name: "Baltimore Ravens",
@@ -648,9 +648,9 @@
                     { position: "EDGE", priority: "low" }
                 ],
                 picks: [
-                    { pick: 24, player: "Carson Beck", position: "QB", school: "Miami", value: "fair" }
+                    { pick: 24, player: "Zachariah Branch", position: "WR", school: "Georgia", value: "fair" }
                 ],
-                summary: "Beck is a reach at #24 but Pittsburgh needed a QB. Developmental prospect with some upside."
+                summary: "Branch gives Pittsburgh a dynamic playmaker at receiver. Explosive speed and return ability fill a major need."
             },
             {
                 name: "Los Angeles Chargers",
