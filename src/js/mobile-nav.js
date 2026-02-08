@@ -50,7 +50,14 @@ const MobileNav = {
 function initMobileNav() {
     // Only initialize on mobile
     if (window.innerWidth > 768) return;
-    
+
+    // Calculate total picks dynamically
+    const pickCards = document.querySelectorAll('.pick-card');
+    if (pickCards.length > 0) {
+        MobileNav.totalPicks = pickCards.length;
+        console.log('[MobileNav] Detected ' + MobileNav.totalPicks + ' picks');
+    }
+
     // Create mobile navigation elements
     createBottomNav();
     createFAB();
@@ -60,19 +67,19 @@ function initMobileNav() {
     createPickDetailsModal();
     createScrollIndicator();
     createHapticIndicator();
-    
+
     // Initialize Hammer.js for gestures
     initGestures();
-    
+
     // Initialize pull-to-refresh
     initPullToRefresh();
-    
+
     // Initialize scroll progress
     initScrollProgress();
-    
+
     // Setup keyboard detection
     setupKeyboardDetection();
-    
+
     // Set initial active state
     setActiveNavItem('round1');
 }
@@ -727,10 +734,23 @@ function previousPick() {
  * Jump to specific pick
  */
 function jumpToPick(pickNumber) {
-    const pickElement = document.querySelector(`[data-pick="${pickNumber}"]`);
+    // Find pick card by its pick number text
+    const allPickCards = document.querySelectorAll('.pick-card');
+    let pickElement = null;
+
+    for (const card of allPickCards) {
+        const pickNumEl = card.querySelector('.pick-number');
+        if (pickNumEl && pickNumEl.textContent.trim() === '#' + pickNumber) {
+            pickElement = card;
+            break;
+        }
+    }
+
     if (pickElement) {
         pickElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
         MobileNav.currentPick = pickNumber;
+    } else {
+        console.warn('[JumpToPick] Could not find pick #' + pickNumber);
     }
 }
 
