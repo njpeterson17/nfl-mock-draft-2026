@@ -2336,18 +2336,29 @@ function displayNextPicks() {
     Object.keys(teamPicks).forEach(team => {
         const picks = teamPicks[team];
         console.log('[NextPick] Team', team, 'has', picks.length, 'picks');
-        
+
         picks.forEach((pick, index) => {
             const nextPick = picks[index + 1];
             const nextPickNumberEl = pick.card.querySelector('.header-right .next-pick-number');
-            
+
             if (nextPickNumberEl) {
                 if (nextPick) {
                     nextPickNumberEl.textContent = '#' + nextPick.pickNumber;
                     console.log('[NextPick] Pick #' + pick.pickNumber + ' -> Next: #' + nextPick.pickNumber);
                 } else {
-                    nextPickNumberEl.textContent = 'None';
-                    console.log('[NextPick] Pick #' + pick.pickNumber + ' -> Next: None');
+                    // No next pick in current rounds - calculate theoretical next round pick
+                    // Each round has 32 picks, so if this is pick 65-96 (round 3), next pick is 32 picks later
+                    const currentPick = pick.pickNumber;
+                    const theoreticalNextPick = currentPick + 32;
+
+                    // Only show theoretical pick for rounds 1-3 (picks 1-96)
+                    if (currentPick <= 96 && theoreticalNextPick <= 256) { // 256 = 8 rounds max
+                        nextPickNumberEl.textContent = '#' + theoreticalNextPick;
+                        console.log('[NextPick] Pick #' + pick.pickNumber + ' -> Next (theoretical): #' + theoreticalNextPick);
+                    } else {
+                        nextPickNumberEl.textContent = 'None';
+                        console.log('[NextPick] Pick #' + pick.pickNumber + ' -> Next: None');
+                    }
                 }
             } else {
                 console.log('[NextPick] No next-pick-number element for pick #' + pick.pickNumber);
