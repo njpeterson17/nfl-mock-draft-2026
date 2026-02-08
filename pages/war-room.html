@@ -43,8 +43,8 @@
     <!-- Immediate check to hide entry screen if coming from config -->
     <script>
         (function() {
-            const savedConfig = sessionStorage.getItem('warRoomConfig');
-            if (savedConfig) {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('team')) {
                 document.documentElement.classList.add('auto-starting');
             }
         })();
