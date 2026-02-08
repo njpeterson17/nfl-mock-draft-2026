@@ -353,22 +353,40 @@ function autoStartWarRoom(config) {
     
     console.log('[WarRoom] Selected team:', WarRoomState.selectedTeam);
     
+    // Initialize game state
+    WarRoomState.isActive = true;
+    WarRoomState.currentPick = 1;
+    WarRoomState.currentRound = 1;
     WarRoomState.difficulty = config.difficulty;
     WarRoomState.roundsToComplete = config.rounds;
     WarRoomState.practiceMode = config.practice;
     WarRoomState.soundEnabled = config.sound;
     WarRoomState.tradesEnabled = config.trades;
     
+    // Initialize available players
+    WarRoomState.availablePlayers = [...PLAYER_DATABASE].sort((a, b) => a.rank - b.rank);
+    
+    // Initialize team needs with priorities
+    WarRoomState.userTeamNeeds = WarRoomState.selectedTeam.needs.map((need, idx) => ({
+        position: need,
+        priority: idx < 2 ? 'high' : idx < 4 ? 'medium' : 'low',
+        filled: false
+    }));
+    
     // Set timer based on difficulty
     const timePerPick = config.time || 300;
-    document.getElementById('timerValue').textContent = formatTime(timePerPick);
+    WarRoomState.timeRemaining = WarRoomState.practiceMode ? 999999 : timePerPick;
+    document.getElementById('timerValue').textContent = formatTime(WarRoomState.timeRemaining);
     
     // Hide entry screen, show interface
     document.getElementById('entryScreen').classList.add('hidden');
     document.getElementById('warRoomInterface').classList.remove('hidden');
     
-    // Initialize the war room
+    // Initialize UI
     initializeWarRoomUI();
+    
+    // Start the draft
+    startPick();
 }
 
 function initializeEntryScreen() {
