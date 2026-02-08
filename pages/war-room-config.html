@@ -564,39 +564,39 @@
 
     <script>
         // NFL Teams data
-        const teams = [
-            { code: 'ARI', name: 'Cardinals', city: 'Arizona' },
-            { code: 'ATL', name: 'Falcons', city: 'Atlanta' },
-            { code: 'BAL', name: 'Ravens', city: 'Baltimore' },
-            { code: 'BUF', name: 'Bills', city: 'Buffalo' },
-            { code: 'CAR', name: 'Panthers', city: 'Carolina' },
-            { code: 'CHI', name: 'Bears', city: 'Chicago' },
-            { code: 'CIN', name: 'Bengals', city: 'Cincinnati' },
-            { code: 'CLE', name: 'Browns', city: 'Cleveland' },
-            { code: 'DAL', name: 'Cowboys', city: 'Dallas' },
-            { code: 'DEN', name: 'Broncos', city: 'Denver' },
-            { code: 'DET', name: 'Lions', city: 'Detroit' },
-            { code: 'GB', name: 'Packers', city: 'Green Bay' },
-            { code: 'HOU', name: 'Texans', city: 'Houston' },
-            { code: 'IND', name: 'Colts', city: 'Indianapolis' },
-            { code: 'JAX', name: 'Jaguars', city: 'Jacksonville' },
-            { code: 'KC', name: 'Chiefs', city: 'Kansas City' },
-            { code: 'LV', name: 'Raiders', city: 'Las Vegas' },
-            { code: 'LAC', name: 'Chargers', city: 'Los Angeles' },
-            { code: 'LAR', name: 'Rams', city: 'Los Angeles' },
-            { code: 'MIA', name: 'Dolphins', city: 'Miami' },
-            { code: 'MIN', name: 'Vikings', city: 'Minnesota' },
-            { code: 'NE', name: 'Patriots', city: 'New England' },
-            { code: 'NO', name: 'Saints', city: 'New Orleans' },
-            { code: 'NYG', name: 'Giants', city: 'New York' },
-            { code: 'NYJ', name: 'Jets', city: 'New York' },
-            { code: 'PHI', name: 'Eagles', city: 'Philadelphia' },
-            { code: 'PIT', name: 'Steelers', city: 'Pittsburgh' },
-            { code: 'SF', name: '49ers', city: 'San Francisco' },
-            { code: 'SEA', name: 'Seahawks', city: 'Seattle' },
-            { code: 'TB', name: 'Buccaneers', city: 'Tampa Bay' },
-            { code: 'TEN', name: 'Titans', city: 'Tennessee' },
-            { code: 'WAS', name: 'Commanders', city: 'Washington' }
+                const teams = [
+            { code: 'ARI', id: 'cardinals', name: 'Cardinals', city: 'Arizona' },
+            { code: 'ATL', id: 'falcons', name: 'Falcons', city: 'Atlanta' },
+            { code: 'BAL', id: 'ravens', name: 'Ravens', city: 'Baltimore' },
+            { code: 'BUF', id: 'bills', name: 'Bills', city: 'Buffalo' },
+            { code: 'CAR', id: 'panthers', name: 'Panthers', city: 'Carolina' },
+            { code: 'CHI', id: 'bears', name: 'Bears', city: 'Chicago' },
+            { code: 'CIN', id: 'bengals', name: 'Bengals', city: 'Cincinnati' },
+            { code: 'CLE', id: 'browns', name: 'Browns', city: 'Cleveland' },
+            { code: 'DAL', id: 'cowboys', name: 'Cowboys', city: 'Dallas' },
+            { code: 'DEN', id: 'broncos', name: 'Broncos', city: 'Denver' },
+            { code: 'DET', id: 'lions', name: 'Lions', city: 'Detroit' },
+            { code: 'GB', id: 'packers', name: 'Packers', city: 'Green Bay' },
+            { code: 'HOU', id: 'texans', name: 'Texans', city: 'Houston' },
+            { code: 'IND', id: 'colts', name: 'Colts', city: 'Indianapolis' },
+            { code: 'JAX', id: 'jaguars', name: 'Jaguars', city: 'Jacksonville' },
+            { code: 'KC', id: 'chiefs', name: 'Chiefs', city: 'Kansas City' },
+            { code: 'LV', id: 'raiders', name: 'Raiders', city: 'Las Vegas' },
+            { code: 'LAC', id: 'chargers', name: 'Chargers', city: 'Los Angeles' },
+            { code: 'LAR', id: 'rams', name: 'Rams', city: 'Los Angeles' },
+            { code: 'MIA', id: 'dolphins', name: 'Dolphins', city: 'Miami' },
+            { code: 'MIN', id: 'vikings', name: 'Vikings', city: 'Minnesota' },
+            { code: 'NE', id: 'patriots', name: 'Patriots', city: 'New England' },
+            { code: 'NO', id: 'saints', name: 'Saints', city: 'New Orleans' },
+            { code: 'NYG', id: 'giants', name: 'Giants', city: 'New York' },
+            { code: 'NYJ', id: 'jets', name: 'Jets', city: 'New York' },
+            { code: 'PHI', id: 'eagles', name: 'Eagles', city: 'Philadelphia' },
+            { code: 'PIT', id: 'steelers', name: 'Steelers', city: 'Pittsburgh' },
+            { code: 'SF', id: 'fortyniners', name: '49ers', city: 'San Francisco' },
+            { code: 'SEA', id: 'seahawks', name: 'Seahawks', city: 'Seattle' },
+            { code: 'TB', id: 'buccaneers', name: 'Buccaneers', city: 'Tampa Bay' },
+            { code: 'TEN', id: 'titans', name: 'Titans', city: 'Tennessee' },
+            { code: 'WAS', id: 'commanders', name: 'Commanders', city: 'Washington' },
         ];
 
         // Populate team grid
@@ -607,7 +607,7 @@
         teams.forEach(team => {
             const div = document.createElement('div');
             div.className = 'team-option';
-            div.dataset.team = team.code;
+            div.dataset.team = team.id;
             div.innerHTML = `
                 <img src="../images/team-helmets/${team.code.toLowerCase()}.png" alt="${team.name}" onerror="this.src='../images/team-helmets/generic.png'">
                 <span>${team.name}</span>
@@ -615,7 +615,7 @@
             div.addEventListener('click', () => {
                 document.querySelectorAll('.team-option').forEach(t => t.classList.remove('selected'));
                 div.classList.add('selected');
-                selectedTeamInput.value = team.code;
+                selectedTeamInput.value = team.id;
                 enterBtn.disabled = false;
             });
             teamGrid.appendChild(div);
