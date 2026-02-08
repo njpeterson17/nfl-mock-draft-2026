@@ -484,14 +484,66 @@
         }
 
         .pick-header {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            grid-template-rows: auto auto;
+            display: flex;
             align-items: center;
-            padding: 1.5rem 2rem;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
             background: var(--team-gradient, linear-gradient(90deg, rgba(0,212,255,0.05) 0%, transparent 100%));
             border-bottom: 1px solid var(--border);
-            gap: 0.5rem 1.5rem;
+            gap: 1rem;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex: 1;
+        }
+
+        .header-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex: 1;
+        }
+
+        .pick-badge {
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 0.25rem 0.75rem;
+            border: 1px solid var(--accent);
+            border-radius: 12px;
+            background: rgba(0, 212, 255, 0.1);
+        }
+
+        .header-right .action-btn {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .header-right .action-btn:hover {
+            background: var(--accent);
+            color: var(--primary);
+            border-color: var(--accent);
         }
 
         /* Team-specific gradients for pick headers */
@@ -530,40 +582,48 @@
 
         .pick-number {
             font-family: 'Oswald', sans-serif;
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 700;
             color: var(--team-color, var(--accent));
-            min-width: 60px;
+            min-width: 50px;
             line-height: 1;
-            grid-column: 1;
-            grid-row: 1 / -1;
-            align-self: center;
+        }
+
+        .pick-number::before {
+            content: "#";
+            font-size: 0.6em;
+            vertical-align: super;
+            margin-right: 2px;
         }
 
         .pick-header .team-helmet-img {
-            grid-column: 2;
-            grid-row: 1;
-            justify-self: center;
+            width: 50px;
+            height: 40px;
+            object-fit: contain;
         }
 
         .pick-header .team-details {
-            grid-column: 2;
-            grid-row: 2;
-            text-align: center;
+            text-align: left;
+        }
+
+        .pick-header .team-details h3 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .pick-header .team-details .team-record {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
         }
 
         .pick-header .team-details .team-needs {
-            justify-content: center;
-        }
-
-        .pick-header .next-pick {
-            grid-column: 2;
-            justify-self: center;
+            justify-content: flex-start;
+            margin-top: 0.5rem;
         }
 
         .team-helmet {
-            width: 70px;
-            height: 50px;
+            width: 50px;
+            height: 40px;
             flex-shrink: 0;
         }
 
@@ -614,15 +674,16 @@
 
         .player-main {
             display: flex;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            position: relative;
         }
 
         .player-photo {
-            width: 140px;
-            height: 170px;
+            width: 120px;
+            height: 155px;
             background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
-            border-radius: 12px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -656,8 +717,8 @@
 
         .player-info h2 {
             font-family: 'Oswald', sans-serif;
-            font-size: 1.6rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+            margin-bottom: 0.35rem;
         }
 
         .player-position {
@@ -703,15 +764,23 @@
         /* Social Share */
         .social-share {
             display: flex;
-            gap: 0.5rem;
-            margin-top: 1rem;
+            gap: 0.4rem;
+            margin-top: 0.75rem;
+        }
+
+        .player-main .social-share {
+            position: absolute;
+            bottom: 0;
+            left: 132px;
+            margin-top: 0;
         }
 
         .share-btn {
             background: var(--card-bg);
             border: 1px solid var(--border);
             color: var(--text-secondary);
-            padding: 0.4rem 0.75rem;
+            padding: 0.3rem 0.6rem;
+            font-size: 0.75rem;
             border-radius: 6px;
             font-size: 0.75rem;
             cursor: pointer;
@@ -1134,34 +1203,43 @@
             }
 
             .pick-header {
-                flex-direction: column;
+                flex-direction: row;
+                flex-wrap: wrap;
                 align-items: center;
-                text-align: center;
-                padding: 1rem;
-                gap: 0.75rem;
+                padding: 0.75rem 1rem;
+                gap: 0.5rem;
+            }
+
+            .header-left {
+                flex: 1 1 100%;
+                justify-content: flex-start;
+            }
+
+            .header-center, .header-right {
+                display: none;
             }
 
             .pick-number {
-                font-size: 2rem;
-                min-width: 45px;
+                font-size: 1.75rem;
+                min-width: 40px;
             }
 
             .team-helmet {
-                width: 50px;
+                width: 45px;
                 height: 35px;
             }
 
             .team-details h3 {
-                font-size: 1.1rem;
+                font-size: 0.95rem;
             }
 
             .team-record {
-                font-size: 0.8rem;
+                font-size: 0.75rem;
             }
 
             .team-needs {
                 width: 100%;
-                justify-content: center;
+                justify-content: flex-start;
             }
 
             .pick-content {
