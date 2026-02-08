@@ -10,6 +10,31 @@ const articlesPerPage = 6;
 // Share counts stored in localStorage
 const SHARE_COUNTS_KEY = 'nfl-draft-share-counts';
 
+// Helper functions to access articles from NewsData
+function getAllArticles() {
+    return typeof articles !== 'undefined' ? articles : [];
+}
+
+function getFeaturedArticles() {
+    return getAllArticles().filter(a => a.featured);
+}
+
+function getArticleById(id) {
+    return getAllArticles().find(a => a.id === parseInt(id));
+}
+
+function getArticlesByType(type) {
+    if (type === 'all') return getAllArticles();
+    return getAllArticles().filter(a => a.type === type);
+}
+
+function getTrendingArticles() {
+    return getAllArticles()
+        .filter(a => a.trending)
+        .sort((a, b) => a.trending - b.trending)
+        .slice(0, 5);
+}
+
 // Initialize News Section
 document.addEventListener('DOMContentLoaded', () => {
     initNewsSection();
