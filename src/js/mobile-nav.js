@@ -51,8 +51,6 @@ function initMobileNav() {
     // Only initialize on mobile
     if (window.innerWidth > 768) return;
     
-    console.log('📱 Initializing Mobile Navigation...');
-    
     // Create mobile navigation elements
     createBottomNav();
     createFAB();
@@ -77,8 +75,6 @@ function initMobileNav() {
     
     // Set initial active state
     setActiveNavItem('round1');
-    
-    console.log('✅ Mobile Navigation initialized');
 }
 
 /**
@@ -679,11 +675,14 @@ function showSwipeIndicator(direction) {
 
 /**
  * Show context menu
+ * Only define if not already defined (png-export.js defines this on index.html)
  */
-function showContextMenu(x, y) {
-    // Implementation for long-press context menu
-    triggerHaptic('heavy');
-    openQuickActions();
+if (typeof showContextMenu === 'undefined') {
+    function showContextMenu(x, y) {
+        // Implementation for long-press context menu
+        triggerHaptic('heavy');
+        openQuickActions();
+    }
 }
 
 // ============================================
@@ -1002,48 +1001,45 @@ function triggerHaptic(type) {
 
 /**
  * Show toast notification
+ * Only define if not already defined (main.js defines this on index.html)
  */
-function showToast(message) {
-    // Use existing toast if available
-    if (typeof showToast === 'function' && showToast !== arguments.callee) {
-        // Avoid recursion
-        window.showToastOriginal = window.showToast;
+if (typeof showToast === 'undefined') {
+    function showToast(message) {
+        // Create toast element
+        let toast = document.getElementById('mobileToast');
+        if (!toast) {
+            toast = document.createElement('div');
+            toast.id = 'mobileToast';
+            toast.style.cssText = `
+                position: fixed;
+                bottom: 100px;
+                left: 50%;
+                transform: translateX(-50%) translateY(100px);
+                background: var(--secondary);
+                color: var(--text-primary);
+                padding: 0.875rem 1.5rem;
+                border-radius: 12px;
+                font-size: 0.9rem;
+                z-index: 3000;
+                opacity: 0;
+                transition: all 0.3s ease;
+                border: 1px solid var(--border);
+                box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+                max-width: 90vw;
+                text-align: center;
+            `;
+            document.body.appendChild(toast);
+        }
+
+        toast.textContent = message;
+        toast.style.opacity = '1';
+        toast.style.transform = 'translateX(-50%) translateY(0)';
+
+        setTimeout(() => {
+            toast.style.opacity = '0';
+            toast.style.transform = 'translateX(-50%) translateY(100px)';
+        }, 2500);
     }
-    
-    // Create toast element
-    let toast = document.getElementById('mobileToast');
-    if (!toast) {
-        toast = document.createElement('div');
-        toast.id = 'mobileToast';
-        toast.style.cssText = `
-            position: fixed;
-            bottom: 100px;
-            left: 50%;
-            transform: translateX(-50%) translateY(100px);
-            background: var(--secondary);
-            color: var(--text-primary);
-            padding: 0.875rem 1.5rem;
-            border-radius: 12px;
-            font-size: 0.9rem;
-            z-index: 3000;
-            opacity: 0;
-            transition: all 0.3s ease;
-            border: 1px solid var(--border);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-            max-width: 90vw;
-            text-align: center;
-        `;
-        document.body.appendChild(toast);
-    }
-    
-    toast.textContent = message;
-    toast.style.opacity = '1';
-    toast.style.transform = 'translateX(-50%) translateY(0)';
-    
-    setTimeout(() => {
-        toast.style.opacity = '0';
-        toast.style.transform = 'translateX(-50%) translateY(100px)';
-    }, 2500);
 }
 
 /**

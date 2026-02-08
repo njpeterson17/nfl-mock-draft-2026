@@ -20,8 +20,6 @@ class PlayerImageLoader {
 
         // Initialize IntersectionObserver for lazy loading
         this.initLazyLoader();
-        
-        console.log('🖼️ Player Image Loader initialized');
     }
 
     /**
@@ -337,7 +335,6 @@ class PlayerImageLoader {
      */
     processAllContainers() {
         const containers = document.querySelectorAll('.player-photo');
-        console.log(`🖼️ Processing ${containers.length} player photo containers`);
 
         containers.forEach(container => {
             // Check if already has an img that loaded successfully

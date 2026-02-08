@@ -201,16 +201,16 @@
             .sort((a, b) => b[1] - a[1])
             .slice(0, 5);
 
-        console.log('%c📊 NFL Mock Draft 2026 - Analytics Summary', 'font-size: 16px; font-weight: bold; color: #00d4ff;');
-        console.log('%c═══════════════════════════════════════════════════', 'color: #00d4ff;');
-        
-        console.log('%c📈 Overview:', 'font-weight: bold; color: #ffd700;');
+        console.log('[Analytics] NFL Mock Draft 2026 - Analytics Summary');
+        console.log('[Analytics] ═══════════════════════════════════════════════════');
+
+        console.log('[Analytics] Overview:');
         console.log(`  Total Visits: ${analytics.totalVisits}`);
         console.log(`  First Visit: ${analytics.firstVisit ? new Date(analytics.firstVisit).toLocaleDateString() : 'N/A'}`);
         console.log(`  Total Time on Site: ${formatTime(analytics.totalTimeSpent)}`);
         console.log(`  Current Session: ${formatTime(sessionTime)}`);
-        
-        console.log('%c\n📑 Tab Clicks:', 'font-weight: bold; color: #00d4ff;');
+
+        console.log('[Analytics] Tab Clicks:');
         if (topTabs.length === 0) {
             console.log('  No tabs clicked yet');
         } else {
@@ -224,7 +224,7 @@
             });
         }
         
-        console.log('%c\n🔍 Search Activity:', 'font-weight: bold; color: #ff6b6b;');
+        console.log('[Analytics] Search Activity:');
         console.log(`  Total Searches: ${analytics.searchQueries.length}`);
         if (popularSearches.length > 0) {
             console.log('  Most Popular Searches:');
@@ -233,17 +233,17 @@
             });
         }
         
-        console.log('%c\n🎛️ Filters Used:', 'font-weight: bold; color: #ff9f43;');
+        console.log('[Analytics] Filters Used:');
         Object.entries(analytics.filtersUsed).forEach(([filter, count]) => {
             console.log(`  ${filter}: ${count} times`);
         });
         
-        console.log('%c\n📤 Exports:', 'font-weight: bold; color: #a29bfe;');
+        console.log('[Analytics] Exports:');
         Object.entries(analytics.exportActions).forEach(([type, count]) => {
             console.log(`  ${type}: ${count} times`);
         });
         
-        console.log('%c\n🔗 Social Shares:', 'font-weight: bold; color: #00d4ff;');
+        console.log('[Analytics] Social Shares:');
         if (analytics.shareActions && Object.keys(analytics.shareActions).length > 0) {
             Object.entries(analytics.shareActions).forEach(([platform, count]) => {
                 console.log(`  ${platform}: ${count} times`);
@@ -251,15 +251,15 @@
         } else {
             console.log('  No shares yet');
         }
-        
-        console.log('%c\n═══════════════════════════════════════════════════', 'color: #00d4ff;');
-        console.log('%cRun showDetailedAnalytics() for raw data', 'color: #8b8b9a; font-style: italic;');
+
+        console.log('[Analytics] ═══════════════════════════════════════════════════');
+        console.log('[Analytics] Run showDetailedAnalytics() for raw data');
         
         return analytics;
     }
 
     function showDetailedAnalytics() {
-        console.log('%c📊 Raw Analytics Data:', 'font-size: 14px; font-weight: bold; color: #00d4ff;');
+        console.log('[Analytics] Raw Analytics Data:');
         console.log(getAnalytics());
     }
 
@@ -296,5 +296,5 @@
     window.showDetailedAnalytics = showDetailedAnalytics;
     window.clearAnalytics = clearAnalytics;
 
-    console.log('%c📊 Analytics loaded. Run showAnalyticsSummary() to see stats.', 'color: #00d4ff;');
+    console.log('[Analytics] Analytics loaded. Run showAnalyticsSummary() to see stats.');
 })();

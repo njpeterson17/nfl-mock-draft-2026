@@ -618,19 +618,22 @@ function exportConsensusData() {
 // ========================================
 // TOAST NOTIFICATIONS
 // ========================================
+// Only define if not already defined (main.js defines this on index.html)
 
-function showToast(message) {
-    const toast = document.getElementById('toast');
-    const toastMessage = document.getElementById('toastMessage');
-    
-    if (!toast || !toastMessage) return;
-    
-    toastMessage.textContent = message;
-    toast.classList.add('show');
-    
-    setTimeout(() => {
-        toast.classList.remove('show');
-    }, 3000);
+if (typeof showToast === 'undefined') {
+    function showToast(message) {
+        const toast = document.getElementById('toast');
+        const toastMessage = document.getElementById('toastMessage');
+
+        if (!toast || !toastMessage) return;
+
+        toastMessage.textContent = message;
+        toast.classList.add('show');
+
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3000);
+    }
 }
 
 // ========================================
