@@ -269,16 +269,6 @@ const PlayerImageDatabase = {
             hasLocal: true,
             teamColorKey: "texasAm"
         },
-        "Malik Reed": {
-            rank: 27,
-            position: "DL",
-            school: "Texas",
-            local: null,
-            espn: null,
-            cbs: null,
-            hasLocal: false,
-            teamColorKey: "texas"
-        },
         "Emmett Johnson": {
             rank: 28,
             position: "RB",
@@ -381,16 +371,6 @@ const PlayerImageDatabase = {
             hasLocal: true,
             teamColorKey: "vanderbilt"
         },
-        "Walter Nolen": {
-            rank: 38,
-            position: "DL",
-            school: "Ole Miss",
-            local: "images/players/walter-nolen.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432531.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "oleMiss"
-        },
         "Chase Bisontis": {
             rank: 39,
             position: "IOL",
@@ -411,26 +391,6 @@ const PlayerImageDatabase = {
             hasLocal: true,
             teamColorKey: "washington"
         },
-        "Ja'Den McBurrows": {
-            rank: 41,
-            position: "CB",
-            school: "Miami",
-            local: null,
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431656.png",
-            cbs: null,
-            hasLocal: false,
-            teamColorKey: "miami"
-        },
-        "Jalen Leach": {
-            rank: 42,
-            position: "LB",
-            school: "Northwestern",
-            local: null,
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432061.png",
-            cbs: null,
-            hasLocal: false,
-            teamColorKey: "northwestern"
-        },
         "Garrett Nussmeier": {
             rank: 43,
             position: "QB",
@@ -440,16 +400,6 @@ const PlayerImageDatabase = {
             cbs: null,
             hasLocal: true,
             teamColorKey: "lsu"
-        },
-        "Nick Marsh": {
-            rank: 44,
-            position: "WR",
-            school: "Michigan State",
-            local: null,
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432049.png",
-            cbs: null,
-            hasLocal: false,
-            teamColorKey: "michiganState"
         },
         "Max Klare": {
             rank: 45,
@@ -481,36 +431,6 @@ const PlayerImageDatabase = {
             hasLocal: true,
             teamColorKey: "miami"
         },
-        "Xavier Watts": {
-            rank: 48,
-            position: "S",
-            school: "Notre Dame",
-            local: null,
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432863.png",
-            cbs: null,
-            hasLocal: false,
-            teamColorKey: "notreDame"
-        },
-        "Jordan Burch": {
-            rank: 49,
-            position: "DL",
-            school: "Oregon",
-            local: null,
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432500.png",
-            cbs: null,
-            hasLocal: false,
-            teamColorKey: "oregon"
-        },
-        "D.J. Uiagalelei": {
-            rank: 50,
-            position: "QB",
-            school: "Florida State",
-            local: "images/players/dj-uiagalelei.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432547.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "floridaState"
-        },
         "Tacario Davis": {
             rank: 51,
             position: "CB",
@@ -530,16 +450,6 @@ const PlayerImageDatabase = {
             cbs: null,
             hasLocal: true,
             teamColorKey: "pennState"
-        },
-        "Tyrion Ingram-Dawkins": {
-            rank: 53,
-            position: "DL",
-            school: "Georgia",
-            local: null,
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432876.png",
-            cbs: null,
-            hasLocal: false,
-            teamColorKey: "georgia"
         },
         "Jack Endries": {
             rank: 54,
@@ -581,16 +491,6 @@ const PlayerImageDatabase = {
             hasLocal: true,
             teamColorKey: "texas"
         },
-        "Kyren Lacy": {
-            rank: 58,
-            position: "WR",
-            school: "LSU",
-            local: "images/players/kyren-lacy.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431374.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "lsu"
-        },
         "Cade Klubnik": {
             rank: 59,
             position: "QB",
@@ -611,16 +511,6 @@ const PlayerImageDatabase = {
             hasLocal: true,
             teamColorKey: "northwestern"
         },
-        "Craig Woodson": {
-            rank: 61,
-            position: "S",
-            school: "California",
-            local: null,
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431168.png",
-            cbs: null,
-            hasLocal: false,
-            teamColorKey: "california"
-        },
         "Joe Royer": {
             rank: 62,
             position: "TE",
@@ -630,16 +520,6 @@ const PlayerImageDatabase = {
             cbs: null,
             hasLocal: true,
             teamColorKey: "cincinnati"
-        },
-        "Samus Sanders": {
-            rank: 63,
-            position: "EDGE",
-            school: "Colorado",
-            local: null,
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431934.png",
-            cbs: null,
-            hasLocal: false,
-            teamColorKey: "colorado"
         },
         "Sawyer Robertson": {
             rank: 64,
@@ -663,26 +543,6 @@ const PlayerImageDatabase = {
             hasLocal: true,
             teamColorKey: "wakeForest"
         },
-        "Tommi Hill": {
-            rank: 66,
-            position: "CB",
-            school: "Nebraska",
-            local: "images/players/tommi-hill.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431421.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "nebraska"
-        },
-        "Dylan Fairchild": {
-            rank: 67,
-            position: "IOL",
-            school: "Georgia",
-            local: null,
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432877.png",
-            cbs: null,
-            hasLocal: false,
-            teamColorKey: "georgia"
-        },
         "Landon Jackson": {
             rank: 68,
             position: "EDGE",
@@ -692,26 +552,6 @@ const PlayerImageDatabase = {
             cbs: null,
             hasLocal: true,
             teamColorKey: "arkansas"
-        },
-        "Vernon Broughton": {
-            rank: 69,
-            position: "DL",
-            school: "Texas",
-            local: "images/players/vernon-broughton.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4430937.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "texas"
-        },
-        "Kurtis Rourke": {
-            rank: 70,
-            position: "QB",
-            school: "Indiana",
-            local: null,
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4360885.png",
-            cbs: null,
-            hasLocal: false,
-            teamColorKey: "indiana"
         },
         "Princely Umanmielen": {
             rank: 71,
@@ -723,72 +563,12 @@ const PlayerImageDatabase = {
             hasLocal: true,
             teamColorKey: "oleMiss"
         },
-        "Antwaun Powell-Ryland": {
-            rank: 72,
-            position: "EDGE",
-            school: "Virginia Tech",
-            local: "images/players/antwaun-powell-ryland.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431608.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "virginiaTech"
-        },
         "D.J. Campbell": {
             rank: 73,
             position: "IOL",
             school: "Texas",
             local: "images/players/dj-campbell.jpg",
             espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4430938.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "texas"
-        },
-        "Darius Taylor": {
-            rank: 74,
-            position: "RB",
-            school: "Minnesota",
-            local: null,
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431402.png",
-            cbs: null,
-            hasLocal: false,
-            teamColorKey: "minnesota"
-        },
-        "Billy Bowman Jr.": {
-            rank: 75,
-            position: "S",
-            school: "Oklahoma",
-            local: null,
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431630.png",
-            cbs: null,
-            hasLocal: false,
-            teamColorKey: "oklahoma"
-        },
-        "Marcus Tate": {
-            rank: 76,
-            position: "IOL",
-            school: "Clemson",
-            local: "images/players/marcus-tate.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431448.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "clemson"
-        },
-        "Teddy Knox": {
-            rank: 77,
-            position: "WR",
-            school: "LSU",
-            local: "images/players/teddy-knox.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431377.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "lsu"
-        },
-        "Barryn Sorrell": {
-            rank: 78,
-            position: "EDGE",
-            school: "Texas",
-            local: "images/players/barryn-sorrell.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4430939.png",
             cbs: null,
             hasLocal: true,
             teamColorKey: "texas"
@@ -802,16 +582,6 @@ const PlayerImageDatabase = {
             cbs: null,
             hasLocal: true,
             teamColorKey: "georgia"
-        },
-        "Mikel Jones": {
-            rank: 80,
-            position: "LB",
-            school: "Syracuse",
-            local: null,
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432144.png",
-            cbs: null,
-            hasLocal: false,
-            teamColorKey: "syracuse"
         },
         "Jalen Milroe": {
             rank: 81,
@@ -843,36 +613,6 @@ const PlayerImageDatabase = {
             hasLocal: true,
             teamColorKey: "michigan"
         },
-        "Donte Banton": {
-            rank: 84,
-            position: "DL",
-            school: "Miami",
-            local: null,
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431657.png",
-            cbs: null,
-            hasLocal: false,
-            teamColorKey: "miami"
-        },
-        "Jordan Shipp": {
-            rank: 85,
-            position: "WR",
-            school: "Florida",
-            local: null,
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431191.png",
-            cbs: null,
-            hasLocal: false,
-            teamColorKey: "florida"
-        },
-        "Branson Taylor": {
-            rank: 86,
-            position: "OT",
-            school: "Pittsburgh",
-            local: null,
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432087.png",
-            cbs: null,
-            hasLocal: false,
-            teamColorKey: "pittsburgh"
-        },
         "Justin Joly": {
             rank: 87,
             position: "TE",
@@ -882,178 +622,6 @@ const PlayerImageDatabase = {
             cbs: null,
             hasLocal: true,
             teamColorKey: "ncState"
-        },
-        "Kris Hutson": {
-            rank: 88,
-            position: "WR",
-            school: "Washington",
-            local: "images/players/kris-hutson.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431146.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "washington"
-        },
-        "Colston Loveland": {
-            rank: 89,
-            position: "TE",
-            school: "Michigan",
-            local: "images/players/colston-loveland.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431328.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "michigan"
-        },
-        "Cooper Mays": {
-            rank: 90,
-            position: "IOL",
-            school: "Tennessee",
-            local: "images/players/cooper-mays.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432540.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "tennessee"
-        },
-        "Camar Wheaton": {
-            rank: 91,
-            position: "RB",
-            school: "SMU",
-            local: null,
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432494.png",
-            cbs: null,
-            hasLocal: false,
-            teamColorKey: "smu"
-        },
-        "Robert Longerbeam": {
-            rank: 92,
-            position: "CB",
-            school: "Rutgers",
-            local: null,
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432093.png",
-            cbs: null,
-            hasLocal: false,
-            teamColorKey: "rutgers"
-        },
-        "Tonka Hemingway": {
-            rank: 93,
-            position: "DL",
-            school: "South Carolina",
-            local: null,
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432111.png",
-            cbs: null,
-            hasLocal: false,
-            teamColorKey: "southCarolina"
-        },
-        "Joshua Farmer": {
-            rank: 94,
-            position: "DL",
-            school: "Florida State",
-            local: "images/players/joshua-farmer.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432544.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "floridaState"
-        },
-        "Bryce Cabeldue": {
-            rank: 95,
-            position: "OT",
-            school: "Kansas",
-            local: "images/players/bryce-cabeldue.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431293.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "kansas"
-        },
-        "Branson Combs": {
-            rank: 96,
-            position: "LB",
-            school: "Kentucky",
-            local: "images/players/branson-combs.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431347.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "kentucky"
-        },
-        "Eugene Wilson III": {
-            rank: 97,
-            position: "WR",
-            school: "Florida",
-            local: "images/players/eugene-wilson-iii.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431192.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "florida"
-        },
-        "Hayden Conner": {
-            rank: 98,
-            position: "IOL",
-            school: "Texas",
-            local: "images/players/hayden-conner.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4430940.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "texas"
-        },
-        "Payton Page": {
-            rank: 99,
-            position: "DL",
-            school: "Clemson",
-            local: "images/players/payton-page.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431449.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "clemson"
-        },
-        "Tyler Baron": {
-            rank: 100,
-            position: "EDGE",
-            school: "Tennessee",
-            local: "images/players/tyler-baron.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4432542.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "tennessee"
-        },
-        "Luther Burden III": {
-            rank: 31,
-            position: "WR",
-            school: "Missouri",
-            local: null,
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431349.png",
-            cbs: null,
-            hasLocal: false,
-            teamColorKey: "missouri"
-        },
-
-        // ADDITIONAL 2026 PROSPECTS WITH ESPN IDs
-        "Cade Klubnik": {
-            rank: 101,
-            position: "QB",
-            school: "Clemson",
-            local: "images/players/cade-klubnik.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4685413.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "clemson"
-        },
-        "Taylen Green": {
-            rank: 102,
-            position: "QB",
-            school: "Arkansas",
-            local: "images/players/taylen-green.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4431325.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "arkansas"
-        },
-        "Evan Stewart": {
-            rank: 103,
-            position: "WR",
-            school: "Oregon",
-            local: "images/players/evan-stewart.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4685565.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "oregon"
         },
         "Kevin Coleman Jr.": {
             rank: 104,
@@ -1074,26 +642,6 @@ const PlayerImageDatabase = {
             cbs: null,
             hasLocal: true,
             teamColorKey: "lsu"
-        },
-        "Tackett Curtis": {
-            rank: 106,
-            position: "LB",
-            school: "UCF",
-            local: "images/players/tackett-curtis.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4870659.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "ucf"
-        },
-        "Anthony Hill Jr.": {
-            rank: 107,
-            position: "LB",
-            school: "Texas",
-            local: "images/players/anthony-hill-jr.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4870805.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "texas"
         },
         "Avieon Terrell": {
             rank: 108,
@@ -1124,26 +672,6 @@ const PlayerImageDatabase = {
             cbs: null,
             hasLocal: true,
             teamColorKey: "lsu"
-        },
-        "KJ Bolden": {
-            rank: 111,
-            position: "S",
-            school: "Georgia",
-            local: "images/players/kj-bolden.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/5079334.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "georgia"
-        },
-        "Zion Branch": {
-            rank: 112,
-            position: "S",
-            school: "Georgia",
-            local: "images/players/zion-branch.jpg",
-            espn: "https://a.espncdn.com/i/headshots/college-football/players/full/4685282.png",
-            cbs: null,
-            hasLocal: true,
-            teamColorKey: "georgia"
         }
     },
 
