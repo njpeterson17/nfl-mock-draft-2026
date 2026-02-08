@@ -667,6 +667,45 @@
             padding: 1.5rem 2rem;
         }
 
+        /* Simplified Pick Card for Rounds 4-7 */
+        .pick-card.simple {
+            margin-bottom: 1rem;
+        }
+
+        .pick-content-simple {
+            padding: 1rem 1.5rem;
+            text-align: center;
+        }
+
+        .pick-content-simple h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .pick-content-simple .player-position {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pick-content-simple .player-school {
+            display: inline-block;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
         .player-main {
             display: flex;
             gap: 1rem;
