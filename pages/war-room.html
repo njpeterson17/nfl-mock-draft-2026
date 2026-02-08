@@ -40,6 +40,24 @@
         <source src="data:audio/wav;base64,UklGRi4AAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAAAAACAgICAgICAgICAgICAAAAA" type="audio/wav">
     </audio>
 
+    <!-- Immediate check to hide entry screen if coming from config -->
+    <script>
+        (function() {
+            const savedConfig = sessionStorage.getItem('warRoomConfig');
+            if (savedConfig) {
+                document.documentElement.classList.add('auto-starting');
+            }
+        })();
+    </script>
+    <style>
+        html.auto-starting #entryScreen {
+            display: none !important;
+        }
+        html.auto-starting #warRoomInterface {
+            display: block !important;
+        }
+    </style>
+
     <!-- Entry Screen -->
     <div id="entryScreen" class="entry-screen">
         <div class="entry-content">
