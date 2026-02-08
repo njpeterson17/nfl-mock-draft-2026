@@ -328,7 +328,15 @@ function renderSourceItems(sources, consensusPlayer) {
 }
 
 function getPlayerImageName(playerName) {
-    return playerName.toLowerCase().replace(/\s+/g, '-').replace(/[.']/g, '') + '.jpg';
+    return playerName.toLowerCase()
+        .replace(/\s+/g, '-')
+        .replace(/[.']/g, '')
+        .replace(/-jr$/, '')
+        .replace(/-sr$/, '')
+        .replace(/-ii$/, '')
+        .replace(/-iii$/, '')
+        .replace(/-iv$/, '')
+        + '.jpg';
 }
 
 // ========================================
