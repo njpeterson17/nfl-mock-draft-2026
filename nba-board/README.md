@@ -6,6 +6,10 @@ Run `python3 server.py` in this directory, then open http://localhost:8788. The 
 
 Top 100 plus 25 borderline prospects; college and international players. Personal ranks, notes, watchlists, tiers, film queue, source freshness, disagreement filters, hover profiles, 2–4 player comparisons, and real observed ranking history. NBA local storage (`draftroom-nba-2027-v1`), JSON backups (`sport: nba`), snapshots, and server port are separate from NFL. NFL backups are rejected by the NBA importer.
 
+## Mock draft
+
+The Mock draft tab (`#mock`) runs a one- or two-round draft against the current top 125. The 2027 order isn't set until the May 2027 lottery, so each slot's team is chosen by the user, or "Shuffle team order" fills a random order (round 2 repeats round 1). Trades and forfeited picks are modeled only by editing slots. Draft any available player for the pick on the clock, or simulate the next pick, up to your team's next pick, or the rest of the draft. The simulator drafts from the consensus board or your personal ranks (unranked players follow in consensus order); with Variance on it takes one of the top three available at 60/25/15% odds. Badges flag picks 8+ spots after a player's consensus rank (value) or 12+ spots before it (reach). Mock state saves in the browser (`draftroom-nba-2027-mock-v1`), is included in backups, and "Copy results" puts the picks on the clipboard. Picks store a snapshot of the player, so they survive a refresh that drops someone from the top 125.
+
 ## Ranking sources and limits
 
 Four equally weighted publishers: Tankathon (67 ranked players), Jonathan Wasserman/Bleacher Report (100), FanSided via Yahoo (60), and Sports Gaming Rosters (150). The latter is a preliminary NBA 2K draft-class board, not an established professional scouting service; that limitation is disclosed in the page methodology. Its page title incorrectly says 2026, while its dedicated 2027 URL, draft-class content and incoming players identify the 2027 list. The adapter is tied to that specific URL. Editorial dates are displayed; the feeds currently range from May through August 2026. They are not portrayed as September editorial updates merely because they were retrieved in September.
@@ -30,6 +34,6 @@ History starts at the first actual local observation and stores changed ranking 
 
 `python3 -m unittest test_consensus test_history`
 
-`node test_features.js`
+`node test_features.js && node test_mock.js`
 
 Python covers pool size, aliases, scoring, wrong-cycle rejection, failed-source retention and observed history. JavaScript executes the actual page scripts in a DOM harness and checks rendering, filters, comparisons, tier/film saves and backup restoration. Headless Chrome was used to inspect the desktop layout; original portraits were visually inspected separately. No external deployment.
