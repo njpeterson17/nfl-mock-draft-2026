@@ -1,0 +1,949 @@
+{
+  "version": 1,
+  "snapshots": [
+    {
+      "recorded_at": "2026-09-15T02:27:48.422682+00:00",
+      "state": {
+        "method": "nba-consensus-v1",
+        "sources": [
+          "br",
+          "fansided",
+          "sgr",
+          "tank"
+        ],
+        "players": {
+          "tyranstokes": {
+            "rank": 1,
+            "source_ranks": {
+              "tank": 1,
+              "br": 1,
+              "fansided": 1,
+              "sgr": 1
+            }
+          },
+          "jordansmith": {
+            "rank": 2,
+            "source_ranks": {
+              "tank": 3,
+              "br": 2,
+              "fansided": 4,
+              "sgr": 3
+            }
+          },
+          "calebholt": {
+            "rank": 3,
+            "source_ranks": {
+              "tank": 2,
+              "br": 3,
+              "fansided": 5,
+              "sgr": 4
+            }
+          },
+          "stefanjoksimovic": {
+            "rank": 4,
+            "source_ranks": {
+              "tank": 5,
+              "br": 4,
+              "fansided": 2,
+              "sgr": 10
+            }
+          },
+          "brucebranch": {
+            "rank": 5,
+            "source_ranks": {
+              "tank": 4,
+              "br": 8,
+              "fansided": 14,
+              "sgr": 2
+            }
+          },
+          "anthonythompson": {
+            "rank": 6,
+            "source_ranks": {
+              "tank": 6,
+              "br": 6,
+              "fansided": 13,
+              "sgr": 11
+            }
+          },
+          "braylonmullins": {
+            "rank": 7,
+            "source_ranks": {
+              "tank": 10,
+              "br": 7,
+              "fansided": 29,
+              "sgr": 6
+            }
+          },
+          "dylanmingo": {
+            "rank": 8,
+            "source_ranks": {
+              "tank": 13,
+              "br": 15,
+              "fansided": 11,
+              "sgr": 18
+            }
+          },
+          "brandonmccoy": {
+            "rank": 9,
+            "source_ranks": {
+              "tank": 9,
+              "br": 20,
+              "fansided": 9,
+              "sgr": 21
+            }
+          },
+          "motiejuskrivas": {
+            "rank": 10,
+            "source_ranks": {
+              "tank": 23,
+              "br": 9,
+              "fansided": 6,
+              "sgr": 22
+            }
+          },
+          "jasoncrowe": {
+            "rank": 11,
+            "source_ranks": {
+              "tank": 16,
+              "br": 14,
+              "fansided": 22,
+              "sgr": 13
+            }
+          },
+          "hugoyimgamoukouri": {
+            "rank": 12,
+            "source_ranks": {
+              "tank": 11,
+              "br": 21,
+              "fansided": 28,
+              "sgr": 12
+            }
+          },
+          "amariallen": {
+            "rank": 13,
+            "source_ranks": {
+              "tank": 12,
+              "br": 12,
+              "fansided": 20,
+              "sgr": 29
+            }
+          },
+          "patrickngongba": {
+            "rank": 14,
+            "source_ranks": {
+              "tank": 15,
+              "br": 13,
+              "fansided": 7,
+              "sgr": 39
+            }
+          },
+          "cameronwilliams": {
+            "rank": 15,
+            "source_ranks": {
+              "tank": 7,
+              "br": 23,
+              "fansided": 40,
+              "sgr": 5
+            }
+          },
+          "ivankharchenkov": {
+            "rank": 16,
+            "source_ranks": {
+              "tank": 18,
+              "br": 16,
+              "fansided": 15,
+              "sgr": 28
+            }
+          },
+          "babaoladotun": {
+            "rank": 17,
+            "source_ranks": {
+              "tank": 8,
+              "br": 18,
+              "fansided": 53,
+              "sgr": 15
+            }
+          },
+          "tylertanner": {
+            "rank": 18,
+            "source_ranks": {
+              "tank": 32,
+              "br": 31,
+              "fansided": 3,
+              "sgr": 36
+            }
+          },
+          "thomashaugh": {
+            "rank": 19,
+            "source_ranks": {
+              "tank": 14,
+              "br": 27,
+              "fansided": 42,
+              "sgr": 20
+            }
+          },
+          "malachimoreno": {
+            "rank": 20,
+            "source_ranks": {
+              "tank": 30,
+              "br": 33,
+              "fansided": 17,
+              "sgr": 35
+            }
+          },
+          "alijaharenas": {
+            "rank": 21,
+            "source_ranks": {
+              "tank": 29,
+              "br": 28,
+              "fansided": 58,
+              "sgr": 7
+            }
+          },
+          "toundeyessoufou": {
+            "rank": 22,
+            "source_ranks": {
+              "tank": 19,
+              "br": 32,
+              "fansided": 57,
+              "sgr": 25
+            }
+          },
+          "mattable": {
+            "rank": 23,
+            "source_ranks": {
+              "tank": 36,
+              "br": 45,
+              "fansided": 25,
+              "sgr": 30
+            }
+          },
+          "billyrichmond": {
+            "rank": 24,
+            "source_ranks": {
+              "tank": 27,
+              "br": 54,
+              "fansided": 48,
+              "sgr": 42
+            }
+          },
+          "sheltonhenderson": {
+            "rank": 25,
+            "source_ranks": {
+              "tank": 38,
+              "br": 56,
+              "fansided": 30,
+              "sgr": 47
+            }
+          },
+          "jjandrews": {
+            "rank": 26,
+            "source_ranks": {
+              "tank": 24,
+              "br": 5,
+              "fansided": 18
+            }
+          },
+          "quentincoleman": {
+            "rank": 27,
+            "source_ranks": {
+              "tank": 22,
+              "br": 19,
+              "fansided": 8
+            }
+          },
+          "abdoutoure": {
+            "rank": 28,
+            "source_ranks": {
+              "br": 25,
+              "fansided": 19,
+              "sgr": 9
+            }
+          },
+          "treymckenney": {
+            "rank": 29,
+            "source_ranks": {
+              "tank": 33,
+              "br": 44,
+              "fansided": 60,
+              "sgr": 43
+            }
+          },
+          "miikkamuurinen": {
+            "rank": 30,
+            "source_ranks": {
+              "tank": 20,
+              "br": 22,
+              "sgr": 17
+            }
+          },
+          "florybidunga": {
+            "rank": 31,
+            "source_ranks": {
+              "tank": 44,
+              "br": 48,
+              "fansided": 45,
+              "sgr": 49
+            }
+          },
+          "jukeharris": {
+            "rank": 32,
+            "source_ranks": {
+              "tank": 39,
+              "br": 39,
+              "fansided": 56,
+              "sgr": 54
+            }
+          },
+          "johanngrunloh": {
+            "rank": 33,
+            "source_ranks": {
+              "tank": 59,
+              "br": 58,
+              "fansided": 52,
+              "sgr": 26
+            }
+          },
+          "prycesandfort": {
+            "rank": 34,
+            "source_ranks": {
+              "tank": 55,
+              "br": 41,
+              "fansided": 37,
+              "sgr": 62
+            }
+          },
+          "ruebenchinyelu": {
+            "rank": 35,
+            "source_ranks": {
+              "tank": 40,
+              "br": 52,
+              "fansided": 43,
+              "sgr": 61
+            }
+          },
+          "luigisuigo": {
+            "rank": 36,
+            "source_ranks": {
+              "tank": 21,
+              "br": 17,
+              "fansided": 32
+            }
+          },
+          "josephtugler": {
+            "rank": 37,
+            "source_ranks": {
+              "tank": 42,
+              "br": 64,
+              "fansided": 46,
+              "sgr": 52
+            }
+          },
+          "christiancollins": {
+            "rank": 38,
+            "source_ranks": {
+              "tank": 25,
+              "fansided": 41,
+              "sgr": 14
+            }
+          },
+          "jeremyfears": {
+            "rank": 39,
+            "source_ranks": {
+              "tank": 50,
+              "br": 73,
+              "fansided": 49,
+              "sgr": 37
+            }
+          },
+          "massambadiop": {
+            "rank": 40,
+            "source_ranks": {
+              "br": 35,
+              "fansided": 34,
+              "sgr": 16
+            }
+          },
+          "davidmirkovic": {
+            "rank": 41,
+            "source_ranks": {
+              "tank": 31,
+              "br": 42,
+              "fansided": 24
+            }
+          },
+          "sayonkeita": {
+            "rank": 42,
+            "source_ranks": {
+              "tank": 17,
+              "br": 46,
+              "fansided": 36
+            }
+          },
+          "davisfogle": {
+            "rank": 43,
+            "source_ranks": {
+              "tank": 26,
+              "br": 29,
+              "fansided": 51
+            }
+          },
+          "milanmomcilovic": {
+            "rank": 44,
+            "source_ranks": {
+              "tank": 28,
+              "br": 47,
+              "sgr": 38
+            }
+          },
+          "damesarr": {
+            "rank": 45,
+            "source_ranks": {
+              "tank": 43,
+              "br": 40,
+              "sgr": 31
+            }
+          },
+          "alexcondon": {
+            "rank": 46,
+            "source_ranks": {
+              "tank": 34,
+              "br": 36,
+              "sgr": 46
+            }
+          },
+          "milesbyrd": {
+            "rank": 47,
+            "source_ranks": {
+              "tank": 54,
+              "br": 84,
+              "fansided": 55,
+              "sgr": 58
+            }
+          },
+          "zvonimirivisic": {
+            "rank": 48,
+            "source_ranks": {
+              "tank": 60,
+              "br": 89,
+              "fansided": 47,
+              "sgr": 59
+            }
+          },
+          "paulmcneil": {
+            "rank": 49,
+            "source_ranks": {
+              "tank": 47,
+              "br": 57,
+              "sgr": 34
+            }
+          },
+          "dashdaniels": {
+            "rank": 50,
+            "source_ranks": {
+              "tank": 46,
+              "br": 62,
+              "sgr": 32
+            }
+          },
+          "matasvokietaitis": {
+            "rank": 51,
+            "source_ranks": {
+              "tank": 49,
+              "br": 68,
+              "sgr": 23
+            }
+          },
+          "neoklisavdalas": {
+            "rank": 52,
+            "source_ranks": {
+              "tank": 45,
+              "br": 53,
+              "sgr": 48
+            }
+          },
+          "colbenlandrew": {
+            "rank": 53,
+            "source_ranks": {
+              "br": 11,
+              "fansided": 10
+            }
+          },
+          "brysonhoward": {
+            "rank": 54,
+            "source_ranks": {
+              "br": 10,
+              "fansided": 12
+            }
+          },
+          "danieljacobsen": {
+            "rank": 55,
+            "source_ranks": {
+              "tank": 53,
+              "br": 60,
+              "fansided": 38
+            }
+          },
+          "andrejstojakovic": {
+            "rank": 56,
+            "source_ranks": {
+              "tank": 37,
+              "br": 75,
+              "sgr": 53
+            }
+          },
+          "najaihines": {
+            "rank": 57,
+            "source_ranks": {
+              "br": 24,
+              "fansided": 16
+            }
+          },
+          "deronrippey": {
+            "rank": 58,
+            "source_ranks": {
+              "fansided": 33,
+              "sgr": 8
+            }
+          },
+          "jttoppin": {
+            "rank": 59,
+            "source_ranks": {
+              "tank": 57,
+              "br": 63,
+              "sgr": 55
+            }
+          },
+          "calebgaskins": {
+            "rank": 60,
+            "source_ranks": {
+              "br": 26,
+              "fansided": 26
+            }
+          },
+          "arafandiane": {
+            "rank": 61,
+            "source_ranks": {
+              "br": 34,
+              "fansided": 21
+            }
+          },
+          "maximoadams": {
+            "rank": 62,
+            "source_ranks": {
+              "br": 30,
+              "fansided": 31
+            }
+          },
+          "tomislavivisic": {
+            "rank": 63,
+            "source_ranks": {
+              "tank": 56,
+              "br": 92,
+              "sgr": 45
+            }
+          },
+          "cameronhouindo": {
+            "rank": 64,
+            "source_ranks": {
+              "tank": 35,
+              "br": 37
+            }
+          },
+          "adamatamna": {
+            "rank": 65,
+            "source_ranks": {
+              "br": 49,
+              "sgr": 24
+            }
+          },
+          "klarkriethauser": {
+            "rank": 66,
+            "source_ranks": {
+              "tank": 41,
+              "br": 38
+            }
+          },
+          "alvarofolgueiras": {
+            "rank": 67,
+            "source_ranks": {
+              "br": 80,
+              "fansided": 44,
+              "sgr": 85
+            }
+          },
+          "thijsderidder": {
+            "rank": 68,
+            "source_ranks": {
+              "br": 65,
+              "sgr": 19
+            }
+          },
+          "caydenboozer": {
+            "rank": 69,
+            "source_ranks": {
+              "tank": 52,
+              "sgr": 40
+            }
+          },
+          "moustaphathiam": {
+            "rank": 70,
+            "source_ranks": {
+              "tank": 48,
+              "br": 55
+            }
+          },
+          "coencarr": {
+            "rank": 71,
+            "source_ranks": {
+              "tank": 58,
+              "br": 98,
+              "sgr": 76
+            }
+          },
+          "nikolaskhamenia": {
+            "rank": 72,
+            "source_ranks": {
+              "tank": 51,
+              "br": 66
+            }
+          },
+          "killyantoure": {
+            "rank": 73,
+            "source_ranks": {
+              "br": 86,
+              "sgr": 33
+            }
+          },
+          "johnblackwell": {
+            "rank": 74,
+            "source_ranks": {
+              "br": 77,
+              "sgr": 44
+            }
+          },
+          "elliotcadeau": {
+            "rank": 75,
+            "source_ranks": {
+              "tank": 62,
+              "sgr": 63
+            }
+          },
+          "jordanscott": {
+            "rank": 76,
+            "source_ranks": {
+              "br": 83,
+              "fansided": 50
+            }
+          },
+          "xavierbooker": {
+            "rank": 77,
+            "source_ranks": {
+              "tank": 65,
+              "sgr": 77
+            }
+          },
+          "xavieredmonds": {
+            "rank": 78,
+            "source_ranks": {
+              "br": 93,
+              "sgr": 56
+            }
+          },
+          "austingoosby": {
+            "rank": 79,
+            "source_ranks": {
+              "fansided": 23
+            }
+          },
+          "pauliusmurauskas": {
+            "rank": 80,
+            "source_ranks": {
+              "br": 82,
+              "sgr": 69
+            }
+          },
+          "nolanwinter": {
+            "rank": 81,
+            "source_ranks": {
+              "br": 71,
+              "sgr": 81
+            }
+          },
+          "mariosaintsupery": {
+            "rank": 82,
+            "source_ranks": {
+              "sgr": 27
+            }
+          },
+          "milessadler": {
+            "rank": 83,
+            "source_ranks": {
+              "fansided": 27
+            }
+          },
+          "tahaadpettiford": {
+            "rank": 84,
+            "source_ranks": {
+              "tank": 67,
+              "br": 87
+            }
+          },
+          "jaxonrichardson": {
+            "rank": 85,
+            "source_ranks": {
+              "fansided": 35
+            }
+          },
+          "juniorcounty": {
+            "rank": 86,
+            "source_ranks": {
+              "fansided": 39
+            }
+          },
+          "amanihansberry": {
+            "rank": 87,
+            "source_ranks": {
+              "br": 76,
+              "sgr": 91
+            }
+          },
+          "talissoulhac": {
+            "rank": 88,
+            "source_ranks": {
+              "sgr": 41
+            }
+          },
+          "stefanvaaks": {
+            "rank": 89,
+            "source_ranks": {
+              "br": 43
+            }
+          },
+          "michaelruzic": {
+            "rank": 90,
+            "source_ranks": {
+              "sgr": 50
+            }
+          },
+          "romandomon": {
+            "rank": 91,
+            "source_ranks": {
+              "br": 50
+            }
+          },
+          "nigeljames": {
+            "rank": 92,
+            "source_ranks": {
+              "br": 51
+            }
+          },
+          "pjhaggerty": {
+            "rank": 93,
+            "source_ranks": {
+              "sgr": 51
+            }
+          },
+          "masonfalslev": {
+            "rank": 94,
+            "source_ranks": {
+              "br": 59,
+              "sgr": 120
+            }
+          },
+          "kaydenmingo": {
+            "rank": 95,
+            "source_ranks": {
+              "fansided": 54
+            }
+          },
+          "calebfoster": {
+            "rank": 96,
+            "source_ranks": {
+              "sgr": 57
+            }
+          },
+          "fredsmith": {
+            "rank": 97,
+            "source_ranks": {
+              "fansided": 59
+            }
+          },
+          "johnmobley": {
+            "rank": 98,
+            "source_ranks": {
+              "sgr": 60
+            }
+          },
+          "karterknox": {
+            "rank": 99,
+            "source_ranks": {
+              "tank": 61
+            }
+          },
+          "lucasmorillo": {
+            "rank": 100,
+            "source_ranks": {
+              "br": 61
+            }
+          },
+          "soloball": {
+            "rank": 101,
+            "source_ranks": {
+              "tank": 63
+            }
+          },
+          "ianjackson": {
+            "rank": 102,
+            "source_ranks": {
+              "tank": 64
+            }
+          },
+          "mackenziemgbako": {
+            "rank": 103,
+            "source_ranks": {
+              "sgr": 64
+            }
+          },
+          "kjlewis": {
+            "rank": 104,
+            "source_ranks": {
+              "sgr": 65
+            }
+          },
+          "bayendongo": {
+            "rank": 105,
+            "source_ranks": {
+              "sgr": 66
+            }
+          },
+          "pavlebacko": {
+            "rank": 106,
+            "source_ranks": {
+              "tank": 66
+            }
+          },
+          "arrintenpage": {
+            "rank": 107,
+            "source_ranks": {
+              "br": 67,
+              "sgr": 137
+            }
+          },
+          "markusburton": {
+            "rank": 108,
+            "source_ranks": {
+              "sgr": 67
+            }
+          },
+          "adenholloway": {
+            "rank": 109,
+            "source_ranks": {
+              "sgr": 68
+            }
+          },
+          "kellenthames": {
+            "rank": 110,
+            "source_ranks": {
+              "br": 69
+            }
+          },
+          "dedanthomas": {
+            "rank": 111,
+            "source_ranks": {
+              "sgr": 70
+            }
+          },
+          "elyjahfreeman": {
+            "rank": 112,
+            "source_ranks": {
+              "br": 70
+            }
+          },
+          "bluecain": {
+            "rank": 113,
+            "source_ranks": {
+              "br": 96,
+              "sgr": 101
+            }
+          },
+          "finleybizjack": {
+            "rank": 114,
+            "source_ranks": {
+              "br": 79,
+              "sgr": 118
+            }
+          },
+          "silasdemary": {
+            "rank": 115,
+            "source_ranks": {
+              "sgr": 71
+            }
+          },
+          "bradenfrager": {
+            "rank": 116,
+            "source_ranks": {
+              "br": 72
+            }
+          },
+          "rodneyrice": {
+            "rank": 117,
+            "source_ranks": {
+              "sgr": 72
+            }
+          },
+          "bradenhuff": {
+            "rank": 118,
+            "source_ranks": {
+              "sgr": 73
+            }
+          },
+          "jacobcofie": {
+            "rank": 119,
+            "source_ranks": {
+              "br": 74
+            }
+          },
+          "jalenreed": {
+            "rank": 120,
+            "source_ranks": {
+              "sgr": 74
+            }
+          },
+          "kwameevans": {
+            "rank": 121,
+            "source_ranks": {
+              "sgr": 75
+            }
+          },
+          "trentpierce": {
+            "rank": 122,
+            "source_ranks": {
+              "br": 97,
+              "sgr": 107
+            }
+          },
+          "jacksonshelstad": {
+            "rank": 123,
+            "source_ranks": {
+              "sgr": 78
+            }
+          },
+          "zoomdiallo": {
+            "rank": 124,
+            "source_ranks": {
+              "br": 78
+            }
+          },
+          "bangotdak": {
+            "rank": 125,
+            "source_ranks": {
+              "sgr": 79
+            }
+          }
+        }
+      }
+    }
+  ]
+}

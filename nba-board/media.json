@@ -1,0 +1,1126 @@
+{
+  "version": 2,
+  "updated": 1789439046.9394474,
+  "players": {
+    "tyranstokes": {
+      "school": "Kansas",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2305.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "jordansmith": {
+      "school": "Arkansas",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/8.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "calebholt": {
+      "school": "Arizona",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/12.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "stefanjoksimovic": {
+      "school": "Baskonia",
+      "photo": null,
+      "logo": null,
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "brucebranch": {
+      "school": "BYU",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/252.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "anthonythompson": {
+      "school": "Ohio State",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/194.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "braylonmullins": {
+      "school": "UConn",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5196916.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/41.png",
+      "height": "6' 6\"",
+      "weight": "196 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/41/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5196916/braylon-mullins"
+    },
+    "dylanmingo": {
+      "school": "Baylor",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/239.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "brandonmccoy": {
+      "school": "Michigan",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "motiejuskrivas": {
+      "school": "Arizona",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5174954.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/12.png",
+      "height": "7' 2\"",
+      "weight": "260 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/12/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5174954/motiejus-krivas"
+    },
+    "jasoncrowe": {
+      "school": "Missouri",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/142.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "hugoyimgamoukouri": {
+      "school": "Nanterre 92",
+      "photo": null,
+      "logo": null,
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "amariallen": {
+      "school": "Alabama",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5101833.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/333.png",
+      "height": "6' 8\"",
+      "weight": "205 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/333/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5101833/amari-allen"
+    },
+    "patrickngongba": {
+      "school": "Duke",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4873209.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+      "height": "6' 11\"",
+      "weight": "250 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/150/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/4873209/patrick-ngongba-ii"
+    },
+    "cameronwilliams": {
+      "school": "Duke",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "ivankharchenkov": {
+      "school": "Arizona",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5311896.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/12.png",
+      "height": "6' 7\"",
+      "weight": "220 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/12/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5311896/ivan-kharchenkov"
+    },
+    "babaoladotun": {
+      "school": "Maryland",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/120.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "tylertanner": {
+      "school": "Vanderbilt",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5187600.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/238.png",
+      "height": "6' 0\"",
+      "weight": "173 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/238/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5187600/tyler-tanner"
+    },
+    "thomashaugh": {
+      "school": "Florida",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5080489.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/57.png",
+      "height": "6' 9\"",
+      "weight": "215 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/57/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5080489/thomas-haugh"
+    },
+    "malachimoreno": {
+      "school": "Kentucky",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5101849.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/96.png",
+      "height": "7' 0\"",
+      "weight": "243 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/96/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5101849/malachi-moreno"
+    },
+    "alijaharenas": {
+      "school": "USC",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5144495.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/30.png",
+      "height": "6' 6\"",
+      "weight": "199 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/30/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5144495/alijah-arenas"
+    },
+    "toundeyessoufou": {
+      "school": "St. John's",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2599.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "mattable": {
+      "school": "North Carolina",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/153.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "billyrichmond": {
+      "school": "Arkansas",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5060732.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/8.png",
+      "height": "6' 6\"",
+      "weight": "205 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/8/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5060732/billy-richmond-iii"
+    },
+    "sheltonhenderson": {
+      "school": "Miami",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5101809.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2390.png",
+      "height": "6' 6\"",
+      "weight": "240 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/2390/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5101809/shelton-henderson"
+    },
+    "jjandrews": {
+      "school": "Arkansas",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/8.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "quentincoleman": {
+      "school": "Illinois",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/356.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "abdoutoure": {
+      "school": "Arkansas",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/8.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "treymckenney": {
+      "school": "Michigan",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5041954.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png",
+      "height": "6' 4\"",
+      "weight": "225 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/130/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5041954/trey-mckenney"
+    },
+    "miikkamuurinen": {
+      "school": "Arkansas",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/8.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "florybidunga": {
+      "school": "Louisville",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/97.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "jukeharris": {
+      "school": "Tennessee",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2633.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "johanngrunloh": {
+      "school": "Virginia",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5311844.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/258.png",
+      "height": "7' 0\"",
+      "weight": "238 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/258/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5311844/johann-grunloh"
+    },
+    "prycesandfort": {
+      "school": "Nebraska",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4858604.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/158.png",
+      "height": "6' 7\"",
+      "weight": "215 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/158/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/4858604/pryce-sandfort"
+    },
+    "ruebenchinyelu": {
+      "school": "Florida",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5174971.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/57.png",
+      "height": "6' 10\"",
+      "weight": "265 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/57/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5174971/rueben-chinyelu"
+    },
+    "luigisuigo": {
+      "school": "Villanova",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/222.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "josephtugler": {
+      "school": "Houston",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5060700.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/248.png",
+      "height": "6' 8\"",
+      "weight": "230 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/248/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5060700/joseph-tugler"
+    },
+    "christiancollins": {
+      "school": "USC",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/30.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "jeremyfears": {
+      "school": "Michigan State",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4711255.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/127.png",
+      "height": "6' 2\"",
+      "weight": "190 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/127/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/4711255/jeremy-fears-jr"
+    },
+    "massambadiop": {
+      "school": "Gonzaga",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2250.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "davidmirkovic": {
+      "school": "Illinois",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5311832.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/356.png",
+      "height": "6' 9\"",
+      "weight": "255 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/356/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5311832/david-mirkovic"
+    },
+    "sayonkeita": {
+      "school": "North Carolina",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/153.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "davisfogle": {
+      "school": "Gonzaga",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5196913.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2250.png",
+      "height": "6' 7\"",
+      "weight": "200 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/2250/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5196913/davis-fogle"
+    },
+    "milanmomcilovic": {
+      "school": "Kentucky",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/96.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "damesarr": {
+      "school": "Duke",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5287474.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+      "height": "6' 8\"",
+      "weight": "190 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/150/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5287474/dame-sarr"
+    },
+    "alexcondon": {
+      "school": "Florida",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5174657.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/57.png",
+      "height": "6' 11\"",
+      "weight": "230 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/57/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5174657/alex-condon"
+    },
+    "milesbyrd": {
+      "school": "Providence",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2507.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "zvonimirivisic": {
+      "school": "Illinois",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5174665.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/356.png",
+      "height": "7' 2\"",
+      "weight": "245 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/356/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5174665/zvonimir-ivisic"
+    },
+    "paulmcneil": {
+      "school": "NC State",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4873151.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/152.png",
+      "height": "6' 5\"",
+      "weight": "190 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/152/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/4873151/paul-mcneil-jr"
+    },
+    "dashdaniels": {
+      "school": "SE Melbourne",
+      "photo": null,
+      "logo": null,
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "matasvokietaitis": {
+      "school": "Texas",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5239838.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+      "height": "7' 0\"",
+      "weight": "255 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/251/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5239838/matas-vokietaitis"
+    },
+    "neoklisavdalas": {
+      "school": "North Carolina",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/153.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "colbenlandrew": {
+      "school": "UConn",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/41.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "brysonhoward": {
+      "school": "Duke",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "danieljacobsen": {
+      "school": "Purdue",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5144147.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2509.png",
+      "height": "7' 4\"",
+      "weight": "250 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/2509/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5144147/daniel-jacobsen"
+    },
+    "andrejstojakovic": {
+      "school": "Illinois",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5175007.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/356.png",
+      "height": "6' 7\"",
+      "weight": "205 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/356/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5175007/andrej-stojakovic"
+    },
+    "najaihines": {
+      "school": "UConn",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/41.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "deronrippey": {
+      "school": "Duke",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "jttoppin": {
+      "school": "Texas Tech",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5143604.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2641.png",
+      "height": "6' 9\"",
+      "weight": "230 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/2641/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5143604/jt-toppin"
+    },
+    "calebgaskins": {
+      "school": "Miami",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2390.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "arafandiane": {
+      "school": "Houston",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/248.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "maximoadams": {
+      "school": "North Carolina",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/153.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "tomislavivisic": {
+      "school": "Illinois",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5214642.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/356.png",
+      "height": "7' 1\"",
+      "weight": "255 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/356/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5214642/tomislav-ivisic"
+    },
+    "cameronhouindo": {
+      "school": "Cedevita Olimpija",
+      "photo": null,
+      "logo": null,
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "adamatamna": {
+      "school": "Ratiopharm Ulm",
+      "photo": null,
+      "logo": null,
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "klarkriethauser": {
+      "school": "\u00c9lan Chalon",
+      "photo": null,
+      "logo": null,
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "alvarofolgueiras": {
+      "school": "Louisville",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/97.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null
+    },
+    "thijsderidder": {
+      "school": "Virginia",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5311846.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/258.png",
+      "height": "6' 9\"",
+      "weight": "238 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/258/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5311846/thijs-de-ridder"
+    },
+    "caydenboozer": {
+      "school": "Duke",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5041937.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+      "height": "6' 4\"",
+      "weight": "205 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/150/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5041937/cayden-boozer"
+    },
+    "moustaphathiam": {
+      "school": "Michigan",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "coencarr": {
+      "school": "Michigan State",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4872740.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/127.png",
+      "height": "6' 6\"",
+      "weight": "225 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/127/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/4872740/coen-carr"
+    },
+    "nikolaskhamenia": {
+      "school": "UConn",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/41.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "killyantoure": {
+      "school": "Iowa State",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5248302.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/66.png",
+      "height": "6' 3\"",
+      "weight": "205 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/66/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5248302/killyan-toure"
+    },
+    "johnblackwell": {
+      "school": "Duke",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "elliotcadeau": {
+      "school": "Michigan",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4869764.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png",
+      "height": "6' 1\"",
+      "weight": "180 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/130/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/4869764/elliot-cadeau"
+    },
+    "jordanscott": {
+      "school": "Michigan State",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5196931.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/127.png",
+      "height": "6' 7\"",
+      "weight": "190 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/127/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5196931/jordan-scott"
+    },
+    "xavierbooker": {
+      "school": "UCLA",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4711304.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/26.png",
+      "height": "6' 11\"",
+      "weight": "245 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/26/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/4711304/xavier-booker"
+    },
+    "xavieredmonds": {
+      "school": "TCU",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5311928.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2628.png",
+      "height": "6' 8\"",
+      "weight": "245 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/2628/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5311928/xavier-edmonds"
+    },
+    "austingoosby": {
+      "school": "Texas",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "pauliusmurauskas": {
+      "school": "Arizona State",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/9.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "nolanwinter": {
+      "school": "Wisconsin",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4895783.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/275.png",
+      "height": "7' 0\"",
+      "weight": "235 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/275/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/4895783/nolan-winter"
+    },
+    "mariosaintsupery": {
+      "school": "Gonzaga",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5313012.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2250.png",
+      "height": "6' 3\"",
+      "weight": "199 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/2250/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5313012/mario-saint-supery"
+    },
+    "milessadler": {
+      "school": "West Virginia",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/277.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "tahaadpettiford": {
+      "school": "Auburn",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4873089.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2.png",
+      "height": "6' 1\"",
+      "weight": "170 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/2/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/4873089/tahaad-pettiford"
+    },
+    "jaxonrichardson": {
+      "school": "Alabama",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/333.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "juniorcounty": {
+      "school": "UConn",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/41.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "amanihansberry": {
+      "school": "Virginia Tech",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4685673.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/259.png",
+      "height": "6' 8\"",
+      "weight": "240 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/259/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/4685673/amani-hansberry"
+    },
+    "talissoulhac": {
+      "school": "France",
+      "photo": null,
+      "logo": null,
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "stefanvaaks": {
+      "school": "Illinois",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/356.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "michaelruzic": {
+      "school": "Croatia",
+      "photo": null,
+      "logo": null,
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "romandomon": {
+      "school": "Murray State",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5313873.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/93.png",
+      "height": "6' 9\"",
+      "weight": "225 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/93/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5313873/roman-domon"
+    },
+    "nigeljames": {
+      "school": "Marquette",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5144086.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/269.png",
+      "height": "6' 0\"",
+      "weight": "185 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/269/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5144086/nigel-james-jr"
+    },
+    "pjhaggerty": {
+      "school": "Texas A&M",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/245.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "masonfalslev": {
+      "school": "Utah State",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5107864.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/328.png",
+      "height": "6' 4\"",
+      "weight": "200 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/328/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5107864/mason-falslev"
+    },
+    "kaydenmingo": {
+      "school": "Baylor",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/239.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "calebfoster": {
+      "school": "Duke",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4711256.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+      "height": "6' 5\"",
+      "weight": "205 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/150/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/4711256/caleb-foster"
+    },
+    "fredsmith": {
+      "school": "Memphis",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/235.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "johnmobley": {
+      "school": "Ohio State",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5060708.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/194.png",
+      "height": "6' 1\"",
+      "weight": "175 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/194/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5060708/john-mobley-jr"
+    },
+    "karterknox": {
+      "school": "Louisville",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/97.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "lucasmorillo": {
+      "school": "Illinois",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/356.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "soloball": {
+      "school": "UConn",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4895737.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/41.png",
+      "height": "6' 4\"",
+      "weight": "200 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/41/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/4895737/solo-ball"
+    },
+    "ianjackson": {
+      "school": "St. John's",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4869770.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2599.png",
+      "height": "6' 5\"",
+      "weight": "195 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/2599/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/4869770/ian-jackson"
+    },
+    "mackenziemgbako": {
+      "school": "Texas A&M",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4683779.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/245.png",
+      "height": "6' 9\"",
+      "weight": "225 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/245/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/4683779/mackenzie-mgbako"
+    },
+    "kjlewis": {
+      "school": "USC",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/30.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null
+    },
+    "bayendongo": {
+      "school": "Pittsburgh",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/221.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "pavlebacko": {
+      "school": "Mega Basket",
+      "photo": null,
+      "logo": null,
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "arrintenpage": {
+      "school": "Providence",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2507.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "markusburton": {
+      "school": "Indiana",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/84.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "adenholloway": {
+      "school": "Alabama",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4684276.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/333.png",
+      "height": "6' 1\"",
+      "weight": "180 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/333/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/4684276/aden-holloway"
+    },
+    "kellenthames": {
+      "school": "Saint Louis",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5105980.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/139.png",
+      "height": "6' 6\"",
+      "weight": "210 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/139/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5105980/kellen-thames"
+    },
+    "dedanthomas": {
+      "school": "Houston",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/248.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "elyjahfreeman": {
+      "school": "Texas",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "bluecain": {
+      "school": "Georgia",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5174661.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/61.png",
+      "height": "6' 5\"",
+      "weight": "195 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/61/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5174661/blue-cain"
+    },
+    "finleybizjack": {
+      "school": "West Virginia",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/277.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "silasdemary": {
+      "school": "UConn",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5054083.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/41.png",
+      "height": "6' 4\"",
+      "weight": "195 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/41/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5054083/silas-demary-jr"
+    },
+    "bradenfrager": {
+      "school": "Nebraska",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5239571.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/158.png",
+      "height": "6' 7\"",
+      "weight": "220 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/158/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5239571/braden-frager"
+    },
+    "rodneyrice": {
+      "school": "USC",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4684634.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/30.png",
+      "height": "6' 5\"",
+      "weight": "199 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/30/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/4684634/rodney-rice"
+    },
+    "bradenhuff": {
+      "school": "Gonzaga",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4894445.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2250.png",
+      "height": "6' 10\"",
+      "weight": "250 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/2250/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/4894445/braden-huff"
+    },
+    "jacobcofie": {
+      "school": "USC",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4873219.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/30.png",
+      "height": "6' 10\"",
+      "weight": "231 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/30/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/4873219/jacob-cofie"
+    },
+    "jalenreed": {
+      "school": "Michigan",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "kwameevans": {
+      "school": "Villanova",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/222.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "trentpierce": {
+      "school": "Missouri",
+      "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5037881.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/142.png",
+      "height": "6' 10\"",
+      "weight": "225 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/142/roster",
+      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5037881/trent-pierce"
+    },
+    "jacksonshelstad": {
+      "school": "Louisville",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/97.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null
+    },
+    "zoomdiallo": {
+      "school": "Kentucky",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/96.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null
+    },
+    "bangotdak": {
+      "school": "Vanderbilt",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/238.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null
+    }
+  }
+}
