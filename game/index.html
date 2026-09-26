@@ -166,7 +166,7 @@
   const PLAYER_SPEED = 9.0;               // yards per second
   const SPRINT_SPEED = 10.6;
   const TACKLE_DIST = 1.05;
-  const CD = { juke: 2.0, spin: 3.0, stiff: 2.6 };
+  const CD = { juke: 2.0, spin: 3.0, stiff: 4.0 };
   const KICK_MAX = 60;                    // longest field goal you're allowed to try
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const coarse = window.matchMedia('(pointer: coarse)').matches;
@@ -720,7 +720,7 @@
       swish(1400);
     }
     if (queued.stiff && p.cd.stiff <= 0) {
-      p.stiff = 0.4; p.cd.stiff = CD.stiff;
+      p.stiff = 0.3; p.stiffUsed = false; p.cd.stiff = CD.stiff;
     }
     queued.juke = queued.spin = queued.stiff = false;
 
@@ -728,7 +728,7 @@
     const sprinting = sprint && moving && p.stamina > 0.02 && p.spin <= 0;
     p.stamina = sprinting ? Math.max(0, p.stamina - 0.42 * dt) : Math.min(1, p.stamina + 0.16 * dt);
     let top = sprinting ? SPRINT_SPEED : PLAYER_SPEED;
-    if (p.stiff > 0) { p.stiff -= dt; top *= 0.88; }
+    if (p.stiff > 0) { p.stiff -= dt; top *= 0.8; }
     if (p.spin > 0) { p.spin -= dt; p.spinAng += dt * Math.PI * 2 / 0.45; top *= 0.72; }
     if (p.stumble > 0) { p.stumble -= dt; top *= 0.6; }
 
@@ -743,17 +743,27 @@
     if (sp > 0.5) p.face = Math.atan2(p.vy, p.vx);
     if (sp > 6 && Math.random() < dt * (sprinting ? 26 : 14)) G.parts.push({ x: p.x + rand(-0.3, 0.3), y: p.y - 0.4, vx: rand(-1, 1), vy: -rand(1, 3), life: 0.35, c: '#4f8a45' });
 
-    // stiff arm: shove away anyone closing in from the front
-    if (p.stiff > 0) {
+    // stiff arm: one shot at the closest defender in front of you; big men are harder to move
+    if (p.stiff > 0 && !p.stiffUsed) {
       const fx = Math.cos(p.face), fy = Math.sin(p.face);
-      for (const d of G.defs) {
-        if (d.blockedBy || d.tackleCd > 0) continue;
-        const dx = d.x - p.x, dy = d.y - p.y, dd = Math.hypot(dx, dy) || 1;
-        if (dd < 1.9 && (dx * fx + dy * fy) / dd > 0.2) {
-          d.vx = dx / dd * 7; d.vy = dy / dd * 7;
-          d.stun = 0.9; d.tackleCd = 1.0;
+      let d = null, best = 1.6;
+      for (const o of G.defs) {
+        if (o.blockedBy || o.tackleCd > 0) continue;
+        const dx = o.x - p.x, dy = o.y - p.y, dd = Math.hypot(dx, dy) || 1;
+        if (dd < best && (dx * fx + dy * fy) / dd > 0.5) { d = o; best = dd; }
+      }
+      if (d) {
+        p.stiffUsed = true;
+        const odds = d.kind === 'DL' ? 0.45 : d.kind === 'LB' ? 0.6 : 0.75;
+        if (Math.random() < odds) {
+          const dx = d.x - p.x, dy = d.y - p.y, dd = Math.hypot(dx, dy) || 1;
+          d.vx = dx / dd * 4.5; d.vy = dy / dd * 4.5;
+          d.stun = 0.5; d.tackleCd = 0.6;
           pop(d.x, d.y, 'STIFF ARM');
           thud(0.22);
+        } else {
+          p.stiff = 0;   // he fights through it and the normal tackle roll applies
+          pop(d.x, d.y, 'SHRUGGED OFF');
         }
       }
     }
