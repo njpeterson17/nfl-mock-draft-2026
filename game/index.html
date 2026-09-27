@@ -1,0 +1,1175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Two-Minute Drill | nockdraft.lol</title>
+<meta name="description" content="Arcade football: follow your blockers, juke, spin and stiff-arm defenders, and score as much as you can with 2:00 left in the 4th quarter.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Graduate&family=Chivo+Mono:wght@500;700&family=Barlow:wght@500;600&display=swap">
+<style>
+  :root {
+    color-scheme: dark;
+    --night: #0c1410;
+    --chalk: #f1efe4;
+    --led: #ffb627;
+    --panel: #121a16;
+    --line: #2a372f;
+    --muted: #8fa396;
+  }
+  html, body { height: 100%; margin: 0; }
+  body {
+    background: var(--night);
+    color: var(--chalk);
+    font-family: "Barlow", system-ui, sans-serif;
+    overflow: hidden;
+    -webkit-user-select: none; user-select: none;
+    touch-action: none;
+  }
+  .app {
+    height: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+    padding-inline: 16px;
+    padding-block: 10px;
+    box-sizing: border-box;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .board {
+    background: var(--panel);
+    border: 2px solid var(--line);
+    border-radius: 6px;
+    padding: 8px 10px 10px;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr 1fr 1.3fr 1.3fr;
+    gap: 6px;
+    box-shadow: 0 0 24px rgba(255, 182, 39, 0.06) inset;
+  }
+  .cell { display: flex; flex-direction: column; align-items: center; gap: 2px; min-width: 0; }
+  .lbl {
+    font-family: "Graduate", Georgia, serif;
+    font-size: 10px; letter-spacing: 0.12em;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .val {
+    font-family: "Chivo Mono", ui-monospace, monospace;
+    font-weight: 700;
+    font-size: clamp(15px, 4.4vw, 22px);
+    color: var(--led);
+    text-shadow: 0 0 8px rgba(255, 182, 39, 0.55);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .val.big { font-size: clamp(18px, 5.6vw, 28px); }
+  .stage { position: relative; flex: 1; min-height: 0; border-radius: 6px; overflow: hidden; background: #0f3a20; }
+  canvas { display: block; width: 100%; height: 100%; touch-action: none; }
+  .calls {
+    position: absolute; top: 10px; left: 10px; right: 10px;
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
+    pointer-events: none;
+  }
+  .calls button {
+    pointer-events: auto;
+    font-family: "Graduate", Georgia, serif; font-size: 12px; letter-spacing: 0.05em;
+    color: var(--night); background: var(--led);
+    border: 0; border-radius: 4px; padding: 7px 12px; cursor: pointer;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.35);
+  }
+  .calls button:disabled { background: #33423a; color: var(--muted); cursor: default; box-shadow: none; }
+  .moves {
+    position: absolute; right: 12px; bottom: 12px;
+    display: grid; grid-template-columns: repeat(2, 58px); gap: 10px;
+  }
+  .mv {
+    width: 58px; height: 58px; border-radius: 50%; padding: 0;
+    border: 2px solid var(--chalk);
+    background: rgba(28, 47, 107, 0.88);
+    color: var(--chalk);
+    font-family: "Graduate", Georgia, serif; font-size: 11px; line-height: 1.1; letter-spacing: 0.04em;
+    touch-action: none; transition: opacity 0.15s;
+  }
+  .mv.juke { background: rgba(200, 50, 60, 0.88); }
+  .mv.cool { opacity: 0.4; }
+  .mv:active { transform: scale(0.94); }
+  .mv:focus-visible, .calls button:focus-visible, .mute:focus-visible { outline: 2px solid var(--led); outline-offset: 3px; }
+  .foot {
+    display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px 14px;
+    font-size: 13px; color: var(--muted);
+  }
+  .foot kbd {
+    font-family: "Chivo Mono", ui-monospace, monospace; font-size: 11px;
+    border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px;
+    padding: 1px 5px; color: var(--chalk); background: var(--panel);
+  }
+  .keys { display: flex; flex-wrap: wrap; gap: 4px 12px; }
+  .foot-end { display: flex; align-items: center; gap: 12px; }
+  .home { color: var(--chalk); font-size: 12px; text-decoration: none; }
+  .home:hover { color: var(--led); }
+  .home:focus-visible { outline: 2px solid var(--led); outline-offset: 3px; }
+  .mute {
+    font: inherit; font-size: 12px; color: var(--chalk);
+    background: var(--panel); border: 1px solid var(--line); border-radius: 4px; padding: 4px 10px; cursor: pointer;
+  }
+  @media (max-width: 420px) {
+    .board { grid-template-columns: repeat(5, 1fr); padding: 6px; gap: 4px; }
+    .lbl { font-size: 8.5px; letter-spacing: 0.06em; }
+  }
+</style>
+
+</head>
+<body>
+<div class="app">
+  <div class="board">
+    <div class="cell"><span class="lbl">HOME</span><span class="val big" id="sScore">0</span></div>
+    <div class="cell"><span class="lbl">DOWN</span><span class="val" id="sDown">1</span></div>
+    <div class="cell"><span class="lbl">TO GO</span><span class="val" id="sToGo">10</span></div>
+    <div class="cell"><span class="lbl">BALL ON</span><span class="val" id="sBall">OWN 25</span></div>
+    <div class="cell"><span class="lbl">4TH QTR</span><span class="val big" id="sClock">2:00</span></div>
+  </div>
+  <div class="stage" id="stage">
+    <canvas id="cv" aria-label="Football field. Run the ball up the field and avoid defenders."></canvas>
+    <div class="calls" id="calls" hidden>
+      <button type="button" id="bFG">Field goal</button>
+    </div>
+    <div class="moves" id="moves" hidden>
+      <button class="mv" id="bSpin" type="button">SPIN</button>
+      <button class="mv" id="bStiff" type="button">STIFF<br>ARM</button>
+      <button class="mv" id="bSprint" type="button">SPRINT</button>
+      <button class="mv juke" id="bJuke" type="button">JUKE</button>
+    </div>
+  </div>
+  <div class="foot">
+    <span class="keys" id="hint">
+      <span><kbd>WASD</kbd> run</span>
+      <span><kbd>Shift</kbd> sprint</span>
+      <span><kbd>Space</kbd> juke</span>
+      <span><kbd>E</kbd> spin</span>
+      <span><kbd>F</kbd> stiff arm</span>
+      <span><kbd>G</kbd> field goal</span>
+    </span>
+    <span class="foot-end">
+      <a class="home" href="../">&larr; Mock draft</a>
+      <button class="mute" id="mute" type="button">Sound: on</button>
+    </span>
+  </div>
+</div>
+
+<script>
+(() => {
+  const FIELD_W = 53.33;
+  const HASH_L = 23.58, HASH_R = 29.75;   // NFL hash marks, yards from the left sideline
+  const UPRIGHT = 3.08;                   // half the 18'6" gap between the uprights, in yards
+  const GAME_CLOCK = 120;
+  const PLAYER_SPEED = 9.0;               // yards per second
+  const SPRINT_SPEED = 10.6;
+  const TACKLE_DIST = 1.05;
+  const CD = { juke: 2.0, spin: 3.0, stiff: 4.0 };
+  const KICK_MAX = 60;                    // longest field goal you're allowed to try
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const coarse = window.matchMedia('(pointer: coarse)').matches;
+
+  const cv = document.getElementById('cv');
+  const ctx = cv.getContext('2d');
+  const stage = document.getElementById('stage');
+  const el = id => document.getElementById(id);
+  const muteBtn = el('mute');
+  const callsEl = el('calls'), bFG = el('bFG');
+  const movesEl = el('moves');
+  const moveBtns = { juke: el('bJuke'), spin: el('bSpin'), stiff: el('bStiff') };
+  const bSprint = el('bSprint');
+  const sScore = el('sScore'), sDown = el('sDown'), sToGo = el('sToGo'), sBall = el('sBall'), sClock = el('sClock');
+  const kb = s => (coarse ? '' : s);
+
+  if (coarse) {
+    movesEl.hidden = false;
+    el('hint').textContent = 'Drag to run · tap the field to snap';
+  }
+
+  let best = 0;
+  try { best = +localStorage.getItem('tmd-best') || 0; } catch (e) {}
+
+  // ---------- canvas sizing ----------
+  let W = 0, H = 0, S = 10, OX = 0, dpr = 1;
+  function resize() {
+    const r = stage.getBoundingClientRect();
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = r.width; H = r.height;
+    cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    S = W / (FIELD_W + 7);           // pixels per yard, with sideline margin
+    OX = (W - FIELD_W * S) / 2;
+  }
+  new ResizeObserver(resize).observe(stage);
+  resize();
+
+  // ---------- audio ----------
+  let actx = null, muted = false;
+  function audio() {
+    if (!actx) { try { actx = new (window.AudioContext || window.webkitAudioContext)(); } catch (e) {} }
+    if (actx && actx.state === 'suspended') actx.resume();
+    return muted ? null : actx;
+  }
+  function whistle() {
+    const a = audio(); if (!a) return;
+    const t = a.currentTime;
+    const o = a.createOscillator(), g = a.createGain(), lfo = a.createOscillator(), lg = a.createGain();
+    o.type = 'sine'; o.frequency.value = 2900;
+    lfo.frequency.value = 38; lg.gain.value = 180;
+    lfo.connect(lg); lg.connect(o.frequency);
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(0.12, t + 0.02);
+    g.gain.setValueAtTime(0.12, t + 0.32); g.gain.linearRampToValueAtTime(0, t + 0.4);
+    o.connect(g); g.connect(a.destination);
+    o.start(t); lfo.start(t); o.stop(t + 0.42); lfo.stop(t + 0.42);
+  }
+  function crowd(dur = 1.8, vol = 0.22) {
+    const a = audio(); if (!a) return;
+    const t = a.currentTime, n = Math.floor(a.sampleRate * dur);
+    const buf = a.createBuffer(1, n, a.sampleRate), d = buf.getChannelData(0);
+    for (let i = 0; i < n; i++) d[i] = Math.random() * 2 - 1;
+    const src = a.createBufferSource(); src.buffer = buf;
+    const f = a.createBiquadFilter(); f.type = 'bandpass'; f.frequency.value = 900; f.Q.value = 0.6;
+    const g = a.createGain();
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(vol, t + 0.25);
+    g.gain.linearRampToValueAtTime(0, t + dur);
+    src.connect(f); f.connect(g); g.connect(a.destination); src.start(t);
+  }
+  function thud(vol = 0.35) {
+    const a = audio(); if (!a) return;
+    const t = a.currentTime, o = a.createOscillator(), g = a.createGain();
+    o.type = 'triangle'; o.frequency.setValueAtTime(140, t); o.frequency.exponentialRampToValueAtTime(45, t + 0.18);
+    g.gain.setValueAtTime(vol, t); g.gain.exponentialRampToValueAtTime(0.001, t + 0.2);
+    o.connect(g); g.connect(a.destination); o.start(t); o.stop(t + 0.22);
+  }
+  function swish(freq = 2200) {
+    const a = audio(); if (!a) return;
+    const t = a.currentTime, n = Math.floor(a.sampleRate * 0.18);
+    const buf = a.createBuffer(1, n, a.sampleRate), d = buf.getChannelData(0);
+    for (let i = 0; i < n; i++) d[i] = (Math.random() * 2 - 1) * (1 - i / n);
+    const src = a.createBufferSource(); src.buffer = buf;
+    const f = a.createBiquadFilter(); f.type = 'highpass'; f.frequency.value = freq;
+    const g = a.createGain(); g.gain.value = 0.18;
+    src.connect(f); f.connect(g); g.connect(a.destination); src.start(t);
+  }
+  muteBtn.addEventListener('click', () => {
+    muted = !muted;
+    muteBtn.textContent = 'Sound: ' + (muted ? 'off' : 'on');
+    muteBtn.blur();
+  });
+
+  // ---------- game state ----------
+  const G = {
+    mode: 'title', score: 0, drive: 1, tds: 0, fgs: 0, yards: 0,
+    los: 25, down: 1, fd: 35, clock: GAME_CLOCK, stamina: 1,
+    player: null, defs: [], blockers: [], parts: [], pops: [], msg: null, kick: null,
+    deadTimer: 0, camY: 25, shake: 0, spotX: FIELD_W / 2, next: null, over: null,
+  };
+
+  const rand = (a, b) => a + Math.random() * (b - a);
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+
+  function newGame() {
+    Object.assign(G, { score: 0, drive: 1, tds: 0, fgs: 0, yards: 0, clock: GAME_CLOCK, stamina: 1, over: null });
+    newDrive();
+  }
+  function newDrive() {
+    G.los = 25; G.down = 1; G.fd = 35; G.spotX = FIELD_W / 2;
+    setupPlay();
+  }
+  function setupPlay() {
+    const x = clamp(G.spotX, HASH_L, HASH_R);   // ball is spotted between the hashes
+    G.player = {
+      x, y: Math.max(G.los - 4.5, -9), vx: 0, vy: 0, face: Math.PI / 2,
+      juke: 0, spin: 0, spinAng: 0, stiff: 0, stumble: 0,
+      cd: { juke: 0, spin: 0, stiff: 0 },
+      stamina: Math.min(1, G.stamina + 0.35),   // a breather in the huddle
+    };
+    G.defs = spawnDefense(x, G.los, G.drive - 1);
+    G.blockers = spawnBlockers(x, G.los);
+    G.parts = []; G.pops = []; G.kick = null;
+    G.mode = 'presnap';
+    presnapMsg();
+    updateBoard();
+  }
+  function presnapMsg() {
+    const snapTxt = coarse ? 'Tap the field to snap' : 'Press Enter to snap';
+    G.msg = { text: downText(), sub: snapTxt, t: 0, hold: true };
+  }
+
+  // five offensive linemen on the line plus a lead fullback
+  function spawnBlockers(px, los) {
+    const nums = [74, 66, 52, 63, 77];
+    const bl = nums.map((num, i) => ({
+      x: clamp(px + (i - 2) * 1.7, 1, FIELD_W - 1), y: los - 0.8, vx: 0, vy: 0,
+      speed: 5.8, accel: 14, react: 0.1, reach: 11, num, target: null, engaged: null, beat: 0,
+    }));
+    bl.push({ x: px, y: Math.max(los - 2.8, -9), vx: 0, vy: 0, speed: 7.6, accel: 16, react: 0.2, reach: 20, num: 44, target: null, engaged: null, beat: 0 });
+    return bl;
+  }
+
+  function spawnDefense(px, los, diff) {
+    const defs = [];
+    let num = 99;
+    const add = (x, y, speed, accel, react, kind) => {
+      if (y > 109) y = rand(101, 109);
+      x = clamp(x, 1, FIELD_W - 1);
+      defs.push({ x, y, homeX: x, lane: x - px, vx: 0, vy: 0, speed, accel, react, kind, stun: 0, tackleCd: 0, blockedBy: null, shed: 0, immune: 0, num: num-- });
+    };
+    const nDL = 3 + (diff >= 2 ? 1 : 0);
+    for (let i = 0; i < nDL; i++) {
+      add(px + (i - (nDL - 1) / 2) * 3.2, los + 1.4, Math.min(6.2 + 0.25 * diff, 7.4), 10, 0.35, 'DL');
+    }
+    const nLB = 3 + (diff >= 3 ? 1 : 0);
+    for (let i = 0; i < nLB; i++) {
+      add(px + (i - (nLB - 1) / 2) * 7 + rand(-1.5, 1.5), los + rand(5.5, 8.5), Math.min(7.3 + 0.2 * diff, 8.3), 13, 0.25, 'LB');
+    }
+    const nDB = 2 + (diff >= 1 ? 1 : 0) + (diff >= 4 ? 1 : 0);
+    for (let i = 0; i < nDB; i++) {
+      const x = 4 + (i + 0.5) * ((FIELD_W - 8) / nDB) + rand(-2, 2);
+      add(x, los + rand(10, 15), Math.min(8.0 + 0.15 * diff, 8.7), 15, 0.15, 'DB');
+    }
+    // the free safety sits deep in the middle as the last line of defense
+    add(px + rand(-3, 3), los + rand(18, 22), Math.min(8.4 + 0.1 * diff, 8.9), 15, 0.1, 'FS');
+    return defs;
+  }
+
+  function downText() {
+    const ord = ['1st', '2nd', '3rd', '4th'][G.down - 1];
+    const togo = G.fd >= 100 ? 'Goal' : Math.max(1, Math.round(G.fd - G.los));
+    return `${ord} & ${togo}`;
+  }
+  function ballOn(y) {
+    const r = Math.round(y);
+    if (r === 50) return '50';
+    return r < 50 ? `OWN ${Math.max(1, r)}` : `OPP ${Math.max(1, 100 - r)}`;
+  }
+  function fmtClock(c) {
+    c = Math.max(0, c);
+    if (c < 10) return c.toFixed(1);
+    const m = Math.floor(c / 60), s = Math.floor(c % 60);
+    return `${m}:${String(s).padStart(2, '0')}`;
+  }
+  // kick is snapped 7 yards behind the line and the posts sit 10 yards deep in the end zone
+  const fgDistance = () => Math.round(100 - G.los + 17);
+
+  let lastBoard = '';
+  function updateBoard() {
+    const togo = G.fd >= 100 ? 'GOAL' : String(Math.max(1, Math.round(G.fd - G.los)));
+    const key = [G.score, G.down, togo, ballOn(G.los), fmtClock(G.clock)].join('|');
+    if (key === lastBoard) return;
+    lastBoard = key;
+    sScore.textContent = G.score;
+    sDown.textContent = G.down;
+    sToGo.textContent = togo;
+    sBall.textContent = ballOn(G.los);
+    sClock.textContent = fmtClock(G.clock);
+  }
+
+  let lastUI = '';
+  function updateUI() {
+    const dist = fgDistance();
+    const fgOk = G.mode === 'presnap' && dist <= KICK_MAX;
+    const p = G.player;
+    const cool = n => (G.mode === 'live' && p && p.cd[n] > 0);
+    const key = [fgOk, dist, cool('juke'), cool('spin'), cool('stiff')].join('|');
+    if (key === lastUI) return;
+    lastUI = key;
+    callsEl.hidden = !fgOk;
+    bFG.textContent = `Field goal${kb(' (G)')} · ${dist} yd`;
+    for (const n in moveBtns) moveBtns[n].classList.toggle('cool', cool(n));
+  }
+
+  function snap() {
+    if (G.mode !== 'presnap') return;
+    G.mode = 'live';
+    G.msg = null;
+    audio();
+  }
+
+  function flash(text, sub, dur = 1.6) { G.msg = { text, sub, t: 0, dur }; }
+  function pop(x, y, text) { G.pops.push({ x, y, text, life: 1.1 }); }
+
+  function endPlay(spotY, reason) {
+    if (G.mode !== 'live') return;
+    G.mode = 'dead';
+    G.deadTimer = 1.7;
+    whistle();
+    G.spotX = G.player.x;
+    G.stamina = G.player.stamina;
+
+    if (reason === 'td') {
+      G.score += 7; G.tds++; G.yards += 100 - G.los;
+      flash('TOUCHDOWN', `+7 · Drive ${G.drive} complete`, 2.2);
+      crowd(2.2, 0.28);
+      G.deadTimer = 2.4;
+      G.next = () => { G.drive++; newDrive(); };
+      return;
+    }
+    if (spotY <= 0) {
+      G.yards += spotY - G.los;
+      flash('SAFETY', 'Tackled in your own end zone', 2);
+      crowd(1.2, 0.1);
+      G.deadTimer = 2.1;
+      G.next = () => newDrive();
+      return;
+    }
+
+    const gained = spotY - G.los;
+    const g = Math.round(gained);
+    G.yards += gained;
+    const gainTxt = g === 0 ? 'No gain' : `${g > 0 ? 'Gain of' : 'Loss of'} ${Math.abs(g)}`;
+    G.los = spotY;
+    if (spotY >= G.fd) {
+      G.down = 1; G.fd = Math.min(Math.round(spotY) + 10, 100);
+      flash('FIRST DOWN', gainTxt, 1.6);
+      crowd(1.0, 0.12);
+    } else if (G.down >= 4) {
+      flash('TURNOVER ON DOWNS', 'New drive from your own 25', 2);
+      G.deadTimer = 2.1;
+      G.next = () => newDrive();
+      return;
+    } else {
+      G.down++;
+      flash(reason === 'oob' ? 'OUT OF BOUNDS' : 'TACKLED', gainTxt, 1.5);
+    }
+    G.next = () => setupPlay();
+  }
+
+  function gameOver(reason) {
+    G.mode = 'over';
+    const isBest = G.score > best;
+    if (isBest) { best = G.score; try { localStorage.setItem('tmd-best', String(best)); } catch (e) {} }
+    G.over = { isBest, reason };
+    G.msg = null; G.kick = null;
+    whistle();
+    crowd(2.5, isBest ? 0.26 : 0.1);
+  }
+
+  // ---------- clock management and kicking ----------
+  function attemptFG() {
+    if (G.mode !== 'presnap') return;
+    const dist = fgDistance();
+    if (dist > KICK_MAX) return;
+    const hard = clamp((dist - 20) / 40, 0, 1);
+    const x0 = clamp(G.spotX, HASH_L, HASH_R), y0 = G.los - 7;
+    G.player.x = x0; G.player.y = y0; G.player.vx = G.player.vy = 0; G.player.face = Math.PI / 2;
+    G.mode = 'kick';
+    G.msg = null;
+    // the green window shrinks and the needle speeds up as the kick gets longer
+    G.kick = { phase: 'aim', dist, x0, y0, needle: -1, dir: 1, speed: 1.1 + hard * 1.7, zone: 0.34 - hard * 0.22, t: 0 };
+  }
+
+  function kickPress() {
+    const k = G.kick;
+    if (!k || k.phase !== 'aim') return;
+    k.phase = 'flight'; k.t = 0;
+    k.dur = 1.0 + k.dist / 60 * 0.7;
+    k.good = Math.abs(k.needle) <= k.zone;
+    k.xf = FIELD_W / 2 + (k.needle / k.zone) * UPRIGHT;
+    G.clock = Math.max(0, G.clock - 4);   // a kick takes about four seconds off the clock
+    thud(0.3); swish(1500);
+  }
+
+  function updateKick(dt) {
+    const k = G.kick;
+    if (k.phase === 'aim') {
+      k.needle += k.dir * k.speed * dt;
+      if (k.needle > 1) { k.needle = 1; k.dir = -1; }
+      if (k.needle < -1) { k.needle = -1; k.dir = 1; }
+      return;
+    }
+    k.t += dt;
+    if (!k.done && k.t >= k.dur) {
+      k.done = true;
+      if (k.good) {
+        G.score += 3; G.fgs++;
+        flash("IT'S GOOD", `${k.dist}-yard field goal · +3`, 2);
+        crowd(1.8, 0.24);
+      } else {
+        flash('NO GOOD', `${k.dist}-yard attempt wide ${k.xf < FIELD_W / 2 ? 'left' : 'right'}`, 2);
+        crowd(1, 0.06);
+      }
+      updateBoard();
+    }
+    if (k.t >= k.dur + 2) {
+      const good = k.good;
+      G.kick = null;
+      if (G.clock <= 0) gameOver();
+      else { if (good) G.drive++; newDrive(); }
+    }
+  }
+  function kickBall(k) {
+    const u = clamp(k.t / k.dur, 0, 1);
+    return { u, x: k.x0 + (k.xf - k.x0) * u, y: k.y0 + (110 - k.y0) * u };
+  }
+
+  // ---------- input ----------
+  const keys = new Set();
+  const queued = { juke: false, spin: false, stiff: false };
+  let sprintHeld = false;
+  const stick = { active: false, id: null, ox: 0, oy: 0, dx: 0, dy: 0 };
+
+  function primaryAction() {
+    audio();
+    if (G.mode === 'title' || G.mode === 'over') { newGame(); return; }
+    if (G.mode === 'kick') { kickPress(); return; }
+    if (G.mode === 'presnap') snap();
+  }
+
+  window.addEventListener('keydown', e => {
+    const k = e.key.toLowerCase();
+    if (['arrowup', 'arrowdown', 'arrowleft', 'arrowright', ' '].includes(k)) e.preventDefault();
+    if (e.repeat && [' ', 'enter', 'g', 'e', 'q', 'f'].includes(k)) return;
+    if (k === 'g') { attemptFG(); return; }
+    if (k === 'enter' || (k === ' ' && G.mode !== 'live')) { primaryAction(); return; }
+    if (k === ' ') { queued.juke = true; return; }
+    if (k === 'e' || k === 'q') { queued.spin = true; return; }
+    if (k === 'f') { queued.stiff = true; return; }
+    keys.add(k);
+    if (G.mode === 'presnap' && ['w', 'arrowup'].includes(k)) snap();
+  });
+  window.addEventListener('keyup', e => keys.delete(e.key.toLowerCase()));
+  window.addEventListener('blur', () => { keys.clear(); sprintHeld = false; });
+
+  cv.addEventListener('pointerdown', e => {
+    cv.setPointerCapture(e.pointerId);
+    if (G.mode !== 'live') { primaryAction(); if (G.mode !== 'live') return; }
+    stick.active = true; stick.id = e.pointerId;
+    const r = cv.getBoundingClientRect();
+    stick.ox = e.clientX - r.left; stick.oy = e.clientY - r.top; stick.dx = 0; stick.dy = 0;
+  });
+  cv.addEventListener('pointermove', e => {
+    if (!stick.active || e.pointerId !== stick.id) return;
+    const r = cv.getBoundingClientRect();
+    stick.dx = e.clientX - r.left - stick.ox; stick.dy = e.clientY - r.top - stick.oy;
+  });
+  const endStick = e => { if (e.pointerId === stick.id) { stick.active = false; stick.dx = stick.dy = 0; } };
+  cv.addEventListener('pointerup', endStick);
+  cv.addEventListener('pointercancel', endStick);
+
+  for (const n in moveBtns) {
+    moveBtns[n].addEventListener('pointerdown', e => {
+      e.preventDefault(); e.stopPropagation();
+      if (G.mode === 'live') queued[n] = true; else primaryAction();
+    });
+  }
+  bSprint.addEventListener('pointerdown', e => {
+    e.preventDefault(); e.stopPropagation();
+    bSprint.setPointerCapture(e.pointerId);
+    if (G.mode === 'live') sprintHeld = true; else primaryAction();
+  });
+  for (const ev of ['pointerup', 'pointercancel', 'lostpointercapture']) bSprint.addEventListener(ev, () => { sprintHeld = false; });
+  bFG.addEventListener('click', () => { attemptFG(); bFG.blur(); });
+
+  function readInput() {
+    let ix = 0, iy = 0;
+    if (keys.has('a') || keys.has('arrowleft')) ix -= 1;
+    if (keys.has('d') || keys.has('arrowright')) ix += 1;
+    if (keys.has('w') || keys.has('arrowup')) iy += 1;
+    if (keys.has('s') || keys.has('arrowdown')) iy -= 1;
+    if (stick.active) {
+      const m = Math.hypot(stick.dx, stick.dy);
+      if (m > 8) { const k = Math.min(1, m / 55) / m; ix = stick.dx * k; iy = -stick.dy * k; }
+    }
+    const m = Math.hypot(ix, iy);
+    if (m > 1) { ix /= m; iy /= m; }
+    return { ix, iy, sprint: sprintHeld || keys.has('shift') };
+  }
+
+  // ---------- update ----------
+  function steer(o, tx, ty, accel, dt) {
+    const dx = tx - o.vx, dy = ty - o.vy, dm = Math.hypot(dx, dy), step = accel * dt;
+    if (dm <= step) { o.vx = tx; o.vy = ty; } else { o.vx += dx / dm * step; o.vy += dy / dm * step; }
+  }
+  // steer toward a spot, easing off on arrival so defenders can hold a position
+  function goTo(o, tx, ty, speed, dt) {
+    const dx = tx - o.x, dy = ty - o.y, dm = Math.hypot(dx, dy) || 1;
+    const sp = speed * Math.min(1, dm / 1.5);
+    steer(o, dx / dm * sp, dy / dm * sp, o.accel, dt);
+  }
+
+  // Each blocker keeps his man if still free, otherwise picks the most dangerous
+  // unclaimed defender (close to him and close to the ball), then engages on contact.
+  function updateBlockers(dt, p) {
+    const diff = G.drive - 1;
+    const free = d => !d.blockedBy && d.immune <= 0;
+    const threat = (b, d) => Math.hypot(d.x - b.x, d.y - b.y) + 0.6 * Math.hypot(d.x - p.x, d.y - p.y);
+    const claimed = new Set();
+    for (const b of G.blockers) {
+      if (b.engaged) { claimed.add(b.engaged); continue; }
+      const t = b.target;
+      if (t && free(t) && !claimed.has(t) && b.beat <= 0 && Math.hypot(t.x - b.x, t.y - b.y) < b.reach) claimed.add(t);
+      else b.target = null;
+    }
+    for (const b of G.blockers) {
+      if (b.engaged || b.target || b.beat > 0) continue;
+      let bestD = null, bestS = 1e9;
+      for (const d of G.defs) {
+        if (!free(d) || claimed.has(d) || Math.hypot(d.x - b.x, d.y - b.y) > b.reach) continue;
+        const s = threat(b, d);
+        if (s < bestS) { bestS = s; bestD = d; }
+      }
+      if (bestD) { b.target = bestD; claimed.add(bestD); }
+    }
+    for (const b of G.blockers) {
+      if (b.engaged) continue;              // position is driven by the defender he's holding
+      if (b.react > 0) { b.react -= dt; continue; }
+      if (b.beat > 0) {
+        b.beat -= dt;
+        b.vx *= Math.pow(0.3, dt); b.vy *= Math.pow(0.3, dt);
+      } else if (b.target) {
+        const d = b.target;
+        const tx = d.x - b.x, ty = d.y - b.y, tm = Math.hypot(tx, ty) || 1;
+        steer(b, tx / tm * b.speed, ty / tm * b.speed, b.accel, dt);
+        if (tm < 1.25 && free(d)) {
+          d.blockedBy = b; b.engaged = d; b.target = null;
+          d.shed = Math.max(0.6, rand(1.2, 2.4) - 0.12 * diff);
+          d.stun = 0;
+        }
+      } else {
+        // nobody to hit: escort the runner a few yards ahead
+        const tx = p.x - b.x, ty = p.y + 3 - b.y, tm = Math.hypot(tx, ty) || 1;
+        const sp = tm < 2 ? 0 : b.speed * 0.85;
+        steer(b, tx / tm * sp, ty / tm * sp, b.accel, dt);
+      }
+      b.x += b.vx * dt; b.y += b.vy * dt;
+    }
+  }
+
+  // Where a free defender wants to go this frame. Before the runner crosses the line,
+  // linebackers fill the lane he's heading for, corners squeeze down, and the safety
+  // stays deep and mirrors. Once he's through, everyone takes a pursuit angle.
+  function defenseTarget(d, p) {
+    const past = p.y > G.los + 0.3;
+    const dist = Math.hypot(p.x - d.x, p.y - d.y);
+    if (d.kind === 'FS' && p.y < d.y - 9) {
+      return { x: p.x + p.vx * 0.4, y: Math.max(p.y + 12, G.los + 12), speed: d.speed * 0.75 };
+    }
+    if (d.kind === 'LB' && !past && dist > 4.5) {
+      return { x: p.x + p.vx * 0.6 + d.lane * 0.35, y: G.los + 2.5, speed: d.speed };
+    }
+    if (d.kind === 'DB' && !past && dist > 9) {
+      return { x: (d.homeX + p.x) / 2, y: G.los + 7, speed: d.speed * 0.8 };
+    }
+    const cap = d.kind === 'DB' || d.kind === 'FS' ? 1.1 : 0.75;
+    const lead = clamp(dist / d.speed, 0, cap);
+    return { x: p.x + p.vx * lead, y: p.y + p.vy * lead, speed: d.speed, chase: true };
+  }
+
+  function tackleChance(d, p) {
+    const sp = Math.hypot(p.vx, p.vy);
+    const dist = Math.hypot(d.x - p.x, d.y - p.y) || 1;
+    // how square the hit is: 1 = straight on, -1 = from behind
+    const facing = ((d.x - p.x) * Math.cos(p.face) + (d.y - p.y) * Math.sin(p.face)) / dist;
+    let c = 0.95 - 0.05 * Math.max(0, sp - 6);
+    c += facing > 0.5 ? 0.05 : facing < -0.2 ? -0.12 : -0.05;
+    if (d.kind === 'DL') c -= 0.05;
+    c += 0.02 * (G.drive - 1);
+    return clamp(c, 0.45, 0.97);
+  }
+
+  function update(dt) {
+    if (G.msg && !G.msg.hold) { G.msg.t += dt; if (G.msg.t > G.msg.dur) G.msg = null; }
+    G.shake = Math.max(0, G.shake - dt * 3);
+    for (const q of G.parts) { q.x += q.vx * dt; q.y += q.vy * dt; q.life -= dt; }
+    G.parts = G.parts.filter(q => q.life > 0);
+    for (const q of G.pops) q.life -= dt;
+    G.pops = G.pops.filter(q => q.life > 0);
+
+    if (G.mode === 'dead') {
+      G.deadTimer -= dt;
+      for (const d of G.defs.concat(G.blockers)) { d.vx *= 0.9; d.vy *= 0.9; d.x += d.vx * dt; d.y += d.vy * dt; }
+      if (G.deadTimer <= 0) {
+        const next = G.next; G.next = null;
+        if (G.clock <= 0) gameOver(); else if (next) next();
+      }
+    }
+    if (G.mode === 'kick') updateKick(dt);
+
+    let camT = G.player ? G.player.y + 4 : G.camY;
+    if (G.kick && G.kick.phase === 'flight') camT = kickBall(G.kick).y;
+    G.camY += (camT - G.camY) * Math.min(1, dt * 5);
+
+    if (G.mode !== 'live') { queued.juke = queued.spin = queued.stiff = false; return; }
+
+    G.clock = Math.max(0, G.clock - dt);   // the final play runs out even after 0:00
+    const p = G.player;
+    const { ix, iy, sprint } = readInput();
+    for (const n in p.cd) p.cd[n] = Math.max(0, p.cd[n] - dt);
+
+    // --- moves ---
+    if (queued.juke && p.cd.juke <= 0 && p.spin <= 0) {
+      let dir = Math.sign(ix);
+      if (!dir) {
+        let nearest = null, nd = 1e9;
+        for (const d of G.defs) { const dd = Math.hypot(d.x - p.x, d.y - p.y); if (dd < nd) { nd = dd; nearest = d; } }
+        dir = nearest ? (p.x >= nearest.x ? 1 : -1) : 1;
+      }
+      p.vx = dir * 13.5; p.vy = Math.max(p.vy, 3.5);
+      p.juke = 0.26; p.cd.juke = CD.juke;
+      for (const d of G.defs) if (!d.blockedBy && Math.hypot(d.x - p.x, d.y - p.y) < 4.8) d.stun = 0.6;
+      swish();
+      for (let i = 0; i < 10; i++) G.parts.push({ x: p.x, y: p.y, vx: -dir * rand(2, 6), vy: rand(-3, 3), life: rand(0.3, 0.6), c: '#6fae5e' });
+    }
+    if (queued.spin && p.cd.spin <= 0 && p.juke <= 0) {
+      // a spin can't be tackled mid-rotation and leaves close defenders grabbing air
+      p.spin = 0.45; p.spinAng = 0; p.cd.spin = CD.spin;
+      for (const d of G.defs) if (!d.blockedBy && Math.hypot(d.x - p.x, d.y - p.y) < 2.4) { d.stun = 0.45; d.tackleCd = 0.6; }
+      swish(1400);
+    }
+    if (queued.stiff && p.cd.stiff <= 0) {
+      p.stiff = 0.3; p.stiffUsed = false; p.cd.stiff = CD.stiff;
+    }
+    queued.juke = queued.spin = queued.stiff = false;
+
+    const moving = ix !== 0 || iy !== 0;
+    const sprinting = sprint && moving && p.stamina > 0.02 && p.spin <= 0;
+    p.stamina = sprinting ? Math.max(0, p.stamina - 0.42 * dt) : Math.min(1, p.stamina + 0.16 * dt);
+    let top = sprinting ? SPRINT_SPEED : PLAYER_SPEED;
+    if (p.stiff > 0) { p.stiff -= dt; top *= 0.8; }
+    if (p.spin > 0) { p.spin -= dt; p.spinAng += dt * Math.PI * 2 / 0.45; top *= 0.72; }
+    if (p.stumble > 0) { p.stumble -= dt; top *= 0.6; }
+
+    if (p.juke > 0) {
+      p.juke -= dt;
+      p.vx *= Math.pow(0.2, dt); p.vy *= Math.pow(0.5, dt);
+    } else {
+      steer(p, ix * top, iy * top, p.spin > 0 ? 10 : moving ? 30 : 18, dt);
+    }
+    p.x += p.vx * dt; p.y += p.vy * dt;
+    const sp = Math.hypot(p.vx, p.vy);
+    if (sp > 0.5) p.face = Math.atan2(p.vy, p.vx);
+    if (sp > 6 && Math.random() < dt * (sprinting ? 26 : 14)) G.parts.push({ x: p.x + rand(-0.3, 0.3), y: p.y - 0.4, vx: rand(-1, 1), vy: -rand(1, 3), life: 0.35, c: '#4f8a45' });
+
+    // stiff arm: one shot at the closest defender in front of you; big men are harder to move
+    if (p.stiff > 0 && !p.stiffUsed) {
+      const fx = Math.cos(p.face), fy = Math.sin(p.face);
+      let d = null, best = 1.6;
+      for (const o of G.defs) {
+        if (o.blockedBy || o.tackleCd > 0) continue;
+        const dx = o.x - p.x, dy = o.y - p.y, dd = Math.hypot(dx, dy) || 1;
+        if (dd < best && (dx * fx + dy * fy) / dd > 0.5) { d = o; best = dd; }
+      }
+      if (d) {
+        p.stiffUsed = true;
+        const odds = d.kind === 'DL' ? 0.45 : d.kind === 'LB' ? 0.6 : 0.75;
+        if (Math.random() < odds) {
+          const dx = d.x - p.x, dy = d.y - p.y, dd = Math.hypot(dx, dy) || 1;
+          d.vx = dx / dd * 4.5; d.vy = dy / dd * 4.5;
+          d.stun = 0.5; d.tackleCd = 0.6;
+          pop(d.x, d.y, 'STIFF ARM');
+          thud(0.22);
+        } else {
+          p.stiff = 0;   // he fights through it and the normal tackle roll applies
+          pop(d.x, d.y, 'SHRUGGED OFF');
+        }
+      }
+    }
+
+    updateBlockers(dt, p);
+
+    for (const d of G.defs) {
+      d.immune = Math.max(0, d.immune - dt);
+      d.tackleCd = Math.max(0, d.tackleCd - dt);
+      if (d.react > 0) { d.react -= dt; continue; }
+      if (d.blockedBy) {
+        // held at the point of attack: the defender drives toward the carrier but barely moves
+        const b = d.blockedBy;
+        const tx = p.x - d.x, ty = p.y - d.y, tm = Math.hypot(tx, ty) || 1;
+        d.vx = tx / tm * d.speed * 0.15; d.vy = ty / tm * d.speed * 0.15;
+        d.x += d.vx * dt; d.y += d.vy * dt;
+        b.x = d.x + tx / tm * 1.05; b.y = d.y + ty / tm * 1.05;   // blocker stays between him and the ball
+        b.vx = d.vx; b.vy = d.vy;
+        d.shed -= dt;
+        if (d.shed <= 0) {
+          d.blockedBy = null; b.engaged = null; b.target = null;
+          b.beat = 0.7; d.immune = 0.9;
+          d.vx = tx / tm * d.speed * 0.6; d.vy = ty / tm * d.speed * 0.6;
+        }
+        continue;
+      }
+      if (d.stun > 0) {
+        d.stun -= dt;
+        d.vx *= Math.pow(0.35, dt); d.vy *= Math.pow(0.35, dt);
+      } else {
+        const t = defenseTarget(d, p);
+        if (t.chase) {
+          const tx = t.x - d.x, ty = t.y - d.y, tm = Math.hypot(tx, ty) || 1;
+          steer(d, tx / tm * t.speed, ty / tm * t.speed, d.accel, dt);
+        } else {
+          goTo(d, t.x, t.y, t.speed, dt);
+        }
+      }
+      d.x += d.vx * dt; d.y += d.vy * dt;
+    }
+    const bodies = G.defs.concat(G.blockers);
+    for (let i = 0; i < bodies.length; i++) for (let j = i + 1; j < bodies.length; j++) {
+      const a = bodies[i], b = bodies[j];
+      if (a.blockedBy === b || b.blockedBy === a) continue;
+      const dx = b.x - a.x, dy = b.y - a.y, dd = Math.hypot(dx, dy);
+      if (dd > 0 && dd < 1.3) { const push = (1.3 - dd) / 2 / dd; a.x -= dx * push; a.y -= dy * push; b.x += dx * push; b.y += dy * push; }
+    }
+
+    // outcomes
+    if (p.y >= 100) { endPlay(100, 'td'); return; }
+    if (p.x < 0 || p.x > FIELD_W) { p.x = clamp(p.x, 0, FIELD_W); endPlay(p.y, 'oob'); return; }
+    if (p.juke > 0 || p.spin > 0) return;
+    for (const d of G.defs) {
+      if (d.react > 0 || d.blockedBy || d.tackleCd > 0 || Math.hypot(d.x - p.x, d.y - p.y) >= TACKLE_DIST) continue;
+      if (Math.random() < tackleChance(d, p)) {
+        thud();
+        if (!reduceMotion) G.shake = 1;
+        for (let i = 0; i < 14; i++) G.parts.push({ x: p.x, y: p.y, vx: rand(-5, 5), vy: rand(-5, 5), life: rand(0.3, 0.7), c: i % 2 ? '#f1efe4' : '#6fae5e' });
+        endPlay(p.y, 'tackle');   // forward progress: spot where the carrier went down
+        return;
+      }
+      // broken tackle: the defender bounces off and the runner stumbles
+      d.stun = 0.8; d.tackleCd = 1.2;
+      const dx = d.x - p.x, dy = d.y - p.y, dd = Math.hypot(dx, dy) || 1;
+      d.vx = dx / dd * 4; d.vy = dy / dd * 4;
+      p.stumble = 0.3;
+      pop(p.x, p.y, 'BROKEN TACKLE');
+      thud(0.18);
+      if (!reduceMotion) G.shake = 0.4;
+      for (let i = 0; i < 8; i++) G.parts.push({ x: p.x, y: p.y, vx: rand(-4, 4), vy: rand(-4, 4), life: rand(0.2, 0.5), c: '#f1efe4' });
+    }
+  }
+
+  // ---------- draw ----------
+  const toX = x => OX + x * S;
+  const toY = y => H * 0.68 - (y - G.camY) * S;
+
+  function drawField() {
+    ctx.fillStyle = '#123f23';
+    ctx.fillRect(0, 0, W, H);
+    const yTop = G.camY + (H * 0.68) / S + 2, yBot = G.camY - (H * 0.32) / S - 2;
+
+    for (let y = Math.floor(yBot / 5) * 5; y < yTop; y += 5) {
+      if (y < -10 || y >= 110) continue;
+      ctx.fillStyle = (Math.floor(y / 5) % 2 === 0) ? '#1e6a3a' : '#1a5c33';
+      ctx.fillRect(toX(0), toY(y + 5), FIELD_W * S, 5 * S + 1);
+    }
+    const ez = (y0, color, word) => {
+      if (y0 + 10 < yBot || y0 > yTop) return;
+      ctx.fillStyle = color;
+      ctx.fillRect(toX(0), toY(y0 + 10), FIELD_W * S, 10 * S);
+      ctx.save();
+      ctx.fillStyle = 'rgba(241,239,228,0.85)';
+      ctx.font = `${Math.round(S * 5)}px Graduate, Georgia, serif`;
+      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.fillText(word, toX(FIELD_W / 2), toY(y0 + 5));
+      ctx.restore();
+    };
+    ez(100, '#8e2530', 'END ZONE');
+    ez(-10, '#1c2f6b', 'HOME');
+
+    ctx.strokeStyle = 'rgba(241,239,228,0.9)';
+    ctx.fillStyle = 'rgba(241,239,228,0.9)';
+    ctx.lineWidth = Math.max(2, S * 0.35);
+    ctx.strokeRect(toX(0), toY(110), FIELD_W * S, 120 * S);
+    for (let y = Math.max(0, Math.floor(yBot)); y <= Math.min(100, yTop); y++) {
+      const sy = toY(y);
+      if (y % 5 === 0) {
+        ctx.lineWidth = y === 0 || y === 100 ? Math.max(2, S * 0.4) : Math.max(1, S * 0.18);
+        ctx.beginPath(); ctx.moveTo(toX(0), sy); ctx.lineTo(toX(FIELD_W), sy); ctx.stroke();
+      } else {
+        const hw = 0.7 * S, t = Math.max(1, S * 0.12);
+        ctx.fillRect(toX(0.3), sy - t / 2, hw, t);
+        ctx.fillRect(toX(FIELD_W - 0.3) - hw, sy - t / 2, hw, t);
+        ctx.fillRect(toX(HASH_L) - hw / 2, sy - t / 2, hw, t);
+        ctx.fillRect(toX(HASH_R) - hw / 2, sy - t / 2, hw, t);
+      }
+      if (y % 10 === 0 && y > 0 && y < 100) {
+        const n = String(y <= 50 ? y : 100 - y).split('').join(' ');
+        for (const [x, rot] of [[9, -Math.PI / 2], [FIELD_W - 9, Math.PI / 2]]) {
+          ctx.save();
+          ctx.font = `${Math.round(S * 2.1)}px Graduate, Georgia, serif`;
+          ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+          ctx.translate(toX(x), sy); ctx.rotate(rot); ctx.fillText(n, 0, 0);
+          ctx.restore();
+        }
+      }
+    }
+    // goal posts on the end line
+    if (yTop > 104) {
+      const cx = toX(FIELD_W / 2), py = toY(110), hw = UPRIGHT * S;
+      ctx.strokeStyle = '#ffd23f'; ctx.lineWidth = Math.max(2, S * 0.22); ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(cx - hw, py); ctx.lineTo(cx + hw, py);
+      ctx.moveTo(cx - hw, py); ctx.lineTo(cx - hw, py - 5 * S);
+      ctx.moveTo(cx + hw, py); ctx.lineTo(cx + hw, py - 5 * S);
+      ctx.moveTo(cx, py); ctx.lineTo(cx, py - 1.2 * S);
+      ctx.stroke();
+      ctx.lineCap = 'butt';
+    }
+    // broadcast lines: line of scrimmage (blue) and line to gain (yellow)
+    if (G.mode !== 'title' && G.mode !== 'over') {
+      ctx.lineWidth = Math.max(2, S * 0.28);
+      ctx.strokeStyle = 'rgba(80,150,255,0.85)';
+      ctx.beginPath(); ctx.moveTo(toX(0), toY(G.los)); ctx.lineTo(toX(FIELD_W), toY(G.los)); ctx.stroke();
+      if (G.fd < 100) {
+        ctx.strokeStyle = 'rgba(255,214,0,0.9)';
+        ctx.beginPath(); ctx.moveTo(toX(0), toY(G.fd)); ctx.lineTo(toX(FIELD_W), toY(G.fd)); ctx.stroke();
+      }
+    }
+    // stadium light falloff
+    const g = ctx.createRadialGradient(W / 2, H * 0.55, H * 0.2, W / 2, H * 0.55, H * 0.95);
+    g.addColorStop(0, 'rgba(0,0,0,0)'); g.addColorStop(1, 'rgba(0,0,0,0.45)');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+  }
+
+  function drawPlayer(x, y, face, jersey, trim, num, carrier, alpha = 1) {
+    const sx = toX(x), sy = toY(y), r = S * 0.62;
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    ctx.fillStyle = 'rgba(0,0,0,0.35)';
+    ctx.beginPath(); ctx.ellipse(sx + r * 0.25, sy + r * 0.35, r * 1.05, r * 0.7, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.translate(sx, sy); ctx.rotate(-face + Math.PI / 2);
+    // shoulder pads
+    ctx.fillStyle = jersey;
+    ctx.beginPath(); ctx.ellipse(0, 0, r * 1.15, r * 0.75, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.lineWidth = Math.max(1, r * 0.14); ctx.strokeStyle = trim; ctx.stroke();
+    // helmet with center stripe
+    ctx.fillStyle = trim;
+    ctx.beginPath(); ctx.arc(0, -r * 0.1, r * 0.52, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = jersey;
+    ctx.fillRect(-r * 0.08, -r * 0.62, r * 0.16, r * 0.9);
+    if (carrier) {
+      ctx.fillStyle = '#7a4520';
+      ctx.beginPath(); ctx.ellipse(r * 0.95, -r * 0.2, r * 0.38, r * 0.24, -0.5, 0, Math.PI * 2); ctx.fill();
+      ctx.strokeStyle = '#f1efe4'; ctx.lineWidth = Math.max(1, r * 0.06);
+      ctx.beginPath(); ctx.moveTo(r * 0.8, -r * 0.1); ctx.lineTo(r * 1.1, -r * 0.3); ctx.stroke();
+    }
+    ctx.restore();
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    ctx.fillStyle = trim;
+    ctx.font = `700 ${Math.max(8, Math.round(r * 0.8))}px "Chivo Mono", ui-monospace, monospace`;
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText(num, sx, sy + r * 1.35);
+    ctx.restore();
+  }
+
+  function outlinedText(text, x, y, font, fill, alpha = 1) {
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    ctx.font = font;
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.lineWidth = 4; ctx.lineJoin = 'round';
+    ctx.strokeStyle = '#0c1410'; ctx.strokeText(text, x, y);
+    ctx.fillStyle = fill; ctx.fillText(text, x, y);
+    ctx.restore();
+  }
+
+  function drawBanner(text, sub, alpha = 1, y = H * 0.36) {
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    const size = Math.min(W / (text.length * 0.72), 54);
+    ctx.font = `${Math.round(size)}px Graduate, Georgia, serif`;
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.lineWidth = Math.max(4, size * 0.16); ctx.lineJoin = 'round';
+    ctx.strokeStyle = '#0c1410'; ctx.strokeText(text, W / 2, y);
+    ctx.fillStyle = '#ffb627'; ctx.fillText(text, W / 2, y);
+    if (sub) {
+      ctx.font = `600 ${Math.round(Math.max(13, size * 0.36))}px Barlow, system-ui, sans-serif`;
+      ctx.lineWidth = 4; ctx.strokeText(sub, W / 2, y + size * 0.85);
+      ctx.fillStyle = '#f1efe4'; ctx.fillText(sub, W / 2, y + size * 0.85);
+    }
+    ctx.restore();
+  }
+
+  function drawCard(lines) {
+    const w = Math.min(W - 32, 380), lh = 24;
+    const extra = lines.reduce((m, ln) => Math.max(m, ln.dy || 0), 0);
+    const h = 44 + lines.length * lh + extra;
+    const x = (W - w) / 2, y = H * 0.52 - h / 2;
+    ctx.save();
+    ctx.fillStyle = 'rgba(12,20,16,0.9)';
+    ctx.strokeStyle = '#2a372f'; ctx.lineWidth = 2;
+    ctx.beginPath();
+    if (ctx.roundRect) ctx.roundRect(x, y, w, h, 8); else ctx.rect(x, y, w, h);
+    ctx.fill(); ctx.stroke();
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    lines.forEach((ln, i) => {
+      ctx.fillStyle = ln.color || '#f1efe4';
+      ctx.font = ln.font || `500 ${W < 380 ? 13 : 15}px Barlow, system-ui, sans-serif`;
+      ctx.fillText(ln.text, W / 2, y + 30 + i * lh + (ln.dy || 0));
+    });
+    ctx.restore();
+  }
+
+  // cooldown chips and the sprint meter, bottom left
+  function drawHUD() {
+    const p = G.player;
+    if (!p || (G.mode !== 'live' && G.mode !== 'presnap')) return;
+    const x0 = 12, y0 = H - 12;
+    ctx.save();
+    ctx.font = '700 10px "Chivo Mono", ui-monospace, monospace';
+    ctx.textBaseline = 'middle';
+    const bw = 134, bh = 6;
+    ctx.fillStyle = 'rgba(12,20,16,0.8)'; ctx.fillRect(x0, y0 - bh, bw, bh);
+    ctx.fillStyle = p.stamina > 0.25 ? '#ffb627' : '#c8323c'; ctx.fillRect(x0, y0 - bh, bw * p.stamina, bh);
+    ctx.textAlign = 'left'; ctx.fillStyle = '#f1efe4';
+    ctx.fillText('SPRINT', x0, y0 - bh - 8);
+    [['juke', 'JUKE'], ['spin', 'SPIN'], ['stiff', 'STIFF']].forEach(([n, label], i) => {
+      const cx = x0 + i * 46, cy = y0 - 44, w = 42, h = 17;
+      const frac = 1 - p.cd[n] / CD[n];
+      ctx.fillStyle = 'rgba(12,20,16,0.8)'; ctx.fillRect(cx, cy, w, h);
+      ctx.fillStyle = frac >= 1 ? 'rgba(255,182,39,0.95)' : 'rgba(255,182,39,0.35)'; ctx.fillRect(cx, cy, w * frac, h);
+      ctx.fillStyle = frac >= 1 ? '#0c1410' : '#f1efe4';
+      ctx.textAlign = 'center'; ctx.fillText(label, cx + w / 2, cy + h / 2 + 0.5);
+    });
+    ctx.restore();
+  }
+
+  function drawKick() {
+    const k = G.kick;
+    if (!k) return;
+    if (k.phase === 'flight') {
+      const b = kickBall(k), lift = Math.sin(Math.PI * b.u);
+      const sx = toX(b.x), sy = toY(b.y);
+      ctx.fillStyle = 'rgba(0,0,0,0.3)';
+      ctx.beginPath(); ctx.ellipse(sx, sy, S * 0.3, S * 0.18, 0, 0, Math.PI * 2); ctx.fill();
+      const r = S * 0.34 * (1 + lift * 1.1);
+      ctx.save();
+      ctx.translate(sx, sy - lift * S * 4); ctx.rotate(k.t * 9);
+      ctx.fillStyle = '#7a4520';
+      ctx.beginPath(); ctx.ellipse(0, 0, r, r * 0.62, 0, 0, Math.PI * 2); ctx.fill();
+      ctx.strokeStyle = '#f1efe4'; ctx.lineWidth = Math.max(1, r * 0.12);
+      ctx.beginPath(); ctx.moveTo(-r * 0.4, 0); ctx.lineTo(r * 0.4, 0); ctx.stroke();
+      ctx.restore();
+      return;
+    }
+    // aiming meter
+    const w = Math.min(W - 40, 300), h = 16, x = (W - w) / 2, y = H * 0.74;
+    outlinedText(`${k.dist}-YARD ATTEMPT`, W / 2, y - 34, '20px Graduate, Georgia, serif', '#ffb627');
+    outlinedText(coarse ? 'Tap when the needle is in the green' : 'Press Space when the needle is in the green', W / 2, y - 12, '600 13px Barlow, system-ui, sans-serif', '#f1efe4');
+    ctx.fillStyle = 'rgba(12,20,16,0.9)'; ctx.fillRect(x - 3, y - 3, w + 6, h + 6);
+    ctx.fillStyle = '#8e2530'; ctx.fillRect(x, y, w, h);
+    ctx.fillStyle = '#3f9a55'; ctx.fillRect(x + w / 2 - k.zone * w / 2, y, k.zone * w, h);
+    ctx.fillStyle = '#f1efe4'; ctx.fillRect(x + w / 2 - 1, y, 2, h);
+    const nx = x + (k.needle + 1) / 2 * w;
+    ctx.fillStyle = '#ffb627'; ctx.fillRect(nx - 2, y - 6, 4, h + 12);
+  }
+
+  function draw() {
+    ctx.save();
+    if (G.shake > 0) ctx.translate(rand(-1, 1) * G.shake * 5, rand(-1, 1) * G.shake * 5);
+    drawField();
+
+    for (const q of G.parts) {
+      ctx.globalAlpha = clamp(q.life * 2.5, 0, 1);
+      ctx.fillStyle = q.c;
+      ctx.fillRect(toX(q.x) - 2, toY(q.y) - 2, 4, 4);
+    }
+    ctx.globalAlpha = 1;
+
+    if (G.player && G.mode !== 'title') {
+      for (const d of G.defs) {
+        const face = Math.hypot(d.vx, d.vy) > 0.3 ? Math.atan2(d.vy, d.vx) : -Math.PI / 2;
+        drawPlayer(d.x, d.y, face, '#f1efe4', '#c8323c', d.num, false, d.stun > 0 ? 0.6 : 1);
+        if (d.stun > 0) {
+          ctx.fillStyle = '#ffb627';
+          ctx.font = `700 ${Math.round(S * 0.9)}px "Chivo Mono", monospace`;
+          ctx.textAlign = 'center';
+          ctx.fillText('?', toX(d.x), toY(d.y) - S * 1.1);
+        }
+      }
+      for (const b of G.blockers) {
+        const face = b.engaged ? Math.atan2(b.engaged.y - b.y, b.engaged.x - b.x)
+          : Math.hypot(b.vx, b.vy) > 0.3 ? Math.atan2(b.vy, b.vx) : Math.PI / 2;
+        drawPlayer(b.x, b.y, face, '#1c2f6b', '#f1efe4', b.num, false, b.beat > 0 ? 0.65 : 1);
+        if (b.engaged) {
+          // contact mark at the point of the block
+          const d = b.engaged, mx = toX((b.x + d.x) / 2), my = toY((b.y + d.y) / 2), r = S * 0.35;
+          ctx.strokeStyle = 'rgba(255,182,39,0.9)'; ctx.lineWidth = Math.max(1.5, S * 0.1);
+          ctx.beginPath();
+          ctx.moveTo(mx - r, my - r); ctx.lineTo(mx + r, my + r);
+          ctx.moveTo(mx + r, my - r); ctx.lineTo(mx - r, my + r);
+          ctx.stroke();
+        }
+      }
+      const p = G.player;
+      if (p.juke > 0) {
+        for (let k = 1; k <= 3; k++) drawPlayer(p.x - p.vx * 0.03 * k, p.y - p.vy * 0.03 * k, p.face, '#1c2f6b', '#f1efe4', 22, false, 0.25 / k);
+      }
+      if (p.stiff > 0) {
+        const ax = Math.cos(p.face), ay = Math.sin(p.face);
+        const hx = toX(p.x + ax * 1.6), hy = toY(p.y + ay * 1.6);
+        ctx.strokeStyle = '#1c2f6b'; ctx.lineWidth = Math.max(3, S * 0.3); ctx.lineCap = 'round';
+        ctx.beginPath(); ctx.moveTo(toX(p.x + ax * 0.4), toY(p.y + ay * 0.4)); ctx.lineTo(hx, hy); ctx.stroke();
+        ctx.fillStyle = '#f1efe4';
+        ctx.beginPath(); ctx.arc(hx, hy, Math.max(2.5, S * 0.24), 0, Math.PI * 2); ctx.fill();
+        ctx.lineCap = 'butt';
+      }
+      const kicking = G.kick && G.kick.phase === 'flight';
+      if (!kicking) drawPlayer(p.x, p.y, p.face + (p.spin > 0 ? p.spinAng : 0), '#1c2f6b', '#f1efe4', 22, !G.kick);
+      else drawPlayer(p.x, p.y, Math.PI / 2, '#1c2f6b', '#f1efe4', 3, false);
+      if (p.spin > 0) {
+        ctx.strokeStyle = 'rgba(241,239,228,0.55)'; ctx.lineWidth = 2;
+        ctx.beginPath(); ctx.arc(toX(p.x), toY(p.y), S * 1.2, p.spinAng, p.spinAng + Math.PI * 1.2); ctx.stroke();
+      }
+      for (const q of G.pops) {
+        outlinedText(q.text, toX(q.x), toY(q.y) - S * 1.8 - (1.1 - q.life) * 22,
+          `${Math.max(11, Math.round(S * 0.8))}px Graduate, Georgia, serif`, '#ffb627', clamp(q.life * 2, 0, 1));
+      }
+      drawKick();
+    }
+    ctx.restore();
+
+    if (stick.active && G.mode === 'live') {
+      ctx.save();
+      ctx.strokeStyle = 'rgba(241,239,228,0.35)'; ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.arc(stick.ox, stick.oy, 55, 0, Math.PI * 2); ctx.stroke();
+      const m = Math.hypot(stick.dx, stick.dy), k = m > 55 ? 55 / m : 1;
+      ctx.fillStyle = 'rgba(241,239,228,0.35)';
+      ctx.beginPath(); ctx.arc(stick.ox + stick.dx * k, stick.oy + stick.dy * k, 20, 0, Math.PI * 2); ctx.fill();
+      ctx.restore();
+    }
+    drawHUD();
+
+    if (G.mode === 'title') {
+      drawBanner('TWO-MINUTE DRILL', null, 1, H * 0.2);
+      drawCard([
+        { text: '4th quarter. 2:00 on the clock.', font: `600 ${W < 380 ? 14 : 16}px Barlow, system-ui, sans-serif` },
+        { text: 'Follow your blockers and score as many', color: '#8fa396' },
+        { text: 'points as you can. Kick it if you have to.', color: '#8fa396' },
+        { text: coarse ? 'Drag to run · buttons for moves' : 'Juke, spin, stiff-arm and sprint past them', dy: 8 },
+        { text: `Best: ${best} pts`, color: '#8fa396', dy: 8 },
+        { text: coarse ? 'TAP TO KICK OFF' : 'PRESS ENTER TO KICK OFF', color: '#ffb627', font: '17px Graduate, Georgia, serif', dy: 18 },
+      ]);
+    } else if (G.mode === 'over') {
+      drawBanner('FINAL', G.over.reason || null, 1, H * 0.2);
+      const stats = [`${G.tds} TD`, `${G.fgs} FG`, `${Math.round(G.yards)} rushing yds`].join(' · ');
+      drawCard([
+        { text: `${G.score} POINTS`, color: '#ffb627', font: '28px Graduate, Georgia, serif', dy: 2 },
+        { text: stats, dy: 14 },
+        { text: G.over.isBest ? 'New personal best' : `Best: ${best} pts`, color: G.over.isBest ? '#ffb627' : '#8fa396', dy: 14 },
+        { text: coarse ? 'TAP TO PLAY AGAIN' : 'PRESS ENTER TO PLAY AGAIN', color: '#ffb627', font: '17px Graduate, Georgia, serif', dy: 26 },
+      ]);
+    } else if (G.msg) {
+      const m = G.msg;
+      const a = m.hold ? 1 : clamp(Math.min(m.t * 6, (m.dur - m.t) * 3), 0, 1);
+      drawBanner(m.text.toUpperCase(), m.sub, a);
+    }
+  }
+
+  // ---------- loop ----------
+  let last = performance.now();
+  function frame(now) {
+    const dt = Math.min(0.033, (now - last) / 1000);
+    last = now;
+    update(dt);
+    draw();
+    if (G.mode !== 'title') updateBoard();
+    updateUI();
+    requestAnimationFrame(frame);
+  }
+  G.camY = 35;
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
