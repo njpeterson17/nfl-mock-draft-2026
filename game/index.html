@@ -18,8 +18,11 @@
     --panel: #121a16;
     --line: #2a372f;
     --muted: #8fa396;
+    --team: #1c2f6b;
+    --team-trim: #f1efe4;
   }
   html, body { height: 100%; margin: 0; }
+  [hidden] { display: none !important; }
   body {
     background: var(--night);
     color: var(--chalk);
@@ -85,9 +88,9 @@
   }
   .mv {
     width: 58px; height: 58px; border-radius: 50%; padding: 0;
-    border: 2px solid var(--chalk);
-    background: rgba(28, 47, 107, 0.88);
-    color: var(--chalk);
+    border: 2px solid var(--team-trim);
+    background: var(--team);
+    color: var(--team-trim);
     font-family: "Graduate", Georgia, serif; font-size: 11px; line-height: 1.1; letter-spacing: 0.04em;
     touch-action: none; transition: opacity 0.15s;
   }
@@ -95,6 +98,56 @@
   .mv.cool { opacity: 0.4; }
   .mv:active { transform: scale(0.94); }
   .mv:focus-visible, .calls button:focus-visible, .mute:focus-visible { outline: 2px solid var(--led); outline-offset: 3px; }
+  .opts {
+    position: absolute; inset: 0;
+    background: rgba(8, 12, 10, 0.8);
+    display: flex; justify-content: center;
+    overflow-y: auto; padding: 12px; box-sizing: border-box;
+  }
+  .opts-card {
+    width: 100%; max-width: 400px; margin-block: auto; box-sizing: border-box;
+    background: var(--panel); border: 2px solid var(--line); border-radius: 8px;
+    padding: 14px 16px 16px;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .opts h2 { margin: 0; font-family: "Graduate", Georgia, serif; font-weight: 400; font-size: 18px; letter-spacing: 0.06em; color: var(--led); }
+  .opts fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+  .opts legend, .field > span {
+    display: block; padding: 0; margin-bottom: 7px;
+    font-family: "Graduate", Georgia, serif; font-size: 10px; letter-spacing: 0.12em; color: var(--muted);
+  }
+  .swatches { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
+  .sw {
+    aspect-ratio: 1; width: 100%; max-width: 100%; padding: 0; border-radius: 50%; cursor: pointer;
+    background: var(--j); border: 4px solid var(--t);
+    box-shadow: 0 0 0 2px var(--panel);
+  }
+  .sw[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--panel), 0 0 0 4px var(--led); }
+  .sw:disabled { opacity: 0.2; cursor: not-allowed; }
+  .sw:focus-visible { outline: 2px solid var(--chalk); outline-offset: 4px; }
+  .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .field { display: flex; flex-direction: column; min-width: 0; }
+  .field input {
+    width: 100%; min-width: 0; box-sizing: border-box;
+    font-family: "Chivo Mono", ui-monospace, monospace; font-weight: 700; font-size: 16px;
+    color: var(--led); background: var(--night);
+    border: 1px solid var(--line); border-radius: 4px; padding: 7px 9px;
+    text-transform: uppercase;
+  }
+  .field input:focus-visible { outline: 2px solid var(--led); outline-offset: 1px; }
+  .seg { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+  .seg label { position: relative; }
+  .seg input { position: absolute; inset: 0; margin: 0; opacity: 0; cursor: pointer; }
+  .seg span { display: block; padding: 8px 4px; text-align: center; font-size: 13px; font-weight: 600; color: var(--muted); }
+  .seg input:checked + span { background: var(--led); color: var(--night); }
+  .seg input:focus-visible + span { outline: 2px solid var(--chalk); outline-offset: -3px; }
+  .note { margin: 6px 0 0; font-size: 12px; color: var(--muted); }
+  .done {
+    font-family: "Graduate", Georgia, serif; font-size: 14px; letter-spacing: 0.06em;
+    color: var(--night); background: var(--led); border: 0; border-radius: 4px; padding: 10px; cursor: pointer;
+  }
+  .done:focus-visible { outline: 2px solid var(--chalk); outline-offset: 2px; }
+  .mute:disabled { opacity: 0.4; cursor: default; }
   .foot {
     display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px 14px;
     font-size: 13px; color: var(--muted);
@@ -123,7 +176,7 @@
 <body>
 <div class="app">
   <div class="board">
-    <div class="cell"><span class="lbl">HOME</span><span class="val big" id="sScore">0</span></div>
+    <div class="cell"><span class="lbl" id="sHome">HOME</span><span class="val big" id="sScore">0</span></div>
     <div class="cell"><span class="lbl">DOWN</span><span class="val" id="sDown">1</span></div>
     <div class="cell"><span class="lbl">TO GO</span><span class="val" id="sToGo">10</span></div>
     <div class="cell"><span class="lbl">BALL ON</span><span class="val" id="sBall">OWN 25</span></div>
@@ -140,6 +193,23 @@
       <button class="mv" id="bSprint" type="button">SPRINT</button>
       <button class="mv juke" id="bJuke" type="button">JUKE</button>
     </div>
+    <div class="opts" id="opts" hidden>
+      <form class="opts-card" id="optsForm" role="dialog" aria-modal="true" aria-labelledby="optsTitle">
+        <h2 id="optsTitle">Team options</h2>
+        <fieldset><legend>YOUR COLORS</legend><div class="swatches" id="swHome"></div></fieldset>
+        <fieldset><legend>DEFENSE COLORS</legend><div class="swatches" id="swAway"></div></fieldset>
+        <div class="fields">
+          <label class="field" for="optName"><span>TEAM NAME</span><input id="optName" maxlength="5" autocomplete="off" spellcheck="false"></label>
+          <label class="field" for="optNum"><span>JERSEY NUMBER</span><input id="optNum" type="number" min="0" max="99" inputmode="numeric"></label>
+        </div>
+        <fieldset>
+          <legend>DIFFICULTY</legend>
+          <div class="seg" id="optLevel"></div>
+          <p class="note" id="lvNote" hidden>Takes effect next game.</p>
+        </fieldset>
+        <button class="done" type="submit">Done</button>
+      </form>
+    </div>
   </div>
   <div class="foot">
     <span class="keys" id="hint">
@@ -149,9 +219,11 @@
       <span><kbd>E</kbd> spin</span>
       <span><kbd>F</kbd> stiff arm</span>
       <span><kbd>G</kbd> field goal</span>
+      <span><kbd>O</kbd> options</span>
     </span>
     <span class="foot-end">
       <a class="home" href="../">&larr; Mock draft</a>
+      <button class="mute" id="optBtn" type="button">Options</button>
       <button class="mute" id="mute" type="button">Sound: on</button>
     </span>
   </div>
@@ -188,8 +260,61 @@
     el('hint').textContent = 'Drag to run · tap the field to snap';
   }
 
-  let best = 0;
-  try { best = +localStorage.getItem('tmd-best') || 0; } catch (e) {}
+  const rand = (a, b) => a + Math.random() * (b - a);
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+
+  // ---------- team options ----------
+  const TEAM_COLORS = [
+    { id: 'navy', name: 'Navy and white', jersey: '#1c2f6b', trim: '#f1efe4' },
+    { id: 'white', name: 'White and red', jersey: '#f1efe4', trim: '#c8323c' },
+    { id: 'crimson', name: 'Crimson and white', jersey: '#9e1b32', trim: '#f1efe4' },
+    { id: 'forest', name: 'Green and gold', jersey: '#1f5a32', trim: '#f2c14e' },
+    { id: 'royal', name: 'Royal blue and gold', jersey: '#1d4fb8', trim: '#ffd23f' },
+    { id: 'black', name: 'Black and gold', jersey: '#17191c', trim: '#c9a227' },
+    { id: 'purple', name: 'Purple and gold', jersey: '#4b2a7b', trim: '#f2c14e' },
+    { id: 'orange', name: 'Orange and navy', jersey: '#e0662a', trim: '#16213e' },
+    { id: 'teal', name: 'Teal and white', jersey: '#0b6e75', trim: '#f1efe4' },
+    { id: 'maroon', name: 'Maroon and gold', jersey: '#5a1f2e', trim: '#d9a441' },
+    { id: 'sky', name: 'Sky blue and navy', jersey: '#6aa9d8', trim: '#0f2a4a' },
+    { id: 'silver', name: 'Silver and black', jersey: '#b9bec4', trim: '#17191c' },
+  ];
+  const LEVELS = ['Rookie', 'Pro', 'All-Pro'];
+  const settings = { home: 'navy', away: 'white', name: 'HOME', num: 22, level: 1 };
+  try { Object.assign(settings, JSON.parse(localStorage.getItem('tmd-settings') || '{}')); } catch (e) {}
+  const colorOf = id => TEAM_COLORS.find(c => c.id === id);
+  const teamName = () => settings.name.trim() || 'HOME';
+  let HOME_C = TEAM_COLORS[0], AWAY_C = TEAM_COLORS[1];
+
+  function applySettings() {
+    if (!colorOf(settings.home)) settings.home = 'navy';
+    if (!colorOf(settings.away) || settings.away === settings.home) {
+      settings.away = TEAM_COLORS.find(c => c.id !== settings.home && (c.id === 'white' || c.id === 'navy')).id;
+    }
+    settings.name = String(settings.name ?? '').toUpperCase().replace(/[^A-Z0-9 ]/g, '').slice(0, 5);
+    settings.num = clamp(Math.round(+settings.num) || 0, 0, 99);
+    settings.level = clamp(Math.round(+settings.level) || 0, 0, 2);
+    HOME_C = colorOf(settings.home); AWAY_C = colorOf(settings.away);
+    el('sHome').textContent = teamName();
+    document.documentElement.style.setProperty('--team', HOME_C.jersey);
+    document.documentElement.style.setProperty('--team-trim', HOME_C.trim);
+    try { localStorage.setItem('tmd-settings', JSON.stringify(settings)); } catch (e) {}
+  }
+
+  // best score is kept per difficulty; an older single best counts as Pro
+  let bests = [0, 0, 0];
+  try {
+    const saved = JSON.parse(localStorage.getItem('tmd-bests') || 'null');
+    if (Array.isArray(saved)) bests = [0, 1, 2].map(i => +saved[i] || 0);
+    else bests[1] = +localStorage.getItem('tmd-best') || 0;
+  } catch (e) {}
+
+  const hexRgb = h => { const n = parseInt(h.slice(1), 16); return [n >> 16 & 255, n >> 8 & 255, n & 255]; };
+  const lum = h => { const [r, g, b] = hexRgb(h); return (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255; };
+  // end zones are painted in the darker of a team's two colors
+  function endZoneColor(c) {
+    const [r, g, b] = hexRgb(lum(c.jersey) > 0.55 ? c.trim : c.jersey);
+    return `rgb(${r * 0.8 | 0},${g * 0.8 | 0},${b * 0.8 | 0})`;
+  }
 
   // ---------- canvas sizing ----------
   let W = 0, H = 0, S = 10, OX = 0, dpr = 1;
@@ -261,17 +386,15 @@
 
   // ---------- game state ----------
   const G = {
-    mode: 'title', score: 0, drive: 1, tds: 0, fgs: 0, yards: 0,
+    mode: 'title', level: 1, score: 0, drive: 1, tds: 0, fgs: 0, yards: 0,
     los: 25, down: 1, fd: 35, clock: GAME_CLOCK, stamina: 1,
     player: null, defs: [], blockers: [], parts: [], pops: [], msg: null, kick: null,
     deadTimer: 0, camY: 25, shake: 0, spotX: FIELD_W / 2, next: null, over: null,
   };
 
-  const rand = (a, b) => a + Math.random() * (b - a);
-  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
 
   function newGame() {
-    Object.assign(G, { score: 0, drive: 1, tds: 0, fgs: 0, yards: 0, clock: GAME_CLOCK, stamina: 1, over: null });
+    Object.assign(G, { level: settings.level, score: 0, drive: 1, tds: 0, fgs: 0, yards: 0, clock: GAME_CLOCK, stamina: 1, over: null });
     newDrive();
   }
   function newDrive() {
@@ -286,7 +409,7 @@
       cd: { juke: 0, spin: 0, stiff: 0 },
       stamina: Math.min(1, G.stamina + 0.35),   // a breather in the huddle
     };
-    G.defs = spawnDefense(x, G.los, G.drive - 1);
+    G.defs = spawnDefense(x, G.los, G.drive - 1 + G.level - 1);
     G.blockers = spawnBlockers(x, G.los);
     G.parts = []; G.pops = []; G.kick = null;
     G.mode = 'presnap';
@@ -373,10 +496,11 @@
     const fgOk = G.mode === 'presnap' && dist <= KICK_MAX;
     const p = G.player;
     const cool = n => (G.mode === 'live' && p && p.cd[n] > 0);
-    const key = [fgOk, dist, cool('juke'), cool('spin'), cool('stiff')].join('|');
+    const key = [G.mode === 'live' || G.mode === 'kick', fgOk, dist, cool('juke'), cool('spin'), cool('stiff')].join('|');
     if (key === lastUI) return;
     lastUI = key;
     callsEl.hidden = !fgOk;
+    optBtn.disabled = G.mode === 'live' || G.mode === 'kick';
     bFG.textContent = `Field goal${kb(' (G)')} · ${dist} yd`;
     for (const n in moveBtns) moveBtns[n].classList.toggle('cool', cool(n));
   }
@@ -439,8 +563,8 @@
 
   function gameOver(reason) {
     G.mode = 'over';
-    const isBest = G.score > best;
-    if (isBest) { best = G.score; try { localStorage.setItem('tmd-best', String(best)); } catch (e) {} }
+    const isBest = G.score > bests[G.level];
+    if (isBest) { bests[G.level] = G.score; try { localStorage.setItem('tmd-bests', JSON.stringify(bests)); } catch (e) {} }
     G.over = { isBest, reason };
     G.msg = null; G.kick = null;
     whistle();
@@ -505,6 +629,55 @@
     return { u, x: k.x0 + (k.xf - k.x0) * u, y: k.y0 + (110 - k.y0) * u };
   }
 
+  // ---------- options panel ----------
+  const optsEl = el('opts'), optsForm = el('optsForm'), optBtn = el('optBtn');
+  const swHome = el('swHome'), swAway = el('swAway'), optName = el('optName'), optNum = el('optNum'), lvNote = el('lvNote');
+  for (const [box, side] of [[swHome, 'home'], [swAway, 'away']]) {
+    for (const c of TEAM_COLORS) {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'sw'; b.title = c.name; b.dataset.id = c.id;
+      b.setAttribute('aria-label', c.name);
+      b.style.setProperty('--j', c.jersey); b.style.setProperty('--t', c.trim);
+      b.addEventListener('click', () => { settings[side] = c.id; applySettings(); syncOptions(); });
+      box.appendChild(b);
+    }
+  }
+  LEVELS.forEach((name, i) => {
+    el('optLevel').insertAdjacentHTML('beforeend', `<label for="lv${i}"><input type="radio" name="level" id="lv${i}" value="${i}"><span>${name}</span></label>`);
+  });
+  el('optLevel').addEventListener('change', e => { settings.level = +e.target.value; applySettings(); syncOptions(); });
+  optName.addEventListener('input', () => { settings.name = optName.value; applySettings(); });
+  optNum.addEventListener('input', () => { if (optNum.value !== '') { settings.num = optNum.value; applySettings(); } });
+  optNum.addEventListener('blur', () => { optNum.value = settings.num; });
+
+  function syncOptions() {
+    for (const [box, side, other] of [[swHome, 'home', 'away'], [swAway, 'away', 'home']]) {
+      for (const b of box.children) {
+        b.setAttribute('aria-pressed', String(b.dataset.id === settings[side]));
+        b.disabled = b.dataset.id === settings[other];   // the two teams can't wear the same colors
+      }
+    }
+    el('lv' + settings.level).checked = true;
+    lvNote.hidden = G.mode === 'title' || G.mode === 'over' || settings.level === G.level;
+  }
+  function openOptions() {
+    if (G.mode === 'live' || G.mode === 'kick') return;
+    keys.clear(); sprintHeld = false;
+    optName.value = settings.name; optNum.value = settings.num;
+    syncOptions();
+    optsEl.hidden = false;
+    const cur = swHome.querySelector('[aria-pressed="true"]');
+    if (cur) cur.focus();
+  }
+  function closeOptions() {
+    optsEl.hidden = true;
+    optNum.value = settings.num;
+    optBtn.focus();
+    optBtn.blur();
+  }
+  optsForm.addEventListener('submit', e => { e.preventDefault(); closeOptions(); });
+  optBtn.addEventListener('click', () => { if (optsEl.hidden) openOptions(); else closeOptions(); });
+
   // ---------- input ----------
   const keys = new Set();
   const queued = { juke: false, spin: false, stiff: false };
@@ -519,7 +692,9 @@
   }
 
   window.addEventListener('keydown', e => {
+    if (!optsEl.hidden) { if (e.key === 'Escape') closeOptions(); return; }
     const k = e.key.toLowerCase();
+    if (k === 'o' && !e.repeat) { openOptions(); return; }
     if (['arrowup', 'arrowdown', 'arrowleft', 'arrowright', ' '].includes(k)) e.preventDefault();
     if (e.repeat && [' ', 'enter', 'g', 'e', 'q', 'f'].includes(k)) return;
     if (k === 'g') { attemptFG(); return; }
@@ -593,7 +768,7 @@
   // Each blocker keeps his man if still free, otherwise picks the most dangerous
   // unclaimed defender (close to him and close to the ball), then engages on contact.
   function updateBlockers(dt, p) {
-    const diff = G.drive - 1;
+    const diff = G.drive - 1 + G.level - 1;
     const free = d => !d.blockedBy && d.immune <= 0;
     const threat = (b, d) => Math.hypot(d.x - b.x, d.y - b.y) + 0.6 * Math.hypot(d.x - p.x, d.y - p.y);
     const claimed = new Set();
@@ -666,7 +841,7 @@
     let c = 0.95 - 0.05 * Math.max(0, sp - 6);
     c += facing > 0.5 ? 0.05 : facing < -0.2 ? -0.12 : -0.05;
     if (d.kind === 'DL') c -= 0.05;
-    c += 0.02 * (G.drive - 1);
+    c += 0.02 * (G.drive - 1) + 0.05 * (G.level - 1);
     return clamp(c, 0.45, 0.97);
   }
 
@@ -862,8 +1037,8 @@
       ctx.fillText(word, toX(FIELD_W / 2), toY(y0 + 5));
       ctx.restore();
     };
-    ez(100, '#8e2530', 'END ZONE');
-    ez(-10, '#1c2f6b', 'HOME');
+    ez(100, endZoneColor(AWAY_C), 'END ZONE');
+    ez(-10, endZoneColor(HOME_C), teamName());
 
     ctx.strokeStyle = 'rgba(241,239,228,0.9)';
     ctx.fillStyle = 'rgba(241,239,228,0.9)';
@@ -945,9 +1120,11 @@
     ctx.restore();
     ctx.save();
     ctx.globalAlpha = alpha;
-    ctx.fillStyle = trim;
     ctx.font = `700 ${Math.max(8, Math.round(r * 0.8))}px "Chivo Mono", ui-monospace, monospace`;
     ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.lineWidth = 3; ctx.lineJoin = 'round'; ctx.strokeStyle = 'rgba(12,20,16,0.7)';
+    ctx.strokeText(num, sx, sy + r * 1.35);
+    ctx.fillStyle = lum(jersey) > lum(trim) ? jersey : trim;   // the lighter team color reads best on turf
     ctx.fillText(num, sx, sy + r * 1.35);
     ctx.restore();
   }
@@ -1069,7 +1246,7 @@
     if (G.player && G.mode !== 'title') {
       for (const d of G.defs) {
         const face = Math.hypot(d.vx, d.vy) > 0.3 ? Math.atan2(d.vy, d.vx) : -Math.PI / 2;
-        drawPlayer(d.x, d.y, face, '#f1efe4', '#c8323c', d.num, false, d.stun > 0 ? 0.6 : 1);
+        drawPlayer(d.x, d.y, face, AWAY_C.jersey, AWAY_C.trim, d.num, false, d.stun > 0 ? 0.6 : 1);
         if (d.stun > 0) {
           ctx.fillStyle = '#ffb627';
           ctx.font = `700 ${Math.round(S * 0.9)}px "Chivo Mono", monospace`;
@@ -1080,7 +1257,7 @@
       for (const b of G.blockers) {
         const face = b.engaged ? Math.atan2(b.engaged.y - b.y, b.engaged.x - b.x)
           : Math.hypot(b.vx, b.vy) > 0.3 ? Math.atan2(b.vy, b.vx) : Math.PI / 2;
-        drawPlayer(b.x, b.y, face, '#1c2f6b', '#f1efe4', b.num, false, b.beat > 0 ? 0.65 : 1);
+        drawPlayer(b.x, b.y, face, HOME_C.jersey, HOME_C.trim, b.num, false, b.beat > 0 ? 0.65 : 1);
         if (b.engaged) {
           // contact mark at the point of the block
           const d = b.engaged, mx = toX((b.x + d.x) / 2), my = toY((b.y + d.y) / 2), r = S * 0.35;
@@ -1093,20 +1270,20 @@
       }
       const p = G.player;
       if (p.juke > 0) {
-        for (let k = 1; k <= 3; k++) drawPlayer(p.x - p.vx * 0.03 * k, p.y - p.vy * 0.03 * k, p.face, '#1c2f6b', '#f1efe4', 22, false, 0.25 / k);
+        for (let k = 1; k <= 3; k++) drawPlayer(p.x - p.vx * 0.03 * k, p.y - p.vy * 0.03 * k, p.face, HOME_C.jersey, HOME_C.trim, settings.num, false, 0.25 / k);
       }
       if (p.stiff > 0) {
         const ax = Math.cos(p.face), ay = Math.sin(p.face);
         const hx = toX(p.x + ax * 1.6), hy = toY(p.y + ay * 1.6);
-        ctx.strokeStyle = '#1c2f6b'; ctx.lineWidth = Math.max(3, S * 0.3); ctx.lineCap = 'round';
+        ctx.strokeStyle = HOME_C.jersey; ctx.lineWidth = Math.max(3, S * 0.3); ctx.lineCap = 'round';
         ctx.beginPath(); ctx.moveTo(toX(p.x + ax * 0.4), toY(p.y + ay * 0.4)); ctx.lineTo(hx, hy); ctx.stroke();
         ctx.fillStyle = '#f1efe4';
         ctx.beginPath(); ctx.arc(hx, hy, Math.max(2.5, S * 0.24), 0, Math.PI * 2); ctx.fill();
         ctx.lineCap = 'butt';
       }
       const kicking = G.kick && G.kick.phase === 'flight';
-      if (!kicking) drawPlayer(p.x, p.y, p.face + (p.spin > 0 ? p.spinAng : 0), '#1c2f6b', '#f1efe4', 22, !G.kick);
-      else drawPlayer(p.x, p.y, Math.PI / 2, '#1c2f6b', '#f1efe4', 3, false);
+      if (!kicking) drawPlayer(p.x, p.y, p.face + (p.spin > 0 ? p.spinAng : 0), HOME_C.jersey, HOME_C.trim, settings.num, !G.kick);
+      else drawPlayer(p.x, p.y, Math.PI / 2, HOME_C.jersey, HOME_C.trim, 3, false);
       if (p.spin > 0) {
         ctx.strokeStyle = 'rgba(241,239,228,0.55)'; ctx.lineWidth = 2;
         ctx.beginPath(); ctx.arc(toX(p.x), toY(p.y), S * 1.2, p.spinAng, p.spinAng + Math.PI * 1.2); ctx.stroke();
@@ -1137,16 +1314,16 @@
         { text: 'Follow your blockers and score as many', color: '#8fa396' },
         { text: 'points as you can. Kick it if you have to.', color: '#8fa396' },
         { text: coarse ? 'Drag to run · buttons for moves' : 'Juke, spin, stiff-arm and sprint past them', dy: 8 },
-        { text: `Best: ${best} pts`, color: '#8fa396', dy: 8 },
+        { text: `${LEVELS[settings.level]} best: ${bests[settings.level]} pts · ${coarse ? 'Options below' : 'O for options'}`, color: '#8fa396', dy: 8 },
         { text: coarse ? 'TAP TO KICK OFF' : 'PRESS ENTER TO KICK OFF', color: '#ffb627', font: '17px Graduate, Georgia, serif', dy: 18 },
       ]);
     } else if (G.mode === 'over') {
       drawBanner('FINAL', G.over.reason || null, 1, H * 0.2);
-      const stats = [`${G.tds} TD`, `${G.fgs} FG`, `${Math.round(G.yards)} rushing yds`].join(' · ');
+      const stats = [LEVELS[G.level], `${G.tds} TD`, `${G.fgs} FG`, `${Math.round(G.yards)} rush yds`].join(' · ');
       drawCard([
         { text: `${G.score} POINTS`, color: '#ffb627', font: '28px Graduate, Georgia, serif', dy: 2 },
         { text: stats, dy: 14 },
-        { text: G.over.isBest ? 'New personal best' : `Best: ${best} pts`, color: G.over.isBest ? '#ffb627' : '#8fa396', dy: 14 },
+        { text: G.over.isBest ? `New ${LEVELS[G.level]} best` : `${LEVELS[G.level]} best: ${bests[G.level]} pts`, color: G.over.isBest ? '#ffb627' : '#8fa396', dy: 14 },
         { text: coarse ? 'TAP TO PLAY AGAIN' : 'PRESS ENTER TO PLAY AGAIN', color: '#ffb627', font: '17px Graduate, Georgia, serif', dy: 26 },
       ]);
     } else if (G.msg) {
@@ -1167,6 +1344,7 @@
     updateUI();
     requestAnimationFrame(frame);
   }
+  applySettings();
   G.camY = 35;
   requestAnimationFrame(frame);
 })();
