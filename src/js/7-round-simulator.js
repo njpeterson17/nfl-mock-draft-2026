@@ -159,9 +159,49 @@ function generateRound3Order() {
 // ==========================================
 
 // Use real prospects from pff-data.js if available, otherwise generate
-const PLAYERS = (typeof pffBigBoardData !== 'undefined' && pffBigBoardData.length > 0) 
-    ? adaptPFFData(pffBigBoardData) 
+const PLAYERS = (typeof pffBigBoardData !== 'undefined' && pffBigBoardData.length > 0)
+    ? addFantasyProsProspects(adaptPFFData(pffBigBoardData))
     : generatePlayers();
+
+// PFF's board has 230 prospects but the draft has 257 picks, so the pool ran
+// dry at pick 231. Add the FantasyPros prospects PFF doesn't list.
+function addFantasyProsProspects(pool) {
+    if (typeof fantasyProsBigBoardData === 'undefined') return pool;
+
+    const nameKey = name => name.toLowerCase().replace(/\b(jr|sr|ii|iii|iv)\b\.?/g, '').replace(/[^a-z]/g, '');
+    const known = new Set(pool.map(p => nameKey(p.name)));
+    const positionMap = { DT: 'DL', C: 'IOL', OG: 'IOL' };
+
+    fantasyProsBigBoardData.forEach(fp => {
+        if (!fp || known.has(nameKey(fp.name))) return;
+        known.add(nameKey(fp.name));
+
+        const position = positionMap[fp.position] || fp.position;
+        // No PFF grade, so borrow the grade of PFF's prospect at the same rank
+        const grade = parseFloat(pool[Math.min(fp.rank, pool.length) - 1].grade);
+
+        pool.push({
+            id: pool.length + 1,
+            rank: fp.rank,
+            name: fp.name.replace(/\s*\(\)\s*$/, ''),
+            position: position,
+            school: fp.school,
+            height: '—',
+            weight: '—',
+            forty: generateFortyTime(position),
+            grade: grade.toFixed(1),
+            round: estimateRound(grade),
+            strengths: ['Athleticism', 'Potential', 'Work ethic'],
+            weaknesses: ['Development needed', 'Experience', 'Technique refinement'],
+            comparison: 'NFL Starter',
+            selected: false,
+            selectedBy: null,
+            selectedAt: null
+        });
+    });
+
+    return pool;
+}
 
 function adaptPFFData(pffData) {
     return pffData.map((player, idx) => {
@@ -447,6 +487,7 @@ const state = {
     trades: [],
     paused: false,
     draftComplete: false,
+    savedMockId: null,
     difficulty: 'veteran',
     enableTrades: true,
     filterPosition: 'all',
@@ -714,6 +755,11 @@ function setupEventListeners() {
     document.getElementById('viewDraftBoard').addEventListener('click', showFullDraftBoard);
     document.getElementById('shareResults').addEventListener('click', shareResults);
     document.getElementById('exportResults').addEventListener('click', exportResults);
+    document.getElementById('saveMock').addEventListener('click', handleSaveMock);
+    document.getElementById('gradeMock').addEventListener('click', () => {
+        const mockId = saveSimulatorMock();
+        window.location.href = mockId ? `draft-grades.html?mock=${encodeURIComponent(mockId)}` : 'draft-grades.html';
+    });
 }
 
 // ==========================================
@@ -1594,6 +1640,61 @@ function shareResults() {
     } else {
         navigator.clipboard.writeText(text);
         alert('Results copied to clipboard!');
+    }
+}
+
+// Shared with save-load-system.js, which Draft Grades reads through MockDraftStorage
+const SAVED_MOCKS_KEY = 'nflMockDraft_savedMocks';
+const MAX_SAVED_MOCKS = 20;
+
+// Save the full draft (every team's picks) so Draft Grades can grade it.
+// Returns the mock id, or null if storage is unavailable.
+function saveSimulatorMock() {
+    if (state.savedMockId) return state.savedMockId;
+
+    const userTeam = NFL_TEAMS.find(t => t.code === state.userTeam);
+    const mock = {
+        id: `mock_${Date.now()}_${Math.random().toString(36).slice(2, 11)}`,
+        name: `${userTeam ? `${userTeam.city} ${userTeam.name}` : 'My'} 7-Round Mock`,
+        dateSaved: new Date().toISOString(),
+        pickerName: userTeam ? `${userTeam.name} GM` : undefined,
+        source: '7-round-simulator',
+        customDraft: state.completedPicks.map(p => ({
+            pick: p.overall,
+            round: p.round,
+            team: NFL_TEAMS.find(t => t.code === p.team)?.name || p.team,
+            selectedPlayer: {
+                name: p.player.name,
+                position: p.player.position,
+                school: p.player.school
+            }
+        })),
+        trades: state.trades,
+        version: '1.0'
+    };
+
+    try {
+        const stored = localStorage.getItem(SAVED_MOCKS_KEY);
+        const savedMocks = stored ? JSON.parse(stored) : [];
+        savedMocks.unshift(mock);
+        localStorage.setItem(SAVED_MOCKS_KEY, JSON.stringify(savedMocks.slice(0, MAX_SAVED_MOCKS)));
+    } catch (error) {
+        console.error('Error saving mock:', error);
+        return null;
+    }
+
+    state.savedMockId = mock.id;
+    return mock.id;
+}
+
+function handleSaveMock() {
+    const button = document.getElementById('saveMock');
+    const label = button.querySelector('span');
+    if (saveSimulatorMock()) {
+        label.textContent = 'Saved';
+        button.disabled = true;
+    } else {
+        label.textContent = "Couldn't save";
     }
 }
 

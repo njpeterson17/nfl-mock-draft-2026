@@ -211,6 +211,8 @@
 
     <!-- Scripts -->
     <script src="../src/js/data.js"></script>
+    <script src="../src/js/pff-data.js"></script>
+    <script src="../src/js/fantasypros-data.js"></script>
     <script src="../src/js/save-load-system.js"></script>
     <script src="../src/js/consensus-mock-data.js"></script>
     <script src="../src/js/draft-grades.js"></script>
@@ -498,6 +500,12 @@
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {
             loadSavedMocksList();
+
+            // Opened from the simulator's "Grade My Mock" button
+            const mockId = new URLSearchParams(window.location.search).get('mock');
+            if (mockId && MockDraftStorage.getMock(mockId)) {
+                loadMockForGrading(mockId);
+            }
         });
     </script>
 </body>

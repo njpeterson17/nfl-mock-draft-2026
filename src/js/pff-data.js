@@ -239,8 +239,6 @@ const pffBigBoardData = [
     { rank: 228, name: "Cameron Scott", position: "WR", school: "South Carolina", height: "6'0\"", weight: 195, grade: "5.42", tier: "Round 7", strengths: "Route running, hands, possession", comparison: "Ceiling: Quez Watkins, Floor: Practice squad" },
     { rank: 229, name: "Devin Price", position: "WR", school: "Florida State", height: "6'3\"", weight: 210, grade: "5.42", tier: "Round 7", strengths: "Size, developmental, red zone potential", comparison: "Ceiling: Auden Tate, Floor: Practice squad" },
     { rank: 230, name: "Xavier Robinson", position: "WR", school: "Georgia", height: "6'0\"", weight: 195, grade: "5.40", tier: "Round 7", strengths: "Route running, quickness, development", comparison: "Ceiling: Trevor Davis, Floor: Practice squad" }
-,
-,
 ];
 
 // ==========================================

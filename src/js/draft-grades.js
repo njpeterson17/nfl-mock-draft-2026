@@ -145,13 +145,58 @@ function getPositionalMultiplier(position) {
     return positionalValueMultipliers[normalizedPos] || 1.0;
 }
 
+// Match names across boards ("C.J. Allen" / "CJ Allen", "Will Lee III", "Bud Clark ()")
+function normalizeProspectName(name) {
+    return String(name)
+        .toLowerCase()
+        .replace(/\b(jr|sr|ii|iii|iv)\b\.?/g, '')
+        .replace(/[^a-z]/g, '');
+}
+
+// EDP (expected draft position) = median rank across the ESPN, PFF and
+// FantasyPros big boards that list the player. Built on first use so it
+// works regardless of script load order.
+let edpData = null;
+
+function buildEdpData() {
+    const boards = [
+        typeof bigBoardData !== 'undefined' ? bigBoardData : [],
+        typeof pffBigBoardData !== 'undefined' ? pffBigBoardData : [],
+        typeof fantasyProsBigBoardData !== 'undefined' ? fantasyProsBigBoardData : []
+    ];
+
+    const ranks = {};
+    boards.forEach(board => {
+        board.forEach(player => {
+            if (!player || !player.name || !player.rank) return;
+            const key = normalizeProspectName(player.name);
+            (ranks[key] = ranks[key] || []).push(player.rank);
+        });
+    });
+
+    const data = {};
+    for (const [key, list] of Object.entries(ranks)) {
+        const sorted = list.sort((a, b) => a - b);
+        const mid = Math.floor(sorted.length / 2);
+        const median = sorted.length % 2 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
+        data[key] = { edp: median, boards: sorted.length };
+    }
+    return data;
+}
+
+function getEdp(playerName) {
+    if (!edpData || Object.keys(edpData).length === 0) edpData = buildEdpData();
+    return edpData[normalizeProspectName(playerName)] || null;
+}
+
 // Calculate value score based on EDP vs Actual Pick (40% of grade)
 function calculateValueScore(playerName, actualPick) {
-    if (typeof edpData === 'undefined' || !edpData || !edpData[playerName]) {
+    const edpEntry = getEdp(playerName);
+    if (!edpEntry) {
         return { score: 75, classification: 'fair', details: 'No EDP data' };
     }
-    
-    const edp = edpData[playerName].edp;
+
+    const edp = edpEntry.edp;
     const diff = edp - actualPick; // Positive = value pick, Negative = reach
     
     let score;
@@ -341,8 +386,9 @@ function calculateTeamGrade(teamName, picks) {
     let totalWeight = 0;
     
     pickGrades.forEach(pick => {
-        // Earlier picks have more weight
-        const weight = 100 - pick.pickNumber;
+        // Earlier picks have more weight; floor at 1 so Day 3 picks in a
+        // 7-round mock don't get zero or negative weight
+        const weight = Math.max(1, 100 - pick.pickNumber);
         totalWeightedScore += pick.weightedScore * weight;
         totalWeight += weight;
     });
@@ -621,6 +667,10 @@ function renderTeamDraftsSection() {
 
 // Call init when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
+    // pages/draft-grades.html grades saved mocks itself; this init grades the
+    // homepage's pick cards and would wipe that page's lists
+    if (document.body.classList.contains('draft-grades-page')) return;
+
     // Wait for other scripts to load
     setTimeout(initDraftGrades, 500);
 });
