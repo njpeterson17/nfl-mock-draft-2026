@@ -29,128 +29,84 @@ const DAY_CONFIG = {
 
 // NFL Teams with their 2026 draft order and needs
 const NFL_TEAMS = [
-    { code: 'LV', name: 'Raiders', city: 'Las Vegas', record: '3-14', helmet: '#000000', accent: '#A5ACAF', needs: ['QB', 'IOL', 'WR', 'LB', 'CB'], picks: [1, 28] },
-    { code: 'NYJ', name: 'Jets', city: 'New York', record: '3-14', helmet: '#125740', accent: 'white', needs: ['QB', 'EDGE', 'OT', 'CB', 'S'], picks: [2, 7] },
-    { code: 'ARI', name: 'Cardinals', city: 'Arizona', record: '3-14', helmet: '#97233F', accent: '#000000', needs: ['OT', 'S', 'IOL', 'WR', 'EDGE'], picks: [3, 21] },
-    { code: 'TEN', name: 'Titans', city: 'Tennessee', record: '3-14', helmet: '#0C2340', accent: '#4C8FB6', needs: ['CB', 'EDGE', 'WR', 'TE', 'IOL'], picks: [4] },
-    { code: 'NYG', name: 'Giants', city: 'New York', record: '4-13', helmet: '#001E62', accent: '#A5ACAF', needs: ['CB', 'OT', 'WR', 'IOL', 'LB'], picks: [5] },
-    { code: 'CLE', name: 'Browns', city: 'Cleveland', record: '5-12', helmet: '#311D00', accent: '#FF3C00', needs: ['OT', 'WR', 'QB', 'IOL', 'TE'], picks: [6, 24] },
-    { code: 'WAS', name: 'Commanders', city: 'Washington', record: '5-12', helmet: '#773141', accent: '#FFB612', needs: ['EDGE', 'CB', 'S', 'WR', 'TE'], picks: [7] },
-    { code: 'NO', name: 'Saints', city: 'New Orleans', record: '6-11', helmet: '#101820', accent: '#D3BC8D', needs: ['WR', 'IOL', 'EDGE', 'LB', 'S'], picks: [8] },
-    { code: 'KC', name: 'Chiefs', city: 'Kansas City', record: '6-11', helmet: '#E31837', accent: '#FFB81C', needs: ['WR', 'DL', 'RB', 'TE', 'IOL'], picks: [9, 20] },
-    { code: 'CIN', name: 'Bengals', city: 'Cincinnati', record: '6-11', helmet: '#FB4F14', accent: 'black', needs: ['EDGE', 'S', 'DL', 'LB', 'CB'], picks: [10] },
-    { code: 'MIA', name: 'Dolphins', city: 'Miami', record: '7-10', helmet: '#008E97', accent: '#FC4C02', needs: ['CB', 'EDGE', 'QB', 'IOL', 'TE'], picks: [11] },
-    { code: 'DAL', name: 'Cowboys', city: 'Dallas', record: '7-9-1', helmet: '#003594', accent: '#869397', needs: ['CB', 'S', 'EDGE', 'LB', 'WR'], picks: [12] },
-    { code: 'LAR', name: 'Rams', city: 'Los Angeles', record: '8-9', helmet: '#003594', accent: '#FFD100', needs: ['CB', 'OT', 'WR', 'QB', 'LB'], picks: [13] },
-    { code: 'BAL', name: 'Ravens', city: 'Baltimore', record: '8-9', helmet: '#241773', accent: '#9E7C0C', needs: ['EDGE', 'DL', 'IOL', 'CB', 'TE'], picks: [14] },
-    { code: 'TB', name: 'Buccaneers', city: 'Tampa Bay', record: '8-9', helmet: '#D50A0A', accent: '#FF7900', needs: ['RB', 'CB', 'EDGE', 'IOL', 'WR'], picks: [15] },
-    { code: 'IND', name: 'Colts', city: 'Indianapolis', record: '8-9', helmet: '#003594', accent: '#FFB81C', needs: ['EDGE', 'QB', 'IOL', 'LB', 'DL'], picks: [16] },
-    { code: 'SF', name: '49ers', city: 'San Francisco', record: '10-7', helmet: '#AA0000', accent: '#B3995D', needs: ['EDGE', 'WR', 'CB', 'S', 'DL'], picks: [17] },
-    { code: 'MIN', name: 'Vikings', city: 'Minnesota', record: '9-8', helmet: '#4F2683', accent: '#FFC62F', needs: ['CB', 'S', 'IOL', 'RB', 'TE'], picks: [18] },
-    { code: 'CAR', name: 'Panthers', city: 'Carolina', record: '8-9', helmet: '#0085CA', accent: '#101820', needs: ['LB', 'EDGE', 'TE', 'IOL', 'OT'], picks: [19] },
-    { code: 'PIT', name: 'Steelers', city: 'Pittsburgh', record: '10-7', helmet: '#FFB612', accent: '#101820', needs: ['QB', 'WR', 'CB', 'IOL', 'EDGE'], picks: [22] },
-    { code: 'LAC', name: 'Chargers', city: 'Los Angeles', record: '11-6', helmet: '#0076B6', accent: '#FFB81C', needs: ['EDGE', 'WR', 'IOL', 'OT', 'RB'], picks: [25] },
-    { code: 'PHI', name: 'Eagles', city: 'Philadelphia', record: '11-6', helmet: '#004C54', accent: '#A5ACAF', needs: ['TE', 'EDGE', 'WR', 'S', 'CB'], picks: [23] },
-    { code: 'CHI', name: 'Bears', city: 'Chicago', record: '8-9', helmet: '#0B162A', accent: '#C83803', needs: ['DL', 'EDGE', 'S', 'OT', 'LB'], picks: [26] },
-    { code: 'BUF', name: 'Bills', city: 'Buffalo', record: '12-5', helmet: '#00338D', accent: '#C60C30', needs: ['WR', 'CB', 'EDGE', 'LB', 'S'], picks: [27] },
-    { code: 'HOU', name: 'Texans', city: 'Houston', record: '12-5', helmet: '#03202F', accent: '#A71930', needs: ['IOL', 'RB', 'S', 'DL', 'WR'], picks: [28] },
-    { code: 'DEN', name: 'Broncos', city: 'Denver', record: '14-3', helmet: '#FB4F14', accent: '#002244', needs: ['WR', 'LB', 'IOL', 'RB', 'TE'], picks: [30] },
-    { code: 'NE', name: 'Patriots', city: 'New England', record: '10-7', helmet: '#002244', accent: '#C60C30', needs: ['OT', 'EDGE', 'WR', 'IOL', 'TE'], picks: [31] },
-    { code: 'DET', name: 'Lions', city: 'Detroit', record: '15-2', helmet: '#0076B6', accent: '#B0B7BC', needs: ['IOL', 'OT', 'EDGE', 'S', 'CB'], picks: [32] },
-    { code: 'GB', name: 'Packers', city: 'Green Bay', record: '9-8', helmet: '#203731', accent: '#FFB612', needs: ['DL', 'CB', 'IOL', 'LB', 'EDGE'], picks: [] },
-    { code: 'ATL', name: 'Falcons', city: 'Atlanta', record: '9-8', helmet: '#000000', accent: '#A71930', needs: ['EDGE', 'CB', 'TE', 'DL', 'S'], picks: [] },
-    { code: 'SEA', name: 'Seahawks', city: 'Seattle', record: '12-5', helmet: '#002244', accent: '#69BE28', needs: ['IOL', 'CB', 'EDGE', 'RB', 'WR'], picks: [] },
-    { code: 'JAX', name: 'Jaguars', city: 'Jacksonville', record: '10-7', helmet: '#006778', accent: '#D7A22A', needs: ['EDGE', 'CB', 'S', 'IOL', 'RB'], picks: [] }
+    { code: 'LV', name: 'Raiders', city: 'Las Vegas', record: '3-14', helmet: '#000000', accent: '#A5ACAF', needs: ['QB', 'IOL', 'WR', 'LB', 'CB'] },
+    { code: 'NYJ', name: 'Jets', city: 'New York', record: '3-14', helmet: '#125740', accent: 'white', needs: ['QB', 'EDGE', 'OT', 'CB', 'S'] },
+    { code: 'ARI', name: 'Cardinals', city: 'Arizona', record: '3-14', helmet: '#97233F', accent: '#000000', needs: ['OT', 'S', 'IOL', 'WR', 'EDGE'] },
+    { code: 'TEN', name: 'Titans', city: 'Tennessee', record: '3-14', helmet: '#0C2340', accent: '#4C8FB6', needs: ['CB', 'EDGE', 'WR', 'TE', 'IOL'] },
+    { code: 'NYG', name: 'Giants', city: 'New York', record: '4-13', helmet: '#001E62', accent: '#A5ACAF', needs: ['CB', 'OT', 'WR', 'IOL', 'LB'] },
+    { code: 'CLE', name: 'Browns', city: 'Cleveland', record: '5-12', helmet: '#311D00', accent: '#FF3C00', needs: ['OT', 'WR', 'QB', 'IOL', 'TE'] },
+    { code: 'WAS', name: 'Commanders', city: 'Washington', record: '5-12', helmet: '#773141', accent: '#FFB612', needs: ['EDGE', 'CB', 'S', 'WR', 'TE'] },
+    { code: 'NO', name: 'Saints', city: 'New Orleans', record: '6-11', helmet: '#101820', accent: '#D3BC8D', needs: ['WR', 'IOL', 'EDGE', 'LB', 'S'] },
+    { code: 'KC', name: 'Chiefs', city: 'Kansas City', record: '6-11', helmet: '#E31837', accent: '#FFB81C', needs: ['WR', 'DL', 'RB', 'TE', 'IOL'] },
+    { code: 'CIN', name: 'Bengals', city: 'Cincinnati', record: '6-11', helmet: '#FB4F14', accent: 'black', needs: ['EDGE', 'S', 'DL', 'LB', 'CB'] },
+    { code: 'MIA', name: 'Dolphins', city: 'Miami', record: '7-10', helmet: '#008E97', accent: '#FC4C02', needs: ['CB', 'EDGE', 'QB', 'IOL', 'TE'] },
+    { code: 'DAL', name: 'Cowboys', city: 'Dallas', record: '7-9-1', helmet: '#003594', accent: '#869397', needs: ['CB', 'S', 'EDGE', 'LB', 'WR'] },
+    { code: 'LAR', name: 'Rams', city: 'Los Angeles', record: '8-9', helmet: '#003594', accent: '#FFD100', needs: ['CB', 'OT', 'WR', 'QB', 'LB'] },
+    { code: 'BAL', name: 'Ravens', city: 'Baltimore', record: '8-9', helmet: '#241773', accent: '#9E7C0C', needs: ['EDGE', 'DL', 'IOL', 'CB', 'TE'] },
+    { code: 'TB', name: 'Buccaneers', city: 'Tampa Bay', record: '8-9', helmet: '#D50A0A', accent: '#FF7900', needs: ['RB', 'CB', 'EDGE', 'IOL', 'WR'] },
+    { code: 'IND', name: 'Colts', city: 'Indianapolis', record: '8-9', helmet: '#003594', accent: '#FFB81C', needs: ['EDGE', 'QB', 'IOL', 'LB', 'DL'] },
+    { code: 'SF', name: '49ers', city: 'San Francisco', record: '10-7', helmet: '#AA0000', accent: '#B3995D', needs: ['EDGE', 'WR', 'CB', 'S', 'DL'] },
+    { code: 'MIN', name: 'Vikings', city: 'Minnesota', record: '9-8', helmet: '#4F2683', accent: '#FFC62F', needs: ['CB', 'S', 'IOL', 'RB', 'TE'] },
+    { code: 'CAR', name: 'Panthers', city: 'Carolina', record: '8-9', helmet: '#0085CA', accent: '#101820', needs: ['LB', 'EDGE', 'TE', 'IOL', 'OT'] },
+    { code: 'PIT', name: 'Steelers', city: 'Pittsburgh', record: '10-7', helmet: '#FFB612', accent: '#101820', needs: ['QB', 'WR', 'CB', 'IOL', 'EDGE'] },
+    { code: 'LAC', name: 'Chargers', city: 'Los Angeles', record: '11-6', helmet: '#0076B6', accent: '#FFB81C', needs: ['EDGE', 'WR', 'IOL', 'OT', 'RB'] },
+    { code: 'PHI', name: 'Eagles', city: 'Philadelphia', record: '11-6', helmet: '#004C54', accent: '#A5ACAF', needs: ['TE', 'EDGE', 'WR', 'S', 'CB'] },
+    { code: 'CHI', name: 'Bears', city: 'Chicago', record: '8-9', helmet: '#0B162A', accent: '#C83803', needs: ['DL', 'EDGE', 'S', 'OT', 'LB'] },
+    { code: 'BUF', name: 'Bills', city: 'Buffalo', record: '12-5', helmet: '#00338D', accent: '#C60C30', needs: ['WR', 'CB', 'EDGE', 'LB', 'S'] },
+    { code: 'HOU', name: 'Texans', city: 'Houston', record: '12-5', helmet: '#03202F', accent: '#A71930', needs: ['IOL', 'RB', 'S', 'DL', 'WR'] },
+    { code: 'DEN', name: 'Broncos', city: 'Denver', record: '14-3', helmet: '#FB4F14', accent: '#002244', needs: ['WR', 'LB', 'IOL', 'RB', 'TE'] },
+    { code: 'NE', name: 'Patriots', city: 'New England', record: '10-7', helmet: '#002244', accent: '#C60C30', needs: ['OT', 'EDGE', 'WR', 'IOL', 'TE'] },
+    { code: 'DET', name: 'Lions', city: 'Detroit', record: '15-2', helmet: '#0076B6', accent: '#B0B7BC', needs: ['IOL', 'OT', 'EDGE', 'S', 'CB'] },
+    { code: 'GB', name: 'Packers', city: 'Green Bay', record: '9-8', helmet: '#203731', accent: '#FFB612', needs: ['DL', 'CB', 'IOL', 'LB', 'EDGE'] },
+    { code: 'ATL', name: 'Falcons', city: 'Atlanta', record: '9-8', helmet: '#000000', accent: '#A71930', needs: ['EDGE', 'CB', 'TE', 'DL', 'S'] },
+    { code: 'SEA', name: 'Seahawks', city: 'Seattle', record: '12-5', helmet: '#002244', accent: '#69BE28', needs: ['IOL', 'CB', 'EDGE', 'RB', 'WR'] },
+    { code: 'JAX', name: 'Jaguars', city: 'Jacksonville', record: '10-7', helmet: '#006778', accent: '#D7A22A', needs: ['EDGE', 'CB', 'S', 'IOL', 'RB'] }
 ];
+
+// Round 1 order, matching the pick cards on the homepage mock. Traded picks
+// list the original owner; every later round uses those original owners.
+const ROUND_1_ORDER = [
+    'LV', 'NYJ', 'ARI', 'TEN', 'NYG', 'CLE', 'WAS', 'NO',
+    'KC', 'CIN', 'MIA', 'DAL', { team: 'LAR', via: 'ATL' }, 'BAL', 'TB', { team: 'NYJ', via: 'IND' },
+    'DET', 'MIN', 'CAR', { team: 'DAL', via: 'GB' }, 'PIT', 'LAC', 'PHI', { team: 'CLE', via: 'JAX' },
+    'CHI', 'BUF', 'SF', 'HOU', 'LAR', 'DEN', 'NE', 'SEA'
+];
+
+// Teams awarded compensatory picks, rotated across rounds 3-7
+const COMPENSATORY_TEAMS = ['PHI', 'LAR', 'SF', 'NO', 'MIN', 'BAL', 'IND', 'DAL', 'BUF'];
 
 // Generate 7-round draft order with compensatory picks
 function generateDraftOrder() {
     const order = [];
     let overallPick = 1;
-    
-    // Round 1: 32 picks
-    for (let i = 0; i < 32; i++) {
-        const team = NFL_TEAMS.find(t => t.picks.includes(i + 1)) || NFL_TEAMS[i % 32];
-        order.push({
-            overall: overallPick++,
-            round: 1,
-            pickInRound: i + 1,
-            team: team.code,
-            originalTeam: team.code,
-            isCompensatory: false,
-            isUser: false
-        });
-    }
-    
-    // Round 2: 32 picks
-    for (let i = 0; i < 32; i++) {
-        const teamIndex = (31 - i); // Reverse order
-        const team = NFL_TEAMS[teamIndex];
-        order.push({
-            overall: overallPick++,
-            round: 2,
-            pickInRound: i + 1,
-            team: team.code,
-            originalTeam: team.code,
-            isCompensatory: false,
-            isUser: false
-        });
-    }
-    
-    // Round 3: 41 picks (includes compensatory)
-    const round3Teams = generateRound3Order();
-    for (let i = 0; i < 41; i++) {
-        order.push({
-            overall: overallPick++,
-            round: 3,
-            pickInRound: i + 1,
-            team: round3Teams[i],
-            originalTeam: round3Teams[i],
-            isCompensatory: i >= 32,
-            isUser: false
-        });
-    }
-    
-    // Rounds 4-7 with compensatory picks
-    const roundPicks = [38, 37, 37, 40];
-    for (let round = 4; round <= 7; round++) {
-        const picksInRound = roundPicks[round - 4];
-        const baseOrder = [...NFL_TEAMS].sort((a, b) => {
-            // Snake draft order
-            if (round % 2 === 0) {
-                return a.record.localeCompare(b.record);
-            } else {
-                return b.record.localeCompare(a.record);
-            }
-        });
-        
+    let compIndex = 0;
+
+    const slots = ROUND_1_ORDER.map(slot => typeof slot === 'string' ? { team: slot, via: slot } : slot);
+
+    for (let round = 1; round <= CONFIG.ROUNDS; round++) {
+        const picksInRound = CONFIG.PICKS_PER_ROUND[round - 1];
+
         for (let i = 0; i < picksInRound; i++) {
-            const team = baseOrder[i % 32];
+            let team, originalTeam;
+            if (i < 32) {
+                originalTeam = slots[i].via;
+                team = round === 1 ? slots[i].team : originalTeam;
+            } else {
+                team = originalTeam = COMPENSATORY_TEAMS[compIndex++ % COMPENSATORY_TEAMS.length];
+            }
+
             order.push({
                 overall: overallPick++,
                 round: round,
                 pickInRound: i + 1,
-                team: team.code,
-                originalTeam: team.code,
+                team: team,
+                originalTeam: originalTeam,
                 isCompensatory: i >= 32,
                 isUser: false
             });
         }
     }
-    
-    return order;
-}
 
-function generateRound3Order() {
-    // Simplified round 3 with some compensatory picks
-    const order = [];
-    // First 32 picks follow reverse order of round 2
-    for (let i = 31; i >= 0; i--) {
-        order.push(NFL_TEAMS[i].code);
-    }
-    // 9 compensatory picks
-    const compTeams = ['PHI', 'LAR', 'SF', 'NO', 'MIN', 'BAL', 'IND', 'DAL', 'BUF'];
-    order.push(...compTeams);
     return order;
 }
 
@@ -487,6 +443,7 @@ const state = {
     trades: [],
     paused: false,
     draftComplete: false,
+    bulkSimulating: false,
     savedMockId: null,
     difficulty: 'veteran',
     enableTrades: true,
@@ -858,7 +815,7 @@ function handleAIPick(pickData) {
     const delay = speed === 'realistic' ? getRealisticDelay(pickData.round) : speed;
     
     setTimeout(() => {
-        if (state.paused) return;
+        if (state.paused || state.bulkSimulating) return;
         
         const team = NFL_TEAMS.find(t => t.code === pickData.team);
         const player = AIDraftLogic.calculateBestPick(
@@ -881,6 +838,10 @@ function getRealisticDelay(round) {
 }
 
 function makePick(pickData, player) {
+    // A pick scheduled before a bulk simulation (or a pause) can fire after
+    // its slot is already filled; recording it would duplicate the slot
+    if (pickData.overall !== state.currentPick || state.draftComplete) return;
+
     // Mark player as selected
     player.selected = true;
     player.selectedBy = pickData.team;
@@ -912,8 +873,24 @@ function makePick(pickData, player) {
     // Update round tabs
     updateRoundTabs();
     
-    // Continue
-    setTimeout(() => processNextPick(), 500);
+    // Continue (bulk simulations drive their own loop)
+    if (!state.bulkSimulating) {
+        setTimeout(() => processNextPick(), 500);
+    }
+}
+
+// The simulate buttons run their own fast pick loop; the normal
+// processNextPick loop stands down until they hand control back
+function startBulkSimulation() {
+    state.bulkSimulating = true;
+    state.isSimulating = true;
+    stopTimer();
+}
+
+function endBulkSimulation() {
+    state.bulkSimulating = false;
+    state.isSimulating = false;
+    processNextPick();
 }
 
 function selectPlayer(playerId) {
@@ -991,10 +968,14 @@ function selectNeedFill() {
 // ==========================================
 
 function simulateToNextUserPick() {
-    state.isSimulating = true;
+    if (state.bulkSimulating || state.draftComplete) return;
+    startBulkSimulation();
     
     function simNext() {
-        if (state.paused) return;
+        if (state.paused) {
+            state.bulkSimulating = false;
+            return;
+        }
         
         const pickData = state.draftOrder.find(p => p.overall === state.currentPick);
         if (!pickData) {
@@ -1003,7 +984,7 @@ function simulateToNextUserPick() {
         }
         
         if (pickData.isUser) {
-            state.isSimulating = false;
+            endBulkSimulation();
             return;
         }
         
@@ -1024,21 +1005,19 @@ function simulateToNextUserPick() {
 
 function simulateCurrentRound() {
     const currentRound = state.draftOrder.find(p => p.overall === state.currentPick)?.round;
-    if (!currentRound) return;
+    if (!currentRound || state.bulkSimulating || state.draftComplete) return;
     
-    state.isSimulating = true;
+    startBulkSimulation();
     
     function simNext() {
-        if (state.paused) return;
-        
-        const pickData = state.draftOrder.find(p => p.overall === state.currentPick);
-        if (!pickData || pickData.round !== currentRound) {
-            state.isSimulating = false;
+        if (state.paused) {
+            state.bulkSimulating = false;
             return;
         }
         
-        if (pickData.isUser) {
-            state.isSimulating = false;
+        const pickData = state.draftOrder.find(p => p.overall === state.currentPick);
+        if (!pickData || pickData.round !== currentRound || pickData.isUser) {
+            endBulkSimulation();
             return;
         }
         
@@ -1056,10 +1035,14 @@ function simulateCurrentRound() {
 }
 
 function simulateRemainingDraft() {
-    state.isSimulating = true;
+    if (state.bulkSimulating || state.draftComplete) return;
+    startBulkSimulation();
     
     function simNext() {
-        if (state.paused) return;
+        if (state.paused) {
+            state.bulkSimulating = false;
+            return;
+        }
         
         const pickData = state.draftOrder.find(p => p.overall === state.currentPick);
         if (!pickData) {
@@ -1095,6 +1078,7 @@ function simulateRemainingDraft() {
 // ==========================================
 
 function startTimer() {
+    stopTimer();
     state.timerRemaining = CONFIG.TIMER_DEFAULT;
     updateTimerDisplay();
     
@@ -1181,6 +1165,13 @@ function togglePause() {
     state.paused = !state.paused;
     elements.pauseMenu.classList.toggle('hidden', !state.paused);
     elements.pauseBtn.innerHTML = state.paused ? '<i class="fas fa-play"></i>' : '<i class="fas fa-pause"></i>';
+
+    // AI picks stop while paused, so restart them on resume (the user's
+    // pick timer just skips ticks while paused)
+    const current = state.draftOrder.find(p => p.overall === state.currentPick);
+    if (!state.paused && !state.draftComplete && !state.bulkSimulating && current && !current.isUser) {
+        processNextPick();
+    }
 }
 
 // ==========================================
@@ -1546,6 +1537,7 @@ function calculateDraftGrade() {
 // ==========================================
 
 function completeDraft() {
+    if (state.draftComplete) return;
     state.draftComplete = true;
     
     // Show Mr. Irrelevant if applicable
