@@ -41,35 +41,35 @@ const NFL_TEAMS = [
     { code: 'CIN', name: 'Bengals', city: 'Cincinnati', record: '6-11', helmet: '#FB4F14', accent: 'black', needs: ['EDGE', 'S', 'DL', 'LB', 'CB'] },
     { code: 'MIA', name: 'Dolphins', city: 'Miami', record: '7-10', helmet: '#008E97', accent: '#FC4C02', needs: ['CB', 'EDGE', 'QB', 'IOL', 'TE'] },
     { code: 'DAL', name: 'Cowboys', city: 'Dallas', record: '7-9-1', helmet: '#003594', accent: '#869397', needs: ['CB', 'S', 'EDGE', 'LB', 'WR'] },
-    { code: 'LAR', name: 'Rams', city: 'Los Angeles', record: '8-9', helmet: '#003594', accent: '#FFD100', needs: ['CB', 'OT', 'WR', 'QB', 'LB'] },
+    { code: 'LAR', name: 'Rams', city: 'Los Angeles', record: '12-5', helmet: '#003594', accent: '#FFD100', needs: ['CB', 'OT', 'WR', 'QB', 'LB'] },
     { code: 'BAL', name: 'Ravens', city: 'Baltimore', record: '8-9', helmet: '#241773', accent: '#9E7C0C', needs: ['EDGE', 'DL', 'IOL', 'CB', 'TE'] },
     { code: 'TB', name: 'Buccaneers', city: 'Tampa Bay', record: '8-9', helmet: '#D50A0A', accent: '#FF7900', needs: ['RB', 'CB', 'EDGE', 'IOL', 'WR'] },
     { code: 'IND', name: 'Colts', city: 'Indianapolis', record: '8-9', helmet: '#003594', accent: '#FFB81C', needs: ['EDGE', 'QB', 'IOL', 'LB', 'DL'] },
-    { code: 'SF', name: '49ers', city: 'San Francisco', record: '10-7', helmet: '#AA0000', accent: '#B3995D', needs: ['EDGE', 'WR', 'CB', 'S', 'DL'] },
+    { code: 'SF', name: '49ers', city: 'San Francisco', record: '12-5', helmet: '#AA0000', accent: '#B3995D', needs: ['EDGE', 'WR', 'CB', 'S', 'DL'] },
     { code: 'MIN', name: 'Vikings', city: 'Minnesota', record: '9-8', helmet: '#4F2683', accent: '#FFC62F', needs: ['CB', 'S', 'IOL', 'RB', 'TE'] },
     { code: 'CAR', name: 'Panthers', city: 'Carolina', record: '8-9', helmet: '#0085CA', accent: '#101820', needs: ['LB', 'EDGE', 'TE', 'IOL', 'OT'] },
     { code: 'PIT', name: 'Steelers', city: 'Pittsburgh', record: '10-7', helmet: '#FFB612', accent: '#101820', needs: ['QB', 'WR', 'CB', 'IOL', 'EDGE'] },
     { code: 'LAC', name: 'Chargers', city: 'Los Angeles', record: '11-6', helmet: '#0076B6', accent: '#FFB81C', needs: ['EDGE', 'WR', 'IOL', 'OT', 'RB'] },
     { code: 'PHI', name: 'Eagles', city: 'Philadelphia', record: '11-6', helmet: '#004C54', accent: '#A5ACAF', needs: ['TE', 'EDGE', 'WR', 'S', 'CB'] },
-    { code: 'CHI', name: 'Bears', city: 'Chicago', record: '8-9', helmet: '#0B162A', accent: '#C83803', needs: ['DL', 'EDGE', 'S', 'OT', 'LB'] },
+    { code: 'CHI', name: 'Bears', city: 'Chicago', record: '11-6', helmet: '#0B162A', accent: '#C83803', needs: ['DL', 'EDGE', 'S', 'OT', 'LB'] },
     { code: 'BUF', name: 'Bills', city: 'Buffalo', record: '12-5', helmet: '#00338D', accent: '#C60C30', needs: ['WR', 'CB', 'EDGE', 'LB', 'S'] },
     { code: 'HOU', name: 'Texans', city: 'Houston', record: '12-5', helmet: '#03202F', accent: '#A71930', needs: ['IOL', 'RB', 'S', 'DL', 'WR'] },
     { code: 'DEN', name: 'Broncos', city: 'Denver', record: '14-3', helmet: '#FB4F14', accent: '#002244', needs: ['WR', 'LB', 'IOL', 'RB', 'TE'] },
-    { code: 'NE', name: 'Patriots', city: 'New England', record: '10-7', helmet: '#002244', accent: '#C60C30', needs: ['OT', 'EDGE', 'WR', 'IOL', 'TE'] },
-    { code: 'DET', name: 'Lions', city: 'Detroit', record: '15-2', helmet: '#0076B6', accent: '#B0B7BC', needs: ['IOL', 'OT', 'EDGE', 'S', 'CB'] },
-    { code: 'GB', name: 'Packers', city: 'Green Bay', record: '9-8', helmet: '#203731', accent: '#FFB612', needs: ['DL', 'CB', 'IOL', 'LB', 'EDGE'] },
-    { code: 'ATL', name: 'Falcons', city: 'Atlanta', record: '9-8', helmet: '#000000', accent: '#A71930', needs: ['EDGE', 'CB', 'TE', 'DL', 'S'] },
-    { code: 'SEA', name: 'Seahawks', city: 'Seattle', record: '12-5', helmet: '#002244', accent: '#69BE28', needs: ['IOL', 'CB', 'EDGE', 'RB', 'WR'] },
-    { code: 'JAX', name: 'Jaguars', city: 'Jacksonville', record: '10-7', helmet: '#006778', accent: '#D7A22A', needs: ['EDGE', 'CB', 'S', 'IOL', 'RB'] }
+    { code: 'NE', name: 'Patriots', city: 'New England', record: '14-3', helmet: '#002244', accent: '#C60C30', needs: ['OT', 'EDGE', 'WR', 'IOL', 'TE'] },
+    { code: 'DET', name: 'Lions', city: 'Detroit', record: '9-8', helmet: '#0076B6', accent: '#B0B7BC', needs: ['IOL', 'OT', 'EDGE', 'S', 'CB'] },
+    { code: 'GB', name: 'Packers', city: 'Green Bay', record: '9-7-1', helmet: '#203731', accent: '#FFB612', needs: ['DL', 'CB', 'IOL', 'LB', 'EDGE'] },
+    { code: 'ATL', name: 'Falcons', city: 'Atlanta', record: '8-9', helmet: '#000000', accent: '#A71930', needs: ['EDGE', 'CB', 'TE', 'DL', 'S'] },
+    { code: 'SEA', name: 'Seahawks', city: 'Seattle', record: '14-3', helmet: '#002244', accent: '#69BE28', needs: ['IOL', 'CB', 'EDGE', 'RB', 'WR'] },
+    { code: 'JAX', name: 'Jaguars', city: 'Jacksonville', record: '13-4', helmet: '#006778', accent: '#D7A22A', needs: ['EDGE', 'CB', 'S', 'IOL', 'RB'] }
 ];
 
-// Round 1 order, matching the pick cards on the homepage mock. Traded picks
-// list the original owner; every later round uses those original owners.
+// 2026 Round 1 order (ESPN pre-draft order, matching the homepage mock). Traded
+// picks list the original owner; every later round uses those original owners.
 const ROUND_1_ORDER = [
     'LV', 'NYJ', 'ARI', 'TEN', 'NYG', 'CLE', 'WAS', 'NO',
     'KC', 'CIN', 'MIA', 'DAL', { team: 'LAR', via: 'ATL' }, 'BAL', 'TB', { team: 'NYJ', via: 'IND' },
     'DET', 'MIN', 'CAR', { team: 'DAL', via: 'GB' }, 'PIT', 'LAC', 'PHI', { team: 'CLE', via: 'JAX' },
-    'CHI', 'BUF', 'SF', 'HOU', 'LAR', 'DEN', 'NE', 'SEA'
+    'CHI', 'BUF', 'SF', 'HOU', { team: 'KC', via: 'LAR' }, 'DEN', 'NE', 'SEA'
 ];
 
 // Teams awarded compensatory picks, rotated across rounds 3-7
