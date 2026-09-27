@@ -4,16 +4,16 @@
 
 /* CSS Variables */
 :root {
-  --primary: #00d4ff;
+  --ld-primary: #00d4ff;
   --primary-dark: #00a8cc;
-  --secondary: #ff6b35;
-  --success: #2ecc71;
-  --warning: #f1c40f;
-  --danger: #e74c3c;
+  --ld-secondary: #ff6b35;
+  --ld-success: #2ecc71;
+  --ld-warning: #f1c40f;
+  --ld-danger: #e74c3c;
   --dark: #0a0a0f;
   --darker: #050508;
-  --card-bg: rgba(20, 20, 30, 0.8);
-  --border: rgba(255, 255, 255, 0.1);
+  --ld-card-bg: rgba(20, 20, 30, 0.8);
+  --ld-border: rgba(255, 255, 255, 0.1);
   --text: #ffffff;
   --text-muted: #888;
   --online: #2ecc71;
@@ -44,8 +44,8 @@
 }
 
 .modal-content {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
+  background: var(--ld-card-bg);
+  border: 1px solid var(--ld-border);
   border-radius: 16px;
   padding: 2rem;
   max-width: 500px;
@@ -108,7 +108,7 @@
   width: 100%;
   padding: 0.75rem 1rem;
   background: var(--darker);
-  border: 1px solid var(--border);
+  border: 1px solid var(--ld-border);
   border-radius: 8px;
   color: var(--text);
   font-size: 1rem;
@@ -117,14 +117,14 @@
 
 .form-group input:focus {
   outline: none;
-  border-color: var(--primary);
+  border-color: var(--ld-primary);
 }
 
 /* Buttons */
 .btn-primary {
   width: 100%;
   padding: 1rem;
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  background: linear-gradient(135deg, var(--ld-primary), var(--primary-dark));
   border: none;
   border-radius: 8px;
   color: var(--dark);
@@ -145,8 +145,8 @@
 
 .btn-secondary {
   padding: 0.75rem 1.5rem;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
+  background: var(--ld-card-bg);
+  border: 1px solid var(--ld-border);
   border-radius: 8px;
   color: var(--text);
   font-size: 0.9rem;
@@ -159,7 +159,7 @@
 
 .btn-secondary:hover {
   background: rgba(255, 255, 255, 0.1);
-  border-color: var(--primary);
+  border-color: var(--ld-primary);
 }
 
 /* App Container */
@@ -190,8 +190,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.5rem;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
+  background: var(--ld-card-bg);
+  border: 1px solid var(--ld-border);
   border-radius: 12px;
   margin-bottom: 1.5rem;
 }
@@ -206,7 +206,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  background: linear-gradient(135deg, var(--ld-primary), var(--primary-dark));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -257,8 +257,8 @@
 
 /* Create Draft Card */
 .create-draft-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
+  background: var(--ld-card-bg);
+  border: 1px solid var(--ld-border);
   border-radius: 16px;
   padding: 1.5rem;
   height: fit-content;
@@ -282,7 +282,7 @@
   flex: 1;
   padding: 0.75rem;
   background: var(--darker);
-  border: 1px solid var(--border);
+  border: 1px solid var(--ld-border);
   border-radius: 8px;
   color: var(--text-muted);
   font-size: 0.85rem;
@@ -300,8 +300,8 @@
 
 .type-btn.active {
   background: rgba(0, 212, 255, 0.2);
-  border-color: var(--primary);
-  color: var(--primary);
+  border-color: var(--ld-primary);
+  color: var(--ld-primary);
 }
 
 .settings-grid {
@@ -326,7 +326,7 @@
   flex: 1;
   padding: 0.6rem;
   background: var(--darker);
-  border: 1px solid var(--border);
+  border: 1px solid var(--ld-border);
   border-radius: 6px;
   color: var(--text);
   font-size: 0.85rem;
@@ -335,16 +335,16 @@
 }
 
 .option-btn.active {
-  background: var(--primary);
+  background: var(--ld-primary);
   color: var(--dark);
-  border-color: var(--primary);
+  border-color: var(--ld-primary);
 }
 
 .team-select {
   width: 100%;
   padding: 0.6rem;
   background: var(--darker);
-  border: 1px solid var(--border);
+  border: 1px solid var(--ld-border);
   border-radius: 6px;
   color: var(--text);
   font-size: 0.9rem;
@@ -354,7 +354,7 @@
 .btn-create-draft {
   width: 100%;
   padding: 1rem;
-  background: linear-gradient(135deg, var(--success), #27ae60);
+  background: linear-gradient(135deg, var(--ld-success), #27ae60);
   border: none;
   border-radius: 8px;
   color: white;
@@ -375,8 +375,8 @@
 
 /* Available Drafts */
 .available-drafts {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
+  background: var(--ld-card-bg);
+  border: 1px solid var(--ld-border);
   border-radius: 16px;
   padding: 1.5rem;
   min-height: 500px;
@@ -399,7 +399,7 @@
 
 .btn-refresh {
   background: var(--darker);
-  border: 1px solid var(--border);
+  border: 1px solid var(--ld-border);
   border-radius: 6px;
   color: var(--text-muted);
   width: 36px;
@@ -409,8 +409,8 @@
 }
 
 .btn-refresh:hover {
-  color: var(--primary);
-  border-color: var(--primary);
+  color: var(--ld-primary);
+  border-color: var(--ld-primary);
 }
 
 .drafts-list {
@@ -421,7 +421,7 @@
 
 .draft-room-card {
   background: var(--darker);
-  border: 1px solid var(--border);
+  border: 1px solid var(--ld-border);
   border-radius: 12px;
   padding: 1rem;
   display: flex;
@@ -431,7 +431,7 @@
 }
 
 .draft-room-card:hover {
-  border-color: var(--primary);
+  border-color: var(--ld-primary);
   transform: translateX(5px);
 }
 
@@ -456,11 +456,11 @@
 }
 
 .draft-room-info .status-badge.active {
-  background: var(--warning);
+  background: var(--ld-warning);
 }
 
 .draft-room-info .status-badge.full {
-  background: var(--danger);
+  background: var(--ld-danger);
 }
 
 .draft-room-meta {
@@ -490,7 +490,7 @@
 }
 
 .btn-join {
-  background: var(--primary);
+  background: var(--ld-primary);
   color: var(--dark);
 }
 
@@ -500,12 +500,12 @@
 
 .btn-spectate {
   background: var(--darker);
-  border: 1px solid var(--border);
+  border: 1px solid var(--ld-border);
   color: var(--text);
 }
 
 .btn-spectate:hover {
-  border-color: var(--primary);
+  border-color: var(--ld-primary);
 }
 
 .empty-state {
@@ -531,8 +531,8 @@
 
 /* Recent Drafts */
 .recent-drafts-section {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
+  background: var(--ld-card-bg);
+  border: 1px solid var(--ld-border);
   border-radius: 16px;
   padding: 1.5rem;
 }
@@ -556,7 +556,7 @@
 .recent-draft-item {
   flex-shrink: 0;
   background: var(--darker);
-  border: 1px solid var(--border);
+  border: 1px solid var(--ld-border);
   border-radius: 8px;
   padding: 0.75rem 1rem;
   min-width: 200px;
@@ -565,7 +565,7 @@
 }
 
 .recent-draft-item:hover {
-  border-color: var(--primary);
+  border-color: var(--ld-primary);
 }
 
 .recent-draft-item .draft-name {
@@ -580,8 +580,8 @@
 
 /* DRAFT ROOM STYLES */
 .draft-header {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
+  background: var(--ld-card-bg);
+  border: 1px solid var(--ld-border);
   border-radius: 12px;
   padding: 1rem 1.5rem;
   display: flex;
@@ -598,7 +598,7 @@
 
 .btn-back {
   background: var(--darker);
-  border: 1px solid var(--border);
+  border: 1px solid var(--ld-border);
   border-radius: 8px;
   color: var(--text);
   width: 40px;
@@ -608,8 +608,8 @@
 }
 
 .btn-back:hover {
-  border-color: var(--primary);
-  color: var(--primary);
+  border-color: var(--ld-primary);
+  color: var(--ld-primary);
 }
 
 .draft-title h2 {
@@ -643,7 +643,7 @@
 .on-the-clock .team-name {
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--primary);
+  color: var(--ld-primary);
 }
 
 .on-the-clock .username {
@@ -654,7 +654,7 @@
 
 .timer {
   background: var(--darker);
-  border: 2px solid var(--border);
+  border: 2px solid var(--ld-border);
   border-radius: 12px;
   padding: 0.75rem 1.5rem;
   min-width: 100px;
@@ -662,12 +662,12 @@
 }
 
 .timer.warning {
-  border-color: var(--warning);
+  border-color: var(--ld-warning);
   animation: timerPulse 1s infinite;
 }
 
 .timer.danger {
-  border-color: var(--danger);
+  border-color: var(--ld-danger);
   animation: timerPulse 0.5s infinite;
 }
 
@@ -689,7 +689,7 @@
 
 .btn-icon {
   background: var(--darker);
-  border: 1px solid var(--border);
+  border: 1px solid var(--ld-border);
   border-radius: 8px;
   color: var(--text);
   width: 40px;
@@ -699,8 +699,8 @@
 }
 
 .btn-icon:hover {
-  border-color: var(--primary);
-  color: var(--primary);
+  border-color: var(--ld-primary);
+  color: var(--ld-primary);
 }
 
 /* Draft Layout */
@@ -728,8 +728,8 @@
 
 /* Draft Board */
 .draft-board-section {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
+  background: var(--ld-card-bg);
+  border: 1px solid var(--ld-border);
   border-radius: 12px;
   display: flex;
   flex-direction: column;
@@ -738,7 +738,7 @@
 
 .section-title {
   padding: 1rem;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--ld-border);
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -747,12 +747,12 @@
 
 .section-title i {
   margin-right: 0.5rem;
-  color: var(--primary);
+  color: var(--ld-primary);
 }
 
 .pick-indicator {
   font-size: 0.85rem;
-  color: var(--primary);
+  color: var(--ld-primary);
   font-weight: 500;
 }
 
@@ -778,7 +778,7 @@
 
 .draft-pick.current {
   background: rgba(0, 212, 255, 0.15);
-  border: 1px solid var(--primary);
+  border: 1px solid var(--ld-primary);
 }
 
 .draft-pick.completed {
@@ -830,13 +830,13 @@
 
 .draft-pick .pick-status {
   font-size: 0.75rem;
-  color: var(--primary);
+  color: var(--ld-primary);
 }
 
 /* Chat Section */
 .chat-section {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
+  background: var(--ld-card-bg);
+  border: 1px solid var(--ld-border);
   border-radius: 12px;
   display: flex;
   flex-direction: column;
@@ -885,7 +885,7 @@
   border-radius: 20px;
   padding: 0.5rem 1rem;
   font-size: 0.85rem;
-  color: var(--primary);
+  color: var(--ld-primary);
 }
 
 .chat-message.mention {
@@ -898,7 +898,7 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  background: linear-gradient(135deg, var(--ld-primary), var(--primary-dark));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -933,13 +933,13 @@
 }
 
 .chat-message .message-text .mention {
-  color: var(--secondary);
+  color: var(--ld-secondary);
   font-weight: 500;
 }
 
 .chat-input-area {
   padding: 1rem;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--ld-border);
   display: flex;
   gap: 0.5rem;
 }
@@ -949,7 +949,7 @@
   display: flex;
   align-items: center;
   background: var(--darker);
-  border: 1px solid var(--border);
+  border: 1px solid var(--ld-border);
   border-radius: 8px;
   padding: 0 0.75rem;
 }
@@ -977,11 +977,11 @@
 }
 
 .btn-emoji:hover {
-  color: var(--primary);
+  color: var(--ld-primary);
 }
 
 .btn-send {
-  background: var(--primary);
+  background: var(--ld-primary);
   border: none;
   border-radius: 8px;
   color: var(--dark);
@@ -1002,8 +1002,8 @@
 }
 
 .queue-section {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
+  background: var(--ld-card-bg);
+  border: 1px solid var(--ld-border);
   border-radius: 12px;
   padding: 1rem;
 }
@@ -1052,7 +1052,7 @@
 
 .queue-item .position {
   font-size: 0.75rem;
-  color: var(--primary);
+  color: var(--ld-primary);
 }
 
 .queue-item .remove {
@@ -1064,12 +1064,12 @@
 }
 
 .queue-item .remove:hover {
-  color: var(--danger);
+  color: var(--ld-danger);
 }
 
 .available-players-section {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
+  background: var(--ld-card-bg);
+  border: 1px solid var(--ld-border);
   border-radius: 12px;
   flex: 1;
   display: flex;
@@ -1079,7 +1079,7 @@
 
 .players-filter {
   padding: 1rem;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--ld-border);
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -1089,7 +1089,7 @@
   display: flex;
   align-items: center;
   background: var(--darker);
-  border: 1px solid var(--border);
+  border: 1px solid var(--ld-border);
   border-radius: 8px;
   padding: 0 0.75rem;
 }
@@ -1115,7 +1115,7 @@
 .players-filter select {
   padding: 0.6rem;
   background: var(--darker);
-  border: 1px solid var(--border);
+  border: 1px solid var(--ld-border);
   border-radius: 8px;
   color: var(--text);
   font-size: 0.9rem;
@@ -1187,7 +1187,7 @@
 
 .btn-draft-player, .btn-queue-player {
   background: var(--darker);
-  border: 1px solid var(--border);
+  border: 1px solid var(--ld-border);
   border-radius: 4px;
   color: var(--text);
   padding: 0.3rem 0.6rem;
@@ -1197,9 +1197,9 @@
 }
 
 .btn-draft-player {
-  background: var(--primary);
+  background: var(--ld-primary);
   color: var(--dark);
-  border-color: var(--primary);
+  border-color: var(--ld-primary);
 }
 
 .btn-draft-player:hover {
@@ -1207,8 +1207,8 @@
 }
 
 .btn-queue-player:hover {
-  border-color: var(--primary);
-  color: var(--primary);
+  border-color: var(--ld-primary);
+  color: var(--ld-primary);
 }
 
 /* My Team Panel */
@@ -1217,8 +1217,8 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: var(--card-bg);
-  border-top: 1px solid var(--border);
+  background: var(--ld-card-bg);
+  border-top: 1px solid var(--ld-border);
   z-index: 100;
 }
 
@@ -1255,7 +1255,7 @@
 .my-pick {
   flex-shrink: 0;
   background: var(--darker);
-  border: 1px solid var(--border);
+  border: 1px solid var(--ld-border);
   border-radius: 8px;
   padding: 0.75rem;
   min-width: 150px;
@@ -1273,7 +1273,7 @@
 
 .my-pick .player-position {
   font-size: 0.8rem;
-  color: var(--primary);
+  color: var(--ld-primary);
 }
 
 /* Emoji Picker */
@@ -1281,8 +1281,8 @@
   position: fixed;
   bottom: 80px;
   right: 20px;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
+  background: var(--ld-card-bg);
+  border: 1px solid var(--ld-border);
   border-radius: 12px;
   padding: 0.75rem;
   z-index: 200;
@@ -1337,7 +1337,7 @@
   min-width: 120px;
   padding: 0.75rem;
   background: var(--darker);
-  border: 1px solid var(--border);
+  border: 1px solid var(--ld-border);
   border-radius: 8px;
   color: var(--text);
   font-size: 0.85rem;
@@ -1350,12 +1350,12 @@
 }
 
 .btn-control:hover {
-  border-color: var(--primary);
+  border-color: var(--ld-primary);
   background: rgba(0, 212, 255, 0.1);
 }
 
 .btn-control.danger:hover {
-  border-color: var(--danger);
+  border-color: var(--ld-danger);
   background: rgba(231, 76, 60, 0.1);
 }
 
@@ -1370,7 +1370,7 @@
   width: 50px;
   height: 50px;
   background: var(--darker);
-  border: 1px solid var(--border);
+  border: 1px solid var(--ld-border);
   border-radius: 8px;
   color: var(--text);
   font-size: 1.2rem;
@@ -1379,8 +1379,8 @@
 }
 
 .btn-adjust:hover {
-  border-color: var(--primary);
-  color: var(--primary);
+  border-color: var(--ld-primary);
+  color: var(--ld-primary);
 }
 
 .timer-adjust span {
@@ -1402,8 +1402,8 @@
 }
 
 .toast {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
+  background: var(--ld-card-bg);
+  border: 1px solid var(--ld-border);
   border-radius: 8px;
   padding: 1rem 1.5rem;
   display: flex;
@@ -1425,19 +1425,19 @@
 }
 
 .toast.success {
-  border-left: 4px solid var(--success);
+  border-left: 4px solid var(--ld-success);
 }
 
 .toast.error {
-  border-left: 4px solid var(--danger);
+  border-left: 4px solid var(--ld-danger);
 }
 
 .toast.info {
-  border-left: 4px solid var(--primary);
+  border-left: 4px solid var(--ld-primary);
 }
 
 .toast.warning {
-  border-left: 4px solid var(--warning);
+  border-left: 4px solid var(--ld-warning);
 }
 
 /* Post-Draft View */
@@ -1449,15 +1449,15 @@
 .draft-complete-header {
   text-align: center;
   padding: 3rem;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
+  background: var(--ld-card-bg);
+  border: 1px solid var(--ld-border);
   border-radius: 16px;
   margin-bottom: 1.5rem;
 }
 
 .draft-complete-header i {
   font-size: 4rem;
-  color: var(--warning);
+  color: var(--ld-warning);
   margin-bottom: 1rem;
 }
 
@@ -1485,8 +1485,8 @@
 }
 
 .standings-card, .value-picks-card, .draft-stats-card, .draft-summary-grid > div {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
+  background: var(--ld-card-bg);
+  border: 1px solid var(--ld-border);
   border-radius: 12px;
   padding: 1.5rem;
 }
@@ -1517,7 +1517,7 @@
 .standing-item .rank {
   width: 28px;
   height: 28px;
-  background: var(--primary);
+  background: var(--ld-primary);
   color: var(--dark);
   border-radius: 50%;
   display: flex;
@@ -1542,7 +1542,7 @@
 
 .standing-item .grade {
   font-weight: 700;
-  color: var(--success);
+  color: var(--ld-success);
 }
 
 .value-pick-item {
@@ -1556,7 +1556,7 @@
 
 .value-pick-item .pick-number {
   font-weight: 700;
-  color: var(--primary);
+  color: var(--ld-primary);
 }
 
 .value-pick-item .pick-details {
@@ -1569,7 +1569,7 @@
 
 .value-pick-item .value-diff {
   font-size: 0.8rem;
-  color: var(--success);
+  color: var(--ld-success);
 }
 
 .stats-grid {
@@ -1588,7 +1588,7 @@
 .stat-box .value {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--primary);
+  color: var(--ld-primary);
 }
 
 .stat-box .label {
@@ -1661,7 +1661,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--border);
+  background: var(--ld-border);
   border-radius: 4px;
 }
 
@@ -1688,8 +1688,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: var(--card-bg);
-  border: 2px solid var(--primary);
+  background: var(--ld-card-bg);
+  border: 2px solid var(--ld-primary);
   border-radius: 16px;
   padding: 2rem;
   z-index: 1000;
@@ -1713,7 +1713,7 @@
 
 .draft-notification h3 {
   margin: 0 0 0.5rem 0;
-  color: var(--primary);
+  color: var(--ld-primary);
 }
 
 .draft-notification .team-name {
@@ -1732,7 +1732,7 @@
   top: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+  background: linear-gradient(90deg, var(--ld-primary), var(--primary-dark));
   color: var(--dark);
   text-align: center;
   padding: 0.75rem;

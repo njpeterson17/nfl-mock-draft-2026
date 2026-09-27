@@ -148,7 +148,7 @@ function getPositionalMultiplier(position) {
 // Calculate value score based on EDP vs Actual Pick (40% of grade)
 function calculateValueScore(playerName, actualPick) {
     if (typeof edpData === 'undefined' || !edpData || !edpData[playerName]) {
-        return { score: 75, details: 'No EDP data' };
+        return { score: 75, classification: 'fair', details: 'No EDP data' };
     }
     
     const edp = edpData[playerName].edp;

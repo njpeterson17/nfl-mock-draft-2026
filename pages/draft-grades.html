@@ -6,12 +6,11 @@
     <title>Draft Grades | NFL Mock Draft Central 2026</title>
     <link rel="stylesheet" href="../src/css/styles.css">
     <link rel="stylesheet" href="../src/css/draft-grades.css">
-    <link rel="stylesheet" href="../src/css/7-round-simulator.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3995009890992954" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="draft-grades-page">
     <!-- Home Button -->
     <a href="../index.html" class="home-button" style="position: fixed; top: 20px; left: 20px; z-index: 1000; display: flex; align-items: center; gap: 8px; padding: 10px 16px; background: var(--primary, #0a0a0f); border: 2px solid var(--accent, #00d4ff); border-radius: 8px; color: var(--text-primary, #fff); text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.2s; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
         <i class="fas fa-home" style="color: var(--accent, #00d4ff);"></i>
@@ -244,12 +243,12 @@
                     <div class="mock-card" onclick="loadMockForGrading('${mock.id}')" style="cursor: pointer; flex: 1; min-width: 280px; max-width: 350px;">
                         <div style="display: flex; justify-content: space-between; align-items: start;">
                             <div>
-                                <h4 style="margin: 0 0 0.5rem 0; color: var(--accent);">${mock.name}</h4>
+                                <h4 style="margin: 0 0 0.5rem 0; color: var(--accent);">${escapeHtml(mock.name)}</h4>
                                 <p style="margin: 0; color: var(--text-secondary); font-size: 0.85rem;">
                                     <i class="fas fa-calendar"></i> ${date}
                                 </p>
                                 <p style="margin: 0.25rem 0 0 0; color: var(--text-secondary); font-size: 0.85rem;">
-                                    <i class="fas fa-user"></i> ${mock.pickerName || 'Anonymous'}
+                                    <i class="fas fa-user"></i> ${escapeHtml(mock.pickerName || 'Anonymous')}
                                 </p>
                             </div>
                             <div style="text-align: right;">
@@ -289,7 +288,7 @@
             const date = new Date(mock.createdAt).toLocaleDateString();
             const pickCount = mock.picks ? mock.picks.length : 0;
             document.getElementById('currentMockInfo').innerHTML = `
-                Created by <strong>${mock.pickerName || 'Anonymous'}</strong> on ${date} • 
+                Created by <strong>${escapeHtml(mock.pickerName || 'Anonymous')}</strong> on ${date} • 
                 <strong>${pickCount}</strong> picks
             `;
             

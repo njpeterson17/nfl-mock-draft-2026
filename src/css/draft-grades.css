@@ -1018,3 +1018,345 @@
         box-shadow: none !important;
     }
 }
+
+/* ===== DRAFT GRADES PAGE (pages/draft-grades.html) ===== */
+.draft-grades-page {
+    --bg-card: var(--card-bg);
+    --border-color: var(--border);
+}
+
+.draft-grades-page .main-nav {
+    background: var(--secondary);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.draft-grades-page .main-nav .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.75rem 1.5rem 0.75rem 140px;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background: none;
+    border: none;
+    position: static;
+}
+
+.draft-grades-page .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.draft-grades-page .logo i {
+    color: var(--accent);
+}
+
+.draft-grades-page .nav-links {
+    display: flex;
+    gap: 0.25rem;
+    margin-left: auto;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.draft-grades-page .nav-links::-webkit-scrollbar {
+    display: none;
+}
+
+.draft-grades-page .nav-links a {
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.draft-grades-page .nav-links a:hover,
+.draft-grades-page .nav-links a.active {
+    color: var(--accent);
+    background: var(--card-bg);
+}
+
+.draft-grades-page .mobile-menu-btn {
+    display: none;
+}
+
+.draft-grades-page .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.draft-grades-page .grades-panel {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.draft-grades-page .grades-panel-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.draft-grades-page .grades-panel-title {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.draft-grades-page .grades-panel-title i {
+    color: var(--accent);
+}
+
+.draft-grades-page .grades-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.draft-grades-page .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.draft-grades-page .legend-box {
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+}
+
+.draft-grades-page .grading-methodology {
+    padding: 1.5rem;
+}
+
+.draft-grades-page .grading-methodology h4 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.draft-grades-page .grading-criteria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+}
+
+.draft-grades-page .criteria-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 1rem;
+    background: var(--breakdown-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.draft-grades-page .criteria-name {
+    font-weight: 600;
+}
+
+.draft-grades-page .criteria-weight {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.85rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.draft-grades-page .criteria-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.draft-grades-page .gtm-attribution {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.draft-grades-page .mock-card {
+    padding: 1.25rem;
+    background: var(--breakdown-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.draft-grades-page .mock-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.draft-grades-page .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.1rem;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.draft-grades-page .btn-primary {
+    background: var(--accent);
+    color: var(--primary);
+}
+
+.draft-grades-page .btn-primary:hover {
+    background: var(--accent-hover);
+}
+
+.draft-grades-page .btn-secondary {
+    background: transparent;
+    border-color: var(--border);
+    color: var(--text-primary);
+}
+
+.draft-grades-page .btn-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.draft-grades-page .team-grade-badge-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.draft-grades-page .team-draft-grade {
+    margin-left: auto;
+    text-align: center;
+}
+
+.draft-grades-page .team-draft-grade-label {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.25rem;
+}
+
+.draft-grades-page .pick-number-small {
+    min-width: 42px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.draft-grades-page .pick-player-position {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.draft-grades-page .pick-analysis {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.draft-grades-page .site-footer {
+    margin-top: 3rem;
+    padding: 2.5rem 1.5rem 1.5rem;
+    background: var(--secondary);
+    border-top: 1px solid var(--border);
+}
+
+.draft-grades-page .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+
+.draft-grades-page .footer-section h4 {
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 0.75rem;
+}
+
+.draft-grades-page .footer-section p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+}
+
+.draft-grades-page .footer-section a {
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+.draft-grades-page .footer-section a:hover {
+    color: var(--accent);
+}
+
+.draft-grades-page .footer-bottom {
+    max-width: 1200px;
+    margin: 2rem auto 0;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+    .draft-grades-page .main-nav .nav-container {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        padding: 0.75rem 1rem 0.75rem 130px;
+    }
+
+    .draft-grades-page .nav-links {
+        flex-basis: calc(100% + 114px);
+        margin-left: -114px;
+    }
+
+    .draft-grades-page .container {
+        padding: 1.5rem 1rem;
+    }
+
+    .draft-grades-page .team-draft-pick {
+        flex-wrap: wrap;
+    }
+}

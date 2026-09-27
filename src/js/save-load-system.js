@@ -441,6 +441,42 @@ function getSavedMocksFromStorage() {
     }
 }
 
+/**
+ * Convert a stored mock ({ customDraft, dateSaved, ... }) into the
+ * { picks, createdAt, ... } shape the Draft Grades page grades.
+ */
+function toGradableMock(mock) {
+    const picks = (mock.customDraft || [])
+        .filter(slot => slot.selectedPlayer)
+        .map(slot => ({
+            playerName: slot.selectedPlayer.name,
+            position: slot.selectedPlayer.position,
+            team: slot.team,
+            pickNumber: slot.pick,
+            round: slot.round || Math.ceil(slot.pick / 32)
+        }));
+
+    return {
+        id: mock.id,
+        name: mock.name,
+        createdAt: mock.dateSaved,
+        pickerName: mock.pickerName,
+        picks: picks
+    };
+}
+
+// Read-only access to saved mocks for pages/draft-grades.html
+const MockDraftStorage = {
+    getAllMocks() {
+        return getSavedMocksFromStorage().map(toGradableMock);
+    },
+
+    getMock(mockId) {
+        const mock = getSavedMocksFromStorage().find(m => m.id === mockId);
+        return mock ? toGradableMock(mock) : null;
+    }
+};
+
 function clearAllSavedMocks() {
     if (confirm('Are you sure you want to delete ALL saved mocks? This cannot be undone.')) {
         localStorage.removeItem(STORAGE_KEYS.SAVED_MOCKS);
@@ -459,7 +495,8 @@ function clearAllSavedMocks() {
  */
 function renderSavedMocksList() {
     const container = document.getElementById('savedMocksList');
-    if (!container) return;
+    // Draft Grades reuses this id but renders its own list
+    if (!container || document.body.classList.contains('draft-grades-page')) return;
 
     const savedMocks = getSavedMocksFromStorage();
 
