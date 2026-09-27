@@ -1378,7 +1378,7 @@ function togglePause() {
 
 function confirmExit() {
     if (confirm('Are you sure you want to exit the War Room? Your progress will be lost.')) {
-        window.location.href = 'index.html';
+        window.location.href = '../2026/';
     }
 }
 

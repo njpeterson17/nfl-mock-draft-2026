@@ -1,0 +1,7 @@
+__pycache__/
+*.tmp
+# Original publisher photos stay local; the page serves assets/headshots/thumbs/
+# and thumbs.py regenerates them. Provenance URLs are in headshots.json.
+assets/headshots/*.jpg
+assets/headshots/*.png
+assets/headshots/*.webp

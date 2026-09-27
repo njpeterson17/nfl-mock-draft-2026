@@ -1,0 +1,146 @@
+{
+  "dylan-stewart": {
+    "photo_original": "https://sportshub.cbsistatic.com/i/sports/player/headshot/28904809.png?width=160",
+    "photo_source": "https://www.cbssports.com/college-football/players/28904809/dylan-stewart/",
+    "photo_credit": "CBS Sports",
+    "photo_checked": "2026-09-14T04:41:47.749362+00:00",
+    "photo": "assets/headshots/dylan-stewart.png",
+    "width": 160,
+    "height": 160
+  },
+  "david-stone": {
+    "photo_original": "https://images.sidearmdev.com/resize?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Fsoonersports.com%2Fimages%2F2024%2F3%2F11%2F2024_-_Spring_Mid-Years_and_Transfers_Stone__David_2024_web_Kmrnb.jpg&width=1600&type=jpeg",
+    "photo_source": "https://soonersports.com/sports/football/roster/david-stone/20177",
+    "photo_credit": "Oklahoma Athletics",
+    "photo_checked": "2026-09-14T04:41:47.851840+00:00",
+    "photo": "assets/headshots/david-stone.jpg",
+    "width": 1500,
+    "height": 2000
+  },
+  "a-mauri-washington": {
+    "photo_original": "https://images.sidearmdev.com/resize?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Fuoregon.sidearmsports.com%2Fimages%2F2026%2F8%2F2%2FWashington__A_Mauri.jpg&width=1600&type=jpeg",
+    "photo_source": "https://goducks.com/sports/football/roster/A%27Mauri-Washington/18341",
+    "photo_credit": "Oregon Athletics",
+    "photo_checked": "2026-09-14T04:41:48.143619+00:00",
+    "photo": "assets/headshots/a-mauri-washington.jpg",
+    "width": 1333,
+    "height": 2000
+  },
+  "matayo-uiagalelei": {
+    "photo_original": "https://images.sidearmdev.com/resize?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Fuoregon.sidearmsports.com%2Fimages%2F2025%2F7%2F29%2FUiagalelei__Matayo.jpg&width=1600&type=jpeg",
+    "photo_source": "https://goducks.com/sports/football/roster/Matayo-Uiagalelei/18339",
+    "photo_credit": "Oregon Athletics",
+    "photo_checked": "2026-09-14T04:41:48.402133+00:00",
+    "photo": "assets/headshots/matayo-uiagalelei.jpg",
+    "width": 1333,
+    "height": 2000
+  },
+  "wyatt-young": {
+    "photo_original": "https://images.sidearmdev.com/resize?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Fokstate.com%2Fimages%2F2026%2F7%2F15%2FYoung_Wyatt.jpg&width=1600&type=jpeg",
+    "photo_source": "https://okstate.com/sports/football/roster/wyatt-young/14351",
+    "photo_credit": "Oklahoma State Athletics",
+    "photo_checked": "2026-09-14T04:41:48.656005+00:00",
+    "photo": "assets/headshots/wyatt-young.jpg",
+    "width": 1329,
+    "height": 2000
+  },
+  "damon-wilson-ii": {
+    "photo_original": "https://miamihurricanes.com/imgproxy/P4EaeUVCoxThV8DjjV7liPXP11KHdb9zkWI2pKVYvnY/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL21pYW1paHVycmljYW5lcy1jb20tcHJvZC8yMDI2LzAyLzk0YWM3NTc4LXdpbHNvbi1paV9kYW1vbl8yMDI2X3NwXzIxNDgxMi1lMTc3MDI0Mzc5MTEyMi5qcGc.jpg",
+    "photo_source": "https://miamihurricanes.com/sports/football/roster/season/2026-27/player/damon-wilson-ii/",
+    "photo_credit": "Miami Athletics",
+    "photo_checked": "2026-09-14T04:41:48.702832+00:00",
+    "photo": "assets/headshots/damon-wilson-ii.jpg",
+    "width": 718,
+    "height": 1006
+  },
+  "oj-frederique-jr": {
+    "photo_original": "https://miamihurricanes.com/imgproxy/01LquqxV-x7qh9My6zKva35kqhmCWDuJMFyS0bcfqAo/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL21pYW1paHVycmljYW5lcy1jb20tcHJvZC8yMDI2LzA4LzJiMDIyNWE2LWZyZWRlcmlxdWVqcl9val8yMDI2LnBuZw.png",
+    "photo_source": "https://miamihurricanes.com/sports/football/roster/player/oj-frederique",
+    "photo_credit": "Miami Athletics",
+    "photo_checked": "2026-09-14T04:41:48.750556+00:00",
+    "photo": "assets/headshots/oj-frederique-jr.png",
+    "width": 1980,
+    "height": 1980
+  },
+  "bryant-wesco-jr": {
+    "photo_original": "https://clemsontigers.com/imgproxy/h12kiuOAJK7OzG35cD6BjM_GgRAx53GMQlT1x-F5gZk/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2NsZW1zb250aWdlcnMtY29tLzIwMjUvMDcvV2VzY29Kci5CcnlhbnQuanBn.jpg",
+    "photo_source": "https://clemsontigers.com/sports/football/roster/player/bryant-wesco-jr",
+    "photo_credit": "Clemson Athletics",
+    "photo_checked": "2026-09-14T04:41:48.877578+00:00",
+    "photo": "assets/headshots/bryant-wesco-jr.jpg",
+    "width": 600,
+    "height": 900
+  },
+  "vicari-swain": {
+    "photo_original": "https://gamecocksonline.com/imgproxy/GPDbwSGuIW5sfWVRrdyHYcuftzRx9c0Vn_wa2E_2TE8/fit/564/832/ce/0/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2dhbWVjb2Nrc29ubGluZS1jb20vMjAyMi8xMi85ZDMzZWYzMS1zd2FpbnZpY2FyaTI0LWUxNzM5OTEzMjg0NzUwLmpwZw.png",
+    "photo_source": "https://gamecocksonline.com/sports/football/roster/player/vicari-swain/",
+    "photo_credit": "South Carolina Athletics",
+    "photo_checked": "2026-09-14T04:41:48.915207+00:00",
+    "photo": "assets/headshots/vicari-swain.png",
+    "width": 563,
+    "height": 752
+  },
+  "ryan-wingo": {
+    "photo_original": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Ftexassports_com%2Fimages%2F2026%2F6%2F17%2FWingo_RyanCropped.png&width=603&height=803&type=webp",
+    "photo_source": "https://texaslonghorns.com/sports/football/roster",
+    "photo_credit": "Texas Athletics",
+    "photo_checked": "2026-09-14T04:41:49.674286+00:00",
+    "photo": "assets/headshots/ryan-wingo.webp",
+    "width": 400,
+    "height": 550
+  },
+  "sahir-west": {
+    "photo_original": "https://images.sidearmdev.com/resize?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Fjmusports.com%2Fimages%2F2025%2F7%2F11%2FWest-Sahir-25.JPG&width=1600&type=jpeg",
+    "photo_source": "https://jmusports.com/sports/football/roster/sahir-west/22644",
+    "photo_credit": "James Madison Athletics \u00b7 2025 roster photo",
+    "photo_checked": "2026-09-14T04:41:49.791662+00:00",
+    "photo": "assets/headshots/sahir-west.jpg",
+    "width": 160,
+    "height": 160
+  },
+  "whitweeks": {
+    "photo_original": "https://lsusports.net/imgproxy/y1N1bh5WLvit0u2Srqb2c_za2YUIrju1r_Hs2P_GKts/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2xzdXNwb3J0cy1uZXQtcHJvZC8yMDI2LzA2LzA3MjZiYjI0LXdoaXRfd2Vla3NfMjAyNi5qcGc.jpg",
+    "photo_source": "https://lsusports.net/sports/fb/roster/player/whit-weeks",
+    "photo_credit": "Mitchell Scaglione / LSU Athletics",
+    "photo_checked": "2026-09-14T04:41:49.876111+00:00",
+    "photo": "assets/headshots/whitweeks.jpg",
+    "width": 1200,
+    "height": 1200
+  },
+  "taylor-wein": {
+    "photo_original": "https://images.sidearmdev.com/resize?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Fsoonersports.com%2Fimages%2F2026%2F7%2F18%2FWein__Taylor_2026_web.jpg&width=1600&type=jpeg",
+    "photo_source": "https://soonersports.com/sports/football/roster/taylor-wein/20185",
+    "photo_credit": "Oklahoma Athletics",
+    "photo_checked": "2026-09-14T04:41:49.978621+00:00",
+    "photo": "assets/headshots/taylor-wein.jpg",
+    "width": 1220,
+    "height": 1660
+  },
+  "teitumtuioti": {
+    "photo_original": "https://images.sidearmdev.com/resize?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Fuoregon.sidearmsports.com%2Fimages%2F2026%2F8%2F2%2FTuioti__Teitum.jpg&width=1600&type=jpeg",
+    "photo_source": "https://do2ufdrk7dzyk.cloudfront.net/sports/football/roster/teitum-tuioti/18338",
+    "photo_credit": "Oregon Athletics",
+    "photo_checked": "2026-09-14T04:41:50.279179+00:00",
+    "photo": "assets/headshots/teitumtuioti.jpg",
+    "width": 1333,
+    "height": 2000
+  },
+  "princewill-umanmielen": {
+    "photo_original": "https://lsusports.net/imgproxy/uuXMLpprSbTZtSQSm8UCvMoW4AJvpTg24Oya3o7-0-Q/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2xzdXNwb3J0cy1uZXQtcHJvZC8yMDI2LzA2LzE5NGUyYTNlLXByaW5jZXdpbGxfdW1hbm1pZWxlbl8yMDI2LmpwZw.jpg",
+    "photo_source": "https://lsusports.net/sports/fb/roster/season/2026/player/princewill-umanmielen",
+    "photo_credit": "Mitchell Scaglione / LSU Athletics",
+    "photo_checked": "2026-09-14T04:41:50.370634+00:00",
+    "photo": "assets/headshots/princewill-umanmielen.jpg",
+    "width": 1200,
+    "height": 1200
+  },
+  "brendan-sorsby": {
+    "photo_original": "https://gobearcats.com/imgproxy/bSmH9-CwI6BDJ0QpeuVk_x0Y1kFvdT9gfa9lEeZSCIY/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2dvYmVhcmNhdHMtY29tLXByb2QvMjAyNS8wNy8xMS9jaGVwalA1NlRLUnQ2bWdYdjNCdEk5cjVxNXJZN0FUdmMzRjM2RHZ4LmpwZw.jpg",
+    "photo_source": "https://gobearcats.com/sports/football/roster/player/brendan-sorsby",
+    "photo_credit": "Cincinnati Athletics \u00b7 2025 roster photo",
+    "photo_checked": "2026-09-14T04:41:50.537126+00:00",
+    "photo": "assets/headshots/brendan-sorsby.jpg",
+    "width": 1080,
+    "height": 1350
+  }
+}

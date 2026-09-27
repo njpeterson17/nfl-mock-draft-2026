@@ -1,8 +1,8 @@
 {
-  "name": "2026 NFL Mock Draft",
-  "short_name": "NFL Mock Draft",
-  "description": "Complete 2026 NFL Mock Draft with 3 rounds, player analysis, and team needs",
-  "start_url": "/nfl-mock-draft-2026/",
+  "name": "NockDraft",
+  "short_name": "NockDraft",
+  "description": "2027 NFL and NBA draft boards, plus the 2026 NFL mock draft archive",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#0a0a0f",
   "theme_color": "#00d4ff",

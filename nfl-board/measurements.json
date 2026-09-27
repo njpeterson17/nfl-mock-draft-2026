@@ -1,0 +1,141 @@
+{
+  "updated": 1790492639.442507,
+  "players": {
+    "dylan-stewart": {
+      "school": "South Carolina",
+      "height": "6' 5\"",
+      "weight": "250 lbs",
+      "measurement_source": "https://www.cbssports.com/college-football/players/28904809/dylan-stewart/",
+      "measurement_source_name": "CBS Sports",
+      "measurement_checked": "2026-09-27T07:03:59.439105+00:00"
+    },
+    "david-stone": {
+      "school": "Oklahoma",
+      "height": "6' 3\"",
+      "weight": "310 lbs",
+      "measurement_source": "https://www.drafttek.com/2027-NFL-Draft-Big-Board/Top-NFL-Draft-Prospects-2027-Page-1.asp",
+      "measurement_source_name": "Drafttek",
+      "measurement_checked": "2026-09-27T07:03:57.109340+00:00"
+    },
+    "a-mauri-washington": {
+      "school": "Oregon",
+      "height": "6' 3\"",
+      "weight": "330 lbs",
+      "measurement_source": "https://www.drafttek.com/2027-NFL-Draft-Big-Board/Top-NFL-Draft-Prospects-2027-Page-1.asp",
+      "measurement_source_name": "Drafttek",
+      "measurement_checked": "2026-09-27T07:03:57.108261+00:00"
+    },
+    "matayo-uiagalelei": {
+      "school": "Oregon",
+      "height": "6' 4\"",
+      "weight": "272 lbs",
+      "measurement_source": "https://www.drafttek.com/2027-NFL-Draft-Big-Board/Top-NFL-Draft-Prospects-2027-Page-1.asp",
+      "measurement_source_name": "Drafttek",
+      "measurement_checked": "2026-09-27T07:03:57.109564+00:00"
+    },
+    "damon-wilson-ii": {
+      "school": "Miami",
+      "height": "6' 4\"",
+      "weight": "250 lbs",
+      "measurement_source": "https://www.drafttek.com/2027-NFL-Draft-Big-Board/Top-NFL-Draft-Prospects-2027-Page-1.asp",
+      "measurement_source_name": "Drafttek",
+      "measurement_checked": "2026-09-27T07:03:57.113405+00:00"
+    },
+    "wyatt-young": {
+      "school": "Oklahoma State",
+      "height": "6' 0\"",
+      "weight": "195 lbs",
+      "measurement_source": "https://www.drafttek.com/2027-NFL-Draft-Big-Board/Top-NFL-Draft-Prospects-2027-Page-1.asp",
+      "measurement_source_name": "Drafttek",
+      "measurement_checked": "2026-09-27T07:03:57.112074+00:00"
+    },
+    "ryan-wingo": {
+      "school": "Texas",
+      "height": "6' 2\"",
+      "weight": "214 lbs",
+      "measurement_source": "https://www.drafttek.com/2027-NFL-Draft-Big-Board/Top-NFL-Draft-Prospects-2027-Page-1.asp",
+      "measurement_source_name": "Drafttek",
+      "measurement_checked": "2026-09-27T07:03:57.112503+00:00"
+    },
+    "oj-frederique-jr": {
+      "school": "Miami",
+      "height": "6' 0\"",
+      "weight": "185 lbs",
+      "measurement_source": "https://www.drafttek.com/2027-NFL-Draft-Big-Board/Top-NFL-Draft-Prospects-2027-Page-1.asp",
+      "measurement_source_name": "Drafttek",
+      "measurement_checked": "2026-09-27T07:03:57.114645+00:00"
+    },
+    "bryant-wesco-jr": {
+      "school": "Clemson",
+      "height": "6' 2\"",
+      "weight": "190 lbs",
+      "measurement_source": "https://www.drafttek.com/2027-NFL-Draft-Big-Board/Top-NFL-Draft-Prospects-2027-Page-1.asp",
+      "measurement_source_name": "Drafttek",
+      "measurement_checked": "2026-09-27T07:03:57.117719+00:00"
+    },
+    "vicari-swain": {
+      "school": "South Carolina",
+      "height": "6' 0\"",
+      "weight": "193 lbs",
+      "measurement_source": "https://scoutinggrade.com/2027/players/vicari-swain",
+      "measurement_source_name": "Scouting Grade",
+      "measurement_checked": "2026-09-27T07:03:57.297802+00:00"
+    },
+    "sahir-west": {
+      "school": "UCLA",
+      "height": "6' 3\"",
+      "weight": "279 lbs",
+      "measurement_source": "https://scoutinggrade.com/2027/players/sahir-west",
+      "measurement_source_name": "Scouting Grade",
+      "measurement_checked": "2026-09-27T07:03:57.294092+00:00"
+    },
+    "princewill-umanmielen": {
+      "school": "LSU",
+      "height": "6' 4\"",
+      "weight": "245 lbs",
+      "measurement_source": "https://www.drafttek.com/2027-NFL-Draft-Big-Board/Top-NFL-Draft-Prospects-2027-Page-1.asp",
+      "measurement_source_name": "Drafttek",
+      "measurement_checked": "2026-09-27T07:03:57.115377+00:00"
+    },
+    "whitweeks": {
+      "school": "LSU",
+      "height": "6' 2\"",
+      "weight": "225 lbs",
+      "measurement_source": "https://www.drafttek.com/2027-NFL-Draft-Big-Board/Top-NFL-Draft-Prospects-2027-Page-1.asp",
+      "measurement_source_name": "Drafttek",
+      "measurement_checked": "2026-09-27T07:03:57.117951+00:00"
+    },
+    "brendan-sorsby": {
+      "school": "Unaffiliated",
+      "height": "6' 3\"",
+      "weight": "235 lbs",
+      "measurement_source": "https://scoutinggrade.com/2027/players/brendan-sorsby",
+      "measurement_source_name": "Scouting Grade",
+      "measurement_checked": "2026-09-27T07:03:57.255405+00:00"
+    },
+    "taylor-wein": {
+      "school": "Oklahoma",
+      "height": "6' 4\"",
+      "weight": "276 lbs",
+      "measurement_source": "https://www.drafttek.com/2027-NFL-Draft-Big-Board/Top-NFL-Draft-Prospects-2027-Page-1.asp",
+      "measurement_source_name": "Drafttek",
+      "measurement_checked": "2026-09-15T05:13:45.875356+00:00"
+    },
+    "teitumtuioti": {
+      "school": "Oregon",
+      "height": "6' 2\"",
+      "weight": "263 lbs",
+      "measurement_source": "https://www.drafttek.com/2027-NFL-Draft-Big-Board/Top-NFL-Draft-Prospects-2027-Page-1.asp",
+      "measurement_source_name": "Drafttek",
+      "measurement_checked": "2026-09-27T07:03:57.118219+00:00"
+    },
+    "djvonnahme": {
+      "school": "Iowa",
+      "height": "6' 4\"",
+      "weight": "241 lbs",
+      "measurement_source": "https://scoutinggrade.com/2027/players/dj-vonnahme",
+      "measurement_source_name": "Scouting Grade",
+      "measurement_checked": "2026-09-27T07:03:57.391515+00:00"
+    }
+  }
+}

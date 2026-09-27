@@ -657,7 +657,7 @@ function setupEventListeners() {
     // Exit
     document.getElementById('exitBtn').addEventListener('click', () => {
         if (confirm('Are you sure you want to exit? Your draft progress will be lost.')) {
-            window.location.href = 'index.html';
+            window.location.href = '../2026/';
         }
     });
     

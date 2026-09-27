@@ -1,0 +1,2351 @@
+{
+  "version": 1,
+  "snapshots": [
+    {
+      "recorded_at": "2026-09-14T18:20:26.350663+00:00",
+      "state": {
+        "method": "consensus-v2",
+        "sources": [
+          "bucs",
+          "drafttek",
+          "sg",
+          "sporting",
+          "tankathon"
+        ],
+        "players": {
+          "jeremiah-smith": {
+            "rank": 1,
+            "source_ranks": {
+              "sg": 1,
+              "tankathon": 1,
+              "drafttek": 2,
+              "sporting": 1,
+              "bucs": 1
+            }
+          },
+          "colin-simmons": {
+            "rank": 2,
+            "source_ranks": {
+              "sg": 2,
+              "tankathon": 3,
+              "drafttek": 3,
+              "sporting": 4,
+              "bucs": 5
+            }
+          },
+          "leonard-moore": {
+            "rank": 3,
+            "source_ranks": {
+              "sg": 4,
+              "tankathon": 5,
+              "drafttek": 4,
+              "sporting": 3,
+              "bucs": 3
+            }
+          },
+          "dylan-stewart": {
+            "rank": 4,
+            "source_ranks": {
+              "sg": 5,
+              "tankathon": 6,
+              "drafttek": 5,
+              "sporting": 6,
+              "bucs": 2
+            }
+          },
+          "dante-moore": {
+            "rank": 5,
+            "source_ranks": {
+              "sg": 3,
+              "tankathon": 4,
+              "drafttek": 6,
+              "sporting": 5,
+              "bucs": 10
+            }
+          },
+          "cam-coleman": {
+            "rank": 6,
+            "source_ranks": {
+              "sg": 7,
+              "tankathon": 7,
+              "drafttek": 9,
+              "sporting": 7,
+              "bucs": 9
+            }
+          },
+          "trevor-goosby": {
+            "rank": 7,
+            "source_ranks": {
+              "sg": 9,
+              "tankathon": 8,
+              "drafttek": 11,
+              "sporting": 8,
+              "bucs": 13
+            }
+          },
+          "jordan-seaton": {
+            "rank": 8,
+            "source_ranks": {
+              "sg": 10,
+              "tankathon": 9,
+              "drafttek": 7,
+              "sporting": 9,
+              "bucs": 23
+            }
+          },
+          "kj-bolden": {
+            "rank": 9,
+            "source_ranks": {
+              "sg": 15,
+              "tankathon": 14,
+              "drafttek": 12,
+              "sporting": 13,
+              "bucs": 7
+            }
+          },
+          "david-stone": {
+            "rank": 10,
+            "source_ranks": {
+              "sg": 8,
+              "tankathon": 11,
+              "drafttek": 10,
+              "sporting": 12,
+              "bucs": 21
+            }
+          },
+          "arch-manning": {
+            "rank": 11,
+            "source_ranks": {
+              "sg": 6,
+              "tankathon": 2,
+              "drafttek": 1,
+              "sporting": 2,
+              "bucs": 54
+            }
+          },
+          "ellis-robinson-iv": {
+            "rank": 12,
+            "source_ranks": {
+              "sg": 12,
+              "tankathon": 12,
+              "drafttek": 13,
+              "sporting": 16,
+              "bucs": 12
+            }
+          },
+          "a-mauri-washington": {
+            "rank": 13,
+            "source_ranks": {
+              "sg": 13,
+              "tankathon": 18,
+              "drafttek": 14,
+              "sporting": 22,
+              "bucs": 6
+            }
+          },
+          "jamari-johnson": {
+            "rank": 14,
+            "source_ranks": {
+              "sg": 17,
+              "tankathon": 16,
+              "drafttek": 16,
+              "sporting": 33,
+              "bucs": 16
+            }
+          },
+          "cj-carr": {
+            "rank": 15,
+            "source_ranks": {
+              "sg": 23,
+              "tankathon": 10,
+              "drafttek": 24,
+              "sporting": 11,
+              "bucs": 35
+            }
+          },
+          "julian-sayin": {
+            "rank": 16,
+            "source_ranks": {
+              "sg": 27,
+              "tankathon": 17,
+              "drafttek": 8,
+              "sporting": 31,
+              "bucs": 25
+            }
+          },
+          "will-echoles": {
+            "rank": 17,
+            "source_ranks": {
+              "sg": 14,
+              "tankathon": 13,
+              "drafttek": 32,
+              "sporting": 14,
+              "bucs": 42
+            }
+          },
+          "jadan-baugh": {
+            "rank": 18,
+            "source_ranks": {
+              "sg": 20,
+              "tankathon": 24,
+              "drafttek": 31,
+              "sporting": 28,
+              "bucs": 14
+            }
+          },
+          "charlie-becker": {
+            "rank": 19,
+            "source_ranks": {
+              "sg": 11,
+              "tankathon": 15,
+              "drafttek": 28,
+              "sporting": 17,
+              "bucs": 50
+            }
+          },
+          "kelley-jones": {
+            "rank": 20,
+            "source_ranks": {
+              "sg": 22,
+              "tankathon": 31,
+              "drafttek": 27,
+              "sporting": 15,
+              "bucs": 26
+            }
+          },
+          "kewan-lacy": {
+            "rank": 21,
+            "source_ranks": {
+              "sg": 19,
+              "tankathon": 27,
+              "drafttek": 41,
+              "sporting": 18,
+              "bucs": 17
+            }
+          },
+          "trey-dez-green": {
+            "rank": 22,
+            "source_ranks": {
+              "sg": 26,
+              "tankathon": 19,
+              "drafttek": 38,
+              "sporting": 23,
+              "bucs": 19
+            }
+          },
+          "trevor-lauck": {
+            "rank": 23,
+            "source_ranks": {
+              "sg": 21,
+              "tankathon": 32,
+              "drafttek": 40,
+              "sporting": 21,
+              "bucs": 22
+            }
+          },
+          "justin-scott": {
+            "rank": 24,
+            "source_ranks": {
+              "sg": 16,
+              "tankathon": 23,
+              "drafttek": 54,
+              "sporting": 20,
+              "bucs": 24
+            }
+          },
+          "carter-smith": {
+            "rank": 25,
+            "source_ranks": {
+              "sg": 28,
+              "tankathon": 40,
+              "drafttek": 15,
+              "sporting": 19,
+              "bucs": 53
+            }
+          },
+          "ryan-williams": {
+            "rank": 26,
+            "source_ranks": {
+              "sg": 34,
+              "tankathon": 25,
+              "drafttek": 29,
+              "sporting": 30,
+              "bucs": 37
+            }
+          },
+          "ahmad-moten": {
+            "rank": 27,
+            "source_ranks": {
+              "sg": 41,
+              "tankathon": 37,
+              "drafttek": 25,
+              "sporting": 55,
+              "bucs": 4
+            }
+          },
+          "ahmad-hardy": {
+            "rank": 28,
+            "source_ranks": {
+              "sg": 36,
+              "tankathon": 20,
+              "drafttek": 53,
+              "sporting": 38,
+              "bucs": 20
+            }
+          },
+          "a-j-holmes-jr": {
+            "rank": 29,
+            "source_ranks": {
+              "sg": 52,
+              "tankathon": 58,
+              "drafttek": 17,
+              "sporting": 43,
+              "bucs": 8
+            }
+          },
+          "drew-mestemaker": {
+            "rank": 30,
+            "source_ranks": {
+              "sg": 37,
+              "tankathon": 43,
+              "drafttek": 26,
+              "sporting": 35,
+              "bucs": 39
+            }
+          },
+          "sammy-brown": {
+            "rank": 31,
+            "source_ranks": {
+              "sg": 30,
+              "tankathon": 33,
+              "drafttek": 48,
+              "sporting": 39,
+              "bucs": 33
+            }
+          },
+          "darian-mensah": {
+            "rank": 32,
+            "source_ranks": {
+              "sg": 42,
+              "tankathon": 22,
+              "drafttek": 21,
+              "sporting": 65,
+              "bucs": 38
+            }
+          },
+          "tae-johnson": {
+            "rank": 33,
+            "source_ranks": {
+              "sg": 18,
+              "tankathon": 21,
+              "drafttek": 18,
+              "sporting": 10
+            }
+          },
+          "nick-marsh": {
+            "rank": 34,
+            "source_ranks": {
+              "sg": 38,
+              "tankathon": 28,
+              "drafttek": 36,
+              "sporting": 25,
+              "bucs": 67
+            }
+          },
+          "zabien-brown": {
+            "rank": 35,
+            "source_ranks": {
+              "sg": 50,
+              "tankathon": 39,
+              "drafttek": 20,
+              "sporting": 74,
+              "bucs": 11
+            }
+          },
+          "kade-pieper": {
+            "rank": 36,
+            "source_ranks": {
+              "sg": 25,
+              "tankathon": 30,
+              "drafttek": 64,
+              "sporting": 24,
+              "bucs": 56
+            }
+          },
+          "cayden-green": {
+            "rank": 37,
+            "source_ranks": {
+              "sg": 39,
+              "tankathon": 35,
+              "drafttek": 19,
+              "sporting": 29,
+              "bucs": 89
+            }
+          },
+          "greg-johnson": {
+            "rank": 38,
+            "source_ranks": {
+              "sg": 32,
+              "tankathon": 34,
+              "drafttek": 47,
+              "sporting": 27,
+              "bucs": 72
+            }
+          },
+          "austin-siereveld": {
+            "rank": 39,
+            "source_ranks": {
+              "sg": 47,
+              "tankathon": 48,
+              "drafttek": 44,
+              "sporting": 58,
+              "bucs": 28
+            }
+          },
+          "matayo-uiagalelei": {
+            "rank": 40,
+            "source_ranks": {
+              "sg": 31,
+              "tankathon": 38,
+              "drafttek": 22,
+              "sporting": 26,
+              "bucs": 113
+            }
+          },
+          "trinidad-chambliss": {
+            "rank": 41,
+            "source_ranks": {
+              "sg": 44,
+              "tankathon": 56,
+              "drafttek": 59,
+              "sporting": 50,
+              "bucs": 30
+            }
+          },
+          "lanorris-sellers": {
+            "rank": 42,
+            "source_ranks": {
+              "sg": 29,
+              "tankathon": 52,
+              "drafttek": 66,
+              "sporting": 44,
+              "bucs": 68
+            }
+          },
+          "jacarrius-peak": {
+            "rank": 43,
+            "source_ranks": {
+              "sg": 65,
+              "tankathon": 63,
+              "drafttek": 33,
+              "sporting": 81,
+              "bucs": 18
+            }
+          },
+          "yhonzae-pierre": {
+            "rank": 44,
+            "source_ranks": {
+              "sg": 24,
+              "tankathon": 29,
+              "drafttek": 51,
+              "sporting": 34
+            }
+          },
+          "damon-wilson-ii": {
+            "rank": 45,
+            "source_ranks": {
+              "sg": 61,
+              "tankathon": 60,
+              "drafttek": 23,
+              "sporting": 63,
+              "bucs": 62
+            }
+          },
+          "will-heldt": {
+            "rank": 46,
+            "source_ranks": {
+              "sg": 40,
+              "tankathon": 44,
+              "drafttek": 30,
+              "sporting": 42
+            }
+          },
+          "clev-lubin": {
+            "rank": 47,
+            "source_ranks": {
+              "sg": 64,
+              "tankathon": 62,
+              "drafttek": 61,
+              "sporting": 83,
+              "bucs": 15
+            }
+          },
+          "koi-perich": {
+            "rank": 48,
+            "source_ranks": {
+              "sg": 74,
+              "tankathon": 68,
+              "drafttek": 49,
+              "sporting": 62,
+              "bucs": 32
+            }
+          },
+          "john-henry-daley": {
+            "rank": 49,
+            "source_ranks": {
+              "sg": 68,
+              "tankathon": 89,
+              "drafttek": 62,
+              "sporting": 41,
+              "bucs": 31
+            }
+          },
+          "ashton-hampton": {
+            "rank": 50,
+            "source_ranks": {
+              "sg": 33,
+              "tankathon": 26,
+              "drafttek": 70,
+              "sporting": 36
+            }
+          },
+          "quincy-rhodes-jr": {
+            "rank": 51,
+            "source_ranks": {
+              "sg": 54,
+              "tankathon": 47,
+              "drafttek": 52,
+              "sporting": 84,
+              "bucs": 58
+            }
+          },
+          "rasheem-biles": {
+            "rank": 52,
+            "source_ranks": {
+              "sg": 78,
+              "tankathon": 71,
+              "drafttek": 35,
+              "sporting": 71,
+              "bucs": 40
+            }
+          },
+          "kyngstonn-viliamu-asa": {
+            "rank": 53,
+            "source_ranks": {
+              "sg": 35,
+              "tankathon": 36,
+              "drafttek": 58,
+              "sporting": 40
+            }
+          },
+          "chris-peal": {
+            "rank": 54,
+            "source_ranks": {
+              "sg": 76,
+              "tankathon": 69,
+              "drafttek": 37,
+              "sporting": 48,
+              "bucs": 76
+            }
+          },
+          "chris-cole": {
+            "rank": 55,
+            "source_ranks": {
+              "sg": 49,
+              "tankathon": 45,
+              "drafttek": 42,
+              "sporting": 57
+            }
+          },
+          "mario-craver": {
+            "rank": 56,
+            "source_ranks": {
+              "sg": 43,
+              "tankathon": 41,
+              "drafttek": 46,
+              "sporting": 75
+            }
+          },
+          "kenyatta-jackson-jr": {
+            "rank": 57,
+            "source_ranks": {
+              "sg": 63,
+              "tankathon": 49,
+              "drafttek": 67,
+              "sporting": 80,
+              "bucs": 75
+            }
+          },
+          "kj-duff": {
+            "rank": 58,
+            "source_ranks": {
+              "sg": 48,
+              "tankathon": 42,
+              "drafttek": 74,
+              "sporting": 45
+            }
+          },
+          "jamari-sharpe": {
+            "rank": 59,
+            "source_ranks": {
+              "sg": 77,
+              "tankathon": 83,
+              "drafttek": 65,
+              "sporting": 68,
+              "bucs": 47
+            }
+          },
+          "wyatt-young": {
+            "rank": 60,
+            "source_ranks": {
+              "sg": 93,
+              "tankathon": 80,
+              "drafttek": 89,
+              "sporting": 49,
+              "bucs": 29
+            }
+          },
+          "bray-hubbard": {
+            "rank": 61,
+            "source_ranks": {
+              "sg": 87,
+              "tankathon": 72,
+              "drafttek": 83,
+              "sporting": 59,
+              "bucs": 46
+            }
+          },
+          "terrance-carter": {
+            "rank": 62,
+            "source_ranks": {
+              "sg": 82,
+              "tankathon": 81,
+              "drafttek": 60,
+              "sporting": 67,
+              "bucs": 59
+            }
+          },
+          "zach-lutmer": {
+            "rank": 63,
+            "source_ranks": {
+              "sg": 58,
+              "tankathon": 53,
+              "drafttek": 85,
+              "sporting": 32
+            }
+          },
+          "isaac-brown": {
+            "rank": 64,
+            "source_ranks": {
+              "sg": 99,
+              "tankathon": 94,
+              "drafttek": 57,
+              "sporting": 78,
+              "bucs": 34
+            }
+          },
+          "ty-benefield": {
+            "rank": 65,
+            "source_ranks": {
+              "sg": 81,
+              "tankathon": 102,
+              "drafttek": 63,
+              "sporting": 85,
+              "bucs": 36
+            }
+          },
+          "brice-pollock": {
+            "rank": 66,
+            "source_ranks": {
+              "sg": 57,
+              "tankathon": 59,
+              "drafttek": 73,
+              "bucs": 52
+            }
+          },
+          "nate-frazier": {
+            "rank": 67,
+            "source_ranks": {
+              "sg": 96,
+              "tankathon": 73,
+              "drafttek": 77,
+              "sporting": 73,
+              "bucs": 49
+            }
+          },
+          "omarion-miller": {
+            "rank": 68,
+            "source_ranks": {
+              "sg": 53,
+              "tankathon": 51,
+              "drafttek": 39,
+              "sporting": 100,
+              "bucs": 131
+            }
+          },
+          "jayden-maiava": {
+            "rank": 69,
+            "source_ranks": {
+              "sg": 69,
+              "tankathon": 50,
+              "drafttek": 119,
+              "sporting": 82,
+              "bucs": 51
+            }
+          },
+          "ryan-wingo": {
+            "rank": 70,
+            "source_ranks": {
+              "sg": 79,
+              "tankathon": 76,
+              "drafttek": 34,
+              "sporting": 70,
+              "bucs": 116
+            }
+          },
+          "oj-frederique-jr": {
+            "rank": 71,
+            "source_ranks": {
+              "sg": 66,
+              "tankathon": 55,
+              "drafttek": 43,
+              "sporting": 89
+            }
+          },
+          "bryant-wesco-jr": {
+            "rank": 72,
+            "source_ranks": {
+              "sg": 83,
+              "tankathon": 75,
+              "drafttek": 55,
+              "sporting": 79,
+              "bucs": 97
+            }
+          },
+          "drake-lindsey": {
+            "rank": 73,
+            "source_ranks": {
+              "sg": 86,
+              "drafttek": 97,
+              "sporting": 47,
+              "bucs": 44
+            }
+          },
+          "melvin-siani": {
+            "rank": 74,
+            "source_ranks": {
+              "sg": 72,
+              "tankathon": 46,
+              "drafttek": 69,
+              "sporting": 90
+            }
+          },
+          "ben-roberts": {
+            "rank": 75,
+            "source_ranks": {
+              "sg": 103,
+              "tankathon": 99,
+              "drafttek": 87,
+              "sporting": 61,
+              "bucs": 55
+            }
+          },
+          "jordan-ross-lsu": {
+            "rank": 76,
+            "source_ranks": {
+              "sg": 59,
+              "tankathon": 54,
+              "drafttek": 82,
+              "sporting": 86
+            }
+          },
+          "duce-robinson": {
+            "rank": 77,
+            "source_ranks": {
+              "sg": 80,
+              "tankathon": 74,
+              "drafttek": 113,
+              "sporting": 98,
+              "bucs": 43
+            }
+          },
+          "lance-heard": {
+            "rank": 78,
+            "source_ranks": {
+              "sg": 85,
+              "tankathon": 88,
+              "sporting": 66,
+              "bucs": 48
+            }
+          },
+          "jelani-mcdonald": {
+            "rank": 79,
+            "source_ranks": {
+              "sg": 51,
+              "tankathon": 57,
+              "drafttek": 56
+            }
+          },
+          "jaylen-mcclain": {
+            "rank": 80,
+            "source_ranks": {
+              "sg": 60,
+              "tankathon": 61,
+              "drafttek": 95,
+              "sporting": 77
+            }
+          },
+          "anthonie-knapp": {
+            "rank": 81,
+            "source_ranks": {
+              "sg": 95,
+              "tankathon": 84,
+              "drafttek": 79,
+              "sporting": 53,
+              "bucs": 110
+            }
+          },
+          "vicari-swain": {
+            "rank": 82,
+            "source_ranks": {
+              "sg": 56,
+              "tankathon": 70,
+              "sporting": 52
+            }
+          },
+          "mark-fletcher-jr": {
+            "rank": 83,
+            "source_ranks": {
+              "sg": 91,
+              "tankathon": 85,
+              "drafttek": 115,
+              "sporting": 76,
+              "bucs": 69
+            }
+          },
+          "jordan-faison": {
+            "rank": 84,
+            "source_ranks": {
+              "sg": 55,
+              "tankathon": 95,
+              "sporting": 37
+            }
+          },
+          "iapani-laloulu": {
+            "rank": 85,
+            "source_ranks": {
+              "sg": 94,
+              "tankathon": 79,
+              "drafttek": 50,
+              "bucs": 96
+            }
+          },
+          "pjwilliams": {
+            "rank": 86,
+            "source_ranks": {
+              "sg": 127,
+              "tankathon": 65,
+              "drafttek": 103,
+              "bucs": 27
+            }
+          },
+          "tavion-gadson": {
+            "rank": 87,
+            "source_ranks": {
+              "sg": 71,
+              "tankathon": 67,
+              "sporting": 60
+            }
+          },
+          "niki-prongos": {
+            "rank": 88,
+            "source_ranks": {
+              "sg": 90,
+              "tankathon": 87,
+              "drafttek": 114,
+              "sporting": 88,
+              "bucs": 77
+            }
+          },
+          "drayk-bowen": {
+            "rank": 89,
+            "source_ranks": {
+              "sg": 67,
+              "drafttek": 131,
+              "sporting": 51,
+              "bucs": 102
+            }
+          },
+          "xavier-atkins": {
+            "rank": 90,
+            "source_ranks": {
+              "sg": 45,
+              "sporting": 54
+            }
+          },
+          "ian-moore": {
+            "rank": 91,
+            "source_ranks": {
+              "sg": 46,
+              "sporting": 56
+            }
+          },
+          "zeke-berry": {
+            "rank": 92,
+            "source_ranks": {
+              "sg": 62,
+              "sporting": 46
+            }
+          },
+          "evan-tengesdahl": {
+            "rank": 93,
+            "source_ranks": {
+              "sg": 102,
+              "tankathon": 93,
+              "drafttek": 86,
+              "bucs": 93
+            }
+          },
+          "lj-martin": {
+            "rank": 94,
+            "source_ranks": {
+              "sg": 104,
+              "tankathon": 86,
+              "drafttek": 128,
+              "bucs": 61
+            }
+          },
+          "bear-alexander": {
+            "rank": 95,
+            "source_ranks": {
+              "sg": 97,
+              "tankathon": 90,
+              "drafttek": 106,
+              "sporting": 92,
+              "bucs": 126
+            }
+          },
+          "boubacar-traore": {
+            "rank": 96,
+            "source_ranks": {
+              "sg": 73,
+              "tankathon": 66,
+              "drafttek": 120
+            }
+          },
+          "christian-alliegro": {
+            "rank": 97,
+            "source_ranks": {
+              "sg": 114,
+              "drafttek": 45,
+              "bucs": 101
+            }
+          },
+          "anthony-smith": {
+            "rank": 98,
+            "source_ranks": {
+              "sg": 98,
+              "tankathon": 92,
+              "drafttek": 71
+            }
+          },
+          "suntarineperkins": {
+            "rank": 99,
+            "source_ranks": {
+              "sg": 135,
+              "tankathon": 106,
+              "drafttek": 76,
+              "sporting": 87,
+              "bucs": 121
+            }
+          },
+          "sahir-west": {
+            "rank": 100,
+            "source_ranks": {
+              "sg": 75,
+              "sporting": 64
+            }
+          },
+          "junior-sherrill": {
+            "rank": 101,
+            "source_ranks": {
+              "sg": 92,
+              "tankathon": 77,
+              "drafttek": 105
+            }
+          },
+          "princewill-umanmielen": {
+            "rank": 102,
+            "source_ranks": {
+              "sg": 115,
+              "tankathon": 96,
+              "drafttek": 109,
+              "bucs": 87
+            }
+          },
+          "t-j-moore": {
+            "rank": 103,
+            "source_ranks": {
+              "sg": 106,
+              "tankathon": 101,
+              "drafttek": 107,
+              "bucs": 94
+            }
+          },
+          "hollywoodsmothers": {
+            "rank": 104,
+            "source_ranks": {
+              "sg": 246,
+              "tankathon": 115,
+              "drafttek": 148,
+              "bucs": 41
+            }
+          },
+          "elijah-paige": {
+            "rank": 105,
+            "source_ranks": {
+              "sg": 89,
+              "sporting": 69
+            }
+          },
+          "whitweeks": {
+            "rank": 106,
+            "source_ranks": {
+              "sg": 146,
+              "tankathon": 91,
+              "drafttek": 90,
+              "bucs": 106
+            }
+          },
+          "samleavitt": {
+            "rank": 107,
+            "source_ranks": {
+              "sg": 198,
+              "tankathon": 114,
+              "drafttek": 75,
+              "sporting": 99,
+              "bucs": 128
+            }
+          },
+          "brendan-sorsby": {
+            "rank": 108,
+            "source_ranks": {
+              "sg": 101,
+              "tankathon": 64
+            }
+          },
+          "antosaka": {
+            "rank": 109,
+            "source_ranks": {
+              "sg": 132,
+              "tankathon": 98,
+              "drafttek": 136,
+              "sporting": 95,
+              "bucs": 99
+            }
+          },
+          "jackson-bennee": {
+            "rank": 110,
+            "source_ranks": {
+              "sg": 88,
+              "drafttek": 78
+            }
+          },
+          "dashawnspears": {
+            "rank": 111,
+            "source_ranks": {
+              "sg": 138,
+              "tankathon": 82,
+              "bucs": 85
+            }
+          },
+          "lukemontgomery": {
+            "rank": 112,
+            "source_ranks": {
+              "sg": 134,
+              "tankathon": 116,
+              "drafttek": 84,
+              "sporting": 94
+            }
+          },
+          "rolijahhardy": {
+            "rank": 113,
+            "source_ranks": {
+              "sg": 287,
+              "bucs": 45
+            }
+          },
+          "taylor-wein": {
+            "rank": 114,
+            "source_ranks": {
+              "sg": 123,
+              "tankathon": 103,
+              "drafttek": 134,
+              "sporting": 72
+            }
+          },
+          "ianstrong": {
+            "rank": 115,
+            "source_ranks": {
+              "sg": 252,
+              "tankathon": 119,
+              "drafttek": 124,
+              "bucs": 57
+            }
+          },
+          "tony-rojas": {
+            "rank": 116,
+            "source_ranks": {
+              "sg": 84,
+              "bucs": 91
+            }
+          },
+          "joshhoover": {
+            "rank": 117,
+            "source_ranks": {
+              "sg": 221,
+              "tankathon": 104,
+              "bucs": 74
+            }
+          },
+          "raleek-brown": {
+            "rank": 118,
+            "source_ranks": {
+              "sg": 107,
+              "bucs": 71
+            }
+          },
+          "nyckharbor": {
+            "rank": 119,
+            "source_ranks": {
+              "sg": 190,
+              "tankathon": 107,
+              "drafttek": 72
+            }
+          },
+          "teitumtuioti": {
+            "rank": 120,
+            "source_ranks": {
+              "sg": 137,
+              "tankathon": 100,
+              "drafttek": 81
+            }
+          },
+          "peterclarke": {
+            "rank": 121,
+            "source_ranks": {
+              "sg": 166,
+              "drafttek": 88,
+              "bucs": 95
+            }
+          },
+          "taojohnson": {
+            "rank": 122,
+            "source_ranks": {
+              "sg": 274,
+              "bucs": 60
+            }
+          },
+          "jordanmarshall": {
+            "rank": 123,
+            "source_ranks": {
+              "sg": 175,
+              "bucs": 63
+            }
+          },
+          "johnmateer": {
+            "rank": 124,
+            "source_ranks": {
+              "drafttek": 149,
+              "bucs": 64
+            }
+          },
+          "lukereynolds": {
+            "rank": 125,
+            "source_ranks": {
+              "sg": 100,
+              "sporting": 91
+            }
+          }
+        }
+      }
+    },
+    {
+      "recorded_at": "2026-09-27T07:03:59.496987+00:00",
+      "state": {
+        "method": "consensus-v2",
+        "sources": [
+          "bucs",
+          "drafttek",
+          "sg",
+          "sporting",
+          "tankathon"
+        ],
+        "players": {
+          "jeremiah-smith": {
+            "rank": 1,
+            "source_ranks": {
+              "sg": 1,
+              "tankathon": 1,
+              "drafttek": 1,
+              "sporting": 1,
+              "bucs": 1
+            }
+          },
+          "colin-simmons": {
+            "rank": 2,
+            "source_ranks": {
+              "sg": 2,
+              "tankathon": 2,
+              "drafttek": 3,
+              "sporting": 4,
+              "bucs": 5
+            }
+          },
+          "leonard-moore": {
+            "rank": 3,
+            "source_ranks": {
+              "sg": 3,
+              "tankathon": 3,
+              "drafttek": 4,
+              "sporting": 3,
+              "bucs": 3
+            }
+          },
+          "dylan-stewart": {
+            "rank": 4,
+            "source_ranks": {
+              "sg": 4,
+              "tankathon": 5,
+              "drafttek": 5,
+              "sporting": 6,
+              "bucs": 2
+            }
+          },
+          "dante-moore": {
+            "rank": 5,
+            "source_ranks": {
+              "sg": 6,
+              "tankathon": 7,
+              "drafttek": 6,
+              "sporting": 5,
+              "bucs": 10
+            }
+          },
+          "cam-coleman": {
+            "rank": 6,
+            "source_ranks": {
+              "sg": 7,
+              "tankathon": 6,
+              "drafttek": 8,
+              "sporting": 7,
+              "bucs": 9
+            }
+          },
+          "trevor-goosby": {
+            "rank": 7,
+            "source_ranks": {
+              "sg": 9,
+              "tankathon": 8,
+              "drafttek": 9,
+              "sporting": 8,
+              "bucs": 13
+            }
+          },
+          "jordan-seaton": {
+            "rank": 8,
+            "source_ranks": {
+              "sg": 10,
+              "tankathon": 9,
+              "drafttek": 7,
+              "sporting": 9,
+              "bucs": 23
+            }
+          },
+          "kj-bolden": {
+            "rank": 9,
+            "source_ranks": {
+              "sg": 15,
+              "tankathon": 14,
+              "drafttek": 10,
+              "sporting": 13,
+              "bucs": 7
+            }
+          },
+          "ellis-robinson-iv": {
+            "rank": 10,
+            "source_ranks": {
+              "sg": 12,
+              "tankathon": 11,
+              "drafttek": 11,
+              "sporting": 16,
+              "bucs": 12
+            }
+          },
+          "arch-manning": {
+            "rank": 11,
+            "source_ranks": {
+              "sg": 5,
+              "tankathon": 4,
+              "drafttek": 2,
+              "sporting": 2,
+              "bucs": 54
+            }
+          },
+          "a-mauri-washington": {
+            "rank": 12,
+            "source_ranks": {
+              "sg": 13,
+              "tankathon": 17,
+              "drafttek": 12,
+              "sporting": 22,
+              "bucs": 6
+            }
+          },
+          "david-stone": {
+            "rank": 13,
+            "source_ranks": {
+              "sg": 8,
+              "tankathon": 10,
+              "drafttek": 32,
+              "sporting": 12,
+              "bucs": 21
+            }
+          },
+          "jamari-johnson": {
+            "rank": 14,
+            "source_ranks": {
+              "sg": 17,
+              "tankathon": 16,
+              "drafttek": 26,
+              "sporting": 33,
+              "bucs": 16
+            }
+          },
+          "trey-dez-green": {
+            "rank": 15,
+            "source_ranks": {
+              "sg": 27,
+              "tankathon": 18,
+              "drafttek": 22,
+              "sporting": 23,
+              "bucs": 19
+            }
+          },
+          "jadan-baugh": {
+            "rank": 16,
+            "source_ranks": {
+              "sg": 18,
+              "tankathon": 20,
+              "drafttek": 34,
+              "sporting": 28,
+              "bucs": 14
+            }
+          },
+          "kelley-jones": {
+            "rank": 17,
+            "source_ranks": {
+              "sg": 21,
+              "tankathon": 23,
+              "drafttek": 29,
+              "sporting": 15,
+              "bucs": 26
+            }
+          },
+          "will-echoles": {
+            "rank": 18,
+            "source_ranks": {
+              "sg": 14,
+              "tankathon": 12,
+              "drafttek": 35,
+              "sporting": 14,
+              "bucs": 42
+            }
+          },
+          "charlie-becker": {
+            "rank": 19,
+            "source_ranks": {
+              "sg": 11,
+              "tankathon": 13,
+              "drafttek": 30,
+              "sporting": 17,
+              "bucs": 50
+            }
+          },
+          "cj-carr": {
+            "rank": 20,
+            "source_ranks": {
+              "sg": 26,
+              "tankathon": 27,
+              "drafttek": 25,
+              "sporting": 11,
+              "bucs": 35
+            }
+          },
+          "kewan-lacy": {
+            "rank": 21,
+            "source_ranks": {
+              "sg": 20,
+              "tankathon": 28,
+              "drafttek": 42,
+              "sporting": 18,
+              "bucs": 17
+            }
+          },
+          "justin-scott": {
+            "rank": 22,
+            "source_ranks": {
+              "sg": 16,
+              "tankathon": 21,
+              "drafttek": 56,
+              "sporting": 20,
+              "bucs": 24
+            }
+          },
+          "trevor-lauck": {
+            "rank": 23,
+            "source_ranks": {
+              "sg": 23,
+              "tankathon": 30,
+              "drafttek": 41,
+              "sporting": 21,
+              "bucs": 22
+            }
+          },
+          "julian-sayin": {
+            "rank": 24,
+            "source_ranks": {
+              "sg": 38,
+              "tankathon": 31,
+              "drafttek": 17,
+              "sporting": 31,
+              "bucs": 25
+            }
+          },
+          "carter-smith": {
+            "rank": 25,
+            "source_ranks": {
+              "sg": 29,
+              "tankathon": 40,
+              "drafttek": 13,
+              "sporting": 19,
+              "bucs": 53
+            }
+          },
+          "ryan-williams": {
+            "rank": 26,
+            "source_ranks": {
+              "sg": 33,
+              "tankathon": 29,
+              "drafttek": 31,
+              "sporting": 30,
+              "bucs": 37
+            }
+          },
+          "ahmad-moten": {
+            "rank": 27,
+            "source_ranks": {
+              "sg": 42,
+              "tankathon": 39,
+              "drafttek": 27,
+              "sporting": 55,
+              "bucs": 4
+            }
+          },
+          "trinidad-chambliss": {
+            "rank": 28,
+            "source_ranks": {
+              "sg": 24,
+              "tankathon": 25,
+              "drafttek": 40,
+              "sporting": 50,
+              "bucs": 30
+            }
+          },
+          "a-j-holmes-jr": {
+            "rank": 29,
+            "source_ranks": {
+              "sg": 50,
+              "tankathon": 56,
+              "drafttek": 14,
+              "sporting": 43,
+              "bucs": 8
+            }
+          },
+          "ahmad-hardy": {
+            "rank": 30,
+            "source_ranks": {
+              "sg": 37,
+              "tankathon": 22,
+              "drafttek": 55,
+              "sporting": 38,
+              "bucs": 20
+            }
+          },
+          "drew-mestemaker": {
+            "rank": 31,
+            "source_ranks": {
+              "sg": 35,
+              "tankathon": 42,
+              "drafttek": 28,
+              "sporting": 35,
+              "bucs": 39
+            }
+          },
+          "darian-mensah": {
+            "rank": 32,
+            "source_ranks": {
+              "sg": 43,
+              "tankathon": 15,
+              "drafttek": 19,
+              "sporting": 65,
+              "bucs": 38
+            }
+          },
+          "sammy-brown": {
+            "rank": 33,
+            "source_ranks": {
+              "sg": 28,
+              "tankathon": 33,
+              "drafttek": 48,
+              "sporting": 39,
+              "bucs": 33
+            }
+          },
+          "tae-johnson": {
+            "rank": 34,
+            "source_ranks": {
+              "sg": 19,
+              "tankathon": 19,
+              "drafttek": 15,
+              "sporting": 10
+            }
+          },
+          "zabien-brown": {
+            "rank": 35,
+            "source_ranks": {
+              "sg": 49,
+              "tankathon": 43,
+              "drafttek": 18,
+              "sporting": 74,
+              "bucs": 11
+            }
+          },
+          "nick-marsh": {
+            "rank": 36,
+            "source_ranks": {
+              "sg": 39,
+              "tankathon": 34,
+              "drafttek": 38,
+              "sporting": 25,
+              "bucs": 67
+            }
+          },
+          "kade-pieper": {
+            "rank": 37,
+            "source_ranks": {
+              "sg": 25,
+              "tankathon": 36,
+              "drafttek": 66,
+              "sporting": 24,
+              "bucs": 56
+            }
+          },
+          "cayden-green": {
+            "rank": 38,
+            "source_ranks": {
+              "sg": 40,
+              "tankathon": 35,
+              "drafttek": 16,
+              "sporting": 29,
+              "bucs": 89
+            }
+          },
+          "greg-johnson": {
+            "rank": 39,
+            "source_ranks": {
+              "sg": 31,
+              "tankathon": 32,
+              "drafttek": 47,
+              "sporting": 27,
+              "bucs": 72
+            }
+          },
+          "austin-siereveld": {
+            "rank": 40,
+            "source_ranks": {
+              "sg": 47,
+              "tankathon": 49,
+              "drafttek": 44,
+              "sporting": 58,
+              "bucs": 28
+            }
+          },
+          "matayo-uiagalelei": {
+            "rank": 41,
+            "source_ranks": {
+              "sg": 30,
+              "tankathon": 38,
+              "drafttek": 21,
+              "sporting": 26,
+              "bucs": 113
+            }
+          },
+          "yhonzae-pierre": {
+            "rank": 42,
+            "source_ranks": {
+              "sg": 22,
+              "tankathon": 24,
+              "drafttek": 52,
+              "sporting": 34
+            }
+          },
+          "damon-wilson-ii": {
+            "rank": 43,
+            "source_ranks": {
+              "sg": 60,
+              "tankathon": 55,
+              "drafttek": 23,
+              "sporting": 63,
+              "bucs": 62
+            }
+          },
+          "lanorris-sellers": {
+            "rank": 44,
+            "source_ranks": {
+              "sg": 34,
+              "tankathon": 53,
+              "drafttek": 68,
+              "sporting": 44,
+              "bucs": 68
+            }
+          },
+          "john-henry-daley": {
+            "rank": 45,
+            "source_ranks": {
+              "sg": 62,
+              "tankathon": 76,
+              "drafttek": 64,
+              "sporting": 41,
+              "bucs": 31
+            }
+          },
+          "clev-lubin": {
+            "rank": 46,
+            "source_ranks": {
+              "sg": 63,
+              "tankathon": 60,
+              "drafttek": 63,
+              "sporting": 83,
+              "bucs": 15
+            }
+          },
+          "kenyatta-jackson-jr": {
+            "rank": 47,
+            "source_ranks": {
+              "sg": 57,
+              "tankathon": 48,
+              "drafttek": 24,
+              "sporting": 80,
+              "bucs": 75
+            }
+          },
+          "jacarrius-peak": {
+            "rank": 48,
+            "source_ranks": {
+              "sg": 61,
+              "tankathon": 68,
+              "drafttek": 57,
+              "sporting": 81,
+              "bucs": 18
+            }
+          },
+          "will-heldt": {
+            "rank": 49,
+            "source_ranks": {
+              "sg": 41,
+              "tankathon": 45,
+              "drafttek": 33,
+              "sporting": 42
+            }
+          },
+          "chris-peal": {
+            "rank": 50,
+            "source_ranks": {
+              "sg": 70,
+              "tankathon": 58,
+              "drafttek": 39,
+              "sporting": 48,
+              "bucs": 76
+            }
+          },
+          "rasheem-biles": {
+            "rank": 51,
+            "source_ranks": {
+              "sg": 79,
+              "tankathon": 64,
+              "drafttek": 37,
+              "sporting": 71,
+              "bucs": 40
+            }
+          },
+          "ashton-hampton": {
+            "rank": 52,
+            "source_ranks": {
+              "sg": 32,
+              "tankathon": 26,
+              "drafttek": 71,
+              "sporting": 36
+            }
+          },
+          "koi-perich": {
+            "rank": 53,
+            "source_ranks": {
+              "sg": 81,
+              "tankathon": 72,
+              "drafttek": 50,
+              "sporting": 62,
+              "bucs": 32
+            }
+          },
+          "wyatt-young": {
+            "rank": 54,
+            "source_ranks": {
+              "sg": 89,
+              "tankathon": 78,
+              "drafttek": 54,
+              "sporting": 49,
+              "bucs": 29
+            }
+          },
+          "kyngstonn-viliamu-asa": {
+            "rank": 55,
+            "source_ranks": {
+              "sg": 36,
+              "tankathon": 41,
+              "drafttek": 61,
+              "sporting": 40
+            }
+          },
+          "quincy-rhodes-jr": {
+            "rank": 56,
+            "source_ranks": {
+              "sg": 58,
+              "tankathon": 57,
+              "drafttek": 53,
+              "sporting": 84,
+              "bucs": 58
+            }
+          },
+          "chris-cole": {
+            "rank": 57,
+            "source_ranks": {
+              "sg": 48,
+              "tankathon": 47,
+              "drafttek": 43,
+              "sporting": 57
+            }
+          },
+          "kj-duff": {
+            "rank": 58,
+            "source_ranks": {
+              "sg": 45,
+              "tankathon": 37,
+              "drafttek": 77,
+              "sporting": 45
+            }
+          },
+          "jamari-sharpe": {
+            "rank": 59,
+            "source_ranks": {
+              "sg": 73,
+              "tankathon": 79,
+              "drafttek": 67,
+              "sporting": 68,
+              "bucs": 47
+            }
+          },
+          "mario-craver": {
+            "rank": 60,
+            "source_ranks": {
+              "sg": 44,
+              "tankathon": 44,
+              "drafttek": 46,
+              "sporting": 75
+            }
+          },
+          "terrance-carter": {
+            "rank": 61,
+            "source_ranks": {
+              "sg": 75,
+              "tankathon": 77,
+              "drafttek": 62,
+              "sporting": 67,
+              "bucs": 59
+            }
+          },
+          "omarion-miller": {
+            "rank": 62,
+            "source_ranks": {
+              "sg": 53,
+              "tankathon": 51,
+              "drafttek": 20,
+              "sporting": 100,
+              "bucs": 131
+            }
+          },
+          "ty-benefield": {
+            "rank": 63,
+            "source_ranks": {
+              "sg": 77,
+              "tankathon": 88,
+              "drafttek": 65,
+              "sporting": 85,
+              "bucs": 36
+            }
+          },
+          "zach-lutmer": {
+            "rank": 64,
+            "source_ranks": {
+              "sg": 54,
+              "tankathon": 54,
+              "drafttek": 89,
+              "sporting": 32
+            }
+          },
+          "isaac-brown": {
+            "rank": 65,
+            "source_ranks": {
+              "sg": 97,
+              "tankathon": 89,
+              "drafttek": 60,
+              "sporting": 78,
+              "bucs": 34
+            }
+          },
+          "jayden-maiava": {
+            "rank": 66,
+            "source_ranks": {
+              "sg": 78,
+              "tankathon": 67,
+              "drafttek": 80,
+              "sporting": 82,
+              "bucs": 51
+            }
+          },
+          "ryan-wingo": {
+            "rank": 67,
+            "source_ranks": {
+              "sg": 82,
+              "tankathon": 65,
+              "drafttek": 36,
+              "sporting": 70,
+              "bucs": 116
+            }
+          },
+          "bray-hubbard": {
+            "rank": 68,
+            "source_ranks": {
+              "sg": 88,
+              "tankathon": 90,
+              "drafttek": 87,
+              "sporting": 59,
+              "bucs": 46
+            }
+          },
+          "brice-pollock": {
+            "rank": 69,
+            "source_ranks": {
+              "sg": 59,
+              "tankathon": 66,
+              "drafttek": 76,
+              "bucs": 52
+            }
+          },
+          "nate-frazier": {
+            "rank": 70,
+            "source_ranks": {
+              "sg": 95,
+              "tankathon": 86,
+              "drafttek": 81,
+              "sporting": 73,
+              "bucs": 49
+            }
+          },
+          "oj-frederique-jr": {
+            "rank": 71,
+            "source_ranks": {
+              "sg": 52,
+              "tankathon": 46,
+              "drafttek": 74,
+              "sporting": 89
+            }
+          },
+          "bryant-wesco-jr": {
+            "rank": 72,
+            "source_ranks": {
+              "sg": 85,
+              "tankathon": 73,
+              "drafttek": 58,
+              "sporting": 79,
+              "bucs": 97
+            }
+          },
+          "drake-lindsey": {
+            "rank": 73,
+            "source_ranks": {
+              "sg": 74,
+              "drafttek": 101,
+              "sporting": 47,
+              "bucs": 44
+            }
+          },
+          "ben-roberts": {
+            "rank": 74,
+            "source_ranks": {
+              "sg": 96,
+              "tankathon": 93,
+              "drafttek": 91,
+              "sporting": 61,
+              "bucs": 55
+            }
+          },
+          "anthonie-knapp": {
+            "rank": 75,
+            "source_ranks": {
+              "sg": 80,
+              "tankathon": 74,
+              "drafttek": 83,
+              "sporting": 53,
+              "bucs": 110
+            }
+          },
+          "melvin-siani": {
+            "rank": 76,
+            "source_ranks": {
+              "sg": 71,
+              "tankathon": 50,
+              "drafttek": 70,
+              "sporting": 90
+            }
+          },
+          "lance-heard": {
+            "rank": 77,
+            "source_ranks": {
+              "sg": 90,
+              "tankathon": 80,
+              "sporting": 66,
+              "bucs": 48
+            }
+          },
+          "princewill-umanmielen": {
+            "rank": 78,
+            "source_ranks": {
+              "sg": 64,
+              "tankathon": 59,
+              "drafttek": 75,
+              "bucs": 87
+            }
+          },
+          "vicari-swain": {
+            "rank": 79,
+            "source_ranks": {
+              "sg": 51,
+              "tankathon": 63,
+              "sporting": 52
+            }
+          },
+          "jelani-mcdonald": {
+            "rank": 80,
+            "source_ranks": {
+              "sg": 46,
+              "tankathon": 62,
+              "drafttek": 59
+            }
+          },
+          "jordan-ross-lsu": {
+            "rank": 81,
+            "source_ranks": {
+              "sg": 65,
+              "tankathon": 69,
+              "drafttek": 86,
+              "sporting": 86
+            }
+          },
+          "ian-moore": {
+            "rank": 82,
+            "source_ranks": {
+              "sg": 55,
+              "tankathon": 71,
+              "sporting": 56
+            }
+          },
+          "jaylen-mcclain": {
+            "rank": 83,
+            "source_ranks": {
+              "sg": 68,
+              "tankathon": 75,
+              "drafttek": 98,
+              "sporting": 77
+            }
+          },
+          "duce-robinson": {
+            "rank": 84,
+            "source_ranks": {
+              "sg": 92,
+              "tankathon": 96,
+              "drafttek": 117,
+              "sporting": 98,
+              "bucs": 43
+            }
+          },
+          "iapani-laloulu": {
+            "rank": 85,
+            "source_ranks": {
+              "sg": 99,
+              "tankathon": 81,
+              "drafttek": 51,
+              "bucs": 96
+            }
+          },
+          "sahir-west": {
+            "rank": 86,
+            "source_ranks": {
+              "sg": 76,
+              "tankathon": 61,
+              "sporting": 64
+            }
+          },
+          "tavion-gadson": {
+            "rank": 87,
+            "source_ranks": {
+              "sg": 67,
+              "tankathon": 82,
+              "drafttek": 120,
+              "sporting": 60
+            }
+          },
+          "mark-fletcher-jr": {
+            "rank": 88,
+            "source_ranks": {
+              "sg": 94,
+              "tankathon": 107,
+              "drafttek": 118,
+              "sporting": 76,
+              "bucs": 69
+            }
+          },
+          "pjwilliams": {
+            "rank": 89,
+            "source_ranks": {
+              "sg": 123,
+              "tankathon": 87,
+              "drafttek": 107,
+              "bucs": 27
+            }
+          },
+          "jackson-bennee": {
+            "rank": 90,
+            "source_ranks": {
+              "sg": 72,
+              "tankathon": 70,
+              "drafttek": 82
+            }
+          },
+          "niki-prongos": {
+            "rank": 91,
+            "source_ranks": {
+              "sg": 93,
+              "tankathon": 97,
+              "sporting": 88,
+              "bucs": 77
+            }
+          },
+          "reedharris": {
+            "rank": 92,
+            "source_ranks": {
+              "sg": 56,
+              "tankathon": 52
+            }
+          },
+          "anthony-smith": {
+            "rank": 93,
+            "source_ranks": {
+              "sg": 86,
+              "tankathon": 83,
+              "drafttek": 72
+            }
+          },
+          "zeke-berry": {
+            "rank": 94,
+            "source_ranks": {
+              "sg": 98,
+              "tankathon": 100,
+              "sporting": 46
+            }
+          },
+          "christian-alliegro": {
+            "rank": 95,
+            "source_ranks": {
+              "sg": 129,
+              "tankathon": 101,
+              "drafttek": 45,
+              "bucs": 101
+            }
+          },
+          "evan-tengesdahl": {
+            "rank": 96,
+            "source_ranks": {
+              "sg": 101,
+              "tankathon": 92,
+              "drafttek": 90,
+              "bucs": 93
+            }
+          },
+          "bear-alexander": {
+            "rank": 97,
+            "source_ranks": {
+              "sg": 84,
+              "tankathon": 91,
+              "drafttek": 111,
+              "sporting": 92,
+              "bucs": 126
+            }
+          },
+          "jordan-faison": {
+            "rank": 98,
+            "source_ranks": {
+              "sg": 91,
+              "sporting": 37
+            }
+          },
+          "suntarineperkins": {
+            "rank": 99,
+            "source_ranks": {
+              "sg": 124,
+              "tankathon": 102,
+              "drafttek": 79,
+              "sporting": 87,
+              "bucs": 121
+            }
+          },
+          "xavier-atkins": {
+            "rank": 100,
+            "source_ranks": {
+              "sg": 87,
+              "tankathon": 120,
+              "sporting": 54
+            }
+          },
+          "lukemontgomery": {
+            "rank": 101,
+            "source_ranks": {
+              "sg": 109,
+              "tankathon": 99,
+              "drafttek": 88,
+              "sporting": 94
+            }
+          },
+          "hollywoodsmothers": {
+            "rank": 102,
+            "source_ranks": {
+              "sg": 273,
+              "tankathon": 131,
+              "drafttek": 102,
+              "bucs": 41
+            }
+          },
+          "samleavitt": {
+            "rank": 103,
+            "source_ranks": {
+              "sg": 160,
+              "tankathon": 128,
+              "drafttek": 49,
+              "sporting": 99,
+              "bucs": 128
+            }
+          },
+          "antosaka": {
+            "rank": 104,
+            "source_ranks": {
+              "sg": 144,
+              "tankathon": 108,
+              "drafttek": 99,
+              "sporting": 95,
+              "bucs": 99
+            }
+          },
+          "drayk-bowen": {
+            "rank": 105,
+            "source_ranks": {
+              "sg": 137,
+              "tankathon": 132,
+              "drafttek": 133,
+              "sporting": 51,
+              "bucs": 102
+            }
+          },
+          "lj-martin": {
+            "rank": 106,
+            "source_ranks": {
+              "sg": 121,
+              "tankathon": 119,
+              "drafttek": 108,
+              "bucs": 61
+            }
+          },
+          "whitweeks": {
+            "rank": 107,
+            "source_ranks": {
+              "sg": 115,
+              "tankathon": 95,
+              "drafttek": 94,
+              "bucs": 106
+            }
+          },
+          "boubacar-traore": {
+            "rank": 108,
+            "source_ranks": {
+              "sg": 83,
+              "tankathon": 84,
+              "drafttek": 123
+            }
+          },
+          "raleek-brown": {
+            "rank": 109,
+            "source_ranks": {
+              "sg": 100,
+              "bucs": 71
+            }
+          },
+          "rolijahhardy": {
+            "rank": 110,
+            "source_ranks": {
+              "sg": 291,
+              "bucs": 45
+            }
+          },
+          "peterclarke": {
+            "rank": 111,
+            "source_ranks": {
+              "sg": 177,
+              "tankathon": 110,
+              "drafttek": 93,
+              "bucs": 95
+            }
+          },
+          "lukereynolds": {
+            "rank": 112,
+            "source_ranks": {
+              "sg": 116,
+              "tankathon": 94,
+              "sporting": 91
+            }
+          },
+          "ianstrong": {
+            "rank": 113,
+            "source_ranks": {
+              "sg": 302,
+              "tankathon": 150,
+              "drafttek": 128,
+              "bucs": 57
+            }
+          },
+          "elijahgreen": {
+            "rank": 114,
+            "source_ranks": {
+              "sg": 249,
+              "tankathon": 116,
+              "drafttek": 69
+            }
+          },
+          "nyckharbor": {
+            "rank": 115,
+            "source_ranks": {
+              "sg": 202,
+              "tankathon": 113,
+              "drafttek": 73
+            }
+          },
+          "joshhoover": {
+            "rank": 116,
+            "source_ranks": {
+              "sg": 236,
+              "tankathon": 112,
+              "bucs": 74
+            }
+          },
+          "taojohnson": {
+            "rank": 117,
+            "source_ranks": {
+              "sg": 306,
+              "tankathon": 151,
+              "bucs": 60
+            }
+          },
+          "teitumtuioti": {
+            "rank": 118,
+            "source_ranks": {
+              "sg": 143,
+              "tankathon": 103,
+              "drafttek": 85
+            }
+          },
+          "benjaminbrahmer": {
+            "rank": 119,
+            "source_ranks": {
+              "sg": 223,
+              "tankathon": 129,
+              "drafttek": 92,
+              "sporting": 97
+            }
+          },
+          "jordanmarshall": {
+            "rank": 120,
+            "source_ranks": {
+              "sg": 168,
+              "bucs": 63
+            }
+          },
+          "kayinlee": {
+            "rank": 121,
+            "source_ranks": {
+              "sg": 114,
+              "tankathon": 106,
+              "sporting": 96
+            }
+          },
+          "johnmateer": {
+            "rank": 122,
+            "source_ranks": {
+              "bucs": 64
+            }
+          },
+          "braelinmoore": {
+            "rank": 123,
+            "source_ranks": {
+              "sg": 235,
+              "tankathon": 111,
+              "drafttek": 95,
+              "bucs": 111
+            }
+          },
+          "brendan-sorsby": {
+            "rank": 124,
+            "source_ranks": {
+              "sg": 106,
+              "tankathon": 85
+            }
+          },
+          "djvonnahme": {
+            "rank": 125,
+            "source_ranks": {
+              "sg": 138,
+              "bucs": 65
+            }
+          }
+        }
+      }
+    }
+  ]
+}

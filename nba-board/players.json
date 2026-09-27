@@ -2,8 +2,8 @@
   "year": 2027,
   "sport": "nba",
   "method": "nba-consensus-v1",
-  "fetched_at": 1789473990.4806135,
-  "updated": "2026-09-15T12:06:30.480615+00:00",
+  "fetched_at": 1790492674.819463,
+  "updated": "2026-09-27T07:04:34.819466+00:00",
   "players": [
     {
       "name": "Tyran Stokes",
@@ -6825,8 +6825,8 @@
         }
       ],
       "depth": 67,
-      "fetched": "2026-09-15T12:06:29.874999+00:00",
-      "checked_at": "2026-09-15T12:06:29.874999+00:00",
+      "fetched": "2026-09-27T07:04:32.253583+00:00",
+      "checked_at": "2026-09-27T07:04:32.253583+00:00",
       "status": "current",
       "editorial_date": "2026-08-02",
       "editorial_date_kind": "Board/publication date"
@@ -7538,8 +7538,8 @@
         }
       ],
       "depth": 100,
-      "fetched": "2026-09-15T12:06:29.079432+00:00",
-      "checked_at": "2026-09-15T12:06:29.079432+00:00",
+      "fetched": "2026-09-27T07:04:33.027413+00:00",
+      "checked_at": "2026-09-27T07:04:33.027413+00:00",
       "status": "current",
       "editorial_date": "2026-08-25",
       "editorial_date_kind": "Board/publication date"
@@ -7971,8 +7971,8 @@
         }
       ],
       "depth": 60,
-      "fetched": "2026-09-15T12:06:30.436430+00:00",
-      "checked_at": "2026-09-15T12:06:30.436430+00:00",
+      "fetched": "2026-09-27T07:04:33.238026+00:00",
+      "checked_at": "2026-09-27T07:04:33.238026+00:00",
       "status": "current",
       "editorial_date": "2026-07-09",
       "editorial_date_kind": "Board/publication date"
@@ -9626,8 +9626,8 @@
         }
       ],
       "depth": 150,
-      "fetched": "2026-09-15T12:06:29.152701+00:00",
-      "checked_at": "2026-09-15T12:06:29.152701+00:00",
+      "fetched": "2026-09-27T07:04:32.397569+00:00",
+      "checked_at": "2026-09-27T07:04:32.397569+00:00",
       "status": "current",
       "editorial_date": "2026-05-30",
       "editorial_date_kind": "Board/publication date"

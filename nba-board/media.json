@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": 1789439046.9394474,
+  "updated": 1790492674.8046145,
   "players": {
     "tyranstokes": {
       "school": "Kansas",
@@ -602,7 +602,8 @@
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/97.png",
       "height": null,
       "weight": null,
-      "measurement_source": null
+      "measurement_source": null,
+      "photo_source": null
     },
     "thijsderidder": {
       "school": "Virginia",
@@ -934,7 +935,8 @@
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/30.png",
       "height": null,
       "weight": null,
-      "measurement_source": null
+      "measurement_source": null,
+      "photo_source": null
     },
     "bayendongo": {
       "school": "Pittsburgh",
@@ -1104,7 +1106,8 @@
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/97.png",
       "height": null,
       "weight": null,
-      "measurement_source": null
+      "measurement_source": null,
+      "photo_source": null
     },
     "zoomdiallo": {
       "school": "Kentucky",
@@ -1112,7 +1115,8 @@
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/96.png",
       "height": null,
       "weight": null,
-      "measurement_source": null
+      "measurement_source": null,
+      "photo_source": null
     },
     "bangotdak": {
       "school": "Vanderbilt",
@@ -1120,7 +1124,8 @@
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/238.png",
       "height": null,
       "weight": null,
-      "measurement_source": null
+      "measurement_source": null,
+      "photo_source": null
     }
   }
 }
