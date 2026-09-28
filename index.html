@@ -33,6 +33,7 @@
             --muted: #8b8b9a;
             --accent: #00d4ff;
             --nba: #ff8a3d;
+            --game: #3ddc84;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -106,6 +107,76 @@
         }
         .hero h1 span { color: var(--accent); }
         .hero p { color: var(--muted); max-width: 620px; margin: 0 auto; font-size: 1.05rem; }
+
+        .hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin-top: 1.75rem; }
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.2rem;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            color: var(--text);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+        .btn-play {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.2rem;
+            border-radius: 10px;
+            background: var(--game);
+            color: #06140b;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .btn-play:hover { filter: brightness(1.1); }
+
+        .side { display: flex; flex-direction: column; gap: 1.25rem; }
+
+        /* Featured game */
+        .game-feature {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(61, 220, 132, 0.35);
+            color: var(--text);
+            text-decoration: none;
+            /* Turf with yard lines */
+            background:
+                repeating-linear-gradient(90deg, transparent 0 58px, rgba(255, 255, 255, 0.07) 58px 60px),
+                linear-gradient(135deg, #0f3d24 0%, #0b2a1a 100%);
+        }
+        .game-feature:hover { border-color: var(--game); }
+        .game-feature .eyebrow { color: var(--game); }
+        .game-feature h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.15;
+            margin: 0.25rem 0 0.5rem;
+        }
+        .game-feature p { color: rgba(255, 255, 255, 0.75); font-size: 0.92rem; }
+        .game-feature .clock {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            align-self: start;
+            color: #ffd54a;
+            background: rgba(0, 0, 0, 0.45);
+            border-radius: 12px;
+            padding: 0.25rem 1rem;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+        .game-feature .btn-play { margin-top: 1rem; }
 
         /* Board previews */
         .boards { display: grid; grid-template-columns: 1.4fr 1fr; gap: 1.25rem; align-items: start; }
@@ -259,9 +330,14 @@
         @media (max-width: 860px) {
             .boards { grid-template-columns: 1fr; }
         }
+        @media (max-width: 640px) {
+            .game-feature { grid-template-columns: 1fr; padding: 1.35rem; }
+            .game-feature .clock { justify-self: start; font-size: 2rem; order: -1; }
+        }
         @media (max-width: 560px) {
             .site-header .wrap { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
-            .site-nav { width: 100%; }
+            .site-nav { width: 100%; flex-wrap: wrap; overflow: visible; }
+            .site-nav a { padding: 0.35rem 0.45rem; font-size: 0.85rem; }
             .hero { padding: 2.25rem 0 1.75rem; }
             .rank-list li { grid-template-columns: 1.75rem 40px 1fr auto; gap: 0.6rem; padding: 0.55rem 1rem; }
             .photo { width: 40px; height: 46px; }
@@ -288,6 +364,11 @@
             <div class="eyebrow">The 2027 Draft Cycle</div>
             <h1>2027 Draft <span>Boards</span></h1>
             <p>Consensus rankings for next year's NFL and NBA drafts, built from multiple publishers' big boards. Track prospects, set your own ranks and keep scouting notes.</p>
+            <div class="hero-actions">
+                <a class="btn-ghost" href="nfl-board/">NFL board</a>
+                <a class="btn-ghost" href="nba-board/">NBA board</a>
+                <a class="btn-play" href="game/">&#9654; Play Two-Minute Drill</a>
+            </div>
         </section>
 
         <section class="boards">
@@ -303,16 +384,27 @@
                 </div>
             </div>
 
-            <div class="panel nba" aria-labelledby="nbaHeading">
-                <div class="panel-head">
-                    <h2 id="nbaHeading"><span>2027 NBA</span> Top 5</h2>
-                    <span class="tag" id="nbaSources"></span>
+            <div class="side">
+                <div class="panel nba" aria-labelledby="nbaHeading">
+                    <div class="panel-head">
+                        <h2 id="nbaHeading"><span>2027 NBA</span> Top 5</h2>
+                        <span class="tag" id="nbaSources"></span>
+                    </div>
+                    <ol class="rank-list" id="nbaList"><li class="loading">Loading the NBA board…</li></ol>
+                    <div class="panel-foot">
+                        <span id="nbaUpdated"></span>
+                        <a class="btn" href="nba-board/">NBA board &amp; mock &rarr;</a>
+                    </div>
                 </div>
-                <ol class="rank-list" id="nbaList"><li class="loading">Loading the NBA board…</li></ol>
-                <div class="panel-foot">
-                    <span id="nbaUpdated"></span>
-                    <a class="btn" href="nba-board/">NBA board &amp; mock &rarr;</a>
-                </div>
+                <a class="game-feature" href="game/">
+                    <div>
+                        <div class="eyebrow">Free arcade game</div>
+                        <h2>Two-Minute Drill</h2>
+                        <p>Two minutes left in the 4th quarter. Follow your blockers, juke, spin and stiff-arm defenders, and put up as many points as you can. Plays with a keyboard or touch controls.</p>
+                        <span class="btn-play">&#9654; Play now</span>
+                    </div>
+                    <div class="clock" aria-hidden="true">2:00</div>
+                </a>
             </div>
         </section>
 
@@ -331,10 +423,6 @@
                     <a href="pages/consensus-mock.html">Consensus Mock</a>
                 </div>
             </div>
-            <a class="card" href="game/">
-                <h3>Two-Minute Drill</h3>
-                <p>An arcade football game: two minutes on the clock, one drive to win it.</p>
-            </a>
         </div>
     </main>
 
