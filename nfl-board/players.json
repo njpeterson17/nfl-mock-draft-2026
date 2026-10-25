@@ -5265,7 +5265,21 @@
       "weight": "220 lbs",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/9/roster",
       "measurement_source_name": "ESPN roster",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Frame and catch-point control give his quarterback a target on intermediate and outside throws; his 2025 charted sample had no drops.",
+        "weaknesses": "Limited top-end speed and after-catch creation put more weight on route detail; his Texas Tech touchdown came with the game already lopsided.",
+        "source": {
+          "name": "Scouting Grade Editorial",
+          "url": "https://scoutinggrade.com/2027/players/reed-harris",
+          "sections": [
+            "How He Wins",
+            "What Can Break His Grade"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "4d392d785af875b389870176c6d8127206d941216f54eea401b84f7eb88d11f1",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-09-27T07:03:59.496987+00:00",
@@ -5325,7 +5339,21 @@
       "weight": "220 lbs",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/142/roster",
       "measurement_source_name": "ESPN roster",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Developmental passer with solid passing-grade and charted-accuracy evidence.",
+        "weaknesses": "Turnover-worthy plays are too frequent, and too many pressured snaps end in sacks.",
+        "source": {
+          "name": "Scouting Grade Editorial",
+          "url": "https://scoutinggrade.com/2027/players/austin-simmons",
+          "sections": [
+            "How He Wins",
+            "What Can Break His Grade"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "815dd3ec240cb1c9f6af58f7a725a55dad470d6ec0c60dfb189145d519524d70",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-10-25T23:16:16.339442+00:00",
@@ -6382,7 +6410,21 @@
       "measurement_source": "https://www.drafttek.com/2027-NFL-Draft-Big-Board/Top-NFL-Draft-Prospects-2027-Page-1.asp",
       "measurement_source_name": "Drafttek",
       "measurement_checked": "2026-10-25T23:24:46.333232+00:00",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Has produced disruptive 2026 games, including two sacks and a forced fumble at Kentucky and steady work against Georgia.",
+        "weaknesses": "His historical pass-rush win rate does not yet show a dependable passing-down skill; box-score totals may reflect pursuit or scheme as much as individual wins.",
+        "source": {
+          "name": "Scouting Grade Editorial",
+          "url": "https://scoutinggrade.com/2027/players/devan-thompkins",
+          "sections": [
+            "How He Wins",
+            "What Can Break His Grade"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "b00813aa657f1d73b73364d00962ed40648058640d9b39a04fc4d5f41b082bce",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-10-25T23:16:16.339442+00:00",
@@ -6607,7 +6649,20 @@
       "weight": "210 lbs",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/25/roster",
       "measurement_source_name": "ESPN roster",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Big, rangy safety with unusual agility for his size, fluid hips, strong instincts and ball skills, plus physicality against the run.",
+        "weaknesses": "Needs to clean up missed tackles; his sample is small (186 snaps at Oregon before a strong start at Cal).",
+        "source": {
+          "name": "Drew Collings \u00b7 Roundtable",
+          "url": "https://roundtable.io/sports/nfl/texans/draft/texans-draft-scouting-cal-safety-kingston-lopa",
+          "sections": [
+            "Texans Draft Scouting: Cal Safety Kingston Lopa"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "4777658a677664cb651b42239f64da3258ad14bea42e1572424b1bfb78ae371a",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-10-25T23:16:16.339442+00:00",
@@ -7107,7 +7162,21 @@
       "weight": "330 lbs",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2390/roster",
       "measurement_source_name": "ESPN roster",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Run blocking holds up beyond passing situations, and tackle experience gives him a path as outside depth without a position change.",
+        "weaknesses": "Needs a fuller workload to show his protection holds across repeated matchups; recovery against power, counters and late exchanges is key to a swing role.",
+        "source": {
+          "name": "Scouting Grade Editorial",
+          "url": "https://scoutinggrade.com/2027/players/samson-okunlola",
+          "sections": [
+            "How He Wins",
+            "What Can Break His Grade"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "833e9249ef7258b8e97dfa393a3e12f031c0a42da9c06ca2099689ca9a913bdb",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-10-25T23:16:16.339442+00:00",
@@ -7159,7 +7228,21 @@
       "weight": "180 lbs",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/145/roster",
       "measurement_source_name": "ESPN roster",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Adds yards after the catch and brings substantial route experience in a complementary role.",
+        "weaknesses": "Has not shown dependable catches with a defender attached; a wider boundary role needs his intermediate timing to survive early contact.",
+        "source": {
+          "name": "Scouting Grade Editorial",
+          "url": "https://scoutinggrade.com/2027/players/deuce-alexander",
+          "sections": [
+            "How He Wins",
+            "What Can Break His Grade"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "89f933acfdb38d2f1da6bcffe69dfda79367e1563f84b95e3527c53931bd3775",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-10-25T23:16:16.339442+00:00",
@@ -8561,7 +8644,20 @@
       "weight": "305 lbs",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2633/roster",
       "measurement_source_name": "ESPN roster",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Fast, strong interior lineman whose explosive first step creates backfield disruption; a dangerous inside pass rusher who is also stout against the run.",
+        "weaknesses": "The reviewed note does not identify a specific weakness.",
+        "source": {
+          "name": "WalterFootball \u00b7 2027 DT Rankings",
+          "url": "https://walterfootball.com/DTRankings2027.php",
+          "sections": [
+            "10/21/26 player note"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "4f341cb81813b2884c2566924db36b8630a59314568882b8c2573e7231d7bfc9",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-10-25T23:16:16.339442+00:00",
@@ -8863,7 +8959,20 @@
       "height": null,
       "weight": null,
       "measurement_source": null,
-      "scouting": null,
+      "scouting": {
+        "strengths": "Big, long left tackle who plays with strength and finish in the run game and covers up rushers in pass protection; allowed no sacks or pressures through three games.",
+        "weaknesses": "The quoted evaluation does not identify a specific weakness.",
+        "source": {
+          "name": "Dane Brugler \u00b7 The Athletic (quoted by Deseret News)",
+          "url": "https://deseret.com/sports/2026/09/22/2027-nfl-draft-lj-martin-zereoue-williams",
+          "sections": [
+            "Quoted evaluation"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "8f0a3c4642f80c02807e476fe5571b6d6700f26c94c159f5221fa26ed45d83a1",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-10-25T23:16:16.339442+00:00",
@@ -9078,7 +9187,21 @@
       "weight": "200 lbs",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/238/roster",
       "measurement_source_name": "ESPN roster",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Paces routes well enough to find space and keep the offense on schedule from the flanker spot, with modest after-catch value.",
+        "weaknesses": "Physical corners can limit him unless his release package improves; needs more independent wins outside.",
+        "source": {
+          "name": "Scouting Grade Editorial",
+          "url": "https://scoutinggrade.com/2027/players/junior-sherrill",
+          "sections": [
+            "How He Wins",
+            "What Can Break His Grade"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "b9f40a70b2fb9267fe2c7fa56c84930b2e9afe691c1f654e72aad42b2b114ab3",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-10-25T23:16:16.339442+00:00",
@@ -9300,7 +9423,21 @@
       "weight": "183 lbs",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/213/roster",
       "measurement_source_name": "ESPN roster",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Disrupts targeted throws at a solid rate and has prior coverage experience.",
+        "weaknesses": "Completions allowed came with costly results, and his coverage grade suggests he is not yet ready for regular isolation.",
+        "source": {
+          "name": "Scouting Grade Editorial",
+          "url": "https://scoutinggrade.com/2027/players/audavion-collins",
+          "sections": [
+            "How He Wins",
+            "What Can Break His Grade"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "3d13b1ad33f4fcac24c573454591885bd6125e80a2808936a3ec7746335e57b4",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-10-25T23:24:48.567084+00:00",
@@ -9338,7 +9475,21 @@
       "weight": "205 lbs",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/248/roster",
       "measurement_source_name": "ESPN roster",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Adds value after the catch, and his route efficiency supports a receiving role beyond designed touches.",
+        "weaknesses": "A smaller target frame puts a premium on precise timing; after-catch production cannot replace winning against tight coverage.",
+        "source": {
+          "name": "Scouting Grade Editorial",
+          "url": "https://scoutinggrade.com/2027/players/amare-thomas",
+          "sections": [
+            "How He Wins",
+            "What Can Break His Grade"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "c3126f172ccd5ebd252a7804df1647ef5d92817887ac941454118262809865cb",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-10-25T23:16:16.339442+00:00",
@@ -9552,7 +9703,21 @@
       "weight": "236 lbs",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/213/roster",
       "measurement_source_name": "ESPN roster",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Makes real stops at or behind the line and has the range to pursue outside the box.",
+        "weaknesses": "2025 coverage results were poor, and his block deconstruction against a guard who reaches him square is unresolved.",
+        "source": {
+          "name": "Scouting Grade Editorial",
+          "url": "https://scoutinggrade.com/2027/players/tony-rojas",
+          "sections": [
+            "How He Wins",
+            "What Can Break His Grade"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "3a33786ad1977da1402ca5c0377c2159242bcc2442f6346c00a3616f7adb718f",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-10-25T23:24:48.567084+00:00",
@@ -9760,7 +9925,21 @@
       "weight": "280 lbs",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/30/roster",
       "measurement_source_name": "ESPN roster",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Finished a good share of his pressures as sacks and recorded no missed run tackles in 2025.",
+        "weaknesses": "His run grade does not yet make early downs a dependable fallback; needs better gap control and block escapes.",
+        "source": {
+          "name": "Scouting Grade Editorial",
+          "url": "https://scoutinggrade.com/2027/players/jide-abasiri",
+          "sections": [
+            "How He Wins",
+            "What Can Break His Grade"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "d8c7ea83f92d9b7bbf556d27f298bc60bda598856a6bd0f3774a95d01aa54df9",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-10-25T23:16:16.339442+00:00",
@@ -9807,7 +9986,20 @@
       "weight": "200 lbs",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/61/roster",
       "measurement_source_name": "ESPN roster",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Made splash plays in coverage at Clemson in 2024 and projects as an NFL free safety.",
+        "weaknesses": "Needs to add strength and improve his tackling.",
+        "source": {
+          "name": "WalterFootball \u00b7 2027 S Rankings",
+          "url": "https://walterfootball.com/SRankings2027.php",
+          "sections": [
+            "10/14/26 player note"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "a1d05cb3fa4b7e41208c7cdaef755a3dfcbd2861e7e7e0bc9e005ad93ad5e24f",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-10-25T23:24:48.567084+00:00",
@@ -9930,7 +10122,21 @@
       "weight": "200 lbs",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/228/roster",
       "measurement_source_name": "ESPN roster",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Held quarterbacks to a low passer rating in coverage and graded well against the run.",
+        "weaknesses": "Must show he can handle Clemson's motions and rotations in the new coverage calls, and that his open-field tackling finishes plays.",
+        "source": {
+          "name": "Scouting Grade Editorial",
+          "url": "https://scoutinggrade.com/2027/players/corey-myrick",
+          "sections": [
+            "How He Wins",
+            "What Can Break His Grade"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "8325f212e3f9d7029c79ca6b3833fba5276a88882af6380957d7249fc5295cfe",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-10-25T23:16:16.339442+00:00",
@@ -10064,7 +10270,21 @@
       "weight": "255 lbs",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/30/roster",
       "measurement_source_name": "ESPN roster",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Long, athletic edge with lateral quickness and growing production who can play with his hand down or standing up, using his length to shed blocks and set the edge.",
+        "weaknesses": "Needs a counter-move package for when his speed rush is stopped, plus more consistent snap-to-snap intensity and hand placement.",
+        "source": {
+          "name": "NFL Draft Countdown",
+          "url": "https://www.draftcountdown.com/2027-nfl-draft/prospect-profile/kameryn-crawford-edge-southern-cal-2027-nfl-draft-prospect-profile-scouting-report/",
+          "sections": [
+            "Key Strengths",
+            "Developmental Focus"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "7ef8cb755c5d80edbc623acbea0421f58c606087dcdbbe05c48330da601ad1c0",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-10-25T23:24:48.567084+00:00",
@@ -10105,7 +10325,21 @@
       "weight": "190 lbs",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/87/roster",
       "measurement_source_name": "ESPN roster",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Disrupts targeted throws at a strong rate and brings meaningful coverage experience.",
+        "weaknesses": "Passer rating allowed is less convincing than his catch rate, and target spacing leaves his route control on other snaps unproven.",
+        "source": {
+          "name": "Scouting Grade Editorial",
+          "url": "https://scoutinggrade.com/2027/players/dj-mckinney",
+          "sections": [
+            "How He Wins",
+            "What Can Break His Grade"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "8f7a77bc79914854084b03c74a598d66afa806b14b47219d5d8fe29463ee3419",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-10-25T23:24:48.567084+00:00",
@@ -10145,7 +10379,21 @@
       "height": null,
       "weight": null,
       "measurement_source": null,
-      "scouting": null,
+      "scouting": {
+        "strengths": "Active run defender with 26 tackles through Week 6 of 2026, plus an interception.",
+        "weaknesses": "Misses too many tackles, and his coverage grade is an obstacle to full-series use.",
+        "source": {
+          "name": "Scouting Grade Editorial",
+          "url": "https://scoutinggrade.com/2027/players/cade-uluave",
+          "sections": [
+            "How He Wins",
+            "What Can Break His Grade"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "2119f98bacaccb580f9617759ac8fb7c22c55a9f90d93f6068bf08a5a7a44dba",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-10-25T23:24:48.567084+00:00",
@@ -10185,7 +10433,21 @@
       "weight": "195 lbs",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2390/roster",
       "measurement_source_name": "ESPN roster",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Productive against man coverage, with a solid receiving grade behind a complementary role.",
+        "weaknesses": "An isolated boundary role needs releases that hold up against press; short completions leave his deeper route work unproven.",
+        "source": {
+          "name": "Scouting Grade Editorial",
+          "url": "https://scoutinggrade.com/2027/players/cooper-barkate",
+          "sections": [
+            "How He Wins",
+            "What Can Break His Grade"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "a3451583ed7e65e3a4b485f9b09af413b437d26d25f5e99b79419a4fb7c78b62",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-10-25T23:24:48.567084+00:00",
@@ -10306,7 +10568,21 @@
       "weight": "245 lbs",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/194/roster",
       "measurement_source_name": "ESPN roster",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Has meaningful early-down run-defense experience and has aligned both in the box and in the slot.",
+        "weaknesses": "Misses too many tackles, and his run grade does not yet offset the coverage concern.",
+        "source": {
+          "name": "Scouting Grade Editorial",
+          "url": "https://scoutinggrade.com/2027/players/christian-alliegro",
+          "sections": [
+            "How He Wins",
+            "What Can Break His Grade"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "9804f01757c85e4136d586a3fb9ff0f0e614a2edbec618460be02b688a7867a9",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-10-25T23:24:48.567084+00:00",
@@ -10426,7 +10702,21 @@
       "weight": "190 lbs",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/248/roster",
       "measurement_source_name": "ESPN roster",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Length and transition balance support his development outside, backed by a full 14-game season.",
+        "weaknesses": "The move from Stephen F. Austin to Houston raises the competition and tests his press patience and recovery speed; takeaways cannot hide soft completions.",
+        "source": {
+          "name": "Scouting Grade Editorial",
+          "url": "https://scoutinggrade.com/2027/players/jalen-mayo",
+          "sections": [
+            "How He Wins",
+            "What Can Break His Grade"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "a44463e00becf133862d3d17d9a69fff2497b49001ba848cb8bc8114833fd0e8",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-10-25T23:24:48.567084+00:00",

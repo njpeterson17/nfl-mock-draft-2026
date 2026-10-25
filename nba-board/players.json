@@ -2033,7 +2033,20 @@
       "movement": null,
       "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5060732.png",
       "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5060732/billy-richmond-iii",
-      "scouting": null,
+      "scouting": {
+        "strengths": "High-flying two-guard with a quick first step, burst and open-court speed who slashes to the rim.",
+        "weaknesses": "His jump shot shows promise but is not yet a strength, and he may need time to develop.",
+        "source": {
+          "name": "NBA Draft Room",
+          "url": "https://nbadraftroom.com/billy-richmond/",
+          "sections": [
+            "Draft Notes"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "b2a65aed0ab5c6b94b51e894aa7b84cedede48066c4b36aa9e5f0105bcb0b1ca",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-09-15T02:27:48.422682+00:00",
@@ -2107,7 +2120,20 @@
       "photo_source": "https://mgoblue.com/sports/mens-basketball/roster",
       "photo_credit": "Michigan Athletics (roster photo)",
       "photo": "assets/headshots/brandonmccoy.jpg",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Long, athletic guard with a quick first step who scores at the rim, has point-guard size and is one of the class's standout defenders.",
+        "weaknesses": "Not yet a polished outside shooter, and not an elite athlete.",
+        "source": {
+          "name": "NBA Draft Room",
+          "url": "https://nbadraftroom.com/brandon-mccoy/",
+          "sections": [
+            "Draft Notes"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "2306b34f20623a9a53ee5abf837a56796f9ce4276fa1791b9a1cd5ca41b6f9b6",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-09-15T02:27:48.422682+00:00",
@@ -3029,7 +3055,20 @@
       "movement": null,
       "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4711255.png",
       "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/4711255/jeremy-fears-jr",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Smart floor general who runs an offense, sets up teammates and defends with effort and intelligence.",
+        "weaknesses": "A bit undersized, not especially explosive, and more a facilitator than a scorer.",
+        "source": {
+          "name": "NBA Draft Room",
+          "url": "https://nbadraftroom.com/jeremy-fears/",
+          "sections": [
+            "Draft Notes"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "4d48efde331c1b083033aa7502e2f9967eae91c2865d9068d2224271416a21fd",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-09-15T02:27:48.422682+00:00",
@@ -3509,7 +3548,20 @@
       "photo_source": "https://ukathletics.com/sports/mbball/roster/",
       "photo_original": "https://ukathletics.com/imgproxy/lGdAXBynV3o60clOM1ItEXH6JYIU9IZWjcobx9P0sdQ/fit/600/800/ce/0/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3VrYXRobGV0aWNzLWNvbS8yMDI2LzA2LzAzZjJmMTA4LTIwMjZfbWlsYW5tb21jaWxvdmljXzAyY3ctc2NhbGVkLmpwZw.png",
       "photo_credit": "Kentucky Athletics (roster photo)",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Floor-spacing forward with an accurate catch-and-shoot and movement jumper plus touch inside the arc.",
+        "weaknesses": "Lacks the run-and-jump athleticism of many NBA prospects.",
+        "source": {
+          "name": "NBA Draft Room",
+          "url": "https://nbadraftroom.com/milon-momcilovic/",
+          "sections": [
+            "Draft Notes"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "bee3c0a5c5748c9757de1c3101d6ec5c1f4ed4f7a0b232463578f0b0bec9e471",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-09-15T02:27:48.422682+00:00",
@@ -5214,7 +5266,20 @@
       "movement": null,
       "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5311844.png",
       "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5311844/johann-grunloh",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Sweet-shooting big with good size and toughness.",
+        "weaknesses": "Lacks top-end athleticism and needs to get stronger; the report questions whether he can defend at the NBA level.",
+        "source": {
+          "name": "NBA Draft Room",
+          "url": "https://nbadraftroom.com/johann-grunloh/",
+          "sections": [
+            "Draft Notes"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "ff4843619c403bfad00d0a422725e7205b496913f23d230c28efea6f251b0e9b",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-09-15T02:27:48.422682+00:00",
@@ -5953,7 +6018,20 @@
       "photo_source": "https://mgoblue.com/sports/mens-basketball/roster",
       "photo_original": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/mgoblue.com/images/2026/9/6/BKM-MGB_20260905-bkm-cadeau.jpg",
       "photo_credit": "Michigan Athletics (roster photo)",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Pace-controlling pure point guard who passes and scores, with a quick first step and touch in the lane.",
+        "weaknesses": "Not a great outside shooter and lacks ideal size for the pro game.",
+        "source": {
+          "name": "NBA Draft Room",
+          "url": "https://nbadraftroom.com/elliott-cadeau/",
+          "sections": [
+            "Draft Notes"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "a490939a73c07b607578a447878899de90b8d7c6ce4d1384093c0e241b9ee446",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-09-15T02:27:48.422682+00:00",
@@ -6784,7 +6862,20 @@
       "weight": "240 lbs",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/97/roster",
       "measurement_source_name": "ESPN",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Massive, powerful center who plays well above the rim and has elite physical tools.",
+        "weaknesses": "Very early in his development, and his scoring is confined to the paint.",
+        "source": {
+          "name": "NBA Draft Room",
+          "url": "https://nbadraftroom.com/obinna-ekezie/",
+          "sections": [
+            "Draft Notes"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "95c0c724910e160a3ebfe2dc7a674f9de63b0c81567dd5963ad4848f5658c1e7",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-10-25T23:24:43.060506+00:00",
@@ -6817,7 +6908,20 @@
       "height": "6' 10\"",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/2483/roster",
       "measurement_source_name": "ESPN",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Talented combo forward who moves well for his size, changes ends easily and finishes above the rim.",
+        "weaknesses": "This brief report does not identify a specific weakness.",
+        "source": {
+          "name": "NBA Draft Room",
+          "url": "https://nbadraftroom.com/tajh-ariza/",
+          "sections": [
+            "Draft Notes"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "0d46e716cae255160641dca232061c984432c9024f8005f293558433877761ce",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-10-25T23:24:43.060506+00:00",
@@ -7157,7 +7261,20 @@
       "weight": "182 lbs",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/251/roster",
       "measurement_source_name": "ESPN",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Smooth, skilled scorer with good handles and the burst to beat his man.",
+        "weaknesses": "Undersized and not an elite athlete; the report expects him to stay in college for several years.",
+        "source": {
+          "name": "NBA Draft Room",
+          "url": "https://nbadraftroom.com/isaiah-johnson/",
+          "sections": [
+            "Draft Notes"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "c20e86e930d5b6525295f820c5d4f4ad6e8f26de97685fa642459850e9f19fdf",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-10-25T23:24:43.060506+00:00",
@@ -7504,7 +7621,20 @@
       "photo_source": "https://gocards.com/sports/mens-basketball/roster",
       "photo_original": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/gocards.com/images/2026/6/18/Shelstad_Jackson_Cropped.png",
       "photo_credit": "Louisville Athletics (roster photo)",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Electric with the ball, combining scoring and playmaking with toughness and a strong frame.",
+        "weaknesses": "Lacks ideal size; the report sees him as a likely multi-year college player.",
+        "source": {
+          "name": "NBA Draft Room",
+          "url": "https://nbadraftroom.com/jackson-shelstad/",
+          "sections": [
+            "Draft Notes"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "ef502f2e70d12da2a3ededfbddf3c646e3a811d9b1287f382605c8630374b563",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-09-15T02:27:48.422682+00:00",
@@ -7696,7 +7826,20 @@
       "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4873181.png",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/153.png",
       "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/4873181/jarin-stevenson",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Floor-spacing big at 6-10+ with athleticism, rebounding effort, toughness and good feel.",
+        "weaknesses": "His shooting can be streaky, his frame needs strength, and he is not a graceful athlete or dynamic leaper.",
+        "source": {
+          "name": "NBA Draft Room",
+          "url": "https://nbadraftroom.com/jarin-stevenson/",
+          "sections": [
+            "Draft Notes"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "5929cf7ce52b00fe3d9d2a63e3c782337982a464c901a9062d76a734a721f8ec",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-10-25T23:17:08.257847+00:00",
@@ -8351,7 +8494,20 @@
       "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5093142.png",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png",
       "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5093142/jp-estrella",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Skilled post player with good size who hustles and contributes at both ends.",
+        "weaknesses": "No single standout skill; NBA interest likely depends on his three-point shot becoming a strength.",
+        "source": {
+          "name": "NBA Draft Room",
+          "url": "https://nbadraftroom.com/j-p-estrella/",
+          "sections": [
+            "Draft Notes"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "93cd4b24baa2038568928adaf84a276695e4fe0e789ee4d1993a528d8e5c8f9c",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-10-25T23:17:08.257847+00:00",
@@ -8518,7 +8674,20 @@
       "movement": null,
       "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4683761.png",
       "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/4683761/kanaan-carlyle",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Explosive lead guard with an elite first step, open-court speed, a pull-up game and disruptive ball pressure on defense.",
+        "weaknesses": "Needs to keep adding strength and has a ways to go as an NBA-range shooter.",
+        "source": {
+          "name": "NBA Draft Room",
+          "url": "https://nbadraftroom.com/p/kanaan-carlyle/",
+          "sections": [
+            "Draft Notes"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "1600883176af1ba523099d3c4e9700d6a6fd3f20997ff959ee3adf128d36fc70",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-10-25T23:16:07.371564+00:00",
@@ -8697,7 +8866,20 @@
       "movement": null,
       "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5176240.png",
       "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5176240/magoon-gwath",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Rare mix of height, shot-making and shot-blocking timing, with a good nose for rebounds.",
+        "weaknesses": "Very skinny and will need to add a lot of strength.",
+        "source": {
+          "name": "NBA Draft Room",
+          "url": "https://nbadraftroom.com/magoon-gwath/",
+          "sections": [
+            "Draft Notes"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "b7238010e9250de562baeb922f63aa2c819d21d0cf03951049149c3e95518997",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-10-25T23:16:07.371564+00:00",
@@ -8802,7 +8984,20 @@
       "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5033017.png",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2540.png",
       "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5033017/miro-little",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Strong, versatile lead guard who scores at the rim and from three, makes good decisions and can defend either guard spot.",
+        "weaknesses": "The reviewed report does not identify a specific weakness.",
+        "source": {
+          "name": "NBA Draft Room",
+          "url": "https://nbadraftroom.com/miro-little/",
+          "sections": [
+            "Draft Notes"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "065ea82549af8ae3e6b56348ff427384dd4f95da1aeafa568fc27fb3b58b169c",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-10-25T23:17:08.257847+00:00",
@@ -8905,7 +9100,20 @@
       "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4895740.png",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/344.png",
       "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/4895740/josh-hubbard",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Talented, high-scoring point guard.",
+        "weaknesses": "Undersized; the report projects his future overseas rather than in the NBA.",
+        "source": {
+          "name": "NBA Draft Room",
+          "url": "https://nbadraftroom.com/josh-hubbard/",
+          "sections": [
+            "Draft Notes"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "22c9406b7f305382d4d069ea76347f045e2a98c5ba5a87a072c55e89e7ab98f8",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-10-25T23:17:08.257847+00:00",
@@ -9016,7 +9224,20 @@
       "source_total": 5,
       "movement": null,
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/99.png",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Explosive, strong wing who rebounds, defends multiple spots, cuts well and plays with relentless energy.",
+        "weaknesses": "His perimeter game, including three-point volume, is still developing.",
+        "source": {
+          "name": "NBA Draft Room",
+          "url": "https://nbadraftroom.com/mouhamed-dioubate/",
+          "sections": [
+            "Draft Notes"
+          ]
+        },
+        "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
+        "evidence_hash": "f919337671bcbcd8eb377a2f0544cc66b60732749bcbfe3642ca1de6e1adec8f",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-10-25T23:17:08.257847+00:00",
