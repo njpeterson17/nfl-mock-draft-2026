@@ -21,6 +21,11 @@ class ConsensusTests(unittest.TestCase):
   rows=''.join(f"<tr><td>{i}</td><td>Player{chr(65+i%26)}{i}, Test</td><td>SF</td><td>PF</td><td>Kansas</td><td>Fr</td><td>6’7, 230 lbs</td><td>10/12/07</td></tr>" for i in range(1,151))
   players=parse('sgr',f'<title>x</title><table><tbody>{rows}</tbody></table>',SOURCES[3][2])
   self.assertEqual(len(players),150);self.assertEqual(players[0]['height'],"6'7\"")
+ def test_noceilings_board(self):
+  heads=''.join(f'<h3>#{i}.  Player{chr(65+i%26)}{i} Jr. | G | Arkansas</h3><ul><li>Age: 18</li></ul>' for i in range(1,61))
+  players=parse('noceilings',f'<title>2027 NBA Draft BIG Board</title>{heads}',SOURCES[4][2])
+  self.assertEqual(len(players),60);self.assertEqual(players[0]['school'],'Arkansas')
+  self.assertEqual(identity('Matthew Able'),identity('Matt Able'));self.assertEqual(identity('Nik Khamenia'),identity('Nikolas Khamenia'))
  def test_failed_fetch_retains_cache(self):
   with patch('consensus.fetch_source',side_effect=OSError('offline')):sources=fetch_all(self.data['sources'])
   self.assertTrue(all(s['status']=='stale' for s in sources));self.assertEqual(sources[0]['players'],self.data['sources'][0]['players'])

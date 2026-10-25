@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch
-from consensus import aggregate, identity, fetch_all, editorial_date
+from consensus import aggregate, identity, fetch_all, editorial_date, parse, SOURCES
 
 class ConsensusTests(unittest.TestCase):
     def sources(self):
@@ -31,6 +31,17 @@ class ConsensusTests(unittest.TestCase):
         self.assertNotEqual(identity('Tae Johnson'),identity('Tao Johnson'))
         self.assertEqual(identity('A.J. Holmes Jr.'),identity('AJ Holmes'))
         self.assertNotEqual(identity('Jordan Ross','LSU'),identity('Jordan Ross','Arizona'))
+    def test_athlon_and_rios_boards(self):
+        url=dict((k,u) for k,_,u in SOURCES)
+        table=''.join(f'<tr><td>{i}.</td><td>Player {i}</td><td>Edge</td><td>School</td></tr>' for i in range(1,101))
+        rows=parse('athlon',f'<title>2027</title><div class="content-table-wrapper"><table><tr><th>RANK</th></tr>{table}</table></div>',url['athlon'])
+        self.assertEqual((len(rows),rows[0]['position']),(100,'EDGE'))
+        heads=''.join(f'<h3>{i}. Player {i}, OT/OG, Miami (Fla.)</h3>' for i in range(1,101))
+        rows=parse('rios',f'<title>2027</title><div class="content-body">{heads}</div>',url['rios'])
+        self.assertEqual((len(rows),rows[99]['school']),(100,'Miami (Fla.)'))
+    def test_new_source_aliases(self):
+        self.assertEqual(identity('Tavion Gadsen'),identity('Tavion Gadson'))
+        self.assertEqual(identity('Keon Saab'),identity('Keon Sabb'))
     def test_failure_retains_source_snapshot(self):
         prior=dict(id='sg',name='Scouting Grade',url='https://example.com',depth=1,players=[{'rank':1}],fetched='2026-09-01')
         with patch('consensus.fetch_source',side_effect=OSError('offline')):

@@ -14,8 +14,10 @@ SOURCES = [
  ('drafttek', 'Drafttek', 'https://www.drafttek.com/2027-NFL-Draft-Big-Board/Top-NFL-Draft-Prospects-2027-Page-1.asp'),
  ('sporting', 'Sporting News (via Yahoo)', 'https://sports.yahoo.com/articles/nfl-draft-prospects-2027-big-055001967.html'),
  ('bucs', 'Bucs Wire (via Yahoo)', 'https://sports.yahoo.com/articles/2027-nfl-draft-summer-top-174955597.html'),
+ ('athlon', 'Athlon Sports (via Yahoo)', 'https://sports.yahoo.com/articles/2027-nfl-draft-rankings-top-235414564.html'),
+ ('rios', 'EssentiallySports · Daniel Rios (via Yahoo)', 'https://sports.yahoo.com/articles/daniel-rios-2027-nfl-draft-214051521.html'),
 ]
-ALIASES = {'brauntaejohnson': 'taejohnson', 'ryancolemanwilliams': 'ryanwilliams', 'ahmadmoten': 'ahmadmoten', 'ahmadmotenii': 'ahmadmoten'}
+ALIASES = {'brauntaejohnson': 'taejohnson', 'ryancolemanwilliams': 'ryanwilliams', 'ahmadmoten': 'ahmadmoten', 'ahmadmotenii': 'ahmadmoten', 'taviongadsen': 'taviongadson', 'keonsaab': 'keonsabb'}
 def identity(name, school=""):
     name = unicodedata.normalize('NFKD', name).encode('ascii', 'ignore').decode().lower()
     name = re.sub(r'\b(jr|sr|ii|iii|iv)\.?$', '', name).strip()
@@ -55,6 +57,16 @@ def parse(key, raw, url):
             text=re.sub(r', RB (Northwestern|Georgia Tech)$', r', RB, \1', text)
             name,pos,school=text.split(',',2)
             rows.append(record(name,pos.strip(),school,rank,url))
+    elif key == 'athlon':
+        for tr in soup.select('.content-table-wrapper table tr'):
+            cells=[td.get_text(' ',strip=True) for td in tr.select('td')]
+            m=re.match(r'^(\d+)\.?$',cells[0]) if len(cells)==4 else None
+            if m:rows.append(record(cells[1],cells[2],cells[3],m[1],url))
+    elif key == 'rios':
+        for h in soup.select('.content-body h3'):
+            m=re.match(r'^(\d+)\.\s*(.+?),\s*([A-Za-z/]+),\s*(.+)$',h.get_text(' ',strip=True))
+            if m:
+                rank,name,pos,school=m.groups();rows.append(record(name,pos,school,rank,url))
     rows.sort(key=lambda p:p['rank'])
     if len(rows)<100 or [r['rank'] for r in rows] != list(range(1,len(rows)+1)):
         raise ValueError('Incomplete or non-sequential board')
@@ -65,7 +77,7 @@ def parse(key, raw, url):
 def editorial_date(key, raw):
     soup = BeautifulSoup(raw, 'html.parser')
     value = None
-    if key in ('sg', 'tankathon', 'sporting', 'bucs'):
+    if key in ('sg', 'tankathon', 'sporting', 'bucs', 'athlon', 'rios'):
         node = soup.select_one('time[datetime]')
         if node: value = node['datetime']
     elif key == 'drafttek':
@@ -75,7 +87,7 @@ def editorial_date(key, raw):
     try:
         if value:
             parsed = datetime.fromisoformat(value.replace('Z', '+00:00'))
-            return dict(editorial_date=parsed.date().isoformat(), editorial_date_kind='Published' if key in ('sporting','bucs') else 'Board dated')
+            return dict(editorial_date=parsed.date().isoformat(), editorial_date_kind='Published' if key in ('sporting','bucs','athlon','rios') else 'Board dated')
     except ValueError: pass
     return dict(editorial_date=None, editorial_date_kind='Date unavailable')
 
@@ -92,7 +104,7 @@ def fetch_all(previous):
         except Exception as exc:
             prior=next((s for s in previous if s['id']==source[0]),None)
             return {**(prior or dict(id=source[0],name=source[1],url=source[2],players=[],depth=0)), 'status':'stale' if prior else 'unavailable','error':str(exc),'checked_at':datetime.now(timezone.utc).isoformat()}
-    with ThreadPoolExecutor(max_workers=5) as pool:return list(pool.map(fetch,SOURCES))
+    with ThreadPoolExecutor(max_workers=len(SOURCES)) as pool:return list(pool.map(fetch,SOURCES))
 
 def aggregate(sources, previous):
     active=[s for s in sources if s.get('players')]

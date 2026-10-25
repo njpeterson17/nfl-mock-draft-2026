@@ -6,7 +6,7 @@ The board shows the consensus top 100 and 25 borderline prospects for the 2027 d
 
 ## Sources
 
-Five independent publishers: Scouting Grade, Tankathon, Drafttek, Sporting News (Yahoo syndication), and Bucs Wire (Yahoo syndication). A syndicated article counts only once. The last two feeds refresh fixed article URLs; newer editions require updating the adapter URL. PFF and several other publishers rejected automated retrieval, and an aggregator labeled 2027 served 2026 prospects, so they are not included.
+Seven independent publishers: Scouting Grade, Tankathon, Drafttek, Sporting News (Yahoo syndication), Bucs Wire (Yahoo syndication), Athlon Sports (Yahoo syndication, Sep 30 top 100), and EssentiallySports/Daniel Rios (Yahoo syndication, Oct 19 midseason top 100). A syndicated article counts only once. The last four feeds refresh fixed article URLs; newer editions require updating the adapter URL. PFF and several other publishers rejected automated retrieval, and an aggregator labeled 2027 served 2026 prospects, so they are not included.
 
 ## Method
 
