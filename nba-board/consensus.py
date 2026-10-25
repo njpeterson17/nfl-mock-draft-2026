@@ -49,7 +49,7 @@ def parse(key,raw,url):
   if '2027-nba-draft-class' not in url:raise ValueError('Wrong class')
   for r in soup.select('table tbody tr'):
    cells=[c.get_text(' ',strip=True) for c in r.select('td')]
-   if len(cells)!=7 or not cells[0].isdigit():continue
+   if len(cells) not in (7,8) or not cells[0].isdigit():continue
    last,first=cells[1].split(',',1);name=first.strip()+' '+last.strip()
    m=re.search(r'(\d)[’\'](\d{1,2})[,.]\s*(\d+)\s*lbs',cells[6])
    dims=dict(height=f"{m[1]}'{m[2]}\"",weight=m[3]+' lbs',measurement_source=url,measurement_source_name='Sports Gaming Rosters') if m else {}

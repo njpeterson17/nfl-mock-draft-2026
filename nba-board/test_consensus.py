@@ -17,6 +17,10 @@ class ConsensusTests(unittest.TestCase):
   self.assertEqual(p['score'],round(sum(min(p['source_ranks'].get(s['id'],126),126) for s in sources)/len(sources),2))
  def test_wrong_cycle(self):
   with self.assertRaises(ValueError):parse('tank','<title>2026 NBA board</title>',SOURCES[0][2])
+ def test_sgr_birthdate_column(self):
+  rows=''.join(f"<tr><td>{i}</td><td>Player{chr(65+i%26)}{i}, Test</td><td>SF</td><td>PF</td><td>Kansas</td><td>Fr</td><td>6’7, 230 lbs</td><td>10/12/07</td></tr>" for i in range(1,151))
+  players=parse('sgr',f'<title>x</title><table><tbody>{rows}</tbody></table>',SOURCES[3][2])
+  self.assertEqual(len(players),150);self.assertEqual(players[0]['height'],"6'7\"")
  def test_failed_fetch_retains_cache(self):
   with patch('consensus.fetch_source',side_effect=OSError('offline')):sources=fetch_all(self.data['sources'])
   self.assertTrue(all(s['status']=='stale' for s in sources));self.assertEqual(sources[0]['players'],self.data['sources'][0]['players'])
