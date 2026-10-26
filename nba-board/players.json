@@ -4202,7 +4202,20 @@
       "measurement_source_name": "ESPN",
       "photo_original": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/uconnhuskies.com/images/2026/7/7/9_HINES_NA_JAI.png",
       "photo_credit": "UConn Athletics (roster photo)",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Powerful post presence who excels at the big-man basics: rebounding, finishing at the rim and blocking shots, with good feet for his size.",
+        "weaknesses": "Needs another offensive dimension (hands, passing or foul drawing) and to shed a few pounds; struggles to change direction once moving.",
+        "source": {
+          "name": "No Ceilings \u00b7 Tyler Metcalf",
+          "url": "https://www.noceilingsnba.com/p/2027-nba-draft-big-east-prospect",
+          "sections": [
+            "2027 NBA Draft Big East Prospect Cheat Sheet"
+          ]
+        },
+        "reviewed_at": "2026-10-26T00:05:26.297165+00:00",
+        "evidence_hash": "e45b6cf59a4a1ae72f1bf2e645982bd84b6f0e68994ab9c0ad01559800b1a0f6",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-09-15T02:27:48.422682+00:00",
@@ -6537,7 +6550,20 @@
       "photo_source": "https://thesundevils.com/sports/mens-basketball/roster/player/paulius-murauskas",
       "photo_original": "https://thesundevils.com/imgproxy/Gq8nc4SZY6HV4BoDICBnISzyOyIhCyLNipIX5SizpuE/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3RoZXN1bmRldmlscy1jb20tcHJvZC8yMDI2LzA3LzEzL3R2dmpHcnZxaXdtYmhBeVBjS3BWTmFWNE5MWVZCQTNjOW1XR0RJbDcuanBn.jpg",
       "photo_credit": "Arizona State Athletics (player profile)",
-      "scouting": null,
+      "scouting": {
+        "strengths": "6-8 wing scorer with slick mid-post footwork, strong rebounding, low turnovers, smart cutting and screening, and a knack for drawing fouls.",
+        "weaknesses": "Historically a middling three-point shooter, score-first as a passer, and his off-ball defensive awareness is a real concern; he will be 23 on draft night.",
+        "source": {
+          "name": "No Ceilings \u00b7 Corey Tulaba",
+          "url": "https://www.noceilingsnba.com/p/uncut-gems",
+          "sections": [
+            "Uncut Gems: Mining for 2027 NBA Draft Sleeper Forwards"
+          ]
+        },
+        "reviewed_at": "2026-10-26T00:05:26.297165+00:00",
+        "evidence_hash": "95c7f0c375d644cda1225eaabeee321a9d0c6bc7f5381eb4c85db7d2801323e6",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-09-15T02:27:48.422682+00:00",
@@ -6736,7 +6762,20 @@
       "weight": "205 lbs",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/41/roster",
       "measurement_source_name": "ESPN",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Tough, versatile defender and rebounder who slashes, flashes shot creation and adapts to different offensive roles; solid spot-up shooter.",
+        "weaknesses": "Shooting consistency off the dribble is the main hole in his game.",
+        "source": {
+          "name": "No Ceilings \u00b7 Tyler Metcalf",
+          "url": "https://www.noceilingsnba.com/p/2027-nba-draft-big-east-prospect",
+          "sections": [
+            "2027 NBA Draft Big East Prospect Cheat Sheet"
+          ]
+        },
+        "reviewed_at": "2026-10-26T00:05:26.297165+00:00",
+        "evidence_hash": "d98be54869eb9e6e0ec887cc100aa0b526fe89a8f27e7f0d0aa0fd6358b579e0",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-09-15T02:27:48.422682+00:00",
@@ -7063,7 +7102,20 @@
       "weight": "195 lbs",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/269/roster",
       "measurement_source_name": "ESPN",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Lightning-quick point guard who pressures the rim, makes plays for others and defends with energy.",
+        "weaknesses": "Very small; needs to keep improving his jumper and take better care of the ball.",
+        "source": {
+          "name": "No Ceilings \u00b7 Tyler Metcalf",
+          "url": "https://www.noceilingsnba.com/p/2027-nba-draft-big-east-prospect",
+          "sections": [
+            "2027 NBA Draft Big East Prospect Cheat Sheet"
+          ]
+        },
+        "reviewed_at": "2026-10-26T00:05:26.297165+00:00",
+        "evidence_hash": "cef4c0ff653279f518ba2a126c18ca91c6f5ae60532de6df2a749b7401505524",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-09-15T02:27:48.422682+00:00",
@@ -8394,7 +8446,20 @@
       "measurement_source_name": "ESPN",
       "photo_original": "https://images.sidearmdev.com/resize?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Ffriars.com%2Fimages%2F2026%2F6%2F4%2FPRI00585.JPG&height=300&type=webp",
       "photo_credit": "Providence Athletics (player profile)",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Mobile big who rebounds, blocks shots, makes multiple rotations and generates steals; an excellent cutter, rim runner and interior finisher.",
+        "weaknesses": "Not an elite primary rim protector; his passing and shooting are still more promise than production.",
+        "source": {
+          "name": "No Ceilings \u00b7 Tyler Metcalf",
+          "url": "https://www.noceilingsnba.com/p/2027-nba-draft-big-east-prospect",
+          "sections": [
+            "2027 NBA Draft Big East Prospect Cheat Sheet"
+          ]
+        },
+        "reviewed_at": "2026-10-26T00:05:26.297165+00:00",
+        "evidence_hash": "45d65a9b21696f7d83c496960d5be7f77bc22ae58d968b36a44135b7d0b5548c",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-09-15T02:27:48.422682+00:00",
@@ -8549,7 +8614,20 @@
       "weight": "210 lbs",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/139/roster",
       "measurement_source_name": "ESPN",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Exceptional athlete with explosive leaping, lateral quickness and speed, plus playmaking that is unusual for his size.",
+        "weaknesses": "A history of injuries and severe cramping limited earlier seasons, and shooting has been a consistent struggle.",
+        "source": {
+          "name": "No Ceilings \u00b7 Owen Jury",
+          "url": "https://www.noceilingsnba.com/p/kellen-thames-demands-your-attention",
+          "sections": [
+            "Kellen Thames Demands Your Attention"
+          ]
+        },
+        "reviewed_at": "2026-10-26T00:05:26.297165+00:00",
+        "evidence_hash": "0b2edfc930f2b9bad7f9e2064c8d676265b41d142b02461ec6481911a8141bb9",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-09-15T02:27:48.422682+00:00",
@@ -9040,7 +9118,20 @@
       "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4685673.png",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/259.png",
       "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/4685673/amani-hansberry",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Strong, long, mobile forward who switches onto guards, guards the post, rotates well off the ball and rebounds, with versatile skill on offense.",
+        "weaknesses": "Somewhat undersized to play center and lacks a single elite skill; his drop coverage was inconsistent.",
+        "source": {
+          "name": "No Ceilings \u00b7 Corey Tulaba",
+          "url": "https://www.noceilingsnba.com/p/uncut-gems",
+          "sections": [
+            "Uncut Gems: Mining for 2027 NBA Draft Sleeper Forwards"
+          ]
+        },
+        "reviewed_at": "2026-10-26T00:05:26.297165+00:00",
+        "evidence_hash": "680f45985fc02e57d57e739e1f9d9ede2353265e41315fd68058dfe7f8e80afb",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-09-15T02:27:48.422682+00:00",
