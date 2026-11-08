@@ -2183,5 +2183,109 @@
     "reviewed_at": "2026-10-25T23:39:49.037647+00:00",
     "evidence_hash": "7ef8cb755c5d80edbc623acbea0421f58c606087dcdbbe05c48330da601ad1c0",
     "status": "reviewed_summary"
+  },
+  "elijahpaige": {
+    "strengths": "Length and recovery range in pass protection; allowed no sacks on 163 charted 2025 pass-blocking snaps.",
+    "weaknesses": "Run blocking (60.2 grade) lacks consistent movement for his frame; can concede early depth and lean on length to rescue his pass sets.",
+    "source": {
+      "name": "Scouting Grade Editorial",
+      "url": "https://scoutinggrade.com/2027/players/elijah-paige",
+      "sections": [
+        "How He Wins",
+        "What Can Break His Grade"
+      ]
+    },
+    "reviewed_at": "2026-11-08T18:58:59.552789+00:00",
+    "evidence_hash": "c4533ab569720f2b90c059a07dec28a2e2b9ebd745a928619c236e9c33934765",
+    "status": "reviewed_summary"
+  },
+  "anthonyboswell": {
+    "strengths": "Extensive center experience (all 819 charted snaps) with the calls and interior traffic; allowed no sacks on 448 pass-blocking snaps.",
+    "weaknesses": "Move from Toledo to Houston tests his anchor and recovery against tougher interior rushers; must handle late front movement without exposing his own block.",
+    "source": {
+      "name": "Scouting Grade Editorial",
+      "url": "https://scoutinggrade.com/2027/players/anthony-boswell",
+      "sections": [
+        "How He Wins",
+        "What Can Break His Grade"
+      ]
+    },
+    "reviewed_at": "2026-11-08T18:58:59.552789+00:00",
+    "evidence_hash": "44712a18da3edcfabfc0c460368e01ba737d2f8a20ce046702de566a921d16eb",
+    "status": "reviewed_summary"
+  },
+  "jyairehill": {
+    "strengths": "Competes at the catch point \u2014 14.6% forced-incompletion rate, with a 52.1% catch rate allowed in 2025.",
+    "weaknesses": "Perimeter tackling is still part of the job; needs to change leverage without late contact before a defense can leave him isolated.",
+    "source": {
+      "name": "Scouting Grade Editorial",
+      "url": "https://scoutinggrade.com/2027/players/jyaire-hill",
+      "sections": [
+        "How He Wins",
+        "What Can Break His Grade"
+      ]
+    },
+    "reviewed_at": "2026-11-08T18:58:59.552789+00:00",
+    "evidence_hash": "3323c95c8dedcb246742c2bd8db7df89faf10fa4d1d096b69e9903d93c19edbe",
+    "status": "reviewed_summary"
+  },
+  "jesseperry": {
+    "strengths": "Length keeps rushers off the shortest path to the quarterback (75.1 pass-block grade); frame and experience suit a multi-position reserve role early.",
+    "weaknesses": "Allowed 16 pressures and three sacks, so hand timing must improve; can play too tall into contact and lose leverage.",
+    "source": {
+      "name": "Scouting Grade Editorial",
+      "url": "https://scoutinggrade.com/2027/players/jesse-perry",
+      "sections": [
+        "How He Wins",
+        "What Can Break His Grade"
+      ]
+    },
+    "reviewed_at": "2026-11-08T18:58:59.552789+00:00",
+    "evidence_hash": "e2dca7fea219509627f7dfb94eb3bc28312b54cb0543baff07d342879f04ebdb",
+    "status": "reviewed_summary"
+  },
+  "ljmartin": {
+    "strengths": "Proven heavy workload (274 touches in 2025) and productive early 2026 form.",
+    "weaknesses": "Needs a defined pass-protection and receiving role on passing downs; rushing decisions must hold up when the first lane closes early.",
+    "source": {
+      "name": "Scouting Grade Editorial",
+      "url": "https://scoutinggrade.com/2027/players/lj-martin",
+      "sections": [
+        "How He Wins",
+        "What Can Break His Grade"
+      ]
+    },
+    "reviewed_at": "2026-11-08T18:58:59.552789+00:00",
+    "evidence_hash": "3b65d25d283bdd4522079453b4285b3bbcf6994011b96e8f4f73a618c0657c2b",
+    "status": "reviewed_summary"
+  },
+  "earnestgreene": {
+    "strengths": "Fires out of his stance with good depth, upper-body strength to sustain blocks and anchor against bull rushes; physical, quick run blocker suited to zone schemes.",
+    "weaknesses": "Can bend at the waist and look stiff in his drop, reacts late to some blitzes, and gives up too many pressures to inside counters while protecting the edge; arm length and height are below the tackle ideal.",
+    "source": {
+      "name": "Charlie Campbell \u00b7 WalterFootball (2025 preseason report)",
+      "url": "https://walterfootball.com/scoutingreports2026egreene.php",
+      "sections": [
+        "Prospect Summary"
+      ]
+    },
+    "reviewed_at": "2026-11-08T18:58:59.552789+00:00",
+    "evidence_hash": "148273585e018a94e6d243f4df4aa90bd0f00ffb8886576119aed3781309fb2e",
+    "status": "reviewed_summary"
+  },
+  "lawsonluckie": {
+    "strengths": "Blocking is his calling card \u2014 strong hands, enough strength for NFL-sized defenders and the ability to seal the edge; moves fluidly and builds speed after the catch.",
+    "weaknesses": "The report lists no weaknesses; its summary notes Georgia has used him sparingly as a receiver so far.",
+    "source": {
+      "name": "Andrew Harbaugh \u00b7 Bucs Wire (via Yahoo)",
+      "url": "https://sports.yahoo.com/articles/2027-summer-scouting-report-lawson-175857630.html",
+      "sections": [
+        "Strengths",
+        "Player Summary"
+      ]
+    },
+    "reviewed_at": "2026-11-08T18:58:59.552789+00:00",
+    "evidence_hash": "46147f9678d46ebc9b66f15cfc7d27a92c51c78e1b4179355fc4c37a3e26ec37",
+    "status": "reviewed_summary"
   }
 }

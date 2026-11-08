@@ -16,8 +16,10 @@ SOURCES = [
  ('bucs', 'Bucs Wire (via Yahoo)', 'https://sports.yahoo.com/articles/2027-nfl-draft-summer-top-174955597.html'),
  ('athlon', 'Athlon Sports (via Yahoo)', 'https://sports.yahoo.com/articles/2027-nfl-draft-rankings-top-235414564.html'),
  ('rios', 'EssentiallySports · Daniel Rios (via Yahoo)', 'https://sports.yahoo.com/articles/daniel-rios-2027-nfl-draft-214051521.html'),
+ ('countdown', 'NFL Draft Countdown · Brian Bosarge', 'https://www.draftcountdown.com/rankings/2027-nfl-draft-big-board-top-150-prospect-rankings-updated/'),
+ ('cbs', 'CBS Sports · Mike Renner', 'https://www.cbssports.com/nfl/draft/news/renners-2027-nfl-draft-big-board-ranking-top-150-prospects/'),
 ]
-ALIASES = {'brauntaejohnson': 'taejohnson', 'ryancolemanwilliams': 'ryanwilliams', 'ahmadmoten': 'ahmadmoten', 'ahmadmotenii': 'ahmadmoten', 'taviongadsen': 'taviongadson', 'keonsaab': 'keonsabb'}
+ALIASES = {'brauntaejohnson': 'taejohnson', 'ryancolemanwilliams': 'ryanwilliams', 'ahmadmoten': 'ahmadmoten', 'ahmadmotenii': 'ahmadmoten', 'taviongadsen': 'taviongadson', 'keonsaab': 'keonsabb', 'kellyjones': 'kelleyjones', 'miquisehumphreygrace': 'miquihumphreygrace', 'adonschuler': 'adonshuler', 'collinsimmons': 'colinsimmons', 'cadeuluavu': 'cadeuluave'}
 def identity(name, school=""):
     name = unicodedata.normalize('NFKD', name).encode('ascii', 'ignore').decode().lower()
     name = re.sub(r'\b(jr|sr|ii|iii|iv)\.?$', '', name).strip()
@@ -67,9 +69,26 @@ def parse(key, raw, url):
             m=re.match(r'^(\d+)\.\s*(.+?),\s*([A-Za-z/]+),\s*(.+)$',h.get_text(' ',strip=True))
             if m:
                 rank,name,pos,school=m.groups();rows.append(record(name,pos,school,rank,url))
+    elif key == 'countdown':
+        for p in soup.select('p'):
+            m=re.match(r'^(\d{1,3})\s*\|\s*([A-Za-z/]+)\s*\|\s*(.+?)\s*\|\s*(.+)$',p.get_text(' ',strip=True))
+            if m:
+                rank,pos,name,school=m.groups();rows.append(record(name,pos,school,rank,url))
+    elif key == 'cbs':
+        # Ranks 1-50 are headings; 51-150 are <br>-separated lines in paragraphs.
+        body=soup.select_one('.Article-bodyContent')
+        for br in body.find_all('br'):br.replace_with('\n')
+        for el in body.select('h2,p'):
+            for line in el.get_text().split('\n'):
+                m=re.match(r'^(\d{1,3})\.\s*(.+?),\s*([A-Za-z/]+),\s*(.+)$',re.sub(r'\s+,',',',re.sub(r'\s+',' ',line).strip()))
+                if m and len(m[0])<80:
+                    rank,name,pos,school=m.groups();rows.append(record(name,pos,school,rank,url))
     rows.sort(key=lambda p:p['rank'])
     if len(rows)<100 or [r['rank'] for r in rows] != list(range(1,len(rows)+1)):
         raise ValueError('Incomplete or non-sequential board')
+    if key == 'cbs':
+        # The article lists Carter Smith twice (99 and 108); keep each player's first listing.
+        seen=set();rows=[r for r in rows if not (identity(r['name'],r['school']) in seen or seen.add(identity(r['name'],r['school'])))]
     if len({identity(r['name'],r['school']) for r in rows})!=len(rows):
         raise ValueError('Ambiguous duplicate player identity')
     return rows
@@ -77,7 +96,7 @@ def parse(key, raw, url):
 def editorial_date(key, raw):
     soup = BeautifulSoup(raw, 'html.parser')
     value = None
-    if key in ('sg', 'tankathon', 'sporting', 'bucs', 'athlon', 'rios'):
+    if key in ('sg', 'tankathon', 'sporting', 'bucs', 'athlon', 'rios', 'countdown', 'cbs'):
         node = soup.select_one('time[datetime]')
         if node: value = node['datetime']
     elif key == 'drafttek':
@@ -86,8 +105,8 @@ def editorial_date(key, raw):
             value = datetime.strptime(match[1], '%B %d, %Y').date().isoformat()
     try:
         if value:
-            parsed = datetime.fromisoformat(value.replace('Z', '+00:00'))
-            return dict(editorial_date=parsed.date().isoformat(), editorial_date_kind='Published' if key in ('sporting','bucs','athlon','rios') else 'Board dated')
+            parsed = datetime.fromisoformat(value.replace('Z', '+00:00').replace(' UTC', '+00:00'))
+            return dict(editorial_date=parsed.date().isoformat(), editorial_date_kind='Published' if key in ('sporting','bucs','athlon','rios','countdown','cbs') else 'Board dated')
     except ValueError: pass
     return dict(editorial_date=None, editorial_date_kind='Date unavailable')
 

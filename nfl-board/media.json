@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": 1792970685.2844734,
+  "updated": 1794164168.803525,
   "players": {
     "jeremiah-smith": {
       "school": "Ohio State",
@@ -38,15 +38,6 @@
       "measurement_source": null,
       "photo_source": null
     },
-    "cam-coleman": {
-      "school": "Texas",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5079376.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
-      "height": "6' 3\"",
-      "weight": "204 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/251/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5079376/cam-coleman"
-    },
     "jordan-seaton": {
       "school": "LSU",
       "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5079682.png",
@@ -56,6 +47,15 @@
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/99/roster",
       "photo_source": "https://www.espn.com/college-football/player/_/id/5079682/jordan-seaton"
     },
+    "cam-coleman": {
+      "school": "Texas",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5079376.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+      "height": "6' 3\"",
+      "weight": "204 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/251/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5079376/cam-coleman"
+    },
     "trevor-goosby": {
       "school": "Texas",
       "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4918430.png",
@@ -64,24 +64,6 @@
       "weight": "325 lbs",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/251/roster",
       "photo_source": "https://www.espn.com/college-football/player/_/id/4918430/trevor-goosby"
-    },
-    "ellis-robinson-iv": {
-      "school": "Georgia",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5079698.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/61.png",
-      "height": "6' 0\"",
-      "weight": "180 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/61/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5079698/ellis-robinson-iv"
-    },
-    "kj-bolden": {
-      "school": "Georgia",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5079334.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/61.png",
-      "height": "6' 0\"",
-      "weight": "195 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/61/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5079334/kj-bolden"
     },
     "charlie-becker": {
       "school": "Indiana",
@@ -101,6 +83,15 @@
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/145/roster",
       "photo_source": "https://www.espn.com/college-football/player/_/id/5218778/will-echoles"
     },
+    "ellis-robinson-iv": {
+      "school": "Georgia",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5079698.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/61.png",
+      "height": "6' 0\"",
+      "weight": "180 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/61/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5079698/ellis-robinson-iv"
+    },
     "jadan-baugh": {
       "school": "Florida",
       "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5079322.png",
@@ -109,42 +100,6 @@
       "weight": "225 lbs",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/roster",
       "photo_source": "https://www.espn.com/college-football/player/_/id/5079322/jadan-baugh"
-    },
-    "a-mauri-washington": {
-      "school": "Oregon",
-      "photo": null,
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2483.png",
-      "height": null,
-      "weight": null,
-      "measurement_source": null,
-      "photo_source": null
-    },
-    "dante-moore": {
-      "school": "Oregon",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4870921.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2483.png",
-      "height": "6' 3\"",
-      "weight": "220 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2483/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/4870921/dante-moore"
-    },
-    "jamari-johnson": {
-      "school": "Oregon",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4922988.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2483.png",
-      "height": "6' 5\"",
-      "weight": "255 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2483/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/4922988/jamari-johnson"
-    },
-    "kelley-jones": {
-      "school": "Mississippi State",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5076950.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/344.png",
-      "height": "6' 4\"",
-      "weight": "205 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/344/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5076950/kelley-jones"
     },
     "drew-mestemaker": {
       "school": "Oklahoma State",
@@ -155,14 +110,23 @@
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/197/roster",
       "photo_source": "https://www.espn.com/college-football/player/_/id/5219834/drew-mestemaker"
     },
-    "trinidad-chambliss": {
-      "school": "Ole Miss",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4911529.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/145.png",
-      "height": "6' 0\"",
+    "a-mauri-washington": {
+      "school": "Oregon",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2483.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "kelley-jones": {
+      "school": "Mississippi State",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5076950.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/344.png",
+      "height": "6' 4\"",
       "weight": "205 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/145/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/4911529/trinidad-chambliss"
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/344/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5076950/kelley-jones"
     },
     "greg-johnson": {
       "school": "Minnesota",
@@ -173,14 +137,32 @@
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/135/roster",
       "photo_source": "https://www.espn.com/college-football/player/_/id/5090565/greg-johnson"
     },
-    "david-stone": {
-      "school": "Oklahoma",
-      "photo": null,
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/201.png",
-      "height": null,
-      "weight": null,
-      "measurement_source": null,
-      "photo_source": null
+    "cj-carr": {
+      "school": "Notre Dame",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5079369.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/87.png",
+      "height": "6' 2\"",
+      "weight": "215 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/87/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5079369/cj-carr"
+    },
+    "trinidad-chambliss": {
+      "school": "Ole Miss",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4911529.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/145.png",
+      "height": "6' 0\"",
+      "weight": "205 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/145/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/4911529/trinidad-chambliss"
+    },
+    "jamari-johnson": {
+      "school": "Oregon",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4922988.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2483.png",
+      "height": "6' 5\"",
+      "weight": "255 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2483/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/4922988/jamari-johnson"
     },
     "trey-dez-green": {
       "school": "LSU",
@@ -191,14 +173,14 @@
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/99/roster",
       "photo_source": "https://www.espn.com/college-football/player/_/id/5079420/treydez-green"
     },
-    "cj-carr": {
-      "school": "Notre Dame",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5079369.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/87.png",
-      "height": "6' 2\"",
-      "weight": "215 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/87/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5079369/cj-carr"
+    "kj-bolden": {
+      "school": "Georgia",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5079334.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/61.png",
+      "height": "6' 0\"",
+      "weight": "195 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/61/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5079334/kj-bolden"
     },
     "trevor-lauck": {
       "school": "Iowa",
@@ -209,14 +191,41 @@
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2294/roster",
       "photo_source": "https://www.espn.com/college-football/player/_/id/4920139/trevor-lauck"
     },
-    "darian-mensah": {
-      "school": "Miami",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5121169.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2390.png",
-      "height": "6' 3\"",
+    "david-stone": {
+      "school": "Oklahoma",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/201.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "ashton-hampton": {
+      "school": "Clemson",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5127738.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/228.png",
+      "height": "6' 2\"",
       "weight": "205 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2390/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5121169/darian-mensah"
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/228/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5127738/ashton-hampton"
+    },
+    "kade-pieper": {
+      "school": "Iowa",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5112633.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2294.png",
+      "height": "6' 3\"",
+      "weight": "298 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2294/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5112633/kade-pieper"
+    },
+    "chris-cole": {
+      "school": "Georgia",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5145410.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/61.png",
+      "height": "6' 3\"",
+      "weight": "235 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/61/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5145410/chris-cole"
     },
     "kewan-lacy": {
       "school": "Ole Miss",
@@ -227,14 +236,41 @@
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/145/roster",
       "photo_source": "https://www.espn.com/college-football/player/_/id/5086388/kewan-lacy"
     },
-    "kade-pieper": {
-      "school": "Iowa",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5112633.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2294.png",
+    "darian-mensah": {
+      "school": "Miami",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5121169.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2390.png",
       "height": "6' 3\"",
-      "weight": "298 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2294/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5112633/kade-pieper"
+      "weight": "205 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2390/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5121169/darian-mensah"
+    },
+    "nick-marsh": {
+      "school": "Indiana",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5079600.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/84.png",
+      "height": "6' 3\"",
+      "weight": "210 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/84/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5079600/nick-marsh"
+    },
+    "dante-moore": {
+      "school": "Oregon",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4870921.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2483.png",
+      "height": "6' 3\"",
+      "weight": "220 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2483/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/4870921/dante-moore"
+    },
+    "yhonzae-pierre": {
+      "school": "Alabama",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4870970.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/333.png",
+      "height": "6' 3\"",
+      "weight": "251 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/333/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/4870970/yhonzae-pierre"
     },
     "ahmad-moten": {
       "school": "Miami",
@@ -254,41 +290,59 @@
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2390/roster",
       "photo_source": "https://www.espn.com/college-football/player/_/id/5079678/justin-scott"
     },
-    "nick-marsh": {
-      "school": "Indiana",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5079600.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/84.png",
-      "height": "6' 3\"",
-      "weight": "210 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/84/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5079600/nick-marsh"
+    "lance-heard": {
+      "school": "Kentucky",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5150410.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/96.png",
+      "height": "6' 6\"",
+      "weight": "325 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/96/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5150410/lance-heard"
     },
-    "ashton-hampton": {
+    "arch-manning": {
+      "school": "Texas",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4870906.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+      "height": "6' 4\"",
+      "weight": "222 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/251/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/4870906/arch-manning"
+    },
+    "kyngstonn-viliamu-asa": {
+      "school": "Notre Dame",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5079748.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/87.png",
+      "height": "6' 3\"",
+      "weight": "234 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/87/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5079748/kyngstonn-viliamu-asa"
+    },
+    "will-heldt": {
       "school": "Clemson",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5127738.png",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5077977.png",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/228.png",
-      "height": "6' 2\"",
-      "weight": "205 lbs",
+      "height": "6' 6\"",
+      "weight": "260 lbs",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/228/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5127738/ashton-hampton"
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5077977/will-heldt"
     },
-    "yhonzae-pierre": {
-      "school": "Alabama",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4870970.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/333.png",
-      "height": "6' 3\"",
-      "weight": "251 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/333/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/4870970/yhonzae-pierre"
+    "ahmad-hardy": {
+      "school": "Missouri",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5197065.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/142.png",
+      "height": "5' 10\"",
+      "weight": "210 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/142/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5197065/ahmad-hardy"
     },
-    "chris-cole": {
-      "school": "Georgia",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5145410.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/61.png",
-      "height": "6' 3\"",
-      "weight": "235 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/61/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5145410/chris-cole"
+    "kj-duff": {
+      "school": "Rutgers",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5084771.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/164.png",
+      "height": "6' 6\"",
+      "weight": "225 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/164/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5084771/kj-duff"
     },
     "tae-johnson": {
       "school": "Notre Dame",
@@ -299,14 +353,32 @@
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/87/roster",
       "photo_source": "https://www.espn.com/college-football/player/_/id/5218506/brauntae-johnson"
     },
-    "carter-smith": {
-      "school": "Indiana",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4819239.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/84.png",
-      "height": "6' 5\"",
-      "weight": "310 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/84/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/4819239/carter-smith"
+    "ryan-williams": {
+      "school": "Alabama",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5141711.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/333.png",
+      "height": "6' 0\"",
+      "weight": "184 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/333/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5141711/ryan-coleman-williams"
+    },
+    "matayo-uiagalelei": {
+      "school": "Oregon",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2483.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "zabien-brown": {
+      "school": "Alabama",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5079344.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/333.png",
+      "height": "6' 0\"",
+      "weight": "194 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/333/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5079344/zabien-brown"
     },
     "austin-siereveld": {
       "school": "Ohio State",
@@ -326,33 +398,6 @@
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/228/roster",
       "photo_source": "https://www.espn.com/college-football/player/_/id/5079342/sammy-brown"
     },
-    "cayden-green": {
-      "school": "Missouri",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4870727.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/142.png",
-      "height": "6' 5\"",
-      "weight": "324 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/142/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/4870727/cayden-green"
-    },
-    "will-heldt": {
-      "school": "Clemson",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5077977.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/228.png",
-      "height": "6' 6\"",
-      "weight": "260 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/228/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5077977/will-heldt"
-    },
-    "zabien-brown": {
-      "school": "Alabama",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5079344.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/333.png",
-      "height": "6' 0\"",
-      "weight": "194 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/333/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5079344/zabien-brown"
-    },
     "a-j-holmes-jr": {
       "school": "Texas Tech",
       "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4702828.png",
@@ -362,50 +407,23 @@
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2641/roster",
       "photo_source": "https://www.espn.com/college-football/player/_/id/4702828/aj-holmes-jr"
     },
-    "ryan-williams": {
-      "school": "Alabama",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5141711.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/333.png",
-      "height": "6' 0\"",
-      "weight": "184 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/333/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5141711/ryan-coleman-williams"
+    "carter-smith": {
+      "school": "Indiana",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4819239.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/84.png",
+      "height": "6' 5\"",
+      "weight": "310 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/84/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/4819239/carter-smith"
     },
-    "arch-manning": {
-      "school": "Texas",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4870906.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
-      "height": "6' 4\"",
-      "weight": "222 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/251/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/4870906/arch-manning"
-    },
-    "matayo-uiagalelei": {
-      "school": "Oregon",
-      "photo": null,
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2483.png",
-      "height": null,
-      "weight": null,
-      "measurement_source": null,
-      "photo_source": null
-    },
-    "ahmad-hardy": {
+    "cayden-green": {
       "school": "Missouri",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5197065.png",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4870727.png",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/142.png",
-      "height": "5' 10\"",
-      "weight": "210 lbs",
+      "height": "6' 5\"",
+      "weight": "324 lbs",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/142/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5197065/ahmad-hardy"
-    },
-    "kenyatta-jackson-jr": {
-      "school": "Ohio State",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5081821.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/194.png",
-      "height": "6' 6\"",
-      "weight": "263 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/194/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5081821/kenyatta-jackson-jr"
+      "photo_source": "https://www.espn.com/college-football/player/_/id/4870727/cayden-green"
     },
     "clev-lubin": {
       "school": "Louisville",
@@ -416,6 +434,15 @@
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/97/roster",
       "photo_source": "https://www.espn.com/college-football/player/_/id/5082149/clev-lubin"
     },
+    "ty-benefield": {
+      "school": "LSU",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5117455.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/99.png",
+      "height": "6' 3\"",
+      "weight": "208 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/99/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5117455/ty-benefield"
+    },
     "damon-wilson-ii": {
       "school": "Miami",
       "photo": null,
@@ -425,41 +452,32 @@
       "measurement_source": null,
       "photo_source": null
     },
-    "kyngstonn-viliamu-asa": {
-      "school": "Notre Dame",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5079748.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/87.png",
-      "height": "6' 3\"",
-      "weight": "234 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/87/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5079748/kyngstonn-viliamu-asa"
-    },
-    "kj-duff": {
-      "school": "Rutgers",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5084771.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/164.png",
+    "kenyatta-jackson-jr": {
+      "school": "Ohio State",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5081821.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/194.png",
       "height": "6' 6\"",
-      "weight": "225 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/164/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5084771/kj-duff"
+      "weight": "263 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/194/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5081821/kenyatta-jackson-jr"
     },
-    "lance-heard": {
-      "school": "Kentucky",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5150410.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/96.png",
-      "height": "6' 6\"",
-      "weight": "325 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/96/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5150410/lance-heard"
+    "devanthompkins": {
+      "school": "Alabama",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/333.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
     },
-    "lanorris-sellers": {
-      "school": "South Carolina",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4875127.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2579.png",
-      "height": "6' 3\"",
-      "weight": "238 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2579/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/4875127/lanorris-sellers"
+    "xaviergilliam": {
+      "school": "Tennessee",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5146422.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2633.png",
+      "height": "6' 2\"",
+      "weight": "305 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2633/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5146422/xavier-gilliam"
     },
     "quincy-rhodes-jr": {
       "school": "Arkansas",
@@ -470,14 +488,77 @@
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/8/roster",
       "photo_source": "https://www.espn.com/college-football/player/_/id/4918136/quincy-rhodes-jr"
     },
-    "ty-benefield": {
-      "school": "LSU",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5117455.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/99.png",
+    "boubacar-traore": {
+      "school": "Notre Dame",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4871079.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/87.png",
+      "height": "6' 5\"",
+      "weight": "253 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/87/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/4871079/boubacar-traore"
+    },
+    "jayden-maiava": {
+      "school": "USC",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4685454.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/30.png",
+      "height": "6' 4\"",
+      "weight": "230 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/30/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/4685454/jayden-maiava"
+    },
+    "melvin-siani": {
+      "school": "Texas",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5121994.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+      "height": "6' 6\"",
+      "weight": "317 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/251/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5121994/melvin-siani"
+    },
+    "lanorris-sellers": {
+      "school": "South Carolina",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4875127.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2579.png",
       "height": "6' 3\"",
-      "weight": "208 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/99/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5117455/ty-benefield"
+      "weight": "238 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2579/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/4875127/lanorris-sellers"
+    },
+    "jaylen-mcclain": {
+      "school": "Ohio State",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5079518.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/194.png",
+      "height": "6' 0\"",
+      "weight": "203 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/194/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5079518/jaylen-mcclain"
+    },
+    "deucealexander": {
+      "school": "Ole Miss",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5152158.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/145.png",
+      "height": "6' 0\"",
+      "weight": "180 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/145/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5152158/deuce-alexander"
+    },
+    "tavion-gadson": {
+      "school": "Kentucky",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5065596.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/96.png",
+      "height": "6' 5\"",
+      "weight": "303 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/96/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5065596/tavion-gadson"
+    },
+    "vicari-swain": {
+      "school": "South Carolina",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2579.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
     },
     "julian-sayin": {
       "school": "Ohio State",
@@ -497,14 +578,23 @@
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2579/roster",
       "photo_source": "https://www.espn.com/college-football/player/_/id/4911915/jacarrius-peak"
     },
-    "john-henry-daley": {
-      "school": "Michigan",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5160962.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png",
+    "austinsimmons": {
+      "school": "Missouri",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5141684.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/142.png",
+      "height": "6' 4\"",
+      "weight": "220 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/142/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5141684/austin-simmons"
+    },
+    "kingstonlopa": {
+      "school": "California",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5087950.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/25.png",
       "height": "6' 5\"",
-      "weight": "252 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/130/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5160962/john-henry-daley"
+      "weight": "210 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/25/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5087950/kingston-lopa"
     },
     "reedharris": {
       "school": "Arizona State",
@@ -515,41 +605,32 @@
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/9/roster",
       "photo_source": "https://www.espn.com/college-football/player/_/id/5031157/reed-harris"
     },
-    "austinsimmons": {
-      "school": "Missouri",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5141684.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/142.png",
-      "height": "6' 4\"",
-      "weight": "220 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/142/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5141684/austin-simmons"
+    "jelani-mcdonald": {
+      "school": "Texas",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4922989.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+      "height": "6' 2\"",
+      "weight": "201 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/251/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/4922989/jelani-mcdonald"
     },
-    "bryant-wesco-jr": {
-      "school": "Clemson",
-      "photo": null,
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/228.png",
-      "height": null,
-      "weight": null,
-      "measurement_source": null,
-      "photo_source": null
-    },
-    "jaylen-mcclain": {
-      "school": "Ohio State",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5079518.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/194.png",
-      "height": "6' 0\"",
-      "weight": "203 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/194/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5079518/jaylen-mcclain"
-    },
-    "tavion-gadson": {
-      "school": "Kentucky",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5065596.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/96.png",
+    "john-henry-daley": {
+      "school": "Michigan",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5160962.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png",
       "height": "6' 5\"",
-      "weight": "303 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/96/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5065596/tavion-gadson"
+      "weight": "252 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/130/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5160962/john-henry-daley"
+    },
+    "jordan-ross-lsu": {
+      "school": "LSU",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5112647.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/99.png",
+      "height": "6' 5\"",
+      "weight": "246 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/99/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5112647/jordan-ross"
     },
     "wyatt-young": {
       "school": "Oklahoma State",
@@ -560,23 +641,14 @@
       "measurement_source": null,
       "photo_source": null
     },
-    "melvin-siani": {
-      "school": "Texas",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5121994.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
-      "height": "6' 6\"",
-      "weight": "317 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/251/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5121994/melvin-siani"
-    },
-    "jayden-maiava": {
-      "school": "USC",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4685454.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/30.png",
-      "height": "6' 4\"",
-      "weight": "230 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/30/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/4685454/jayden-maiava"
+    "bryant-wesco-jr": {
+      "school": "Clemson",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/228.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
     },
     "anthonie-knapp": {
       "school": "Notre Dame",
@@ -596,24 +668,6 @@
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/251/roster",
       "photo_source": "https://www.espn.com/college-football/player/_/id/4922981/rasheem-biles"
     },
-    "boubacar-traore": {
-      "school": "Notre Dame",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4871079.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/87.png",
-      "height": "6' 5\"",
-      "weight": "253 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/87/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/4871079/boubacar-traore"
-    },
-    "koi-perich": {
-      "school": "Oregon",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5142588.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2483.png",
-      "height": "6' 1\"",
-      "weight": "202 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2483/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5142588/koi-perich"
-    },
     "ryan-wingo": {
       "school": "Texas",
       "photo": null,
@@ -623,10 +677,46 @@
       "measurement_source": null,
       "photo_source": null
     },
-    "devanthompkins": {
-      "school": "Alabama",
+    "lukereynolds": {
+      "school": "Virginia Tech",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5138451.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/259.png",
+      "height": "6' 4\"",
+      "weight": "250 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/259/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5138451/luke-reynolds"
+    },
+    "bear-alexander": {
+      "school": "Oregon",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4685244.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2483.png",
+      "height": "6' 3\"",
+      "weight": "316 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2483/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/4685244/bear-alexander"
+    },
+    "princewill-umanmielen": {
+      "school": "LSU",
       "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/99.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "bray-hubbard": {
+      "school": "Alabama",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5077638.png",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/333.png",
+      "height": "6' 2\"",
+      "weight": "215 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/333/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5077638/bray-hubbard"
+    },
+    "zereouewilliams": {
+      "school": "Utah",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/254.png",
       "height": null,
       "weight": null,
       "measurement_source": null,
@@ -641,69 +731,6 @@
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2294/roster",
       "photo_source": "https://www.espn.com/college-football/player/_/id/5067875/zach-lutmer"
     },
-    "jelani-mcdonald": {
-      "school": "Texas",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4922989.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
-      "height": "6' 2\"",
-      "weight": "201 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/251/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/4922989/jelani-mcdonald"
-    },
-    "kingstonlopa": {
-      "school": "California",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5087950.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/25.png",
-      "height": "6' 5\"",
-      "weight": "210 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/25/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5087950/kingston-lopa"
-    },
-    "omarion-miller": {
-      "school": "Arizona State",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4870850.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/9.png",
-      "height": "6' 2\"",
-      "weight": "215 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/9/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/4870850/omarion-miller"
-    },
-    "vicari-swain": {
-      "school": "South Carolina",
-      "photo": null,
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2579.png",
-      "height": null,
-      "weight": null,
-      "measurement_source": null,
-      "photo_source": null
-    },
-    "jordan-ross-lsu": {
-      "school": "LSU",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5112647.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/99.png",
-      "height": "6' 5\"",
-      "weight": "246 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/99/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5112647/jordan-ross"
-    },
-    "bray-hubbard": {
-      "school": "Alabama",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5077638.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/333.png",
-      "height": "6' 2\"",
-      "weight": "215 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/333/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5077638/bray-hubbard"
-    },
-    "mario-craver": {
-      "school": "Texas A&M",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5079345.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/245.png",
-      "height": "5' 9\"",
-      "weight": "180 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/245/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5079345/mario-craver"
-    },
     "samsonokunlola": {
       "school": "Miami",
       "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4870875.png",
@@ -712,87 +739,6 @@
       "weight": "330 lbs",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2390/roster",
       "photo_source": "https://www.espn.com/college-football/player/_/id/4870875/samson-okunlola"
-    },
-    "deucealexander": {
-      "school": "Ole Miss",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5152158.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/145.png",
-      "height": "6' 0\"",
-      "weight": "180 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/145/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5152158/deuce-alexander"
-    },
-    "drake-lindsey": {
-      "school": "Minnesota",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5144959.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/135.png",
-      "height": "6' 5\"",
-      "weight": "230 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/135/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5144959/drake-lindsey"
-    },
-    "chris-peal": {
-      "school": "Syracuse",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4870944.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/183.png",
-      "height": "6' 1\"",
-      "weight": "200 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/183/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/4870944/chris-peal"
-    },
-    "princewill-umanmielen": {
-      "school": "LSU",
-      "photo": null,
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/99.png",
-      "height": null,
-      "weight": null,
-      "measurement_source": null,
-      "photo_source": null
-    },
-    "bear-alexander": {
-      "school": "Oregon",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4685244.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2483.png",
-      "height": "6' 3\"",
-      "weight": "316 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2483/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/4685244/bear-alexander"
-    },
-    "pjwilliams": {
-      "school": "SMU",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4685593.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2567.png",
-      "height": "6' 5\"",
-      "weight": "306 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2567/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/4685593/pj-williams"
-    },
-    "duce-robinson": {
-      "school": "Florida State",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4870922.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/52.png",
-      "height": "6' 6\"",
-      "weight": "230 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/52/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/4870922/duce-robinson"
-    },
-    "jamari-sharpe": {
-      "school": "Indiana",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4881031.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/84.png",
-      "height": "6' 1\"",
-      "weight": "190 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/84/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/4881031/jamari-sharpe"
-    },
-    "ben-roberts": {
-      "school": "Texas Tech",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4833626.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2641.png",
-      "height": "6' 3\"",
-      "weight": "245 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2641/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/4833626/ben-roberts"
     },
     "nate-frazier": {
       "school": "Georgia",
@@ -803,6 +749,51 @@
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/61/roster",
       "photo_source": "https://www.espn.com/college-football/player/_/id/5084047/nate-frazier"
     },
+    "isaac-brown": {
+      "school": "Louisville",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5079349.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/97.png",
+      "height": "5' 9\"",
+      "weight": "190 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/97/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5079349/isaac-brown"
+    },
+    "koi-perich": {
+      "school": "Oregon",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5142588.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2483.png",
+      "height": "6' 1\"",
+      "weight": "202 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2483/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5142588/koi-perich"
+    },
+    "mario-craver": {
+      "school": "Texas A&M",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5079345.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/245.png",
+      "height": "5' 9\"",
+      "weight": "180 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/245/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5079345/mario-craver"
+    },
+    "omarion-miller": {
+      "school": "Arizona State",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4870850.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/9.png",
+      "height": "6' 2\"",
+      "weight": "215 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/9/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/4870850/omarion-miller"
+    },
+    "duce-robinson": {
+      "school": "Florida State",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4870922.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/52.png",
+      "height": "6' 6\"",
+      "weight": "230 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/52/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/4870922/duce-robinson"
+    },
     "mark-fletcher-jr": {
       "school": "Miami",
       "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4870736.png",
@@ -811,24 +802,6 @@
       "weight": "225 lbs",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2390/roster",
       "photo_source": "https://www.espn.com/college-football/player/_/id/4870736/mark-fletcher-jr"
-    },
-    "brice-pollock": {
-      "school": "Texas Tech",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5075540.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2641.png",
-      "height": "6' 0\"",
-      "weight": "195 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2641/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5075540/brice-pollock"
-    },
-    "lukereynolds": {
-      "school": "Virginia Tech",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5138451.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/259.png",
-      "height": "6' 4\"",
-      "weight": "250 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/259/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5138451/luke-reynolds"
     },
     "terrance-carter": {
       "school": "Texas Tech",
@@ -839,50 +812,32 @@
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2641/roster",
       "photo_source": "https://www.espn.com/college-football/player/_/id/4867887/terrance-carter-jr"
     },
-    "isaac-brown": {
-      "school": "Louisville",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5079349.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/97.png",
-      "height": "5' 9\"",
-      "weight": "190 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/97/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5079349/isaac-brown"
-    },
-    "oj-frederique-jr": {
-      "school": "Miami",
-      "photo": null,
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2390.png",
-      "height": null,
-      "weight": null,
-      "measurement_source": null,
-      "photo_source": null
-    },
-    "xaviergilliam": {
-      "school": "Tennessee",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5146422.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2633.png",
+    "tonyrojas": {
+      "school": "Penn State",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4918098.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/213.png",
       "height": "6' 2\"",
-      "weight": "305 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2633/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5146422/xavier-gilliam"
+      "weight": "236 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/213/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/4918098/tony-rojas"
     },
-    "evan-tengesdahl": {
-      "school": "Cincinnati",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4910957.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2132.png",
+    "ben-roberts": {
+      "school": "Texas Tech",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4833626.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2641.png",
       "height": "6' 3\"",
-      "weight": "325 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2132/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/4910957/evan-tengesdahl"
+      "weight": "245 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2641/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/4833626/ben-roberts"
     },
-    "iapani-laloulu": {
-      "school": "Oregon",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4870845.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2483.png",
-      "height": "6' 2\"",
-      "weight": "325 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2483/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/4870845/iapani-laloulu"
+    "brice-pollock": {
+      "school": "Texas Tech",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5075540.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2641.png",
+      "height": "6' 0\"",
+      "weight": "195 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2641/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5075540/brice-pollock"
     },
     "jordan-faison": {
       "school": "Notre Dame",
@@ -893,158 +848,41 @@
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/87/roster",
       "photo_source": "https://www.espn.com/college-football/player/_/id/5150424/jordan-faison"
     },
-    "zereouewilliams": {
-      "school": "Utah",
-      "photo": null,
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/254.png",
-      "height": null,
-      "weight": null,
-      "measurement_source": null,
-      "photo_source": null
-    },
-    "anthony-smith": {
-      "school": "Minnesota",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4832823.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/135.png",
-      "height": "6' 6\"",
-      "weight": "280 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/135/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/4832823/anthony-smith"
-    },
-    "hollywoodsmothers": {
-      "school": "Texas",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4871053.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
-      "height": "5' 11\"",
-      "weight": "193 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/251/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/4871053/hollywood-smothers"
-    },
-    "juniorsherrill": {
-      "school": "Vanderbilt",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5078165.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/238.png",
-      "height": "5' 11\"",
+    "chris-peal": {
+      "school": "Syracuse",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4870944.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/183.png",
+      "height": "6' 1\"",
       "weight": "200 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/238/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5078165/junior-sherrill"
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/183/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/4870944/chris-peal"
     },
-    "suntarineperkins": {
-      "school": "Ole Miss",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4870967.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/145.png",
-      "height": "6' 2\"",
-      "weight": "220 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/145/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/4870967/suntarine-perkins"
+    "pjwilliams": {
+      "school": "SMU",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4685593.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2567.png",
+      "height": "6' 5\"",
+      "weight": "306 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2567/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/4685593/pj-williams"
     },
-    "sahir-west": {
-      "school": "UCLA",
-      "photo": null,
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/26.png",
-      "height": null,
-      "weight": null,
-      "measurement_source": null,
-      "photo_source": null
-    },
-    "audavioncollins": {
-      "school": "Penn State",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4837460.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/213.png",
-      "height": "5' 11\"",
-      "weight": "183 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/213/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/4837460/audavion-collins"
-    },
-    "amarethomas": {
-      "school": "Houston",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5077060.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/248.png",
-      "height": "6' 0\"",
-      "weight": "205 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/248/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5077060/amare-thomas"
-    },
-    "jackson-bennee": {
-      "school": "Utah",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5219991.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/254.png",
-      "height": "6' 2\"",
+    "jamari-sharpe": {
+      "school": "Indiana",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4881031.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/84.png",
+      "height": "6' 1\"",
       "weight": "190 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/254/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5219991/jackson-bennee"
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/84/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/4881031/jamari-sharpe"
     },
-    "samleavitt": {
-      "school": "LSU",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5078810.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/99.png",
-      "height": "6' 2\"",
-      "weight": "216 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/99/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5078810/sam-leavitt"
-    },
-    "tonyrojas": {
-      "school": "Penn State",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4918098.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/213.png",
-      "height": "6' 2\"",
-      "weight": "236 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/213/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/4918098/tony-rojas"
-    },
-    "drayk-bowen": {
-      "school": "Notre Dame",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4870622.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/87.png",
-      "height": "6' 2\"",
-      "weight": "234 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/87/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/4870622/drayk-bowen"
-    },
-    "xavier-atkins": {
-      "school": "Auburn",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5079309.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2.png",
-      "height": "6' 0\"",
-      "weight": "210 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5079309/xavier-atkins"
-    },
-    "jideabasiri": {
-      "school": "USC",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5138455.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/30.png",
+    "drake-lindsey": {
+      "school": "Minnesota",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5144959.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/135.png",
       "height": "6' 5\"",
-      "weight": "280 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/30/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5138455/jide-abasiri"
-    },
-    "khalilbarnes": {
-      "school": "Georgia",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5078250.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/61.png",
-      "height": "6' 0\"",
-      "weight": "200 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/61/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5078250/khalil-barnes"
-    },
-    "lukemontgomery": {
-      "school": "Ohio State",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4870946.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/194.png",
-      "height": "6' 5\"",
-      "weight": "313 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/194/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/4870946/luke-montgomery"
-    },
-    "coreymyrick": {
-      "school": "Clemson",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5193354.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/228.png",
-      "height": "6' 3\"",
-      "weight": "200 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/228/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5193354/corey-myrick"
+      "weight": "230 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/135/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5144959/drake-lindsey"
     },
     "niki-prongos": {
       "school": "Stanford",
@@ -1055,67 +893,68 @@
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/24/roster",
       "photo_source": "https://www.espn.com/college-football/player/_/id/5086031/niki-prongos"
     },
-    "kameryncrawford": {
+    "iapani-laloulu": {
+      "school": "Oregon",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4870845.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2483.png",
+      "height": "6' 2\"",
+      "weight": "325 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2483/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/4870845/iapani-laloulu"
+    },
+    "elijahpaige": {
       "school": "USC",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5132218.png",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4918438.png",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/30.png",
-      "height": "6' 5\"",
-      "weight": "255 lbs",
+      "height": "6' 7\"",
+      "weight": "315 lbs",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/30/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5132218/kameryn-crawford"
+      "photo_source": "https://www.espn.com/college-football/player/_/id/4918438/elijah-paige"
     },
-    "djmckinney": {
-      "school": "Notre Dame",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4707184.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/87.png",
-      "height": "6' 1\"",
-      "weight": "190 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/87/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/4707184/dj-mckinney"
+    "evan-tengesdahl": {
+      "school": "Cincinnati",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4910957.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2132.png",
+      "height": "6' 3\"",
+      "weight": "325 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2132/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/4910957/evan-tengesdahl"
     },
-    "cadeuluave": {
-      "school": "BYU",
+    "samleavitt": {
+      "school": "LSU",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5078810.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/99.png",
+      "height": "6' 2\"",
+      "weight": "216 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/99/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5078810/sam-leavitt"
+    },
+    "sahir-west": {
+      "school": "UCLA",
       "photo": null,
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/252.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/26.png",
       "height": null,
       "weight": null,
-      "measurement_source": null
+      "measurement_source": null,
+      "photo_source": null
     },
-    "cooperbarkate": {
-      "school": "Miami",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4804878.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2390.png",
-      "height": "6' 1\"",
-      "weight": "195 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2390/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/4804878/cooper-barkate"
-    },
-    "zeke-berry": {
-      "school": "Michigan",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4794102.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png",
+    "juniorsherrill": {
+      "school": "Vanderbilt",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5078165.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/238.png",
       "height": "5' 11\"",
-      "weight": "188 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/130/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/4794102/zeke-berry"
+      "weight": "200 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/238/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5078165/junior-sherrill"
     },
-    "christianalliegro": {
-      "school": "Ohio State",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5120968.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/194.png",
-      "height": "6' 4\"",
-      "weight": "245 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/194/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5120968/christian-alliegro"
-    },
-    "ian-moore": {
-      "school": "Ohio State",
-      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5079606.png",
-      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/194.png",
-      "height": "6' 6\"",
-      "weight": "315 lbs",
-      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/194/roster",
-      "photo_source": "https://www.espn.com/college-football/player/_/id/5079606/ian-moore"
+    "audavioncollins": {
+      "school": "Penn State",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4837460.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/213.png",
+      "height": "5' 11\"",
+      "weight": "183 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/213/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/4837460/audavion-collins"
     },
     "jalenmayo": {
       "school": "Houston",
@@ -1125,6 +964,168 @@
       "weight": "190 lbs",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/248/roster",
       "photo_source": "https://www.espn.com/college-football/player/_/id/5232344/jalen-mayo"
+    },
+    "anthonyboswell": {
+      "school": "Houston",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5219097.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/248.png",
+      "height": "6' 2\"",
+      "weight": "301 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/248/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5219097/anthony-boswell"
+    },
+    "jyairehill": {
+      "school": "Michigan",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4918449.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png",
+      "height": "6' 2\"",
+      "weight": "190 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/130/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/4918449/jyaire-hill"
+    },
+    "xavier-atkins": {
+      "school": "Auburn",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5079309.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2.png",
+      "height": "6' 0\"",
+      "weight": "210 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5079309/xavier-atkins"
+    },
+    "suntarineperkins": {
+      "school": "Ole Miss",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4870967.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/145.png",
+      "height": "6' 2\"",
+      "weight": "220 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/145/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/4870967/suntarine-perkins"
+    },
+    "anthony-smith": {
+      "school": "Minnesota",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4832823.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/135.png",
+      "height": "6' 6\"",
+      "weight": "280 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/135/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/4832823/anthony-smith"
+    },
+    "oj-frederique-jr": {
+      "school": "Miami",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2390.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "earnestgreene": {
+      "school": "Georgia",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4685360.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/61.png",
+      "height": "6' 4\"",
+      "weight": "320 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/61/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/4685360/earnest-greene-iii"
+    },
+    "hollywoodsmothers": {
+      "school": "Texas",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4871053.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+      "height": "5' 11\"",
+      "weight": "193 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/251/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/4871053/hollywood-smothers"
+    },
+    "teitumtuioti": {
+      "school": "Oregon",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2483.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "amarethomas": {
+      "school": "Houston",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5077060.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/248.png",
+      "height": "6' 0\"",
+      "weight": "205 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/248/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5077060/amare-thomas"
+    },
+    "lukemontgomery": {
+      "school": "Ohio State",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4870946.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/194.png",
+      "height": "6' 5\"",
+      "weight": "313 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/194/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/4870946/luke-montgomery"
+    },
+    "cadeuluave": {
+      "school": "BYU",
+      "photo": null,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/252.png",
+      "height": null,
+      "weight": null,
+      "measurement_source": null,
+      "photo_source": null
+    },
+    "jesseperry": {
+      "school": "Tennessee",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5140260.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2633.png",
+      "height": "6' 6\"",
+      "weight": "320 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2633/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5140260/jesse-perry"
+    },
+    "lawsonluckie": {
+      "school": "Georgia",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4870874.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/61.png",
+      "height": "6' 4\"",
+      "weight": "240 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/61/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/4870874/lawson-luckie"
+    },
+    "emmanueloyebadejo": {
+      "school": "Florida",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5226569.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/57.png",
+      "height": "6' 6\"",
+      "weight": "299 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5226569/emmanuel-oyebadejo"
+    },
+    "ljmartin": {
+      "school": "BYU",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/4918126.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/252.png",
+      "height": "6' 2\"",
+      "weight": "225 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/252/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/4918126/lj-martin"
+    },
+    "domnichols": {
+      "school": "Michigan",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5079636.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png",
+      "height": "6' 5\"",
+      "weight": "245 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/130/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5079636/dom-nichols"
+    },
+    "ian-moore": {
+      "school": "Ohio State",
+      "photo": "https://a.espncdn.com/i/headshots/college-football/players/full/5079606.png",
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/194.png",
+      "height": "6' 6\"",
+      "weight": "315 lbs",
+      "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/194/roster",
+      "photo_source": "https://www.espn.com/college-football/player/_/id/5079606/ian-moore"
     }
   }
 }

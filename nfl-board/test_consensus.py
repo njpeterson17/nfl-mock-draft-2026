@@ -39,9 +39,21 @@ class ConsensusTests(unittest.TestCase):
         heads=''.join(f'<h3>{i}. Player {i}, OT/OG, Miami (Fla.)</h3>' for i in range(1,101))
         rows=parse('rios',f'<title>2027</title><div class="content-body">{heads}</div>',url['rios'])
         self.assertEqual((len(rows),rows[99]['school']),(100,'Miami (Fla.)'))
+    def test_countdown_and_cbs_boards(self):
+        url=dict((k,u) for k,_,u in SOURCES)
+        paras=''.join(f'<p><span>{i} | DL | <a href="#">Player {i}</a> | School</span></p>' for i in range(1,101))
+        rows=parse('countdown',f'<title>2027</title>{paras}',url['countdown'])
+        self.assertEqual((len(rows),rows[0]['name'],rows[0]['school']),(100,'Player 1','School'))
+        heads=''.join(f'<h2>{i}. <a>Player {i}</a> , WR, Ohio State</h2>' for i in range(1,51))
+        lines='<br>'.join(f'{i}. <a>Player {i}</a> , OT, Miami' for i in range(51,100))+'<br>100. <a>Player 99</a> , OT, Miami'
+        rows=parse('cbs',f'<title>2027</title><div class="Article-bodyContent">{heads}<p>{lines}</p></div>',url['cbs'])
+        self.assertEqual((len(rows),rows[-1]['rank'],rows[0]['position']),(99,99,'WR'))
+        self.assertEqual(editorial_date('cbs','<time datetime="2026-10-14 16:30:00 UTC"></time>')['editorial_date'],'2026-10-14')
     def test_new_source_aliases(self):
         self.assertEqual(identity('Tavion Gadsen'),identity('Tavion Gadson'))
         self.assertEqual(identity('Keon Saab'),identity('Keon Sabb'))
+        self.assertEqual(identity('Collin Simmons'),identity('Colin Simmons'))
+        self.assertEqual(identity('Mi’Quise Humphrey-Grace'),identity("Mi'Qui. Humphrey-Grace"))
     def test_failure_retains_source_snapshot(self):
         prior=dict(id='sg',name='Scouting Grade',url='https://example.com',depth=1,players=[{'rank':1}],fetched='2026-09-01')
         with patch('consensus.fetch_source',side_effect=OSError('offline')):
