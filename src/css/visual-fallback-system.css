@@ -93,7 +93,7 @@
   --pos-ls-dark: #525252;
   --pos-ls-text: #000000;
   
-  --pos-default-bg: #00D4FF;
+  --pos-default-bg: #2f6fe6;
   --pos-default-dark: #0891B2;
   --pos-default-text: #000000;
   
@@ -120,7 +120,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--pos-color, var(--pos-default-bg)), var(--pos-color-dark, var(--pos-default-dark)));
+  background: var(--pos-color, var(--pos-default-bg));
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -516,7 +516,7 @@
    LOADING STATE
    ============================================ */
 .player-visual-card--loading {
-  background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+  background: #2a2a2a;
   animation: pulse 1.5s ease-in-out infinite;
 }
 
@@ -529,7 +529,7 @@
    ERROR STATE
    ============================================ */
 .player-visual-card--error {
-  background: linear-gradient(135deg, #ef4444, #b91c1c);
+  background: #ef4444;
 }
 
 .player-visual-card--error .error-icon {
@@ -704,7 +704,7 @@
 /* Focus styles for keyboard navigation */
 .player-visual-card:focus-visible,
 .nfl-team-logo:focus-visible {
-  outline: 2px solid #00D4FF;
+  outline: 2px solid #2f6fe6;
   outline-offset: 2px;
 }
 

@@ -263,7 +263,7 @@ const PositionColors = {
   'K': { bg: '#E9D5FF', text: '#000000', darkBg: '#7E22CE', gradient: ['#E9D5FF', '#C084FC'] },     // Light Purple
   'P': { bg: '#F3E8FF', text: '#000000', darkBg: '#9333EA', gradient: ['#F3E8FF', '#D8B4FE'] },     // Pale Purple
   'LS': { bg: '#F5F5F5', text: '#000000', darkBg: '#525252', gradient: ['#F5F5F5', '#D4D4D4'] },    // Light Gray
-  'default': { bg: '#00D4FF', text: '#000000', darkBg: '#0891B2', gradient: ['#00D4FF', '#06B6D4'] } // Cyan
+  'default': { bg: '#2f6fe6', text: '#000000', darkBg: '#0891B2', gradient: ['#2f6fe6', '#06B6D4'] } // Cyan
 };
 
 // ============================================

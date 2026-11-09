@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>War Room Mode - 2026 NFL Mock Draft</title>
     <meta name="description" content="Experience the pressure of draft day with War Room Mode - an immersive GM simulation for the 2026 NFL Mock Draft">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&family=Chakra+Petch:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700;1,800;1,900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../src/css/war-room.css">
     <link rel="manifest" href="../manifest.json">
@@ -13,18 +13,31 @@
     <link rel="shortcut icon" href="../favicon.svg">
     <link rel="apple-touch-icon" href="../favicon.svg">
     <link rel="alternate icon" href="../favicon.svg">
-    <meta name="theme-color" content="#0a0a0f">
+    <meta name="theme-color" content="#0b1f3a">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3995009890992954" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/src/css/nock.css">
+    <link rel="stylesheet" href="/src/css/nock-legacy.css">
 </head>
 <body data-warroom="true">
+    <header class="nk-bar">
+        <div class="nk-bar-in">
+            <a class="nk-logo" href="/" aria-label="NockDraft home">Nock<b>Draft</b></a>
+            <nav class="nk-nav" aria-label="Site">
+                <a href="/nfl-board/">NFL Board</a>
+                <a href="/nba-board/">NBA Board</a>
+                <a href="/2026/">2026 Mock</a>
+                <a href="/game/">Game</a>
+            </nav>
+        </div>
+    </header>
     <!-- Home Button -->
-    <a href="../2026/" class="home-button" style="position: fixed; top: 20px; left: 20px; z-index: 1000; display: flex; align-items: center; gap: 8px; padding: 10px 16px; background: var(--primary, #0a0a0f); border: 2px solid var(--accent, #00d4ff); border-radius: 8px; color: var(--text-primary, #fff); text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.2s; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-        <i class="fas fa-home" style="color: var(--accent, #00d4ff);"></i>
+    <a href="../2026/" class="home-button" style="position: fixed; top: 20px; left: 20px; z-index: 1000; display: flex; align-items: center; gap: 8px; padding: 10px 16px; background: var(--primary, #0a0a0f); border: 2px solid var(--accent, #2f6fe6); border-radius: 8px; color: var(--text-primary, #fff); text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.2s; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+        <i class="fas fa-home" style="color: var(--accent, #2f6fe6);"></i>
         <span>Home</span>
     </a>
     <style>
     .home-button:hover {
-        background: var(--accent, #00d4ff);
+        background: var(--accent, #2f6fe6);
         color: var(--primary, #0a0a0f);
         transform: translateY(-2px);
     }
@@ -67,7 +80,7 @@
             </div>
             
             <h1 class="entry-title">
-                <span class="highlight">🏈</span> WAR ROOM MODE <span class="highlight">🏈</span>
+                WAR ROOM MODE
             </h1>
             
             <p class="entry-subtitle">Experience the pressure of draft day!</p>
@@ -86,17 +99,14 @@
                     <label><i class="fas fa-tachometer-alt"></i> Difficulty</label>
                     <div class="difficulty-options">
                         <button class="difficulty-btn" data-difficulty="rookie" data-time="480">
-                            <div class="diff-icon">🌱</div>
                             <div class="diff-name">Rookie</div>
                             <div class="diff-time">8 min/pick</div>
                         </button>
                         <button class="difficulty-btn active" data-difficulty="veteran" data-time="300">
-                            <div class="diff-icon">⚡</div>
                             <div class="diff-name">Veteran</div>
                             <div class="diff-time">5 min/pick</div>
                         </button>
                         <button class="difficulty-btn" data-difficulty="gm" data-time="180">
-                            <div class="diff-icon">👔</div>
                             <div class="diff-name">GM Mode</div>
                             <div class="diff-time">3 min/pick + trades</div>
                         </button>

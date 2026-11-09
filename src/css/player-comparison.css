@@ -17,7 +17,7 @@
 }
 
 .comparison-modal-content {
-    background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
+    background: var(--primary);
     margin: 2rem auto;
     width: 95%;
     max-width: 1400px;
@@ -44,12 +44,12 @@
     align-items: center;
     padding: 1.5rem 2rem;
     border-bottom: 1px solid var(--border);
-    background: linear-gradient(90deg, rgba(0, 212, 255, 0.05) 0%, transparent 100%);
+    background: rgba(10, 79, 214, 0.05);
     border-radius: 20px 20px 0 0;
 }
 
 .comparison-modal-header h2 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.8rem;
     margin: 0;
     display: flex;
@@ -82,7 +82,7 @@
 
 .comparison-btn:hover {
     border-color: var(--accent);
-    background: rgba(0, 212, 255, 0.1);
+    background: rgba(10, 79, 214, 0.1);
 }
 
 .comparison-btn.primary {
@@ -154,7 +154,7 @@
 
 .comparison-search-input:focus {
     border-color: var(--accent);
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+    box-shadow: none;
 }
 
 .comparison-search-icon {
@@ -196,11 +196,11 @@
 }
 
 .search-result-item:hover {
-    background: rgba(0, 212, 255, 0.1);
+    background: rgba(10, 79, 214, 0.1);
 }
 
 .search-result-rank {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.9rem;
     color: var(--accent);
     min-width: 35px;
@@ -249,18 +249,18 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 212, 255, 0.05));
-    border: 1px solid rgba(0, 212, 255, 0.3);
+    background: rgba(10, 79, 214, 0.1);
+    border: 1px solid rgba(10, 79, 214, 0.3);
     padding: 0.5rem 0.75rem;
     border-radius: 10px;
     animation: slideIn 0.3s ease;
 }
 
 .selected-player-rank {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.8rem;
     color: var(--accent);
-    background: rgba(0, 212, 255, 0.2);
+    background: rgba(10, 79, 214, 0.2);
     padding: 0.15rem 0.4rem;
     border-radius: 4px;
 }
@@ -371,7 +371,7 @@
 
 .comparison-player-column:hover {
     border-color: var(--accent);
-    box-shadow: 0 10px 40px rgba(0, 212, 255, 0.1);
+    box-shadow: 0 10px 40px rgba(10, 79, 214, 0.1);
 }
 
 /* Comparison Header */
@@ -379,7 +379,7 @@
     padding: 1.5rem;
     text-align: center;
     border-top: 4px solid var(--accent);
-    background: linear-gradient(180deg, rgba(0, 212, 255, 0.05) 0%, transparent 100%);
+    background: rgba(10, 79, 214, 0.05);
 }
 
 .comparison-player-photo {
@@ -404,7 +404,7 @@
     left: 0;
     background: var(--accent);
     color: var(--primary);
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.9rem;
     font-weight: 700;
     padding: 0.25rem 0.5rem;
@@ -412,7 +412,7 @@
 }
 
 .comparison-player-name {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
 }
@@ -455,12 +455,12 @@
 
 .comparison-grade.round1 {
     border-color: var(--success);
-    background: rgba(0, 255, 136, 0.1);
+    background: rgba(15, 123, 63, 0.1);
 }
 
 .comparison-grade.round2 {
     border-color: var(--accent);
-    background: rgba(0, 212, 255, 0.1);
+    background: rgba(10, 79, 214, 0.1);
 }
 
 .comparison-grade.round3 {
@@ -476,7 +476,7 @@
 }
 
 .grade-value {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
 }
@@ -493,7 +493,7 @@
 }
 
 .comparison-section h4 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.95rem;
     margin-bottom: 1rem;
     display: flex;
@@ -518,7 +518,7 @@
 }
 
 .comparison-stat-row.winner {
-    background: rgba(0, 255, 136, 0.1);
+    background: rgba(15, 123, 63, 0.1);
 }
 
 .stat-label {
@@ -542,7 +542,7 @@
 }
 
 .comparison-stat-row .stat-value {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.9rem;
     min-width: 70px;
     text-align: right;
@@ -565,7 +565,7 @@
 }
 
 .comparison-rating-row.winner {
-    background: rgba(0, 255, 136, 0.1);
+    background: rgba(15, 123, 63, 0.1);
 }
 
 .rating-label {
@@ -586,7 +586,7 @@
 }
 
 .rating-value {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.9rem;
     color: var(--accent);
     min-width: 30px;
@@ -631,7 +631,7 @@
 }
 
 .comparison-chart-section h4 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
     display: flex;
@@ -677,7 +677,7 @@
 .compare-bar-count {
     background: var(--accent);
     color: var(--primary);
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
     padding: 0.25rem 0.6rem;
     border-radius: 20px;
@@ -755,7 +755,7 @@
 .compare-bar-count {
     background: var(--accent);
     color: var(--primary);
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
     padding: 0.25rem 0.6rem;
     border-radius: 20px;
@@ -772,7 +772,7 @@
     position: fixed;
     bottom: 2rem;
     left: 2rem;
-    background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+    background: var(--accent);
     color: var(--primary);
     padding: 1rem 1.5rem;
     border-radius: 50px;
@@ -782,7 +782,7 @@
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(10, 79, 214, 0.3);
     transition: all 0.3s ease;
     z-index: 98;
     animation: slideInLeft 0.3s ease;
@@ -801,7 +801,7 @@
 
 .floating-compare-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(0, 212, 255, 0.4);
+    box-shadow: 0 15px 40px rgba(10, 79, 214, 0.4);
 }
 
 .floating-compare-btn i {
@@ -813,7 +813,7 @@
     padding: 0.15rem 0.5rem;
     border-radius: 20px;
     font-size: 0.8rem;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
 }
 
 /* Context Menu */
@@ -841,7 +841,7 @@
 }
 
 .context-menu-item:hover {
-    background: rgba(0, 212, 255, 0.1);
+    background: rgba(10, 79, 214, 0.1);
 }
 
 .context-menu-item i {

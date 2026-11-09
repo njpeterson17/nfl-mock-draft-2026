@@ -179,8 +179,8 @@ function initFortyByPositionChart() {
             datasets: [{
                 label: 'Avg 40-Yard Dash (seconds)',
                 data: averages,
-                backgroundColor: 'rgba(0, 212, 255, 0.6)',
-                borderColor: 'rgba(0, 212, 255, 1)',
+                backgroundColor: 'rgba(10, 79, 214, 0.6)',
+                borderColor: 'rgba(10, 79, 214, 1)',
                 borderWidth: 1
             }]
         },
@@ -514,8 +514,8 @@ function renderRAS() {
     grid.innerHTML = sorted.map(player => {
         const d = player.drills;
         const scoreColor = player.ras >= 9.5 ? 'linear-gradient(90deg, #ffd700, #ffb800)' : 
-                          player.ras >= 8.0 ? 'linear-gradient(90deg, #00ff88, #00cc6a)' :
-                          player.ras >= 5.0 ? 'linear-gradient(90deg, #00d4ff, #00a8cc)' : '#ff4757';
+                          player.ras >= 8.0 ? 'linear-gradient(90deg, #1fae5b, #00cc6a)' :
+                          player.ras >= 5.0 ? 'linear-gradient(90deg, #2f6fe6, #2f6fe6)' : '#ff4757';
 
         return `
             <div class="ras-card" onclick="showPlayerModal('${player.id}')">
@@ -527,7 +527,7 @@ function renderRAS() {
                     </div>
                 </div>
                 <div class="ras-score-display">
-                    <div class="ras-score-value" style="color: ${player.ras >= 9.5 ? '#ffd700' : player.ras >= 8.0 ? '#00ff88' : '#00d4ff'}">${player.ras.toFixed(2)}</div>
+                    <div class="ras-score-value" style="color: ${player.ras >= 9.5 ? '#ffd700' : player.ras >= 8.0 ? '#1fae5b' : '#2f6fe6'}">${player.ras.toFixed(2)}</div>
                     <div class="ras-score-bar">
                         <div class="ras-score-fill" style="width: ${player.ras * 10}%; background: ${scoreColor};"></div>
                     </div>
@@ -569,8 +569,8 @@ function filterRAS() {
     grid.innerHTML = filtered.map(player => {
         const d = player.drills;
         const scoreColor = player.ras >= 9.5 ? 'linear-gradient(90deg, #ffd700, #ffb800)' : 
-                          player.ras >= 8.0 ? 'linear-gradient(90deg, #00ff88, #00cc6a)' :
-                          player.ras >= 5.0 ? 'linear-gradient(90deg, #00d4ff, #00a8cc)' : '#ff4757';
+                          player.ras >= 8.0 ? 'linear-gradient(90deg, #1fae5b, #00cc6a)' :
+                          player.ras >= 5.0 ? 'linear-gradient(90deg, #2f6fe6, #2f6fe6)' : '#ff4757';
 
         return `
             <div class="ras-card" onclick="showPlayerModal('${player.id}')">
@@ -582,7 +582,7 @@ function filterRAS() {
                     </div>
                 </div>
                 <div class="ras-score-display">
-                    <div class="ras-score-value" style="color: ${player.ras >= 9.5 ? '#ffd700' : player.ras >= 8.0 ? '#00ff88' : '#00d4ff'}">${player.ras.toFixed(2)}</div>
+                    <div class="ras-score-value" style="color: ${player.ras >= 9.5 ? '#ffd700' : player.ras >= 8.0 ? '#1fae5b' : '#2f6fe6'}">${player.ras.toFixed(2)}</div>
                     <div class="ras-score-bar">
                         <div class="ras-score-fill" style="width: ${player.ras * 10}%; background: ${scoreColor};"></div>
                     </div>

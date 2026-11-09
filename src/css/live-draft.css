@@ -4,8 +4,8 @@
 
 /* CSS Variables */
 :root {
-  --ld-primary: #00d4ff;
-  --primary-dark: #00a8cc;
+  --ld-primary: #2f6fe6;
+  --primary-dark: #2f6fe6;
   --ld-secondary: #ff6b35;
   --ld-success: #2ecc71;
   --ld-warning: #f1c40f;
@@ -124,7 +124,7 @@
 .btn-primary {
   width: 100%;
   padding: 1rem;
-  background: linear-gradient(135deg, var(--ld-primary), var(--primary-dark));
+  background: var(--ld-primary);
   border: none;
   border-radius: 8px;
   color: var(--dark);
@@ -140,7 +140,7 @@
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(10, 79, 214, 0.3);
 }
 
 .btn-secondary {
@@ -206,7 +206,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--ld-primary), var(--primary-dark));
+  background: var(--ld-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -299,7 +299,7 @@
 }
 
 .type-btn.active {
-  background: rgba(0, 212, 255, 0.2);
+  background: rgba(10, 79, 214, 0.2);
   border-color: var(--ld-primary);
   color: var(--ld-primary);
 }
@@ -354,7 +354,7 @@
 .btn-create-draft {
   width: 100%;
   padding: 1rem;
-  background: linear-gradient(135deg, var(--ld-success), #27ae60);
+  background: var(--ld-success);
   border: none;
   border-radius: 8px;
   color: white;
@@ -679,7 +679,7 @@
 .timer .time {
   font-size: 1.8rem;
   font-weight: 700;
-  font-family: 'Oswald', monospace;
+  font-family: 'Barlow Condensed', monospace;
 }
 
 .draft-actions {
@@ -777,7 +777,7 @@
 }
 
 .draft-pick.current {
-  background: rgba(0, 212, 255, 0.15);
+  background: rgba(10, 79, 214, 0.15);
   border: 1px solid var(--ld-primary);
 }
 
@@ -880,8 +880,8 @@
 }
 
 .chat-message.system .message-content {
-  background: rgba(0, 212, 255, 0.1);
-  border: 1px solid rgba(0, 212, 255, 0.3);
+  background: rgba(10, 79, 214, 0.1);
+  border: 1px solid rgba(10, 79, 214, 0.3);
   border-radius: 20px;
   padding: 0.5rem 1rem;
   font-size: 0.85rem;
@@ -898,7 +898,7 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--ld-primary), var(--primary-dark));
+  background: var(--ld-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1351,7 +1351,7 @@
 
 .btn-control:hover {
   border-color: var(--ld-primary);
-  background: rgba(0, 212, 255, 0.1);
+  background: rgba(10, 79, 214, 0.1);
 }
 
 .btn-control.danger:hover {
@@ -1676,10 +1676,10 @@
 
 @keyframes pickingPulse {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.4);
+    box-shadow: 0 0 0 0 rgba(10, 79, 214, 0.4);
   }
   50% {
-    box-shadow: 0 0 0 10px rgba(0, 212, 255, 0);
+    box-shadow: 0 0 0 10px rgba(10, 79, 214, 0);
   }
 }
 
@@ -1732,7 +1732,7 @@
   top: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(90deg, var(--ld-primary), var(--primary-dark));
+  background: var(--ld-primary);
   color: var(--dark);
   text-align: center;
   padding: 0.75rem;

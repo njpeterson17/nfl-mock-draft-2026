@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
     <!-- The 2026 mock moved from / to /2026/; assets and scripts still resolve from the root -->
     <base href="/">
@@ -14,11 +14,11 @@
     <meta name="twitter:card" content="summary_large_image">
     <link rel="manifest" href="manifest.json">
     <link rel="alternate" type="application/rss+xml" title="NFL Draft Central RSS" href="rss.xml">
-    <meta name="theme-color" content="#00d4ff" id="themeColor">
+    <meta name="theme-color" content="#2f6fe6" id="themeColor">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="shortcut icon" href="favicon.svg">
     <link rel="apple-touch-icon" href="favicon.svg">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700;1,800;1,900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Export Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
@@ -52,11 +52,22 @@
     <!-- Content Security Policy - Allow self-hosted images and external resources -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://www.google.com https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com; img-src 'self' data: https: http: https://img.youtube.com https://i.ytimg.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://giscus.app; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://pagead2.googlesyndication.com https://giscus.app https://ep2.adtrafficquality.google https://www.google.com; frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://giscus.app https://ep2.adtrafficquality.google https://www.google.com https://*.safeframe.googlesyndication.com;">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3995009890992954" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/src/css/nock.css">
+    <link rel="stylesheet" href="/src/css/nock-legacy.css">
 </head>
 <body>
-    <div class="archive-banner" style="background: var(--secondary, #12121a); border-bottom: 1px solid var(--border, rgba(255,255,255,0.08)); padding: 0.6rem 1rem; text-align: center; font-size: 0.9rem; color: var(--text-secondary, #8b8b9a);">
-        You're viewing the 2026 mock draft archive. <a href="/" style="color: var(--accent, #00d4ff); font-weight: 600; text-decoration: none;">See the 2027 draft boards &rarr;</a>
-    </div>
+    <header class="nk-bar">
+        <div class="nk-bar-in">
+            <a class="nk-logo" href="/" aria-label="NockDraft home">Nock<b>Draft</b></a>
+            <nav class="nk-nav" aria-label="Site">
+                <a href="/nfl-board/">NFL Board</a>
+                <a href="/nba-board/">NBA Board</a>
+                <a href="/2026/" aria-current="page">2026 Mock</a>
+                <a href="/game/">Game</a>
+            </nav>
+        </div>
+    </header>
+    <div class="nk-archive"><b>Archive</b><p>The 2026 mock draft, final version. <a href="/">See the 2027 draft boards</a></p></div>
     <header class="header">
         <div class="header-content">
             <h1>2026 NFL Mock Draft</h1>
@@ -137,7 +148,7 @@
                         <i class="fas fa-users" style="color: var(--success);"></i> Live Draft
                     </a>
                     <a href="pages/ai-draft-predictor.html" class="dropdown-item" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 0.8rem; color: var(--text-primary); text-decoration: none; border-radius: 4px; font-size: 0.8rem;">
-                        <i class="fas fa-robot" style="color: #a855f7;"></i> AI Predictor
+                        <i class="fas fa-robot" style="color: #2f6fe6;"></i> AI Predictor
                     </a>
                     <a href="pages/combine-tracker.html" class="dropdown-item" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 0.8rem; color: var(--text-primary); text-decoration: none; border-radius: 4px; font-size: 0.8rem;">
                         <i class="fas fa-stopwatch" style="color: #f59e0b;"></i> Combine
@@ -3404,7 +3415,7 @@ le"></i> Concerns/Areas to Improve</h4>
                     <div class="pick-content">
                         <div class="player-main">
                             <div class="player-photo">
-                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);"><i class="fas fa-check-circle" style="font-size:1.5rem;color:#00ff88;"></i><span style="font-size:0.7rem;font-weight:600;color:#00ff88;margin-top:0.3rem;">2025 NFL</span></div>
+                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1a2e;"><i class="fas fa-check-circle" style="font-size:1.5rem;color:#1fae5b;"></i><span style="font-size:0.7rem;font-weight:600;color:#1fae5b;margin-top:0.3rem;">2025 NFL</span></div>
                             </div>
                             <div class="player-info">
                                 <h2>Darien Porter - New York Jets</h2>
@@ -3589,7 +3600,7 @@ le"></i> Concerns/Areas to Improve</h4>
                     <div class="pick-content">
                         <div class="player-main">
                             <div class="player-photo">
-                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);"><i class="fas fa-check-circle" style="font-size:1.5rem;color:#00ff88;"></i><span style="font-size:0.7rem;font-weight:600;color:#00ff88;margin-top:0.3rem;">2025 NFL</span></div>
+                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1a2e;"><i class="fas fa-check-circle" style="font-size:1.5rem;color:#1fae5b;"></i><span style="font-size:0.7rem;font-weight:600;color:#1fae5b;margin-top:0.3rem;">2025 NFL</span></div>
                             </div>
                             <div class="player-info">
                                 <h2>Zane Durant - New England Patriots</h2>
@@ -3638,7 +3649,7 @@ le"></i> Concerns/Areas to Improve</h4>
                     <div class="pick-content">
                         <div class="player-main">
                             <div class="player-photo">
-                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
+                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1a2e;"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
                             </div>
                             <div class="player-info">
                                 <h2>Marcus Washington - Las Vegas Raiders</h2>
@@ -3688,7 +3699,7 @@ le"></i> Concerns/Areas to Improve</h4>
                     <div class="pick-content">
                         <div class="player-main">
                             <div class="player-photo">
-                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
+                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1a2e;"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
                             </div>
                             <div class="player-info">
                                 <h2>Darrell Jackson Jr. - Cleveland Browns</h2>
@@ -3738,7 +3749,7 @@ le"></i> Concerns/Areas to Improve</h4>
                     <div class="pick-content">
                         <div class="player-main">
                             <div class="player-photo">
-                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
+                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1a2e;"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
                             </div>
                             <div class="player-info">
                                 <h2>Blake Miller - Tennessee Titans</h2>
@@ -3787,7 +3798,7 @@ le"></i> Concerns/Areas to Improve</h4>
                     <div class="pick-content">
                         <div class="player-main">
                             <div class="player-photo">
-                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
+                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1a2e;"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
                             </div>
                             <div class="player-info">
                                 <h2>Aamil Wagner - Carolina Panthers</h2>
@@ -3836,7 +3847,7 @@ le"></i> Concerns/Areas to Improve</h4>
                     <div class="pick-content">
                         <div class="player-main">
                             <div class="player-photo">
-                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
+                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1a2e;"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
                             </div>
                             <div class="player-info">
                                 <h2>Devin Moore - New York Jets</h2>
@@ -3886,7 +3897,7 @@ le"></i> Concerns/Areas to Improve</h4>
                     <div class="pick-content">
                         <div class="player-main">
                             <div class="player-photo">
-                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
+                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1a2e;"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
                             </div>
                             <div class="player-info">
                                 <h2>Dani Dennis-Sutton - New Orleans Saints</h2>
@@ -3936,7 +3947,7 @@ le"></i> Concerns/Areas to Improve</h4>
                     <div class="pick-content">
                         <div class="player-main">
                             <div class="player-photo">
-                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
+                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1a2e;"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
                             </div>
                             <div class="player-info">
                                 <h2>Billy Schrauth - Washington Commanders</h2>
@@ -3986,7 +3997,7 @@ le"></i> Concerns/Areas to Improve</h4>
                     <div class="pick-content">
                         <div class="player-main">
                             <div class="player-photo">
-                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
+                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1a2e;"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
                             </div>
                             <div class="player-info">
                                 <h2>A.J. Haulcy - Chicago Bears</h2>
@@ -4036,7 +4047,7 @@ le"></i> Concerns/Areas to Improve</h4>
                     <div class="pick-content">
                         <div class="player-main">
                             <div class="player-photo">
-                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
+                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1a2e;"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
                             </div>
                             <div class="player-info">
                                 <h2>Derrick Moore - Green Bay Packers</h2>
@@ -4086,7 +4097,7 @@ le"></i> Concerns/Areas to Improve</h4>
                     <div class="pick-content">
                         <div class="player-main">
                             <div class="player-photo">
-                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
+                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1a2e;"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
                             </div>
                             <div class="player-info">
                                 <h2>Logan Jones - Atlanta Falcons</h2>
@@ -4136,7 +4147,7 @@ le"></i> Concerns/Areas to Improve</h4>
                     <div class="pick-content">
                         <div class="player-main">
                             <div class="player-photo">
-                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
+                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1a2e;"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
                             </div>
                             <div class="player-info">
                                 <h2>Dallen Bentley - Tampa Bay Buccaneers</h2>
@@ -4185,7 +4196,7 @@ le"></i> Concerns/Areas to Improve</h4>
                     <div class="pick-content">
                         <div class="player-main">
                             <div class="player-photo">
-                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
+                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1a2e;"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
                             </div>
                             <div class="player-info">
                                 <h2>D'Angelo Ponds - Miami Dolphins</h2>
@@ -4235,7 +4246,7 @@ le"></i> Concerns/Areas to Improve</h4>
                     <div class="pick-content">
                         <div class="player-main">
                             <div class="player-photo">
-                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
+                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1a2e;"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
                             </div>
                             <div class="player-info">
                                 <h2>Isaiah World - Baltimore Ravens</h2>
@@ -4284,7 +4295,7 @@ le"></i> Concerns/Areas to Improve</h4>
                     <div class="pick-content">
                         <div class="player-main">
                             <div class="player-photo">
-                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
+                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1a2e;"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
                             </div>
                             <div class="player-info">
                                 <h2>Elijah Sarrett - Indianapolis Colts</h2>
@@ -4334,7 +4345,7 @@ le"></i> Concerns/Areas to Improve</h4>
                     <div class="pick-content">
                         <div class="player-main">
                             <div class="player-photo">
-                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
+                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1a2e;"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
                             </div>
                             <div class="player-info">
                                 <h2>Malachi Lawrence - San Francisco 49ers</h2>
@@ -4384,7 +4395,7 @@ le"></i> Concerns/Areas to Improve</h4>
                     <div class="pick-content">
                         <div class="player-main">
                             <div class="player-photo">
-                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
+                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1a2e;"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
                             </div>
                             <div class="player-info">
                                 <h2>Malik Muhammad - Minnesota Vikings</h2>
@@ -4434,7 +4445,7 @@ le"></i> Concerns/Areas to Improve</h4>
                     <div class="pick-content">
                         <div class="player-main">
                             <div class="player-photo">
-                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
+                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1a2e;"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
                             </div>
                             <div class="player-info">
                                 <h2>Zakee Wheatley - Los Angeles Chargers</h2>
@@ -4484,7 +4495,7 @@ le"></i> Concerns/Areas to Improve</h4>
                     <div class="pick-content">
                         <div class="player-main">
                             <div class="player-photo">
-                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
+                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1a2e;"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
                             </div>
                             <div class="player-info">
                                 <h2>Drew Shelton - Kansas City Chiefs</h2>
@@ -4533,7 +4544,7 @@ le"></i> Concerns/Areas to Improve</h4>
                     <div class="pick-content">
                         <div class="player-main">
                             <div class="player-photo">
-                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
+                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1a2e;"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
                             </div>
                             <div class="player-info">
                                 <h2>Cameron Ball - Arizona Cardinals</h2>
@@ -4583,7 +4594,7 @@ le"></i> Concerns/Areas to Improve</h4>
                     <div class="pick-content">
                         <div class="player-main">
                             <div class="player-photo">
-                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
+                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1a2e;"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
                             </div>
                             <div class="player-info">
                                 <h2>Jake Slaughter - Seattle Seahawks</h2>
@@ -4633,7 +4644,7 @@ le"></i> Concerns/Areas to Improve</h4>
                     <div class="pick-content">
                         <div class="player-main">
                             <div class="player-photo">
-                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
+                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1a2e;"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
                             </div>
                             <div class="player-info">
                                 <h2>Dametrious Crownover - Buffalo Bills</h2>
@@ -4682,7 +4693,7 @@ le"></i> Concerns/Areas to Improve</h4>
                     <div class="pick-content">
                         <div class="player-main">
                             <div class="player-photo">
-                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
+                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1a2e;"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
                             </div>
                             <div class="player-info">
                                 <h2>Kamari Ramsey - Houston Texans</h2>
@@ -4732,7 +4743,7 @@ le"></i> Concerns/Areas to Improve</h4>
                     <div class="pick-content">
                         <div class="player-main">
                             <div class="player-photo">
-                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
+                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1a2e;"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
                             </div>
                             <div class="player-info">
                                 <h2>Jacob Rodriguez - Dallas Cowboys</h2>
@@ -4782,7 +4793,7 @@ le"></i> Concerns/Areas to Improve</h4>
                     <div class="pick-content">
                         <div class="player-main">
                             <div class="player-photo">
-                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
+                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1a2e;"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
                             </div>
                             <div class="player-info">
                                 <h2>Tim Keenan III - Philadelphia Eagles</h2>
@@ -4832,7 +4843,7 @@ le"></i> Concerns/Areas to Improve</h4>
                     <div class="pick-content">
                         <div class="player-main">
                             <div class="player-photo">
-                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
+                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1a2e;"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
                             </div>
                             <div class="player-info">
                                 <h2>Joshua Josephs - Cincinnati Bengals</h2>
@@ -4882,7 +4893,7 @@ le"></i> Concerns/Areas to Improve</h4>
                     <div class="pick-content">
                         <div class="player-main">
                             <div class="player-photo">
-                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
+                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1a2e;"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
                             </div>
                             <div class="player-info">
                                 <h2>Charles Demmings - Las Vegas Raiders</h2>
@@ -4932,7 +4943,7 @@ le"></i> Concerns/Areas to Improve</h4>
                     <div class="pick-content">
                         <div class="player-main">
                             <div class="player-photo">
-                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
+                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1a2e;"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
                             </div>
                             <div class="player-info">
                                 <h2>Sam Roush - Pittsburgh Steelers</h2>
@@ -4981,7 +4992,7 @@ le"></i> Concerns/Areas to Improve</h4>
                     <div class="pick-content">
                         <div class="player-main">
                             <div class="player-photo">
-                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
+                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1a2e;"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
                             </div>
                             <div class="player-info">
                                 <h2>Skyler Gill-Howard - Denver Broncos</h2>
@@ -5031,7 +5042,7 @@ le"></i> Concerns/Areas to Improve</h4>
                     <div class="pick-content">
                         <div class="player-main">
                             <div class="player-photo">
-                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
+                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1a2e;"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
                             </div>
                             <div class="player-info">
                                 <h2>LT Overton - Los Angeles Rams</h2>
@@ -5081,7 +5092,7 @@ le"></i> Concerns/Areas to Improve</h4>
                     <div class="pick-content">
                         <div class="player-main">
                             <div class="player-photo">
-                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
+                                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1a2e;"><i class="fas fa-question-circle" style="font-size:1.5rem;color:#ff6b35;"></i><span style="font-size:0.7rem;font-weight:600;color:#ff6b35;margin-top:0.3rem;">Not Eligible</span></div>
                             </div>
                             <div class="player-info">
                                 <h2>Austin Barber - Detroit Lions</h2>
@@ -7902,7 +7913,7 @@ le"></i> Concerns/Areas to Improve</h4>
                 </div>
             </div>
 
-            <div style="text-align: center; margin-top: 2rem; padding: 1rem; background: rgba(0, 212, 255, 0.05); border-radius: 8px;">
+            <div style="text-align: center; margin-top: 2rem; padding: 1rem; background: rgba(10, 79, 214, 0.05); border-radius: 8px;">
                 <p style="color: var(--text-secondary); font-size: 0.9rem;">
                     <i class="fas fa-info-circle"></i> 
                     <strong>How to use ADP:</strong> 
@@ -8079,9 +8090,9 @@ le"></i> Concerns/Areas to Improve</h4>
                     </div>
                     <div class="edp-toggle">
                         <button class="filter-toggle-btn active" onclick="filterConsensus('all')">All Picks</button>
-                        <button class="filter-toggle-btn" onclick="filterConsensus('high')">🟢 High (4-5 agree)</button>
-                        <button class="filter-toggle-btn" onclick="filterConsensus('medium')">🟡 Medium (3 agree)</button>
-                        <button class="filter-toggle-btn" onclick="filterConsensus('low')">🔴 Split Votes</button>
+                        <button class="filter-toggle-btn" onclick="filterConsensus('high')">High (4-5 agree)</button>
+                        <button class="filter-toggle-btn" onclick="filterConsensus('medium')">Medium (3 agree)</button>
+                        <button class="filter-toggle-btn" onclick="filterConsensus('low')">Split Votes</button>
                     </div>
                 </div>
             </div>
@@ -8170,7 +8181,7 @@ le"></i> Concerns/Areas to Improve</h4>
                 
                 <!-- Overall Leaderboard -->
                 <div class="grades-section" style="margin-bottom: 2.5rem;">
-                    <h3 class="grades-section-title" style="font-family: 'Oswald', sans-serif; font-size: 1.3rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <h3 class="grades-section-title" style="font-family: 'Barlow Condensed', sans-serif; font-size: 1.3rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
                         <i class="fas fa-trophy" style="color: var(--accent);"></i> Team Draft Rankings
                     </h3>
                     <div id="teamGradesLeaderboard" class="team-grades-list">
@@ -8180,7 +8191,7 @@ le"></i> Concerns/Areas to Improve</h4>
                 
                 <!-- Detailed Team Analysis -->
                 <div class="grades-section" style="margin-bottom: 2.5rem;">
-                    <h3 class="grades-section-title" style="font-family: 'Oswald', sans-serif; font-size: 1.3rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <h3 class="grades-section-title" style="font-family: 'Barlow Condensed', sans-serif; font-size: 1.3rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
                         <i class="fas fa-chart-bar" style="color: var(--accent);"></i> Detailed Analysis
                     </h3>
                     <div id="detailedTeamAnalysis" class="detailed-analysis-list">
@@ -8190,12 +8201,12 @@ le"></i> Concerns/Areas to Improve</h4>
                 
                 <!-- Grade Methodology -->
                 <div class="grades-methodology" style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem;">
-                    <h4 style="font-family: 'Oswald', sans-serif; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; color: var(--accent);">
+                    <h4 style="font-family: 'Barlow Condensed', sans-serif; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; color: var(--accent);">
                         <i class="fas fa-info-circle"></i> Grading Methodology
                     </h4>
                     <div class="methodology-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
                         <div class="methodology-item" style="display: flex; gap: 1rem; padding: 1rem; background: var(--primary); border-radius: 10px; border: 1px solid var(--border);">
-                            <div class="methodology-icon value" style="width: 45px; height: 45px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; background: rgba(0, 255, 136, 0.15); color: #00ff88; flex-shrink: 0;">
+                            <div class="methodology-icon value" style="width: 45px; height: 45px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; background: rgba(15, 123, 63, 0.15); color: #1fae5b; flex-shrink: 0;">
                                 <i class="fas fa-dollar-sign"></i>
                             </div>
                             <div class="methodology-content">
@@ -8204,7 +8215,7 @@ le"></i> Concerns/Areas to Improve</h4>
                             </div>
                         </div>
                         <div class="methodology-item" style="display: flex; gap: 1rem; padding: 1rem; background: var(--primary); border-radius: 10px; border: 1px solid var(--border);">
-                            <div class="methodology-icon need" style="width: 45px; height: 45px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; background: rgba(0, 212, 255, 0.15); color: #00d4ff; flex-shrink: 0;">
+                            <div class="methodology-icon need" style="width: 45px; height: 45px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; background: rgba(10, 79, 214, 0.15); color: #2f6fe6; flex-shrink: 0;">
                                 <i class="fas fa-bullseye"></i>
                             </div>
                             <div class="methodology-content">
@@ -8275,7 +8286,7 @@ le"></i> Concerns/Areas to Improve</h4>
                 </div>
 
                 <div class="export-option" onclick="openPNGExportModal(); closeExportModal();">
-                    <div class="export-option-icon" style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(0, 168, 204, 0.2)); color: #00d4ff;">
+                    <div class="export-option-icon" style="background: rgba(10, 79, 214, 0.2); color: #2f6fe6;">
                         <i class="fas fa-image"></i>
                     </div>
                     <div class="export-option-content">
@@ -8768,7 +8779,7 @@ le"></i> Concerns/Areas to Improve</h4>
             // Render picks
             container.innerHTML = filteredPicks.map(p => {
                 const levelColor = p.consensusLevel === 'high' ? '#10b981' : p.consensusLevel === 'medium' ? '#f59e0b' : '#ef4444';
-                const levelIcon = p.consensusLevel === 'high' ? '🟢' : p.consensusLevel === 'medium' ? '🟡' : '🔴';
+                const levelIcon = '';
                 
                 return `
                     <div class="edp-item" style="border-left-color: ${levelColor}; display: flex; align-items: center; gap: 1rem; padding: 1rem;">

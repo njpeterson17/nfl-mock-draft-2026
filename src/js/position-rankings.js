@@ -430,7 +430,7 @@ function compareProspects(pos, ranks) {
     
     // Update comparison players
     const container = document.getElementById('comparisonPlayers');
-    const colors = ['#00d4ff', '#00ff88', '#ffd700', '#ff6b6b'];
+    const colors = ['#2f6fe6', '#1fae5b', '#ffd700', '#ff6b6b'];
     
     container.innerHTML = selectedProspects.map((p, i) => {
         const imgPath = getPlayerImagePath(p.name);

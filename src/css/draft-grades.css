@@ -14,7 +14,7 @@
     min-width: 50px;
     padding: 0.35rem 0.75rem;
     border-radius: 8px;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
     text-transform: uppercase;
     transition: all 0.3s ease;
@@ -40,67 +40,67 @@
 
 /* Grade Colors */
 .grade-a-plus {
-    background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
+    background: #1fae5b;
     color: #000;
-    box-shadow: 0 2px 10px rgba(0, 255, 136, 0.4);
+    box-shadow: 0 2px 10px rgba(15, 123, 63, 0.4);
 }
 
 .grade-a {
-    background: linear-gradient(135deg, #00ff88 0%, #00dd77 100%);
+    background: #1fae5b;
     color: #000;
-    box-shadow: 0 2px 10px rgba(0, 255, 136, 0.3);
+    box-shadow: 0 2px 10px rgba(15, 123, 63, 0.3);
 }
 
 .grade-a-minus {
-    background: linear-gradient(135deg, #00dd77 0%, #00bb66 100%);
+    background: #00dd77;
     color: #000;
-    box-shadow: 0 2px 10px rgba(0, 255, 136, 0.25);
+    box-shadow: 0 2px 10px rgba(15, 123, 63, 0.25);
 }
 
 .grade-b-plus {
-    background: linear-gradient(135deg, #00d4ff 0%, #00a8cc 100%);
+    background: #2f6fe6;
     color: #000;
-    box-shadow: 0 2px 10px rgba(0, 212, 255, 0.3);
+    box-shadow: 0 2px 10px rgba(10, 79, 214, 0.3);
 }
 
 .grade-b {
-    background: linear-gradient(135deg, #00a8cc 0%, #0088aa 100%);
+    background: #2f6fe6;
     color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 212, 255, 0.2);
+    box-shadow: 0 2px 10px rgba(10, 79, 214, 0.2);
 }
 
 .grade-b-minus {
-    background: linear-gradient(135deg, #0088aa 0%, #006688 100%);
+    background: #0088aa;
     color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 212, 255, 0.15);
+    box-shadow: 0 2px 10px rgba(10, 79, 214, 0.15);
 }
 
 .grade-c-plus {
-    background: linear-gradient(135deg, #ffb800 0%, #cc9400 100%);
+    background: #ffb800;
     color: #000;
     box-shadow: 0 2px 10px rgba(255, 184, 0, 0.3);
 }
 
 .grade-c {
-    background: linear-gradient(135deg, #cc9400 0%, #aa7700 100%);
+    background: #cc9400;
     color: #fff;
     box-shadow: 0 2px 10px rgba(255, 184, 0, 0.2);
 }
 
 .grade-c-minus {
-    background: linear-gradient(135deg, #aa7700 0%, #886600 100%);
+    background: #aa7700;
     color: #fff;
     box-shadow: 0 2px 10px rgba(255, 184, 0, 0.15);
 }
 
 .grade-d-plus, .grade-d, .grade-d-minus {
-    background: linear-gradient(135deg, #ff6b35 0%, #cc5522 100%);
+    background: #ff6b35;
     color: #fff;
     box-shadow: 0 2px 10px rgba(255, 107, 53, 0.3);
 }
 
 .grade-f {
-    background: linear-gradient(135deg, #ff4757 0%, #cc3333 100%);
+    background: #ff4757;
     color: #fff;
     box-shadow: 0 2px 10px rgba(255, 71, 87, 0.4);
 }
@@ -133,7 +133,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
     font-size: 1.1rem;
     cursor: pointer;
@@ -165,7 +165,7 @@
     visibility: hidden;
     transition: all 0.3s ease;
     border: 1px solid var(--border);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Barlow', sans-serif;
     font-weight: 500;
 }
 
@@ -219,13 +219,13 @@
 .grade-progress-ring-progress.grade-a-plus,
 .grade-progress-ring-progress.grade-a,
 .grade-progress-ring-progress.grade-a-minus {
-    stroke: #00ff88;
+    stroke: #1fae5b;
 }
 
 .grade-progress-ring-progress.grade-b-plus,
 .grade-progress-ring-progress.grade-b,
 .grade-progress-ring-progress.grade-b-minus {
-    stroke: #00d4ff;
+    stroke: #2f6fe6;
 }
 
 .grade-progress-ring-progress.grade-c-plus,
@@ -252,14 +252,14 @@
 }
 
 .grade-letter-large {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 3rem;
     font-weight: 700;
     line-height: 1;
-    background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    background: var(--text-primary);
+    
+    
+    
 }
 
 .grade-score-small {
@@ -348,7 +348,7 @@
 }
 
 .grade-modal-title h3 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.5rem;
     margin: 0.25rem 0;
 }
@@ -383,7 +383,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 2rem;
     font-weight: 700;
 }
@@ -420,7 +420,7 @@
 }
 
 .component-grade {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
     padding: 0.2rem 0.5rem;
     border-radius: 4px;
@@ -428,13 +428,13 @@
 }
 
 .component-grade.grade-a {
-    background: rgba(0, 255, 136, 0.2);
-    color: #00ff88;
+    background: rgba(15, 123, 63, 0.2);
+    color: #1fae5b;
 }
 
 .component-grade.grade-b {
-    background: rgba(0, 212, 255, 0.2);
-    color: #00d4ff;
+    background: rgba(10, 79, 214, 0.2);
+    color: #2f6fe6;
 }
 
 .component-grade.grade-c {
@@ -462,7 +462,7 @@
 
 .component-fill {
     height: 100%;
-    background: linear-gradient(90deg, var(--accent) 0%, var(--success) 100%);
+    background: var(--accent);
     border-radius: 4px;
     transition: width 0.5s ease;
 }
@@ -474,15 +474,15 @@
 
 /* Grade Verdict */
 .grade-verdict {
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 255, 136, 0.05) 100%);
-    border: 1px solid rgba(0, 212, 255, 0.2);
+    background: rgba(10, 79, 214, 0.1);
+    border: 1px solid rgba(10, 79, 214, 0.2);
     border-radius: 10px;
     padding: 1rem;
     text-align: center;
 }
 
 .verdict-score {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.2rem;
     color: var(--accent);
     margin-bottom: 0.5rem;
@@ -531,7 +531,7 @@
 }
 
 .draft-grades-header h2 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 2rem;
     margin-bottom: 0.5rem;
 }
@@ -565,7 +565,7 @@
 }
 
 .team-grade-rank {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--accent);
@@ -602,7 +602,7 @@
 
 .grade-metric-value {
     display: block;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-weight: 600;
     color: var(--accent);
     font-size: 0.95rem;
@@ -637,7 +637,7 @@
 }
 
 .historical-comparison h3 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
@@ -658,7 +658,7 @@
 }
 
 .comparison-similar {
-    background: rgba(0, 212, 255, 0.1);
+    background: rgba(10, 79, 214, 0.1);
     border-radius: 8px;
     padding: 1rem;
 }
@@ -669,7 +669,7 @@
 }
 
 .comparison-value {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.5rem;
     color: var(--accent);
 }
@@ -694,7 +694,7 @@
 }
 
 .comparison-history-grade {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.2rem;
     font-weight: 600;
     margin: 0.25rem 0;
@@ -726,13 +726,13 @@
 }
 
 .picks-highlight-card.best {
-    border-color: rgba(0, 255, 136, 0.3);
-    background: linear-gradient(135deg, rgba(0, 255, 136, 0.05) 0%, transparent 100%);
+    border-color: rgba(15, 123, 63, 0.3);
+    background: rgba(15, 123, 63, 0.05);
 }
 
 .picks-highlight-card.worst {
     border-color: rgba(255, 107, 53, 0.3);
-    background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, transparent 100%);
+    background: rgba(255, 107, 53, 0.05);
 }
 
 .picks-highlight-label {
@@ -743,7 +743,7 @@
 }
 
 .picks-highlight-card.best .picks-highlight-label {
-    color: #00ff88;
+    color: #1fae5b;
 }
 
 .picks-highlight-card.worst .picks-highlight-label {
@@ -771,7 +771,7 @@
 }
 
 .position-breakdown h4 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     margin-bottom: 1rem;
 }
 
@@ -812,17 +812,17 @@
     padding-right: 0.75rem;
 }
 
-.position-bar-fill.qb { background: linear-gradient(90deg, #ff6b6b, #ee5a5a); }
-.position-bar-fill.rb { background: linear-gradient(90deg, #4ecdc4, #44b5ad); }
-.position-bar-fill.wr { background: linear-gradient(90deg, #45b7d1, #3ca3bc); }
-.position-bar-fill.te { background: linear-gradient(90deg, #96ceb4, #85b9a0); }
-.position-bar-fill.ot { background: linear-gradient(90deg, #feca57, #e5b54e); }
-.position-bar-fill.iol { background: linear-gradient(90deg, #ff9ff3, #e68edc); }
-.position-bar-fill.edge { background: linear-gradient(90deg, #54a0ff, #4a8fe0); }
-.position-bar-fill.dl { background: linear-gradient(90deg, #5f27cd, #5322b5); }
-.position-bar-fill.lb { background: linear-gradient(90deg, #00d2d3, #00bbbc); }
-.position-bar-fill.cb { background: linear-gradient(90deg, #1dd1a1, #1abc91); }
-.position-bar-fill.s { background: linear-gradient(90deg, #ff9f43, #e68f3c); }
+.position-bar-fill.qb { background: #ff6b6b; }
+.position-bar-fill.rb { background: #4ecdc4; }
+.position-bar-fill.wr { background: #45b7d1; }
+.position-bar-fill.te { background: #96ceb4; }
+.position-bar-fill.ot { background: #feca57; }
+.position-bar-fill.iol { background: #ff9ff3; }
+.position-bar-fill.edge { background: #54a0ff; }
+.position-bar-fill.dl { background: #5f27cd; }
+.position-bar-fill.lb { background: #00d2d3; }
+.position-bar-fill.cb { background: #1dd1a1; }
+.position-bar-fill.s { background: #ff9f43; }
 
 .position-bar-count {
     color: #fff;
@@ -1049,7 +1049,7 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.2rem;
     font-weight: 600;
     color: var(--text-primary);
@@ -1120,7 +1120,7 @@
     display: flex;
     align-items: center;
     gap: 0.6rem;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.15rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -1184,7 +1184,7 @@
 }
 
 .draft-grades-page .criteria-weight {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.85rem;
     color: var(--accent);
     text-transform: uppercase;
@@ -1278,7 +1278,7 @@
 
 .draft-grades-page .pick-number-small {
     min-width: 42px;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-weight: 600;
     color: var(--accent);
 }
@@ -1311,7 +1311,7 @@
 }
 
 .draft-grades-page .footer-section h4 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     margin-bottom: 0.75rem;
 }
 

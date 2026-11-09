@@ -65,7 +65,7 @@
 }
 
 .hub-header h2 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 2rem;
     margin-bottom: 1.5rem;
     color: var(--text-primary);
@@ -104,7 +104,7 @@
 .hub-search input:focus {
     outline: none;
     border-color: var(--accent);
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+    box-shadow: none;
 }
 
 /* Conference Tabs */
@@ -221,10 +221,10 @@
     color: white;
 }
 
-.team-grade.grade-a { background: linear-gradient(135deg, #00ff88, #00cc6a); }
-.team-grade.grade-b { background: linear-gradient(135deg, #00d4ff, #00a8cc); }
-.team-grade.grade-c { background: linear-gradient(135deg, #ffd700, #ccac00); }
-.team-grade.grade-d { background: linear-gradient(135deg, #ff6b6b, #cc5555); }
+.team-grade.grade-a { background: #1fae5b; }
+.team-grade.grade-b { background: #2f6fe6; }
+.team-grade.grade-c { background: #ffd700; }
+.team-grade.grade-d { background: #ff6b6b; }
 
 /* Recent Teams */
 .recent-teams {
@@ -235,7 +235,7 @@
 }
 
 .recent-teams h3 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.1rem;
     margin-bottom: 1rem;
     color: var(--text-primary);
@@ -266,7 +266,7 @@
 
 .recent-chip:hover {
     border-color: var(--accent);
-    background: rgba(0, 212, 255, 0.1);
+    background: rgba(10, 79, 214, 0.1);
 }
 
 .recent-chip .chip-helmet {
@@ -329,7 +329,7 @@
 
 /* Team Header */
 .team-detail-header {
-    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(0, 212, 255, 0.05) 100%);
+    background: var(--card-bg);
     border: 1px solid var(--border);
     border-radius: 16px;
     padding: 2rem;
@@ -358,13 +358,13 @@
 }
 
 .team-header-info h1 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
-    background: linear-gradient(90deg, var(--text-primary) 0%, var(--accent) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    background: var(--text-primary);
+    
+    
+    
 }
 
 .team-meta {
@@ -404,7 +404,7 @@
 }
 
 .performance-overview h2 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     color: var(--text-primary);
@@ -437,7 +437,7 @@
 }
 
 .perf-value {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 2.5rem;
     font-weight: 700;
     color: var(--accent);
@@ -471,25 +471,25 @@
 }
 
 .grade-value {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 2.5rem;
     font-weight: 700;
     padding: 0.5rem 1.5rem;
     border-radius: 8px;
 }
 
-.grade-value.grade-a-plus { background: linear-gradient(135deg, #00ff88, #00cc6a); color: #000; }
-.grade-value.grade-a { background: linear-gradient(135deg, #00ff88, #00cc6a); color: #000; }
-.grade-value.grade-a-minus { background: linear-gradient(135deg, #00ff88, #00cc6a); color: #000; }
-.grade-value.grade-b-plus { background: linear-gradient(135deg, #00d4ff, #00a8cc); color: #000; }
-.grade-value.grade-b { background: linear-gradient(135deg, #00d4ff, #00a8cc); color: #000; }
-.grade-value.grade-b-minus { background: linear-gradient(135deg, #00d4ff, #00a8cc); color: #000; }
-.grade-value.grade-c-plus { background: linear-gradient(135deg, #ffd700, #ccac00); color: #000; }
-.grade-value.grade-c { background: linear-gradient(135deg, #ffd700, #ccac00); color: #000; }
-.grade-value.grade-c-minus { background: linear-gradient(135deg, #ffd700, #ccac00); color: #000; }
-.grade-value.grade-d-plus { background: linear-gradient(135deg, #ff6b6b, #cc5555); color: #fff; }
-.grade-value.grade-d { background: linear-gradient(135deg, #ff6b6b, #cc5555); color: #fff; }
-.grade-value.grade-f { background: linear-gradient(135deg, #ff4757, #cc3742); color: #fff; }
+.grade-value.grade-a-plus { background: #1fae5b; color: #000; }
+.grade-value.grade-a { background: #1fae5b; color: #000; }
+.grade-value.grade-a-minus { background: #1fae5b; color: #000; }
+.grade-value.grade-b-plus { background: #2f6fe6; color: #000; }
+.grade-value.grade-b { background: #2f6fe6; color: #000; }
+.grade-value.grade-b-minus { background: #2f6fe6; color: #000; }
+.grade-value.grade-c-plus { background: #ffd700; color: #000; }
+.grade-value.grade-c { background: #ffd700; color: #000; }
+.grade-value.grade-c-minus { background: #ffd700; color: #000; }
+.grade-value.grade-d-plus { background: #ff6b6b; color: #fff; }
+.grade-value.grade-d { background: #ff6b6b; color: #fff; }
+.grade-value.grade-f { background: #ff4757; color: #fff; }
 
 .grade-rank {
     font-size: 0.9rem;
@@ -506,7 +506,7 @@
 }
 
 .year-selector h3 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.2rem;
     margin-bottom: 1rem;
     color: var(--text-primary);
@@ -566,7 +566,7 @@
 }
 
 .draft-class-header h3 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.3rem;
     color: var(--text-primary);
 }
@@ -582,7 +582,7 @@
 }
 
 .class-grade-value {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
     padding: 0.35rem 1rem;
@@ -631,7 +631,7 @@
 }
 
 .pick-overall {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.1rem;
     font-weight: 700;
 }
@@ -691,7 +691,7 @@
 }
 
 .hits-section h3, .misses-section h3 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.2rem;
     margin-bottom: 1rem;
     color: var(--text-primary);
@@ -785,7 +785,7 @@
 }
 
 .tendencies-section h3 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
     color: var(--text-primary);
@@ -821,7 +821,7 @@
 .tendency-icon {
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+    background: var(--accent);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -836,7 +836,7 @@
 }
 
 .tendency-value {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.25rem;
     font-weight: 700;
     color: var(--text-primary);
@@ -874,7 +874,7 @@
 }
 
 .chart-container h4 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.1rem;
     margin-bottom: 1rem;
     color: var(--text-primary);
@@ -899,7 +899,7 @@
 }
 
 .comparison-section h3 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
     color: var(--text-primary);
@@ -987,7 +987,7 @@
 }
 
 .comparison-table .winner {
-    background: rgba(0, 255, 136, 0.1);
+    background: rgba(15, 123, 63, 0.1);
     color: var(--success);
     font-weight: 700;
 }
@@ -1004,7 +1004,7 @@
 }
 
 .comparison-title {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.2rem;
 }
 
@@ -1025,7 +1025,7 @@
 }
 
 .related-links h3 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.1rem;
     margin-bottom: 1rem;
     color: var(--text-primary);
@@ -1058,7 +1058,7 @@
 
 .link-chip:hover {
     border-color: var(--accent);
-    background: rgba(0, 212, 255, 0.1);
+    background: rgba(10, 79, 214, 0.1);
 }
 
 .link-chip i {

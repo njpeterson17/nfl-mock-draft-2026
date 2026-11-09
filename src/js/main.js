@@ -2,16 +2,16 @@
         // THEME TOGGLE FUNCTIONS
         // ==========================================
         
-        // Load saved theme - default to dark
+        // Load saved theme - default to the daytime broadcast
         function loadTheme() {
             const savedTheme = localStorage.getItem('nflDraftTheme');
             if (savedTheme) {
                 document.documentElement.setAttribute('data-theme', savedTheme);
                 updateThemeIcon(savedTheme);
             } else {
-                // Default to dark theme
-                document.documentElement.setAttribute('data-theme', 'dark');
-                updateThemeIcon('dark');
+                // Default to light
+                document.documentElement.setAttribute('data-theme', 'light');
+                updateThemeIcon('light');
             }
         }
         
@@ -32,7 +32,7 @@
             // Update meta theme-color for mobile browsers
             const themeColor = document.getElementById('themeColor');
             if (themeColor) {
-                themeColor.content = theme === 'light' ? '#00a8cc' : '#00d4ff';
+                themeColor.content = theme === 'light' ? '#2f6fe6' : '#2f6fe6';
             }
         }
         
@@ -934,10 +934,10 @@
                 
                 return `
                     <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem 1rem; 
-                                background: ${isCurrent ? 'rgba(0,212,255,0.1)' : 'var(--card-bg)'}; 
+                                background: ${isCurrent ? 'rgba(10, 79, 214,0.1)' : 'var(--card-bg)'}; 
                                 border: 1px solid ${isCurrent ? 'var(--accent)' : 'var(--border)'}; 
                                 border-radius: 8px; ${isCurrent ? 'border-left: 3px solid var(--accent);' : ''}">
-                        <span style="font-family: 'Oswald', sans-serif; font-size: 1.25rem; font-weight: 700; 
+                        <span style="font-family: 'Barlow Condensed', sans-serif; font-size: 1.25rem; font-weight: 700; 
                                      color: ${isCurrent ? 'var(--accent)' : 'var(--text-secondary)'}; min-width: 30px;">
                             ${pick.pick}
                         </span>
@@ -1048,7 +1048,7 @@
                 .sort((a, b) => b[1] - a[1])
                 .map(([pos, count]) => `
                     <div style="text-align: center; padding: 0.75rem; background: var(--card-bg); border-radius: 8px;">
-                        <div style="font-family: 'Oswald', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--accent);">${count}</div>
+                        <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--accent);">${count}</div>
                         <div style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase;">${pos}</div>
                     </div>
                 `).join('');
@@ -1115,7 +1115,7 @@
                 
                 // Highlight effect
                 pickCards[pickNum - 1].style.borderColor = 'var(--accent)';
-                pickCards[pickNum - 1].style.boxShadow = '0 0 30px rgba(0,212,255,0.3)';
+                pickCards[pickNum - 1].style.boxShadow = '0 0 30px rgba(10, 79, 214,0.3)';
                 setTimeout(() => {
                     pickCards[pickNum - 1].style.borderColor = '';
                     pickCards[pickNum - 1].style.boxShadow = '';
@@ -1636,7 +1636,7 @@
             const element = document.createElement('div');
             element.innerHTML = `
                 <div style="font-family: Arial, sans-serif; padding: 20px; max-width: 800px; margin: 0 auto;">
-                    <div style="text-align: center; border-bottom: 3px solid #00d4ff; padding-bottom: 20px; margin-bottom: 30px;">
+                    <div style="text-align: center; border-bottom: 3px solid #2f6fe6; padding-bottom: 20px; margin-bottom: 30px;">
                         <h1 style="font-size: 32px; margin: 0; color: #0a0a0f;">2026 NFL Mock Draft</h1>
                         <p style="font-size: 16px; color: #666; margin: 10px 0 0;">Complete 3 Round Projections with Player Analysis</p>
                         <p style="font-size: 12px; color: #999; margin: 5px 0 0;">Generated on ${new Date().toLocaleDateString()}</p>
@@ -1682,7 +1682,7 @@
             let content = '';
             
             // Round 1
-            content += '<h2 style="font-size: 24px; color: #00d4ff; margin: 30px 0 20px; border-bottom: 2px solid #00d4ff; padding-bottom: 10px;">Round 1</h2>';
+            content += '<h2 style="font-size: 24px; color: #2f6fe6; margin: 30px 0 20px; border-bottom: 2px solid #2f6fe6; padding-bottom: 10px;">Round 1</h2>';
             const round1Picks = document.querySelectorAll('#round1Picks .pick-card');
             round1Picks.forEach((pick, index) => {
                 if (!pick.classList.contains('hidden')) {
@@ -1691,7 +1691,7 @@
             });
             
             // Round 2
-            content += '<h2 style="font-size: 24px; color: #00d4ff; margin: 30px 0 20px; border-bottom: 2px solid #00d4ff; padding-bottom: 10px;">Round 2</h2>';
+            content += '<h2 style="font-size: 24px; color: #2f6fe6; margin: 30px 0 20px; border-bottom: 2px solid #2f6fe6; padding-bottom: 10px;">Round 2</h2>';
             const round2Picks = document.querySelectorAll('#round2Picks .pick-card');
             round2Picks.forEach((pick, index) => {
                 if (!pick.classList.contains('hidden')) {
@@ -1717,7 +1717,7 @@
             return `
                 <div style="margin-bottom: 25px; padding: 15px; border: 1px solid #eee; border-radius: 8px; page-break-inside: avoid;">
                     <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
-                        <span style="font-size: 28px; font-weight: bold; color: #00d4ff; min-width: 50px;">${pickNum}</span>
+                        <span style="font-size: 28px; font-weight: bold; color: #2f6fe6; min-width: 50px;">${pickNum}</span>
                         <div>
                             <div style="font-size: 16px; font-weight: bold; color: #0a0a0f;">${teamName}</div>
                             <div style="font-size: 12px; color: #666;">${teamRecord}</div>
@@ -1725,7 +1725,7 @@
                     </div>
                     <div style="margin-left: 65px;">
                         <div style="font-size: 18px; font-weight: bold; color: #0a0a0f; margin-bottom: 5px;">
-                            ${playerName} <span style="color: #00d4ff;">${playerPos}</span> • ${playerSchool}
+                            ${playerName} <span style="color: #2f6fe6;">${playerPos}</span> • ${playerSchool}
                         </div>
                         ${needs ? `<div style="font-size: 11px; color: #666; margin-bottom: 8px;">Team Needs: ${needs}</div>` : ''}
                         <div style="font-size: 12px; color: #444; line-height: 1.5;">${reasoning}</div>
@@ -1955,7 +1955,7 @@
             // Render
             container.innerHTML = teamGrades.map((team, index) => `
                 <div class="team-grade-card" style="display: flex; align-items: center; gap: 1rem; background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.5rem; margin-bottom: 0.75rem; animation: slideIn 0.5s ease forwards; animation-delay: ${index * 0.05}s; opacity: 0;">
-                    <div class="team-grade-rank" style="font-family: 'Oswald', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--accent); min-width: 40px; text-align: center;">#${index + 1}</div>
+                    <div class="team-grade-rank" style="font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--accent); min-width: 40px; text-align: center;">#${index + 1}</div>
                     <div class="team-grade-info" style="flex: 1;">
                         <div class="team-grade-name" style="display: flex; align-items: center; gap: 0.75rem; font-weight: 600; margin-bottom: 0.25rem;">
                             ${getTeamHelmetSVG(team.teamName)}
@@ -1964,21 +1964,21 @@
                         <div class="team-grade-picks" style="font-size: 0.8rem; color: var(--text-secondary);">${team.picks.length} picks analyzed</div>
                         <div class="team-grade-breakdown" style="display: flex; gap: 1rem; margin-top: 0.5rem;">
                             <div class="grade-metric" style="text-align: center;">
-                                <span class="grade-metric-value" style="display: block; font-family: 'Oswald', sans-serif; font-weight: 600; color: var(--accent); font-size: 0.95rem;">${Math.round(team.picks.reduce((sum, p) => sum + p.breakdown.value.score, 0) / team.picks.length)}</span>
+                                <span class="grade-metric-value" style="display: block; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; color: var(--accent); font-size: 0.95rem;">${Math.round(team.picks.reduce((sum, p) => sum + p.breakdown.value.score, 0) / team.picks.length)}</span>
                                 <span class="grade-metric-label" style="font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase;">Value</span>
                             </div>
                             <div class="grade-metric" style="text-align: center;">
-                                <span class="grade-metric-value" style="display: block; font-family: 'Oswald', sans-serif; font-weight: 600; color: var(--accent); font-size: 0.95rem;">${Math.round(team.picks.reduce((sum, p) => sum + p.breakdown.need.score, 0) / team.picks.length)}</span>
+                                <span class="grade-metric-value" style="display: block; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; color: var(--accent); font-size: 0.95rem;">${Math.round(team.picks.reduce((sum, p) => sum + p.breakdown.need.score, 0) / team.picks.length)}</span>
                                 <span class="grade-metric-label" style="font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase;">Need</span>
                             </div>
                             <div class="grade-metric" style="text-align: center;">
-                                <span class="grade-metric-value" style="display: block; font-family: 'Oswald', sans-serif; font-weight: 600; color: var(--accent); font-size: 0.95rem;">${Math.round(team.picks.reduce((sum, p) => sum + p.breakdown.fit.score, 0) / team.picks.length)}</span>
+                                <span class="grade-metric-value" style="display: block; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; color: var(--accent); font-size: 0.95rem;">${Math.round(team.picks.reduce((sum, p) => sum + p.breakdown.fit.score, 0) / team.picks.length)}</span>
                                 <span class="grade-metric-label" style="font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase;">Fit</span>
                             </div>
                         </div>
                     </div>
                     <div class="team-grade-score-container" style="text-align: center;">
-                        <div class="grade-badge ${team.bgClass}" style="display: inline-flex; flex-direction: column; align-items: center; justify-content: center; min-width: 50px; padding: 0.35rem 0.75rem; border-radius: 8px; font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase;">
+                        <div class="grade-badge ${team.bgClass}" style="display: inline-flex; flex-direction: column; align-items: center; justify-content: center; min-width: 50px; padding: 0.35rem 0.75rem; border-radius: 8px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; text-transform: uppercase;">
                             <span class="grade-letter" style="font-size: 1.2rem; line-height: 1;">${team.letter}</span>
                         </div>
                         <span class="team-grade-score" style="display: block; font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.25rem;">${team.score}</span>
@@ -2010,16 +2010,16 @@
             
             container.innerHTML = teamGrades.map((team, index) => `
                 <div class="detailed-team-card" style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; margin-bottom: 1.5rem; overflow: hidden;">
-                    <div class="detailed-team-header" onclick="toggleTeamDetails(this)" style="display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 1.5rem; background: linear-gradient(90deg, rgba(0, 212, 255, 0.05) 0%, transparent 100%); border-bottom: 1px solid var(--border); cursor: pointer; transition: all 0.3s ease;">
+                    <div class="detailed-team-header" onclick="toggleTeamDetails(this)" style="display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 1.5rem; background: linear-gradient(90deg, rgba(10, 79, 214, 0.05) 0%, transparent 100%); border-bottom: 1px solid var(--border); cursor: pointer; transition: all 0.3s ease;">
                         <div class="detailed-team-info" style="display: flex; align-items: center; gap: 1rem;">
                             ${getTeamHelmetSVG(team.teamName)}
                             <div>
-                                <h4 style="font-family: 'Oswald', sans-serif; font-size: 1.2rem;">${team.teamName}</h4>
+                                <h4 style="font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem;">${team.teamName}</h4>
                                 <div class="detailed-team-meta" style="font-size: 0.8rem; color: var(--text-secondary);">Rank #${index + 1} • ${team.picks.length} picks</div>
                             </div>
                         </div>
                         <div style="display: flex; align-items: center; gap: 1rem;">
-                            <div class="grade-badge ${team.bgClass}" style="display: inline-flex; flex-direction: column; align-items: center; justify-content: center; min-width: 50px; padding: 0.35rem 0.75rem; border-radius: 8px; font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase;">
+                            <div class="grade-badge ${team.bgClass}" style="display: inline-flex; flex-direction: column; align-items: center; justify-content: center; min-width: 50px; padding: 0.35rem 0.75rem; border-radius: 8px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; text-transform: uppercase;">
                                 <span class="grade-letter" style="font-size: 1.2rem; line-height: 1;">${team.letter}</span>
                             </div>
                             <i class="fas fa-chevron-down expand-icon" style="transition: transform 0.3s ease; color: var(--text-secondary);"></i>
@@ -2045,10 +2045,10 @@
                     <div class="grade-circle" style="position: relative; width: 120px; height: 120px;">
                         <svg class="grade-progress-ring" width="120" height="120" style="transform: rotate(-90deg);">
                             <circle class="grade-progress-ring-bg" cx="60" cy="60" r="45" fill="none" stroke="var(--border)" stroke-width="8"></circle>
-                            <circle class="grade-progress-ring-progress ${team.bgClass}" cx="60" cy="60" r="45" fill="none" stroke-width="8" stroke-linecap="round" stroke-dasharray="${circumference}" stroke-dashoffset="${offset}" style="transition: stroke-dashoffset 1s ease; stroke: ${team.score >= 90 ? '#00ff88' : team.score >= 80 ? '#00d4ff' : team.score >= 70 ? '#ffb800' : '#ff4757'};"></circle>
+                            <circle class="grade-progress-ring-progress ${team.bgClass}" cx="60" cy="60" r="45" fill="none" stroke-width="8" stroke-linecap="round" stroke-dasharray="${circumference}" stroke-dashoffset="${offset}" style="transition: stroke-dashoffset 1s ease; stroke: ${team.score >= 90 ? '#1fae5b' : team.score >= 80 ? '#2f6fe6' : team.score >= 70 ? '#ffb800' : '#ff4757'};"></circle>
                         </svg>
                         <div class="grade-content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center;">
-                            <span class="grade-letter-large" style="font-family: 'Oswald', sans-serif; font-size: 3rem; font-weight: 700; line-height: 1; background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">${team.letter}</span>
+                            <span class="grade-letter-large" style="font-family: 'Barlow Condensed', sans-serif; font-size: 3rem; font-weight: 700; line-height: 1; background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">${team.letter}</span>
                             <span class="grade-score-small" style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.25rem;">${team.score}</span>
                         </div>
                     </div>
@@ -2063,8 +2063,8 @@
             
             return `
                 <div class="picks-highlight" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0;">
-                    <div class="picks-highlight-card best" style="background: var(--card-bg); border-radius: 12px; padding: 1rem; border: 1px solid rgba(0, 255, 136, 0.3); background: linear-gradient(135deg, rgba(0, 255, 136, 0.05) 0%, transparent 100%);">
-                        <div class="picks-highlight-label" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; color: #00ff88;"><i class="fas fa-thumbs-up"></i> Best Pick</div>
+                    <div class="picks-highlight-card best" style="background: var(--card-bg); border-radius: 12px; padding: 1rem; border: 1px solid rgba(15, 123, 63, 0.3); background: linear-gradient(135deg, rgba(15, 123, 63, 0.05) 0%, transparent 100%);">
+                        <div class="picks-highlight-label" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; color: #1fae5b;"><i class="fas fa-thumbs-up"></i> Best Pick</div>
                         <div class="picks-highlight-player" style="font-weight: 600; margin-bottom: 0.25rem;">${team.bestPick.player}</div>
                         <div class="picks-highlight-details" style="font-size: 0.8rem; color: var(--text-secondary);">#${team.bestPick.pickNumber} • ${team.bestPick.position} • Grade: ${team.bestPick.letter}</div>
                     </div>
@@ -2084,7 +2084,7 @@
             
             return `
                 <div class="position-breakdown" style="background: var(--card-bg); border-radius: 12px; padding: 1.5rem; margin-top: 1.5rem;">
-                    <h4 style="font-family: 'Oswald', sans-serif; margin-bottom: 1rem;">Position Breakdown</h4>
+                    <h4 style="font-family: 'Barlow Condensed', sans-serif; margin-bottom: 1rem;">Position Breakdown</h4>
                     <div class="position-bars" style="display: flex; flex-direction: column; gap: 0.75rem;">
                         ${Object.entries(positions).map(([pos, count]) => `
                             <div class="position-bar-item" style="display: flex; align-items: center; gap: 1rem;">
@@ -2105,17 +2105,17 @@
         function renderTeamPicksList(team) {
             return `
                 <div style="margin-top: 1.5rem;">
-                    <h4 style="margin-bottom: 1rem; font-family: 'Oswald', sans-serif;">All Picks</h4>
+                    <h4 style="margin-bottom: 1rem; font-family: 'Barlow Condensed', sans-serif;">All Picks</h4>
                     <div class="team-picks-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
                         ${team.picks.map(pick => `
                             <div class="team-pick-item" onclick="openPickGradeModal('${team.teamName}', ${pick.pickNumber}, '${pick.player}', '${pick.position}')" style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: var(--primary); border-radius: 8px; border: 1px solid var(--border); cursor: pointer; transition: all 0.3s ease;">
-                                <span class="team-pick-number" style="font-family: 'Oswald', sans-serif; font-weight: 700; color: var(--accent); min-width: 35px;">#${pick.pickNumber}</span>
+                                <span class="team-pick-number" style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; color: var(--accent); min-width: 35px;">#${pick.pickNumber}</span>
                                 <div class="team-pick-info" style="flex: 1;">
                                     <div class="team-pick-name" style="font-weight: 600;">${pick.player}</div>
                                     <div class="team-pick-position" style="font-size: 0.8rem; color: var(--text-secondary);">${pick.position}</div>
                                 </div>
                                 <div class="team-pick-grade" style="display: flex; flex-direction: column; align-items: flex-end;">
-                                    <span class="grade-badge ${pick.bgClass}" style="min-width: 40px; padding: 0.25rem 0.5rem; display: inline-flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 8px; font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase;">
+                                    <span class="grade-badge ${pick.bgClass}" style="min-width: 40px; padding: 0.25rem 0.5rem; display: inline-flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 8px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; text-transform: uppercase;">
                                         <span class="grade-letter" style="font-size: 1rem;">${pick.letter}</span>
                                     </span>
                                 </div>
@@ -2177,7 +2177,7 @@
         
         // Trigger Confetti
         function triggerConfetti() {
-            const colors = ['#00ff88', '#00d4ff', '#ffd700', '#ff6b35'];
+            const colors = ['#1fae5b', '#2f6fe6', '#ffd700', '#ff6b35'];
             const confettiCount = 50;
             
             for (let i = 0; i < confettiCount; i++) {
@@ -2222,7 +2222,7 @@
             const abbrev = getTeamAbbreviation(teamName);
             return `
                 <svg class="team-helmet" viewBox="0 0 100 70" style="width: 40px; height: 28px;">
-                    <ellipse cx="50" cy="35" rx="45" ry="30" fill="rgba(0,212,255,0.2)" stroke="var(--accent)" stroke-width="2"/>
+                    <ellipse cx="50" cy="35" rx="45" ry="30" fill="rgba(10, 79, 214,0.2)" stroke="var(--accent)" stroke-width="2"/>
                     <text x="50" y="42" text-anchor="middle" fill="var(--accent)" font-size="14" font-weight="bold" font-family="Arial">${abbrev}</text>
                 </svg>
             `;

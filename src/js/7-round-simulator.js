@@ -23,7 +23,7 @@ const CONFIG = {
 
 // Day configuration for visual theming
 const DAY_CONFIG = {
-    day1: { rounds: [1, 2, 3], color: '#00d4ff', name: 'Day 1' },
+    day1: { rounds: [1, 2, 3], color: '#2f6fe6', name: 'Day 1' },
     day2: { rounds: [4, 5, 6, 7], color: '#ff6b35', name: 'Day 2' }
 };
 
@@ -1268,13 +1268,13 @@ function highlightUserTurn() {
     // Add visual indication that it's the user's turn
     const banner = document.getElementById('onClockBanner');
     if (banner && state.userTeam) {
-        banner.style.background = 'linear-gradient(90deg, #00d4ff, #0099cc)';
+        banner.style.background = 'linear-gradient(90deg, #2f6fe6, #0099cc)';
         banner.style.animation = 'pulse 2s infinite';
         
         // Add a visual cue to the player grid
         const centerPanel = document.querySelector('.center-panel');
         if (centerPanel) {
-            centerPanel.style.boxShadow = '0 0 20px rgba(0, 212, 255, 0.3)';
+            centerPanel.style.boxShadow = '0 0 20px rgba(10, 79, 214, 0.3)';
             
             // Remove highlight after a few seconds
             setTimeout(() => {
@@ -1523,10 +1523,10 @@ function calculateDraftGrade() {
     
     const avgValue = totalValue / userPicks.length;
     
-    if (avgValue < -20) return { letter: 'A+', color: '#00ff88' };
-    if (avgValue < -10) return { letter: 'A', color: '#00ff88' };
-    if (avgValue < -5) return { letter: 'B+', color: '#00d4ff' };
-    if (avgValue < 0) return { letter: 'B', color: '#00d4ff' };
+    if (avgValue < -20) return { letter: 'A+', color: '#1fae5b' };
+    if (avgValue < -10) return { letter: 'A', color: '#1fae5b' };
+    if (avgValue < -5) return { letter: 'B+', color: '#2f6fe6' };
+    if (avgValue < 0) return { letter: 'B', color: '#2f6fe6' };
     if (avgValue < 10) return { letter: 'C+', color: '#ffb800' };
     if (avgValue < 20) return { letter: 'C', color: '#ffb800' };
     return { letter: 'D', color: '#ff4757' };

@@ -1,0 +1,401 @@
+/* NockDraft broadcast layer for the older pages (2026 mock, tools, about/contact).
+   Loaded after every feature stylesheet; maps their private tokens onto the shared ones
+   and rebuilds the shared pieces (headers, tabs, pick cards) in the broadcast vocabulary. */
+
+:root, [data-theme], html body {
+    /* 7-round simulator */
+    --nfl-dark: var(--nk-ground);
+    --nfl-darker: var(--nk-ground);
+    --nfl-panel: var(--nk-plate);
+    --nfl-panel-light: var(--nk-plate-2);
+    --nfl-border: var(--nk-rule);
+    --nfl-blue: var(--nk-navy);
+    --nfl-red: var(--nk-red);
+    --nfl-gold: var(--nk-gold);
+    --accent-primary: var(--nk-blue);
+    --accent-glow: transparent;
+    --accent-success: var(--success);
+    --accent-warning: var(--warning);
+    --accent-danger: var(--danger);
+    --accent-cyan: var(--nk-blue);
+
+    /* War room */
+    --wr-bg: var(--nk-ground);
+    --wr-bg-secondary: var(--nk-plate);
+    --wr-bg-tertiary: var(--nk-plate-2);
+    --wr-accent: var(--nk-blue);
+    --wr-accent-glow: transparent;
+    --wr-gold: var(--nk-gold);
+    --wr-success: var(--success);
+    --wr-warning: var(--warning);
+    --wr-danger: var(--danger);
+    --wr-text: var(--nk-ink);
+    --wr-text-secondary: var(--nk-ink-2);
+    --wr-border: var(--nk-rule);
+    --wr-panel-bg: var(--nk-plate);
+    --wr-timer-green: var(--success);
+    --wr-timer-yellow: var(--nk-gold);
+    --wr-timer-red: var(--nk-red);
+
+    /* AI predictor */
+    --ai-cyan: var(--nk-blue);
+    --ai-purple: var(--nk-blue);
+    --ai-green: var(--success);
+    --ai-yellow: var(--warning);
+    --ai-red: var(--danger);
+    --ai-bg-grid: none;
+
+    /* Leaderboard / profile */
+    --primary-light: var(--nk-navy-2);
+    --primary-dark: var(--nk-navy);
+    --accent-light: var(--nk-blue);
+    --bg-dark: var(--nk-ground);
+    --bg-card: var(--nk-plate);
+    --bg-hover: var(--nk-plate-2);
+    --text-muted: var(--nk-ink-2);
+    --border-color: var(--nk-rule);
+    --error: var(--danger);
+
+    /* Live draft */
+    --dark: var(--nk-ground);
+    --darker: var(--nk-ground);
+    --ld-card-bg: var(--nk-plate);
+    --ld-border: var(--nk-rule);
+    --text: var(--nk-ink);
+    --ld-primary: var(--nk-blue);
+    --ld-secondary: var(--nk-red);
+
+    /* AI predictor's own set */
+    --bg-primary: var(--nk-ground);
+    --bg-secondary: var(--nk-plate);
+    --bg-tertiary: var(--nk-plate-2);
+}
+body { background-image: none !important; }
+h1, h2, h3, h4, h5, h6, th, button, .btn, .nav-tab, .filter-btn, .round-nav-btn, .round-title,
+.pick-number, .stat-value, .stat-label, .player-position {
+    font-family: var(--nk-display);
+}
+h1, h2, h3 { letter-spacing: 0 !important; }
+
+/* Square corners: broadcast plates have no soft cards */
+[class*="card"], [class*="panel"], [class*="modal"], [class*="container"], [class*="section"], [class*="box"],
+[class*="btn"], [class*="tab"], [class*="badge"], [class*="item"], [class*="dropdown"], [class*="pill"], [class*="chip"],
+button, input, select, textarea, table {
+    border-radius: 0 !important;
+}
+img[class*="avatar"], [class*="avatar"] { border-radius: 0 !important; }
+
+/* No gradient text */
+.error-code, .header h1, .ai-header h1, .freaks-title h2, .header-text h1, .methodology-content h2,
+.grade-letter-large, .hero-content h1, .player-photo-placeholder.gradient-text .initials, .team-header-info h1,
+.news-header h1, .consensus-header h1, .sim-header h1, .config-header h1, .war-room-header h1 {
+    background: none !important;
+    -webkit-text-fill-color: currentColor !important;
+}
+
+/* ---------- Page headers become a lower-third title band ---------- */
+.header, .news-header, .consensus-header, .ai-header, .config-header {
+    background: var(--nk-plate) !important;
+    border-bottom: 1px solid var(--nk-rule) !important;
+    text-align: left !important;
+    padding: 1.75rem max(16px, calc(50vw - 604px)) 1.5rem !important;
+    box-shadow: none !important;
+}
+.header::before, .header::after, .news-header::before, .consensus-header::before, .ai-header::before { display: none !important; }
+.header .header-content, .news-header .header-content, .consensus-header .header-content {
+    max-width: 1240px;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+.header h1, .news-header h1, .consensus-header h1, .ai-header h1, .config-header h1 {
+    display: block;
+    font-family: var(--nk-display) !important;
+    font-style: italic;
+    font-weight: 900 !important;
+    font-size: clamp(2.4rem, 6vw, 4.25rem) !important;
+    line-height: .95 !important;
+    text-transform: uppercase;
+    color: var(--nk-ink) !important;
+    margin: 0 0 .6rem !important;
+}
+.header-subtitle {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0;
+    font-family: var(--nk-display);
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+    text-transform: uppercase;
+    color: #fff !important;
+    background: var(--nk-navy);
+    padding: .35rem 1.4rem .35rem .8rem;
+    clip-path: polygon(0 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+}
+.header-accent { color: var(--nk-gold) !important; font-weight: 700 !important; margin-left: .35rem; }
+
+/* Archive strip on the 2026 page */
+.nk-archive {
+    display: flex;
+    align-items: stretch;
+    background: var(--nk-plate-2);
+    border-bottom: 1px solid var(--nk-rule);
+    font-size: .95rem;
+}
+.nk-archive b {
+    display: flex;
+    align-items: center;
+    padding: .4rem 1.3rem .4rem 16px;
+    background: var(--nk-gold);
+    color: var(--nk-navy);
+    font-family: var(--nk-display);
+    font-style: italic;
+    font-weight: 800;
+    text-transform: uppercase;
+    clip-path: polygon(0 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+}
+.nk-archive p { align-self: center; padding: .4rem .9rem; color: var(--nk-ink-2); margin: 0; }
+.nk-archive a { color: var(--nk-blue); font-weight: 600; }
+
+/* ---------- Controls and tabs ---------- */
+.controls-bar {
+    background: var(--nk-plate) !important;
+    border-bottom: 1px solid var(--nk-rule) !important;
+    box-shadow: none !important;
+}
+.control-label { font-family: var(--nk-display); font-weight: 700; text-transform: uppercase; color: var(--nk-ink-2) !important; }
+.filter-btn, .round-nav-btn, .position-btn, .pos-filter, [class*="filter-btn"] {
+    font-family: var(--nk-display) !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    font-size: 1rem !important;
+    background: var(--nk-plate) !important;
+    color: var(--nk-ink) !important;
+    border: 1px solid var(--nk-rule) !important;
+    box-shadow: none !important;
+}
+.filter-btn:hover, .round-nav-btn:hover { border-color: var(--nk-navy) !important; }
+.filter-btn.active, .round-nav-btn.active, .position-btn.active, [class*="filter-btn"].active {
+    background: var(--nk-navy) !important;
+    color: #fff !important;
+    border-color: var(--nk-navy) !important;
+}
+[data-theme="dark"] .filter-btn.active, [data-theme="dark"] .round-nav-btn.active { background: var(--nk-blue) !important; color: var(--nk-on-accent) !important; border-color: var(--nk-blue) !important; }
+.round-nav-btn .fa-circle { display: none; }
+
+.search-box input, .jump-to-select, input[type="text"], input[type="search"], select {
+    background: var(--nk-plate) !important;
+    color: var(--nk-ink) !important;
+    border: 1px solid var(--nk-rule) !important;
+}
+
+.nav-container {
+    background: var(--nk-navy-2) !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+.nav-tabs { gap: 0 !important; }
+.nav-tab {
+    font-family: var(--nk-display) !important;
+    font-weight: 700 !important;
+    font-size: 1.05rem !important;
+    text-transform: uppercase;
+    color: var(--nk-on-navy-2) !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-bottom: 3px solid transparent !important;
+    box-shadow: none !important;
+}
+.nav-tab:hover { color: #fff !important; background: transparent !important; }
+.nav-tab.active { color: #fff !important; border-bottom-color: var(--nk-red) !important; background: transparent !important; }
+.nav-tab.active::after { display: none !important; }
+.nav-tab i { color: inherit !important; }
+.dropdown-menu { background: var(--nk-plate) !important; border: 1px solid var(--nk-rule) !important; }
+.dropdown-item { color: var(--nk-ink) !important; }
+.dropdown-item i { color: var(--nk-blue) !important; }
+
+.round-title {
+    font-family: var(--nk-display) !important;
+    font-style: italic;
+    font-weight: 900 !important;
+    font-size: clamp(2.2rem, 5vw, 3.25rem) !important;
+    text-transform: uppercase;
+    color: var(--nk-ink) !important;
+    text-align: left !important;
+    letter-spacing: 0 !important;
+}
+.round-title span { color: var(--nk-red) !important; }
+.round-nav { justify-content: flex-start !important; }
+
+/* ---------- Pick card: broadcast graphic ---------- */
+.pick-card {
+    background: var(--nk-plate) !important;
+    border: 0 !important;
+    border-top: 6px solid var(--team-color, var(--nk-navy)) !important;
+    box-shadow: 0 1px 0 var(--nk-rule), 0 14px 30px -24px rgba(11, 31, 58, .55) !important;
+}
+.pick-card:hover { transform: none !important; }
+.pick-header {
+    background: var(--nk-navy) !important;
+    color: #fff;
+    border-bottom: 0 !important;
+    padding: 0 1.25rem 0 0 !important;
+    min-height: 64px;
+}
+.pick-header .header-left { align-self: stretch; justify-content: center; }
+.pick-header .pick-number, .header-left .pick-number {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 1.6rem 0 1.1rem;
+    background: var(--nk-red);
+    color: #fff !important;
+    font-style: italic;
+    font-weight: 900 !important;
+    font-size: 2.6rem !important;
+    clip-path: polygon(0 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
+    -webkit-text-fill-color: #fff !important;
+    text-shadow: none !important;
+}
+.pick-header .team-helmet-img { filter: drop-shadow(0 2px 4px rgba(0, 0, 0, .35)); }
+.next-pick, .next-pick-label { color: var(--nk-on-navy-2) !important; font-family: var(--nk-display); text-transform: uppercase; font-weight: 700; }
+.next-pick-number { color: #fff !important; font-family: var(--nk-display); font-weight: 800; }
+.player-photo { border-radius: 0 !important; border: 0 !important; background: var(--nk-plate-2) !important; box-shadow: none !important; }
+.player-photo img { border-radius: 0 !important; }
+.player-info h2 {
+    font-family: var(--nk-display) !important;
+    font-style: italic;
+    font-weight: 900 !important;
+    text-transform: uppercase;
+    font-size: clamp(1.6rem, 3vw, 2.3rem) !important;
+    line-height: 1 !important;
+    color: var(--nk-ink) !important;
+}
+.player-position {
+    background: var(--nk-blue) !important;
+    color: #fff !important;
+    border: 0 !important;
+    font-weight: 800 !important;
+    font-size: 1rem !important;
+    padding: .3rem .7rem !important;
+}
+.player-school {
+    background: var(--nk-navy) !important;
+    color: #fff !important;
+    border: 0 !important;
+    font-family: var(--nk-display);
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: .3rem .7rem !important;
+    border-radius: 0 !important;
+}
+.stat-box { background: var(--nk-plate-2) !important; border: 0 !important; border-top: 2px solid var(--nk-navy) !important; }
+.stat-box .stat-value { color: var(--nk-ink) !important; font-weight: 800 !important; }
+.stat-box .stat-label { color: var(--nk-ink-2) !important; }
+.breakdown-section { background: var(--nk-plate-2) !important; border: 0 !important; }
+.breakdown-title { color: var(--nk-ink) !important; font-family: var(--nk-display); font-weight: 800; text-transform: uppercase; font-size: 1.15rem !important; }
+.breakdown-title i { color: var(--nk-red) !important; }
+.breakdown-content { color: var(--nk-ink) !important; }
+.sw-section { background: var(--nk-plate) !important; border: 0 !important; }
+.sw-section h4 { font-family: var(--nk-display); text-transform: uppercase; font-weight: 800; }
+.sw-section.strengths h4, .sw-section.strengths h4 i { color: var(--success) !important; }
+.sw-section.weaknesses h4, .sw-section.weaknesses h4 i { color: var(--nk-red) !important; }
+
+/* Generic buttons in the older pages */
+.btn-primary, .primary-btn, .action-btn.primary, .cta-button, [class*="btn-primary"] {
+    background: var(--nk-red) !important;
+    color: #fff !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Footers */
+.footer, .site-footer, .ai-footer, .config-footer, .history-footer {
+    background: var(--nk-navy) !important;
+    color: var(--nk-on-navy-2) !important;
+    border-top: 0 !important;
+}
+.footer a, .site-footer a, .ai-footer a, .config-footer a, .history-footer a { color: #fff !important; }
+
+/* Mobile bottom nav on the 2026 page */
+.mobile-bottom-nav { background: var(--nk-navy) !important; border-top: 3px solid var(--nk-red) !important; backdrop-filter: none !important; }
+.mobile-bottom-nav * { color: var(--nk-on-navy-2); }
+.mobile-bottom-nav .active, .mobile-bottom-nav .active * { color: #fff !important; }
+
+/* The site bar replaces the floating home buttons */
+.home-button, .back-to-hub { display: none !important; }
+
+.breaking-ticker, [data-theme="light"] .breaking-ticker { background: var(--nk-red) !important; }
+.config-header .highlight, .config-title .highlight { color: var(--nk-red) !important; }
+.config-badge { border-radius: 0 !important; }
+
+.player-info h2 { white-space: normal !important; overflow: visible !important; text-overflow: clip !important; }
+.player-position, .player-school { display: inline-flex !important; width: auto !important; align-self: flex-start !important; justify-self: start !important; border-radius: 0 !important; }
+.next-pick-number { border-radius: 0 !important; border: 0 !important; background: rgba(255, 255, 255, .12) !important; box-shadow: none !important; }
+.player-info [class*="social"] a, .player-info .youtube-btn, .player-info .share-btn { box-shadow: none !important; }
+
+/* Tool pages with their own second nav: make it a navy rail like the 2026 tabs */
+.draft-grades-page .main-nav, .draft-grades-page .main-nav .nav-container { background: var(--nk-navy-2) !important; border: 0 !important; box-shadow: none !important; }
+.draft-grades-page .main-nav a { color: var(--nk-on-navy-2) !important; font-family: var(--nk-display); font-weight: 700; text-transform: uppercase; background: transparent !important; }
+.draft-grades-page .main-nav a.active, .draft-grades-page .main-nav a:hover { color: #fff !important; }
+
+/* Square icon chips instead of gradient circles */
+.contact-icon, .method-icon, .feature-icon, .stat-icon {
+    background: var(--nk-navy) !important;
+    color: #fff !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.start-btn { background: var(--nk-red) !important; color: #fff !important; font-style: italic; font-weight: 800 !important; box-shadow: none !important; }
+
+/* ---------- Review fixes ---------- */
+/* Gold belongs to the clock, red to on-the-clock moments */
+.header-accent { color: #fff !important; }
+.nk-archive b { background: var(--nk-navy); color: #fff; }
+.theme-toggle, .theme-toggle i { color: var(--nk-ink) !important; background: var(--nk-plate) !important; box-shadow: none !important; }
+.round-title span, .highlight, .config-title .highlight, .config-header .highlight, h1 .highlight { color: inherit !important; -webkit-text-fill-color: currentColor !important; background: none !important; }
+.error-code { color: var(--nk-ink) !important; }
+
+/* Pick card body: one chyron line, one plate, ruled sections */
+.pick-card .player-info { display: block !important; text-align: left !important; }
+.pick-card .player-info h2 { margin-bottom: .6rem !important; }
+.pick-card .player-position, .pick-card .player-school { margin: 0 !important; vertical-align: top; }
+.pick-card .player-school { margin-left: -4px !important; }
+.pick-card .stats-year { margin-top: 1rem !important; }
+.breakdown-section { background: transparent !important; border-top: 1px solid var(--nk-rule) !important; box-shadow: none !important; }
+.sw-section { background: transparent !important; border: 0 !important; border-top: 2px solid var(--nk-navy) !important; box-shadow: none !important; padding-left: 0 !important; padding-right: 0 !important; }
+.breakdown-content, .sw-section li, .sw-section ul { font-family: var(--nk-body) !important; }
+.social-share a, .social-share button, .player-main .social-share a, .player-main .social-share button {
+    box-shadow: none !important; filter: none !important; border-radius: 0 !important; background: transparent !important;
+}
+
+/* Draft grades: the site bar already carries the brand */
+.draft-grades-page .main-nav .nav-brand, .draft-grades-page .main-nav .logo { display: none !important; }
+.draft-grades-page header[style] { text-align: left !important; }
+
+/* Contact */
+.contact-gfx { max-width: 760px; margin: 0 auto 2.5rem; }
+.contact-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .25rem 1rem; padding: 1rem; border-bottom: 1px solid var(--nk-rule); }
+.contact-row:last-child { border-bottom: 0; }
+.contact-row strong { font-family: var(--nk-display); font-weight: 700; font-size: 1.25rem; text-transform: uppercase; color: var(--nk-ink); }
+.contact-row a { color: var(--nk-blue); font-weight: 600; }
+
+/* Kicker pills above tool headings */
+.config-badge, .sim-badge, .war-room-badge, .ai-badge, .entry-badge, .setup-badge { display: none !important; }
+
+/* Consensus mock: square app icon and badges */
+.header-icon { border-radius: 0 !important; background: var(--nk-navy) !important; box-shadow: none !important; }
+.pff-badge, [class*="consensus-badge"] { border-radius: 0 !important; }
+.entry-content, .war-room-entry, .setup-container { border-radius: 0 !important; box-shadow: 0 1px 0 var(--nk-rule), 0 18px 40px -28px rgba(11, 31, 58, .6) !important; border: 0 !important; border-top: 6px solid var(--nk-navy) !important; }
+.player-info i.fab, .player-info i.fas { box-shadow: none !important; border-radius: 0 !important; background: none !important; color: var(--nk-ink) !important; }
+/* Tool controls: navy for selection, red for the primary action */
+.difficulty-btn.active, .speed-btn.active, .round-option.active, [class*="option"].active { background: var(--nk-navy) !important; color: #fff !important; border-color: var(--nk-navy) !important; box-shadow: none !important; }
+.difficulty-btn.active *, .speed-btn.active *, [class*="option"].active * { color: #fff !important; }
+.enter-btn, .enter-war-room-btn, #enterWarRoom, #startDraft { background: var(--nk-red) !important; color: #fff !important; box-shadow: none !important; }
+.entry-screen, .sim-entry, .war-room-entry-screen { background-image: none !important; }
+
+@media (max-width: 640px) {
+    .pick-card .player-stats { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+    .pick-card .player-school { margin-left: 0 !important; }
+}

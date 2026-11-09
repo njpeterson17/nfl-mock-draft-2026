@@ -1,18 +1,18 @@
         :root {
             --primary: #0a0a0f;
             --secondary: #12121a;
-            --accent: #00d4ff;
-            --accent-hover: #4ddfff;
+            --accent: #2f6fe6;
+            --accent-hover: #5a8ff0;
             --gold: #ffd700;
             --text-primary: #ffffff;
             --text-secondary: #8b8b9a;
             --card-bg: rgba(255, 255, 255, 0.07);
             --border: rgba(255, 255, 255, 0.08);
-            --success: #00ff88;
-            --info: #00d4ff;
+            --success: #1fae5b;
+            --info: #2f6fe6;
             --warning: #ffb800;
             --danger: #ff4757;
-            --shadow-color: rgba(0, 212, 255, 0.1);
+            --shadow-color: rgba(10, 79, 214, 0.1);
             --breakdown-bg: rgba(0, 0, 0, 0.2);
             --trade-panel-bg: rgba(0, 0, 0, 0.2);
             --trade-value-bg: rgba(0, 0, 0, 0.3);
@@ -22,18 +22,18 @@
         [data-theme="light"] {
             --primary: #f5f5f7;
             --secondary: #ffffff;
-            --accent: #00a8cc;
-            --accent-hover: #00d4ff;
+            --accent: #2f6fe6;
+            --accent-hover: #2f6fe6;
             --gold: #d4af37;
             --text-primary: #1a1a2e;
             --text-secondary: #4a4a5a;
             --card-bg: rgba(0, 0, 0, 0.03);
             --border: rgba(0, 0, 0, 0.1);
             --success: #00b368;
-            --info: #00a8cc;
+            --info: #2f6fe6;
             --warning: #cc9400;
             --danger: #e63946;
-            --shadow-color: rgba(0, 168, 204, 0.1);
+            --shadow-color: rgba(10, 79, 214, 0.1);
             --breakdown-bg: rgba(0, 0, 0, 0.05);
             --trade-panel-bg: rgba(0, 0, 0, 0.03);
             --trade-value-bg: rgba(0, 0, 0, 0.08);
@@ -55,8 +55,8 @@
         }
 
         html, body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
+            font-family: 'Barlow', sans-serif;
+            background: var(--primary);
             color: var(--text-primary);
             min-height: 100vh;
             line-height: 1.6;
@@ -66,12 +66,12 @@
         }
 
         [data-theme="light"] body {
-            background: linear-gradient(180deg, var(--primary) 0%, #e8e8ec 100%);
+            background: var(--primary);
         }
 
         /* Header */
         .header {
-            background: linear-gradient(180deg, rgba(0,212,255,0.1) 0%, transparent 100%);
+            background: rgba(10, 79, 214,0.1);
             padding: 1.5rem 0 1rem;
             text-align: center;
             border-bottom: 1px solid var(--border);
@@ -85,19 +85,19 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, var(--accent) 0%, var(--success) 50%, var(--warning) 100%);
+            background: var(--accent);
         }
 
         .header h1 {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             font-size: 4rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 4px;
-            background: linear-gradient(90deg, var(--text-primary) 0%, var(--accent) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            background: var(--text-primary);
+            
+            
+            
             margin-bottom: 0.5rem;
         }
 
@@ -114,7 +114,7 @@
 
         /* War Room Promo */
         .war-room-promo {
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 255, 136, 0.1));
+            background: rgba(10, 79, 214, 0.1);
             border-bottom: 1px solid var(--border);
             padding: 1rem 2rem;
         }
@@ -132,7 +132,7 @@
         .promo-icon {
             width: 50px;
             height: 50px;
-            background: linear-gradient(135deg, var(--accent), var(--success));
+            background: var(--accent);
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -148,7 +148,7 @@
         }
 
         .promo-text h3 {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             font-size: 1.2rem;
             margin-bottom: 0.25rem;
             color: var(--text-primary);
@@ -161,7 +161,7 @@
         }
 
         .promo-btn {
-            background: linear-gradient(135deg, var(--accent), var(--success));
+            background: var(--accent);
             color: var(--primary);
             padding: 0.75rem 1.5rem;
             border-radius: 8px;
@@ -176,7 +176,7 @@
 
         .promo-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(10, 79, 214, 0.3);
         }
 
         /* Controls Bar */
@@ -291,7 +291,7 @@
             border: none;
             color: var(--text-secondary);
             padding: 0.6rem 1rem;
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             font-size: 0.85rem;
             font-weight: 500;
             text-transform: uppercase;
@@ -336,8 +336,8 @@
 
 
         .war-room-tab:hover {
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(0, 255, 136, 0.2));
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+            background: rgba(10, 79, 214, 0.2);
+            box-shadow: none;
         }
 
         .round-badge {
@@ -374,7 +374,7 @@
 
         /* Round Title */
         .round-title {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             font-size: 2rem;
             text-align: center;
             margin-bottom: 2rem;
@@ -405,7 +405,7 @@
         }
 
         .stat-item-value {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             font-size: 2rem;
             font-weight: 700;
             color: var(--accent);
@@ -488,7 +488,7 @@
             align-items: center;
             justify-content: space-between;
             padding: 1rem 1.5rem;
-            background: var(--team-gradient, linear-gradient(90deg, rgba(0,212,255,0.05) 0%, transparent 100%));
+            background: var(--team-gradient, linear-gradient(90deg, rgba(10, 79, 214,0.05) 0%, transparent 100%));
             border-bottom: 1px solid var(--border);
             gap: 1rem;
         }
@@ -523,7 +523,7 @@
             padding: 0.25rem 0.75rem;
             border: 1px solid var(--accent);
             border-radius: 12px;
-            background: rgba(0, 212, 255, 0.1);
+            background: rgba(10, 79, 214, 0.1);
         }
 
         .header-right .action-btn {
@@ -581,7 +581,7 @@
         .pick-card[data-team="Jaguars"] { --team-gradient: linear-gradient(90deg, rgba(0,103,120,0.08) 0%, transparent 100%); --team-shadow: rgba(215,162,42,0.3); }
 
         .pick-number {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             font-size: 2rem;
             font-weight: 700;
             color: var(--team-color, var(--accent));
@@ -623,7 +623,7 @@
         }
 
         .team-details h3 {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             font-size: 1.3rem;
             font-weight: 600;
             text-transform: uppercase;
@@ -678,7 +678,7 @@
         }
 
         .pick-content-simple h2 {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             font-size: 1.1rem;
             font-weight: 600;
             color: var(--text-primary);
@@ -688,7 +688,7 @@
 
         .pick-content-simple .player-position {
             display: inline-block;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background: var(--primary);
             color: white;
             padding: 0.25rem 0.75rem;
             border-radius: 20px;
@@ -716,7 +716,7 @@
         .player-photo {
             width: 120px;
             height: 155px;
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            background: var(--secondary);
             border-radius: 10px;
             display: flex;
             align-items: center;
@@ -750,7 +750,7 @@
         }
 
         .player-info h2 {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             font-size: 1.4rem;
             margin-bottom: 0.35rem;
         }
@@ -782,7 +782,7 @@
         }
 
         .stat-box .stat-value {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             font-size: 1.4rem;
             font-weight: 700;
             color: var(--accent);
@@ -850,7 +850,7 @@
         }
 
         .breakdown-title {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             font-size: 1rem;
             color: var(--gold);
             margin-bottom: 0.75rem;
@@ -952,7 +952,7 @@
         }
 
         .quick-pick-number {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--accent);
@@ -977,7 +977,7 @@
         }
 
         .quick-pick-player {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             font-size: 1.1rem;
             font-weight: 600;
         }
@@ -1019,7 +1019,7 @@
             visibility: hidden;
             transition: all 0.3s ease;
             z-index: 99;
-            box-shadow: 0 4px 20px rgba(0,212,255,0.3);
+            box-shadow: 0 4px 20px rgba(10, 79, 214,0.3);
         }
 
         .back-to-top.visible {
@@ -1029,12 +1029,12 @@
 
         .back-to-top:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 30px rgba(0,212,255,0.4);
+            box-shadow: 0 6px 30px rgba(10, 79, 214,0.4);
         }
 
         /* Comments Section */
         .comments-section {
-            background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
+            background: var(--primary);
             padding: 4rem 2rem;
             border-top: 1px solid var(--border);
         }
@@ -1045,7 +1045,7 @@
         }
 
         .comments-title {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             font-size: 2rem;
             font-weight: 600;
             text-align: center;
@@ -1077,7 +1077,7 @@
             text-align: center;
             margin-top: 1.5rem;
             padding: 1rem;
-            background: rgba(0, 212, 255, 0.05);
+            background: rgba(10, 79, 214, 0.05);
             border-radius: 8px;
             color: var(--text-secondary);
             font-size: 0.85rem;
@@ -1095,7 +1095,7 @@
         }
 
         [data-theme="light"] .comments-info {
-            background: rgba(0, 212, 255, 0.1);
+            background: rgba(10, 79, 214, 0.1);
         }
 
         /* Footer */
@@ -1497,7 +1497,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.25rem;
-            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            background: #ff6b35;
             color: #fff;
             padding: 0.25rem 0.5rem;
             border-radius: 4px;
@@ -1517,7 +1517,7 @@
         }
 
         .pick-card.traded .pick-header {
-            background: linear-gradient(90deg, rgba(255,107,53,0.1) 0%, transparent 100%);
+            background: rgba(255,107,53,0.1);
         }
 
         .trade-details {
@@ -1638,7 +1638,7 @@
         }
 
         .trade-simulator-title {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             font-size: 1.3rem;
             margin-bottom: 1rem;
             display: flex;
@@ -1700,7 +1700,7 @@
         }
 
         .trade-pick-item.selected {
-            background: rgba(0,212,255,0.1);
+            background: rgba(10, 79, 214,0.1);
             border-color: var(--accent);
         }
 
@@ -1769,7 +1769,7 @@
         }
 
         .active-trades h4 {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             margin-bottom: 1rem;
             color: var(--accent);
         }
@@ -1833,11 +1833,11 @@
 
         /* Export & Share Styles */
         .export-bar {
-            background: linear-gradient(90deg, rgba(0,212,255,0.1) 0%, rgba(0,255,136,0.05) 50%, rgba(255,184,0,0.1) 100%);
+            background: rgba(10, 79, 214,0.1);
         }
 
         [data-theme="light"] .export-bar {
-            background: linear-gradient(90deg, rgba(0,168,204,0.08) 0%, rgba(0,179,104,0.04) 50%, rgba(204,148,0,0.08) 100%);
+            background: rgba(10, 79, 214,0.08);
         }
             padding: 0.75rem 2rem;
             border-bottom: 1px solid var(--border);
@@ -1866,7 +1866,7 @@
             border-color: var(--accent);
             color: var(--accent);
             transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(0,212,255,0.2);
+            box-shadow: 0 4px 15px rgba(10, 79, 214,0.2);
         }
 
         .export-btn.primary {
@@ -1957,7 +1957,7 @@
         }
 
         .export-modal-title {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             font-size: 1.5rem;
             display: flex;
             align-items: center;
@@ -1996,7 +1996,7 @@
 
         .export-option:hover {
             border-color: var(--accent);
-            background: rgba(0,212,255,0.05);
+            background: rgba(10, 79, 214,0.05);
         }
 
         .export-option-icon {
@@ -2010,8 +2010,8 @@
         }
 
         .export-option-icon.pdf { background: rgba(255, 71, 87, 0.2); color: #ff4757; }
-        .export-option-icon.text { background: rgba(0, 255, 136, 0.2); color: #00ff88; }
-        .export-option-icon.link { background: rgba(0, 212, 255, 0.2); color: #00d4ff; }
+        .export-option-icon.text { background: rgba(15, 123, 63, 0.2); color: #1fae5b; }
+        .export-option-icon.link { background: rgba(10, 79, 214, 0.2); color: #2f6fe6; }
         .export-option-icon.image { background: rgba(255, 184, 0, 0.2); color: #ffb800; }
         .export-option-icon.social { background: rgba(29, 161, 242, 0.2); color: #1DA1F2; }
 
@@ -2147,27 +2147,27 @@
         /* Pick Highlight Animation for Deep Links */
         @keyframes pickHighlightPulse {
             0% {
-                box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.7);
+                box-shadow: 0 0 0 0 rgba(10, 79, 214, 0.7);
                 border-color: var(--accent);
                 transform: scale(1);
             }
             25% {
-                box-shadow: 0 0 0 10px rgba(0, 212, 255, 0.4);
+                box-shadow: 0 0 0 10px rgba(10, 79, 214, 0.4);
                 border-color: var(--accent);
                 transform: scale(1.01);
             }
             50% {
-                box-shadow: 0 0 0 20px rgba(0, 212, 255, 0.2);
+                box-shadow: 0 0 0 20px rgba(10, 79, 214, 0.2);
                 border-color: var(--accent-hover);
                 transform: scale(1.01);
             }
             75% {
-                box-shadow: 0 0 0 10px rgba(0, 212, 255, 0.4);
+                box-shadow: 0 0 0 10px rgba(10, 79, 214, 0.4);
                 border-color: var(--accent);
                 transform: scale(1.01);
             }
             100% {
-                box-shadow: 0 0 0 0 rgba(0, 212, 255, 0);
+                box-shadow: 0 0 0 0 rgba(10, 79, 214, 0);
                 border-color: var(--border);
                 transform: scale(1);
             }
@@ -2175,11 +2175,11 @@
         
         @keyframes pickHighlightGlow {
             0%, 100% {
-                box-shadow: 0 0 20px rgba(0, 212, 255, 0.3), 0 0 40px rgba(0, 212, 255, 0.1);
+                box-shadow: 0 0 20px rgba(10, 79, 214, 0.3), 0 0 40px rgba(10, 79, 214, 0.1);
                 border-color: var(--accent);
             }
             50% {
-                box-shadow: 0 0 30px rgba(0, 212, 255, 0.6), 0 0 60px rgba(0, 212, 255, 0.2);
+                box-shadow: 0 0 30px rgba(10, 79, 214, 0.6), 0 0 60px rgba(10, 79, 214, 0.2);
                 border-color: var(--accent-hover);
             }
         }
@@ -2235,7 +2235,7 @@
             color: var(--text-secondary);
             padding: 1rem;
             border-radius: 12px;
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             font-size: 0.95rem;
             font-weight: 500;
             cursor: pointer;
@@ -2247,7 +2247,7 @@
         }
 
         .position-btn:hover {
-            background: rgba(0, 212, 255, 0.1);
+            background: rgba(10, 79, 214, 0.1);
             border-color: var(--accent);
             color: var(--accent);
             transform: translateY(-2px);
@@ -2292,7 +2292,7 @@
         }
 
         .bb-rank {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             font-size: 1.2rem;
             font-weight: 700;
             color: var(--accent);
@@ -2323,7 +2323,7 @@
 
         .bb-grade {
             text-align: center;
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             font-size: 1.1rem;
             font-weight: 700;
         }
@@ -2342,8 +2342,8 @@
         }
 
         .bb-tier.elite { background: rgba(255, 215, 0, 0.15); color: var(--gold); }
-        .bb-tier.round1 { background: rgba(0, 255, 136, 0.15); color: var(--success); }
-        .bb-tier.round2 { background: rgba(0, 212, 255, 0.15); color: var(--accent); }
+        .bb-tier.round1 { background: rgba(15, 123, 63, 0.15); color: var(--success); }
+        .bb-tier.round2 { background: rgba(10, 79, 214, 0.15); color: var(--accent); }
         .bb-tier.round3 { background: rgba(139, 139, 154, 0.15); color: var(--text-secondary); }
 
         /* Positional Rankings Styles */
@@ -2365,7 +2365,7 @@
         }
 
         .pos-rank-num {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             font-size: 1.1rem;
             font-weight: 700;
             color: var(--accent);
@@ -2389,7 +2389,7 @@
 
         .pos-grade {
             text-align: center;
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             font-size: 1rem;
             font-weight: 700;
             color: var(--accent);
@@ -2458,7 +2458,7 @@
         }
 
         .team-draft-info h3 {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             font-size: 1.2rem;
             color: var(--text-primary);
             margin: 0;
@@ -2473,24 +2473,24 @@
             margin-left: auto;
             padding: 0.5rem 1rem;
             border-radius: 8px;
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             font-size: 1.3rem;
             font-weight: 700;
             text-align: center;
             min-width: 50px;
         }
 
-        .grade-badge.grade-aplus { background: linear-gradient(135deg, #ffd700, #ffed4e); color: #000; }
-        .grade-badge.grade-a { background: linear-gradient(135deg, #00ff88, #00cc6a); color: #000; }
-        .grade-badge.grade-aminus { background: linear-gradient(135deg, #00dd77, #00aa55); color: #000; }
-        .grade-badge.grade-bplus { background: linear-gradient(135deg, #88ff00, #66cc00); color: #000; }
-        .grade-badge.grade-b { background: linear-gradient(135deg, #ccff00, #99cc00); color: #000; }
-        .grade-badge.grade-bminus { background: linear-gradient(135deg, #ffcc00, #cc9900); color: #000; }
-        .grade-badge.grade-cplus { background: linear-gradient(135deg, #ff9900, #cc7700); color: #fff; }
-        .grade-badge.grade-c { background: linear-gradient(135deg, #ff6600, #cc4400); color: #fff; }
-        .grade-badge.grade-cminus { background: linear-gradient(135deg, #ff3300, #cc1100); color: #fff; }
-        .grade-badge.grade-d { background: linear-gradient(135deg, #ff0000, #cc0000); color: #fff; }
-        .grade-badge.grade-f { background: linear-gradient(135deg, #990000, #660000); color: #fff; }
+        .grade-badge.grade-aplus { background: #ffd700; color: #000; }
+        .grade-badge.grade-a { background: #1fae5b; color: #000; }
+        .grade-badge.grade-aminus { background: #00dd77; color: #000; }
+        .grade-badge.grade-bplus { background: #88ff00; color: #000; }
+        .grade-badge.grade-b { background: #ccff00; color: #000; }
+        .grade-badge.grade-bminus { background: #ffcc00; color: #000; }
+        .grade-badge.grade-cplus { background: #ff9900; color: #fff; }
+        .grade-badge.grade-c { background: #ff6600; color: #fff; }
+        .grade-badge.grade-cminus { background: #ff3300; color: #fff; }
+        .grade-badge.grade-d { background: #ff0000; color: #fff; }
+        .grade-badge.grade-f { background: #990000; color: #fff; }
 
         .team-draft-needs {
             padding: 1rem 1.25rem;
@@ -2547,7 +2547,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             font-weight: 700;
             font-size: 0.9rem;
             flex-shrink: 0;
@@ -2576,8 +2576,8 @@
             text-transform: uppercase;
         }
 
-        .pick-value-indicator.value { background: rgba(0, 255, 136, 0.2); color: var(--success); }
-        .pick-value-indicator.fair { background: rgba(0, 212, 255, 0.2); color: var(--accent); }
+        .pick-value-indicator.value { background: rgba(15, 123, 63, 0.2); color: var(--success); }
+        .pick-value-indicator.fair { background: rgba(10, 79, 214, 0.2); color: var(--accent); }
         .pick-value-indicator.reach { background: rgba(255, 71, 87, 0.2); color: var(--danger); }
 
         .team-draft-summary {
@@ -2608,7 +2608,7 @@
         }
 
         .grade-rank {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--accent);
@@ -2647,7 +2647,7 @@
         }
 
         .score-value {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             font-size: 1.1rem;
             font-weight: 600;
             color: var(--text-primary);
@@ -2677,7 +2677,7 @@
 
         /* Export Bar Styles */
         .export-bar {
-            background: linear-gradient(90deg, rgba(0,212,255,0.1) 0%, rgba(0,255,136,0.1) 100%);
+            background: rgba(10, 79, 214,0.1);
             border-bottom: 1px solid var(--border);
             padding: 0.75rem 2rem;
             display: flex;
@@ -2753,7 +2753,7 @@
         }
 
         .theme-toggle .fa-moon {
-            color: #00d4ff;
+            color: #2f6fe6;
         }
 
         [data-theme="light"] .theme-toggle .fa-moon {
@@ -2808,11 +2808,11 @@
         }
 
         [data-theme="light"] .back-to-top {
-            box-shadow: 0 4px 20px rgba(0,168,204,0.3);
+            box-shadow: 0 4px 20px rgba(10, 79, 214,0.3);
         }
 
         [data-theme="light"] .back-to-top:hover {
-            box-shadow: 0 6px 30px rgba(0,168,204,0.4);
+            box-shadow: 0 6px 30px rgba(10, 79, 214,0.4);
         }
 
         [data-theme="light"] .filter-btn.active {
@@ -2856,7 +2856,7 @@
 
         [data-theme="light"] .export-option-icon.pdf { background: rgba(255, 71, 87, 0.1); }
         [data-theme="light"] .export-option-icon.text { background: rgba(0, 179, 104, 0.1); }
-        [data-theme="light"] .export-option-icon.link { background: rgba(0, 168, 204, 0.1); }
+        [data-theme="light"] .export-option-icon.link { background: rgba(10, 79, 214, 0.1); }
         [data-theme="light"] .export-option-icon.image { background: rgba(204, 148, 0, 0.1); }
         [data-theme="light"] .export-option-icon.social { background: rgba(29, 161, 242, 0.1); }
 
@@ -2884,7 +2884,7 @@
 }
 
 .saved-mocks-title {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.3rem;
     display: flex;
     align-items: center;
@@ -2917,7 +2917,7 @@
 .save-mock-btn:hover {
     background: var(--accent-hover);
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(10, 79, 214, 0.3);
 }
 
 .import-mock-btn {
@@ -2938,7 +2938,7 @@
 .import-mock-btn:hover {
     border-color: var(--accent);
     color: var(--accent);
-    background: rgba(0, 212, 255, 0.05);
+    background: rgba(10, 79, 214, 0.05);
 }
 
 .import-mock-btn input[type="file"] {
@@ -2987,7 +2987,7 @@
 
 .saved-mock-item:hover {
     border-color: var(--accent);
-    background: rgba(0, 212, 255, 0.05);
+    background: rgba(10, 79, 214, 0.05);
     transform: translateX(4px);
 }
 
@@ -3027,7 +3027,7 @@
 
 .saved-mock-progress-bar {
     height: 100%;
-    background: linear-gradient(90deg, var(--accent), var(--success));
+    background: var(--accent);
     border-radius: 2px;
     transition: width 0.3s ease;
 }
@@ -3241,11 +3241,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    background: #1a1a2e;
     font-size: 2rem;
     font-weight: 700;
-    color: #00d4ff;
-    font-family: 'Oswald', sans-serif;
+    color: #2f6fe6;
+    font-family: 'Barlow Condensed', sans-serif;
 }
 
 /* Team Logo Images - ESPN Transparent PNGs */
@@ -3287,16 +3287,16 @@
 .next-pick-number {
     color: var(--accent-primary);
     font-weight: 700;
-    background: rgba(0, 212, 255, 0.1);
+    background: rgba(10, 79, 214, 0.1);
     padding: 2px 8px;
     border-radius: 12px;
     border: 1px solid var(--accent-primary);
 }
 
 [data-theme="light"] .next-pick-number {
-    background: rgba(0, 168, 204, 0.1);
-    border-color: #00a8cc;
-    color: #00a8cc;
+    background: rgba(10, 79, 214, 0.1);
+    border-color: #2f6fe6;
+    color: #2f6fe6;
 }
 
 @media (max-width: 768px) {
@@ -3328,7 +3328,7 @@
 .header-left .pick-number {
     font-size: 3rem;
     font-weight: 900;
-    color: var(--accent, #00d4ff);
+    color: var(--accent, #2f6fe6);
     line-height: 1;
     margin: 0;
 }
@@ -3382,7 +3382,7 @@
 .header-right .next-pick-number {
     display: block;
     font-size: 1.25rem;
-    color: var(--accent, #00d4ff);
+    color: var(--accent, #2f6fe6);
     font-weight: 700;
 }
 
@@ -3466,8 +3466,8 @@
 
 .player-main > .social-share .share-btn:hover {
     background: rgba(255, 255, 255, 0.1);
-    border-color: var(--accent, #00d4ff);
-    color: var(--accent, #00d4ff);
+    border-color: var(--accent, #2f6fe6);
+    color: var(--accent, #2f6fe6);
 }
 
 .player-main > .social-share .share-btn i {
@@ -3549,12 +3549,12 @@
 }
 
 .action-btn.copy {
-    color: var(--accent, #00d4ff);
+    color: var(--accent, #2f6fe6);
 }
 
 .action-btn.copy:hover {
-    background: rgba(0, 212, 255, 0.1);
-    border-color: rgba(0, 212, 255, 0.3);
+    background: rgba(10, 79, 214, 0.1);
+    border-color: rgba(10, 79, 214, 0.3);
 }
 
 /* Mobile responsive for action buttons */

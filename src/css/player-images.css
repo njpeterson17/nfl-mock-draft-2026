@@ -71,7 +71,7 @@
     width: 24px;
     height: 24px;
     margin: -12px 0 0 -12px;
-    border: 2px solid var(--accent, #00d4ff);
+    border: 2px solid var(--accent, #2f6fe6);
     border-top-color: transparent;
     border-radius: 50%;
     animation: player-image-spin 0.8s linear infinite;
@@ -93,12 +93,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        90deg,
-        var(--skeleton-base, #2a2d35) 25%,
-        var(--skeleton-shine, #3a3d45) 50%,
-        var(--skeleton-base, #2a2d35) 75%
-    );
+    background: var(--skeleton-base, #2a2d35);
     background-size: 200% 100%;
     animation: player-image-shimmer 1.5s infinite;
 }
@@ -141,7 +136,7 @@
    ========================================== */
 
 .player-photo.initials-placeholder {
-    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+    background: #2d3748;
 }
 
 .player-photo.initials-placeholder img {
@@ -239,7 +234,7 @@
    ========================================== */
 
 .player-photo.gray-placeholder {
-    background: linear-gradient(135deg, #3a3d45 0%, #2a2d35 100%);
+    background: #3a3d45;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -509,7 +504,7 @@
 }
 
 .player-photo.bordered {
-    border: 2px solid var(--accent, #00d4ff);
+    border: 2px solid var(--accent, #2f6fe6);
 }
 
 .player-photo.shadow {
@@ -530,11 +525,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+    background: #2d3748;
     color: rgba(255, 255, 255, 0.8);
     font-size: 28px;
     font-weight: 700;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     letter-spacing: 2px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }

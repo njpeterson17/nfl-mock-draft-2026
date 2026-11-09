@@ -6,19 +6,32 @@
     <title>Draft Grades | NFL Mock Draft Central 2026</title>
     <link rel="stylesheet" href="../src/css/styles.css">
     <link rel="stylesheet" href="../src/css/draft-grades.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700;1,800;1,900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3995009890992954" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/src/css/nock.css">
+    <link rel="stylesheet" href="/src/css/nock-legacy.css">
 </head>
 <body class="draft-grades-page">
+    <header class="nk-bar">
+        <div class="nk-bar-in">
+            <a class="nk-logo" href="/" aria-label="NockDraft home">Nock<b>Draft</b></a>
+            <nav class="nk-nav" aria-label="Site">
+                <a href="/nfl-board/">NFL Board</a>
+                <a href="/nba-board/">NBA Board</a>
+                <a href="/2026/">2026 Mock</a>
+                <a href="/game/">Game</a>
+            </nav>
+        </div>
+    </header>
     <!-- Home Button -->
-    <a href="../2026/" class="home-button" style="position: fixed; top: 20px; left: 20px; z-index: 1000; display: flex; align-items: center; gap: 8px; padding: 10px 16px; background: var(--primary, #0a0a0f); border: 2px solid var(--accent, #00d4ff); border-radius: 8px; color: var(--text-primary, #fff); text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.2s; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-        <i class="fas fa-home" style="color: var(--accent, #00d4ff);"></i>
+    <a href="../2026/" class="home-button" style="position: fixed; top: 20px; left: 20px; z-index: 1000; display: flex; align-items: center; gap: 8px; padding: 10px 16px; background: var(--primary, #0a0a0f); border: 2px solid var(--accent, #2f6fe6); border-radius: 8px; color: var(--text-primary, #fff); text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.2s; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+        <i class="fas fa-home" style="color: var(--accent, #2f6fe6);"></i>
         <span>Home</span>
     </a>
     <style>
     .home-button:hover {
-        background: var(--accent, #00d4ff);
+        background: var(--accent, #2f6fe6);
         color: var(--primary, #0a0a0f);
         transform: translateY(-2px);
     }
@@ -463,7 +476,7 @@
                         <div class="team-draft-header">
                             ${getTeamHelmetSVG(team.teamName)}
                             <div>
-                                <div style="font-family: 'Oswald', sans-serif; font-size: 1.1rem; font-weight: 600;">${team.teamName}</div>
+                                <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 600;">${team.teamName}</div>
                                 <div style="font-size: 0.8rem; color: var(--text-secondary);">Rank #${index + 1} • ${picks.length} picks</div>
                             </div>
                             <div class="team-draft-grade">

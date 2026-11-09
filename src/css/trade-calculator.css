@@ -45,7 +45,7 @@
    ============================================================================= */
 
 .trade-calculator-header {
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, transparent 100%);
+    background: rgba(10, 79, 214, 0.1);
     padding: 1.5rem 2rem;
     border-bottom: 1px solid var(--border);
     display: flex;
@@ -54,7 +54,7 @@
 }
 
 .trade-calculator-title {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.8rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -164,7 +164,7 @@
 }
 
 .trade-panel-title {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.1rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -212,7 +212,7 @@
 .team-selector select:focus {
     outline: none;
     border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+    box-shadow: 0 0 0 3px rgba(10, 79, 214, 0.1);
 }
 
 /* Team Display */
@@ -226,7 +226,7 @@
     align-items: center;
     gap: 1rem;
     padding: 1rem;
-    background: linear-gradient(135deg, var(--team-primary, var(--primary)) 0%, var(--team-secondary, var(--secondary)) 100%);
+    background: var(--team-primary, var(--primary));
     border-radius: 12px;
     border: 2px solid var(--team-secondary, var(--border));
 }
@@ -239,7 +239,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
     font-size: 0.9rem;
     color: var(--team-primary, var(--primary));
@@ -282,7 +282,7 @@
 .pick-selector select:focus {
     outline: none;
     border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+    box-shadow: 0 0 0 3px rgba(10, 79, 214, 0.1);
 }
 
 /* Multi-select pick grid */
@@ -322,7 +322,7 @@
 
 .pick-option-number {
     display: block;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
     font-size: 0.9rem;
 }
@@ -371,7 +371,7 @@
 }
 
 .trade-value-header {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.1rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -420,7 +420,7 @@
 }
 
 .value-box-amount {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 2rem;
     font-weight: 700;
     color: var(--text-primary);
@@ -440,7 +440,7 @@
 }
 
 .value-vs {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1rem;
     color: var(--text-secondary);
 }
@@ -480,11 +480,11 @@
 }
 
 .value-bar-fill.offered {
-    background: linear-gradient(90deg, var(--success) 0%, #00cc6a 100%);
+    background: var(--success);
 }
 
 .value-bar-fill.received {
-    background: linear-gradient(90deg, var(--warning) 0%, #ffcc00 100%);
+    background: var(--warning);
 }
 
 .value-bar-value {
@@ -523,9 +523,9 @@
 }
 
 .fairness-success {
-    background: rgba(0, 255, 136, 0.15);
+    background: rgba(15, 123, 63, 0.15);
     color: var(--success);
-    border: 1px solid rgba(0, 255, 136, 0.3);
+    border: 1px solid rgba(15, 123, 63, 0.3);
 }
 
 .fairness-warning {
@@ -593,7 +593,7 @@
 }
 
 .probability-percent {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
     color: var(--accent);
 }
@@ -613,15 +613,15 @@
 }
 
 .probability-fill.success {
-    background: linear-gradient(90deg, var(--success) 0%, #00cc6a 100%);
+    background: var(--success);
 }
 
 .probability-fill.warning {
-    background: linear-gradient(90deg, var(--warning) 0%, #ffcc00 100%);
+    background: var(--warning);
 }
 
 .probability-fill.danger {
-    background: linear-gradient(90deg, var(--danger) 0%, #ff6b7a 100%);
+    background: var(--danger);
 }
 
 .probability-description {
@@ -643,7 +643,7 @@
 }
 
 .suggestions-header {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -712,7 +712,7 @@
 }
 
 .historical-trades-header {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -809,7 +809,7 @@
 .trade-btn-primary:hover {
     background: var(--accent-hover);
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(10, 79, 214, 0.3);
 }
 
 .trade-btn-secondary {
@@ -869,7 +869,7 @@
 
 .trade-notification-success {
     border-color: var(--success);
-    background: rgba(0, 255, 136, 0.1);
+    background: rgba(15, 123, 63, 0.1);
 }
 
 .trade-notification-success i {

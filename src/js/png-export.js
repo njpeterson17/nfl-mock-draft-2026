@@ -18,8 +18,8 @@ const PNGExportConfig = {
     // Branding
     branding: {
         text: 'NFLMockDraft2026.com',
-        logo: '🏈',
-        primaryColor: '#00d4ff',
+        logo: '',
+        primaryColor: '#2f6fe6',
         secondaryColor: '#ffd700'
     },
     
@@ -398,7 +398,7 @@ function createExportContainer(format, darkBackground) {
         height: ${dims.height}px;
         background: ${bgColor};
         color: ${textColor};
-        font-family: 'Inter', sans-serif;
+        font-family: 'Barlow', sans-serif;
         overflow: hidden;
         z-index: -1;
     `;
@@ -409,7 +409,7 @@ function createExportContainer(format, darkBackground) {
 function createExportHeader(title, config) {
     const header = document.createElement('div');
     const bgColor = config.darkBackground ? '#12121a' : '#f5f5f7';
-    const accentColor = config.darkBackground ? '#00d4ff' : '#00a8cc';
+    const accentColor = config.darkBackground ? '#2f6fe6' : '#2f6fe6';
     
     header.style.cssText = `
         background: ${bgColor};
@@ -419,9 +419,9 @@ function createExportHeader(title, config) {
     
     header.innerHTML = `
         <div style="font-size: 14px; color: ${accentColor}; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px;">
-            🏈 NFL MOCK DRAFT 2026
+            NFL MOCK DRAFT 2026
         </div>
-        <h1 style="font-family: 'Oswald', sans-serif; font-size: 36px; margin: 0; font-weight: 700; color: inherit;">
+        <h1 style="font-family: 'Barlow Condensed', sans-serif; font-size: 36px; margin: 0; font-weight: 700; color: inherit;">
             ${title}
         </h1>
         <div style="font-size: 14px; opacity: 0.7; margin-top: 8px;">
@@ -439,7 +439,7 @@ function createExportHeader(title, config) {
 function createTeamHeader(teamName, pickCount, config) {
     const header = document.createElement('div');
     const bgColor = config.darkBackground ? '#12121a' : '#f5f5f7';
-    const accentColor = config.darkBackground ? '#00d4ff' : '#00a8cc';
+    const accentColor = config.darkBackground ? '#2f6fe6' : '#2f6fe6';
     
     // Get team info if available
     const teamInfo = getTeamInfo(teamName);
@@ -462,9 +462,9 @@ function createTeamHeader(teamName, pickCount, config) {
         ` : ''}
         <div>
             <div style="font-size: 14px; color: ${teamInfo?.color || accentColor}; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px;">
-                🏈 NFL MOCK DRAFT 2026
+                NFL MOCK DRAFT 2026
             </div>
-            <h1 style="font-family: 'Oswald', sans-serif; font-size: 42px; margin: 0; font-weight: 700; color: inherit;">
+            <h1 style="font-family: 'Barlow Condensed', sans-serif; font-size: 42px; margin: 0; font-weight: 700; color: inherit;">
                 ${teamName}
             </h1>
             <div style="font-size: 16px; opacity: 0.7; margin-top: 5px;">
@@ -513,13 +513,13 @@ function createTeamPickElement(pickCard, config) {
     const playerSchool = pickCard.querySelector('.player-school')?.textContent || '';
     
     el.innerHTML = `
-        <div style="font-family: 'Oswald', sans-serif; font-size: 36px; color: #00d4ff; font-weight: 700; min-width: 60px;">
+        <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 36px; color: #2f6fe6; font-weight: 700; min-width: 60px;">
             ${pickNumber}
         </div>
         <div style="flex: 1;">
             <div style="font-size: 24px; font-weight: 700;">${playerName}</div>
             <div style="font-size: 16px; opacity: 0.8;">
-                <span style="background: #00d4ff; color: ${config.darkBackground ? '#0a0a0f' : '#fff'}; padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; margin-right: 8px;">${playerPos}</span>
+                <span style="background: #2f6fe6; color: ${config.darkBackground ? '#0a0a0f' : '#fff'}; padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; margin-right: 8px;">${playerPos}</span>
                 ${playerSchool}
             </div>
         </div>
@@ -530,7 +530,7 @@ function createTeamPickElement(pickCard, config) {
 
 function createDraftStats(config) {
     const stats = document.createElement('div');
-    const bgColor = config.darkBackground ? 'rgba(0,212,255,0.1)' : 'rgba(0,168,204,0.1)';
+    const bgColor = config.darkBackground ? 'rgba(10, 79, 214,0.1)' : 'rgba(10, 79, 214,0.1)';
     
     // Count positions
     const positionCounts = countPositionsByRound();
@@ -547,7 +547,7 @@ function createDraftStats(config) {
         .filter(([_, count]) => count > 0)
         .map(([pos, count]) => `
             <div style="text-align: center;">
-                <div style="font-family: 'Oswald', sans-serif; font-size: 32px; color: ${config.darkBackground ? '#00d4ff' : '#00a8cc'}; font-weight: 700;">${count}</div>
+                <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 32px; color: ${config.darkBackground ? '#2f6fe6' : '#2f6fe6'}; font-weight: 700;">${count}</div>
                 <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">${pos}</div>
             </div>
         `).join('');
@@ -561,10 +561,10 @@ function createRoundSection(roundName, selector, config) {
     
     const title = document.createElement('h2');
     title.style.cssText = `
-        font-family: 'Oswald', sans-serif;
+        font-family: 'Barlow Condensed', sans-serif;
         font-size: 28px;
-        color: ${config.darkBackground ? '#00d4ff' : '#00a8cc'};
-        border-bottom: 2px solid ${config.darkBackground ? '#00d4ff' : '#00a8cc'};
+        color: ${config.darkBackground ? '#2f6fe6' : '#2f6fe6'};
+        border-bottom: 2px solid ${config.darkBackground ? '#2f6fe6' : '#2f6fe6'};
         padding-bottom: 10px;
         margin-bottom: 20px;
     `;
@@ -597,10 +597,10 @@ function createSuperCompactPick(pickCard, config) {
     `;
     
     el.innerHTML = `
-        <div style="font-family: 'Oswald', sans-serif; font-size: 20px; color: ${config.darkBackground ? '#00d4ff' : '#00a8cc'}; font-weight: 700; min-width: 40px;">${pickNum}</div>
+        <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 20px; color: ${config.darkBackground ? '#2f6fe6' : '#2f6fe6'}; font-weight: 700; min-width: 40px;">${pickNum}</div>
         <div style="flex: 1; font-size: 14px;">${teamName}</div>
         <div style="flex: 2; font-weight: 600;">${playerName}</div>
-        <div style="background: ${config.darkBackground ? '#00d4ff' : '#00a8cc'}; color: ${config.darkBackground ? '#0a0a0f' : '#fff'}; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 600;">${position}</div>
+        <div style="background: ${config.darkBackground ? '#2f6fe6' : '#2f6fe6'}; color: ${config.darkBackground ? '#0a0a0f' : '#fff'}; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 600;">${position}</div>
         <div style="font-size: 13px; opacity: 0.7;">${school}</div>
     `;
     
@@ -794,7 +794,7 @@ function showExportLoading(message = 'Generating image...') {
     `;
     
     loader.innerHTML = `
-        <div style="width: 60px; height: 60px; border: 4px solid rgba(0,212,255,0.3); border-top-color: #00d4ff; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+        <div style="width: 60px; height: 60px; border: 4px solid rgba(10, 79, 214,0.3); border-top-color: #2f6fe6; border-radius: 50%; animation: spin 1s linear infinite;"></div>
         <p style="color: white; margin-top: 20px; font-size: 16px;">${message}</p>
     `;
     
@@ -845,8 +845,8 @@ function showPNGPreview(canvas, filename, config) {
     modal.innerHTML = `
         <div style="background: var(--card-bg, #1a1a2e); border-radius: 16px; max-width: 90vw; max-height: 90vh; overflow: hidden; display: flex; flex-direction: column;">
             <div style="padding: 20px; border-bottom: 1px solid var(--border, rgba(255,255,255,0.1)); display: flex; justify-content: space-between; align-items: center;">
-                <h3 style="margin: 0; color: var(--text-primary, #fff); font-family: 'Oswald', sans-serif;">
-                    <i class="fas fa-image" style="color: #00d4ff; margin-right: 10px;"></i>
+                <h3 style="margin: 0; color: var(--text-primary, #fff); font-family: 'Barlow Condensed', sans-serif;">
+                    <i class="fas fa-image" style="color: #2f6fe6; margin-right: 10px;"></i>
                     PNG Export Preview
                 </h3>
                 <button onclick="hidePNGPreview()" style="background: none; border: none; color: var(--text-secondary, #8b8b9a); font-size: 24px; cursor: pointer;">

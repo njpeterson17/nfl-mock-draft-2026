@@ -298,7 +298,7 @@
                     <div class="suggestion-item" data-index="${i}" data-text="${s.text}" style="
                         padding: 10px 15px; cursor: pointer; display: flex;
                         align-items: center; gap: 10px; border-bottom: 1px solid var(--border);
-                    " onmouseover="this.style.background='rgba(0,212,255,0.1)'" 
+                    " onmouseover="this.style.background='rgba(10, 79, 214,0.1)'" 
                        onmouseout="this.style.background='transparent'">
                         <i class="fas ${iconClass}" style="color: var(--accent); width: 20px;"></i>
                         <span style="flex: 1;">${highlightedText}</span>
@@ -357,7 +357,7 @@
         function updateSelection() {
             const items = suggestionsContainer.querySelectorAll('.suggestion-item');
             items.forEach((item, i) => {
-                item.style.background = i === selectedIndex ? 'rgba(0,212,255,0.2)' : 'transparent';
+                item.style.background = i === selectedIndex ? 'rgba(10, 79, 214,0.2)' : 'transparent';
                 if (i === selectedIndex) item.scrollIntoView({ block: 'nearest' });
             });
         }

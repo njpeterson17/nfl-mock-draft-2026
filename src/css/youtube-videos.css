@@ -69,7 +69,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem 1.5rem;
-  background: linear-gradient(90deg, rgba(0, 212, 255, 0.1) 0%, transparent 100%);
+  background: rgba(10, 79, 214, 0.1);
   border-bottom: 1px solid var(--border, rgba(255, 255, 255, 0.08));
 }
 
@@ -80,7 +80,7 @@
   background: transparent;
   border: none;
   color: var(--text-primary, #ffffff);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Barlow', sans-serif;
   font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
@@ -91,7 +91,7 @@
 
 .video-back-btn:hover {
   background: rgba(255, 255, 255, 0.1);
-  color: var(--accent, #00d4ff);
+  color: var(--accent, #2f6fe6);
 }
 
 .video-player-actions {
@@ -114,9 +114,9 @@
 }
 
 .video-action-btn:hover {
-  background: rgba(0, 212, 255, 0.1);
-  border-color: var(--accent, #00d4ff);
-  color: var(--accent, #00d4ff);
+  background: rgba(10, 79, 214, 0.1);
+  border-color: var(--accent, #2f6fe6);
+  color: var(--accent, #2f6fe6);
 }
 
 /* ==========================================
@@ -163,7 +163,7 @@
 }
 
 .video-title {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-size: 1.3rem;
   font-weight: 600;
   color: var(--text-primary, #ffffff);
@@ -187,7 +187,7 @@
 }
 
 .video-meta i {
-  color: var(--accent, #00d4ff);
+  color: var(--accent, #2f6fe6);
   font-size: 0.9rem;
 }
 
@@ -246,7 +246,7 @@
 }
 
 .playlist-header h3 {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-size: 1rem;
   font-weight: 600;
   color: var(--text-primary, #ffffff);
@@ -257,7 +257,7 @@
 .playlist-count {
   font-size: 0.8rem;
   color: var(--text-secondary, #8b8b9a);
-  background: rgba(0, 212, 255, 0.1);
+  background: rgba(10, 79, 214, 0.1);
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
 }
@@ -296,8 +296,8 @@
 }
 
 .playlist-item.active {
-  background: rgba(0, 212, 255, 0.1);
-  border: 1px solid rgba(0, 212, 255, 0.3);
+  background: rgba(10, 79, 214, 0.1);
+  border: 1px solid rgba(10, 79, 214, 0.3);
 }
 
 .playlist-thumbnail {
@@ -337,7 +337,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 212, 255, 0.8);
+  background: rgba(10, 79, 214, 0.8);
 }
 
 .playlist-playing i {
@@ -381,7 +381,7 @@
 }
 
 .recommended-title {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--text-secondary, #8b8b9a);
@@ -424,7 +424,7 @@
   position: absolute;
   top: 4px;
   left: 4px;
-  background: var(--accent, #00d4ff);
+  background: var(--accent, #2f6fe6);
   color: var(--primary, #0a0a0f);
   font-size: 0.65rem;
   font-weight: 700;
@@ -473,7 +473,7 @@
   transform: translate(-50%, -50%);
   width: 50px;
   height: 50px;
-  background: rgba(0, 212, 255, 0.9);
+  background: rgba(10, 79, 214, 0.9);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -481,7 +481,7 @@
   cursor: pointer;
   opacity: 0;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 212, 255, 0.4);
+  box-shadow: 0 4px 20px rgba(10, 79, 214, 0.4);
   z-index: 10;
 }
 
@@ -534,13 +534,13 @@
 
 /* Watch highlights button */
 .watch-highlights-link {
-  background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(0, 212, 255, 0.05) 100%);
-  border-color: var(--accent, #00d4ff);
-  color: var(--accent, #00d4ff);
+  background: rgba(10, 79, 214, 0.2);
+  border-color: var(--accent, #2f6fe6);
+  color: var(--accent, #2f6fe6);
 }
 
 .watch-highlights-link:hover {
-  background: var(--accent, #00d4ff);
+  background: var(--accent, #2f6fe6);
   color: var(--primary, #0a0a0f);
 }
 
@@ -554,17 +554,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 212, 255, 0.1);
-  border: 1px solid rgba(0, 212, 255, 0.3);
+  background: rgba(10, 79, 214, 0.1);
+  border: 1px solid rgba(10, 79, 214, 0.3);
   border-radius: 8px;
-  color: var(--accent, #00d4ff);
+  color: var(--accent, #2f6fe6);
   cursor: pointer;
   transition: all 0.2s ease;
   margin-left: 0.5rem;
 }
 
 .bb-video-btn:hover {
-  background: var(--accent, #00d4ff);
+  background: var(--accent, #2f6fe6);
   color: var(--primary, #0a0a0f);
   transform: scale(1.1);
 }
@@ -586,7 +586,7 @@
   color: var(--text-primary, #ffffff);
   padding: 1rem 2rem;
   border-radius: 10px;
-  border: 1px solid var(--accent, #00d4ff);
+  border: 1px solid var(--accent, #2f6fe6);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
   z-index: 10001;
   opacity: 0;
@@ -621,8 +621,8 @@
 
 .video-search-input:focus {
   outline: none;
-  border-color: var(--accent, #00d4ff);
-  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+  border-color: var(--accent, #2f6fe6);
+  box-shadow: 0 0 0 3px rgba(10, 79, 214, 0.1);
 }
 
 .video-search-icon {
@@ -653,9 +653,9 @@
 }
 
 .video-card:hover {
-  border-color: var(--accent, #00d4ff);
+  border-color: var(--accent, #2f6fe6);
   transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(10, 79, 214, 0.15);
 }
 
 .video-card-thumbnail {
@@ -696,12 +696,12 @@
 .video-card-play {
   width: 60px;
   height: 60px;
-  background: rgba(0, 212, 255, 0.9);
+  background: rgba(10, 79, 214, 0.9);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 20px rgba(0, 212, 255, 0.4);
+  box-shadow: 0 4px 20px rgba(10, 79, 214, 0.4);
 }
 
 .video-card-play i {
@@ -905,7 +905,7 @@
   width: 50px;
   height: 50px;
   border: 3px solid rgba(255, 255, 255, 0.1);
-  border-top-color: var(--accent, #00d4ff);
+  border-top-color: var(--accent, #2f6fe6);
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -937,7 +937,7 @@
 }
 
 .video-empty-state h3 {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-size: 1.5rem;
   color: var(--text-primary, #ffffff);
   margin-bottom: 0.5rem;
@@ -961,8 +961,8 @@
 }
 
 [data-theme="light"] .playlist-item.active {
-  background: rgba(0, 168, 204, 0.1);
-  border-color: rgba(0, 168, 204, 0.5);
+  background: rgba(10, 79, 214, 0.1);
+  border-color: rgba(10, 79, 214, 0.5);
 }
 
 [data-theme="light"] .playlist-item:hover {
@@ -979,5 +979,5 @@
 }
 
 [data-theme="light"] .video-card:hover {
-  box-shadow: 0 10px 30px rgba(0, 168, 204, 0.2);
+  box-shadow: 0 10px 30px rgba(10, 79, 214, 0.2);
 }

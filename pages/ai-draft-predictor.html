@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Draft Predictor - NFL Mock Draft 2026</title>
     <meta name="description" content="AI-powered NFL Draft predictions with probability percentages, confidence scores, and real-time updates.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700;1,800;1,900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../src/css/ai-predictor.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -18,8 +18,8 @@
             --text-primary: #ffffff;
             --text-secondary: #a0a0a0;
             --text-muted: #666666;
-            --accent-cyan: #00d4ff;
-            --accent-purple: #a855f7;
+            --accent-cyan: #2f6fe6;
+            --accent-purple: #2f6fe6;
             --accent-green: #22c55e;
             --accent-yellow: #f59e0b;
             --accent-red: #ef4444;
@@ -47,7 +47,7 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Barlow', sans-serif;
             background: var(--bg-primary);
             color: var(--text-primary);
             min-height: 100vh;
@@ -55,7 +55,7 @@
 
         /* Header */
         .ai-header {
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+            background: rgba(10, 79, 214, 0.1);
             border-bottom: 1px solid var(--border-color);
             padding: 2rem;
             text-align: center;
@@ -83,7 +83,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            background: var(--accent-cyan);
             color: white;
             padding: 0.5rem 1rem;
             border-radius: 50px;
@@ -94,19 +94,19 @@
         }
 
         @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.4); }
-            50% { box-shadow: 0 0 20px 5px rgba(0, 212, 255, 0.2); }
+            0%, 100% { box-shadow: 0 0 0 0 rgba(10, 79, 214, 0.4); }
+            50% { box-shadow: 0 0 20px 5px rgba(10, 79, 214, 0.2); }
         }
 
         .ai-header h1 {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, var(--text-primary), var(--accent-cyan));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            background: var(--text-primary);
+            
+            
+            
         }
 
         .ai-header p {
@@ -143,7 +143,7 @@
         }
 
         .nav-btn:hover, .nav-btn.active {
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(168, 85, 247, 0.2));
+            background: rgba(10, 79, 214, 0.2);
             border-color: var(--accent-cyan);
             color: var(--text-primary);
         }
@@ -239,7 +239,7 @@
             -webkit-appearance: none;
             width: 18px;
             height: 18px;
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            background: var(--accent-cyan);
             border-radius: 50%;
             cursor: pointer;
             transition: transform 0.2s;
@@ -271,7 +271,7 @@
 
         .prediction-type-btn:hover, .prediction-type-btn.active {
             border-color: var(--accent-cyan);
-            background: rgba(0, 212, 255, 0.1);
+            background: rgba(10, 79, 214, 0.1);
             color: var(--text-primary);
         }
 
@@ -287,7 +287,7 @@
             width: 100%;
             padding: 1rem;
             margin-top: 1.5rem;
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            background: var(--accent-cyan);
             border: none;
             border-radius: 8px;
             color: white;
@@ -299,7 +299,7 @@
 
         .recalculate-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(10, 79, 214, 0.3);
         }
 
         /* Full Draft Predictions */
@@ -333,7 +333,7 @@
         }
 
         .pick-number {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--accent-cyan);
@@ -393,7 +393,7 @@
         }
 
         .prediction-item.top {
-            background: linear-gradient(90deg, rgba(0, 212, 255, 0.1), transparent);
+            background: rgba(10, 79, 214, 0.1);
             border-left: 3px solid var(--accent-cyan);
         }
 
@@ -500,7 +500,7 @@
         }
 
         .pick-btn:hover, .pick-btn.active {
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            background: var(--accent-cyan);
             border-color: var(--accent-cyan);
             color: white;
         }
@@ -519,7 +519,7 @@
         }
 
         .prediction-header {
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(168, 85, 247, 0.1));
+            background: rgba(10, 79, 214, 0.1);
             padding: 1.5rem;
             border-bottom: 1px solid var(--border-color);
         }
@@ -546,7 +546,7 @@
         .confidence-score {
             font-size: 2rem;
             font-weight: 700;
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
         }
 
         .confidence-score.high { color: var(--confidence-high); }
@@ -555,7 +555,7 @@
 
         .top-prediction {
             padding: 1.5rem;
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(168, 85, 247, 0.05));
+            background: rgba(10, 79, 214, 0.05);
             border-bottom: 1px solid var(--border-color);
         }
 
@@ -574,7 +574,7 @@
         .top-probability {
             font-size: 3rem;
             font-weight: 700;
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             color: var(--accent-cyan);
             min-width: 100px;
         }
@@ -773,7 +773,7 @@
         .stat-value {
             font-size: 2.5rem;
             font-weight: 700;
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             color: var(--accent-cyan);
         }
 
@@ -793,14 +793,14 @@
 
         .accuracy-fill {
             height: 100%;
-            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+            background: var(--accent-cyan);
             border-radius: 4px;
             transition: width 0.5s ease;
         }
 
         /* Surprise Alerts */
         .surprise-alert {
-            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(245, 158, 11, 0.1));
+            background: rgba(239, 68, 68, 0.1);
             border: 2px solid var(--confidence-medium);
             border-radius: 12px;
             padding: 1.5rem;
@@ -1131,7 +1131,7 @@
             transform: translate(-50%, -50%);
             font-size: 1.75rem;
             font-weight: 700;
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
         }
 
         /* Responsive */
@@ -1173,16 +1173,29 @@
         }
     </style>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3995009890992954" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/src/css/nock.css">
+    <link rel="stylesheet" href="/src/css/nock-legacy.css">
 </head>
 <body>
+    <header class="nk-bar">
+        <div class="nk-bar-in">
+            <a class="nk-logo" href="/" aria-label="NockDraft home">Nock<b>Draft</b></a>
+            <nav class="nk-nav" aria-label="Site">
+                <a href="/nfl-board/">NFL Board</a>
+                <a href="/nba-board/">NBA Board</a>
+                <a href="/2026/">2026 Mock</a>
+                <a href="/game/">Game</a>
+            </nav>
+        </div>
+    </header>
     <!-- Home Button -->
-    <a href="../2026/" class="home-button" style="position: fixed; top: 20px; left: 20px; z-index: 1000; display: flex; align-items: center; gap: 8px; padding: 10px 16px; background: var(--primary, #0a0a0f); border: 2px solid var(--accent, #00d4ff); border-radius: 8px; color: var(--text-primary, #fff); text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.2s; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-        <i class="fas fa-home" style="color: var(--accent, #00d4ff);"></i>
+    <a href="../2026/" class="home-button" style="position: fixed; top: 20px; left: 20px; z-index: 1000; display: flex; align-items: center; gap: 8px; padding: 10px 16px; background: var(--primary, #0a0a0f); border: 2px solid var(--accent, #2f6fe6); border-radius: 8px; color: var(--text-primary, #fff); text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.2s; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+        <i class="fas fa-home" style="color: var(--accent, #2f6fe6);"></i>
         <span>Home</span>
     </a>
     <style>
     .home-button:hover {
-        background: var(--accent, #00d4ff);
+        background: var(--accent, #2f6fe6);
         color: var(--primary, #0a0a0f);
         transform: translateY(-2px);
     }
@@ -1194,8 +1207,8 @@
     <svg width="0" height="0" style="position: absolute;">
         <defs>
             <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" style="stop-color:#00d4ff"/>
-                <stop offset="100%" style="stop-color:#a855f7"/>
+                <stop offset="0%" style="stop-color:#2f6fe6"/>
+                <stop offset="100%" style="stop-color:#2f6fe6"/>
             </linearGradient>
         </defs>
     </svg>
@@ -2356,7 +2369,7 @@
                 <div class="factor-item">
                     <div class="factor-name">${key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}</div>
                     <div class="factor-bar-container">
-                        <div class="factor-bar" style="width: ${data.score}%; background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));">
+                        <div class="factor-bar" style="width: ${data.score}%; background: var(--accent-cyan);">
                             <span class="factor-score">${Math.round(data.score)}</span>
                         </div>
                     </div>
@@ -2403,8 +2416,8 @@
                         datasets: [{
                             label: 'Predicted Selections',
                             data: [5, 6, 4, 4, 4, 3, 2, 2, 1, 1],
-                            backgroundColor: 'rgba(0, 212, 255, 0.7)',
-                            borderColor: '#00d4ff',
+                            backgroundColor: 'rgba(10, 79, 214, 0.7)',
+                            borderColor: '#2f6fe6',
                             borderWidth: 1
                         }]
                     },
@@ -2465,9 +2478,9 @@
                         datasets: [{
                             label: '2025 Accuracy',
                             data: [89, 76, 72, 68, 74, 70],
-                            backgroundColor: 'rgba(0, 212, 255, 0.2)',
-                            borderColor: '#00d4ff',
-                            pointBackgroundColor: '#00d4ff'
+                            backgroundColor: 'rgba(10, 79, 214, 0.2)',
+                            borderColor: '#2f6fe6',
+                            pointBackgroundColor: '#2f6fe6'
                         }]
                     },
                     options: {
@@ -2501,14 +2514,14 @@
                         datasets: [{
                             label: 'Exact Match %',
                             data: [58, 62, 65, 69, 72],
-                            borderColor: '#00d4ff',
-                            backgroundColor: 'rgba(0, 212, 255, 0.1)',
+                            borderColor: '#2f6fe6',
+                            backgroundColor: 'rgba(10, 79, 214, 0.1)',
                             tension: 0.4,
                             fill: true
                         }, {
                             label: 'Within 3 Picks %',
                             data: [72, 76, 80, 84, 88],
-                            borderColor: '#a855f7',
+                            borderColor: '#2f6fe6',
                             backgroundColor: 'rgba(168, 85, 247, 0.1)',
                             tension: 0.4,
                             fill: true

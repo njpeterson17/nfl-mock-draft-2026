@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | NockDraft.lol</title>
     <meta name="description" content="Contact NockDraft.lol - Send us feedback, questions, or suggestions about our 2026 NFL Mock Draft.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700;1,800;1,900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #0a0a0f;
             --secondary: #12121a;
-            --accent: #00d4ff;
-            --accent-hover: #4ddfff;
+            --accent: #2f6fe6;
+            --accent-hover: #5a8ff0;
             --gold: #ffd700;
             --text-primary: #ffffff;
             --text-secondary: #8b8b9a;
@@ -21,27 +21,27 @@
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(180deg, var(--primary) 0%, #050508 100%);
+            font-family: 'Barlow', sans-serif;
+            background: var(--primary);
             color: var(--text-primary);
             min-height: 100vh;
             line-height: 1.6;
         }
         .header {
-            background: linear-gradient(180deg, rgba(0,212,255,0.1) 0%, transparent 100%);
+            background: rgba(10, 79, 214,0.1);
             padding: 3rem 0 2rem;
             text-align: center;
             border-bottom: 1px solid var(--border);
         }
         .header h1 {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             font-size: 3rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 3px;
-            background: linear-gradient(90deg, #fff 0%, var(--accent) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            background: #fff;
+            
+            
             margin-bottom: 0.5rem;
         }
         .header a {
@@ -75,7 +75,7 @@
         .contact-icon {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--gold) 100%);
+            background: var(--accent);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -103,7 +103,7 @@
             margin-bottom: 2rem;
         }
         .form-section h2 {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
             color: var(--accent);
@@ -127,7 +127,7 @@
             border-radius: 8px;
             padding: 1rem;
             color: var(--text-primary);
-            font-family: 'Inter', sans-serif;
+            font-family: 'Barlow', sans-serif;
             font-size: 1rem;
             outline: none;
         }
@@ -140,7 +140,7 @@
             resize: vertical;
         }
         .submit-btn {
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+            background: var(--accent);
             color: var(--primary);
             border: none;
             padding: 1rem 2rem;
@@ -153,11 +153,11 @@
         }
         .submit-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 20px rgba(0,212,255,0.3);
+            box-shadow: 0 4px 20px rgba(10, 79, 214,0.3);
         }
         .faq-section { margin-top: 4rem; }
         .faq-section h2 {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
             color: var(--accent);
@@ -191,34 +191,35 @@
             margin: 0 0.75rem;
         }
     </style>
+    <link rel="stylesheet" href="/src/css/nock.css">
+    <link rel="stylesheet" href="/src/css/nock-legacy.css">
 </head>
 <body>
+    <header class="nk-bar">
+        <div class="nk-bar-in">
+            <a class="nk-logo" href="/" aria-label="NockDraft home">Nock<b>Draft</b></a>
+            <nav class="nk-nav" aria-label="Site">
+                <a href="/nfl-board/">NFL Board</a>
+                <a href="/nba-board/">NBA Board</a>
+                <a href="/2026/">2026 Mock</a>
+                <a href="/game/">Game</a>
+            </nav>
+        </div>
+    </header>
     <header class="header">
         <h1>Contact Us</h1>
-        <a href="index.html">← Back to Home</a>
+        
     </header>
 
     <div class="container">
-        <div class="contact-grid">
-            <div class="contact-card">
-                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                <h3>Email</h3>
-                <p>General inquiries</p>
-                <a href="mailto:contact@nockdraft.lol">contact@nockdraft.lol</a>
-            </div>
-            <div class="contact-card">
-                <div class="contact-icon"><i class="fas fa-bug"></i></div>
-                <h3>Bug Reports</h3>
-                <p>Technical issues</p>
-                <a href="mailto:bugs@nockdraft.lol">bugs@nockdraft.lol</a>
-            </div>
-            <div class="contact-card">
-                <div class="contact-icon"><i class="fas fa-lightbulb"></i></div>
-                <h3>Suggestions</h3>
-                <p>Feature ideas</p>
-                <a href="mailto:ideas@nockdraft.lol">ideas@nockdraft.lol</a>
-            </div>
-        </div>
+        <section class="nk-gfx contact-gfx" aria-labelledby="reachHeading">
+            <div class="nk-gfx-head"><h2 id="reachHeading">Reach NockDraft</h2></div>
+            <ul class="nk-rows">
+                <li class="contact-row"><strong>General inquiries</strong><a href="mailto:contact@nockdraft.lol">contact@nockdraft.lol</a></li>
+                <li class="contact-row"><strong>Bug reports</strong><a href="mailto:bugs@nockdraft.lol">bugs@nockdraft.lol</a></li>
+                <li class="contact-row"><strong>Feature ideas</strong><a href="mailto:ideas@nockdraft.lol">ideas@nockdraft.lol</a></li>
+            </ul>
+        </section>
 
         <div class="form-section">
             <h2>Send Us a Message</h2>

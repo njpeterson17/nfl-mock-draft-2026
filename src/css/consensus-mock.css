@@ -9,7 +9,7 @@
     --consensus-medium-bg: rgba(243, 156, 18, 0.1);
     --consensus-low: #e74c3c;
     --consensus-low-bg: rgba(231, 76, 60, 0.1);
-    --pff-color: #00d4ff;
+    --pff-color: #2f6fe6;
     --espn-color: #e31837;
     --pfn-color: #1e3a8a;
     --tdn-color: #10b981;
@@ -20,8 +20,8 @@
    HEADER
    ======================================== */
 .consensus-header {
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(168, 85, 247, 0.1) 100%);
-    border-bottom: 2px solid rgba(0, 212, 255, 0.3);
+    background: rgba(10, 79, 214, 0.15);
+    border-bottom: 2px solid rgba(10, 79, 214, 0.3);
     padding: 2rem;
     display: flex;
     justify-content: space-between;
@@ -39,23 +39,23 @@
 .header-icon {
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, #00d4ff, #a855f7);
+    background: #2f6fe6;
     border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2rem;
     color: white;
-    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(10, 79, 214, 0.3);
 }
 
 .header-text h1 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 2.2rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #00d4ff, #a855f7);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background: #2f6fe6;
+    
+    
     margin: 0;
     letter-spacing: 1px;
 }
@@ -67,13 +67,13 @@
 }
 
 .pff-badge {
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(0, 212, 255, 0.1));
+    background: rgba(10, 79, 214, 0.2);
     color: var(--pff-color);
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
     font-size: 0.85rem;
     font-weight: 600;
-    border: 1px solid rgba(0, 212, 255, 0.3);
+    border: 1px solid rgba(10, 79, 214, 0.3);
 }
 
 .header-stats {
@@ -86,7 +86,7 @@
 }
 
 .header-stat .stat-value {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 2rem;
     font-weight: 700;
     color: var(--accent-color);
@@ -138,8 +138,8 @@
 }
 
 .consensus-tab.active {
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(168, 85, 247, 0.1));
-    border-color: rgba(0, 212, 255, 0.4);
+    background: rgba(10, 79, 214, 0.15);
+    border-color: rgba(10, 79, 214, 0.4);
     color: var(--accent-color);
 }
 
@@ -215,7 +215,7 @@
 }
 
 .filter-chip.active {
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(168, 85, 247, 0.1));
+    background: rgba(10, 79, 214, 0.2);
     border-color: var(--accent-color);
     color: var(--accent-color);
 }
@@ -248,8 +248,8 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.65rem 1.25rem;
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(168, 85, 247, 0.1));
-    border: 2px solid rgba(0, 212, 255, 0.3);
+    background: rgba(10, 79, 214, 0.15);
+    border: 2px solid rgba(10, 79, 214, 0.3);
     border-radius: 10px;
     color: var(--accent-color);
     font-weight: 600;
@@ -259,7 +259,7 @@
 }
 
 .action-btn:hover {
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.25), rgba(168, 85, 247, 0.2));
+    background: rgba(10, 79, 214, 0.25);
     transform: translateY(-2px);
 }
 
@@ -292,20 +292,20 @@
 }
 
 .consensus-pick-card:hover {
-    border-color: rgba(0, 212, 255, 0.3);
+    border-color: rgba(10, 79, 214, 0.3);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
 }
 
 .consensus-pick-card.high-consensus {
-    border-left: 5px solid var(--consensus-high);
+    border-top: 4px solid var(--consensus-high);
 }
 
 .consensus-pick-card.medium-consensus {
-    border-left: 5px solid var(--consensus-medium);
+    border-top: 4px solid var(--consensus-medium);
 }
 
 .consensus-pick-card.low-consensus {
-    border-left: 5px solid var(--consensus-low);
+    border-top: 4px solid var(--consensus-low);
 }
 
 .pick-card-header {
@@ -320,13 +320,13 @@
 .pick-number-badge {
     width: 45px;
     height: 45px;
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(168, 85, 247, 0.1));
-    border: 2px solid rgba(0, 212, 255, 0.3);
+    background: rgba(10, 79, 214, 0.2);
+    border: 2px solid rgba(10, 79, 214, 0.3);
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.3rem;
     font-weight: 700;
     color: var(--accent-color);
@@ -408,7 +408,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(168, 85, 247, 0.1));
+    background: rgba(10, 79, 214, 0.1);
     color: var(--text-secondary);
     font-size: 2rem;
 }
@@ -431,8 +431,8 @@
 
 .position-badge {
     padding: 0.35rem 0.75rem;
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(168, 85, 247, 0.1));
-    border: 1px solid rgba(0, 212, 255, 0.3);
+    background: rgba(10, 79, 214, 0.15);
+    border: 1px solid rgba(10, 79, 214, 0.3);
     border-radius: 6px;
     font-weight: 600;
     font-size: 0.9rem;
@@ -475,15 +475,15 @@
 }
 
 .confidence-fill.high {
-    background: linear-gradient(90deg, var(--consensus-high), #2ecc71);
+    background: var(--consensus-high);
 }
 
 .confidence-fill.medium {
-    background: linear-gradient(90deg, var(--consensus-medium), #f1c40f);
+    background: var(--consensus-medium);
 }
 
 .confidence-fill.low {
-    background: linear-gradient(90deg, var(--consensus-low), #c0392b);
+    background: var(--consensus-low);
 }
 
 .confidence-value {
@@ -915,7 +915,7 @@
 
 .history-header h2 {
     margin: 0 0 0.5rem 0;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.8rem;
     color: var(--text-primary);
 }
@@ -1031,13 +1031,13 @@
 }
 
 .methodology-content h2 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 2rem;
     text-align: center;
     margin-bottom: 2rem;
-    background: linear-gradient(135deg, #00d4ff, #a855f7);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background: #2f6fe6;
+    
+    
 }
 
 .method-section {

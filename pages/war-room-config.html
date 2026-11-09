@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>War Room Configuration - 2026 NFL Mock Draft</title>
     <meta name="description" content="Configure your War Room experience for the 2026 NFL Mock Draft">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&family=Chakra+Petch:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700;1,800;1,900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../src/css/styles.css">
     <style>
         :root {
             --primary: #0a0a0f;
             --secondary: #12121a;
-            --accent: #00d4ff;
-            --success: #00ff88;
+            --accent: #2f6fe6;
+            --success: #1fae5b;
             --warning: #ff6b35;
             --danger: #ff2a6d;
             --text-primary: #ffffff;
@@ -28,7 +28,7 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Barlow', sans-serif;
             background: var(--primary);
             color: var(--text-primary);
             min-height: 100vh;
@@ -38,7 +38,7 @@
 
         /* Header */
         .config-header {
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            background: var(--secondary);
             border-bottom: 2px solid var(--accent);
             padding: 2rem;
             text-align: center;
@@ -48,7 +48,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: rgba(0, 212, 255, 0.1);
+            background: rgba(10, 79, 214, 0.1);
             border: 1px solid var(--accent);
             padding: 0.5rem 1rem;
             border-radius: 20px;
@@ -61,7 +61,7 @@
         }
 
         .config-title {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
@@ -114,7 +114,7 @@
         }
 
         .section-header h3 {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Barlow Condensed', sans-serif;
             font-size: 1.1rem;
             font-weight: 600;
         }
@@ -182,7 +182,7 @@
 
         .team-option.selected {
             border-color: var(--accent);
-            background: rgba(0, 212, 255, 0.1);
+            background: rgba(10, 79, 214, 0.1);
         }
 
         .team-option img {
@@ -224,7 +224,7 @@
 
         .option-btn.selected {
             border-color: var(--accent);
-            background: rgba(0, 212, 255, 0.1);
+            background: rgba(10, 79, 214, 0.1);
         }
 
         .option-btn .icon {
@@ -366,7 +366,7 @@
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0, 212, 255, 0.3);
+            box-shadow: 0 8px 24px rgba(10, 79, 214, 0.3);
         }
 
         .btn-primary:disabled {
@@ -407,8 +407,21 @@
         }
     </style>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3995009890992954" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/src/css/nock.css">
+    <link rel="stylesheet" href="/src/css/nock-legacy.css">
 </head>
 <body>
+    <header class="nk-bar">
+        <div class="nk-bar-in">
+            <a class="nk-logo" href="/" aria-label="NockDraft home">Nock<b>Draft</b></a>
+            <nav class="nk-nav" aria-label="Site">
+                <a href="/nfl-board/">NFL Board</a>
+                <a href="/nba-board/">NBA Board</a>
+                <a href="/2026/">2026 Mock</a>
+                <a href="/game/">Game</a>
+            </nav>
+        </div>
+    </header>
     <!-- Header -->
     <header class="config-header">
         <div class="config-badge">

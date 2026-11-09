@@ -69,20 +69,20 @@
     display: flex;
     align-items: flex-start;
     gap: 15px;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--text-primary, #fff);
 }
 
 .png-export-title i {
-    color: var(--accent, #00d4ff);
+    color: var(--accent, #2f6fe6);
     font-size: 1.75rem;
     margin-top: 3px;
 }
 
 .png-export-subtitle {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Barlow', sans-serif;
     font-size: 0.875rem;
     color: var(--text-secondary, #8b8b9a);
     font-weight: 400;
@@ -179,16 +179,16 @@
 }
 
 .png-export-option:hover .png-export-option-content {
-    border-color: var(--accent, #00d4ff);
+    border-color: var(--accent, #2f6fe6);
 }
 
 .png-export-option input:checked + .png-export-option-content {
-    border-color: var(--accent, #00d4ff);
-    background: rgba(0, 212, 255, 0.1);
+    border-color: var(--accent, #2f6fe6);
+    background: rgba(10, 79, 214, 0.1);
 }
 
 .png-export-option input:checked + .png-export-option-content i {
-    color: var(--accent, #00d4ff);
+    color: var(--accent, #2f6fe6);
 }
 
 /* Team Select */
@@ -211,7 +211,7 @@
 
 .png-export-select:focus {
     outline: none;
-    border-color: var(--accent, #00d4ff);
+    border-color: var(--accent, #2f6fe6);
 }
 
 .png-export-select option {
@@ -268,12 +268,12 @@
 }
 
 .png-export-checkbox:hover .checkmark {
-    border-color: var(--accent, #00d4ff);
+    border-color: var(--accent, #2f6fe6);
 }
 
 .png-export-checkbox input:checked + .checkmark {
-    background: var(--accent, #00d4ff);
-    border-color: var(--accent, #00d4ff);
+    background: var(--accent, #2f6fe6);
+    border-color: var(--accent, #2f6fe6);
 }
 
 .png-export-checkbox input:checked + .checkmark::after {
@@ -309,14 +309,14 @@
 }
 
 .png-export-format-btn:hover {
-    border-color: var(--accent, #00d4ff);
+    border-color: var(--accent, #2f6fe6);
     color: var(--text-primary, #fff);
 }
 
 .png-export-format-btn.active {
-    border-color: var(--accent, #00d4ff);
-    background: rgba(0, 212, 255, 0.1);
-    color: var(--accent, #00d4ff);
+    border-color: var(--accent, #2f6fe6);
+    background: rgba(10, 79, 214, 0.1);
+    color: var(--accent, #2f6fe6);
 }
 
 /* Modal Footer */
@@ -340,18 +340,18 @@
     cursor: pointer;
     transition: all 0.2s ease;
     border: none;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Barlow', sans-serif;
 }
 
 .png-export-btn.primary {
-    background: var(--accent, #00d4ff);
+    background: var(--accent, #2f6fe6);
     color: var(--primary, #0a0a0f);
 }
 
 .png-export-btn.primary:hover {
-    background: var(--accent-hover, #4ddfff);
+    background: var(--accent-hover, #5a8ff0);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+    box-shadow: 0 8px 25px rgba(10, 79, 214, 0.3);
 }
 
 .png-export-btn.secondary {
@@ -414,8 +414,8 @@
 }
 
 .context-menu-item:hover {
-    background: rgba(0, 212, 255, 0.1);
-    color: var(--accent, #00d4ff);
+    background: rgba(10, 79, 214, 0.1);
+    color: var(--accent, #2f6fe6);
 }
 
 .context-menu-item i {
@@ -425,7 +425,7 @@
 }
 
 .context-menu-item:hover i {
-    color: var(--accent, #00d4ff);
+    color: var(--accent, #2f6fe6);
 }
 
 .context-menu-separator {
@@ -439,13 +439,13 @@
    ========================================== */
 
 .export-btn.png-export-trigger {
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(0, 168, 204, 0.2));
-    border-color: var(--accent, #00d4ff);
-    color: var(--accent, #00d4ff);
+    background: rgba(10, 79, 214, 0.2);
+    border-color: var(--accent, #2f6fe6);
+    color: var(--accent, #2f6fe6);
 }
 
 .export-btn.png-export-trigger:hover {
-    background: var(--accent, #00d4ff);
+    background: var(--accent, #2f6fe6);
     color: var(--primary, #0a0a0f);
 }
 
@@ -620,7 +620,7 @@
 .png-export-select:focus,
 .png-export-checkbox input:focus + .checkmark,
 .png-export-btn:focus {
-    outline: 2px solid var(--accent, #00d4ff);
+    outline: 2px solid var(--accent, #2f6fe6);
     outline-offset: 2px;
 }
 

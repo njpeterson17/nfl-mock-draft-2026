@@ -55,7 +55,7 @@ const positionColors = {
 // Grade colors
 const gradeColors = {
     'A+': '#00FF88', 'A': '#00FF88', 'A-': '#00FF88',
-    'B+': '#00D4FF', 'B': '#00D4FF', 'B-': '#00D4FF',
+    'B+': '#2f6fe6', 'B': '#2f6fe6', 'B-': '#2f6fe6',
     'C+': '#FFD700', 'C': '#FFD700', 'C-': '#FFD700',
     'D+': '#FF6B6B', 'D': '#FF6B6B', 'F': '#FF4757'
 };
@@ -412,7 +412,7 @@ function renderCharts(team) {
                 datasets: [{
                     label: 'Hit Rate %',
                     data: hitRates.map(r => Math.round(r * 100)),
-                    backgroundColor: hitRates.map((_, i) => i === bestRound - 1 ? '#00ff88' : '#00d4ff'),
+                    backgroundColor: hitRates.map((_, i) => i === bestRound - 1 ? '#1fae5b' : '#2f6fe6'),
                     borderRadius: 4
                 }]
             },
@@ -442,11 +442,11 @@ function renderCharts(team) {
                 datasets: [{
                     label: 'Draft Grade',
                     data: team.gradeTrend,
-                    borderColor: '#00d4ff',
-                    backgroundColor: 'rgba(0, 212, 255, 0.1)',
+                    borderColor: '#2f6fe6',
+                    backgroundColor: 'rgba(10, 79, 214, 0.1)',
                     fill: true,
                     tension: 0.4,
-                    pointBackgroundColor: '#00d4ff',
+                    pointBackgroundColor: '#2f6fe6',
                     pointBorderColor: '#fff',
                     pointBorderWidth: 2
                 }]

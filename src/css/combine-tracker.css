@@ -4,7 +4,7 @@
 
 /* Combine Info Bar */
 .combine-info-bar {
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(0, 255, 136, 0.1) 100%);
+    background: rgba(10, 79, 214, 0.15);
     border-bottom: 1px solid var(--border);
     padding: 1rem 2rem;
 }
@@ -60,7 +60,7 @@
 
 /* Breaking News Ticker */
 .breaking-news-ticker {
-    background: linear-gradient(90deg, rgba(255, 71, 87, 0.2) 0%, rgba(255, 71, 87, 0.1) 100%);
+    background: rgba(255, 71, 87, 0.2);
     border-bottom: 1px solid rgba(255, 71, 87, 0.3);
     padding: 0.75rem 1rem;
     display: flex;
@@ -124,7 +124,7 @@
 
 /* Panel Titles */
 .panel-title {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 1rem;
@@ -169,7 +169,7 @@
 
 .schedule-card.today {
     border-color: var(--accent);
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+    box-shadow: none;
 }
 
 .schedule-card.completed {
@@ -227,12 +227,12 @@
 }
 
 .schedule-status.upcoming {
-    background: rgba(0, 212, 255, 0.2);
+    background: rgba(10, 79, 214, 0.2);
     color: var(--accent);
 }
 
 .schedule-status.completed {
-    background: rgba(0, 255, 136, 0.2);
+    background: rgba(15, 123, 63, 0.2);
     color: var(--success);
 }
 
@@ -255,12 +255,12 @@
 .leaderboard-card:hover {
     border-color: var(--accent);
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(10, 79, 214, 0.1);
 }
 
 .leaderboard-card.highlight {
     border-color: var(--gold);
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, var(--card-bg) 100%);
+    background: rgba(255, 215, 0, 0.1);
 }
 
 .leaderboard-header {
@@ -282,7 +282,7 @@
 }
 
 .leaderboard-header h3 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1rem;
     font-weight: 600;
     margin: 0;
@@ -303,7 +303,7 @@
 }
 
 .leaderboard-item:hover {
-    background: rgba(0, 212, 255, 0.1);
+    background: rgba(10, 79, 214, 0.1);
 }
 
 .leaderboard-rank {
@@ -319,17 +319,17 @@
 }
 
 .leaderboard-rank.gold {
-    background: linear-gradient(135deg, #ffd700, #ffb800);
+    background: #ffd700;
     color: #1a1a2e;
 }
 
 .leaderboard-rank.silver {
-    background: linear-gradient(135deg, #c0c0c0, #a0a0a0);
+    background: #c0c0c0;
     color: #1a1a2e;
 }
 
 .leaderboard-rank.bronze {
-    background: linear-gradient(135deg, #cd7f32, #b87333);
+    background: #cd7f32;
     color: white;
 }
 
@@ -359,7 +359,7 @@
 }
 
 .leaderboard-value {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.1rem;
     font-weight: 700;
     color: var(--accent);
@@ -489,7 +489,7 @@
 }
 
 .measurements-table tr:hover td {
-    background: rgba(0, 212, 255, 0.05);
+    background: rgba(10, 79, 214, 0.05);
 }
 
 .measurements-table .player-cell {
@@ -502,7 +502,7 @@
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent), var(--success));
+    background: var(--accent);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -529,17 +529,17 @@
 }
 
 .ras-elite {
-    background: linear-gradient(135deg, #ffd700, #ffb800);
+    background: #ffd700;
     color: #1a1a2e;
 }
 
 .ras-good {
-    background: rgba(0, 255, 136, 0.2);
+    background: rgba(15, 123, 63, 0.2);
     color: var(--success);
 }
 
 .ras-average {
-    background: rgba(0, 212, 255, 0.2);
+    background: rgba(10, 79, 214, 0.2);
     color: var(--accent);
 }
 
@@ -628,7 +628,7 @@
 }
 
 .drill-section-title {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.1rem;
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
@@ -680,12 +680,12 @@
 }
 
 .drill-grade.meet {
-    background: rgba(0, 212, 255, 0.2);
+    background: rgba(10, 79, 214, 0.2);
     color: var(--accent);
 }
 
 .drill-grade.beat {
-    background: rgba(0, 255, 136, 0.2);
+    background: rgba(15, 123, 63, 0.2);
     color: var(--success);
 }
 
@@ -701,7 +701,7 @@
 
 /* RAS Explanation */
 .ras-explanation {
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 255, 136, 0.05) 100%);
+    background: rgba(10, 79, 214, 0.1);
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 1.5rem;
@@ -709,7 +709,7 @@
 }
 
 .ras-explanation h3 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
@@ -768,7 +768,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent), var(--success));
+    background: var(--accent);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -794,7 +794,7 @@
 }
 
 .ras-score-value {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 2rem;
     font-weight: 700;
 }
@@ -842,7 +842,7 @@
     text-align: center;
     margin-bottom: 2rem;
     padding: 2rem;
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.15) 0%, rgba(255, 184, 0, 0.1) 100%);
+    background: rgba(255, 215, 0, 0.15);
     border: 1px solid rgba(255, 215, 0, 0.3);
     border-radius: 12px;
 }
@@ -861,13 +861,13 @@
 }
 
 .freaks-title h2 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 2rem;
     margin: 0;
-    background: linear-gradient(90deg, var(--gold) 0%, #ffb800 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    background: var(--gold);
+    
+    
+    
 }
 
 .freaks-subtitle {
@@ -898,7 +898,7 @@
 }
 
 .freak-rank {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 3rem;
     font-weight: 700;
     color: var(--gold);
@@ -926,7 +926,7 @@
 }
 
 .freak-ras-value {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 2.5rem;
     font-weight: 700;
     color: var(--gold);
@@ -973,7 +973,7 @@
 }
 
 .stock-panel.risers {
-    border-color: rgba(0, 255, 136, 0.3);
+    border-color: rgba(15, 123, 63, 0.3);
 }
 
 .stock-panel.fallers {
@@ -988,7 +988,7 @@
 }
 
 .stock-panel.risers .stock-header {
-    background: rgba(0, 255, 136, 0.1);
+    background: rgba(15, 123, 63, 0.1);
 }
 
 .stock-panel.fallers .stock-header {
@@ -1009,7 +1009,7 @@
 
 .stock-header h3 {
     margin: 0;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
 }
 
 .stock-list {
@@ -1030,7 +1030,7 @@
 }
 
 .stock-item:hover {
-    background: rgba(0, 212, 255, 0.05);
+    background: rgba(10, 79, 214, 0.05);
 }
 
 .stock-rank-change {
@@ -1041,7 +1041,7 @@
 }
 
 .stock-change-value {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.2rem;
     font-weight: 700;
 }
@@ -1083,7 +1083,7 @@
 }
 
 .stock-rank-value {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.3rem;
     font-weight: 700;
     color: var(--accent);
@@ -1099,7 +1099,7 @@
 
 .stock-chart-panel h3 {
     margin-bottom: 1rem;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
 }
 
 /* Pro Day Styles */
@@ -1146,7 +1146,7 @@
 
 .proday-card.today {
     border-color: var(--accent);
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+    box-shadow: none;
 }
 
 .proday-card.completed {
@@ -1154,7 +1154,7 @@
 }
 
 .proday-date {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
 }
@@ -1291,7 +1291,7 @@
 
 .modal-header h2 {
     margin: 0;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
 }
 
 .modal-close {
@@ -1323,7 +1323,7 @@
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent), var(--success));
+    background: var(--accent);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1388,7 +1388,7 @@
 }
 
 .measurement-value {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.3rem;
     font-weight: 700;
     color: var(--text-primary);
@@ -1454,7 +1454,7 @@
 }
 
 .comparison-table .highlight {
-    background: rgba(0, 212, 255, 0.1);
+    background: rgba(10, 79, 214, 0.1);
 }
 
 /* Video Container */

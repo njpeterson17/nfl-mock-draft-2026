@@ -905,7 +905,7 @@ function renderAvailablePlayers() {
         card.innerHTML = `
             <div class="player-rank">#${player.rank}</div>
             <div class="player-card-header">
-                <div class="player-card-photo">🏈</div>
+                <div class="player-card-photo"></div>
                 <div class="player-card-info">
                     <h4>${player.name}</h4>
                     <div class="player-card-meta">
@@ -1248,7 +1248,7 @@ function selectPlayer(playerName) {
     document.getElementById('playerDetailSchool').textContent = player.school;
     document.getElementById('playerDetailBBRank').textContent = '#' + player.rank;
     document.getElementById('playerDetailEDP').textContent = player.edp.toFixed(1);
-    document.getElementById('playerDetailPhoto').textContent = '🏈';
+    document.getElementById('playerDetailPhoto').textContent = '';
     
     // Measurements
     const measurementsGrid = document.getElementById('playerMeasurements');
@@ -1419,7 +1419,7 @@ function showSummaryScreen() {
     if (numericGrade >= 90) {
         gradeCircle.style.background = 'linear-gradient(135deg, var(--wr-success), #00cc6a)';
     } else if (numericGrade >= 80) {
-        gradeCircle.style.background = 'linear-gradient(135deg, var(--wr-accent), #00a8cc)';
+        gradeCircle.style.background = 'linear-gradient(135deg, var(--wr-accent), #2f6fe6)';
     } else if (numericGrade >= 70) {
         gradeCircle.style.background = 'linear-gradient(135deg, var(--wr-warning), #cc9400)';
     } else {

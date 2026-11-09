@@ -539,7 +539,7 @@ function renderDraftGradesLeaderboard() {
 function getTeamHelmetSVG(teamName) {
     // Return a simplified helmet icon
     return `<svg class="team-helmet" viewBox="0 0 100 70" style="width: 40px; height: 28px;">
-        <ellipse cx="50" cy="35" rx="45" ry="30" fill="rgba(0,212,255,0.2)" stroke="var(--accent)" stroke-width="2"/>
+        <ellipse cx="50" cy="35" rx="45" ry="30" fill="rgba(10, 79, 214,0.2)" stroke="var(--accent)" stroke-width="2"/>
         <text x="50" y="42" text-anchor="middle" fill="var(--accent)" font-size="14" font-weight="bold" font-family="Arial">${getTeamAbbreviation(teamName)}</text>
     </svg>`;
 }
@@ -631,7 +631,7 @@ function renderTeamDraftsSection() {
                 <div class="team-draft-header">
                     ${getTeamHelmetSVG(team.teamName)}
                     <div>
-                        <div style="font-family: 'Oswald', sans-serif; font-size: 1.1rem; font-weight: 600;">${team.teamName}</div>
+                        <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 600;">${team.teamName}</div>
                         <div style="font-size: 0.8rem; color: var(--text-secondary);">Rank #${index + 1} • ${picks.length} picks</div>
                     </div>
                     <div class="team-draft-grade">

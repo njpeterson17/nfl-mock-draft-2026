@@ -896,7 +896,7 @@ const SocialShareManager = {
                 bottom: 2rem;
                 left: 50%;
                 transform: translateX(-50%);
-                background: var(--accent, #00d4ff);
+                background: var(--accent, #2f6fe6);
                 color: var(--primary, #0a0a0f);
                 padding: 1rem 2rem;
                 border-radius: 8px;

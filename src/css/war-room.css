@@ -7,17 +7,17 @@
     --wr-bg: #0a0a0f;
     --wr-bg-secondary: #12121a;
     --wr-bg-tertiary: #1a1a24;
-    --wr-accent: #00d4ff;
-    --wr-accent-glow: rgba(0, 212, 255, 0.4);
+    --wr-accent: #2f6fe6;
+    --wr-accent-glow: rgba(10, 79, 214, 0.4);
     --wr-gold: #ffd700;
-    --wr-success: #00ff88;
+    --wr-success: #1fae5b;
     --wr-warning: #ffb800;
     --wr-danger: #ff4757;
     --wr-text: #ffffff;
     --wr-text-secondary: #8b8b9a;
     --wr-border: rgba(255, 255, 255, 0.1);
     --wr-panel-bg: rgba(18, 18, 26, 0.95);
-    --wr-timer-green: #00ff88;
+    --wr-timer-green: #1fae5b;
     --wr-timer-yellow: #ffb800;
     --wr-timer-red: #ff4757;
 }
@@ -30,7 +30,7 @@
 }
 
 html, body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Barlow', sans-serif;
     background: var(--wr-bg);
     color: var(--wr-text);
     min-height: 100vh;
@@ -62,8 +62,8 @@ body[data-warroom="true"] {
     right: 0;
     bottom: 0;
     background-image: 
-        linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+        linear-gradient(rgba(10, 79, 214, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(10, 79, 214, 0.03) 1px, transparent 1px);
     background-size: 50px 50px;
     animation: gridMove 20s linear infinite;
 }
@@ -101,7 +101,7 @@ body[data-warroom="true"] {
     width: 100%;
     box-shadow: 
         0 0 100px rgba(0, 0, 0, 0.5),
-        0 0 0 1px rgba(0, 212, 255, 0.1);
+        0 0 0 1px rgba(10, 79, 214, 0.1);
     backdrop-filter: blur(20px);
 }
 
@@ -109,7 +109,7 @@ body[data-warroom="true"] {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: linear-gradient(135deg, var(--wr-accent), var(--wr-success));
+    background: var(--wr-accent);
     color: var(--wr-bg);
     padding: 0.5rem 1rem;
     border-radius: 20px;
@@ -121,7 +121,7 @@ body[data-warroom="true"] {
 }
 
 .entry-title {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 0.5rem;
@@ -179,7 +179,7 @@ body[data-warroom="true"] {
 .form-select:focus {
     outline: none;
     border-color: var(--wr-accent);
-    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+    box-shadow: 0 0 0 3px rgba(10, 79, 214, 0.1);
 }
 
 /* Difficulty Options */
@@ -205,9 +205,9 @@ body[data-warroom="true"] {
 }
 
 .difficulty-btn.active {
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 255, 136, 0.1));
+    background: rgba(10, 79, 214, 0.1);
     border-color: var(--wr-accent);
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+    box-shadow: none;
 }
 
 .diff-icon {
@@ -297,7 +297,7 @@ body[data-warroom="true"] {
 }
 
 .toggle-label input:checked + .toggle-slider {
-    background: rgba(0, 212, 255, 0.2);
+    background: rgba(10, 79, 214, 0.2);
     border-color: var(--wr-accent);
 }
 
@@ -314,12 +314,12 @@ body[data-warroom="true"] {
 /* Enter Button */
 .enter-btn {
     width: 100%;
-    background: linear-gradient(135deg, var(--wr-accent), var(--wr-success));
+    background: var(--wr-accent);
     border: none;
     border-radius: 12px;
     padding: 1.25rem;
     color: var(--wr-bg);
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.2rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -335,7 +335,7 @@ body[data-warroom="true"] {
 
 .enter-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(10, 79, 214, 0.3);
 }
 
 .enter-btn:active {
@@ -404,7 +404,7 @@ body[data-warroom="true"] {
 }
 
 .team-name {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.1rem;
     font-weight: 600;
 }
@@ -426,7 +426,7 @@ body[data-warroom="true"] {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background: linear-gradient(135deg, var(--wr-danger), #ff6b6b);
+    background: var(--wr-danger);
     color: white;
     padding: 0.4rem 1rem;
     border-radius: 20px;
@@ -464,7 +464,7 @@ body[data-warroom="true"] {
 }
 
 .pick-number-large {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 3rem;
     font-weight: 700;
     color: var(--wr-accent);
@@ -536,7 +536,7 @@ body[data-warroom="true"] {
 }
 
 .timer-value {
-    font-family: 'Chakra Petch', monospace;
+    font-family: 'Barlow Condensed', monospace;
     font-size: 2rem;
     font-weight: 700;
     color: var(--wr-timer-green);
@@ -568,18 +568,18 @@ body[data-warroom="true"] {
 
 .timer-progress {
     height: 100%;
-    background: linear-gradient(90deg, var(--wr-timer-green), var(--wr-success));
+    background: var(--wr-timer-green);
     border-radius: 4px;
     transition: width 1s linear, background 0.3s ease;
     width: 100%;
 }
 
 .timer-progress.warning {
-    background: linear-gradient(90deg, var(--wr-timer-yellow), #ffcc00);
+    background: var(--wr-timer-yellow);
 }
 
 .timer-progress.danger {
-    background: linear-gradient(90deg, var(--wr-timer-red), #ff6b6b);
+    background: var(--wr-timer-red);
 }
 
 /* Main Layout */
@@ -685,7 +685,7 @@ body[data-warroom="true"] {
 }
 
 .need-priority.low {
-    background: rgba(0, 255, 136, 0.2);
+    background: rgba(15, 123, 63, 0.2);
     color: var(--wr-success);
 }
 
@@ -799,7 +799,7 @@ body[data-warroom="true"] {
 }
 
 .best-available-btn {
-    background: linear-gradient(135deg, var(--wr-gold), #ffaa00);
+    background: var(--wr-gold);
     border: none;
     border-radius: 8px;
     padding: 0.6rem 1rem;
@@ -861,7 +861,7 @@ body[data-warroom="true"] {
 
 .player-card.selected {
     border-color: var(--wr-success);
-    background: rgba(0, 255, 136, 0.05);
+    background: rgba(15, 123, 63, 0.05);
 }
 
 .player-rank {
@@ -973,11 +973,11 @@ body[data-warroom="true"] {
 
 .board-cell.current {
     border-color: var(--wr-accent);
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+    box-shadow: none;
 }
 
 .board-cell.selected {
-    background: rgba(0, 255, 136, 0.2);
+    background: rgba(15, 123, 63, 0.2);
     border-color: var(--wr-success);
 }
 
@@ -1008,7 +1008,7 @@ body[data-warroom="true"] {
 }
 
 .history-pick {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--wr-accent);
@@ -1072,7 +1072,7 @@ body[data-warroom="true"] {
 .stat-icon {
     width: 36px;
     height: 36px;
-    background: rgba(0, 212, 255, 0.1);
+    background: rgba(10, 79, 214, 0.1);
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -1085,7 +1085,7 @@ body[data-warroom="true"] {
 }
 
 .stat-value {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.3rem;
     font-weight: 700;
 }
@@ -1243,7 +1243,7 @@ body[data-warroom="true"] {
     justify-content: space-between;
     align-items: center;
     padding: 1.25rem;
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 255, 136, 0.1));
+    background: rgba(10, 79, 214, 0.1);
     border-bottom: 1px solid var(--wr-border);
 }
 
@@ -1273,7 +1273,7 @@ body[data-warroom="true"] {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-family: 'Chakra Petch', monospace;
+    font-family: 'Barlow Condensed', monospace;
     font-size: 1.1rem;
     color: var(--wr-warning);
 }
@@ -1300,7 +1300,7 @@ body[data-warroom="true"] {
 }
 
 .team-name-large {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.3rem;
     margin-bottom: 0.25rem;
 }
@@ -1382,13 +1382,13 @@ body[data-warroom="true"] {
 
 .value-fill {
     height: 100%;
-    background: linear-gradient(90deg, var(--wr-success), var(--wr-warning));
+    background: var(--wr-success);
     border-radius: 4px;
     transition: width 0.5s ease;
 }
 
 .value-percentage {
-    font-family: 'Chakra Petch', monospace;
+    font-family: 'Barlow Condensed', monospace;
     font-weight: 700;
     font-size: 0.9rem;
     min-width: 45px;
@@ -1498,12 +1498,12 @@ body[data-warroom="true"] {
     display: flex;
     gap: 1.5rem;
     padding: 1.5rem;
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), transparent);
+    background: rgba(10, 79, 214, 0.05);
     border-bottom: 1px solid var(--wr-border);
 }
 
 .player-detail-rank {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 2rem;
     font-weight: 700;
     color: var(--wr-accent);
@@ -1533,7 +1533,7 @@ body[data-warroom="true"] {
 }
 
 .player-detail-info h2 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
@@ -1579,7 +1579,7 @@ body[data-warroom="true"] {
 }
 
 .grade-value {
-    font-family: 'Chakra Petch', monospace;
+    font-family: 'Barlow Condensed', monospace;
     font-size: 1.1rem;
     font-weight: 700;
 }
@@ -1624,7 +1624,7 @@ body[data-warroom="true"] {
 }
 
 .measurement-value {
-    font-family: 'Chakra Petch', monospace;
+    font-family: 'Barlow Condensed', monospace;
     font-size: 1.1rem;
     font-weight: 700;
     color: var(--wr-accent);
@@ -1669,12 +1669,12 @@ body[data-warroom="true"] {
 
 .draft-player-btn {
     width: 100%;
-    background: linear-gradient(135deg, var(--wr-success), #00cc6a);
+    background: var(--wr-success);
     border: none;
     border-radius: 12px;
     padding: 1rem;
     color: var(--wr-bg);
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
@@ -1687,7 +1687,7 @@ body[data-warroom="true"] {
 
 .draft-player-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+    box-shadow: 0 10px 30px rgba(15, 123, 63, 0.3);
 }
 
 /* News Ticker */
@@ -1696,7 +1696,7 @@ body[data-warroom="true"] {
     top: 100px;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(135deg, rgba(255, 71, 87, 0.9), rgba(255, 100, 100, 0.9));
+    background: rgba(255, 71, 87, 0.9);
     color: white;
     padding: 0.75rem 1.5rem;
     border-radius: 8px;
@@ -1725,7 +1725,7 @@ body[data-warroom="true"] {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    background: linear-gradient(135deg, var(--wr-gold), #ffaa00);
+    background: var(--wr-gold);
     color: var(--wr-bg);
     padding: 1rem 1.5rem;
     border-radius: 12px;
@@ -1792,7 +1792,7 @@ body[data-warroom="true"] {
 }
 
 .pause-content h2 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 3rem;
     margin-bottom: 2rem;
     color: var(--wr-accent);
@@ -1863,7 +1863,7 @@ body[data-warroom="true"] {
 }
 
 .summary-header h1 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
 }
@@ -1881,17 +1881,17 @@ body[data-warroom="true"] {
     width: 180px;
     height: 180px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--wr-accent), var(--wr-success));
+    background: var(--wr-accent);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    box-shadow: 0 20px 60px rgba(0, 212, 255, 0.3);
+    box-shadow: 0 20px 60px rgba(10, 79, 214, 0.3);
 }
 
 .grade-letter {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 5rem;
     font-weight: 700;
     color: var(--wr-bg);
@@ -1924,7 +1924,7 @@ body[data-warroom="true"] {
 }
 
 .summary-stat-value {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 0.25rem;
@@ -1972,7 +1972,7 @@ body[data-warroom="true"] {
 }
 
 .summary-pick-number {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.3rem;
     font-weight: 700;
     color: var(--wr-accent);
@@ -2039,7 +2039,7 @@ body[data-warroom="true"] {
 
 .achievement-item.earned {
     border-color: var(--wr-gold);
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), transparent);
+    background: rgba(255, 215, 0, 0.1);
 }
 
 .achievement-item i {
@@ -2091,7 +2091,7 @@ body[data-warroom="true"] {
 }
 
 .summary-btn.primary {
-    background: linear-gradient(135deg, var(--wr-accent), var(--wr-success));
+    background: var(--wr-accent);
     border-color: transparent;
     color: var(--wr-bg);
 }

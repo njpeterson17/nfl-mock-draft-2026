@@ -10,7 +10,7 @@ const ConsensusMockData = {
             name: 'PFF', 
             weight: 0.35, 
             author: 'Trevor Sikkema',
-            color: '#00d4ff',
+            color: '#2f6fe6',
             description: 'Pro Football Focus - Advanced analytics and film study'
         },
         espn: { 

@@ -150,8 +150,8 @@ function parseFortyTime(forty) {
 function getTierColor(tier) {
     switch(tier) {
         case 'Elite': return '#ffd700'; // Gold
-        case 'Round 1': return '#00ff88'; // Green
-        case 'Round 2': return '#00d4ff'; // Cyan
+        case 'Round 1': return '#1fae5b'; // Green
+        case 'Round 2': return '#2f6fe6'; // Cyan
         case 'Round 3': return '#ffb800'; // Orange
         default: return '#8b8b9a'; // Gray
     }
@@ -532,8 +532,8 @@ function initComparisonChart() {
     
     const labels = ['Athleticism', 'Size', 'Production', 'Upside', 'Technique'];
     const colors = [
-        { bg: 'rgba(0, 212, 255, 0.2)', border: '#00d4ff' },
-        { bg: 'rgba(0, 255, 136, 0.2)', border: '#00ff88' },
+        { bg: 'rgba(10, 79, 214, 0.2)', border: '#2f6fe6' },
+        { bg: 'rgba(15, 123, 63, 0.2)', border: '#1fae5b' },
         { bg: 'rgba(255, 184, 0, 0.2)', border: '#ffb800' }
     ];
     

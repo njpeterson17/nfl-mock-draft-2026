@@ -167,13 +167,13 @@ function getConsensusLevel(confidence, agreement) {
 function getConsensusBadge(level) {
     switch (level) {
         case 'high':
-            return { text: '🟢 High Consensus', class: 'high' };
+            return { text: 'High Consensus', class: 'high' };
         case 'medium':
-            return { text: '🟡 Medium Consensus', class: 'medium' };
+            return { text: 'Medium Consensus', class: 'medium' };
         case 'low':
-            return { text: '🔴 Split Votes', class: 'low' };
+            return { text: 'Split Votes', class: 'low' };
         default:
-            return { text: '⚪ Unknown', class: '' };
+            return { text: 'Unknown', class: '' };
     }
 }
 
@@ -260,7 +260,7 @@ function renderConsensusPicks() {
                 ${pick.dissent ? `
                 <div class="dissent-alert">
                     <i class="fas fa-exclamation-triangle"></i>
-                    <span>⚠️ ${pick.dissent}</span>
+                    <span>${pick.dissent}</span>
                 </div>
                 ` : ''}
                 

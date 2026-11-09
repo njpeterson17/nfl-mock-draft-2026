@@ -31,7 +31,7 @@
     border-radius: 8px;
     color: var(--text-secondary);
     text-decoration: none;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -57,7 +57,7 @@
 }
 
 .section-title {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 2rem;
     text-align: center;
     margin-bottom: 2rem;
@@ -104,7 +104,7 @@
 .position-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, var(--accent), var(--success));
+    background: var(--accent);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -114,7 +114,7 @@
 }
 
 .position-info h3 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.4rem;
     margin-bottom: 0.25rem;
 }
@@ -171,14 +171,14 @@
     color: var(--primary);
     padding: 0.25rem 0.75rem;
     border-radius: 6px;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
 }
 
 .position-title-section h2 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 2rem;
     margin: 0.5rem 0;
 }
@@ -199,7 +199,7 @@
 
 .meta-value {
     display: block;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--accent);
@@ -241,7 +241,7 @@
 .overview-icon {
     width: 40px;
     height: 40px;
-    background: rgba(0, 212, 255, 0.1);
+    background: rgba(10, 79, 214, 0.1);
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -251,13 +251,13 @@
     flex-shrink: 0;
 }
 
-.overview-card.strength .overview-icon { background: rgba(0, 255, 136, 0.1); color: var(--success); }
+.overview-card.strength .overview-icon { background: rgba(15, 123, 63, 0.1); color: var(--success); }
 .overview-card.sleeper .overview-icon { background: rgba(255, 184, 0, 0.1); color: var(--warning); }
-.overview-card.riser .overview-icon { background: rgba(0, 212, 255, 0.1); color: var(--accent); }
+.overview-card.riser .overview-icon { background: rgba(10, 79, 214, 0.1); color: var(--accent); }
 .overview-card.projection .overview-icon { background: rgba(255, 71, 87, 0.1); color: var(--danger); }
 
 .overview-content h4 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.9rem;
     margin-bottom: 0.25rem;
     color: var(--text-secondary);
@@ -280,7 +280,7 @@
 }
 
 .traits-section h4 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1rem;
     margin-bottom: 1rem;
     color: var(--gold);
@@ -293,7 +293,7 @@
 }
 
 .trait-tag {
-    background: rgba(0, 212, 255, 0.1);
+    background: rgba(10, 79, 214, 0.1);
     border: 1px solid var(--accent);
     color: var(--accent);
     padding: 0.5rem 1rem;
@@ -383,7 +383,7 @@
     background: var(--secondary);
     padding: 1rem;
     text-align: left;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -407,7 +407,7 @@
 }
 
 .rankings-table tbody tr:hover {
-    background: rgba(0, 212, 255, 0.05);
+    background: rgba(10, 79, 214, 0.05);
 }
 
 .rankings-table tbody tr:last-child td {
@@ -419,7 +419,7 @@
 }
 
 .rank-number {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--accent);
@@ -438,7 +438,7 @@
 .player-avatar {
     width: 40px;
     height: 40px;
-    background: linear-gradient(135deg, var(--secondary), var(--primary));
+    background: var(--secondary);
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -465,11 +465,11 @@
     font-size: 0.85rem;
     font-weight: 700;
     color: rgba(255, 255, 255, 0.8);
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
 }
 
 .player-info-cell h4 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.1rem;
     margin: 0;
 }
@@ -489,7 +489,7 @@
 }
 
 .grade-value {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.3rem;
     font-weight: 700;
 }
@@ -535,7 +535,7 @@
 }
 
 .comparison-section h3 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.3rem;
     margin-bottom: 1.5rem;
     color: var(--text-primary);
@@ -568,7 +568,7 @@
 .comparison-player:hover,
 .comparison-player.selected {
     border-color: var(--accent);
-    background: rgba(0, 212, 255, 0.1);
+    background: rgba(10, 79, 214, 0.1);
 }
 
 .comparison-player-color {
@@ -580,7 +580,7 @@
 .comparison-player-avatar {
     width: 45px;
     height: 45px;
-    background: linear-gradient(135deg, var(--secondary), var(--primary));
+    background: var(--secondary);
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -605,7 +605,7 @@
     font-size: 0.9rem;
     font-weight: 700;
     color: rgba(255, 255, 255, 0.8);
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
 }
 
 .comparison-player-info {
@@ -613,7 +613,7 @@
 }
 
 .comparison-player-info h5 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1rem;
     margin: 0;
 }
@@ -696,7 +696,7 @@
 .modal-player-photo {
     width: 150px;
     height: 180px;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    background: var(--primary);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -722,11 +722,11 @@
     font-size: 3rem;
     font-weight: 700;
     color: rgba(255, 255, 255, 0.8);
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
 }
 
 .modal-player-info h2 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 2rem;
     margin-bottom: 0.5rem;
 }
@@ -746,7 +746,7 @@
 }
 
 .modal-grade {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 2.5rem;
     font-weight: 700;
     color: var(--accent);
@@ -768,7 +768,7 @@
 }
 
 .modal-stat-value {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--accent);
@@ -786,7 +786,7 @@
 }
 
 .stats-section-header {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.9rem;
     text-transform: uppercase;
     color: var(--text-secondary);
@@ -801,7 +801,7 @@
 }
 
 .projected-badge {
-    background: linear-gradient(135deg, rgba(255, 193, 7, 0.2), rgba(255, 160, 0, 0.1));
+    background: rgba(255, 193, 7, 0.2);
     color: #ffc107;
     font-size: 0.65rem;
     padding: 0.2rem 0.5rem;
@@ -817,7 +817,7 @@
 }
 
 .modal-section h4 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1rem;
     color: var(--gold);
     margin-bottom: 0.75rem;
@@ -879,7 +879,7 @@
 
 /* Bottom Line */
 .modal-bottom-line {
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 255, 136, 0.1));
+    background: rgba(10, 79, 214, 0.1);
     border: 1px solid var(--accent);
     border-radius: 12px;
     padding: 1.25rem;
@@ -887,7 +887,7 @@
 }
 
 .modal-bottom-line h4 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     color: var(--accent);
     margin-bottom: 0.5rem;
 }
@@ -926,7 +926,7 @@
 }
 
 .nav-current {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.2rem;
     color: var(--text-primary);
 }
