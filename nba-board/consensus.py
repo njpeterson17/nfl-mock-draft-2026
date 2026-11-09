@@ -8,10 +8,11 @@ from urllib.parse import urljoin
 SOURCES=[
  ('tank','Tankathon','https://www.tankathon.com/big-board'),
  ('br','Bleacher Report · Jonathan Wasserman','https://bleacherreport.com/articles/25474454-2027-nba-draft-big-board-top-100-player-rankings'),
- ('fansided','FanSided (via Yahoo)','https://sports.yahoo.com/articles/2027-nba-draft-big-board-135915469.html'),
+ ('fansided','FanSided (via Yahoo)','https://sports.yahoo.com/articles/2027-nba-draft-big-board-173944256.html'),
  ('sgr','Sports Gaming Rosters · preliminary class board','https://sportsgamingrosters.com/2027-nba-draft-class-big-board/'),
- ('noceilings','No Ceilings · staff composite','https://www.noceilingsnba.com/p/2027-nba-draft-big-board-v1')]
-ALIASES={'jojotugler':'josephtugler','klarkreithauser':'klarkriethauser','johanngrnloh':'johanngrunloh','zvonimirivii':'zvonimirivisic','nolanwintre':'nolanwinter','alvarofolguiras':'alvarofolgueiras','lvarofolgueiras':'alvarofolgueiras','arfandiane':'arafandiane','davidmirkovi':'davidmirkovic','stevanjoksimovic':'stefanjoksimovic','davisfogel':'davisfogle','malachmoreno':'malachimoreno','mormassambadiop':'massambadiop','hymgamoukouri':'hugoyimgamoukouri','matthewable':'mattable','nikkhamenia':'nikolaskhamenia'}
+ ('noceilings','No Ceilings · staff composite','https://www.noceilingsnba.com/p/2027-nba-draft-big-board-v1'),
+ ('espn','ESPN · Jeremy Woo (via TSN)','https://www.tsn.ca/nba/article/breaking-down-top-prospects-for-2027-nba-draft-n1-50379717/')]
+ALIASES={'treymckinney':'treymckenney','neoavdalas':'neoklisavdalas','pharrelpayne':'pharrellpayne','jojotugler':'josephtugler','klarkreithauser':'klarkriethauser','johanngrnloh':'johanngrunloh','zvonimirivii':'zvonimirivisic','nolanwintre':'nolanwinter','alvarofolguiras':'alvarofolgueiras','lvarofolgueiras':'alvarofolgueiras','arfandiane':'arafandiane','davidmirkovi':'davidmirkovic','stevanjoksimovic':'stefanjoksimovic','davisfogel':'davisfogle','malachmoreno':'malachimoreno','mormassambadiop':'massambadiop','hymgamoukouri':'hugoyimgamoukouri','matthewable':'mattable','nikkhamenia':'nikolaskhamenia'}
 SCHOOLS={'UWC':'USC','Miami FL':'Miami','Connecticut':'UConn','Brigham Young':'BYU',"St. John’s":"St. John's",'Ohio St.':'Ohio State','N.C. State':'NC State'}
 def identity(name,school=''):
  name=unicodedata.normalize('NFKD',name).encode('ascii','ignore').decode().lower()
@@ -48,19 +49,32 @@ def parse(key,raw,url):
    if m and len(cells)>=3:rows.append(record(m[2],cells[1],cells[2],m[1],url))
  elif key=='sgr':
   if '2027-nba-draft-class' not in url:raise ValueError('Wrong class')
-  for r in soup.select('table tbody tr'):
-   cells=[c.get_text(' ',strip=True) for c in r.select('td')]
-   if len(cells) not in (7,8) or not cells[0].isdigit():continue
-   last,first=cells[1].split(',',1);name=first.strip()+' '+last.strip()
-   m=re.search(r'(\d)[’\'](\d{1,2})[,.]\s*(\d+)\s*lbs',cells[6])
+  # Columns are found by header name; the publisher keeps adding columns (Birthdate, OVR, a leading index).
+  col={'rank':0,'player':1,'1st pos.':2,'school':4,'h/w':6}
+  for r in soup.select('table tbody tr, table thead tr'):
+   cells=[c.get_text(' ',strip=True) for c in r.select('td,th')]
+   heads=[c.lower() for c in cells]
+   if 'rank' in heads and 'player' in heads:col={h:i for i,h in enumerate(heads)};continue
+   if len(cells)<=max(col.values()) or not cells[col['rank']].isdigit():continue
+   last,first=cells[col['player']].split(',',1);name=first.strip()+' '+last.strip()
+   m=re.search(r'(\d)[’\'](\d{1,2})[,.]\s*(\d+)\s*lbs',cells[col['h/w']])
    dims=dict(height=f"{m[1]}'{m[2]}\"",weight=m[3]+' lbs',measurement_source=url,measurement_source_name='Sports Gaming Rosters') if m else {}
-   rows.append(record(name,cells[2],cells[4],cells[0],url,**dims))
+   rows.append(record(name,cells[col['1st pos.']],cells[col['school']],cells[col['rank']],url,**dims))
  elif key=='noceilings':
   for h in soup.select('h3'):
    m=re.match(r'^#(\d+)\.\s*(.+?)\s*\|\s*([A-Z/]+)\s*\|\s*(.+)$',h.get_text(' ',strip=True))
    if m:rows.append(record(m[2],m[3],m[4],m[1],url))
+ elif key=='espn':
+  # Ranks 1-25 are headings; 26-100 run together in one paragraph ("| Age: 18.727. Next ..."), split on the one-decimal age.
+  for h in soup.select('h2'):
+   t=h.get_text(' ',strip=True)
+   m=re.match(r'^(\d{1,3})\.\s*(.+?),\s*([A-Z/]+),\s*(.+)$',t)
+   if m:rows.append(record(m[2],m[3],m[4],m[1],url))
+   elif t.startswith('Remaining big board'):
+    for para in h.find_next_siblings('p'):
+     for m in re.finditer(r'(\d{1,3})\.\s*(.+?),\s*([A-Z/]*),\s*(.+?)\s*\|\s*Age:\s*\d{2}\.\d',para.get_text()):rows.append(record(m[2],m[3],m[4],m[1],url))
  rows.sort(key=lambda p:p['rank'])
- minimum={'tank':50,'br':100,'fansided':60,'sgr':150,'noceilings':60}[key]
+ minimum={'tank':50,'br':100,'fansided':60,'sgr':150,'noceilings':60,'espn':100}[key]
  if len(rows)<minimum or [p['rank'] for p in rows]!=list(range(1,len(rows)+1)):raise ValueError('Incomplete/non-sequential '+key+' board: '+str(len(rows)))
  if len({identity(p['name']) for p in rows})!=len(rows):raise ValueError('Duplicate identities')
  return rows

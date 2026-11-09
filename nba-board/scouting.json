@@ -1636,5 +1636,103 @@
     "reviewed_at": "2026-10-26T00:05:26.297165+00:00",
     "evidence_hash": "0b2edfc930f2b9bad7f9e2064c8d676265b41d142b02461ec6481911a8141bb9",
     "status": "reviewed_summary"
+  },
+  "collinchandler": {
+    "strengths": "Athletic shooting guard who shoots the three well and can also attack the rim.",
+    "weaknesses": "Older prospect, though the report sees room left to develop.",
+    "source": {
+      "name": "NBA Draft Room",
+      "url": "https://nbadraftroom.com/collin-chandler/",
+      "sections": [
+        "Draft Notes"
+      ]
+    },
+    "reviewed_at": "2026-11-09T04:57:16.267002+00:00",
+    "evidence_hash": "788718b42488e94fe7bf47dc674873e015cc754c14b5c3939bb88007497a43e0",
+    "status": "reviewed_summary"
+  },
+  "cheickhniang": {
+    "strengths": "Rangy, mobile wing who pressures defenses as an aggressive slasher; long strides, can beat defenders off the dribble and shows playmaking vision.",
+    "weaknesses": "Driving and ball handling are not yet polished, and the outside shot is a work in progress.",
+    "source": {
+      "name": "NBA Draft Room",
+      "url": "https://nbadraftroom.com/cheickh-niang/",
+      "sections": [
+        "Draft Notes"
+      ]
+    },
+    "reviewed_at": "2026-11-09T04:57:16.267002+00:00",
+    "evidence_hash": "6208d4971157b2751e00af7d68532423df65048cbaae59bb87365b175261b34e",
+    "status": "reviewed_summary"
+  },
+  "brysontiller": {
+    "strengths": "Power-forward size with an advanced face-up game; handles and beats defenders off the dribble like a wing, with promise as a shooter.",
+    "weaknesses": "Three-point shooting runs hot and cold; a solid but not elite run-and-jump athlete.",
+    "source": {
+      "name": "NBA Draft Room",
+      "url": "https://nbadraftroom.com/bryson-tiller/",
+      "sections": [
+        "Draft Notes"
+      ]
+    },
+    "reviewed_at": "2026-11-09T04:57:16.267002+00:00",
+    "evidence_hash": "653002ede76609142a329deb09a5ea66851eafdec387e57105f450948ae3ced1",
+    "status": "reviewed_summary"
+  },
+  "jalenharalson": {
+    "strengths": "Strong-framed big guard with good fundamentals who runs the offense, scores off the dribble and creates for others; soft touch on floaters and can shoot from outside.",
+    "weaknesses": "No single elite skill — his value comes from doing everything well.",
+    "source": {
+      "name": "NBA Draft Room",
+      "url": "https://nbadraftroom.com/jalen-haralson/",
+      "sections": [
+        "Draft Notes"
+      ]
+    },
+    "reviewed_at": "2026-11-09T04:57:16.267002+00:00",
+    "evidence_hash": "88b8537b84977375363f99bce1acd9ca7a05568d58002a51ae6453cee037da5c",
+    "status": "reviewed_summary"
+  },
+  "ericreibe": {
+    "strengths": "Big, skilled center with an NBA frame, a solid post game, fluid movement for a 7-footer and some floor-spacing ability; potential to become a high-level defender.",
+    "weaknesses": "Not especially explosive vertically.",
+    "source": {
+      "name": "NBA Draft Room",
+      "url": "https://nbadraftroom.com/eric-reibe/",
+      "sections": [
+        "Draft Notes"
+      ]
+    },
+    "reviewed_at": "2026-11-09T04:57:16.267002+00:00",
+    "evidence_hash": "e6c72cde59b9b71c0b0ebe2776747f543c79bf41c58785ed48d123188caea1da",
+    "status": "reviewed_summary"
+  },
+  "davidpunch": {
+    "strengths": "Powerfully built, physical forward who plays tough in the lane.",
+    "weaknesses": "Undersized for power forward, and limited shooting could narrow his NBA role.",
+    "source": {
+      "name": "NBA Draft Room",
+      "url": "https://nbadraftroom.com/david-punch/",
+      "sections": [
+        "Draft Notes"
+      ]
+    },
+    "reviewed_at": "2026-11-09T04:57:16.267002+00:00",
+    "evidence_hash": "aca599869ec3b88e8da9fcea89a1fdbdff4a0f8f19129d6933c7bced613d1782",
+    "status": "reviewed_summary"
+  },
+  "kanoncatchings": {
+    "strengths": "Long, athletic, bouncy wing with NBA-level tools and plenty of untapped potential.",
+    "weaknesses": "The brief reviewed report does not identify a specific weakness.",
+    "source": {
+      "name": "NBA Draft Room",
+      "url": "https://nbadraftroom.com/kanon-catchings/",
+      "sections": [
+        "Draft Notes"
+      ]
+    },
+    "reviewed_at": "2026-11-09T04:57:16.267002+00:00",
+    "evidence_hash": "11366f25c40a39262be3816e9ad6665268a9ab3d7b2b09cc54a80d2bbd969d4f",
+    "status": "reviewed_summary"
   }
 }
