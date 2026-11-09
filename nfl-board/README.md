@@ -40,7 +40,7 @@ Height and weight use matched ESPN rosters first. Missing pairs are filled from 
 
 ## Completed headshot coverage
 
-All 125 current prospects have portraits. Sixteen previously missing headshots were matched to official school profiles/rosters (15) and CBS Sports (Dylan Stewart), downloaded without alteration into `assets/headshots/`, and recorded with source URLs and credits in `headshots.json`. The registry survives routine roster refreshes. Sahir West uses his official James Madison portrait; Brendan Sorsby uses his Cincinnati 2025 portrait. Those earlier-team photos are identified in profile credits. A CBS silhouette was rejected during visual QA. All 16 downloaded files decoded successfully and were checked visually; all local image routes return image content.
+All 125 current prospects have portraits. Nineteen previously missing headshots were matched to official school profiles/rosters (18, including Devan Thompkins, Zereoue Williams and Cade Uluave added Nov 8) and CBS Sports (Dylan Stewart), downloaded without alteration into `assets/headshots/`, and recorded with source URLs and credits in `headshots.json`. The registry survives routine roster refreshes. Sahir West uses his official James Madison portrait; Brendan Sorsby uses his Cincinnati 2025 portrait. Those earlier-team photos are identified in profile credits. A CBS silhouette was rejected during visual QA. All 16 downloaded files decoded successfully and were checked visually; all local image routes return image content.
 
 ## Source freshness, disagreement and comparisons
 

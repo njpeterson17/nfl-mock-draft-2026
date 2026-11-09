@@ -142,5 +142,32 @@
     "photo": "assets/headshots/brendan-sorsby.jpg",
     "width": 1080,
     "height": 1350
+  },
+  "devanthompkins": {
+    "photo": "assets/headshots/devanthompkins.jpg",
+    "photo_original": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/rolltide.com/images/2026/2/12/ThompkinsDe_Mugs_260211_MFB_JVS0225.jpg",
+    "photo_source": "https://rolltide.com/sports/football/roster/devan-thompkins/17536",
+    "photo_credit": "Alabama Athletics \u00b7 official roster photo",
+    "photo_checked": "2026-11-09T05:58:11.762719+00:00",
+    "width": 768,
+    "height": 1152
+  },
+  "zereouewilliams": {
+    "photo": "assets/headshots/zereouewilliams.jpg",
+    "photo_original": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/utahutes.com/images/2026/7/13/Williams__Zereoue-1.jpg",
+    "photo_source": "https://utahutes.com/sports/football/roster/zereoue-williams/17592",
+    "photo_credit": "Utah Athletics \u00b7 official roster photo",
+    "photo_checked": "2026-11-09T05:58:11.762719+00:00",
+    "width": 1500,
+    "height": 2000
+  },
+  "cadeuluave": {
+    "photo": "assets/headshots/cadeuluave.jpg",
+    "photo_original": "https://storage.googleapis.com/byucougars-prod/2026/08/31/51PDjVsCfqR3LqOMEgQA7NwjvKMRNiHo6vmYH0xY.jpg",
+    "photo_source": "https://byucougars.com/sports/football/roster/player/cade-uluave",
+    "photo_credit": "BYU Athletics \u00b7 official roster photo",
+    "photo_checked": "2026-11-09T05:58:11.762719+00:00",
+    "width": 609,
+    "height": 852
   }
 }

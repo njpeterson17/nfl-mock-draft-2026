@@ -1779,7 +1779,11 @@
             "espn": 28
           }
         }
-      ]
+      ],
+      "photo": "assets/headshots/hugoyimgamoukouri.png",
+      "photo_original": "https://www.nanterre92.com/wp-content/uploads/2025/09/1_HUGO-YIMGA-MOUKOURI.png",
+      "photo_source": "https://www.nanterre92.com/joueurs/hugo-yimga-moukouri/",
+      "photo_credit": "Nanterre 92 \u00b7 official player photo"
     },
     {
       "name": "Tyler Tanner",
@@ -4986,7 +4990,11 @@
             "espn": 35
           }
         }
-      ]
+      ],
+      "photo": "assets/headshots/dashdaniels.webp",
+      "photo_original": "https://cdn.prod.website-files.com/64a50350adad23f0f1ef8f43/6ad01983ae0505937f82f750_456410246a4747979cf1d8030b76c67d.webp",
+      "photo_source": "https://www.nbl.com.au/players/dash-daniels-eb6922f2-530f-11f0-9b9d-930015120978",
+      "photo_credit": "NBL \u00b7 official player photo (South East Melbourne Phoenix)"
     },
     {
       "name": "Najai Hines",
@@ -5286,7 +5294,11 @@
             "espn": 23
           }
         }
-      ]
+      ],
+      "photo": "assets/headshots/calebgaskins.jpg",
+      "photo_original": "https://storage.googleapis.com/miamihurricanes-com-prod/2026/09/21/98KB3D1ngNuteTeSIilirMnyOZIgTuD73Cl0IuGO.jpg",
+      "photo_source": "https://miamihurricanes.com/sports/mbball/roster/player/caleb-gaskins",
+      "photo_credit": "Miami Athletics \u00b7 official roster photo"
     },
     {
       "name": "Zvonimir Ivisic",
@@ -6823,7 +6835,11 @@
             "espn": 55
           }
         }
-      ]
+      ],
+      "photo": "assets/headshots/cameronhouindo.png",
+      "photo_original": "https://www.aba-liga.com/stats/img/foto/5213.png",
+      "photo_source": "https://www.aba-liga.com/player/5213",
+      "photo_credit": "ABA League \u00b7 official player photo"
     },
     {
       "name": "Klark Riethauser",
@@ -7951,7 +7967,11 @@
             "espn": 94
           }
         }
-      ]
+      ],
+      "photo": "assets/headshots/pavlebacko.png",
+      "photo_original": "https://www.aba-liga.com/stats/img/foto/4661.png",
+      "photo_source": "https://www.aba-liga.com/player/4661/26/1/pavle-backo/",
+      "photo_credit": "ABA League \u00b7 official player photo"
     },
     {
       "name": "Alvaro Folgueiras",
@@ -9528,7 +9548,11 @@
             "espn": 46
           }
         }
-      ]
+      ],
+      "photo": "assets/headshots/cheickhniang.png",
+      "photo_original": "https://lba-media.s3.eu-south-1.amazonaws.com/variants/YW5pxWatG5mPHgTnn9NGaXS6/large",
+      "photo_source": "https://www.legabasket.it/protagonisti/giocatori/7279/cheichk-niang",
+      "photo_credit": "Lega Basket Serie A \u00b7 official player photo"
     },
     {
       "name": "Bryson Tiller",
@@ -9837,7 +9861,11 @@
             "br": 49
           }
         }
-      ]
+      ],
+      "photo": "assets/headshots/adamatamna.webp",
+      "photo_original": "https://api.basketball-bundesliga.de/images/player/portrait/2026/2003190",
+      "photo_source": "https://www.ratiopharmulm.com/team/spieler/adam-atamna-2003190/",
+      "photo_credit": "easyCredit BBL / ratiopharm ulm \u00b7 official portrait"
     },
     {
       "name": "Amare Bynum",
@@ -10242,7 +10270,7 @@
       "source_total": 6,
       "movement": null,
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/99.png",
-      "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5458830/michael-ruzic",
+      "photo_source": "https://lsusports.net/sports/mb/roster/season/2026-27/player/michael-ruzic",
       "height": "7' 0\"",
       "weight": "235 lbs",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/99/roster",
@@ -10283,7 +10311,10 @@
             "espn": 56
           }
         }
-      ]
+      ],
+      "photo": "assets/headshots/michaelruzic.jpg",
+      "photo_original": "https://storage.googleapis.com/lsusports-net-prod/2026/10/07/IuETeAcr3HfxZZknFVUYEjkdVDZBmbJIm386Ktlx.jpg",
+      "photo_credit": "LSU Athletics \u00b7 official roster photo"
     },
     {
       "name": "Mackenzie Mgbako",
@@ -10735,7 +10766,11 @@
             "br": 61
           }
         }
-      ]
+      ],
+      "photo": "assets/headshots/lucasmorillo.jpg",
+      "photo_original": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/fightingillini.com/images/2026/10/5/23-Morillo_Lucas.jpg",
+      "photo_source": "https://fightingillini.com/sports/mens-basketball/roster/lucas-morillo/15986",
+      "photo_credit": "Illinois Athletics \u00b7 official roster photo"
     },
     {
       "name": "Jarin Stevenson",

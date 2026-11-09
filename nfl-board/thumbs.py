@@ -35,7 +35,11 @@ def main():
     before = after = 0
     for name in sorted(used):
         src = SRC / name
-        im = ImageOps.exif_transpose(Image.open(src)).convert('RGB')
+        im = ImageOps.exif_transpose(Image.open(src)).convert('RGBA')
+        # Cutout PNG/WebP portraits are transparent; flatten onto white, not black.
+        flat = Image.new('RGBA', im.size, 'white')
+        flat.alpha_composite(im)
+        im = flat.convert('RGB')
         thumb = im.crop(crop_box(src.stem, im)).resize((W, H), Image.LANCZOS)
         dest = OUT / (src.stem + '.jpg')
         thumb.save(dest, 'JPEG', quality=84, optimize=True, progressive=True)

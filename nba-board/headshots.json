@@ -370,5 +370,59 @@
     "photo_original": "https://api-page.kzs.si/storage/ntPlayer/3151_1784921823/3151_1784921823.jpg",
     "photo_source": "https://kzs.si/reprezentant/2615",
     "photo_credit": "Basketball Federation of Slovenia"
+  },
+  "calebgaskins": {
+    "photo": "assets/headshots/calebgaskins.jpg",
+    "photo_original": "https://storage.googleapis.com/miamihurricanes-com-prod/2026/09/21/98KB3D1ngNuteTeSIilirMnyOZIgTuD73Cl0IuGO.jpg",
+    "photo_source": "https://miamihurricanes.com/sports/mbball/roster/player/caleb-gaskins",
+    "photo_credit": "Miami Athletics · official roster photo"
+  },
+  "michaelruzic": {
+    "photo": "assets/headshots/michaelruzic.jpg",
+    "photo_original": "https://storage.googleapis.com/lsusports-net-prod/2026/10/07/IuETeAcr3HfxZZknFVUYEjkdVDZBmbJIm386Ktlx.jpg",
+    "photo_source": "https://lsusports.net/sports/mb/roster/season/2026-27/player/michael-ruzic",
+    "photo_credit": "LSU Athletics · official roster photo"
+  },
+  "lucasmorillo": {
+    "photo": "assets/headshots/lucasmorillo.jpg",
+    "photo_original": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/fightingillini.com/images/2026/10/5/23-Morillo_Lucas.jpg",
+    "photo_source": "https://fightingillini.com/sports/mens-basketball/roster/lucas-morillo/15986",
+    "photo_credit": "Illinois Athletics · official roster photo"
+  },
+  "hugoyimgamoukouri": {
+    "photo": "assets/headshots/hugoyimgamoukouri.png",
+    "photo_original": "https://www.nanterre92.com/wp-content/uploads/2025/09/1_HUGO-YIMGA-MOUKOURI.png",
+    "photo_source": "https://www.nanterre92.com/joueurs/hugo-yimga-moukouri/",
+    "photo_credit": "Nanterre 92 · official player photo"
+  },
+  "cameronhouindo": {
+    "photo": "assets/headshots/cameronhouindo.png",
+    "photo_original": "https://www.aba-liga.com/stats/img/foto/5213.png",
+    "photo_source": "https://www.aba-liga.com/player/5213",
+    "photo_credit": "ABA League · official player photo"
+  },
+  "pavlebacko": {
+    "photo": "assets/headshots/pavlebacko.png",
+    "photo_original": "https://www.aba-liga.com/stats/img/foto/4661.png",
+    "photo_source": "https://www.aba-liga.com/player/4661/26/1/pavle-backo/",
+    "photo_credit": "ABA League · official player photo"
+  },
+  "adamatamna": {
+    "photo": "assets/headshots/adamatamna.webp",
+    "photo_original": "https://api.basketball-bundesliga.de/images/player/portrait/2026/2003190",
+    "photo_source": "https://www.ratiopharmulm.com/team/spieler/adam-atamna-2003190/",
+    "photo_credit": "easyCredit BBL / ratiopharm ulm · official portrait"
+  },
+  "cheickhniang": {
+    "photo": "assets/headshots/cheickhniang.png",
+    "photo_original": "https://lba-media.s3.eu-south-1.amazonaws.com/variants/YW5pxWatG5mPHgTnn9NGaXS6/large",
+    "photo_source": "https://www.legabasket.it/protagonisti/giocatori/7279/cheichk-niang",
+    "photo_credit": "Lega Basket Serie A · official player photo"
+  },
+  "dashdaniels": {
+    "photo": "assets/headshots/dashdaniels.webp",
+    "photo_original": "https://cdn.prod.website-files.com/64a50350adad23f0f1ef8f43/6ad01983ae0505937f82f750_456410246a4747979cf1d8030b76c67d.webp",
+    "photo_source": "https://www.nbl.com.au/players/dash-daniels-eb6922f2-530f-11f0-9b9d-930015120978",
+    "photo_credit": "NBL · official player photo (South East Melbourne Phoenix)"
   }
 }
