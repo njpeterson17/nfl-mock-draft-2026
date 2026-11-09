@@ -6046,7 +6046,22 @@
       "movement": null,
       "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4873151.png",
       "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/4873151/paul-mcneil-jr",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Elite catch-and-shoot range with a quick release, smart off-ball relocation and shooting gravity; a long wing frame (near 7-foot wingspan) with athleticism to attack closeouts.",
+        "weaknesses": "Handle loosens under pressure and he isn't yet a reliable shot creator; limited playmaking, finishing through contact and defensive consistency all need work, and he needs to add strength.",
+        "source": {
+          "name": "Matt Babcock \u00b7 Babcock Hoops",
+          "url": "https://www.babcockhoops.com/post/2026-nba-draft-paul-mcneil-jr-scouting-report",
+          "sections": [
+            "Strengths",
+            "Concerns",
+            "Bottom Line"
+          ]
+        },
+        "reviewed_at": "2026-11-09T06:20:26.408507+00:00",
+        "evidence_hash": "6e7584425216cb9b485ae54a9634869819d805f347da7d9d44bfae4ab86f46e6",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-09-15T02:27:48.422682+00:00",
@@ -8001,7 +8016,20 @@
       "photo_source": "https://gocards.com/sports/mens-basketball/roster",
       "photo_original": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/gocards.com/images/2026/6/18/Folgueiras_Alvaro_Cropped.png",
       "photo_credit": "Louisville Athletics (roster photo)",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Versatile 6'9\" forward with size, skill and basketball IQ; impacts the game as a rebounder, playmaker and scorer at all three levels.",
+        "weaknesses": "The brief reviewed note does not identify a specific weakness; it notes he is older for a prospect.",
+        "source": {
+          "name": "Roberto Araiza \u00b7 DraftStack FIBA summer recap (Jul 29, 2025)",
+          "url": "https://draftstack.substack.com/p/fiba-recap-the-standout-players-from",
+          "sections": [
+            "Alvaro Folgueiras"
+          ]
+        },
+        "reviewed_at": "2026-11-09T06:20:26.408507+00:00",
+        "evidence_hash": "19be67100d2374729909c5e7d6b7afbd06ee932f8c595b27a016bb46708833ba",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-09-15T02:27:48.422682+00:00",
@@ -8085,7 +8113,22 @@
       "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5107864.png",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/328.png",
       "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5107864/mason-falslev",
-      "scouting": null,
+      "scouting": {
+        "strengths": "NBA-ready strong guard who wins with toughness; sharp last step and screen navigation in pick-and-roll defense, alert team defender, and a consistent, quick catch-and-shoot stroke.",
+        "weaknesses": "Closeouts are a step late and too far, he gambles for deflections despite limited length, and he needs more movement shooting; defensive versatility is limited to guards. Older prospect (24 in the report).",
+        "source": {
+          "name": "Ersin Demir \u00b7 Ersin's NBA Draft Newsletter (Jan 27, 2026)",
+          "url": "https://edemirnba.substack.com/p/mason-falslev-scouting-report",
+          "sections": [
+            "Physical Profile",
+            "Defense",
+            "Offense"
+          ]
+        },
+        "reviewed_at": "2026-11-09T06:20:26.408507+00:00",
+        "evidence_hash": "655eb73aa1cd37d8d829c62af07fd0fe8ef8bc3fcce561317a5ed60ed2681338",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-09-15T02:27:48.422682+00:00",
@@ -8789,7 +8832,20 @@
       "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/5176232.png",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/258.png",
       "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/5176232/sam-lewis",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Sleek 6'6\" wing and proven three-level scorer in an off-ball role; efficient shooter from three and the midrange.",
+        "weaknesses": "Decision-making needs streamlining \u2014 barely more assists than turnovers \u2014 before he can handle a bigger on-ball role.",
+        "source": {
+          "name": "Isaac Trotter \u00b7 CBS Sports, as quoted by Virginia on SI (Apr 30, 2026)",
+          "url": "https://www.si.com/college/virginia/basketball/cbs-sports-names-sam-lewis-as-a-2nd-year-transfer-that-will-make-a-jump-next-season-01kqfkj9h803",
+          "sections": [
+            "What does he need to improve?"
+          ]
+        },
+        "reviewed_at": "2026-11-09T06:20:26.408507+00:00",
+        "evidence_hash": "0f6bf61646240bdd43fcf84a6cb670d311390b81c7b6802aed62c88d422b7a5c",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-10-25T23:17:08.257847+00:00",
@@ -8848,7 +8904,22 @@
       "photo": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4895783.png",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/275.png",
       "photo_source": "https://www.espn.com/mens-college-basketball/player/_/id/4895783/nolan-winter",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Tough, true 7-footer and elite rebounder with a strong motor; effective screener and roll finisher, good passer for a big, and light enough on his feet to hedge or switch.",
+        "weaknesses": "Not a vertical athlete; a stationary shooter who must improve balance and footwork before rising up.",
+        "source": {
+          "name": "Ersin Demir \u00b7 Ersin's NBA Draft Newsletter (Nov 27, 2025)",
+          "url": "https://edemirnba.substack.com/p/nolan-winter-scouting-report",
+          "sections": [
+            "Physical Profile",
+            "Offense",
+            "Defense"
+          ]
+        },
+        "reviewed_at": "2026-11-09T06:20:26.408507+00:00",
+        "evidence_hash": "6002f894c7c22a5f184439263609e0686ff787f58b01d933f4a8a74ab581779e",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-09-15T02:27:48.422682+00:00",
@@ -9497,7 +9568,20 @@
       "weight": "205 lbs",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/9/roster",
       "measurement_source_name": "ESPN",
-      "scouting": null,
+      "scouting": {
+        "strengths": "High-floor 6'7\" wing: versatile shotmaker and consistent floor-spacer with intriguing defensive upside who rarely makes costly mistakes.",
+        "weaknesses": "Has yet to show a high-end ability to score out of structure.",
+        "source": {
+          "name": "Kevin Hicks \u00b7 Arizona State on SI (Apr 4, 2026)",
+          "url": "https://www.si.com/college/arizonastate/sun-devils-why-must-add-transfer-dillan-shaw",
+          "sections": [
+            "Shaw Is High Floor Wing That Provides All-Around Value"
+          ]
+        },
+        "reviewed_at": "2026-11-09T06:20:26.408507+00:00",
+        "evidence_hash": "015660a7831876c4ec99c0b8a0d7b4dc7895e2174d586cd62165dc9454888a5c",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-11-09T04:56:22.086841+00:00",
@@ -9815,7 +9899,20 @@
       "coverage": 1,
       "source_total": 6,
       "movement": null,
-      "scouting": null,
+      "scouting": {
+        "strengths": "Historically young and productive in France's U21 league \u2014 efficient interior scoring and strong steal/block activity for his age.",
+        "weaknesses": "Shooting is the biggest hole, and he hasn't taken on playmaking duties the way comparable prospects did. (A production-based 2024 analysis from his ASVEL youth seasons.)",
+        "source": {
+          "name": "avi \u00b7 100 Guaranteed, Deep Draft Sleepers from LNB Espoirs (Sep 2024)",
+          "url": "https://100guaranteed.substack.com/p/deep-draft-sleepers-from-lnb-espoirs",
+          "sections": [
+            "1. Adam Atamna"
+          ]
+        },
+        "reviewed_at": "2026-11-09T06:20:26.408507+00:00",
+        "evidence_hash": "44d4aa455a26b1e8e1a49f4168d90dad5b6f31feaf50be0116d539b57de1d013",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-09-15T02:27:48.422682+00:00",
@@ -9926,7 +10023,20 @@
       "weight": "225 lbs",
       "measurement_source": "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/93/roster",
       "measurement_source_name": "ESPN",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Advanced skill for a 6'9\" frame \u2014 an on-ball initiator and three-level scorer with real mid-range shot creation and floor-general flashes; can guard multiple positions.",
+        "weaknesses": "Still developing as a catch-and-shoot and off-ball scorer; plays stiff laterally against small guards, lacks strength against bigs, and his defensive motor and focus drift.",
+        "source": {
+          "name": "Ethan Alexander \u00b7 Mid-Major Prospect Preview (Jul 8, 2026)",
+          "url": "https://hoopssicko.substack.com/p/mid-major-prospect-preview-potential",
+          "sections": [
+            "Roman Domon - Murray State"
+          ]
+        },
+        "reviewed_at": "2026-11-09T06:20:26.408507+00:00",
+        "evidence_hash": "46ddbf274cf6f1b352a7a7abe1260d6521469a5c46d4a50aa5dc82ca9c173023",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-09-15T02:27:48.422682+00:00",
@@ -11058,7 +11168,21 @@
       "photo_source": "https://usctrojans.com/sports/mens-basketball/roster",
       "photo_original": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/usctrojans.com/images/2025/6/9/Rice__Rodney.jpg",
       "photo_credit": "USC Athletics (roster photo)",
-      "scouting": null,
+      "scouting": {
+        "strengths": "Real NBA three-point shooter and multi-level shotmaker with compact, repeatable mechanics; growing pick-and-roll creation and lead-guard passing at USC.",
+        "weaknesses": "Limited athlete and below-the-rim finisher who must lean on touch and angles inside; injury history (ankle, hand, shoulder).",
+        "source": {
+          "name": "Jamaill Hines \u00b7 No Ceilings (Dec 5, 2025)",
+          "url": "https://www.noceilingsnba.com/p/a-scouts-take-new-place-new-role",
+          "sections": [
+            "Shooting is the Separator",
+            "Lead Guard Growth"
+          ]
+        },
+        "reviewed_at": "2026-11-09T06:20:26.408507+00:00",
+        "evidence_hash": "31a6b85db3f138106cb9d698e76f048f25b471b8f6838d67a91c74fa62e0e98d",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-09-15T02:27:48.422682+00:00",
@@ -11213,7 +11337,22 @@
       "photo_source": "https://uhcougars.com/sports/mens-basketball/roster",
       "photo_original": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/uhcougars.com/images/2026/8/30/Thomas_Jr_Dedan_DSC01593_copy_C57ON.jpg",
       "photo_credit": "Houston Athletics (roster photo)",
-      "scouting": null,
+      "scouting": {
+        "strengths": "High-IQ point guard with excellent footwork, ball handling and pick-and-roll decision-making; good screen navigation and off-ball instincts on defense, with a smooth catch-and-shoot stroke.",
+        "weaknesses": "Slim frame needs strength to fight through screens and finish through contact; lacks explosiveness and is a likely switch target at 6'1\". (Report covers his freshman year at UNLV.)",
+        "source": {
+          "name": "Ersin Demir \u00b7 Ersin's NBA Draft Newsletter (Apr 8, 2024)",
+          "url": "https://edemirnba.substack.com/p/dedan-thomas-jr-scouting-report",
+          "sections": [
+            "Physical Profile",
+            "Defense",
+            "Offense"
+          ]
+        },
+        "reviewed_at": "2026-11-09T06:20:26.408507+00:00",
+        "evidence_hash": "675d11ee4acd1476400ca0b06ec751bc5c8a1abe4e8b337efd0ad20bad9d4b72",
+        "status": "reviewed_summary"
+      },
       "history": [
         {
           "recorded_at": "2026-09-15T02:27:48.422682+00:00",

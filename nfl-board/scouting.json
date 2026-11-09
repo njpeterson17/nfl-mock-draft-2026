@@ -2287,5 +2287,33 @@
     "reviewed_at": "2026-11-08T18:58:59.552789+00:00",
     "evidence_hash": "46147f9678d46ebc9b66f15cfc7d27a92c51c78e1b4179355fc4c37a3e26ec37",
     "status": "reviewed_summary"
+  },
+  "domnichols": {
+    "strengths": "One of college football's best bull rushers at 6'5\", 245, who sets up blockers with his approach and has counters ready.",
+    "weaknesses": "The report does not identify a specific weakness; it notes he was injured early in the Iowa game.",
+    "source": {
+      "name": "Mike Renner \u00b7 CBS Sports midseason big board (Oct 14, 2026)",
+      "url": "https://www.cbssports.com/nfl/draft/news/renners-2027-nfl-draft-big-board-ranking-top-150-prospects/",
+      "sections": [
+        "31. Dom Nichols"
+      ]
+    },
+    "reviewed_at": "2026-11-09T06:20:26.408507+00:00",
+    "evidence_hash": "c4caa5021a5c1d1c414400366cbc526701dced0d777bccf116bc0d69db2a3c5e",
+    "status": "reviewed_summary"
+  },
+  "emmanueloyebadejo": {
+    "strengths": "Intriguing combination of size and athleticism.",
+    "weaknesses": "Still very raw after taking up football only a few years ago in England; needs more pass-rush moves, and a full move inside could help.",
+    "source": {
+      "name": "Joe DiTullio \u00b7 The Game Haus, Week 9 prospect recap (Oct 31, 2026)",
+      "url": "https://thegamehaus.com/nfl-draft/nfl-draft-prospects-to-watch-in-college-football-week-9-recap/2026/10/31/",
+      "sections": [
+        "1. Emmanuel Oyebadejo"
+      ]
+    },
+    "reviewed_at": "2026-11-09T06:20:26.408507+00:00",
+    "evidence_hash": "02ffb5c57c7fa8a91bd68f8904e83bf0b3beb166ce61788d1c609e50b7fd4071",
+    "status": "reviewed_summary"
   }
 }
